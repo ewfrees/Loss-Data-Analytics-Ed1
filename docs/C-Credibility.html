@@ -52,6 +52,7 @@ function toggle(id1,id2) {
 	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
 		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
 </script>
+
 <script language="javascript">
 function togglecode(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
@@ -69,6 +70,19 @@ function toggleTheory(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
    if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
       else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
 </script>
 
 
@@ -130,11 +144,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
 <li class="chapter" data-level="1.1" data-path="C-Intro.html"><a href="C-Intro.html#S:Intro"><i class="fa fa-check"></i><b>1.1</b> Relevance of Analytics</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="C-Intro.html"><a href="C-Intro.html#what-is-analytics"><i class="fa fa-check"></i><b>1.1.1</b> What is Analytics?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="C-Intro.html"><a href="C-Intro.html#short-term-insurance"><i class="fa fa-check"></i><b>1.1.2</b> Short-term Insurance</a></li>
+<li class="chapter" data-level="1.1.2" data-path="C-Intro.html"><a href="C-Intro.html#short-and-long-term-insurance"><i class="fa fa-check"></i><b>1.1.2</b> Short and Long-term Insurance</a></li>
 <li class="chapter" data-level="1.1.3" data-path="C-Intro.html"><a href="C-Intro.html#S:InsProcesses"><i class="fa fa-check"></i><b>1.1.3</b> Insurance Processes</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="C-Intro.html"><a href="C-Intro.html#S:PredModApps"><i class="fa fa-check"></i><b>1.2</b> Insurance Company Operations</a><ul>
@@ -144,7 +159,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.2.4" data-path="C-Intro.html"><a href="C-Intro.html#S:Reserving"><i class="fa fa-check"></i><b>1.2.4</b> Loss Reserving</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="C-Intro.html"><a href="C-Intro.html#S:LGPIF"><i class="fa fa-check"></i><b>1.3</b> Case Study: Wisconsin Property Fund</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="C-Intro.html"><a href="C-Intro.html#S:OutComes"><i class="fa fa-check"></i><b>1.3.1</b> Fund Claims Variables</a></li>
+<li class="chapter" data-level="1.3.1" data-path="C-Intro.html"><a href="C-Intro.html#S:OutComes"><i class="fa fa-check"></i><b>1.3.1</b> Fund Claims Variables: Frequency and Severity</a></li>
 <li class="chapter" data-level="1.3.2" data-path="C-Intro.html"><a href="C-Intro.html#S:FundVariables"><i class="fa fa-check"></i><b>1.3.2</b> Fund Rating Variables</a></li>
 <li class="chapter" data-level="1.3.3" data-path="C-Intro.html"><a href="C-Intro.html#fund-operations"><i class="fa fa-check"></i><b>1.3.3</b> Fund Operations</a></li>
 </ul></li>
@@ -279,29 +294,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Contributors and Further Resources</a></li>
 <li class="chapter" data-level="8.5" data-path="C-RiskClass.html"><a href="C-RiskClass.html#S:RC:mle-Pois-reg"><i class="fa fa-check"></i><b>8.5</b> Technical Supplement – Estimating Poisson Regression Models</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html"><i class="fa fa-check"></i><b>9</b> Experience Rating Using Credibility Theory</a><ul>
-<li class="chapter" data-level="9.1" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#introduction-to-applications-of-credibility-theory"><i class="fa fa-check"></i><b>9.1</b> Introduction to Applications of Credibility Theory</a></li>
-<li class="chapter" data-level="9.2" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.2</b> Limited Fluctuation Credibility</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#S:frequency"><i class="fa fa-check"></i><b>9.2.1</b> Full Credibility for Claim Frequency</a></li>
-<li class="chapter" data-level="9.2.2" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#full-credibility-for-aggregate-losses-and-pure-premium"><i class="fa fa-check"></i><b>9.2.2</b> Full Credibility for Aggregate Losses and Pure Premium</a></li>
-<li class="chapter" data-level="9.2.3" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#full-credibility-for-severity"><i class="fa fa-check"></i><b>9.2.3</b> Full Credibility for Severity</a></li>
-<li class="chapter" data-level="9.2.4" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
+<li class="chapter" data-level="9" data-path="C-Credibility.html"><a href="C-Credibility.html"><i class="fa fa-check"></i><b>9</b> Experience Rating Using Credibility Theory</a><ul>
+<li class="chapter" data-level="9.1" data-path="C-Credibility.html"><a href="C-Credibility.html#introduction-to-applications-of-credibility-theory"><i class="fa fa-check"></i><b>9.1</b> Introduction to Applications of Credibility Theory</a></li>
+<li class="chapter" data-level="9.2" data-path="C-Credibility.html"><a href="C-Credibility.html#limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.2</b> Limited Fluctuation Credibility</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:frequency"><i class="fa fa-check"></i><b>9.2.1</b> Full Credibility for Claim Frequency</a></li>
+<li class="chapter" data-level="9.2.2" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-for-aggregate-losses-and-pure-premium"><i class="fa fa-check"></i><b>9.2.2</b> Full Credibility for Aggregate Losses and Pure Premium</a></li>
+<li class="chapter" data-level="9.2.3" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-for-severity"><i class="fa fa-check"></i><b>9.2.3</b> Full Credibility for Severity</a></li>
+<li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#buhlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
+<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#buhlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
-<li class="chapter" data-level="9.5" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#bayesian-inference-and-buhlmann"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann</a><ul>
-<li class="chapter" data-level="9.5.1" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#gamma-poisson-model"><i class="fa fa-check"></i><b>9.5.1</b> Gamma-Poisson Model</a></li>
-<li class="chapter" data-level="9.5.2" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#exact-credibility"><i class="fa fa-check"></i><b>9.5.2</b> Exact Credibility</a></li>
+<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
+<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-buhlmann"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="C-Credibility.html"><a href="C-Credibility.html#gamma-poisson-model"><i class="fa fa-check"></i><b>9.5.1</b> Gamma-Poisson Model</a></li>
+<li class="chapter" data-level="9.5.2" data-path="C-Credibility.html"><a href="C-Credibility.html#exact-credibility"><i class="fa fa-check"></i><b>9.5.2</b> Exact Credibility</a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#estimating-credibility-parameters"><i class="fa fa-check"></i><b>9.6</b> Estimating Credibility Parameters</a><ul>
-<li class="chapter" data-level="9.6.1" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#full-credibility-standard-for-limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.6.1</b> Full Credibility Standard for Limited Fluctuation Credibility</a></li>
-<li class="chapter" data-level="9.6.2" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#nonparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
-<li class="chapter" data-level="9.6.3" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#semiparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
-<li class="chapter" data-level="9.6.4" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#balancing-credibility-estimators"><i class="fa fa-check"></i><b>9.6.4</b> Balancing Credibility Estimators</a></li>
+<li class="chapter" data-level="9.6" data-path="C-Credibility.html"><a href="C-Credibility.html#estimating-credibility-parameters"><i class="fa fa-check"></i><b>9.6</b> Estimating Credibility Parameters</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-standard-for-limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.6.1</b> Full Credibility Standard for Limited Fluctuation Credibility</a></li>
+<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.4" data-path="C-Credibility.html"><a href="C-Credibility.html#balancing-credibility-estimators"><i class="fa fa-check"></i><b>9.6.4</b> Balancing Credibility Estimators</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="experience-rating-using-credibility-theory.html"><a href="experience-rating-using-credibility-theory.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
+<li class="chapter" data-level="9.7" data-path="C-Credibility.html"><a href="C-Credibility.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="C-PortMgt.html"><a href="C-PortMgt.html"><i class="fa fa-check"></i><b>10</b> Portfolio Management including Reinsurance</a><ul>
 <li class="chapter" data-level="10.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Tails"><i class="fa fa-check"></i><b>10.1</b> Tails of Distributions</a><ul>
@@ -429,7 +444,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
-<li><a href="https://ewfrees.github.io/Loss-Data-Analytics/" target="blank">Loss Data Analytics on GitHub</a></li>
+<li><a href="https://openacttexts.github.io/Loss-Data-Analytics/" target="blank">Loss Data Analytics on GitHub</a></li>
 
 </ul>
 
@@ -448,7 +463,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="experience-rating-using-credibility-theory" class="section level1">
+<div id="C:Credibility" class="section level1">
 <h1><span class="header-section-number">Chapter 9</span> Experience Rating Using Credibility Theory</h1>
 <p><em>Chapter Preview.</em> This chapter introduces credibility theory which is an important actuarial tool for estimating pure premiums, frequencies, and severities for individual risks or classes of risks. Credibility theory provides a convenient framework for combining the experience for an individual risk or class with other data to produce more stable and accurate estimates. Several models for calculating credibility estimates will be discussed including limited fluctuation, Bühlmann, Bühlmann-Straub, and nonparametric and semiparametric credibility methods. The chapter will also show a connection between credibility theory and Bayesian estimation which was introduced in Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
 <div id="introduction-to-applications-of-credibility-theory" class="section level2">
@@ -485,21 +500,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 \Pr[(1-k)\mu_N\leq N \leq(1+k)\mu_N] \geq p.
 \tag{9.1}
 \end{equation}\]</span>
-<p>The expected number of claims required for the probability on the left-hand side of <a href="experience-rating-using-credibility-theory.html#eq:confidence-interval">(9.1)</a> to equal <span class="math inline">\(p\)</span> is called the <strong>full credibility</strong> standard.</p>
+<p>The expected number of claims required for the probability on the left-hand side of <a href="C-Credibility.html#eq:confidence-interval">(9.1)</a> to equal <span class="math inline">\(p\)</span> is called the <strong>full credibility</strong> standard.</p>
 <p>If the expected number of claims is greater than or equal to the full credibility standard then full credibility can be assigned to the data so <span class="math inline">\(Z=1\)</span>. Usually the expected value <span class="math inline">\(\mu_N\)</span> is not known so full credibility will be assigned to the data if the actual observed value of <span class="math inline">\(N\)</span> is greater than or equal to the full credibility standard. The <span class="math inline">\(k\)</span> and <span class="math inline">\(p\)</span> values must be selected and the actuary may rely on experience, judgment, and other factors in making the choices.</p>
-<p>Subtracting <span class="math inline">\(\mu_N\)</span> from each term in <a href="experience-rating-using-credibility-theory.html#eq:confidence-interval">(9.1)</a> and dividing by the standard deviation <span class="math inline">\(\sigma_N\)</span> of <span class="math inline">\(N\)</span> gives</p>
+<p>Subtracting <span class="math inline">\(\mu_N\)</span> from each term in <a href="C-Credibility.html#eq:confidence-interval">(9.1)</a> and dividing by the standard deviation <span class="math inline">\(\sigma_N\)</span> of <span class="math inline">\(N\)</span> gives</p>
 <span class="math display" id="eq:normalized-interval">\[\begin{equation}
 \Pr\left[\frac{-k\mu_N}{\sigma_N}\leq \frac{N-\mu_N}{\sigma_N} \leq \frac{k\mu_N}{\sigma_N}\right] \geq p.
 \tag{9.2}
 \end{equation}\]</span>
 <p>For large values of <span class="math inline">\(\mu_N=\mathrm{E}[N]\)</span> it may be reasonable to approximate the distribution for <span class="math inline">\(Z=(N-\mu_N)/\sigma_N\)</span> with the standard normal distribution.</p>
 <p>Let <span class="math inline">\(y_p\)</span> be the value such that <span class="math inline">\(\Pr[-y_p\leq Z \leq y_p]=\Phi(y_p)-\Phi(-y_p)=p\)</span> where <span class="math inline">\(\Phi( )\)</span> is the cumulative standard normal distribution. Because <span class="math inline">\(\Phi(-y_p)=1-\Phi(y_p)\)</span>, the equality can be rewritten as <span class="math inline">\(2\Phi(y_p)-1=p\)</span>. Solving for <span class="math inline">\(y_p\)</span> gives <span class="math inline">\(y_p=\Phi^{-1}((p+1)/2)\)</span> where <span class="math inline">\(\Phi^{-1}( )\)</span> is the inverse of the cumulative normal.</p>
-<p>Equation <a href="experience-rating-using-credibility-theory.html#eq:normalized-interval">(9.2)</a> will be satisfied if <span class="math inline">\(k\mu_N/\sigma_N \geq y_p\)</span> assuming the normal approximation. First we will consider this inequality for the case when <span class="math inline">\(N\)</span> has a Poisson distribution: <span class="math inline">\(\Pr[N=n] = \lambda^n\textrm{e}^{\lambda}/n!\)</span>. Because <span class="math inline">\(\lambda=\mu_N=\sigma_N^2\)</span> for the Poisson, taking square roots yields <span class="math inline">\(\mu_N^{1/2}=\sigma_N\)</span>. So, <span class="math inline">\(k\mu_N/\mu_N^{1/2} \geq y_p\)</span> which is equivalent to <span class="math inline">\(\mu_N \geq (y_p/k)^2\)</span>. Let’s define <span class="math inline">\(\lambda_{kp}\)</span> to be the value of <span class="math inline">\(\mu_N\)</span> for which equality holds. Then the full credibility standard for the Poission distribution is</p>
+<p>Equation <a href="C-Credibility.html#eq:normalized-interval">(9.2)</a> will be satisfied if <span class="math inline">\(k\mu_N/\sigma_N \geq y_p\)</span> assuming the normal approximation. First we will consider this inequality for the case when <span class="math inline">\(N\)</span> has a Poisson distribution: <span class="math inline">\(\Pr[N=n] = \lambda^n\textrm{e}^{\lambda}/n!\)</span>. Because <span class="math inline">\(\lambda=\mu_N=\sigma_N^2\)</span> for the Poisson, taking square roots yields <span class="math inline">\(\mu_N^{1/2}=\sigma_N\)</span>. So, <span class="math inline">\(k\mu_N/\mu_N^{1/2} \geq y_p\)</span> which is equivalent to <span class="math inline">\(\mu_N \geq (y_p/k)^2\)</span>. Let’s define <span class="math inline">\(\lambda_{kp}\)</span> to be the value of <span class="math inline">\(\mu_N\)</span> for which equality holds. Then the full credibility standard for the Poission distribution is</p>
 <span class="math display" id="eq:full-credibility-Poisson">\[\begin{equation}
 \lambda_{kp} = \left(\frac{y_p}{k}\right)^2 \textrm{with } y_p=\Phi^{-1}((p+1)/2).
 \tag{9.3}
 \end{equation}\]</span>
-<p>If the expected number of claims <span class="math inline">\(\mu_N\)</span> is greater than or equal to <span class="math inline">\(\lambda_{kp}\)</span> then equation <a href="experience-rating-using-credibility-theory.html#eq:confidence-interval">(9.1)</a> is assumed to hold and full credibility can be assigned to the data. As noted previously, because <span class="math inline">\(\mu_N\)</span> is usually unknown, full credibility is given if the observed value of <span class="math inline">\(N\)</span> satisfies <span class="math inline">\(N \geq \lambda_{kp}.\)</span></p>
+<p>If the expected number of claims <span class="math inline">\(\mu_N\)</span> is greater than or equal to <span class="math inline">\(\lambda_{kp}\)</span> then equation <a href="C-Credibility.html#eq:confidence-interval">(9.1)</a> is assumed to hold and full credibility can be assigned to the data. As noted previously, because <span class="math inline">\(\mu_N\)</span> is usually unknown, full credibility is given if the observed value of <span class="math inline">\(N\)</span> satisfies <span class="math inline">\(N \geq \lambda_{kp}.\)</span></p>
 <p><strong>Example 9.2.1.</strong> The full credibility standard is set so that the observed number of claims is to be within 5% of the expected value with probability <span class="math inline">\(p=0.95\)</span>. If the number of claims has a Poisson distribution find the number of claims needed for full credibility.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleCred.2.1" href="javascript:toggleEX('toggleExampleCred.2.1','displayTextExampleCred.2.1');"><i><strong>Show Example Solution</strong></i></a>
@@ -508,7 +523,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><strong>Solution</strong> Referring to a normal table, <span class="math inline">\(y_p=\Phi^{-1}((p+1)/2)=\Phi^{-1}((0.95+1)/2)\)</span>=<span class="math inline">\(\Phi^{-1}(0.975)=1.960\)</span>. Using this value and <span class="math inline">\(k=.05\)</span> then <span class="math inline">\(\lambda_{kp} = (y_p/k)^{2}=(1.960/0.05)^{2}=1,536.64\)</span>. After rounding up the full credibility standard is 1,537.</p>
 </div>
 <hr />
-<p>If claims are not Poisson distributed then equation <a href="experience-rating-using-credibility-theory.html#eq:normalized-interval">(9.2)</a> does not imply <a href="experience-rating-using-credibility-theory.html#eq:full-credibility-Poisson">(9.3)</a>. Setting the upper bound of <span class="math inline">\(Z\)</span> in <a href="experience-rating-using-credibility-theory.html#eq:normalized-interval">(9.2)</a> equal to <span class="math inline">\(y_p\)</span> gives <span class="math inline">\(k\mu_N/\sigma_N=y_p\)</span>. Squaring both sides and moving everything to the right side except for one of the <span class="math inline">\(\mu_N\)</span>’s gives <span class="math inline">\(\mu_N=(y_p/k)^2(\sigma_N^2/\mu_N)\)</span>. This is the full credibility standard for frequency and will be denoted by <span class="math inline">\(n_f\)</span>,</p>
+<p>If claims are not Poisson distributed then equation <a href="C-Credibility.html#eq:normalized-interval">(9.2)</a> does not imply <a href="C-Credibility.html#eq:full-credibility-Poisson">(9.3)</a>. Setting the upper bound of <span class="math inline">\(Z\)</span> in <a href="C-Credibility.html#eq:normalized-interval">(9.2)</a> equal to <span class="math inline">\(y_p\)</span> gives <span class="math inline">\(k\mu_N/\sigma_N=y_p\)</span>. Squaring both sides and moving everything to the right side except for one of the <span class="math inline">\(\mu_N\)</span>’s gives <span class="math inline">\(\mu_N=(y_p/k)^2(\sigma_N^2/\mu_N)\)</span>. This is the full credibility standard for frequency and will be denoted by <span class="math inline">\(n_f\)</span>,</p>
 <span class="math display" id="eq:full-credibility-frequency">\[\begin{equation}
 n_f=\left(\frac{y_p}{k}\right)^2\left(\frac{\sigma_N^2}{\mu_N}\right)=\lambda_{kp}\left(\frac{\sigma_N^2}{\mu_N}\right).
 \tag{9.4}
@@ -557,7 +572,7 @@ n_f=\left(\frac{y_p}{k}\right)^2\left(\frac{\sigma_N^2}{\mu_N}\right)=\lambda_{k
 <span class="math display">\[\begin{equation*}
 \Pr\left[(1-k)\frac{\mu_N}{m}\leq \frac{N}{m} \leq(1+k)\frac{\mu_N}{m}\right] \geq p.
 \end{equation*}\]</span>
-<p>Mulitplying through by <span class="math inline">\(m\)</span> results in equation <a href="experience-rating-using-credibility-theory.html#eq:confidence-interval">(9.1)</a> at the beginning of the section. The full credibility standards that were developed for estimating expected number of claims also apply to frequency.</p>
+<p>Mulitplying through by <span class="math inline">\(m\)</span> results in equation <a href="C-Credibility.html#eq:confidence-interval">(9.1)</a> at the beginning of the section. The full credibility standards that were developed for estimating expected number of claims also apply to frequency.</p>
 </div>
 <div id="full-credibility-for-aggregate-losses-and-pure-premium" class="section level3">
 <h3><span class="header-section-number">9.2.2</span> Full Credibility for Aggregate Losses and Pure Premium</h3>
@@ -595,7 +610,7 @@ n_S=\left(\frac{y_p}{k}\right)^2\left[\left(\frac{\sigma_N^2}{\mu_N}\right)+\lef
 <p><strong>Solution</strong> Because the number of claims is Poission, <span class="math inline">\((\sigma_N^2/\mu_N)=1\)</span>. The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)</span> and the variance is <span class="math inline">\(\sigma_X^2=\theta^{2}\alpha/[(\alpha-1)^{2}(\alpha-2)]\)</span> so <span class="math inline">\((\sigma_X/\mu_X)^2=\alpha/(\alpha-2)\)</span>. Combining the frequency and severity terms gives <span class="math inline">\([(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=2(\alpha-1)/(\alpha-2)\)</span>. From a normal table <span class="math inline">\(y_p=\Phi^{-1}((0.95+1)/2)=1.960\)</span>. The full credibility standard is <span class="math inline">\(n_S=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)\)</span>. Suppose <span class="math inline">\(\alpha=3\)</span> then <span class="math inline">\(n_S=6,146.56\)</span> for a full credibility standard of 6,147. Note that considerably more claims are needed for full credibility for aggregate losses that frequency alone.</p>
 </div>
 <hr />
-<p>When the number of claims are Poisson distributed then equation <a href="experience-rating-using-credibility-theory.html#eq:full-credibility-losses">(9.5)</a> can be simplified using <span class="math inline">\((\sigma_N^2/\mu_N)=1\)</span>. It follows that <span class="math inline">\([(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=[1+(\sigma_X/\mu_X)^2]=[(\mu_x^2+\sigma_X^2)/\mu_X^2]=\mathrm{E}(X^2)/\mathrm{E}(X)^2\)</span> using the relationship <span class="math inline">\(\mu_X^2+\sigma_X^2=\mathrm{E}(X^2)\)</span>. The full credibility standard is <span class="math inline">\(n_S=\lambda_{kp}\mathrm{E}(X^2)/\mathrm{E}(X)^2\)</span>.</p>
+<p>When the number of claims are Poisson distributed then equation <a href="C-Credibility.html#eq:full-credibility-losses">(9.5)</a> can be simplified using <span class="math inline">\((\sigma_N^2/\mu_N)=1\)</span>. It follows that <span class="math inline">\([(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=[1+(\sigma_X/\mu_X)^2]=[(\mu_x^2+\sigma_X^2)/\mu_X^2]=\mathrm{E}(X^2)/\mathrm{E}(X)^2\)</span> using the relationship <span class="math inline">\(\mu_X^2+\sigma_X^2=\mathrm{E}(X^2)\)</span>. The full credibility standard is <span class="math inline">\(n_S=\lambda_{kp}\mathrm{E}(X^2)/\mathrm{E}(X)^2\)</span>.</p>
 <p>The pure premium <span class="math inline">\(PP\)</span> is equal to aggregate losses <span class="math inline">\(S\)</span> divided by exposures <span class="math inline">\(m\)</span>: <span class="math inline">\(PP=S/m\)</span>. The full credibility standard for pure premium will require</p>
 <span class="math display">\[\begin{equation*}
 \Pr\left[(1-k)\mu_{PP}\leq PP \leq(1+k)\mu_{PP}\right] \geq p.
@@ -620,11 +635,11 @@ n_{PP}=n_S=\lambda_{kp}\left[\left(\frac{\sigma_N^2}{\mu_n}\right)+\left(\frac{\
 \bar{X}=\frac{1}{n}\left(X_1+X_2+\cdots+X_n\right).
 \end{equation*}\]</span>
 <p>How big does <span class="math inline">\(n\)</span> need to be to get a good estimate? Note that <span class="math inline">\(n\)</span> is not a random variable whereas it is in the aggregate loss model.</p>
-<p>In Section <a href="experience-rating-using-credibility-theory.html#S:frequency">9.2.1</a> the accuracy of an estimator was defined in terms of a confidence interval. For severity this confidence interval is</p>
+<p>In Section <a href="C-Credibility.html#S:frequency">9.2.1</a> the accuracy of an estimator was defined in terms of a confidence interval. For severity this confidence interval is</p>
 <span class="math display">\[\begin{equation*}
 \Pr[(1-k)\mu_X\leq \bar{X} \leq(1+k)\mu_X ]\geq p
 \end{equation*}\]</span>
-<p>where <span class="math inline">\(k\)</span> and <span class="math inline">\(p\)</span> need to be specified. Following the steps in Section <a href="experience-rating-using-credibility-theory.html#S:frequency">9.2.1</a>, mean claim severity <span class="math inline">\(\mu_X\)</span> is subtracted from each term and the standard deviation of the claim severity estimator <span class="math inline">\(\sigma_{\bar{X}}\)</span> is divided into each term yielding</p>
+<p>where <span class="math inline">\(k\)</span> and <span class="math inline">\(p\)</span> need to be specified. Following the steps in Section <a href="C-Credibility.html#S:frequency">9.2.1</a>, mean claim severity <span class="math inline">\(\mu_X\)</span> is subtracted from each term and the standard deviation of the claim severity estimator <span class="math inline">\(\sigma_{\bar{X}}\)</span> is divided into each term yielding</p>
 <span class="math display">\[\begin{equation*}
 \Pr\left[\frac{-k\mu_X}{\sigma_{\bar{X}}}\leq Z \leq \frac{k\mu_X}{\sigma_{\bar{X}}}\right] \geq p
 \end{equation*}\]</span>
@@ -740,7 +755,7 @@ C &amp; 20\% &amp; \lambda=2.0 &amp; \theta=2000, \alpha=2.0 \\
 <p><strong>Solution</strong> The expected number of claims for a risk is E(<span class="math inline">\(N\)</span>)=<span class="math inline">\(\lambda\)</span>. The expected value for a Pareto distributed random variable is E(<span class="math inline">\(X\)</span>)=<span class="math inline">\(\theta/(\alpha-1)\)</span>. The expected value of the aggregate loss random variable <span class="math inline">\(S=X_1+\cdots+X_N\)</span> for a risk is E(<span class="math inline">\(S\)</span>)=E(<span class="math inline">\(N\)</span>)E(<span class="math inline">\(X\)</span>)=<span class="math inline">\(\lambda\theta/(\alpha-1)\)</span>. The expected aggregate loss for a risk of type A is E(<span class="math inline">\(S_{\textrm{A}}\)</span>)=(0.5)(1000)/(2-1)=500. The expected aggregate loss for a risk selected at random from the population is E(<span class="math inline">\(S\)</span>)=0.5[(0.5)(1000)]+0.3[(1.0)(1500)]+0.2[(2.0)(2000)]=1500.</p>
 </div>
 <hr />
-<p>Although formula <a href="experience-rating-using-credibility-theory.html#eq:buhlcred">(9.6)</a> was introduced using experience rating as an example, the Bühlmann credibility model has wider application. Suppose that a rating plan has multiple classes. Credibility formula <a href="experience-rating-using-credibility-theory.html#eq:buhlcred">(9.6)</a> can be used to determine individual class rates. The overall mean <span class="math inline">\(\mu\)</span> would be the average loss for all classes combined, <span class="math inline">\(\bar{X}\)</span> would be the experience for the individual class, and <span class="math inline">\(\hat{\mu}(\theta)\)</span> would be the estimated loss for the class.</p>
+<p>Although formula <a href="C-Credibility.html#eq:buhlcred">(9.6)</a> was introduced using experience rating as an example, the Bühlmann credibility model has wider application. Suppose that a rating plan has multiple classes. Credibility formula <a href="C-Credibility.html#eq:buhlcred">(9.6)</a> can be used to determine individual class rates. The overall mean <span class="math inline">\(\mu\)</span> would be the average loss for all classes combined, <span class="math inline">\(\bar{X}\)</span> would be the experience for the individual class, and <span class="math inline">\(\hat{\mu}(\theta)\)</span> would be the estimated loss for the class.</p>
 <div id="S:EPV-VHM-Z" class="section level3">
 <h3><span class="header-section-number">9.3.1</span> Credibility Z, <em>EPV</em>, and <em>VHM</em></h3>
 <p>When computing the credibility estimate <span class="math inline">\(\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu\)</span>, how much weight <span class="math inline">\(Z\)</span> should go to experience <span class="math inline">\(\bar{X}\)</span> and how much weight <span class="math inline">\((1-Z)\)</span> to the overall mean <span class="math inline">\(\mu\)</span>? In Bühlmann credibility there are three factors that need to be considered:</p>
@@ -870,7 +885,7 @@ Z&amp;=&amp;\textrm{credibility assigned to $m$ exposures } \\
  &amp; &amp; \textrm{ policyholder from population.}\\
 \end{eqnarray*}\]</span>
 <p>Note that <span class="math inline">\(\hat{\mu}(\theta)\)</span> is the estimator for the expected loss for one exposure. If the policyholder has <span class="math inline">\(m_j\)</span> exposures then the expected loss is <span class="math inline">\(m_j\hat{\mu}(\theta)\)</span>.</p>
-<p>In an example in the prior section it was shown that <span class="math inline">\(Z\)</span>=Var(E(<span class="math inline">\(\bar{X}|\theta\)</span>))/Var(<span class="math inline">\(\bar{X}\)</span>) where <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(n\)</span> observations. In equation <a href="experience-rating-using-credibility-theory.html#eq:bscred">(9.8)</a> the <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(m\)</span> exposures and the same <span class="math inline">\(Z\)</span> formula can be used:</p>
+<p>In an example in the prior section it was shown that <span class="math inline">\(Z\)</span>=Var(E(<span class="math inline">\(\bar{X}|\theta\)</span>))/Var(<span class="math inline">\(\bar{X}\)</span>) where <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(n\)</span> observations. In equation <a href="C-Credibility.html#eq:bscred">(9.8)</a> the <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(m\)</span> exposures and the same <span class="math inline">\(Z\)</span> formula can be used:</p>
 <span class="math display">\[\begin{equation*} 
 Z=\frac{\mathrm{Var}(\mathrm{E}(\bar{X}))}{\mathrm{Var}(\bar{X})}=
 \frac{\mathrm{Var}(\mathrm{E}(\bar{X}))}{\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))+\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}. 
@@ -1033,13 +1048,13 @@ n_S=\left(\frac{y_p}{k}\right)^2\left[\frac{\mathrm{E}(X^2)}{(\mathrm{E}(X))^2}\
 <span class="math display">\[\begin{equation*} 
 VHM=\textrm{Var(E}(\mu(\theta_i)) = \mathrm{Var}(\bar{X}_i) - \textrm{E(Var}(\bar{X}_i|\Theta=\theta_i)).
 \end{equation*}\]</span>
-<p>As discussed previously in Section <a href="experience-rating-using-credibility-theory.html#S:EPV-VHM-Z">9.3.1</a>, <em>EPV</em>/n = E(Var(<span class="math inline">\(\bar{X}_i|\Theta=\theta_i\)</span>)) and using the above estimators gives an unbiased estimator for the <em>VHM</em>:</p>
+<p>As discussed previously in Section <a href="C-Credibility.html#S:EPV-VHM-Z">9.3.1</a>, <em>EPV</em>/n = E(Var(<span class="math inline">\(\bar{X}_i|\Theta=\theta_i\)</span>)) and using the above estimators gives an unbiased estimator for the <em>VHM</em>:</p>
 <span class="math display" id="eq:VHM-estimate">\[\begin{equation} 
 \widehat{VHM} = \frac{1}{r-1} \sum_{i=1}^{r}(\bar{X}_i-\bar{X})^2 - \frac{\widehat{EPV}}{n} .
 \tag{9.11}
 \end{equation}\]</span>
 <p>Although the expected loss for a risk with parameter <span class="math inline">\(\theta_i\)</span> is <span class="math inline">\(\mu(\theta_i)\)</span>=E(<span class="math inline">\(\bar{X}_i|\Theta=\theta_i\)</span>), the variance of the sample mean <span class="math inline">\(\bar{X}_i\)</span> is greater that the variance of the hypothetical means: Var(<span class="math inline">\(\bar{X}_i)\geq\)</span>Var(<span class="math inline">\(\mu(\theta_i)\)</span>). The variance in the sample means Var(<span class="math inline">\(\bar{X}_i\)</span>) includes both the variance in the hypothetical means plus a process variance term because for individual observations <span class="math inline">\(X_{ij}\)</span>, <span class="math inline">\(Var(X_{ij}|\Theta=\theta_i)&gt;0\)</span>.</p>
-<p>In some cases formula <a href="experience-rating-using-credibility-theory.html#eq:VHM-estimate">(9.11)</a> can produce a negative value for <span class="math inline">\(\widehat{VHM}\)</span> because of the subtraction of <span class="math inline">\(\widehat{EPV}/n\)</span>, but a variance cannot be negative. The process variance within risks is so large that it overwhelms the measurement of the variance in means between risks. We cannot use this method to determine the values needed for Bühlmann credibility.</p>
+<p>In some cases formula <a href="C-Credibility.html#eq:VHM-estimate">(9.11)</a> can produce a negative value for <span class="math inline">\(\widehat{VHM}\)</span> because of the subtraction of <span class="math inline">\(\widehat{EPV}/n\)</span>, but a variance cannot be negative. The process variance within risks is so large that it overwhelms the measurement of the variance in means between risks. We cannot use this method to determine the values needed for Bühlmann credibility.</p>
 <p><strong>Example 9.6.1.</strong> Two policyholders had claims over a three-year period as shown in the table below. Estimate the expected number of claims for each policyholder using Bühlmann credibility and calculating necessary parameters from the data.</p>
 <p><span class="math display">\[\begin{matrix}
 \begin{array}{|c|c|c|}
@@ -1343,13 +1358,14 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": true,
-"twitter": true,
-"google": false,
+"facebook": false,
+"twitter": false,
+"google": true,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"linkedin": false
 },
 "fontsettings": {
 "theme": "white",
