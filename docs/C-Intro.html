@@ -46,40 +46,136 @@
 
 
 
+
+
+<!-- Jquery and Mathjax -->
+<script src="https://unpkg.com/jquery"></script>
+
+<script type='text/x-mathjax-config'>
+		MathJax.Hub.Config({
+			extensions: ['tex2jax.js'],
+			jax: ['input/TeX', 'output/HTML-CSS'],
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+				displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+				processEscapes: true
+			},
+			'HTML-CSS': { availableFonts: ['TeX'] }
+		});
+</script>
+
+<!-- The following code is for the quizzes -->
+<script src="https://surveyjs.azureedge.net/1.0.50/survey.jquery.js"></script>
+<link href="https://surveyjs.azureedge.net/1.0.50/survey.css" type="text/css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>  
+
+<script>
+function markdownConverterEWF() {  
+//Create showdown markdown converter
+var converter = new showdown.Converter();
+converter.setOption('ghCompatibleHeaderId', true);
+survey
+    .onTextMarkdown
+    .add(function (survey, options) {
+        //convert the mardown text to html
+        var str = converter.makeHtml(options.text);
+        //remove root paragraphs <p></p>
+        str = str.substring(3);
+        str = str.substring(0, str.length - 4);
+        //set html
+        options.html = str;
+         MathJax.Hub.Queue(['Typeset',MathJax.Hub, 'options']);
+    });  
+};
+// Quiz Header info
+const jsonHeader = { 
+    showProgressBar: "bottom",
+    showTimerPanel: "none",
+    maxTimeToFinishPage: 10000,
+    maxTimeToFinish: 25000,
+    firstPageIsStarted: true,
+    startSurveyText: "Start Quiz" //,
+//    title: "Does This Make Sense?"
+}
+
+// Three, four, and five question quizzes
+function jsonSummary3EWF(json) {  
+let jsonEnd3 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][3]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][3]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][3]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd3;
+};
+
+function jsonSummary4EWF(json) {  
+jsonEnd4 = jsonSummary3EWF(json);
+jsonEnd4.completedHtml = jsonEnd4.completedHtml +  
+"<br>"+
+json["pages"][4]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][4]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][4]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd4;
+};
+
+function jsonSummary5EWF(json) {  
+jsonEnd5 = jsonSummary4EWF(json);
+jsonEnd5.completedHtml = jsonEnd5.completedHtml +  
+"<br>"+
+json["pages"][5]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][5]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][5]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd5;
+};
+</script>  
+<!-- This completes the code for the quizzes -->
+
+
+<!-- Various toggle functions used throughout --> 
 <script language="javascript">
 function toggle(id1,id2) {
 	var ele = document.getElementById(id1); var text = document.getElementById(id2);
 	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
 		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
-</script>
-
-<script language="javascript">
 function togglecode(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
    if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
       else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
-</script>
-<script language="javascript">
 function toggleEX(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
    if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
       else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
-</script>
-<script language="javascript">
 function toggleTheory(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
    if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
       else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+function toggleQuiz(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Quiz Solution";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Quiz Solution";}}      
 </script>
 
+<!-- A few functions for revealing definitions -->
 <script language="javascript">
+<!--   $( function() {
+    $("#tabs").tabs();
+  } ); -->
+
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
-</script>
 
-
-<script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover(); 
 });
@@ -493,8 +589,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Summarize the importance of insurance to consumers and the economy</li>
-<li>How to describe analytics</li>
-<li>To identify data generating events associated with the timeline of a typical insurance contract</li>
+<li>Describe analytics</li>
+<li>Identify data generating events associated with the timeline of a typical insurance contract</li>
 </ul>
 <hr />
 <p>This book introduces the process of using data to make decisions in an insurance context. It does not assume that readers are familiar with insurance but introduces insurance concepts as needed. Insurance may not be as entertaining as the sports industry (another industry that depends heavily on data) but it does affect the financial livelihoods of many. By almost any measure, insurance is a major economic activity. On a global level, insurance premiums comprised about 6.2% of the world gross domestic product (GDP) in 2014, <span class="citation">(Insurance Information Institute <a href="#ref-III2016">2016</a>)</span>. As examples, premiums accounted for 18.9% of GDP in Taiwan (the highest in the study) and represented 7.3% of GDP in the United States. On a personal level, almost everyone owning a home has insurance to protect themselves in the event of a fire, hailstorm, or some other calamitous event. Almost every country requires insurance for those driving a car. In sum, although not particularly entertaining, insurance plays an important role in the economies of nations and the lives of individuals.</p>
@@ -506,7 +602,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="short-and-long-term-insurance" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> Short and Long-term Insurance</h3>
-<p>This text will focus on short-term insurance contracts. By short-term, we mean contracts where the insurance coverage is typically provided for six months or a year. If you are new to insurance, then it is probably easiest to think about an insurance policy that covers the contents of an apartment or house that you are renting (known as <a href="#" class="tooltip" style="color:green">renters insurance<span style="font-size:8pt">Renters insurance is an insurance policy that covers the contents of an apartment or house that you are renting.</span> </a>) or the contents and property of a building that is owned by you or a friend (known as <a href="#" class="tooltip" style="color:green">homeowners insurance<span style="font-size:8pt">Homeowners insurance is an insurance policy that covers the contents and property of a building that is owned by you or a friend.</span></a>). Another easy example is <a href="#" class="tooltip" style="color:green">automobile insurance<span style="font-size:8pt">An insurance policy that covers damage to your vehicle, damage to other vehicles in the accident, as well as medical expenses of those injured in the accident.</span></a>. In the event of an accident, this policy may cover damage to your vehicle, damage to other vehicles in the accident, as well as medical expenses of those injured in the accident.</p>
+<p>This text will focus on short-term insurance contracts. By short-term, we mean contracts where the insurance coverage is typically provided for six months or a year. If you are new to insurance, then it is probably easiest to think about an insurance policy that covers the contents of an apartment or house that you are renting (known as <a href="#" class="tooltip" style="color:green">renters insurance<span style="font-size:8pt">Renters insurance is an insurance policy that covers the contents of an apartment or house that you are renting.</span> </a>) or the contents and property of a building that is owned by you or a friend (known as <a href="#" class="tooltip" style="color:green">homeowners insurance<span style="font-size:8pt">Homeowners insurance is an insurance policy that covers the contents and property of a building that is owned by you or a friend.</span></a>). Another common example is <a href="#" class="tooltip" style="color:green">automobile insurance<span style="font-size:8pt">An insurance policy that covers damage to your vehicle, damage to other vehicles in the accident, as well as medical expenses of those injured in the accident.</span></a>. In the event of an accident, this policy may cover damage to your vehicle, damage to other vehicles in the accident, as well as medical expenses of those injured in the accident.</p>
 <p>In the US, policies such as renters and homeowners are known as <a href="#" class="tooltip" style="color:green">property insurance<span style="font-size:8pt">Property insurance is a policy that protects the insured against loss or damage to real or personal property. The cause of loss might be fire, lightening, business interruption, loss of rents, glass breakage, tornado, windstorm, hail, water damage, explosion, riot, civil commotion, rain, or damage from aircraft or vehicles.</span></a> whereas a policy such as auto that covers medical damages to people is known as <a href="#" class="tooltip" style="color:green">casualty insurance<span style="font-size:8pt">Casualty insurance is a form of liability insurance providing coverage for negligent acts and omissions. Examples include workers compensation, errors and omissions, fidelity, crime, glass, boiler, and various malpractice coverages.</span></a> In the rest of the world, these are both known as <a href="#" class="tooltip" style="color:green"span class="tooltip">nonlife<span style="font-size:8pt">Nonlife insurance is any type of insurance where payments are not based on the death (or survivorship) of a named insured. Examples include automobile, homeowners, and so on. Also known as property and casualty or general insurance.</span></a> or general insurance, to distinguish them from life insurance.</p>
 <p>Both life and nonlife insurances are important components of the world economy. The <span class="citation">Insurance Information Institute (<a href="#ref-III2016">2016</a>)</span> estimates that direct insurance premiums in the world for 2014 was 2,654,549 for life and 2,123,699 for nonlife; these figures are in <em>millions of US dollars</em>. As noted earlier, the total represents 6.2% of the world GDP. Put another way, life accounts for 55.5% of insurance premiums and 3.4% of world GDP whereas nonlife accounts for 44.5% of insurance premiums and 2.8% of world GDP. Both life and nonlife represent important economic activities and are worthy of study in their own right.</p>
 <p>Yet, life insurance considerations differ from nonlife. In life insurance, the default is to have a multi-year contract. For example, if a person 25 years old purchases a whole life policy that pays upon death of the insured and that person does not die until age 100, then the contract is in force for 75 years. We think of this as a long-term contract.</p>
@@ -529,6 +625,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 Figure 1.1: Timeline of a Typical Insurance Policy. Arrows mark the occurrences of random events. Each x marks the time of scheduled events that are typically non-random.
 </p>
 </div>
+<div id="surveyElement11">
+
+</div>
+<div id="surveyResult11">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz11.1" href="javascript:toggleQuiz
+('display.Quiz11.2','display.Quiz11.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz11.2" style="display: none">
+<p id="Quiz11Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/Quiz11.js">
+</script>
 </div>
 </div>
 <div id="S:PredModApps" class="section level2">
@@ -543,7 +656,7 @@ Figure 1.1: Timeline of a Typical Insurance Policy. Arrows mark the occurrences 
 <p>Armed with insurance data, the end goal is to use data to make decisions. We will learn more about methods of analyzing and extrapolating data in future chapters. To begin, let us think about why we want to do the analysis. Let us take the insurer’s viewpoint (not a person) and introduce ways of bringing money in, paying it out, managing costs, and making sure that we have enough money to meet obligations.</p>
 <p>Specifically, in many insurance companies, it is customary to aggregate detailed insurance processes into larger operational units; many companies use these functional areas to segregate employee activities and areas of responsibilities. Actuaries and other financial analysts work within these units and use data for the following activities:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Initiating Insurance</strong>. At this stage, the company makes a decision as to whether or not to take on a risk (the <a href="#" class="tooltip" style="color:green"><em>underwriting</em><span style="font-size:8pt">Underwriting is the process where the company makes a decision as to whether or not to take on a risk.</span></a> stage) and assign an appropriate premium (or rate).Insurance analytics has its actuarial roots in <em>ratemaking</em>, where analysts seek to determine the right price for the right risk.</p></li>
+<li><p><strong>Initiating Insurance</strong>. At this stage, the company makes a decision as to whether or not to take on a risk (the <a href="#" class="tooltip" style="color:green"><em>underwriting</em><span style="font-size:8pt">Underwriting is the process where the company makes a decision as to whether or not to take on a risk.</span></a> stage) and assign an appropriate premium (or rate). Insurance analytics has its actuarial roots in <em>ratemaking</em>, where analysts seek to determine the right price for the right risk.</p></li>
 <li><p><strong>Renewing Insurance</strong>. Many contracts, particularly in general insurance, have relatively short durations such as 6 months or a year. Although there is an implicit expectation that such contracts will be renewed, the insurer has the opportunity to decline coverage and to adjust the premium. Analytics is also used at this policy renewal stage where the goal is to retain profitable customers.</p></li>
 <li><p><strong>Claims Management</strong>. Analytics has long been used in (1) detecting and preventing claims fraud, (2) managing claim costs, including identifying the appropriate support for claims handling expenses, as well as (3) understanding excess layers for reinsurance and retention.</p></li>
 <li><p><strong>Loss Reserving</strong>. Analytic tools are used to provide management with an appropriate estimate of future obligations and to quantify the uncertainty of those estimates.</p></li>
@@ -597,6 +710,23 @@ processes. Such processes can also be helpful for adjusters in developing case r
 <li><p>In addition to insurance company management and regulators, other stakeholders such as investors and customers make decisions that depend on company loss reserves.</p></li>
 </ol>
 <p>Loss reserving is a topic where there are substantive differences between life and general (also known as property and casualty, or non-life), insurance. In life insurance, the severity (amount of loss) is often not a source of uncertainty as payouts are specified in the contract. The frequency, driven by mortality of the insured, is a concern. However, because of the length of time for settlement of life insurance contracts, the time value of money uncertainty as measured from issue to date of death can dominate frequency concerns. For example, for an insured who purchases a life contract at age 25, it would not be unusual for the contract to still be open in 75 years time. See, for example, <span class="citation">Bowers et al. (<a href="#ref-bowers1986actuarial">1986</a>)</span> or <span class="citation">Dickson, Hardy, and Waters (<a href="#ref-dickson2013actuarial">2013</a>)</span> for introductions to reserving for life insurance.</p>
+<div id="surveyElement12">
+
+</div>
+<div id="surveyResult12">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz12.1" href="javascript:toggleQuiz
+('display.Quiz12.2','display.Quiz12.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz12.2" style="display: none">
+<p id="Quiz12Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/Quiz12.js">
+</script>
 </div>
 </div>
 <div id="S:LGPIF" class="section level2">
@@ -605,7 +735,6 @@ processes. Such processes can also be helpful for adjusters in developing case r
 <p>In this section, we use the Wisconsin Property Fund as a case study. You learn how to:</p>
 <ul>
 <li>Describe how data generating events can produce data of interest to insurance analysts.</li>
-<li>Identify each type of variable.</li>
 <li>Produce relevant summary statistics for each variable.</li>
 <li>Describe how these summary statistics can be used in each of the major operational areas of an insurance company.</li>
 </ul>
@@ -760,8 +889,8 @@ hist(log(InsamplePos2010$yAvg), main=&quot;&quot;, xlab=&quot;Logarithmic Averag
 </div>
 <div id="S:FundVariables" class="section level3">
 <h3><span class="header-section-number">1.3.2</span> Fund Rating Variables</h3>
-<p>Developing models to represent and manage the two outcome variables, frequency and severity, is the focus of the early chapters of this text. However, when actuaries and other financial analysts use those models, they do so in the context of external variables. In general statistical terminology, one might call these explanatory or predictor variables; there are many other names in statistics, economics, psychology, and other disciplines. Because of our insurance focus, we call them <em>rating variables</em> as they will be useful in setting insurance rates and premiums.</p>
-<p>We earlier considered a sample of 1,110 observations which may seem like a lot. However, as we will see in our forthcoming applications, because of the preponderance of zeros and the skewed nature of claims, actuaries typically yearn for more data. One common approach that we adopt here is to examine outcomes from multiple years, thus increasing the sample size. We will discuss the strengths and limitations of this strategy later but, at this juncture, just want to show the reader how it works.</p>
+<p>Developing models to represent and manage the two outcome variables, frequency and severity, is the focus of the early chapters of this text. However, when actuaries and other financial analysts use those models, they do so in the context of external variables. In general statistical terminology, one might call these explanatory or predictor variables; there are many other names in statistics, economics, psychology, and other disciplines. Because of our insurance focus, we call them <a href="#" class="tooltip" style="color:green"><em>rating variables</em><span style="font-size:8pt"> A variable that is useful to explain or predict a loss, typically used to classify risks for rating purposes.</span></a> as they will be useful in setting insurance rates and premiums.</p>
+<p>We earlier considered observations from a sample of 1,110 policyholders which may seem like a lot. However, as we will see in our forthcoming applications, because of the preponderance of zeros and the skewed nature of claims, actuaries typically yearn for more data. One common approach that we adopt here is to examine outcomes from multiple years, thus increasing the sample size. We will discuss the strengths and limitations of this strategy later but, at this juncture, just want to show the reader how it works.</p>
 <p>Specifically, Table <a href="C-Intro.html#tab:CoverageBCIM">1.3</a> shows that we now consider policies over five years of data, years 2006, …, 2010, inclusive. The data begins in 2006 because there was a shift in claim coding in 2005 so that comparisons with earlier years are not helpful. To mitigate the effect of open claims, we consider policy years prior to 2011. An open claim means that all of the obligations are not known at the time of the analysis; for some claims, such an injury to a person in an auto accident or in the workplace, it can take years before costs are fully known.</p>
 <p>Table <a href="C-Intro.html#tab:CoverageBCIM">1.3</a> shows that the average claim varies over time, especially with the high 2010 value due to a single large claim.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> The total number of policyholders is steadily declining and, conversely, the coverage is steadily increasing. The coverage variable is the amount of coverage of the property and contents. Roughly, you can think of it as the maximum possible payout of the insurer. For our immediate purposes, it is our first rating variable. Other things being equal, we would expect that policyholders with larger coverage will have larger claims. We will make this vague idea much more precise as we proceed.</p>
 <table style="width:92%;">
@@ -1320,6 +1449,23 @@ Table4d &lt;- ByVarCredit(4)    #Claims Summary by Entity Type and Alarm Credit=
 <div id="loss-reserving" class="section level4 unnumbered">
 <h4>Loss Reserving</h4>
 <p>In our case study, we look only at the one year outcomes of closed claims (the opposite of open). However, like many lines of insurance, obligations from insured events to buildings such as fire, hail, and the like, are not known immediately and may develop over time. Other lines of business, including those were there are injuries to people, take much longer to develop. Chapter <a href="C-LossReserves.html#C:LossReserves">11</a> introduces this concern and <em>loss reserving</em>, the discipline of determining how much the insurance company should retain to meet its obligations.</p>
+<div id="surveyElement13">
+
+</div>
+<div id="surveyResult13">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz13.1" href="javascript:toggleQuiz
+('display.Quiz13.2','display.Quiz13.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz13.2" style="display: none">
+<p id="Quiz13Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/Quiz13.js">
+</script>
 </div>
 </div>
 </div>

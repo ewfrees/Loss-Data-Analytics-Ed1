@@ -46,40 +46,136 @@
 
 
 
+
+
+<!-- Jquery and Mathjax -->
+<script src="https://unpkg.com/jquery"></script>
+
+<script type='text/x-mathjax-config'>
+		MathJax.Hub.Config({
+			extensions: ['tex2jax.js'],
+			jax: ['input/TeX', 'output/HTML-CSS'],
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+				displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+				processEscapes: true
+			},
+			'HTML-CSS': { availableFonts: ['TeX'] }
+		});
+</script>
+
+<!-- The following code is for the quizzes -->
+<script src="https://surveyjs.azureedge.net/1.0.50/survey.jquery.js"></script>
+<link href="https://surveyjs.azureedge.net/1.0.50/survey.css" type="text/css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>  
+
+<script>
+function markdownConverterEWF() {  
+//Create showdown markdown converter
+var converter = new showdown.Converter();
+converter.setOption('ghCompatibleHeaderId', true);
+survey
+    .onTextMarkdown
+    .add(function (survey, options) {
+        //convert the mardown text to html
+        var str = converter.makeHtml(options.text);
+        //remove root paragraphs <p></p>
+        str = str.substring(3);
+        str = str.substring(0, str.length - 4);
+        //set html
+        options.html = str;
+         MathJax.Hub.Queue(['Typeset',MathJax.Hub, 'options']);
+    });  
+};
+// Quiz Header info
+const jsonHeader = { 
+    showProgressBar: "bottom",
+    showTimerPanel: "none",
+    maxTimeToFinishPage: 10000,
+    maxTimeToFinish: 25000,
+    firstPageIsStarted: true,
+    startSurveyText: "Start Quiz" //,
+//    title: "Does This Make Sense?"
+}
+
+// Three, four, and five question quizzes
+function jsonSummary3EWF(json) {  
+let jsonEnd3 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][3]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][3]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][3]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd3;
+};
+
+function jsonSummary4EWF(json) {  
+jsonEnd4 = jsonSummary3EWF(json);
+jsonEnd4.completedHtml = jsonEnd4.completedHtml +  
+"<br>"+
+json["pages"][4]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][4]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][4]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd4;
+};
+
+function jsonSummary5EWF(json) {  
+jsonEnd5 = jsonSummary4EWF(json);
+jsonEnd5.completedHtml = jsonEnd5.completedHtml +  
+"<br>"+
+json["pages"][5]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][5]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][5]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd5;
+};
+</script>  
+<!-- This completes the code for the quizzes -->
+
+
+<!-- Various toggle functions used throughout --> 
 <script language="javascript">
 function toggle(id1,id2) {
 	var ele = document.getElementById(id1); var text = document.getElementById(id2);
 	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
 		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
-</script>
-
-<script language="javascript">
 function togglecode(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
    if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
       else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
-</script>
-<script language="javascript">
 function toggleEX(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
    if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
       else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
-</script>
-<script language="javascript">
 function toggleTheory(id1,id2) {
    var ele = document.getElementById(id1); var text = document.getElementById(id2);
    if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
       else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+function toggleQuiz(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Quiz Solution";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Quiz Solution";}}      
 </script>
 
+<!-- A few functions for revealing definitions -->
 <script language="javascript">
+<!--   $( function() {
+    $("#tabs").tabs();
+  } ); -->
+
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
-</script>
 
-
-<script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover(); 
 });
@@ -1036,7 +1132,8 @@ TVaR_q[X]\geq VaR_q[X].
 Y_{insurer} = c X \ \ \text{and} \ \ \ Y_{reinsurer} = (1-c) X,
 \]</span> where <span class="math inline">\(c\in (0,1)\)</span> denotes the proportion retained by the insurer. Note that <span class="math inline">\(Y_{insurer}+Y_{reinsurer}=X\)</span>.</p>
 <p><strong>Example 10.3.1. Distribution of losses under quota share.</strong> To develop an intuition for the effect of quota-share agreement on the distribution of losses, the following is a short <code>R</code> demonstration using simulation. Note the relative shapes of the distributions of total losses, the retained portion (of the insurer), and the reinsurer’s portion.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-9-1.png" width="960" style="display: block; margin: auto;" /></p>
+<pre><code>Warning: package &#39;actuar&#39; was built under R version 3.4.4</code></pre>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-12-1.png" width="960" style="display: block; margin: auto;" /></p>
 <h6 style="text-align: center;">
 <a id="displayQuotaShare" href="javascript:togglecode('toggleQuotaShare','displayQuotaShare');"><i><strong>Show the R Code</strong></i></a>
 </h6>
@@ -1140,7 +1237,7 @@ c1Vec &lt;-<span class="st"> </span>c2Vec &lt;-<span class="st"> </span>c3Vec &l
 <span class="kw">text</span>(<span class="dv">1200</span>,<span class="fl">0.80</span>, <span class="kw">expression</span>(c[<span class="dv">1</span>]))
 <span class="kw">text</span>(<span class="dv">2000</span>,<span class="fl">0.75</span>, <span class="kw">expression</span>(c[<span class="dv">2</span>]))
 <span class="kw">text</span>(<span class="dv">1500</span>,<span class="fl">0.30</span>, <span class="kw">expression</span>(c[<span class="dv">3</span>]))</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-11-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-14-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -1292,7 +1389,7 @@ Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span cla
 <span class="kw">plot</span>(<span class="kw">density</span>(YTotal),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Total Loss&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yinsur),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer&quot;</span>,    <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yreinsur), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer&quot;</span>,  <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-14-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-17-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <hr />
 </div>
@@ -1445,7 +1542,7 @@ Total    3351.35 4675.04 6464.20 12159.02</code></pre>
 <span class="kw">plot</span>(<span class="kw">density</span>(Yretained), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">500</span>), <span class="dt">main=</span><span class="st">&quot;Retained Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss (Note the different horizontal scale)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Density (Note different vertical scale)&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yinsurer), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Total Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-20-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-23-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="further-resources-and-contributors" class="section level4 unnumbered">
