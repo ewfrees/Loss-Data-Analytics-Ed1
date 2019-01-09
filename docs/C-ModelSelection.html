@@ -679,7 +679,7 @@ plot(PercentilesxExample, main=&quot;&quot;,xlab=&quot;x&quot;)</code></pre>
 <p>We have already seen the <em>median</em>, which is the number such that approximately half of a data set is below (or above) it. The <strong>first quartile</strong> is the number such that approximately 25% of the data is below it and the <em>third quartile</em> is the number such that approximately 75% of the data is below it. A <span class="math inline">\(100p\)</span> <strong>percentile</strong> is the number such that <span class="math inline">\(100 \times p\)</span> percent of the data is below it.</p>
 <p>To generalize this concept, consider a distribution function <span class="math inline">\(F(\cdot)\)</span>, which may or may not be continuous, and let <span class="math inline">\(q\)</span> be a fraction so that <span class="math inline">\(0&lt;q&lt;1\)</span>. We want to define a quantile, say <span class="math inline">\(q_F\)</span>, to be a number such that <span class="math inline">\(F(q_F) \approx q\)</span>. Notice that when <span class="math inline">\(q = 0.5\)</span>, <span class="math inline">\(q_F\)</span> is the median; when <span class="math inline">\(q = 0.25\)</span>, <span class="math inline">\(q_F\)</span> is the first quartile, and so on. So, a quantile generalizes the concepts of median, quartiles, and percentiles.</p>
 <p>To be precise, for a given <span class="math inline">\(0&lt;q&lt;1\)</span>, define the <span class="math inline">\(q\)</span><strong>th quantile</strong> <span class="math inline">\(q_F\)</span> to be <em>any</em> number that satisfies</p>
-<span class="math display" id="eq:Quantile">\[\begin{equation} 
+<span class="math display" id="eq:Quantile">\[\begin{equation}
   F(q_F-) \le q \le F(q_F)
   \tag{4.1}
 \end{equation}\]</span>
@@ -724,10 +724,11 @@ Figure 4.3: Three Quantile Cases
 </div>
 <div id="density-estimators" class="section level4">
 <h4><span class="header-section-number">4.1.1.4</span> Density Estimators</h4>
-<p><strong>Discrete Variable.</strong> When the random variable is discrete, estimating the probability mass function <span class="math inline">\(f(x) = \Pr(X=x)\)</span> is straightforward. We simply use the sample average, defined to be <span class="math display">\[f_n(x) = \frac{1}{n} \sum_{i=1}^n I(X_i = x).\]</span></p>
+<p><strong>Discrete Variable.</strong> When the random variable is discrete, estimating the probability mass function <span class="math inline">\(f(x) = \Pr(X=x)\)</span> is straightforward. We simply use the sample average, defined to be</p>
+<p><span class="math display">\[f_n(x) = \frac{1}{n} \sum_{i=1}^n I(X_i = x).\]</span></p>
 <p><strong>Continuous Variable within a Group.</strong> For a continuous random variable, consider a discretized formulation in which the domain of <span class="math inline">\(F(\cdot)\)</span> is partitioned by constants <span class="math inline">\(\{c_0 &lt; c_1 &lt; \cdots &lt; c_k\}\)</span> into intervals of the form <span class="math inline">\([c_{j-1}, c_j)\)</span>, for <span class="math inline">\(j=1, \ldots, k\)</span>. The data observations are thus “grouped” by the intervals into which they fall. Then, we might use the basic definition of the empirical mass function, or a variation such as <span class="math display">\[f_n(x) = \frac{n_j}{n \times (c_j - c_{j-1})}  \ \ \ \ \ \ c_{j-1} \le x &lt; c_j,\]</span> where <span class="math inline">\(n_j\)</span> is the number of observations (<span class="math inline">\(X_i\)</span>) that fall into the interval <span class="math inline">\([c_{j-1}, c_j)\)</span>.</p>
 <p><strong>Continuous Variable (not grouped).</strong> Extending this notion to instances where we observe individual data, note that we can always create arbitrary groupings and use this formula. More formally, let <span class="math inline">\(b&gt;0\)</span> be a small positive constant, known as a <strong>bandwidth</strong>, and define a density estimator to be</p>
-<span class="math display" id="eq:KDF">\[\begin{equation} 
+<span class="math display" id="eq:KDF">\[\begin{equation}
   f_n(x) = \frac{1}{2nb} \sum_{i=1}^n I(x-b &lt; X_i \le x + b)
   \tag{4.2}
 \end{equation}\]</span>
@@ -760,7 +761,7 @@ Figure 4.3: Three Quantile Cases
 \begin{array}{l|cc}
 \hline
 \text{Kernel} &amp;  w(x) \\
-\hline 
+\hline
 \text{Uniform } &amp;  \frac{1}{2}I(-1 &lt; x \le 1) \\
 \text{Triangle} &amp;  (1-|x|)\times I(|x| \le 1) \\
 \text{Epanechnikov} &amp; \frac{3}{4}(1-x^2) \times I(|x| \le 1) \\
@@ -793,17 +794,19 @@ legend(&quot;topright&quot;, c(&quot;b=0.3255 (default)&quot;, &quot;b=0.1&quot;
 <hr />
 <p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as <span class="math display">\[\begin{aligned}
 \hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}\]</span></p>
-<p>where <span class="math inline">\(W\)</span> is the distribution function associated with the kernel density <span class="math inline">\(w\)</span>. To illustrate, for the uniform kernel, we have <span class="math inline">\(w(y) = \frac{1}{2}I(-1 &lt; y \le 1)\)</span>, so <span class="math display">\[
-\begin{aligned}
+where <span class="math inline">\(W\)</span> is the distribution function associated with the kernel density <span class="math inline">\(w\)</span>. To illustrate, for the uniform kernel, we have <span class="math inline">\(w(y) = \frac{1}{2}I(-1 &lt; y \le 1)\)</span>, so $$
+<span class="math display">\[\begin{aligned}
+
 W(y) =
 \begin{cases}
 0 &amp;            y&lt;-1\\
 \frac{y+1}{2}&amp; -1 \le y &lt; 1 \\
 1 &amp; y \ge 1 \\
-\end{cases}\end{aligned} .
-\]</span></p>
+\end{cases}\end{aligned}\]</span>
+<p>. $$</p>
 <hr />
-<p><strong>Example 4.1.5. Actuarial Exam Question.</strong> You study five lives to estimate the time from the onset of a disease to death. The times to death are:</p>
+<p><strong>Example 4.1.5. Actuarial Exam Question.</strong></p>
+<p>You study five lives to estimate the time from the onset of a disease to death. The times to death are:</p>
 <p><span class="math display">\[\begin{array}{ccccc}
 2 &amp; 3 &amp; 3 &amp; 3 &amp; 7  \\
 \end{array}\]</span></p>
@@ -816,7 +819,7 @@ W(y) =
 <p><span class="math display">\[\begin{array}{c|c|c}
 \hline
 X_i &amp; \frac{x-X_i}{b} &amp; w\left(\frac{x-X_i}{b} \right) \\
-\hline 
+\hline
 2 &amp; \frac{2.5-2}{2}=\frac{1}{4} &amp;  (1-\frac{1}{4})(1) = \frac{3}{4} \\
 \hline
 3 &amp; &amp; \\
@@ -882,7 +885,7 @@ Figure 4.7: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. T
 \begin{array}{l|cc}
 \hline
 \text{Statistic} &amp; \text{Definition} &amp; \text{Computational Expression} \\
-\hline 
+\hline
 \text{Kolmogorov-} &amp; \max_x |F_n(x) - F(x)| &amp; \max(D^+, D^-) \text{ where } \\
 ~~~\text{Smirnov} &amp;&amp; D^+ = \max_{i=1, \ldots, n} \left|\frac{i}{n} - F_i\right| \\
 &amp;&amp; D^- = \max_{i=1, \ldots, n} \left| F_i - \frac{i-1}{n} \right| \\
@@ -908,7 +911,7 @@ Figure 4.7: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. T
 <p><span class="math display">\[\begin{array}{ccccc}
 \hline
 x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|) \\
-\hline 
+\hline
 29  &amp; 0.2517 &amp; 0.2 &amp; 0   &amp; \max(0.0517, 0.2517) = 0.2517 \\
 64  &amp; 0.4727 &amp; 0.4 &amp; 0.2 &amp; \max(0.0727, 0.2727) = 0.2727 \\
 90  &amp; 0.5934 &amp; 0.6 &amp; 0.4 &amp; \max(0.0066, 0.1934) = 0.1934 \\
@@ -962,7 +965,8 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 <h4><span class="header-section-number">4.1.3.2</span> Percentile Matching</h4>
 <p>Under <strong>percentile matching</strong>, we approximate the quantiles or percentiles of the parametric distribution using the empirical (nonparametric) quantiles or percentiles described in Section <a href="C-ModelSelection.html#S:MS:QuantileEstimator">4.1.1.3</a>.</p>
 <hr />
-<p><strong>Example 4.1.9. Property Fund.</strong> For the 2010 property fund, we illustrate matching on quantiles. In particular, the Pareto distribution is intuitively pleasing because of the closed-form solution for the quantiles. Recall that the distribution function for the Pareto distribution is <span class="math display">\[F(x) = 1 - \left(\frac{\theta}{x+\theta}\right)^{\alpha}.\]</span> Easy algebra shows that we can express the quantile as <span class="math display">\[F^{-1}(q) = \theta \left( (1-q)^{-1/\alpha} -1 \right).\]</span> for a fraction <span class="math inline">\(q\)</span>, <span class="math inline">\(0&lt;q&lt;1\)</span>.</p>
+<p><strong>Example 4.1.9. Property Fund.</strong> For the 2010 property fund, we illustrate matching on quantiles. In particular, the Pareto distribution is intuitively pleasing because of the closed-form solution for the quantiles. Recall that the distribution function for the Pareto distribution is <span class="math display">\[F(x) = 1 - \left(\frac{\theta}{x+\theta}\right)^{\alpha}.\]</span> Easy algebra shows that we can express the quantile as</p>
+<p><span class="math display">\[F^{-1}(q) = \theta \left( (1-q)^{-1/\alpha} -1 \right).\]</span> for a fraction <span class="math inline">\(q\)</span>, <span class="math inline">\(0&lt;q&lt;1\)</span>.</p>
 <p>Determine estimates of the Pareto distribution parameters using the 25th and 95th empirical quantiles.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleSelect.1.9" href="javascript:toggleEX('toggleExampleSelect.1.9','displayTextExampleSelect.1.9');"><i><strong>Show Example Solution</strong></i></a>
@@ -1107,7 +1111,8 @@ F(c_k) - F(c_{k-1}) &amp;   \text{if }\ x \in (c_{k-1}, c_k]\\
 L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_j \ln \left\{F(c_j) - F(c_{j-1})\right\}
 \end{aligned}\]</span></p>
 <p>Maximizing the likelihood function (or equivalently, maximizing the log-likelihood function) would then produce the maximum likelihood estimates for grouped data.</p>
-<p><strong>Example 4.3.1. Actuarial Exam Question.</strong> You are given:</p>
+<p><strong>Example 4.3.1. Actuarial Exam Question.</strong></p>
+<p>You are given:</p>
 <ol style="list-style-type: lower-roman">
 <li>Losses follow an exponential distribution with mean <span class="math inline">\(\theta\)</span>.</li>
 <li>A random sample of 20 losses is distributed as follows:</li>
@@ -1117,7 +1122,7 @@ L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_
 \begin{array}{l|c}
 \hline
 \text{Loss Range} &amp; \text{Frequency} \\
-\hline 
+\hline
 [0,1000] &amp; 7 \\
 (1000,2000] &amp; 6 \\
 (2000,\infty) &amp; 7 \\
@@ -1270,7 +1275,7 @@ f(x) &amp; \text{if } \delta = 1
 \begin{array}{lc}
 \hline
 \text{Outcome} &amp; \text{Likelihood Contribution} \\
-\hline 
+\hline
 \text{exact value} &amp; f(x) \\
 \text{right-censoring} &amp; 1-F(C_U) \\
 \text{left-censoring} &amp; F(C_L) \\
@@ -1298,7 +1303,7 @@ L(\theta) &amp;= \sum_{E} \left\{ \ln f(x_i) - \ln (1-F(C_{Li})) \right\} + \sum
 \end{aligned}
 \]</span></p>
 <p>To simplify the notation, define <span class="math inline">\(\delta_i = I(X_i \geq C_{Ui})\)</span> to be a binary variable that indicates right-censoring. Let <span class="math inline">\(X_i^{\ast \ast} = \min(X_i, C_{Ui}) - C_{Li}\)</span> be the amount that the observed variable exceeds the lower truncation limit. With this, the log-likelihood is</p>
-<span class="math display" id="eq:EXPloglik">\[\begin{equation} 
+<span class="math display" id="eq:EXPloglik">\[\begin{equation}
   L(\theta) =  - \sum_{i=1}^n ((1-\delta_i) \ln \theta + \frac{x_i^{\ast \ast}}{\theta})
   \tag{4.5}
 \end{equation}\]</span>
@@ -1363,7 +1368,8 @@ F_n(c_j) = \frac{\text{number of observations } \le c_j}{n}.
 <p>For other values of <span class="math inline">\(x \in (c_{j-1}, c_j)\)</span>, we can estimate the distribution function with the <em>ogive</em> estimator, which linearly interpolates between <span class="math inline">\(F_n(c_{j-1})\)</span> and <span class="math inline">\(F_n(c_j)\)</span>, i.e. the values of the boundaries <span class="math inline">\(F_n(c_{j-1})\)</span> and <span class="math inline">\(F_n(c_j)\)</span> are connected with a straight line. This can formally be expressed as <span class="math display">\[F_n(x) = \frac{c_j-x}{c_j-c_{j-1}} F_n(c_{j-1}) + \frac{x-c_{j-1}}{c_j-c_{j-1}} F_n(c_j) \ \ \ \text{for } c_{j-1} \le x &lt; c_j\]</span></p>
 <p>The corresponding density is <span class="math display">\[f_n(x) = F^{\prime}_n(x) = \frac{F_n(c_j)-F_n(c_{j-1})}{c_j - c_{j-1}} \ \ \  \text{for } c_{j-1} \le x &lt; c_j .\]</span></p>
 <hr />
-<p><strong>Example 4.3.4. Actuarial Exam Question.</strong> You are given the following information regarding claim sizes for 100 claims:</p>
+<p><strong>Example 4.3.4. Actuarial Exam Question.</strong></p>
+<p>You are given the following information regarding claim sizes for 100 claims:</p>
 <p><span class="math display">\[
 {\small
 \begin{array}{r|c}
@@ -1396,7 +1402,8 @@ F_n(c_j) = \frac{\text{number of observations } \le c_j}{n}.
 <p>It can be useful to calibrate parametric estimators with nonparametric methods that do not rely on a parametric form of the distribution. The product-limit estimator due to <span class="citation">(Kaplan and Meier <a href="#ref-kaplan1958">1958</a>)</span> is a well-known estimator of the distribution function in the presence of censoring.</p>
 <p><strong>Motivation for the Kaplan-Meier Product Limit Estimator.</strong> To explain why the product-limit works so well with censored observations, let us first return to the “usual” case without censoring. Here, the empirical distribution function <span class="math inline">\(F_n(x)\)</span> is an <em>unbiased</em> estimator of the distribution function <span class="math inline">\(F(x)\)</span>. This is because <span class="math inline">\(F_n(x)\)</span> is the average of indicator variables each of which are unbiased, that is, <span class="math inline">\(\mathrm{E~} I(X_i \le x) = \Pr(X_i \le x) = F(x)\)</span>.</p>
 <p>Now suppose the the random outcome is censored on the right by a limiting amount, say, <span class="math inline">\(C_U\)</span>, so that we record the smaller of the two, <span class="math inline">\(X^* = \min(X, C_U)\)</span>. For values of <span class="math inline">\(x\)</span> that are smaller than <span class="math inline">\(C_U\)</span>, the indicator variable still provides an unbiased estimator of the distribution function before we reach the censoring limit. That is, <span class="math inline">\(\mathrm{E~} I(X^* \le x) = F(x)\)</span> because <span class="math inline">\(I(X^* \le x) = I(X \le x)\)</span> for <span class="math inline">\(x &lt; C_U\)</span>. In the same way, <span class="math inline">\(\mathrm{E~} I(X^* &gt; x) = 1 -F(x) = S(x)\)</span>. But, for <span class="math inline">\(x&gt;C_U\)</span>, <span class="math inline">\(I(X^* \le x)\)</span> is in general not an unbiased estimator of <span class="math inline">\(F(x)\)</span>.</p>
-<p>As an alternative, consider <em>two</em> random variables that have different censoring limits. For illustration, suppose that we observe <span class="math inline">\(X_1^* = \min(X_1, 5)\)</span> and <span class="math inline">\(X_2^* = \min(X_2, 10)\)</span> where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent draws from the same distribution. For <span class="math inline">\(x \le 5\)</span>, the empirical distribution function <span class="math inline">\(F_2(x)\)</span> is an unbiased estimator of <span class="math inline">\(F(x)\)</span>. However, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the first observation cannot be used for the distribution function because of the censoring limitation. Instead, the strategy developed by <span class="citation">(Kaplan and Meier <a href="#ref-kaplan1958">1958</a>)</span> is to use <span class="math inline">\(S_2(5)\)</span> as an estimator of <span class="math inline">\(S(5)\)</span> and then to use the second observation to estimate the survival function conditional on survival to time 5, <span class="math inline">\(\Pr(X &gt; x | X &gt;5) = \frac{S(x)}{S(5)}\)</span>. Specifically, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the estimator of the survival function is <span class="math display">\[
+<p>As an alternative, consider <em>two</em> random variables that have different censoring limits. For illustration, suppose that we observe <span class="math inline">\(X_1^* = \min(X_1, 5)\)</span> and <span class="math inline">\(X_2^* = \min(X_2, 10)\)</span> where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent draws from the same distribution. For <span class="math inline">\(x \le 5\)</span>, the empirical distribution function <span class="math inline">\(F_2(x)\)</span> is an unbiased estimator of <span class="math inline">\(F(x)\)</span>. However, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the first observation cannot be used for the distribution function because of the censoring limitation. Instead, the strategy developed by <span class="citation">(Kaplan and Meier <a href="#ref-kaplan1958">1958</a>)</span> is to use <span class="math inline">\(S_2(5)\)</span> as an estimator of <span class="math inline">\(S(5)\)</span> and then to use the second observation to estimate the survival function conditional on survival to time 5, <span class="math inline">\(\Pr(X &gt; x | X &gt;5) = \frac{S(x)}{S(5)}\)</span>. Specifically, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the estimator of the survival function is</p>
+<p><span class="math display">\[
 \hat{S}(x) = S_2(5) \times I(X_2^* &gt; x ) .
 \]</span></p>
 <p><strong>Kaplan-Meier Product Limit Estimator.</strong> Extending this idea, for each observation <span class="math inline">\(i\)</span>, let <span class="math inline">\(u_i\)</span> be the upper censoring limit (<span class="math inline">\(=\infty\)</span> if no censoring). Thus, the recorded value is <span class="math inline">\(x_i\)</span> in the case of no censoring and <span class="math inline">\(u_i\)</span> if there is censoring. Let <span class="math inline">\(t_{1} &lt;\cdots&lt; t_{k}\)</span> be <span class="math inline">\(k\)</span> distinct points at which an uncensored loss occurs, and let <span class="math inline">\(s_j\)</span> be the number of uncensored losses <span class="math inline">\(x_i\)</span>’s at <span class="math inline">\(t_{j}\)</span>. The corresponding <strong>risk set</strong> is the number of observations that are active (not censored) at a value <em>less than</em> <span class="math inline">\(t_{j}\)</span>, denoted as <span class="math inline">\(R_j = \sum_{i=1}^n I(x_i \geq t_{j}) + \sum_{i=1}^n I(u_i \geq t_{j})\)</span>.</p>
@@ -1460,7 +1467,8 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 \]</span></p>
 <p>Note that the above expression is a result of the Nelson-Äalen estimator of the cumulative hazard function <span class="math display">\[\hat{H}(x)=\sum_{j:t_j\leq x}  \frac{s_j}{R_j} \]</span> and the relationship between the survival function and cumulative hazard function, <span class="math inline">\(\hat{S}_{NA}(x)=e^{-\hat{H}(x)}\)</span>.</p>
 <hr />
-<p><strong>Example 4.3.6. Actuarial Exam Question.</strong> For observation <span class="math inline">\(i\)</span> of a survival study:</p>
+<p><strong>Example 4.3.6. Actuarial Exam Question.</strong></p>
+<p>For observation <span class="math inline">\(i\)</span> of a survival study:</p>
 <ul>
 <li><span class="math inline">\(d_i\)</span> is the left truncation point</li>
 <li><span class="math inline">\(x_i\)</span> is the observed value if not right censored</li>
@@ -1488,7 +1496,7 @@ u_i &amp; - &amp; 1.2 &amp; - &amp; 1.5 &amp; 1.6 &amp; - &amp; 1.7 &amp; - &amp
 <p><span class="math display">\[\begin{array}{ccccc}
 \hline
 j &amp; t_j &amp; s_j &amp; R_j &amp; \hat{S}(t_j) \\
-\hline 
+\hline
 1  &amp; 0.9   &amp; 1   &amp; 10-3 = 7 &amp; 1-\frac{1}{7} = \frac{6}{7} \\
 2  &amp; 1.5   &amp; 1   &amp; 8-2 = 6  &amp; \frac{6}{7}\left( 1 - \frac{1}{6} \right) = \frac{5}{7}\\
 3  &amp; 1.7   &amp; 1   &amp; 5-0 = 5  &amp; \frac{5}{7}\left( 1 - \frac{1}{5} \right) = \frac{4}{7}\\
@@ -1523,7 +1531,7 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 &amp;= \frac{2}{10} + \frac{1}{5}  = 0.2 + 0.2 = 0.4 .\\
 \end{aligned}\]</span></p>
 <p>From earlier work, the Kaplan-Meier estimate of <span class="math inline">\(S(11)\)</span> is <span class="math inline">\(\hat{S}(11) = 0.64\)</span>. Then Greenwood’s estimate of the variance of the product-limit estimate of <span class="math inline">\(S(11)\)</span> is <span class="math display">\[\begin{aligned}
-\widehat{Var}(\hat{S}(11)) &amp;= (\hat{S}(11))^2 \sum_{j:t_j\leq 11} \frac{s_j}{R_j(R_j-s_j)} 
+\widehat{Var}(\hat{S}(11)) &amp;= (\hat{S}(11))^2 \sum_{j:t_j\leq 11} \frac{s_j}{R_j(R_j-s_j)}
 &amp;= (0.64)^2 \left(\frac{2}{10(8)} + \frac{1}{5(4)} \right)  = 0.0307. \\
 \end{aligned}\]</span></p>
 </div>
@@ -1656,8 +1664,8 @@ I(\hat{\theta} =\theta) &amp; \text{zero-one loss (for discrete probabilities)} 
 </h5>
 <div id="toggleExampleSelect.4.2" style="display: none">
 <p><em>Solution:</em> The posterior density, given an observation of 3 is</p>
-<p><span class="math display">\[\pi(\theta|3) =  \frac{f(3|\theta)\pi(\theta)}{\int_1^\infty f(3|\theta)\pi(\theta)d\theta} = 
-\frac{\frac{2\theta^2}{(3+\theta)^3}\frac{1}{\theta^2}}{\int_1^\infty 2(3+\theta)^{-3} d\theta} = 
+<p><span class="math display">\[\pi(\theta|3) =  \frac{f(3|\theta)\pi(\theta)}{\int_1^\infty f(3|\theta)\pi(\theta)d\theta} =
+\frac{\frac{2\theta^2}{(3+\theta)^3}\frac{1}{\theta^2}}{\int_1^\infty 2(3+\theta)^{-3} d\theta} =
 \frac{2(3+\theta)^{-3}}{\left. -(3+\theta)^{-2}\right|_1^\infty} = 32(3+\theta)^{-3}, \ \ \theta &gt; 1\]</span></p>
 <p>Then</p>
 <p><span class="math display">\[\Pr(\Theta&gt;2|3) = \int_2^\infty 32(3+\theta)^{-3}d\theta = \left. -16(3+\theta)^{-2} \right|_2^\infty = \frac{16}{25} = 0.64\]</span></p>
@@ -1724,7 +1732,8 @@ E(Y|X)
 \]</span></p>
 </div>
 <hr />
-<p><strong>Example 4.4.4. Actuarial Exam Question.</strong> You are given:</p>
+<p><strong>Example 4.4.4. Actuarial Exam Question.</strong></p>
+<p>You are given:</p>
 <ol style="list-style-type: lower-roman">
 <li>Losses on a company’s insurance policies follow a Pareto distribution with probability density function: <span class="math display">\[
 f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
@@ -1766,7 +1775,8 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 \]</span></p>
 </div>
 <hr />
-<p><strong>Example 4.4.5. Actuarial Exam Question.</strong> You are given:</p>
+<p><strong>Example 4.4.5. Actuarial Exam Question.</strong></p>
+<p>You are given:</p>
 <ol style="list-style-type: lower-roman">
 <li>The probability that an insured will have at least one loss during any year is <span class="math inline">\(p\)</span>.</li>
 <li>The prior distribution for <span class="math inline">\(p\)</span> is uniform on <span class="math inline">\([0, 0.5]\)</span>.</li>
@@ -1798,7 +1808,7 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 \hline
 \text{I} &amp; 0.7 &amp; 0.1 \\
 \text{II} &amp; 0.2 &amp; 0.2 \\
-\text{III} &amp; 0.1 &amp; 0.4 \\ 
+\text{III} &amp; 0.1 &amp; 0.4 \\
 \hline
 \end{array}
 }
@@ -1853,7 +1863,8 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <p>where <span class="math inline">\(C\)</span> is a constant. We recognize this to be a gamma distribution with new parameters <span class="math inline">\(\alpha_{post} = \sum_i x_i + \alpha\)</span> and <span class="math inline">\(\theta_{post} = 1/(n + 1/\theta)\)</span>. Thus, the gamma distribution is a conjugate prior for the Poisson model distribution.</p>
 </div>
 <hr />
-<p><strong>Example 4.4.7. Actuarial Exam Question.</strong> You are given:</p>
+<p><strong>Example 4.4.7. Actuarial Exam Question.</strong></p>
+<p>You are given:</p>
 <ol style="list-style-type: lower-roman">
 <li>The conditional distribution of the number of claims per policyholder is Poisson with mean <span class="math inline">\(\lambda\)</span>.</li>
 <li>The variable <span class="math inline">\(\lambda\)</span> has a gamma distribution with parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\theta\)</span>.</li>
@@ -1865,7 +1876,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <a id="displayTextExampleSelect.4.7" href="javascript:toggleEX('toggleExampleSelect.4.7','displayTextExampleSelect.4.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExampleSelect.4.7" style="display: none">
-<p><strong>Solution.</strong> Since the conditional distribution of the number of claims per policyholder, <span class="math inline">\(E(X|\lambda)=Var(X|\lambda)=\lambda\)</span>, the Bayes prediction is <span class="math display">\[\begin{aligned}
+<p><strong>Solution.</strong></p>
+<p>Since the conditional distribution of the number of claims per policyholder, <span class="math inline">\(E(X|\lambda)=Var(X|\lambda)=\lambda\)</span>, the Bayes prediction is</p>
+<p><span class="math display">\[\begin{aligned}
 \mathrm{E}(X_2|X_1)
 &amp;= \int \mathrm{E}(X_2|\lambda) \pi(\lambda|X_1) d\lambda = \alpha_{new} \theta_{new}
 \end{aligned}\]</span> because the posterior distribution is gamma with parameters <span class="math inline">\(\alpha_{new}\)</span> and <span class="math inline">\(\theta_{new}\)</span>.</p>
@@ -2178,7 +2191,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
