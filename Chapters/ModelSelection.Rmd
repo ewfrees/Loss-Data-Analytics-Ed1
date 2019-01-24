@@ -93,7 +93,8 @@ $$
 
 You should check that the sample mean is $\bar{X} = 19.7$ and that the sample variance is $s^2 =34.45556$. The corresponding empirical distribution function is
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 F_n(x) &=
 \left\{
 \begin{array}{ll}
@@ -104,7 +105,8 @@ F_n(x) &=
 0.9 & \text{ for }\ 23 \leq x<30 \\
 1 & \text{ for }\ x \geq 30,
 \end{array}
-\right.\end{aligned}$$
+\right.\end{aligned}
+$$
 
 which is shown in the following graph in Figure \@ref(fig:EDFToy).
 
@@ -252,12 +254,14 @@ where $n_j$ is the number of observations ($X_i$) that fall into the interval $[
 
 The idea is that the estimator $f_n(x)$ in equation \@ref(eq:KDF) is the average over $n$ <a href="#" class="tooltip" style="color:green">*iid*<span style="font-size:8pt"> identically and independently distributed</span></a> realizations of a random variable with mean
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \mathrm{E~ } \frac{1}{2b} I(x-b < X \le x + b) &=  \frac{1}{2b}\left(F(x+b)-F(x-b)\right) \\
 &=  \frac{1}{2b} \left( \left\{ F(x) + b F^{\prime}(x) + b^2 C_1\right\}
 \left\{ F(x) - b F^{\prime}(x) + b^2 C_2\right\} \right) \\
 &=  F^{\prime}(x) + b \frac{C_1-C_2}{2} \rightarrow  F^{\prime}(x) = f(x),
-\end{aligned}$$
+\end{aligned}
+$$
 
 as $b\rightarrow  0$. That is, $f_n(x)$ is an asymptotically unbiased estimator of $f(x)$ (its expectation approaches the true value as sample size increases to infinity). This development assumes some smoothness of $F(\cdot)$, in particular, twice differentiability at $x$, but makes no assumptions on the form of the distribution function $F$. Because of this, the density estimator $f_n$ is said to be *nonparametric*.
 
@@ -337,8 +341,10 @@ legend("topright", c("b=0.3255 (default)", "b=0.1", "b=1.0"), lty=c(1,3,1),
 ***
 
 Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the *kernel estimator of the distribution function* can be found as 
-$$\begin{aligned}
-\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}$$
+$$
+\begin{aligned}
+\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}
+$$
 
 where $W$ is the distribution function associated with the kernel density $w$. To illustrate, for the uniform kernel, we have $w(y) = \frac{1}{2}I(-1 < y \le 1)$, so 
 $$
@@ -602,10 +608,12 @@ $$\alpha = \frac{\mu_1^2}{\mu_2^{\prime}-\mu_1^2}  \ \ \ \text{and} \ \ \  \thet
 
 Thus, the method of moment estimators are
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \hat{\alpha} &=  \frac{26.62259^2}{136154.6-26.62259^2} = 0.005232809 \\
 \hat{\theta} &=  \frac{136154.6-26.62259^2}{26.62259} = 5,087.629.
-\end{aligned}$$
+\end{aligned}
+$$
 
 For comparison, the maximum likelihood values turn out to be $\hat{\alpha}_{MLE} =  0.2905959$ and $\hat{\theta}_{MLE} = 91.61378$, so there are big discrepancies between the two estimation procedures. This is one indication, as we have seen before, that the gamma model fits poorly.
 
@@ -617,10 +625,12 @@ $$\alpha = 1+ \frac{\mu_2^{\prime}}{\mu_2^{\prime}-\mu_1^2} \ \ \ \
 
 Thus, the method of moment estimators are
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \hat{\alpha} &=  1+ \frac{136154.6}{136154.6-26,62259^2} = 2.005233 \\
 \hat{\theta} &=  (2.005233-1) \cdot 26.62259 = 26.7619
-\end{aligned}$$
+\end{aligned}
+$$
 
 The maximum likelihood values turn out to be $\hat{\alpha}_{MLE} =  0.9990936$ and $\hat{\theta}_{MLE} = 2.2821147$. It is interesting that $\hat{\alpha}_{MLE}<1$; for the Pareto distribution, recall that $\alpha <1$ means that the mean is infinite. This is another indication that the property claims data set is a long tail distribution.
 
@@ -860,7 +870,8 @@ Formalizing this idea, suppose there are $k$ groups or intervals delimited by bo
 _i \in (c_{j-1}, c_j]\right) = F(c_j) - F(c_{j-1}).$$
 
 The corresponding probability mass function for an observation is
-$$\begin{aligned}
+$$
+\begin{aligned}
 f(x) &=
 \begin{cases}
 F(c_1) - F(c_{0}) &   \text{if }\ x \in (c_{0}, c_1]\\
@@ -868,17 +879,22 @@ F(c_1) - F(c_{0}) &   \text{if }\ x \in (c_{0}, c_1]\\
 F(c_k) - F(c_{k-1}) &   \text{if }\ x \in (c_{k-1}, c_k]\\
 \end{cases} \\
 &= \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{I(x \in (c_{j-1}, c_j])}
-\end{aligned}$$
+\end{aligned}
+$$
 
 Now, define $n_j$ to be the number of observations that fall in the $j$th interval, $(c_{j-1}, c_j]$. Thus, the likelihood function (with respect to the parameter(s) $\theta$) is
-$$\begin{aligned}
+$$
+\begin{aligned}
 \mathcal{L}(\theta) = \prod_{j=1}^n f(x_i) = \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{n_j}
-\end{aligned}$$
+\end{aligned}
+$$
 
 And the log-likelihood function is
-$$\begin{aligned}
+$$
+\begin{aligned}
 L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_j \ln \left\{F(c_j) - F(c_{j-1})\right\}
-\end{aligned}$$
+\end{aligned}
+$$
 
 Maximizing the likelihood function (or equivalently, maximizing the log-likelihood function) would then produce the maximum likelihood estimates for grouped data.
 
@@ -910,12 +926,14 @@ Calculate the maximum likelihood estimate of $\theta$.
 <div id="toggleExampleSelect.3.1" style="display: none">
 
 **Solution.**
-$$\begin{aligned}
+$$
+\begin{aligned}
 \mathcal{L}(\theta) &= F(1000)^7[F(2000)-F(1000)]^6[1-F(2000)]^7 \\
 &= (1-e^{-1000/\theta})^7(e^{-1000/\theta} - e^{-2000/\theta})^6(e^{-2000/\theta})^7 \\
 &= (1-p)^7(p-p^2)^6(p^2)^7 \\
 &= p^{20}(1-p)^{13}
-\end{aligned}$$
+\end{aligned}
+$$
 
 where $p=e^{-1000/\theta}$. Maximizing this expression with respect to $p$ is equivalent to maximizing the likelihood with respect to $\theta$. The maximum occurs at $p=\frac{20}{33}$ and so $\hat{\theta}=\frac{-1000}{\ln(20/33)}= 1996.90$.
 
@@ -1348,10 +1366,12 @@ j & t_j & s_j & R_j \\
 \end{array}$$
 
 Thus, the Kaplan-Meier estimate of $S(11)$ is
-$$\begin{aligned}
+$$
+\begin{aligned}
 \hat{S}(11) &= \prod_{j:t_j\leq 11} \left( 1- \frac{s_j}{R_j} \right) =  \prod_{j=1}^{2} \left( 1- \frac{s_j}{R_j} \right)\\
 &= \left(1-\frac{2}{10} \right) \left(1-\frac{1}{5} \right) = (0.8)(0.8)= 0.64. \\
-\end{aligned}$$
+\end{aligned}
+$$
 
 </div>
 
@@ -1464,16 +1484,20 @@ j & t_j & s_j & R_j \\
 \end{array}$$
 
 The Nelson-&Auml;alen estimate of $S(11)$ is $\hat{S}_{NA}(11)=e^{-\hat{H}(11)} = e^{-0.4} = 0.67$, since
-$$\begin{aligned}
+$$
+\begin{aligned}
 \hat{H}(11) &= \sum_{j:t_j\leq 11} \frac{s_j}{R_j}  = \sum_{j=1}^{2} \frac{s_j}{R_j}  \\
 &= \frac{2}{10} + \frac{1}{5}  = 0.2 + 0.2 = 0.4 .\\
-\end{aligned}$$
+\end{aligned}
+$$
 
 From earlier work, the Kaplan-Meier estimate of $S(11)$ is $\hat{S}(11) = 0.64$. Then Greenwood's estimate of the variance of the product-limit estimate of $S(11)$ is
-$$\begin{aligned}
+$$
+\begin{aligned}
 \widehat{Var}(\hat{S}(11)) &= (\hat{S}(11))^2 \sum_{j:t_j\leq 11} \frac{s_j}{R_j(R_j-s_j)}
 &= (0.64)^2 \left(\frac{2}{10(8)} + \frac{1}{5(4)} \right)  = 0.0307. \\
-\end{aligned}$$
+\end{aligned}
+$$
 
 </div>
 
@@ -1837,17 +1861,21 @@ Calculate the posterior probability that the insured will have at least one loss
 
 **Solution.**
 The posterior probability density is
-$$\begin{aligned}
+$$
+\begin{aligned}
 \pi(p|1,1,1,1,1,1,1,1) &\propto \Pr(1,1,1,1,1,1,1,1|p)\ \pi(p) = p^8(2) \propto p^8 \\ 
 \Rightarrow \pi(p|1,1,1,1,1,1,1,1) &= \frac{p^8}{\int_0^5 p^8 dp} = \frac{p^8}{(0.5^9)/9} = 9(0.5^{-9})p^8
-\end{aligned}$$
+\end{aligned}
+$$
 
 Thus, the posterior probability that the insured will have at least one loss during Year 9 is
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \Pr(X_9=1|1,1,1,1,1,1,1,1) &= \int_0^5 \Pr(X_9=1|p) \pi(p|1,1,1,1,1,1,1,1) dp \\
 &= \int_0^5 p(9)(0.5^{-9})p^8 dp = 9(0.5^{-9})(0.5^{10})/10 = 0.45
-\end{aligned}$$
+\end{aligned}
+$$
 
 </div>
 
@@ -1881,29 +1909,37 @@ One randomly chosen risk has three claims during Years 1-6. Calculate the poster
 The probabilities are from a binomial distribution with 6 trials in which 3 successes were observed.
 
 
-$$\begin{aligned} 
+$$
+\begin{aligned} 
 \Pr(3|\text{I}) &= {6 \choose 3} (0.1^3)(0.9^3) = 0.01458 \\
 \Pr(3|\text{II}) &= {6 \choose 3} (0.2^3)(0.8^3) = 0.08192 \\
 \Pr(3|\text{III}) &= {6 \choose 3} (0.4^3)(0.6^3) = 0.27648
-\end{aligned}$$
+\end{aligned}
+$$
 
 The probability of observing three successes is 
-$$\begin{aligned} \Pr(3) &= \Pr(3|\text{I})\Pr(\text{I}) + \Pr(3|\text{II})\Pr(\text{II}) + \Pr(3|\text{III})\Pr(\text{III}) \\
+$$
+\begin{aligned} \Pr(3) &= \Pr(3|\text{I})\Pr(\text{I}) + \Pr(3|\text{II})\Pr(\text{II}) + \Pr(3|\text{III})\Pr(\text{III}) \\
 &=  0.7(0.01458) + 0.2(0.08192) + 0.1(0.27648) = 0.054238
-\end{aligned}$$
+\end{aligned}
+$$
 
 The three posterior probabilities are
-$$\begin{aligned}
+$$
+\begin{aligned}
 \Pr(\text{I}|3) &= \frac{\Pr(3|\text{I})\Pr(\text{I})}{\Pr(3)} = \frac{0.7(0.01458)}{0.054238} = 0.18817 \\
 \Pr(\text{II}|3) &= \frac{\Pr(3|\text{II})\Pr(\text{II})}{\Pr(3)} = \frac{0.2(0.08192)}{0.054238} = 0.30208 \\
 \Pr(\text{III}|3) &= \frac{\Pr(3|\text{III})\Pr(\text{III})}{\Pr(3)} = \frac{0.1(0.27648)}{0.054238} = 0.50975 
-\end{aligned}$$
+\end{aligned}
+$$
 
 The posterior probability of a claim is then 
-$$\begin{aligned} 
+$$
+\begin{aligned} 
 \Pr(\text{claim} | 3) &= \Pr(\text{claim}|\text{I})\Pr(\text{I} | 3) + \Pr(\text{claim} | \text{II})\Pr(\text{II} | 3) + \Pr(\text{claim} | \text{III}) \Pr(\text{III} | 3) \\ 
 &= 0.1(0.18817) + 0.2(0.30208) + 0.4(0.50975) = 0.28313
-\end{aligned}$$
+\end{aligned}
+$$
 
 </div>
 
@@ -1934,10 +1970,12 @@ $$f(\mathbf{x} | \lambda) = \prod_{i=1}^n \frac{\lambda^{x_i} e^{-\lambda}}{x_i!
 The prior distribution is
 $$\pi(\lambda) = \frac{\left(\lambda/\theta\right)^{\alpha} \exp(-\lambda/\theta)}{\lambda \Gamma(\alpha)}.$$
 Thus, the posterior distribution is proportional to
-$$\begin{aligned}
+$$
+\begin{aligned}
 \pi(\lambda | \mathbf{x}) &\propto f(\mathbf{x}|\theta ) \pi(\lambda) \\
 &= C \lambda^{\sum_i x_i + \alpha -1} \exp(-\lambda(n+1/\theta))
-\end{aligned}$$
+\end{aligned}
+$$
 
 where $C$ is a constant. We recognize this to be a gamma distribution with new parameters $\alpha_{post} = \sum_i x_i + \alpha$ and $\theta_{post} = 1/(n + 1/\theta)$. Thus, the gamma distribution is a conjugate prior for the Poisson model distribution. 
 
@@ -1964,10 +2002,12 @@ Calculate $\theta$.
 
 Since the conditional distribution of the number of claims per policyholder,  $E(X|\lambda)=Var(X|\lambda)=\lambda$, the Bayes prediction is
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \mathrm{E}(X_2|X_1)
 &= \int \mathrm{E}(X_2|\lambda) \pi(\lambda|X_1) d\lambda = \alpha_{new} \theta_{new}
-\end{aligned}$$
+\end{aligned}
+$$
 because the posterior distribution is gamma with parameters $\alpha_{new}$ and $\theta_{new}$.
 
 

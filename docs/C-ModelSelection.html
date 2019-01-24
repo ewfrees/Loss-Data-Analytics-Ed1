@@ -253,9 +253,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
-<li class="chapter" data-level="1.1" data-path="C-Intro.html"><a href="C-Intro.html#S:Intro"><i class="fa fa-check"></i><b>1.1</b> Relevance of Analytics</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="C-Intro.html"><a href="C-Intro.html#what-is-analytics"><i class="fa fa-check"></i><b>1.1.1</b> What is Analytics?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="C-Intro.html"><a href="C-Intro.html#short-and-long-term-insurance"><i class="fa fa-check"></i><b>1.1.2</b> Short and Long-term Insurance</a></li>
+<li class="chapter" data-level="1.1" data-path="C-Intro.html"><a href="C-Intro.html#S:Intro"><i class="fa fa-check"></i><b>1.1</b> Relevance of Analytics to Insurance Activites</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="C-Intro.html"><a href="C-Intro.html#nature-and-relevance-of-insurance"><i class="fa fa-check"></i><b>1.1.1</b> Nature and Relevance of Insurance</a></li>
+<li class="chapter" data-level="1.1.2" data-path="C-Intro.html"><a href="C-Intro.html#what-is-analytics"><i class="fa fa-check"></i><b>1.1.2</b> What is Analytics?</a></li>
 <li class="chapter" data-level="1.1.3" data-path="C-Intro.html"><a href="C-Intro.html#S:InsProcesses"><i class="fa fa-check"></i><b>1.1.3</b> Insurance Processes</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="C-Intro.html"><a href="C-Intro.html#S:PredModApps"><i class="fa fa-check"></i><b>1.2</b> Insurance Company Operations</a><ul>
@@ -644,7 +644,8 @@ X_i&amp; 10 &amp;15 &amp;15 &amp;15 &amp;20 &amp;23 &amp;23 &amp;23 &amp;23 &amp
 </h5>
 <div id="toggleExampleSelect.1.1" style="display: none">
 <p>You should check that the sample mean is <span class="math inline">\(\bar{X} = 19.7\)</span> and that the sample variance is <span class="math inline">\(s^2 =34.45556\)</span>. The corresponding empirical distribution function is</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 F_n(x) &amp;=
 \left\{
 \begin{array}{ll}
@@ -655,7 +656,8 @@ F_n(x) &amp;=
 0.9 &amp; \text{ for }\ 23 \leq x&lt;30 \\
 1 &amp; \text{ for }\ x \geq 30,
 \end{array}
-\right.\end{aligned}\]</span></p>
+\right.\end{aligned}
+\]</span></p>
 <p>which is shown in the following graph in Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:EDFToy"></span>
 <img src="LossDataAnalytics_files/figure-html/EDFToy-1.png" alt="Empirical Distribution Function of a Toy Example" width="60%" />
@@ -738,12 +740,14 @@ Figure 4.3: Three Quantile Cases
 <div id="Theorykerneldensity" style="display: none">
 <hr />
 <p>The idea is that the estimator <span class="math inline">\(f_n(x)\)</span> in equation <a href="C-ModelSelection.html#eq:KDF">(4.2)</a> is the average over <span class="math inline">\(n\)</span> <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt"> identically and independently distributed</span></a> realizations of a random variable with mean</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 \mathrm{E~ } \frac{1}{2b} I(x-b &lt; X \le x + b) &amp;=  \frac{1}{2b}\left(F(x+b)-F(x-b)\right) \\
 &amp;=  \frac{1}{2b} \left( \left\{ F(x) + b F^{\prime}(x) + b^2 C_1\right\}
 \left\{ F(x) - b F^{\prime}(x) + b^2 C_2\right\} \right) \\
 &amp;=  F^{\prime}(x) + b \frac{C_1-C_2}{2} \rightarrow  F^{\prime}(x) = f(x),
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>as <span class="math inline">\(b\rightarrow 0\)</span>. That is, <span class="math inline">\(f_n(x)\)</span> is an asymptotically unbiased estimator of <span class="math inline">\(f(x)\)</span> (its expectation approaches the true value as sample size increases to infinity). This development assumes some smoothness of <span class="math inline">\(F(\cdot)\)</span>, in particular, twice differentiability at <span class="math inline">\(x\)</span>, but makes no assumptions on the form of the distribution function <span class="math inline">\(F\)</span>. Because of this, the density estimator <span class="math inline">\(f_n\)</span> is said to be <em>nonparametric</em>.</p>
 <hr />
 </div>
@@ -792,8 +796,10 @@ legend(&quot;topright&quot;, c(&quot;b=0.3255 (default)&quot;, &quot;b=0.1&quot;
             lwd=c(2.5,1,1), col=c(&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;), cex=1)</code></pre>
 </div>
 <hr />
-<p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as <span class="math display">\[\begin{aligned}
-\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}\]</span></p>
+<p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as <span class="math display">\[
+\begin{aligned}
+\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}
+\]</span></p>
 where <span class="math inline">\(W\)</span> is the distribution function associated with the kernel density <span class="math inline">\(w\)</span>. To illustrate, for the uniform kernel, we have <span class="math inline">\(w(y) = \frac{1}{2}I(-1 &lt; y \le 1)\)</span>, so $$
 <span class="math display">\[\begin{aligned}
 
@@ -942,20 +948,24 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 <p><strong>Solution.</strong> To fit a gamma distribution, we have <span class="math inline">\(\mu_1 = \alpha \theta\)</span> and <span class="math inline">\(\mu_2^{\prime} = \alpha(\alpha+1) \theta^2\)</span>. Equating the two yields the method of moments estimators, easy algebra shows that</p>
 <p><span class="math display">\[\alpha = \frac{\mu_1^2}{\mu_2^{\prime}-\mu_1^2}  \ \ \ \text{and} \ \ \  \theta = \frac{\mu_2^{\prime}-\mu_1^2}{\mu_1}.\]</span></p>
 <p>Thus, the method of moment estimators are</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 \hat{\alpha} &amp;=  \frac{26.62259^2}{136154.6-26.62259^2} = 0.005232809 \\
 \hat{\theta} &amp;=  \frac{136154.6-26.62259^2}{26.62259} = 5,087.629.
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>For comparison, the maximum likelihood values turn out to be <span class="math inline">\(\hat{\alpha}_{MLE} = 0.2905959\)</span> and <span class="math inline">\(\hat{\theta}_{MLE} = 91.61378\)</span>, so there are big discrepancies between the two estimation procedures. This is one indication, as we have seen before, that the gamma model fits poorly.</p>
 <p>In contrast, now assume a Pareto distribution so that <span class="math inline">\(\mu_1 = \theta/(\alpha -1)\)</span> and <span class="math inline">\(\mu_2^{\prime} = 2\theta^2/((\alpha-1)(\alpha-2) )\)</span>. Easy algebra shows</p>
 <p><span class="math display">\[\alpha = 1+ \frac{\mu_2^{\prime}}{\mu_2^{\prime}-\mu_1^2} \ \ \ \
 \text{and} \ \ \ \ \
  \theta = (\alpha-1)\mu_1.\]</span></p>
 <p>Thus, the method of moment estimators are</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 \hat{\alpha} &amp;=  1+ \frac{136154.6}{136154.6-26,62259^2} = 2.005233 \\
 \hat{\theta} &amp;=  (2.005233-1) \cdot 26.62259 = 26.7619
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>The maximum likelihood values turn out to be <span class="math inline">\(\hat{\alpha}_{MLE} = 0.9990936\)</span> and <span class="math inline">\(\hat{\theta}_{MLE} = 2.2821147\)</span>. It is interesting that <span class="math inline">\(\hat{\alpha}_{MLE}&lt;1\)</span>; for the Pareto distribution, recall that <span class="math inline">\(\alpha &lt;1\)</span> means that the mean is infinite. This is another indication that the property claims data set is a long tail distribution.</p>
 </div>
 <hr />
@@ -1095,7 +1105,8 @@ Figure 4.9: Model Validation. A data set is randomly split into two subsamples.
 <p>Consider a sample of size <span class="math inline">\(n\)</span> observed from the distribution <span class="math inline">\(F(\cdot)\)</span>, but in groups so that we only know the group into which each observation fell, not the exact value. This is referred to as <strong>grouped</strong> or <strong>interval-censored</strong> data. For example, we may be looking at two successive years of annual employee records. People employed in the first year but not the second have left sometime during the year. With an exact departure date (individual data), we could compute the amount of time that they were with the firm. Without the departure date (grouped data), we only know that they departed sometime during a year-long interval.</p>
 <p>Formalizing this idea, suppose there are <span class="math inline">\(k\)</span> groups or intervals delimited by boundaries <span class="math inline">\(c_0 &lt; c_1&lt; \cdots &lt; c_k\)</span>. For each observation, we only observe the interval into which it fell (e.g. <span class="math inline">\((c_{j-1}, c_j)\)</span>), not the exact value. Thus, we only know the number of observations in each interval. The constants <span class="math inline">\(\{c_0 &lt; c_1 &lt; \cdots &lt; c_k\}\)</span> form some partition of the domain of <span class="math inline">\(F(\cdot)\)</span>. Then the probability of an observation <span class="math inline">\(X_i\)</span> falling in the <span class="math inline">\(j\)</span>th interval is <span class="math display">\[\Pr\left(X
 _i \in (c_{j-1}, c_j]\right) = F(c_j) - F(c_{j-1}).\]</span></p>
-<p>The corresponding probability mass function for an observation is <span class="math display">\[\begin{aligned}
+<p>The corresponding probability mass function for an observation is <span class="math display">\[
+\begin{aligned}
 f(x) &amp;=
 \begin{cases}
 F(c_1) - F(c_{0}) &amp;   \text{if }\ x \in (c_{0}, c_1]\\
@@ -1103,13 +1114,18 @@ F(c_1) - F(c_{0}) &amp;   \text{if }\ x \in (c_{0}, c_1]\\
 F(c_k) - F(c_{k-1}) &amp;   \text{if }\ x \in (c_{k-1}, c_k]\\
 \end{cases} \\
 &amp;= \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{I(x \in (c_{j-1}, c_j])}
-\end{aligned}\]</span></p>
-<p>Now, define <span class="math inline">\(n_j\)</span> to be the number of observations that fall in the <span class="math inline">\(j\)</span>th interval, <span class="math inline">\((c_{j-1}, c_j]\)</span>. Thus, the likelihood function (with respect to the parameter(s) <span class="math inline">\(\theta\)</span>) is <span class="math display">\[\begin{aligned}
+\end{aligned}
+\]</span></p>
+<p>Now, define <span class="math inline">\(n_j\)</span> to be the number of observations that fall in the <span class="math inline">\(j\)</span>th interval, <span class="math inline">\((c_{j-1}, c_j]\)</span>. Thus, the likelihood function (with respect to the parameter(s) <span class="math inline">\(\theta\)</span>) is <span class="math display">\[
+\begin{aligned}
 \mathcal{L}(\theta) = \prod_{j=1}^n f(x_i) = \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{n_j}
-\end{aligned}\]</span></p>
-<p>And the log-likelihood function is <span class="math display">\[\begin{aligned}
+\end{aligned}
+\]</span></p>
+<p>And the log-likelihood function is <span class="math display">\[
+\begin{aligned}
 L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_j \ln \left\{F(c_j) - F(c_{j-1})\right\}
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>Maximizing the likelihood function (or equivalently, maximizing the log-likelihood function) would then produce the maximum likelihood estimates for grouped data.</p>
 <p><strong>Example 4.3.1. Actuarial Exam Question.</strong></p>
 <p>You are given:</p>
@@ -1135,12 +1151,14 @@ L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_
 <a id="displayTextExampleSelect.3.1" href="javascript:toggleEX('toggleExampleSelect.3.1','displayTextExampleSelect.3.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExampleSelect.3.1" style="display: none">
-<p><strong>Solution.</strong> <span class="math display">\[\begin{aligned}
+<p><strong>Solution.</strong> <span class="math display">\[
+\begin{aligned}
 \mathcal{L}(\theta) &amp;= F(1000)^7[F(2000)-F(1000)]^6[1-F(2000)]^7 \\
 &amp;= (1-e^{-1000/\theta})^7(e^{-1000/\theta} - e^{-2000/\theta})^6(e^{-2000/\theta})^7 \\
 &amp;= (1-p)^7(p-p^2)^6(p^2)^7 \\
 &amp;= p^{20}(1-p)^{13}
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>where <span class="math inline">\(p=e^{-1000/\theta}\)</span>. Maximizing this expression with respect to <span class="math inline">\(p\)</span> is equivalent to maximizing the likelihood with respect to <span class="math inline">\(\theta\)</span>. The maximum occurs at <span class="math inline">\(p=\frac{20}{33}\)</span> and so <span class="math inline">\(\hat{\theta}=\frac{-1000}{\ln(20/33)}= 1996.90\)</span>.</p>
 </div>
 <hr />
@@ -1440,10 +1458,12 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 4 &amp; 15 &amp; 1 &amp; 1 \\
 \hline
 \end{array}\]</span></p>
-<p>Thus, the Kaplan-Meier estimate of <span class="math inline">\(S(11)\)</span> is <span class="math display">\[\begin{aligned}
+<p>Thus, the Kaplan-Meier estimate of <span class="math inline">\(S(11)\)</span> is <span class="math display">\[
+\begin{aligned}
 \hat{S}(11) &amp;= \prod_{j:t_j\leq 11} \left( 1- \frac{s_j}{R_j} \right) =  \prod_{j=1}^{2} \left( 1- \frac{s_j}{R_j} \right)\\
 &amp;= \left(1-\frac{2}{10} \right) \left(1-\frac{1}{5} \right) = (0.8)(0.8)= 0.64. \\
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 </div>
 <hr />
 </div>
@@ -1526,14 +1546,18 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 4 &amp; 15 &amp; 1 &amp; 1 \\
 \hline
 \end{array}\]</span></p>
-<p>The Nelson-Äalen estimate of <span class="math inline">\(S(11)\)</span> is <span class="math inline">\(\hat{S}_{NA}(11)=e^{-\hat{H}(11)} = e^{-0.4} = 0.67\)</span>, since <span class="math display">\[\begin{aligned}
+<p>The Nelson-Äalen estimate of <span class="math inline">\(S(11)\)</span> is <span class="math inline">\(\hat{S}_{NA}(11)=e^{-\hat{H}(11)} = e^{-0.4} = 0.67\)</span>, since <span class="math display">\[
+\begin{aligned}
 \hat{H}(11) &amp;= \sum_{j:t_j\leq 11} \frac{s_j}{R_j}  = \sum_{j=1}^{2} \frac{s_j}{R_j}  \\
 &amp;= \frac{2}{10} + \frac{1}{5}  = 0.2 + 0.2 = 0.4 .\\
-\end{aligned}\]</span></p>
-<p>From earlier work, the Kaplan-Meier estimate of <span class="math inline">\(S(11)\)</span> is <span class="math inline">\(\hat{S}(11) = 0.64\)</span>. Then Greenwood’s estimate of the variance of the product-limit estimate of <span class="math inline">\(S(11)\)</span> is <span class="math display">\[\begin{aligned}
+\end{aligned}
+\]</span></p>
+<p>From earlier work, the Kaplan-Meier estimate of <span class="math inline">\(S(11)\)</span> is <span class="math inline">\(\hat{S}(11) = 0.64\)</span>. Then Greenwood’s estimate of the variance of the product-limit estimate of <span class="math inline">\(S(11)\)</span> is <span class="math display">\[
+\begin{aligned}
 \widehat{Var}(\hat{S}(11)) &amp;= (\hat{S}(11))^2 \sum_{j:t_j\leq 11} \frac{s_j}{R_j(R_j-s_j)}
 &amp;= (0.64)^2 \left(\frac{2}{10(8)} + \frac{1}{5(4)} \right)  = 0.0307. \\
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 </div>
 <hr />
 </div>
@@ -1787,15 +1811,19 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <a id="displayTextExampleSelect.4.5" href="javascript:toggleEX('toggleExampleSelect.4.5','displayTextExampleSelect.4.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExampleSelect.4.5" style="display: none">
-<p><strong>Solution.</strong> The posterior probability density is <span class="math display">\[\begin{aligned}
+<p><strong>Solution.</strong> The posterior probability density is <span class="math display">\[
+\begin{aligned}
 \pi(p|1,1,1,1,1,1,1,1) &amp;\propto \Pr(1,1,1,1,1,1,1,1|p)\ \pi(p) = p^8(2) \propto p^8 \\ 
 \Rightarrow \pi(p|1,1,1,1,1,1,1,1) &amp;= \frac{p^8}{\int_0^5 p^8 dp} = \frac{p^8}{(0.5^9)/9} = 9(0.5^{-9})p^8
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>Thus, the posterior probability that the insured will have at least one loss during Year 9 is</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 \Pr(X_9=1|1,1,1,1,1,1,1,1) &amp;= \int_0^5 \Pr(X_9=1|p) \pi(p|1,1,1,1,1,1,1,1) dp \\
 &amp;= \int_0^5 p(9)(0.5^{-9})p^8 dp = 9(0.5^{-9})(0.5^{10})/10 = 0.45
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 </div>
 <hr />
 <p><strong>Example 4.4.6. Actuarial Exam Question.</strong> You are given:</p>
@@ -1820,23 +1848,31 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </h5>
 <div id="toggleExampleSelect.4.6" style="display: none">
 <p><strong>Solution.</strong> The probabilities are from a binomial distribution with 6 trials in which 3 successes were observed.</p>
-<p><span class="math display">\[\begin{aligned} 
+<p><span class="math display">\[
+\begin{aligned} 
 \Pr(3|\text{I}) &amp;= {6 \choose 3} (0.1^3)(0.9^3) = 0.01458 \\
 \Pr(3|\text{II}) &amp;= {6 \choose 3} (0.2^3)(0.8^3) = 0.08192 \\
 \Pr(3|\text{III}) &amp;= {6 \choose 3} (0.4^3)(0.6^3) = 0.27648
-\end{aligned}\]</span></p>
-<p>The probability of observing three successes is <span class="math display">\[\begin{aligned} \Pr(3) &amp;= \Pr(3|\text{I})\Pr(\text{I}) + \Pr(3|\text{II})\Pr(\text{II}) + \Pr(3|\text{III})\Pr(\text{III}) \\
+\end{aligned}
+\]</span></p>
+<p>The probability of observing three successes is <span class="math display">\[
+\begin{aligned} \Pr(3) &amp;= \Pr(3|\text{I})\Pr(\text{I}) + \Pr(3|\text{II})\Pr(\text{II}) + \Pr(3|\text{III})\Pr(\text{III}) \\
 &amp;=  0.7(0.01458) + 0.2(0.08192) + 0.1(0.27648) = 0.054238
-\end{aligned}\]</span></p>
-<p>The three posterior probabilities are <span class="math display">\[\begin{aligned}
+\end{aligned}
+\]</span></p>
+<p>The three posterior probabilities are <span class="math display">\[
+\begin{aligned}
 \Pr(\text{I}|3) &amp;= \frac{\Pr(3|\text{I})\Pr(\text{I})}{\Pr(3)} = \frac{0.7(0.01458)}{0.054238} = 0.18817 \\
 \Pr(\text{II}|3) &amp;= \frac{\Pr(3|\text{II})\Pr(\text{II})}{\Pr(3)} = \frac{0.2(0.08192)}{0.054238} = 0.30208 \\
 \Pr(\text{III}|3) &amp;= \frac{\Pr(3|\text{III})\Pr(\text{III})}{\Pr(3)} = \frac{0.1(0.27648)}{0.054238} = 0.50975 
-\end{aligned}\]</span></p>
-<p>The posterior probability of a claim is then <span class="math display">\[\begin{aligned} 
+\end{aligned}
+\]</span></p>
+<p>The posterior probability of a claim is then <span class="math display">\[
+\begin{aligned} 
 \Pr(\text{claim} | 3) &amp;= \Pr(\text{claim}|\text{I})\Pr(\text{I} | 3) + \Pr(\text{claim} | \text{II})\Pr(\text{II} | 3) + \Pr(\text{claim} | \text{III}) \Pr(\text{III} | 3) \\ 
 &amp;= 0.1(0.18817) + 0.2(0.30208) + 0.4(0.50975) = 0.28313
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 </div>
 <hr />
 </div>
@@ -1856,10 +1892,12 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <a id="displayTextExampleConj.4f" href="javascript:toggleEX('toggleExampleConj','displayTextExampleConj.4f');"><i><strong>Show Special Case Details</strong></i></a>
 </h5>
 <div id="toggleExampleConj" style="display: none">
-<p><strong>Special Case – Poisson-Gamma - Continued.</strong> The model distribution is <span class="math display">\[f(\mathbf{x} | \lambda) = \prod_{i=1}^n \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} .\]</span> The prior distribution is <span class="math display">\[\pi(\lambda) = \frac{\left(\lambda/\theta\right)^{\alpha} \exp(-\lambda/\theta)}{\lambda \Gamma(\alpha)}.\]</span> Thus, the posterior distribution is proportional to <span class="math display">\[\begin{aligned}
+<p><strong>Special Case – Poisson-Gamma - Continued.</strong> The model distribution is <span class="math display">\[f(\mathbf{x} | \lambda) = \prod_{i=1}^n \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} .\]</span> The prior distribution is <span class="math display">\[\pi(\lambda) = \frac{\left(\lambda/\theta\right)^{\alpha} \exp(-\lambda/\theta)}{\lambda \Gamma(\alpha)}.\]</span> Thus, the posterior distribution is proportional to <span class="math display">\[
+\begin{aligned}
 \pi(\lambda | \mathbf{x}) &amp;\propto f(\mathbf{x}|\theta ) \pi(\lambda) \\
 &amp;= C \lambda^{\sum_i x_i + \alpha -1} \exp(-\lambda(n+1/\theta))
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>where <span class="math inline">\(C\)</span> is a constant. We recognize this to be a gamma distribution with new parameters <span class="math inline">\(\alpha_{post} = \sum_i x_i + \alpha\)</span> and <span class="math inline">\(\theta_{post} = 1/(n + 1/\theta)\)</span>. Thus, the gamma distribution is a conjugate prior for the Poisson model distribution.</p>
 </div>
 <hr />
@@ -1878,10 +1916,12 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <div id="toggleExampleSelect.4.7" style="display: none">
 <p><strong>Solution.</strong></p>
 <p>Since the conditional distribution of the number of claims per policyholder, <span class="math inline">\(E(X|\lambda)=Var(X|\lambda)=\lambda\)</span>, the Bayes prediction is</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 \mathrm{E}(X_2|X_1)
 &amp;= \int \mathrm{E}(X_2|\lambda) \pi(\lambda|X_1) d\lambda = \alpha_{new} \theta_{new}
-\end{aligned}\]</span> because the posterior distribution is gamma with parameters <span class="math inline">\(\alpha_{new}\)</span> and <span class="math inline">\(\theta_{new}\)</span>.</p>
+\end{aligned}
+\]</span> because the posterior distribution is gamma with parameters <span class="math inline">\(\alpha_{new}\)</span> and <span class="math inline">\(\theta_{new}\)</span>.</p>
 <p>For year 1, we have <span class="math display">\[
 0.15 = (X_1 + \alpha) \times \frac{1}{n+1/\theta} = (1 + \alpha) \times \frac{1}{1+1/\theta},
 \]</span> so <span class="math inline">\(0.15(1+1/\theta)= 1 + \alpha.\)</span> For year 2, we have <span class="math display">\[
