@@ -48,9 +48,7 @@
 
 
 
-<!-- Jquery and Mathjax -->
-<script src="https://unpkg.com/jquery"></script>
-
+<!-- Mathjax -->
 <script type='text/x-mathjax-config'>
 		MathJax.Hub.Config({
 			extensions: ['tex2jax.js'],
@@ -1132,7 +1130,6 @@ TVaR_q[X]\geq VaR_q[X].
 Y_{insurer} = c X \ \ \text{and} \ \ \ Y_{reinsurer} = (1-c) X,
 \]</span> where <span class="math inline">\(c\in (0,1)\)</span> denotes the proportion retained by the insurer. Note that <span class="math inline">\(Y_{insurer}+Y_{reinsurer}=X\)</span>.</p>
 <p><strong>Example 10.3.1. Distribution of losses under quota share.</strong> To develop an intuition for the effect of quota-share agreement on the distribution of losses, the following is a short <code>R</code> demonstration using simulation. Note the relative shapes of the distributions of total losses, the retained portion (of the insurer), and the reinsurer’s portion.</p>
-<pre><code>Warning: package &#39;actuar&#39; was built under R version 3.3.3</code></pre>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-12-1.png" width="960" style="display: block; margin: auto;" /></p>
 <h6 style="text-align: center;">
 <a id="displayQuotaShare" href="javascript:togglecode('toggleQuotaShare','displayQuotaShare');"><i><strong>Show the R Code</strong></i></a>
@@ -1617,7 +1614,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

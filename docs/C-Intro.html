@@ -48,9 +48,7 @@
 
 
 
-<!-- Jquery and Mathjax -->
-<script src="https://unpkg.com/jquery"></script>
-
+<!-- Mathjax -->
 <script type='text/x-mathjax-config'>
 		MathJax.Hub.Config({
 			extensions: ['tex2jax.js'],
@@ -1040,7 +1038,7 @@ Rowlable &lt;- rbind(&quot;Claim Frequency&quot;,&quot;Claim Severity&quot;,&quo
 Table2aa &lt;- cbind(Rowlable,as.matrix(Table2a))
 Table2aa</code></pre>
 </div>
-<p>The following display describes the rating variables considered in this chapter. Hopefully, these are variables that you think might naturally be related to claims outcomes. You can learn more about them in <span class="citation">(<span class="citeproc-not-found" data-reference-id="frees2016multivariate"><strong>???</strong></span>)</span>. To handle the skewness, we henceforth focus on logarithmic transformations of coverage and deductibles.</p>
+<p>The following display describes the rating variables considered in this chapter. Hopefully, these are variables that you think might naturally be related to claims outcomes. You can learn more about them in <span class="citation">Frees, Lee, and Yang (<a href="#ref-frees2016multivariate">2016</a>)</span>. To handle the skewness, we henceforth focus on logarithmic transformations of coverage and deductibles.</p>
 <p><strong>Description of Rating Variables</strong> <span class="math display">\[{\small \begin{matrix}
 \begin{array}{ l | l}
 \hline
@@ -1505,6 +1503,9 @@ Table4d &lt;- ByVarCredit(4)    #Claims Summary by Entity Type and Alarm Credit=
 <div id="ref-dickson2013actuarial">
 <p>Dickson, David C. M., Mary Hardy, and Howard R. Waters. 2013. <em>Actuarial Mathematics for Life Contingent Risks</em>. Cambridge University Press.</p>
 </div>
+<div id="ref-frees2016multivariate">
+<p>Frees, Edward W, Gee Lee, and Lu Yang. 2016. “Multivariate Frequency-Severity Regression Models in Insurance.” <em>Risks</em> 4 (1). Multidisciplinary Digital Publishing Institute: 4.</p>
+</div>
 <div id="ref-NAICGlossary">
 <p>NAIC Glossary. 2018. “Glossary of Insurance Terms.” In. National Association of Insurance Commissioners. <a href="https://www.naic.org/consumer_glossary.htm" class="uri">https://www.naic.org/consumer_glossary.htm</a>.</p>
 </div>
@@ -1554,7 +1555,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

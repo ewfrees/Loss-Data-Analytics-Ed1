@@ -1,8 +1,6 @@
 
 
-<!-- Jquery and Mathjax -->
-<script src="https://unpkg.com/jquery"></script>
-
+<!-- Mathjax -->
 <script type='text/x-mathjax-config'>
 		MathJax.Hub.Config({
 			extensions: ['tex2jax.js'],

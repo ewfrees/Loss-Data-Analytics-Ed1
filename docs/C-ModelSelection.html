@@ -48,9 +48,7 @@
 
 
 
-<!-- Jquery and Mathjax -->
-<script src="https://unpkg.com/jquery"></script>
-
+<!-- Mathjax -->
 <script type='text/x-mathjax-config'>
 		MathJax.Hub.Config({
 			extensions: ['tex2jax.js'],
@@ -621,7 +619,8 @@ s^2 = \frac{1}{n-1} \sum_{i=1}^n \left(X_i - \bar{X}\right)^2.
 <div id="empirical-distribution-function" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Empirical Distribution Function</h4>
 <p>We have seen how to compute nonparametric estimators of the <em>k</em>th moment <span class="math inline">\(\mathrm{E~} X^k\)</span>. In the same way, for any known function <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, we can estimate <span class="math inline">\(\mathrm{E~} \mathrm{g}(X)\)</span> using <span class="math inline">\(n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>. This is sometimes known as the <em>analog principle</em>.</p>
-<p>Now suppose that we fix a value of <em>x</em> and consider the function <span class="math inline">\(\mathrm{g}(X) = I(X \le x)\)</span>. Here, the notation <span class="math inline">\(I(\cdot)\)</span> is the indicator function; it returns 1 if the event <span class="math inline">\((\cdot)\)</span> is true and 0 otherwise. For this choice of <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, the expected value is <span class="math inline">\(\mathrm{E~} I(X \le x) = \Pr(X \le x) = F(x)\)</span>, the distribution function evaluated at a fixed point <em>x</em>. Using the analog principle, we define the nonparametric estimator of the distribution function <span class="math display">\[
+<p>Now suppose that we fix a value of <em>x</em> and consider the function <span class="math inline">\(\mathrm{g}(X) = I(X \le x)\)</span>. Here, the notation <span class="math inline">\(I(\cdot)\)</span> is the indicator function; it returns 1 if the event <span class="math inline">\((\cdot)\)</span> is true and 0 otherwise. For this choice of <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, the expected value is <span class="math inline">\(\mathrm{E~} I(X \le x) = \Pr(X \le x) = F(x)\)</span>, the distribution function evaluated at a fixed point <em>x</em>. Using the analog principle, we define the nonparametric estimator of the distribution function</p>
+<p><span class="math display">\[
 \begin{aligned}
 F_n(x)
 &amp;=  \frac{1}{n} \sum_{i=1}^n I\left(X_i \le x\right) \\
@@ -796,33 +795,37 @@ legend(&quot;topright&quot;, c(&quot;b=0.3255 (default)&quot;, &quot;b=0.1&quot;
             lwd=c(2.5,1,1), col=c(&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;), cex=1)</code></pre>
 </div>
 <hr />
-<p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as <span class="math display">\[
+<p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as</p>
+<p><span class="math display">\[
 \begin{aligned}
 \hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}
 \]</span></p>
-where <span class="math inline">\(W\)</span> is the distribution function associated with the kernel density <span class="math inline">\(w\)</span>. To illustrate, for the uniform kernel, we have <span class="math inline">\(w(y) = \frac{1}{2}I(-1 &lt; y \le 1)\)</span>, so $$
-<span class="math display">\[\begin{aligned}
-
+<p>where <span class="math inline">\(W\)</span> is the distribution function associated with the kernel density <span class="math inline">\(w\)</span>. To illustrate, for the uniform kernel, we have <span class="math inline">\(w(y) = \frac{1}{2}I(-1 &lt; y \le 1)\)</span>, so</p>
+<p><span class="math display">\[
+\begin{aligned}
 W(y) =
 \begin{cases}
 0 &amp;            y&lt;-1\\
 \frac{y+1}{2}&amp; -1 \le y &lt; 1 \\
 1 &amp; y \ge 1 \\
-\end{cases}\end{aligned}\]</span>
-<p>. $$</p>
+\end{cases}\end{aligned} .
+\]</span></p>
 <hr />
 <p><strong>Example 4.1.5. Actuarial Exam Question.</strong></p>
 <p>You study five lives to estimate the time from the onset of a disease to death. The times to death are:</p>
-<p><span class="math display">\[\begin{array}{ccccc}
+<p><span class="math display">\[
+\begin{array}{ccccc}
 2 &amp; 3 &amp; 3 &amp; 3 &amp; 7  \\
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>Using a triangular kernel with bandwith <span class="math inline">\(2\)</span>, calculate the density function estimate at 2.5.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleSelect.1.5" href="javascript:toggleEX('toggleExampleSelect.1.5','displayTextExampleSelect.1.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExampleSelect.1.5" style="display: none">
 <p><strong>Solution.</strong> For the kernel density estimate, we have <span class="math display">\[f_n(x) = \frac{1}{nb} \sum_{i=1}^n w\left(\frac{x-X_i}{b}\right),\]</span> where <span class="math inline">\(n=5\)</span>, <span class="math inline">\(b=2\)</span>, and <span class="math inline">\(x=2.5\)</span>. For the triangular kernel, <span class="math inline">\(w(x) = (1-|x|)\times I(|x| \le 1)\)</span>. Thus,</p>
-<p><span class="math display">\[\begin{array}{c|c|c}
+<p><span class="math display">\[
+\begin{array}{c|c|c}
 \hline
 X_i &amp; \frac{x-X_i}{b} &amp; w\left(\frac{x-X_i}{b} \right) \\
 \hline
@@ -834,7 +837,8 @@ X_i &amp; \frac{x-X_i}{b} &amp; w\left(\frac{x-X_i}{b} \right) \\
 \hline
 7 &amp; \frac{2.5-7}{2}=-2.25 &amp; (1-|-2.25|)(0) = 0\\
 \hline
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>Then the kernel density estimate is <span class="math display">\[f_n(x) = \frac{1}{5(2)}\left( \frac{3}{4} + (3) \frac{3}{4} + 0 \right) = \frac{3}{10}\]</span></p>
 </div>
 <hr />
@@ -905,16 +909,19 @@ Figure 4.7: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. T
 <p>The <em>Kolmogorov-Smirnov statistic</em> is the maximum absolute difference between the fitted distribution function and the empirical distribution function. Instead of comparing differences between single points, the <em>Cramer-von Mises statistic</em> integrates the difference between the empirical and fitted distribution functions over the entire range of values. The <em>Anderson-Darling statistic</em> also integrates this difference over the range of values, although weighted by the inverse of the variance. It therefore places greater emphasis on the tails of the distribution (i.e when <span class="math inline">\(F(x)\)</span> or <span class="math inline">\(1-F(x)=S(x)\)</span> is small).</p>
 <hr />
 <p><strong>Exaxmple 4.1.7. Actuarial Exam Question (modified).</strong> A sample of claim payments is:</p>
-<p><span class="math display">\[\begin{array}{ccccc}
+<p><span class="math display">\[
+\begin{array}{ccccc}
 29 &amp; 64 &amp; 90 &amp; 135 &amp; 182  \\
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>Compare the empirical claims distribution to an exponential distribution with mean <span class="math inline">\(100\)</span> by calculating the value of the Kolmogorov-Smirnov test statistic.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleSelect.1.7" href="javascript:toggleEX('toggleExampleSelect.1.7','displayTextExampleSelect.1.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExampleSelect.1.7" style="display: none">
 <p><strong>Solution.</strong> For an exponential distribution with mean <span class="math inline">\(100\)</span>, the cumulative distribution function is <span class="math inline">\(F(x)=1-e^{-x/100}\)</span>. Thus,</p>
-<p><span class="math display">\[\begin{array}{ccccc}
+<p><span class="math display">\[
+\begin{array}{ccccc}
 \hline
 x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|) \\
 \hline
@@ -924,7 +931,8 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 135 &amp; 0.7408 &amp; 0.8 &amp; 0.6 &amp; \max(0.0592, 0.1408) = 0.1408 \\
 182 &amp; 0.8380 &amp; 1   &amp; 0.8 &amp; \max(0.1620, 0.0380) = 0.1620 \\
 \hline
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>The Kolmogorov-Smirnov test statistic is therefore <span class="math inline">\(KS = \max(0.2517, 0.2727, 0.1934, 0.1408, 0.1620) = 0.2727\)</span>.</p>
 </div>
 <hr />
@@ -992,9 +1000,11 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 <li>Losses follow a loglogistic distribution with cumulative distribution function: <span class="math display">\[F(x) = \frac{\left(x/\theta\right)^{\gamma}}{1+\left(x/\theta\right)^{\gamma}}\]</span></li>
 <li>The sample of losses is:</li>
 </ol>
-<p><span class="math display">\[\begin{array}{ccccccccccc}
+<p><span class="math display">\[
+\begin{array}{ccccccccccc}
 10 &amp;35 &amp;80 &amp;86 &amp;90 &amp;120 &amp;158 &amp;180 &amp;200 &amp;210 &amp;1500 \\
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>Calculate the estimate of <span class="math inline">\(\theta\)</span> by percentile matching, using the 40th and 80th empirically smoothed percentile estimates.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleSelect.1.10" href="javascript:toggleEX('toggleExampleSelect.1.10','displayTextExampleSelect.1.10');"><i><strong>Show Example Solution</strong></i></a>
@@ -1105,7 +1115,8 @@ Figure 4.9: Model Validation. A data set is randomly split into two subsamples.
 <p>Consider a sample of size <span class="math inline">\(n\)</span> observed from the distribution <span class="math inline">\(F(\cdot)\)</span>, but in groups so that we only know the group into which each observation fell, not the exact value. This is referred to as <strong>grouped</strong> or <strong>interval-censored</strong> data. For example, we may be looking at two successive years of annual employee records. People employed in the first year but not the second have left sometime during the year. With an exact departure date (individual data), we could compute the amount of time that they were with the firm. Without the departure date (grouped data), we only know that they departed sometime during a year-long interval.</p>
 <p>Formalizing this idea, suppose there are <span class="math inline">\(k\)</span> groups or intervals delimited by boundaries <span class="math inline">\(c_0 &lt; c_1&lt; \cdots &lt; c_k\)</span>. For each observation, we only observe the interval into which it fell (e.g. <span class="math inline">\((c_{j-1}, c_j)\)</span>), not the exact value. Thus, we only know the number of observations in each interval. The constants <span class="math inline">\(\{c_0 &lt; c_1 &lt; \cdots &lt; c_k\}\)</span> form some partition of the domain of <span class="math inline">\(F(\cdot)\)</span>. Then the probability of an observation <span class="math inline">\(X_i\)</span> falling in the <span class="math inline">\(j\)</span>th interval is <span class="math display">\[\Pr\left(X
 _i \in (c_{j-1}, c_j]\right) = F(c_j) - F(c_{j-1}).\]</span></p>
-<p>The corresponding probability mass function for an observation is <span class="math display">\[
+<p>The corresponding probability mass function for an observation is</p>
+<p><span class="math display">\[
 \begin{aligned}
 f(x) &amp;=
 \begin{cases}
@@ -1438,9 +1449,11 @@ F_n(c_j) = \frac{\text{number of observations } \le c_j}{n}.
 <p>As usual, the corresponding estimate of the survival function is <span class="math inline">\(\hat{S}(x) = 1 - \hat{F}(x)\)</span>.</p>
 <hr />
 <p><strong>Example 4.3.5. Actuarial Exam Question.</strong> The following is a sample of 10 payments:</p>
-<p><span class="math display">\[\begin{array}{cccccccccc}
+<p><span class="math display">\[
+\begin{array}{cccccccccc}
 4 &amp;4 &amp;5+ &amp;5+ &amp;5+ &amp;8 &amp;10+ &amp;10+ &amp;12 &amp;15 \\
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>where <span class="math inline">\(+\)</span> indicates that a loss has exceeded the policy limit.</p>
 <p>Using the Kaplan-Meier product-limit estimator, calculate the probability that the loss on a policy exceeds 11, <span class="math inline">\(\hat{S}(11)\)</span>.</p>
 <h5 style="text-align: center;">
@@ -1448,7 +1461,8 @@ F_n(c_j) = \frac{\text{number of observations } \le c_j}{n}.
 </h5>
 <div id="toggleExampleSelect.3.5" style="display: none">
 <p><strong>Solution.</strong> There are four event times (non-censored observations). For each time <span class="math inline">\(t_j\)</span>, we can calculate the number of events <span class="math inline">\(s_j\)</span> and the risk set <span class="math inline">\(R_j\)</span> as the following:</p>
-<p><span class="math display">\[\begin{array}{cccc}
+<p><span class="math display">\[
+\begin{array}{cccc}
 \hline
 j &amp; t_j &amp; s_j &amp; R_j \\
 \hline
@@ -1457,7 +1471,8 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 3 &amp; 12 &amp; 1 &amp; 2 \\
 4 &amp; 15 &amp; 1 &amp; 1 \\
 \hline
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>Thus, the Kaplan-Meier estimate of <span class="math inline">\(S(11)\)</span> is <span class="math display">\[
 \begin{aligned}
 \hat{S}(11) &amp;= \prod_{j:t_j\leq 11} \left( 1- \frac{s_j}{R_j} \right) =  \prod_{j=1}^{2} \left( 1- \frac{s_j}{R_j} \right)\\
@@ -1513,7 +1528,8 @@ u_i &amp; - &amp; 1.2 &amp; - &amp; 1.5 &amp; 1.6 &amp; - &amp; 1.7 &amp; - &amp
 </h5>
 <div id="toggleExampleSelect.3.6" style="display: none">
 <p><strong>Solution.</strong> Recall the risk set <span class="math inline">\(R_j = \sum_{i=1}^n \left\{ I(x_i \geq t_{j}) + I(u_i \geq t_{j}) - I(d_i \geq t_{j}) \right\}\)</span>. Then</p>
-<p><span class="math display">\[\begin{array}{ccccc}
+<p><span class="math display">\[
+\begin{array}{ccccc}
 \hline
 j &amp; t_j &amp; s_j &amp; R_j &amp; \hat{S}(t_j) \\
 \hline
@@ -1522,7 +1538,8 @@ j &amp; t_j &amp; s_j &amp; R_j &amp; \hat{S}(t_j) \\
 3  &amp; 1.7   &amp; 1   &amp; 5-0 = 5  &amp; \frac{5}{7}\left( 1 - \frac{1}{5} \right) = \frac{4}{7}\\
 4  &amp; 2.1   &amp; 2   &amp; 3        &amp; \frac{4}{7}\left( 1 - \frac{2}{3}\right) = \frac{4}{21}\\
 \hline
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>The Kaplan-Meier estimate is therefore <span class="math inline">\(\hat{S}(1.6) = \frac{5}{7}\)</span>.</p>
 </div>
 <hr />
@@ -1536,7 +1553,8 @@ j &amp; t_j &amp; s_j &amp; R_j &amp; \hat{S}(t_j) \\
 </h5>
 <div id="toggleExampleSelect.3.7" style="display: none">
 <p><strong>Solution.</strong> As before, there are four event times (non-censored observations). For each time <span class="math inline">\(t_j\)</span>, we can calculate the number of events <span class="math inline">\(s_j\)</span> and the risk set <span class="math inline">\(R_j\)</span> as the following:</p>
-<p><span class="math display">\[\begin{array}{cccc}
+<p><span class="math display">\[
+\begin{array}{cccc}
 \hline
 j &amp; t_j &amp; s_j &amp; R_j \\
 \hline
@@ -1545,7 +1563,8 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 3 &amp; 12 &amp; 1 &amp; 2 \\
 4 &amp; 15 &amp; 1 &amp; 1 \\
 \hline
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>The Nelson-Äalen estimate of <span class="math inline">\(S(11)\)</span> is <span class="math inline">\(\hat{S}_{NA}(11)=e^{-\hat{H}(11)} = e^{-0.4} = 0.67\)</span>, since <span class="math display">\[
 \begin{aligned}
 \hat{H}(11) &amp;= \sum_{j:t_j\leq 11} \frac{s_j}{R_j}  = \sum_{j=1}^{2} \frac{s_j}{R_j}  \\
@@ -1881,11 +1900,13 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <h3><span class="header-section-number">4.4.4</span> Conjugate Distributions</h3>
 <p>In the Bayesian framework, the key to statistical inference is understanding the posterior distribution of the parameters. As described in Section <a href="C-ModelSelection.html#S:IntroBayes">4.4.1</a>, modern data analysis using Bayesian methods utilize computationally intensive techniques such as <a href="#" class="tooltip" style="color:green"><em>MCMC</em><span style="font-size:8pt"> Markov Chain Monte Carlo</span></a> simulation. Another approach for computing posterior distributions are based on <strong>conjugate distributions.</strong> Although this approach is available only for a limited number of distributions, it has the appeal that it provides closed-form expressions for the distributions, allowing for easy interpretations of results.</p>
 <p>To relate the prior and posterior distributions of the parameters, we have the relationship</p>
-<p><span class="math display">\[\begin{array}{ccc}
+<p><span class="math display">\[
+\begin{array}{ccc}
 \pi(\boldsymbol \theta | x) &amp; = &amp; \frac{f(x|\boldsymbol \theta )\pi(\boldsymbol \theta)}{f(x)}  \\
  &amp; \propto  &amp; f(x|\boldsymbol \theta ) \pi(\boldsymbol \theta) \\
 \text{Posterior} &amp; \text{is proportional to} &amp; \text{likelihood} \times \text{prior} .
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>For conjugate distributions, the posterior and the prior come from the same family of distributions. The following illustration looks at the Poisson-gamma special case, the most well-known in actuarial applications.</p>
 <p><strong>Special Case – Poisson-Gamma - Continued.</strong> Assume a Poisson(<span class="math inline">\(\lambda\)</span>) model distribution and that <span class="math inline">\(\lambda\)</span> follows a gamma(<span class="math inline">\(\alpha, \theta\)</span>) prior distribution. Then, the posterior distribution of <span class="math inline">\(\lambda\)</span> given the data follows a gamma distribution with new parameters <span class="math inline">\(\alpha_{post} = \sum_i x_i + \alpha\)</span> and <span class="math inline">\(\theta_{post} = 1/(n + 1/\theta)\)</span>.</p>
 <h5 style="text-align: center;">
@@ -2231,7 +2252,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

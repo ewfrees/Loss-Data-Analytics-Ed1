@@ -6121,7 +6121,9 @@ otherwise. For this choice of \(\mathrm{g}(\cdot)\), the expected value
 is \(\mathrm{E~} I(X \le x) = \Pr(X \le x) = F(x)\), the distribution
 function evaluated at a fixed point \emph{x}. Using the analog
 principle, we define the nonparametric estimator of the distribution
-function \[
+function
+
+\[
 \begin{aligned}
 F_n(x)
 &=  \frac{1}{n} \sum_{i=1}^n I\left(X_i \le x\right) \\
@@ -6154,7 +6156,8 @@ You should check that the sample mean is \(\bar{X} = 19.7\) and that the
 sample variance is \(s^2 =34.45556\). The corresponding empirical
 distribution function is
 
-\[\begin{aligned}
+\[
+\begin{aligned}
 F_n(x) &=
 \left\{
 \begin{array}{ll}
@@ -6165,7 +6168,8 @@ F_n(x) &=
 0.9 & \text{ for }\ 23 \leq x<30 \\
 1 & \text{ for }\ x \geq 30,
 \end{array}
-\right.\end{aligned}\]
+\right.\end{aligned}
+\]
 
 which is shown in the following graph in Figure \ref{fig:EDFToy}.
 
@@ -6459,23 +6463,26 @@ Nonparametric density estimators, such as the kernel estimator, are
 regularly used in practice. The concept can also be extended to give
 smooth versions of an empirical distribution function. Given the
 definition of the kernel density estimator, the \emph{kernel estimator
-of the distribution function} can be found as \[\begin{aligned}
-\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}\]
+of the distribution function} can be found as
+
+\[
+\begin{aligned}
+\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}
+\]
 
 where \(W\) is the distribution function associated with the kernel
 density \(w\). To illustrate, for the uniform kernel, we have
-\(w(y) = \frac{1}{2}I(-1 < y \le 1)\), so \$\$
+\(w(y) = \frac{1}{2}I(-1 < y \le 1)\), so
 
+\[
 \begin{aligned}
-
 W(y) =
 \begin{cases}
 0 &            y<-1\\
 \frac{y+1}{2}& -1 \le y < 1 \\
 1 & y \ge 1 \\
-\end{cases}\end{aligned}
-
-. \$\$
+\end{cases}\end{aligned} .
+\]
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -6484,9 +6491,11 @@ W(y) =
 You study five lives to estimate the time from the onset of a disease to
 death. The times to death are:
 
-\[\begin{array}{ccccc}
+\[
+\begin{array}{ccccc}
 2 & 3 & 3 & 3 & 7  \\
-\end{array}\]
+\end{array}
+\]
 
 Using a triangular kernel with bandwith \(2\), calculate the density
 function estimate at 2.5.
@@ -6499,7 +6508,8 @@ Show Example Solution
 where \(n=5\), \(b=2\), and \(x=2.5\). For the triangular kernel,
 \(w(x) = (1-|x|)\times I(|x| \le 1)\). Thus,
 
-\[\begin{array}{c|c|c}
+\[
+\begin{array}{c|c|c}
 \hline
 X_i & \frac{x-X_i}{b} & w\left(\frac{x-X_i}{b} \right) \\
 \hline
@@ -6511,7 +6521,8 @@ X_i & \frac{x-X_i}{b} & w\left(\frac{x-X_i}{b} \right) \\
 \hline
 7 & \frac{2.5-7}{2}=-2.25 & (1-|-2.25|)(0) = 0\\
 \hline
-\end{array}\]
+\end{array}
+\]
 
 Then the kernel density estimate is
 \[f_n(x) = \frac{1}{5(2)}\left( \frac{3}{4} + (3) \frac{3}{4} + 0 \right) = \frac{3}{10}\]
@@ -6716,9 +6727,11 @@ small).
 \textbf{Exaxmple 4.1.7. Actuarial Exam Question (modified).} A sample of
 claim payments is:
 
-\[\begin{array}{ccccc}
+\[
+\begin{array}{ccccc}
 29 & 64 & 90 & 135 & 182  \\
-\end{array}\]
+\end{array}
+\]
 
 Compare the empirical claims distribution to an exponential distribution
 with mean \(100\) by calculating the value of the Kolmogorov-Smirnov
@@ -6730,7 +6743,8 @@ Show Example Solution
 \textbf{Solution.} For an exponential distribution with mean \(100\),
 the cumulative distribution function is \(F(x)=1-e^{-x/100}\). Thus,
 
-\[\begin{array}{ccccc}
+\[
+\begin{array}{ccccc}
 \hline
 x & F(x) & F_n(x) & F_n(x-) & \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|) \\
 \hline
@@ -6740,7 +6754,8 @@ x & F(x) & F_n(x) & F_n(x-) & \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|) \\
 135 & 0.7408 & 0.8 & 0.6 & \max(0.0592, 0.1408) = 0.1408 \\
 182 & 0.8380 & 1   & 0.8 & \max(0.1620, 0.0380) = 0.1620 \\
 \hline
-\end{array}\]
+\end{array}
+\]
 
 The Kolmogorov-Smirnov test statistic is therefore
 \(KS = \max(0.2517, 0.2727, 0.1934, 0.1408, 0.1620) = 0.2727\).
@@ -6795,10 +6810,12 @@ the method of moments estimators, easy algebra shows that
 
 Thus, the method of moment estimators are
 
-\[\begin{aligned}
+\[
+\begin{aligned}
 \hat{\alpha} &=  \frac{26.62259^2}{136154.6-26.62259^2} = 0.005232809 \\
 \hat{\theta} &=  \frac{136154.6-26.62259^2}{26.62259} = 5,087.629.
-\end{aligned}\]
+\end{aligned}
+\]
 
 For comparison, the maximum likelihood values turn out to be
 \(\hat{\alpha}_{MLE} = 0.2905959\) and
@@ -6817,10 +6834,12 @@ shows
 
 Thus, the method of moment estimators are
 
-\[\begin{aligned}
+\[
+\begin{aligned}
 \hat{\alpha} &=  1+ \frac{136154.6}{136154.6-26,62259^2} = 2.005233 \\
 \hat{\theta} &=  (2.005233-1) \cdot 26.62259 = 26.7619
-\end{aligned}\]
+\end{aligned}
+\]
 
 The maximum likelihood values turn out to be
 \(\hat{\alpha}_{MLE} = 0.9990936\) and
@@ -6900,9 +6919,11 @@ moments.
   The sample of losses is:
 \end{enumerate}
 
-\[\begin{array}{ccccccccccc}
+\[
+\begin{array}{ccccccccccc}
 10 &35 &80 &86 &90 &120 &158 &180 &200 &210 &1500 \\
-\end{array}\]
+\end{array}
+\]
 
 Calculate the estimate of \(\theta\) by percentile matching, using the
 40th and 80th empirically smoothed percentile estimates.
@@ -7284,7 +7305,9 @@ the \(j\)th interval is \[\Pr\left(X
 _i \in (c_{j-1}, c_j]\right) = F(c_j) - F(c_{j-1}).\]
 
 The corresponding probability mass function for an observation is
-\[\begin{aligned}
+
+\[
+\begin{aligned}
 f(x) &=
 \begin{cases}
 F(c_1) - F(c_{0}) &   \text{if }\ x \in (c_{0}, c_1]\\
@@ -7292,17 +7315,22 @@ F(c_1) - F(c_{0}) &   \text{if }\ x \in (c_{0}, c_1]\\
 F(c_k) - F(c_{k-1}) &   \text{if }\ x \in (c_{k-1}, c_k]\\
 \end{cases} \\
 &= \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{I(x \in (c_{j-1}, c_j])}
-\end{aligned}\]
+\end{aligned}
+\]
 
 Now, define \(n_j\) to be the number of observations that fall in the
 \(j\)th interval, \((c_{j-1}, c_j]\). Thus, the likelihood function
-(with respect to the parameter(s) \(\theta\)) is \[\begin{aligned}
+(with respect to the parameter(s) \(\theta\)) is \[
+\begin{aligned}
 \mathcal{L}(\theta) = \prod_{j=1}^n f(x_i) = \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{n_j}
-\end{aligned}\]
+\end{aligned}
+\]
 
-And the log-likelihood function is \[\begin{aligned}
+And the log-likelihood function is \[
+\begin{aligned}
 L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_j \ln \left\{F(c_j) - F(c_{j-1})\right\}
-\end{aligned}\]
+\end{aligned}
+\]
 
 Maximizing the likelihood function (or equivalently, maximizing the
 log-likelihood function) would then produce the maximum likelihood
@@ -7340,12 +7368,14 @@ Calculate the maximum likelihood estimate of \(\theta\).
 Show Example Solution
 
 \hypertarget{toggleExampleSelect.3.1}{}
-\textbf{Solution.} \[\begin{aligned}
+\textbf{Solution.} \[
+\begin{aligned}
 \mathcal{L}(\theta) &= F(1000)^7[F(2000)-F(1000)]^6[1-F(2000)]^7 \\
 &= (1-e^{-1000/\theta})^7(e^{-1000/\theta} - e^{-2000/\theta})^6(e^{-2000/\theta})^7 \\
 &= (1-p)^7(p-p^2)^6(p^2)^7 \\
 &= p^{20}(1-p)^{13}
-\end{aligned}\]
+\end{aligned}
+\]
 
 where \(p=e^{-1000/\theta}\). Maximizing this expression with respect to
 \(p\) is equivalent to maximizing the likelihood with respect to
@@ -7872,9 +7902,11 @@ As usual, the corresponding estimate of the survival function is
 \textbf{Example 4.3.5. Actuarial Exam Question.} The following is a
 sample of 10 payments:
 
-\[\begin{array}{cccccccccc}
+\[
+\begin{array}{cccccccccc}
 4 &4 &5+ &5+ &5+ &8 &10+ &10+ &12 &15 \\
-\end{array}\]
+\end{array}
+\]
 
 where \(+\) indicates that a loss has exceeded the policy limit.
 
@@ -7888,7 +7920,8 @@ Show Example Solution
 observations). For each time \(t_j\), we can calculate the number of
 events \(s_j\) and the risk set \(R_j\) as the following:
 
-\[\begin{array}{cccc}
+\[
+\begin{array}{cccc}
 \hline
 j & t_j & s_j & R_j \\
 \hline
@@ -7897,12 +7930,15 @@ j & t_j & s_j & R_j \\
 3 & 12 & 1 & 2 \\
 4 & 15 & 1 & 1 \\
 \hline
-\end{array}\]
+\end{array}
+\]
 
-Thus, the Kaplan-Meier estimate of \(S(11)\) is \[\begin{aligned}
+Thus, the Kaplan-Meier estimate of \(S(11)\) is \[
+\begin{aligned}
 \hat{S}(11) &= \prod_{j:t_j\leq 11} \left( 1- \frac{s_j}{R_j} \right) =  \prod_{j=1}^{2} \left( 1- \frac{s_j}{R_j} \right)\\
 &= \left(1-\frac{2}{10} \right) \left(1-\frac{1}{5} \right) = (0.8)(0.8)= 0.64. \\
-\end{aligned}\]
+\end{aligned}
+\]
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -8010,7 +8046,8 @@ Show Example Solution
 \(R_j = \sum_{i=1}^n \left\{ I(x_i \geq t_{j}) + I(u_i \geq t_{j}) - I(d_i \geq t_{j}) \right\}\).
 Then
 
-\[\begin{array}{ccccc}
+\[
+\begin{array}{ccccc}
 \hline
 j & t_j & s_j & R_j & \hat{S}(t_j) \\
 \hline
@@ -8019,7 +8056,8 @@ j & t_j & s_j & R_j & \hat{S}(t_j) \\
 3  & 1.7   & 1   & 5-0 = 5  & \frac{5}{7}\left( 1 - \frac{1}{5} \right) = \frac{4}{7}\\
 4  & 2.1   & 2   & 3        & \frac{4}{7}\left( 1 - \frac{2}{3}\right) = \frac{4}{21}\\
 \hline
-\end{array}\]
+\end{array}
+\]
 
 The Kaplan-Meier estimate is therefore \(\hat{S}(1.6) = \frac{5}{7}\).
 
@@ -8045,7 +8083,8 @@ Show Example Solution
 observations). For each time \(t_j\), we can calculate the number of
 events \(s_j\) and the risk set \(R_j\) as the following:
 
-\[\begin{array}{cccc}
+\[
+\begin{array}{cccc}
 \hline
 j & t_j & s_j & R_j \\
 \hline
@@ -8054,21 +8093,25 @@ j & t_j & s_j & R_j \\
 3 & 12 & 1 & 2 \\
 4 & 15 & 1 & 1 \\
 \hline
-\end{array}\]
+\end{array}
+\]
 
 The Nelson-Äalen estimate of \(S(11)\) is
-\(\hat{S}_{NA}(11)=e^{-\hat{H}(11)} = e^{-0.4} = 0.67\), since
-\[\begin{aligned}
+\(\hat{S}_{NA}(11)=e^{-\hat{H}(11)} = e^{-0.4} = 0.67\), since \[
+\begin{aligned}
 \hat{H}(11) &= \sum_{j:t_j\leq 11} \frac{s_j}{R_j}  = \sum_{j=1}^{2} \frac{s_j}{R_j}  \\
 &= \frac{2}{10} + \frac{1}{5}  = 0.2 + 0.2 = 0.4 .\\
-\end{aligned}\]
+\end{aligned}
+\]
 
 From earlier work, the Kaplan-Meier estimate of \(S(11)\) is
 \(\hat{S}(11) = 0.64\). Then Greenwood's estimate of the variance of the
-product-limit estimate of \(S(11)\) is \[\begin{aligned}
+product-limit estimate of \(S(11)\) is \[
+\begin{aligned}
 \widehat{Var}(\hat{S}(11)) &= (\hat{S}(11))^2 \sum_{j:t_j\leq 11} \frac{s_j}{R_j(R_j-s_j)}
 &= (0.64)^2 \left(\frac{2}{10(8)} + \frac{1}{5(4)} \right)  = 0.0307. \\
-\end{aligned}\]
+\end{aligned}
+\]
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -8684,11 +8727,13 @@ results.
 To relate the prior and posterior distributions of the parameters, we
 have the relationship
 
-\[\begin{array}{ccc}
+\[
+\begin{array}{ccc}
 \pi(\boldsymbol \theta | x) & = & \frac{f(x|\boldsymbol \theta )\pi(\boldsymbol \theta)}{f(x)}  \\
  & \propto  & f(x|\boldsymbol \theta ) \pi(\boldsymbol \theta) \\
 \text{Posterior} & \text{is proportional to} & \text{likelihood} \times \text{prior} .
-\end{array}\]
+\end{array}
+\]
 
 For conjugate distributions, the posterior and the prior come from the
 same family of distributions. The following illustration looks at the
