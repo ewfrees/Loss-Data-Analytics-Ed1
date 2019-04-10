@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Loss Data Analytics</title>
-  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 4 Model Selection and Estimation | Loss Data Analytics</title>
+  <meta name="description" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Loss Data Analytics" />
+  <meta property="og:title" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
+  <meta property="og:description" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Loss Data Analytics" />
+  <meta name="twitter:title" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
 <meta name="author" content="An open text authored by the Actuarial Community">
@@ -35,6 +35,7 @@
 <link rel="next" href="C-AggLossModels.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -350,11 +351,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.4.4" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:ConjugateDistributions"><i class="fa fa-check"></i><b>4.4.4</b> Conjugate Distributions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#MS:further-reading-and-resources"><i class="fa fa-check"></i><b>4.5</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#technical-supplement-a.-gini-statistic"><i class="fa fa-check"></i>Technical Supplement A. Gini Statistic</a><ul>
-<li class="chapter" data-level="" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#ts-a.1.-the-classic-lorenz-curve"><i class="fa fa-check"></i>TS A.1. The Classic Lorenz Curve</a></li>
-<li class="chapter" data-level="" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#ts-a.2.-ordered-lorenz-curve-and-the-gini-index"><i class="fa fa-check"></i>TS A.2. Ordered Lorenz Curve and the Gini Index</a></li>
-<li class="chapter" data-level="" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#ts-a.3.-out-of-sample-validation"><i class="fa fa-check"></i>TS A.3. Out-of-Sample Validation</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html"><i class="fa fa-check"></i><b>5</b> Aggregate Loss Models</a><ul>
 <li class="chapter" data-level="5.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
@@ -375,10 +371,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#technical-supplement-b.-aggregate-loss-models"><i class="fa fa-check"></i>Technical Supplement B. Aggregate Loss Models</a><ul>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-b.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS B.1. Individual Risk Model Properties</a></li>
-<li><a href="C-AggLossModels.html#ts-b.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS B.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
-<li><a href="C-AggLossModels.html#ts-b.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS B.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
+<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#technical-supplement-5.a.-aggregate-loss-models"><i class="fa fa-check"></i>Technical Supplement 5.A. Aggregate Loss Models</a><ul>
+<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
+<li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
+<li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="C-Simulation.html"><a href="C-Simulation.html"><i class="fa fa-check"></i><b>6</b> Simulation</a><ul>
@@ -402,7 +398,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.3.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#numerical-examples"><i class="fa fa-check"></i><b>8.3.4</b> Numerical Examples</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Contributors and Further Resources</a></li>
-<li class="chapter" data-level="8.5" data-path="C-RiskClass.html"><a href="C-RiskClass.html#S:RC:mle-Pois-reg"><i class="fa fa-check"></i><b>8.5</b> Technical Supplement – Estimating Poisson Regression Models</a></li>
+<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#technical-supplement-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>Technical Supplement 8.A – Estimating Poisson Regression Models</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="C-Credibility.html"><a href="C-Credibility.html"><i class="fa fa-check"></i><b>9</b> Experience Rating Using Credibility Theory</a><ul>
 <li class="chapter" data-level="9.1" data-path="C-Credibility.html"><a href="C-Credibility.html#introduction-to-applications-of-credibility-theory"><i class="fa fa-check"></i><b>9.1</b> Introduction to Applications of Credibility Theory</a></li>
@@ -538,7 +534,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="16.2.2" data-path="C-AppB.html"><a href="C-AppB.html#law-of-total-variance"><i class="fa fa-check"></i><b>16.2.2</b> Law of Total Variance</a></li>
 <li class="chapter" data-level="16.2.3" data-path="C-AppB.html"><a href="C-AppB.html#application"><i class="fa fa-check"></i><b>16.2.3</b> Application</a></li>
 </ul></li>
-<li class="chapter" data-level="16.3" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:ConjugateDistributions"><i class="fa fa-check"></i><b>16.3</b> Conjugate Distributions</a><ul>
+<li class="chapter" data-level="16.3" data-path="C-AppB.html"><a href="C-AppB.html#S:AppConjugateDistributions"><i class="fa fa-check"></i><b>16.3</b> Conjugate Distributions</a><ul>
 <li class="chapter" data-level="16.3.1" data-path="C-AppB.html"><a href="C-AppB.html#linear-exponential-family"><i class="fa fa-check"></i><b>16.3.1</b> Linear Exponential Family</a></li>
 <li class="chapter" data-level="16.3.2" data-path="C-AppB.html"><a href="C-AppB.html#conjugate-distributions"><i class="fa fa-check"></i><b>16.3.2</b> Conjugate Distributions</a></li>
 </ul></li>
@@ -1082,7 +1078,7 @@ Figure 4.9: Model Validation. A data set is randomly split into two subsamples.
 \sum_i \mathrm{d}(y_i,\hat{\mathrm{g}}\left(x_{i1}, \ldots, x_{ik}\right) ) .
 \tag{4.4}
 \end{equation}\]</span>
-<p>Here, the sum <em>i</em> is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2\)</span>. In actuarial applications, Euclidean distance <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|\)</span> is often preferred because of the skewed nature of the data (large outlying values of <span class="math inline">\(y\)</span> can have a large effect on the measure). The Chapter 4 <em>Technical Supplement A</em> describes another measure, the <em>Gini index</em>, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).</p>
+<p>Here, the sum <em>i</em> is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2\)</span>. In actuarial applications, Euclidean distance <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|\)</span> is often preferred because of the skewed nature of the data (large outlying values of <span class="math inline">\(y\)</span> can have a large effect on the measure). Chapter <a href="C-PremCalc.html#C:PremCalc">7</a> describes another measure, the <em>Gini index</em>, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).</p>
 <p><strong>Selecting a Distribution.</strong> Still, our focus so far has been to select a distribution for a data set that can be used for actuarial modeling without additional inputs <span class="math inline">\(x_1, \ldots, x_k\)</span>. Even in this more fundamental problem, the model validation approach is valuable. If we base all inference on only in-sample data, then there is a tendency to select more complicated models then needed. For example, we might select a four parameter GB2, generalized beta of the second kind, distribution when only a two parameter Pareto is needed. Information criteria such as <a href="#" class="tooltip" style="color:green"><em>AIC</em><span style="font-size:8pt"> Akaike’s information criterion</span></a> and <a href="#" class="tooltip" style="color:green"><em>BIC</em><span style="font-size:8pt"> Bayesian information criterion</span></a> included penalties for model complexity and so provide some protection but using a test sample is the best guarantee to achieve parsimonious models. From a quote often attributed to Albert Einstein, we want to “use the simplest model as possible but no simpler.”</p>
 </div>
 <div id="model-selection-based-on-cross-validation" class="section level3">
@@ -1958,7 +1954,7 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <li>The uncertainty of parameters is summarized using a beta distribution and the outcomes have a (conditional on the parameter) binomial distribution.</li>
 <li>The uncertainty of parameters is summarized using a normal distribution and the outcomes are conditionally normally distributed.</li>
 </ul>
-<p>Additional results on conjugate distributions are summarized in the Appendix Chapter <a href="C-AppB.html#C:AppB">16</a>.</p>
+<p>Additional results on conjugate distributions are summarized in the Appendix Section <a href="C-AppB.html#S:AppConjugateDistributions">16.3</a>.</p>
 </div>
 </div>
 <div id="MS:further-reading-and-resources" class="section level2">
@@ -1974,207 +1970,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <h4>Contributors</h4>
 <ul>
 <li><strong>Edward W. (Jed) Frees</strong> and <strong>Lisa Gao</strong>, University of Wisconsin-Madison, are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> for chapter comments and suggested improvements.</li>
+<li>Chapter reviewers include: Andrew Kwon-Nakamura, Hirokazu (Iwahiro) Iwasawa, Eren Dodd.</li>
 </ul>
 
-</div>
-</div>
-<div id="technical-supplement-a.-gini-statistic" class="section level2 unnumbered">
-<h2>Technical Supplement A. Gini Statistic</h2>
-<div id="ts-a.1.-the-classic-lorenz-curve" class="section level3 unnumbered">
-<h3>TS A.1. The Classic Lorenz Curve</h3>
-<p>In welfare economics, it is common to compare distributions via the <strong>Lorenz curve</strong>, developed by Max Otto Lorenz <span class="citation">(Lorenz <a href="#ref-lorenz1905methods">1905</a>)</span>. A Lorenz curve is a graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis. It is typically used to represent income distributions. When the income distribution is perfectly aligned with the population distribution, the Lorenz curve results in a 45 degree line that is known as the <em>line of equality</em>. Because the graph compares two distribution functions, one can also think of a Lorenz curve as a type of <span class="math inline">\(pp\)</span> plot that was introduced in Section <a href="C-ModelSelection.html#S:MS:GraphComparison">4.1.2.1</a>. The area between the Lorenz curve and the line of equality is a measure of the discrepancy between the income and population distributions. Two times this area is known as the <strong>Gini index</strong>, introduced by Corrado Gini in 1912.</p>
-<p><strong>Example – Classic Lorenz Curve.</strong> For an insurance example, Figure <a href="C-ModelSelection.html#fig:ClassicLorenz">4.12</a> shows a distribution of insurance losses. This figure is based on a random sample of 2000 losses. The left-hand panel shows a right-skewed histogram of losses. The right-hand panel provides the corresponding Lorenz curve, showing again a skewed distribution. For example, the arrow marks the point where 60 percent of the policyholders have 30 percent of losses. The 45 degree line is the line of equality; if each policyholder has the same loss, then the loss distribution would be at this line. The Gini index, twice the area between the Lorenz curve and the 45 degree line, is 37.6 percent for this data set.</p>
-<div class="figure" style="text-align: center"><span id="fig:ClassicLorenz"></span>
-<img src="LossDataAnalytics_files/figure-html/ClassicLorenz-1.png" alt="Distribution of insurance losses." width="90%" />
-<p class="caption">
-Figure 4.12: Distribution of insurance losses.
-</p>
-</div>
-</div>
-<div id="ts-a.2.-ordered-lorenz-curve-and-the-gini-index" class="section level3 unnumbered">
-<h3>TS A.2. Ordered Lorenz Curve and the Gini Index</h3>
-<p>We now introduce a modification of the classic Lorenz curve and Gini statistic that is useful in insurance applications. Specifically, we introduce an <em>ordered</em> Lorenz curve which is a graph of the distribution of losses versus premiums, where both losses and premiums are ordered by relativities. Intuitively, the relativities point towards aspects of the comparison where there is a mismatch between losses and premiums. To make the ideas concrete, we first provide some notation. We will consider <span class="math inline">\(i=1, \ldots, n\)</span> policies. For the <span class="math inline">\(i\)</span>th policy, let</p>
-<ul>
-<li><span class="math inline">\(y_i\)</span> denote the insurance loss,</li>
-<li><span class="math inline">\(\mathbf{x}_i\)</span> be the set of policyholder characteristics known to the analyst,</li>
-<li><span class="math inline">\(P_i=P(\mathbf{x}_i)\)</span> be the associated premium that is a function of <span class="math inline">\(\mathbf{x}_i\)</span>,</li>
-<li><span class="math inline">\(S_i = S(\mathbf{x}_i)\)</span> be an insurance score under consideration for rate changes, and</li>
-<li><span class="math inline">\(R_i = R(\mathbf{x}_i)=S(\mathbf{x}_i)/P(\mathbf{x}_i)\)</span> is the relativity, or relative premium.</li>
-</ul>
-<p>Thus, the set of information used to calculate the ordered Lorenz curve for the <span class="math inline">\(i\)</span>th policy is <span class="math inline">\((y_i, P_i, S_i, R_i)\)</span>.</p>
-<div id="ordered-lorenz-curve" class="section level4 unnumbered">
-<h4>Ordered Lorenz Curve</h4>
-We now sort the set of policies based on relativities (from smallest to largest) and compute the premium and loss distributions. Using notation, the premium distribution is
-<span class="math display" id="eq:EmpPremDF">\[\begin{equation}
-\hat{F}_P(s) =  \frac{ \sum_{i=1}^n
-P(\mathbf{x}_i) \mathrm{I}(R_i \leq s) }{\sum_{i=1}^n P(\mathbf{x}_i)} ,\tag{4.7}
-\end{equation}\]</span>
-and the loss distribution is
-<span class="math display" id="eq:EmpLossDF">\[\begin{equation}
-\hat{F}_{L}(s) =  \frac{ \sum_{i=1}^n y_i \mathrm{I}(R_i
-\leq s) }{\sum_{i=1}^n y_i} ,\tag{4.8}
-\end{equation}\]</span>
-<p>where <span class="math inline">\(\mathrm{I}(\cdot)\)</span> is the indicator function, returning a 1 if the event is true and zero otherwise. The graph <span class="math inline">\(\left(\hat{F}_P(s),\hat{F}_{L}(s) \right)\)</span> is an <strong>ordered Lorenz curve</strong>.</p>
-<p>The classic Lorenz curve shows the proportion of policyholders on the horizontal axis and the loss distribution function on the vertical axis. The ordered Lorenz curve extends the classical Lorenz curve in two ways, (1) through the ordering of risks and prices by relativities and (2) by allowing prices to vary by observation. We summarize the ordered Lorenz curve in the same way as the classic Lorenz curve using a Gini index, defined as twice the area between the curve and a 45 degree line. The analyst seeks ordered Lorenz curves that approach passing through the southeast corner (1,0); these have greater separation between the loss and premium distributions and therefore larger Gini indices.</p>
-<p><strong>Example – Loss Distribution.</strong></p>
-<p>Suppose we have <span class="math inline">\(n=5\)</span> policyholders with experience as:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Variable</th>
-<th align="center"><span class="math inline">\(i\)</span></th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>Sum</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Loss</td>
-<td align="center"><span class="math inline">\(y_i\)</span></td>
-<td>5</td>
-<td>5</td>
-<td>5</td>
-<td>4</td>
-<td>6</td>
-<td>25</td>
-</tr>
-<tr class="even">
-<td align="left">Premium</td>
-<td align="center"><span class="math inline">\(P(\mathbf{x}_i)\)</span></td>
-<td>4</td>
-<td>2</td>
-<td>6</td>
-<td>5</td>
-<td>8</td>
-<td>25</td>
-</tr>
-<tr class="odd">
-<td align="left">Relativity</td>
-<td align="center"><span class="math inline">\(R(\mathbf{x}_i)\)</span></td>
-<td>5</td>
-<td>4</td>
-<td>3</td>
-<td>2</td>
-<td>1</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Determine the Lorenz curve and the ordered Lorenz curve.</p>
-<h5 style="text-align: center;">
-<a id="displayLorenz.1" href="javascript:toggleEX('toggleLorenz','displayLorenz.1');"><i><strong>Show Example Solution</strong></i></a>
-</h5>
-<div id="toggleLorenz" style="display: none">
-<hr />
-<div class="figure" style="text-align: center"><span id="fig:LorenzVsOrdered"></span>
-<img src="LossDataAnalytics_files/figure-html/LorenzVsOrdered-1.png" alt="Lorenz versus Ordered Lorenz Curve" width="90%" />
-<p class="caption">
-Figure 4.13: Lorenz versus Ordered Lorenz Curve
-</p>
-</div>
-<p>Figure <a href="C-ModelSelection.html#fig:LorenzVsOrdered">4.13</a> compares the Lorenz curve to the ordered version based on this data. The left-hand panel shows the Lorenz curve. The horizontal axis is the cumulative proportion of policyholders (0, 0.2, 0.4, and so forth) and the vertical axis is the cumulative proportion of losses (0, 4/25, 9/25, and so forth). This figure shows little separation between the distributions of losses and policyholders.</p>
-<p>The right-hand panel shows the ordered Lorenz curve. Because observations are sorted by relativities, the first point after the origin (reading from left to right) is (8/25, 6/25). The second point is (13/25, 10/25), with the pattern continuing. For the ordered Lorenz curve, the horizontal axis uses premium weights, the vertical axis uses loss weights, and both axes are ordered by relativities. From the figure, we see that there is greater separation between losses and premiums when viewed through this relativity.</p>
-<hr />
-</div>
-</div>
-<div id="gini-index" class="section level4 unnumbered">
-<h4>Gini Index</h4>
-Specifically, the Gini index can be calculated as follows. Suppose that the empirical ordered Lorenz curve is given by <span class="math inline">\(\{ (a_0=0, b_0=0), (a_1, b_1), \ldots,\)</span> <span class="math inline">\((a_n=1, b_n=1) \}\)</span> for a sample of <span class="math inline">\(n\)</span> observations. Here, we use <span class="math inline">\(a_j = \hat{F}_P(R_j)\)</span> and <span class="math inline">\(b_j = \hat{F}_{L}(R_j)\)</span>. Then, the empirical Gini index is
-<span class="math display" id="eq:GiniDefn">\[\begin{eqnarray}
-\widehat{Gini} &amp;=&amp;  2\sum_{j=0}^{n-1} (a_{j+1} - a_j) \left \{
-\frac{a_{j+1}+a_j}{2} - \frac{b_{j+1}+b_j}{2} \right\} \nonumber \\
-&amp;=&amp; 1 - \sum_{j=0}^{n-1} (a_{j+1} - a_j) (b_{j+1}+b_j) .\tag{4.9}
-\end{eqnarray}\]</span>
-<p><strong>Example – Loss Distribution: Continued.</strong> In the figure, the Gini index for the left-hand panel is 5.6%. In contrast, the Gini index for the right-hand panel is 14.9%. <span class="math inline">\(~~\Box\)</span></p>
-</div>
-</div>
-<div id="ts-a.3.-out-of-sample-validation" class="section level3 unnumbered">
-<h3>TS A.3. Out-of-Sample Validation</h3>
-<p>The Gini statistics based on an ordered Lorenz curve can be used for out-of-sample validation. The procedure follows:</p>
-<ol style="list-style-type: decimal">
-<li>Use an in-sample data set to estimate several competing models.</li>
-<li>Designate an out-of-sample, or validation, data set of the form <span class="math inline">\(\{(y_i, \mathbf{x}_i), i=1,\ldots,n\}\)</span>.</li>
-<li>Establish one of the models as the base model. Use this estimated model and explanatory variables from the validation sample to form premiums of the form <span class="math inline">\(P(\mathbf{x}_i)\)</span>.</li>
-<li>Pick one of the competing models. Use this estimated model and explanatory variables from the validation sample to form scores of the form <span class="math inline">\(S(\mathbf{x}_i)\)</span>.</li>
-<li>From the premiums and scores, develop relativities <span class="math inline">\(R_i =S(\mathbf{x}_i)/P(\mathbf{x}_i)\)</span>.</li>
-<li>Use the validation sample outcomes <span class="math inline">\(y_i\)</span> to compute the Gini statistic.</li>
-</ol>
-<p><strong>Example – Out-of-Sample Validation</strong></p>
-<p>Suppose that we have experience from 25 states and that, for each state, we have available 500 observations that can be used to predict future losses. For simplicity, assume that the analyst knows that these losses were generated by a gamma distribution with a common shape parameter equal to 5. Unknown to the analyst, the scale parameters vary by state, from a low of 20 to 66. To compute base premiums, the analyst assumes a scale parameter that is common to all states that is to be estimated from the data. As an alternative, the analyst allows the scale parameters to vary by state and will again use the data to estimate these parameters.</p>
-<p>An out of sample validation set of 200 from each state is available. Determine the ordered Lorenz curve and the corresponding Gini statistic to compare the two rate procedures.</p>
-<h5 style="text-align: center;">
-<a id="displayLorenzeExample" href="javascript:toggleEX('toggleExampleLor','displayLorenzeExample');"><i><strong>Show Example Solution</strong></i></a>
-</h5>
-<div id="toggleExampleLor" style="display: none">
-<hr />
-<p>Recall for the gamma distribution that the mean equals the shape times the scale or, 5 times the scale parameter, for our example. So, you can check that the maximum likelihood estimates are simple the average experience.</p>
-<p>For our base premium, we assume a common distribution among all states. For these simulated data, the average is <strong>P</strong>=219.96. You can think of this common premium as based on a <em>community rating</em> principle.</p>
-<p>As an alternative, we use averages that are state-specific; these averages form our scores <strong>S</strong>. Because this illustration uses means that vary by states, we anticipate this alternative rating procedure to be preferred to the community rating procedure.</p>
-<p>Out of sample claims were generated from the same gamma distribution, with 200 observations for each state. The following <code>R</code> code shows how to calculate the ordered Lorenz curve.</p>
-<h5 style="text-align: center;">
-<a id="displayGiniCode.4" href="javascript:togglecode('toggleGiniCode.4','displayGiniCode.4');"><i><strong>Show R Code</strong></i></a>
-</h5>
-<div id="toggleGiniCode.4" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">GiniCalc &lt;-<span class="st"> </span><span class="cf">function</span>(Claims,PIx,Sx){
-   y   &lt;-<span class="st"> </span>Claims<span class="op">/</span><span class="kw">mean</span>(Claims)
-   PIx &lt;-<span class="st"> </span>PIx<span class="op">/</span><span class="kw">mean</span>(PIx)
-   Sx  &lt;-<span class="st"> </span>Sx<span class="op">/</span><span class="kw">mean</span>(Sx)
-   Rx  &lt;-<span class="st"> </span>Sx<span class="op">/</span>PIx       <span class="co">#Relativity</span>
-   n   &lt;-<span class="st"> </span><span class="kw">length</span>(PIx)
-   origorder &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">:</span>n)
-   PSRmat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(PIx,Sx,Rx,y,origorder))
-   PSRmatOrder &lt;-<span class="st"> </span>PSRmat[<span class="kw">order</span>(Rx),]  <span class="co">#  Sort by relativity</span>
-<span class="co">#  PREMIUM, LOSS DFs</span>
-   DFPrem &lt;-<span class="st"> </span><span class="kw">cumsum</span>(PSRmatOrder<span class="op">$</span>PIx)<span class="op">/</span>n
-   DFLoss &lt;-<span class="st"> </span><span class="kw">cumsum</span>(PSRmatOrder<span class="op">$</span>y)<span class="op">/</span>n
-<span class="co">#  GINI CALC</span>
-   DFPremdiff &lt;-<span class="st"> </span>DFPrem[<span class="dv">2</span><span class="op">:</span>n]<span class="op">-</span>DFPrem[<span class="dv">1</span><span class="op">:</span>(n<span class="op">-</span><span class="dv">1</span>)]
-   DFPremavg  &lt;-<span class="st"> </span>(DFPrem[<span class="dv">2</span><span class="op">:</span>n]<span class="op">+</span>DFPrem[<span class="dv">1</span><span class="op">:</span>(n<span class="op">-</span><span class="dv">1</span>)])<span class="op">/</span><span class="dv">2</span>
-   DFLossavg  &lt;-<span class="st"> </span>(DFLoss[<span class="dv">2</span><span class="op">:</span>n]<span class="op">+</span>DFLoss[<span class="dv">1</span><span class="op">:</span>(n<span class="op">-</span><span class="dv">1</span>)])<span class="op">/</span><span class="dv">2</span>
-   (Gini &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span><span class="kw">crossprod</span>(DFPremdiff,DFPremavg<span class="op">-</span>DFLossavg)) 
-<span class="co">#  STANDARD ERROR CALC</span>
-   h1 &lt;-<span class="st"> </span><span class="fl">0.5</span><span class="op">*</span><span class="st"> </span>(PSRmatOrder<span class="op">$</span>PIx<span class="op">*</span>DFLoss <span class="op">+</span><span class="st"> </span>PSRmatOrder<span class="op">$</span>y<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>DFPrem) ) <span class="co">#  PROJECTION CALC</span>
-   h1bar   &lt;-<span class="st"> </span><span class="kw">mean</span>(h1) 
-   sigmah  &lt;-<span class="st"> </span><span class="kw">var</span>(h1)
-   sigmahy &lt;-<span class="st"> </span><span class="kw">cov</span>(h1,PSRmatOrder<span class="op">$</span>y)
-   sigmahpi &lt;-<span class="st"> </span><span class="kw">cov</span>(h1,PSRmatOrder<span class="op">$</span>PIx)
-   sigmay  &lt;-<span class="st"> </span><span class="kw">var</span>(y)
-   sigmapi &lt;-<span class="st"> </span><span class="kw">var</span>(PIx)
-   sigmaypi &lt;-<span class="st"> </span><span class="kw">cov</span>(PSRmatOrder<span class="op">$</span>y,PSRmatOrder<span class="op">$</span>PIx)
-   temp1=<span class="st"> </span><span class="dv">4</span><span class="op">*</span>sigmah <span class="op">+</span><span class="st"> </span>h1bar<span class="op">^</span><span class="dv">2</span><span class="op">*</span>sigmay <span class="op">+</span><span class="st"> </span>h1bar<span class="op">^</span><span class="dv">2</span><span class="op">*</span>sigmapi <span class="op">-</span>
-<span class="st">           </span><span class="dv">4</span><span class="op">*</span>h1bar<span class="op">*</span>sigmahy <span class="op">-</span><span class="st"> </span><span class="dv">4</span><span class="op">*</span>h1bar<span class="op">*</span>sigmahpi <span class="op">+</span>
-<span class="st">           </span><span class="dv">2</span><span class="op">*</span>h1bar<span class="op">^</span><span class="dv">2</span><span class="op">*</span>sigmaypi
-   sigmaGini  &lt;-<span class="st"> </span><span class="dv">4</span><span class="op">*</span>temp1
-   stderrGini &lt;-<span class="st"> </span><span class="kw">sqrt</span>(sigmaGini<span class="op">/</span>n) 
-   check &lt;-<span class="st"> </span><span class="kw">var</span>(PIx<span class="op">-</span>Sx)
-   Gini  &lt;-<span class="st"> </span>Gini<span class="op">*</span>(check <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)
-   stderrGini &lt;-<span class="st"> </span>stderrGini<span class="op">*</span>(check <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)
-   Retmat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(DFPrem,DFLoss)) 
-   RetmatGini&lt;-<span class="kw">list</span>(Retmat,Gini,stderrGini)
-     <span class="kw">return</span>(RetmatGini)
-}
-temp=<span class="kw">GiniCalc</span>(<span class="dt">Claims=</span>Outy,<span class="dt">PIx=</span>Flatpred,<span class="dt">Sx=</span>Predvec)
-Results=temp[[<span class="dv">1</span>]]
-Gini &lt;-<span class="st"> </span>temp[[<span class="dv">2</span>]];<span class="co">#Gini</span>
-stderrorGini &lt;-<span class="st"> </span>temp[[<span class="dv">3</span>]];<span class="co">#Standard Error</span></code></pre></div>
-</div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-9-1.png" width="50%" style="display: block; margin: auto;" /></p>
-<p>For these data, the Gini index is 0.187 with a standard error equal to 0.00381. This suggests that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
-<hr />
-</div>
-<div id="discussion" class="section level4 unnumbered">
-<h4>Discussion</h4>
-<p>In insurance claims modeling, standard out-of-sample validation measures are not the most informative due to the high proportions of zeros (corresponding to no claim) and the skewed fat-tailed distribution of the positive values. In contrast, the Gini index works well with many zeros (see the demonstration in <span class="citation">(Frees, Meyers, and Cummings <a href="#ref-frees2014insurance">2014</a>)</span>). Moreover, the Gini index can be motivated by the economics of insurance. Intuitively, the Gini index measures the negative covariance between a policy’s “profit” (<span class="math inline">\(P-y\)</span>, premium minus loss) and the rank of the relativity (<strong>R</strong>, score divided by premium). That is, the close approximation</p>
-<p><span class="math display">\[\widehat{Gini} \approx - \frac{2}{n} \widehat{Cov} \left\{ (P-y), rank(R) \right\} .\]</span></p>
-<p>This observation leads an insurer to seek a score and resulting relativity that produces to a large Gini index. In this way, the Gini index and associated ordered Lorenz curve are useful for identifying profitable blocks of insurance business.</p>
-<p>Unlike classical measures of association, the Gini index assumes that a premium base <strong>P</strong> is currently in place and seeks to assess vulnerabilities of this structure. This approach is more akin to hypothesis testing (when compared to goodness of fit) where one identifies a “null hypothesis” as the current state of the world and uses decision-making criteria/statistics to compare this with an “alternative hypothesis.”</p>
-<p>Properties of the insurance version of the Gini statistic were developed by <span class="citation">(Frees, Meyers, and Cummings <a href="#ref-frees2011summarizing">2011</a>)</span> and <span class="citation">(Frees, Meyers, and Cummings <a href="#ref-frees2014insurance">2014</a>)</span>. In these articles you can find formulas for the standard errors and other additional background information.</p>
-
-</div>
 </div>
 </div>
 </div>
@@ -2204,15 +2002,6 @@ stderrorGini &lt;-<span class="st"> </span>temp[[<span class="dv">3</span>]];<sp
 <div id="ref-hartman2016">
 <p>Hartman, Brian. 2016. “Bayesian Computational Methods.” <em>Predictive Modeling Applications in Actuarial Science: Volume 2, Case Studies in Insurance</em>. Cambridge University Press.</p>
 </div>
-<div id="ref-lorenz1905methods">
-<p>Lorenz, Max O. 1905. “Methods of Measuring the Concentration of Wealth.” <em>Publications of the American Statistical Association</em> 9 (70). Taylor &amp; Francis: 209–19.</p>
-</div>
-<div id="ref-frees2014insurance">
-<p>Frees, Edward W., Glenn Meyers, and A. David Cummings. 2011. “Summarizing Insurance Scores Using a Gini Index.” <em>Journal of the American Statistical Association</em> 106 (495). Taylor &amp; Francis: 1085–98.</p> 2014. “Insurance Ratemaking and a Gini Index.” <em>Journal of Risk and Insurance</em> 81 (2). Wiley Online Library: 335–66.</p>
-</div>
-<div id="ref-frees2011summarizing">
-<p>Frees, Edward W., Glenn Meyers, and A. David Cummings. 2011. “Summarizing Insurance Scores Using a Gini Index.” <em>Journal of the American Statistical Association</em> 106 (495). Taylor &amp; Francis: 1085–98.</p>
-</div>
 </div>
             </section>
 
@@ -2240,7 +2029,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2250,6 +2039,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -2267,7 +2060,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
