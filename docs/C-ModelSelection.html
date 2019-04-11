@@ -615,7 +615,7 @@ s^2 = \frac{1}{n-1} \sum_{i=1}^n \left(X_i - \bar{X}\right)^2.
 </div>
 <div id="empirical-distribution-function" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Empirical Distribution Function</h4>
-<p>We have seen how to compute nonparametric estimators of the <em>k</em>th moment <span class="math inline">\(\mathrm{E~} X^k\)</span>. In the same way, for any known function <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, we can estimate <span class="math inline">\(\mathrm{E~} \mathrm{g}(X)\)</span> using <span class="math inline">\(n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>. This is sometimes known as the <em>analog principle</em>.</p>
+<p>We have seen how to compute nonparametric estimators of the <em>k</em>th moment <span class="math inline">\(\mathrm{E~} X^k\)</span>. In the same way, for any known function <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, we can estimate <span class="math inline">\(\mathrm{E~} \mathrm{g}(X)\)</span> using <span class="math inline">\(n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>.</p>
 <p>Now suppose that we fix a value of <em>x</em> and consider the function <span class="math inline">\(\mathrm{g}(X) = I(X \le x)\)</span>. Here, the notation <span class="math inline">\(I(\cdot)\)</span> is the indicator function; it returns 1 if the event <span class="math inline">\((\cdot)\)</span> is true and 0 otherwise. For this choice of <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, the expected value is <span class="math inline">\(\mathrm{E~} I(X \le x) = \Pr(X \le x) = F(x)\)</span>, the distribution function evaluated at a fixed point <em>x</em>. Using the analog principle, we define the nonparametric estimator of the distribution function</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -840,6 +840,33 @@ X_i &amp; \frac{x-X_i}{b} &amp; w\left(\frac{x-X_i}{b} \right) \\
 </div>
 <hr />
 </div>
+<div id="plug-in-principle" class="section level4">
+<h4><span class="header-section-number">4.1.1.5</span> Plug-in Principle</h4>
+<p>One way to create a nonparametric estimator is to use the <em>analog</em> or <em>plug-in principle</em> where one replaces the unknown <em>cdf</em> <span class="math inline">\(F\)</span> with a known estimate such as the empirical <em>cdf</em> <span class="math inline">\(F_n\)</span>. So, if we are trying to estimate <span class="math inline">\(\mathrm{E}~\mathrm{g}(X)=\mathrm{E}_F~\mathrm{g}(X)\)</span> for a generic function <em>g</em>, then we define a nonparametric estimator to be <span class="math inline">\(\mathrm{E}_{F_n}~\mathrm{g}(X)=n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>.</p>
+<p>To see how this works, as a special case of <em>g</em> we consider the <em>loss elimination ratio</em> introduced in Section 3.4.1, <span class="math display">\[
+LER(d) = \frac{\mathrm{E~}(\min(X,d) )}{\mathrm{E~}(X)}
+\]</span> for a fixed deductible <span class="math inline">\(d\)</span>.</p>
+<p><strong>Example. 4.1.11. Bodily Injury Claims and Loss Elimination Ratios</strong></p>
+<p>We use a sample of 432 closed auto claims from Boston from <span class="citation">Derrig, Ostaszewski, and Rempala (<a href="#ref-derrig2001applications">2001</a>)</span>. Losses are recorded for payments due to bodily injuries in auto accidents. Losses are not subject to deductibles but are subject to various policy limits also available in the data. It turns out that only 17 out of 432 (<span class="math inline">\(\approx\)</span> 4%) were subject to policy limit and so we ignore these data for this illustration.</p>
+<p>The average loss paid is 6906. Figure <a href="C-ModelSelection.html#fig:BIClaims">4.5</a> shows other aspects of the distribution. Specifically, the left-hand panel shows the empirical distribution function, the right-hand panel gives a nonparametric density plot.</p>
+<div class="figure" style="text-align: center"><span id="fig:BIClaims"></span>
+<img src="LossDataAnalytics_files/figure-html/BIClaims-1.png" alt="Bodily Injury Claims. The left-hand panel gives the empirical distribution function. The right-hand panel presents a nonparametric density plot." width="672" />
+<p class="caption">
+Figure 4.5: Bodily Injury Claims. The left-hand panel gives the empirical distribution function. The right-hand panel presents a nonparametric density plot.
+</p>
+</div>
+<p>The impact of bodily injury losses can be mitigated by the imposition of limits or purchasing reinsurance policies (see Section 10.3). To quantify the impact of these risk mitigation tools, it is common to compute the <em>loss elimination ratio (LER)</em> as introduced in Section 3.4.1. The distribution function is not available and so much be estimated in some way. Using the plug-in principle, a nonparametric estimator can be defined as</p>
+<p><span class="math display">\[
+LER_n(d) = \frac{n^{-1} \sum_{i=1}^n \min(X_i,d)}{n^{-1} \sum_{i=1}^n X_i} = \frac{\sum_{i=1}^n \min(X_i,d)}{\sum_{i=1}^n X_i} .
+\]</span></p>
+<p>Figure <a href="C-ModelSelection.html#fig:BIClaims">4.5</a> shows the estimator <span class="math inline">\(LER_n(d)\)</span> for various choices of <em>d</em>. For example, if <span class="math inline">\(d=14,000\)</span>, then it turns out that <span class="math inline">\(LER_n(14000) \approx\)</span> 0.9768. Imposing a limit of 14,000 means that we expect to retain 97.68 percent of claims.</p>
+<div class="figure" style="text-align: center"><span id="fig:LER"></span>
+<img src="LossDataAnalytics_files/figure-html/LER-1.png" alt="LER for Bodily Injury Claims. The figure presents the loss elimination ratio (LER) as a function of deductible d." width="672" />
+<p class="caption">
+Figure 4.6: LER for Bodily Injury Claims. The figure presents the loss elimination ratio (LER) as a function of deductible d.
+</p>
+</div>
+</div>
 </div>
 <div id="S:MS:ToolsModelSelection" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Tools for Model Selection and Diagnostics</h3>
@@ -847,31 +874,31 @@ X_i &amp; \frac{x-X_i}{b} &amp; w\left(\frac{x-X_i}{b} \right) \\
 <p>Nonparametric tools can be used to corroborate the selection of parametric models. Essentially, the approach is to compute selected summary measures under a fitted parametric model and to compare it to the corresponding quantity under the nonparametric model. As the nonparametric does not assume a specific distribution and is merely a function of the data, it is used as a benchmark to assess how well the parametric distribution/model represents the data. This comparison may alert the analyst to deficiencies in the parametric model and sometimes point ways to improving the parametric specification. Procedures geared towards assessing the validity of a model are known as <strong>model diagnostics</strong>.</p>
 <div id="S:MS:GraphComparison" class="section level4">
 <h4><span class="header-section-number">4.1.2.1</span> Graphical Comparison of Distributions</h4>
-<p>We have already seen the technique of overlaying graphs for comparison purposes. To reinforce the application of this technique, Figure <a href="C-ModelSelection.html#fig:ComparisonCDFPDF">4.5</a> compares the empirical distribution to two parametric fitted distributions. The left panel shows the distribution functions of claims distributions. The dots forming an “S-shaped” curve represent the empirical distribution function at each observation. The thick blue curve gives corresponding values for the fitted gamma distribution and the light purple is for the fitted Pareto distribution. Because the Pareto is much closer to the empirical distribution function than the gamma, this provides evidence that the Pareto is the better model for this data set. The right panel gives similar information for the density function and provides a consistent message. Based (only) on these figures, the Pareto distribution is the clear choice for the analyst.</p>
+<p>We have already seen the technique of overlaying graphs for comparison purposes. To reinforce the application of this technique, Figure <a href="C-ModelSelection.html#fig:ComparisonCDFPDF">4.7</a> compares the empirical distribution to two parametric fitted distributions. The left panel shows the distribution functions of claims distributions. The dots forming an “S-shaped” curve represent the empirical distribution function at each observation. The thick blue curve gives corresponding values for the fitted gamma distribution and the light purple is for the fitted Pareto distribution. Because the Pareto is much closer to the empirical distribution function than the gamma, this provides evidence that the Pareto is the better model for this data set. The right panel gives similar information for the density function and provides a consistent message. Based (only) on these figures, the Pareto distribution is the clear choice for the analyst.</p>
 <div class="figure" style="text-align: center"><span id="fig:ComparisonCDFPDF"></span>
 <img src="LossDataAnalytics_files/figure-html/ComparisonCDFPDF-1.png" alt="Nonparametric Versus Fitted Parametric Distribution and Density Functions. The left-hand panel compares distribution functions, with the dots corresponding to the empirical distribution, the thick blue curve corresponding to the fitted gamma and the light purple curve corresponding to the fitted Pareto. The right hand panel compares these three distributions summarized using probability density functions." width="80%" />
 <p class="caption">
-Figure 4.5: Nonparametric Versus Fitted Parametric Distribution and Density Functions. The left-hand panel compares distribution functions, with the dots corresponding to the empirical distribution, the thick blue curve corresponding to the fitted gamma and the light purple curve corresponding to the fitted Pareto. The right hand panel compares these three distributions summarized using probability density functions.
+Figure 4.7: Nonparametric Versus Fitted Parametric Distribution and Density Functions. The left-hand panel compares distribution functions, with the dots corresponding to the empirical distribution, the thick blue curve corresponding to the fitted gamma and the light purple curve corresponding to the fitted Pareto. The right hand panel compares these three distributions summarized using probability density functions.
 </p>
 </div>
-<p>For another way to compare the appropriateness of two fitted models, consider the <strong>probability-probability (<span class="math inline">\(pp\)</span>) plot</strong>. A <span class="math inline">\(pp\)</span> plot compares cumulative probabilities under two models. For our purposes, these two models are the nonparametric empirical distribution function and the parametric fitted model. Figure <a href="C-ModelSelection.html#fig:PPPlot">4.6</a> shows <span class="math inline">\(pp\)</span> plots for the Property Fund data. The fitted gamma is on the left and the fitted Pareto is on the right, compared to the same empirical distribution function of the data. The straight line represents equality between the two distributions being compared, so points close to the line are desirable. As seen in earlier demonstrations, the Pareto is much closer to the empirical distribution than the gamma, providing additional evidence that the Pareto is the better model.</p>
+<p>For another way to compare the appropriateness of two fitted models, consider the <strong>probability-probability (<span class="math inline">\(pp\)</span>) plot</strong>. A <span class="math inline">\(pp\)</span> plot compares cumulative probabilities under two models. For our purposes, these two models are the nonparametric empirical distribution function and the parametric fitted model. Figure <a href="C-ModelSelection.html#fig:PPPlot">4.8</a> shows <span class="math inline">\(pp\)</span> plots for the Property Fund data. The fitted gamma is on the left and the fitted Pareto is on the right, compared to the same empirical distribution function of the data. The straight line represents equality between the two distributions being compared, so points close to the line are desirable. As seen in earlier demonstrations, the Pareto is much closer to the empirical distribution than the gamma, providing additional evidence that the Pareto is the better model.</p>
 <div class="figure" style="text-align: center"><span id="fig:PPPlot"></span>
 <img src="LossDataAnalytics_files/figure-html/PPPlot-1.png" alt="Probability-Probability ($pp$) Plots. The horizontal axes gives the empirical distribution function at each observation. In the left-hand panel, the corresponding distribution function for the gamma is shown in the vertical axis. The right-hand panel shows the fitted Pareto distribution. Lines of $y=x$ are superimposed." width="80%" />
 <p class="caption">
-Figure 4.6: Probability-Probability (<span class="math inline">\(pp\)</span>) Plots. The horizontal axes gives the empirical distribution function at each observation. In the left-hand panel, the corresponding distribution function for the gamma is shown in the vertical axis. The right-hand panel shows the fitted Pareto distribution. Lines of <span class="math inline">\(y=x\)</span> are superimposed.
+Figure 4.8: Probability-Probability (<span class="math inline">\(pp\)</span>) Plots. The horizontal axes gives the empirical distribution function at each observation. In the left-hand panel, the corresponding distribution function for the gamma is shown in the vertical axis. The right-hand panel shows the fitted Pareto distribution. Lines of <span class="math inline">\(y=x\)</span> are superimposed.
 </p>
 </div>
-<p>A <span class="math inline">\(pp\)</span> plot is useful in part because no artificial scaling is required, such as with the overlaying of densities in Figure <a href="C-ModelSelection.html#fig:ComparisonCDFPDF">4.5</a>, in which we switched to the log scale to better visualize the data. The Chapter 4 <em>Technical Supplement A.1</em> introduces a variation of the <span class="math inline">\(pp\)</span> plot known as a <em>Lorenz curve</em>; this is an important tool for assessing income inequality. Furthermore, <span class="math inline">\(pp\)</span> plots are available in multivariate settings where more than one outcome variable is available. However, a limitation of the <span class="math inline">\(pp\)</span> plot is that, because it is a plot <em>cumulative</em> distribution functions, it can sometimes be difficult to detect <em>where</em> a fitted parametric distribution is deficient. As an alternative, it is common to use a <strong>quantile-quantile (<span class="math inline">\(qq\)</span>) plot</strong>, as demonstrated in Figure <a href="C-ModelSelection.html#fig:QQPlot">4.7</a>.</p>
-<p>The <span class="math inline">\(qq\)</span> plot compares two fitted models through their quantiles. As with <span class="math inline">\(pp\)</span> plots, we compare the nonparametric to a parametric fitted model. Quantiles may be evaluated at each point of the data set, or on a grid (e.g., at <span class="math inline">\(0, 0.001, 0.002, \ldots, 0.999, 1.000\)</span>), depending on the application. In Figure <a href="C-ModelSelection.html#fig:QQPlot">4.7</a>, for each point on the aforementioned grid, the horizontal axis displays the empirical quantile and the vertical axis displays the corresponding fitted parametric quantile (gamma for the upper two panels, Pareto for the lower two). Quantiles are plotted on the original scale in the left panels and on the log scale in the right panels to allow us to see where a fitted distribution is deficient. The straight line represents equality between the empirical distribution and fitted distribution. From these plots, we again see that the Pareto is an overall better fit than the gamma. Furthermore, the lower-right panel suggests that the Pareto distribution does a good job with large observations, but provides a poorer fit for small observations.</p>
+<p>A <span class="math inline">\(pp\)</span> plot is useful in part because no artificial scaling is required, such as with the overlaying of densities in Figure <a href="C-ModelSelection.html#fig:ComparisonCDFPDF">4.7</a>, in which we switched to the log scale to better visualize the data. The Chapter 4 <em>Technical Supplement A.1</em> introduces a variation of the <span class="math inline">\(pp\)</span> plot known as a <em>Lorenz curve</em>; this is an important tool for assessing income inequality. Furthermore, <span class="math inline">\(pp\)</span> plots are available in multivariate settings where more than one outcome variable is available. However, a limitation of the <span class="math inline">\(pp\)</span> plot is that, because it is a plot <em>cumulative</em> distribution functions, it can sometimes be difficult to detect <em>where</em> a fitted parametric distribution is deficient. As an alternative, it is common to use a <strong>quantile-quantile (<span class="math inline">\(qq\)</span>) plot</strong>, as demonstrated in Figure <a href="C-ModelSelection.html#fig:QQPlot">4.9</a>.</p>
+<p>The <span class="math inline">\(qq\)</span> plot compares two fitted models through their quantiles. As with <span class="math inline">\(pp\)</span> plots, we compare the nonparametric to a parametric fitted model. Quantiles may be evaluated at each point of the data set, or on a grid (e.g., at <span class="math inline">\(0, 0.001, 0.002, \ldots, 0.999, 1.000\)</span>), depending on the application. In Figure <a href="C-ModelSelection.html#fig:QQPlot">4.9</a>, for each point on the aforementioned grid, the horizontal axis displays the empirical quantile and the vertical axis displays the corresponding fitted parametric quantile (gamma for the upper two panels, Pareto for the lower two). Quantiles are plotted on the original scale in the left panels and on the log scale in the right panels to allow us to see where a fitted distribution is deficient. The straight line represents equality between the empirical distribution and fitted distribution. From these plots, we again see that the Pareto is an overall better fit than the gamma. Furthermore, the lower-right panel suggests that the Pareto distribution does a good job with large observations, but provides a poorer fit for small observations.</p>
 <div class="figure" style="text-align: center"><span id="fig:QQPlot"></span>
 <img src="LossDataAnalytics_files/figure-html/QQPlot-1.png" alt="Quantile-Quantile ($qq$) Plots. The horizontal axes gives the empirical quantiles at each observation. The right-hand panels they are graphed on a logarithmic basis. The vertical axis gives the quantiles from the fitted distributions; gamma quantiles are in the upper panels, Pareto quantiles are in the lower panels." width="80%" />
 <p class="caption">
-Figure 4.7: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. The horizontal axes gives the empirical quantiles at each observation. The right-hand panels they are graphed on a logarithmic basis. The vertical axis gives the quantiles from the fitted distributions; gamma quantiles are in the upper panels, Pareto quantiles are in the lower panels.
+Figure 4.9: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. The horizontal axes gives the empirical quantiles at each observation. The right-hand panels they are graphed on a logarithmic basis. The vertical axis gives the quantiles from the fitted distributions; gamma quantiles are in the upper panels, Pareto quantiles are in the lower panels.
 </p>
 </div>
 <hr />
 <p><strong>Example 4.1.6. Actuarial Exam Question.</strong> The graph below shows a <span class="math inline">\(pp\)</span> plot of a fitted distribution compared to a sample.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-5-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-7-1.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>Comment on the two distributions with respect to left tail, right tail, and median probabilities.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleSelect.1.6" href="javascript:toggleEX('toggleExampleSelect.1.6','displayTextExampleSelect.1.6');"><i><strong>Show Example Solution</strong></i></a>
@@ -1035,11 +1062,11 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 </ul>
 <div id="iterative-model-selection" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Iterative Model Selection</h3>
-<p>In our development, we examine the data graphically, hypothesize a model structure, and compare the data to a candidate model in order to formulate an improved model. <span class="citation">Box (<a href="#ref-box1980sampling">1980</a>)</span> describes this as an <em>iterative process</em> which is shown in Figure <a href="C-ModelSelection.html#fig:Iterative">4.8</a>.</p>
+<p>In our development, we examine the data graphically, hypothesize a model structure, and compare the data to a candidate model in order to formulate an improved model. <span class="citation">Box (<a href="#ref-box1980sampling">1980</a>)</span> describes this as an <em>iterative process</em> which is shown in Figure <a href="C-ModelSelection.html#fig:Iterative">4.10</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Iterative"></span>
 <img src="Figures/F5Iterative.png" alt="The iterative model specification process." width="80%" />
 <p class="caption">
-Figure 4.8: The iterative model specification process.
+Figure 4.10: The iterative model specification process.
 </p>
 </div>
 <p>This iterative process provides a useful recipe for structuring the task of specifying a model to represent a set of data.</p>
@@ -1065,11 +1092,11 @@ Figure 4.8: The iterative model specification process.
 <p><strong>Model validation</strong> is the process of confirming that the proposed model is appropriate, especially in light of the purposes of the investigation. An important limitation of the model selection process based only on insample data is that it can be susceptible to <em>data-snooping</em>, that is, fitting a great number of models to a single set of data. By looking at a large number of models, we may overfit the data and understate the natural variation in our representation.</p>
 <p>Selecting a model based only on insample data also does not support the goal of <strong>predictive inference</strong>. Particularly in actuarial applications, our goal is to make statements about <em>new</em> experience rather than a dataset at hand. For example, we use claims experience from one year to develop a model that can be used to price insurance contracts for the following year. As an analogy, we can think about the training data set as experience from one year that is used to predict the behavior of the next year’s test data set.</p>
 <p>We can respond to these criticisms by using a technique sometimes known as <strong>out-of-sample validation</strong>. The ideal situation is to have available two sets of data, one for training, or model development, and one for testing, or model validation. We initially develop one or several models on the first data set that we call our <em>candidate</em> models. Then, the relative performance of the candidate models can be measured on the second set of data. In this way, the data used to validate the model is unaffected by the procedures used to formulate the model.</p>
-<p><strong>Random Split of the Data.</strong> Unfortunately, rarely will two sets of data be available to the investigator. However, we can implement the validation process by splitting the data set into <strong>training</strong> and <strong>test</strong> subsamples, respectively. Figure <a href="C-ModelSelection.html#fig:ModelValidation">4.9</a> illustrates this splitting of the data.</p>
+<p><strong>Random Split of the Data.</strong> Unfortunately, rarely will two sets of data be available to the investigator. However, we can implement the validation process by splitting the data set into <strong>training</strong> and <strong>test</strong> subsamples, respectively. Figure <a href="C-ModelSelection.html#fig:ModelValidation">4.11</a> illustrates this splitting of the data.</p>
 <div class="figure" style="text-align: center"><span id="fig:ModelValidation"></span>
 <img src="LossDataAnalytics_files/figure-html/ModelValidation-1.png" alt="Model Validation. A data set is randomly split into two subsamples." width="60%" />
 <p class="caption">
-Figure 4.9: Model Validation. A data set is randomly split into two subsamples.
+Figure 4.11: Model Validation. A data set is randomly split into two subsamples.
 </p>
 </div>
 <p>Various researchers recommend different proportions for the allocation. <span class="citation">Snee (<a href="#ref-snee1977validation">1977</a>)</span> suggests that data-splitting not be done unless the sample size is moderately large. The guidelines of <span class="citation">Picard and Berk (<a href="#ref-picard1990data">1990</a>)</span> show that the greater the number of parameters to be estimated, the greater the proportion of observations needed for the model development subsample.</p>
@@ -1209,11 +1236,11 @@ X &amp; X \leq C_U \\
 \right.\end{aligned}
 \]</span></p>
 <p>Classic examples of truncation from the right include <span class="math inline">\(X\)</span> as a measure of distance to a star. When the distance exceeds a certain level <span class="math inline">\(C_U\)</span>, the star is no longer observable.</p>
-<p>Figure <a href="C-ModelSelection.html#fig:CensorTrunc">4.10</a> compares truncated and censored observations. Values of <span class="math inline">\(X\)</span> that are greater than the “upper” censoring limit <span class="math inline">\(C_U\)</span> are not observed at all (right-censored), while values of <span class="math inline">\(X\)</span> that are smaller than the “lower” truncation limit <span class="math inline">\(C_L\)</span> are observed, but observed as <span class="math inline">\(C_L\)</span> rather than the actual value of <span class="math inline">\(X\)</span> (left-truncated).</p>
+<p>Figure <a href="C-ModelSelection.html#fig:CensorTrunc">4.12</a> compares truncated and censored observations. Values of <span class="math inline">\(X\)</span> that are greater than the “upper” censoring limit <span class="math inline">\(C_U\)</span> are not observed at all (right-censored), while values of <span class="math inline">\(X\)</span> that are smaller than the “lower” truncation limit <span class="math inline">\(C_L\)</span> are observed, but observed as <span class="math inline">\(C_L\)</span> rather than the actual value of <span class="math inline">\(X\)</span> (left-truncated).</p>
 <div class="figure" style="text-align: center"><span id="fig:CensorTrunc"></span>
 <img src="LossDataAnalytics_files/figure-html/CensorTrunc-1.png" alt="Censoring and Truncation" width="60%" />
 <p class="caption">
-Figure 4.10: Censoring and Truncation
+Figure 4.12: Censoring and Truncation
 </p>
 </div>
 <hr />
@@ -1221,11 +1248,11 @@ Figure 4.10: Censoring and Truncation
 <a id="displayTextExampleMort.4f" href="javascript:toggleEX('toggleExampleMort','displayTextExampleMort.4f');"><i><strong>Show Mortality Study Example </strong></i></a>
 </h5>
 <div id="toggleExampleMort" style="display: none">
-<p><strong>Example – Mortality Study.</strong> Suppose that you are conducting a two-year study of mortality of high-risk subjects, beginning January 1, 2010 and finishing January 1, 2012. Figure <a href="C-ModelSelection.html#fig:Mortality">4.11</a> graphically portrays the six types of subjects recruited. For each subject, the beginning of the arrow represents that the the subject was recruited and the arrow end represents the event time. Thus, the arrow represents exposure time.</p>
+<p><strong>Example – Mortality Study.</strong> Suppose that you are conducting a two-year study of mortality of high-risk subjects, beginning January 1, 2010 and finishing January 1, 2012. Figure <a href="C-ModelSelection.html#fig:Mortality">4.13</a> graphically portrays the six types of subjects recruited. For each subject, the beginning of the arrow represents that the the subject was recruited and the arrow end represents the event time. Thus, the arrow represents exposure time.</p>
 <div class="figure" style="text-align: center"><span id="fig:Mortality"></span>
 <img src="LossDataAnalytics_files/figure-html/Mortality-1.png" alt="Timeline for Several Subjects on Test in a Mortality Study" width="60%" />
 <p class="caption">
-Figure 4.11: Timeline for Several Subjects on Test in a Mortality Study
+Figure 4.13: Timeline for Several Subjects on Test in a Mortality Study
 </p>
 </div>
 <ul>
@@ -1978,6 +2005,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </div>
 <h3>Bibliography</h3>
 <div id="refs" class="references">
+<div id="ref-derrig2001applications">
+<p>Derrig, Richard A, Krzysztof M Ostaszewski, and Grzegorz A Rempala. 2001. “Applications of Resampling Methods in Actuarial Practice.” In <em>Proceedings of the Casualty Actuarial Society</em>, 87:322–64. Casualty Actuarial Society.</p>
+</div>
 <div id="ref-box1980sampling">
 <p>Box, George EP. 1980. “Sampling and Bayes’ Inference in Scientific Modelling and Robustness.” <em>Journal of the Royal Statistical Society. Series A (General)</em>. JSTOR, 383–430.</p>
 </div>
