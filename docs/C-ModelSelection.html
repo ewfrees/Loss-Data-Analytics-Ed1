@@ -1505,6 +1505,23 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 \]</span></p>
 </div>
 <hr />
+<p><strong>Example. 4.3.6. Bodily Injury Claims.</strong> We consider again the Boston auto bodily injury claims data from <span class="citation">Derrig, Ostaszewski, and Rempala (<a href="#ref-derrig2001applications">2001</a>)</span> that was introduced in Example 4.1.11. In that example, we omitted the 17 claims that were censored by policy limits. Now, we include the full dataset and use the Kaplan-Meier product limit to estimate the survival function. This is given in Figure <a href="C-ModelSelection.html#fig:KMSurvival">4.14</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:KMSurvival"></span>
+<img src="LossDataAnalytics_files/figure-html/KMSurvival-1.png" alt="Kaplan-Meier Estimate of the Survival Function for Bodily Injury Claims" width="672" />
+<p class="caption">
+Figure 4.14: Kaplan-Meier Estimate of the Survival Function for Bodily Injury Claims
+</p>
+</div>
+<h5 style="text-align: center;">
+<a id="displayTextKaplanMeier.4f" href="javascript:togglecode('toggleKaplanMeier','displayTextKaplanMeier.4f');"><i><strong>Show R Code</strong></i></a>
+</h5>
+<div id="toggleKaplanMeier" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(survival)                <span class="co"># for Surv(), survfit()</span>
+## KM estimate
+KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)
+<span class="kw">plot</span>(KM0, <span class="dt">conf.int=</span><span class="ot">FALSE</span>, <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Kaplan Meier Survival&quot;</span>)</code></pre></div>
+</div>
+<hr />
 </div>
 <div id="right-censored-left-truncated-empirical-distribution-function" class="section level4">
 <h4><span class="header-section-number">4.3.2.3</span> Right-Censored, Left-Truncated Empirical Distribution Function</h4>
@@ -1526,7 +1543,7 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 \]</span></p>
 <p>Note that the above expression is a result of the Nelson-Äalen estimator of the cumulative hazard function <span class="math display">\[\hat{H}(x)=\sum_{j:t_j\leq x}  \frac{s_j}{R_j} \]</span> and the relationship between the survival function and cumulative hazard function, <span class="math inline">\(\hat{S}_{NA}(x)=e^{-\hat{H}(x)}\)</span>.</p>
 <hr />
-<p><strong>Example 4.3.6. Actuarial Exam Question.</strong></p>
+<p><strong>Example 4.3.7. Actuarial Exam Question.</strong></p>
 <p>For observation <span class="math inline">\(i\)</span> of a survival study:</p>
 <ul>
 <li><span class="math inline">\(d_i\)</span> is the left truncation point</li>
@@ -1567,7 +1584,7 @@ j &amp; t_j &amp; s_j &amp; R_j &amp; \hat{S}(t_j) \\
 <p>The Kaplan-Meier estimate is therefore <span class="math inline">\(\hat{S}(1.6) = \frac{5}{7}\)</span>.</p>
 </div>
 <hr />
-<p><strong>Example 4.3.7. Actuarial Exam Question. - Continued.</strong></p>
+<p><strong>Example 4.3.8. Actuarial Exam Question. - Continued.</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li>Using the Nelson-Äalen estimator, calculate the probability that the loss on a policy exceeds 11, <span class="math inline">\(\hat{S}_{NA}(11)\)</span>.</li>
 <li>Calculate Greenwood’s approximation to the variance of the product-limit estimate <span class="math inline">\(\hat{S}(11)\)</span>.</li>

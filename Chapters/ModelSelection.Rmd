@@ -1454,6 +1454,34 @@ $$
 
 ***
 
+**Example. `r chapnum`.3.6. Bodily Injury Claims.** We consider again the Boston auto bodily injury claims data from @derrig2001applications that was introduced in Example `r chapnum`.1.11. In that example, we omitted the `r sum(BIData$Censored)` claims that were censored by policy limits. Now, we include the full dataset and use the Kaplan-Meier product limit to estimate the survival function. This is given in Figure \@ref(fig:KMSurvival).
+
+
+```{r KMSurvival, fig.cap='Kaplan-Meier Estimate of the Survival Function for Bodily Injury Claims', fig.align='center', echo = FALSE}
+library(survival)                # for Surv(), survfit()
+#BIData <- read.csv("Data/DerrigResampling.csv", header =T)
+#BIData$Censored <- 1*(BIData$AmountPaid >= BIData$PolicyLimit)
+BIData$UnCensored <- 1*(BIData$AmountPaid < BIData$PolicyLimit)
+## KM estimate
+KM0 <- survfit(Surv(AmountPaid, UnCensored) ~ 1,  type="kaplan-meier", data=BIData)
+plot(KM0, conf.int=FALSE, xlab="x",ylab="Kaplan Meier Survival")
+```
+
+<h5 style="text-align: center;"><a id="displayTextKaplanMeier.4f" href="javascript:togglecode('toggleKaplanMeier','displayTextKaplanMeier.4f');"><i><strong>Show R Code</strong></i></a> </h5>
+<div id="toggleKaplanMeier" style="display: none">
+
+```{r eval = FALSE}
+library(survival)                # for Surv(), survfit()
+## KM estimate
+KM0 <- survfit(Surv(AmountPaid, UnCensored) ~ 1,  type="kaplan-meier", data=BIData)
+plot(KM0, conf.int=FALSE, xlab="x",ylab="Kaplan Meier Survival")
+
+```
+
+</div>
+
+***
+
 
 #### Right-Censored, Left-Truncated Empirical Distribution Function
 
@@ -1486,7 +1514,7 @@ and the relationship between the survival function and cumulative hazard functio
 
 ***
 
-**Example `r chapnum`.3.6. Actuarial Exam Question.** 
+**Example `r chapnum`.3.7. Actuarial Exam Question.** 
 
 For observation $i$ of a survival study:
 
@@ -1539,7 +1567,7 @@ The Kaplan-Meier estimate is therefore $\hat{S}(1.6) = \frac{5}{7}$.
 
 ***
 
-**Example `r chapnum`.3.7. Actuarial Exam Question. - Continued.** 
+**Example `r chapnum`.3.8. Actuarial Exam Question. - Continued.** 
 
 
 a) Using the Nelson-&Auml;alen estimator, calculate the probability that the loss on a policy exceeds 11, $\hat{S}_{NA}(11)$.
