@@ -1,0 +1,22 @@
+
+```{r echo = FALSE}
+Gloss_data <- read.csv("References/GlossFct.csv", header = TRUE) 
+
+A1 <- '<a href="#" class="tooltip" style="color:green"> *'
+A2 <- '* <span style="font-size:8pt">'
+A3 <- '</span></a>'
+
+Glossfunction <- function(term){
+  temp2 <- which(Gloss_data == term, arr.ind = TRUE)
+  return(Gloss_data[temp2[[1]],2])
+}
+
+Gloss <- function(term){
+  return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
+}
+
+GlossNo <- function(term){
+  return(term)
+}
+
+```
