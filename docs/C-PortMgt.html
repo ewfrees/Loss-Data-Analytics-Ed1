@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Loss Data Analytics</title>
-  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics</title>
+  <meta name="description" content="Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Loss Data Analytics" />
+  <meta property="og:title" content="Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
+  <meta property="og:description" content="Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Loss Data Analytics" />
+  <meta name="twitter:title" content="Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
 <meta name="author" content="An open text authored by the Actuarial Community">
@@ -35,6 +35,7 @@
 <link rel="next" href="C-LossReserves.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -289,8 +290,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:mixture-distributions"><i class="fa fa-check"></i><b>2.6</b> Mixture Distributions</a></li>
 <li class="chapter" data-level="2.7" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:goodness-of-fit"><i class="fa fa-check"></i><b>2.7</b> Goodness of Fit</a></li>
 <li class="chapter" data-level="2.8" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:exercises"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
-<li class="chapter" data-level="2.9" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#Freq-further-reading-and-resources"><i class="fa fa-check"></i><b>2.9</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="2.10" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:rcode"><i class="fa fa-check"></i><b>2.10</b> Technical Supplement 2.A. R Code for Plots</a></li>
+<li class="chapter" data-level="2.9" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#Freq-further-reading-and-resources"><i class="fa fa-check"></i><b>2.9</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:rcode"><i class="fa fa-check"></i><b>2.9.1</b> TS 2.A. R Code for Plots</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="C-Severity.html"><a href="C-Severity.html"><i class="fa fa-check"></i><b>3</b> Modeling Loss Severity</a><ul>
 <li class="chapter" data-level="3.1" data-path="C-Severity.html"><a href="C-Severity.html#S:BasicQuantities"><i class="fa fa-check"></i><b>3.1</b> Basic Distributional Quantities</a><ul>
@@ -368,8 +370,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:MS:DedImpactClmFreq"><i class="fa fa-check"></i><b>5.5.2</b> Impact of Deductibles on Claim Frequency</a></li>
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#technical-supplement-5.a.-aggregate-loss-models"><i class="fa fa-check"></i>Technical Supplement 5.A. Aggregate Loss Models</a><ul>
+<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a><ul>
 <li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
 <li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
 <li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
@@ -399,7 +400,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.5.2" data-path="C-Simulation.html"><a href="C-Simulation.html#gibbs-sampler"><i class="fa fa-check"></i><b>6.5.2</b> Gibbs sampler</a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="C-Simulation.html"><a href="C-Simulation.html#Simulation:further-reading-and-resources"><i class="fa fa-check"></i><b>6.6</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="6.7" data-path="C-Simulation.html"><a href="C-Simulation.html#technical-supplement-6.a.-applications-of-bootstrap-in-predictive-modeling"><i class="fa fa-check"></i><b>6.7</b> Technical Supplement 6.A. Applications of Bootstrap in Predictive Modeling</a></li>
+<li class="chapter" data-level="6.7" data-path="C-Simulation.html"><a href="C-Simulation.html#ts-6.a.-applications-of-bootstrap-in-predictive-modeling"><i class="fa fa-check"></i><b>6.7</b> TS 6.A. Applications of Bootstrap in Predictive Modeling</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html"><i class="fa fa-check"></i><b>7</b> Premium Foundations</a><ul>
 <li class="chapter" data-level="7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:IntroductionRatemaking"><i class="fa fa-check"></i><b>7.1</b> Introduction to Ratemaking</a></li>
@@ -423,10 +424,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:Other"><i class="fa fa-check"></i><b>7.7</b> Other Topics?</a></li>
-<li class="chapter" data-level="7.8" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.8</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="7.9" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.9</b> Technical Supplement 7.A. Rate Regulation</a></li>
-<li class="chapter" data-level="7.10" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:SelectingRateFactors"><i class="fa fa-check"></i><b>7.10</b> Technical Supplement 7.B. Selecting Rating Factors</a></li>
-<li class="chapter" data-level="7.11" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:AdverseSelection"><i class="fa fa-check"></i><b>7.11</b> Technical Supplement 7.C. Adverse Selection</a></li>
+<li class="chapter" data-level="7.8" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.8</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.8.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="7.8.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:SelectingRateFactors"><i class="fa fa-check"></i><b>7.8.2</b> TS 7.B. Selecting Rating Factors</a></li>
+<li class="chapter" data-level="7.8.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:AdverseSelection"><i class="fa fa-check"></i><b>7.8.3</b> TS 7.C. Adverse Selection</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
 <li class="chapter" data-level="8.1" data-path="C-RiskClass.html"><a href="C-RiskClass.html#S:RC:Introduction"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
@@ -442,8 +444,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.3.3" data-path="C-RiskClass.html"><a href="C-RiskClass.html#poisson-regression-for-multiplicative-tariff"><i class="fa fa-check"></i><b>8.3.3</b> Poisson Regression for Multiplicative Tariff</a></li>
 <li class="chapter" data-level="8.3.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#numerical-examples"><i class="fa fa-check"></i><b>8.3.4</b> Numerical Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#technical-supplement-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>Technical Supplement 8.A – Estimating Poisson Regression Models</a></li>
+<li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>TS 8.A – Estimating Poisson Regression Models</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="C-Credibility.html"><a href="C-Credibility.html"><i class="fa fa-check"></i><b>9</b> Experience Rating Using Credibility Theory</a><ul>
 <li class="chapter" data-level="9.1" data-path="C-Credibility.html"><a href="C-Credibility.html#introduction-to-applications-of-credibility-theory"><i class="fa fa-check"></i><b>9.1</b> Introduction to Applications of Credibility Theory</a></li>
@@ -471,22 +474,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.7" data-path="C-Credibility.html"><a href="C-Credibility.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="C-PortMgt.html"><a href="C-PortMgt.html"><i class="fa fa-check"></i><b>10</b> Insurance Portfolio Management including Reinsurance</a><ul>
-<li class="chapter" data-level="" data-path="C-PortMgt.html"><a href="C-PortMgt.html#overview"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="10.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Tails"><i class="fa fa-check"></i><b>10.1</b> Tails of Distributions</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#classification-based-on-moments"><i class="fa fa-check"></i><b>10.1.1</b> Classification Based on Moments</a></li>
-<li class="chapter" data-level="10.1.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#comparison-based-on-limiting-tail-behavior"><i class="fa fa-check"></i><b>10.1.2</b> Comparison Based on Limiting Tail Behavior</a></li>
+<li class="chapter" data-level="10.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#introduction-to-insurance-portfolios"><i class="fa fa-check"></i><b>10.1</b> Introduction to Insurance Portfolios</a></li>
+<li class="chapter" data-level="10.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Tails"><i class="fa fa-check"></i><b>10.2</b> Tails of Distributions</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#classification-based-on-moments"><i class="fa fa-check"></i><b>10.2.1</b> Classification Based on Moments</a></li>
+<li class="chapter" data-level="10.2.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#comparison-based-on-limiting-tail-behavior"><i class="fa fa-check"></i><b>10.2.2</b> Comparison Based on Limiting Tail Behavior</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:RiskMeasure"><i class="fa fa-check"></i><b>10.2</b> Risk Measures</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#coherent-risk-measures"><i class="fa fa-check"></i><b>10.2.1</b> Coherent Risk Measures</a></li>
-<li class="chapter" data-level="10.2.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#value-at-risk"><i class="fa fa-check"></i><b>10.2.2</b> Value-at-Risk</a></li>
-<li class="chapter" data-level="10.2.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#tail-value-at-risk"><i class="fa fa-check"></i><b>10.2.3</b> Tail Value-at-Risk</a></li>
+<li class="chapter" data-level="10.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:RiskMeasure"><i class="fa fa-check"></i><b>10.3</b> Risk Measures</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#coherent-risk-measures"><i class="fa fa-check"></i><b>10.3.1</b> Coherent Risk Measures</a></li>
+<li class="chapter" data-level="10.3.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#value-at-risk"><i class="fa fa-check"></i><b>10.3.2</b> Value-at-Risk</a></li>
+<li class="chapter" data-level="10.3.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#tail-value-at-risk"><i class="fa fa-check"></i><b>10.3.3</b> Tail Value-at-Risk</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Reinsurance"><i class="fa fa-check"></i><b>10.3</b> Reinsurance</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:ProportionalRe"><i class="fa fa-check"></i><b>10.3.1</b> Proportional Reinsurance</a></li>
-<li class="chapter" data-level="10.3.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:NonProportionalRe"><i class="fa fa-check"></i><b>10.3.2</b> Non-Proportional Reinsurance</a></li>
-<li class="chapter" data-level="10.3.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:AdditionalRe"><i class="fa fa-check"></i><b>10.3.3</b> Additional Reinsurance Treaties</a></li>
+<li class="chapter" data-level="10.4" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Reinsurance"><i class="fa fa-check"></i><b>10.4</b> Reinsurance</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:ProportionalRe"><i class="fa fa-check"></i><b>10.4.1</b> Proportional Reinsurance</a></li>
+<li class="chapter" data-level="10.4.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:NonProportionalRe"><i class="fa fa-check"></i><b>10.4.2</b> Non-Proportional Reinsurance</a></li>
+<li class="chapter" data-level="10.4.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:AdditionalRe"><i class="fa fa-check"></i><b>10.4.3</b> Additional Reinsurance Treaties</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="C-PortMgt.html"><a href="C-PortMgt.html#further-resources-and-contributors-1"><i class="fa fa-check"></i><b>10.4</b> Further Resources and Contributors</a></li>
+<li class="chapter" data-level="10.5" data-path="C-PortMgt.html"><a href="C-PortMgt.html#further-resources-and-contributors-1"><i class="fa fa-check"></i><b>10.5</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="C-LossReserves.html"><a href="C-LossReserves.html"><i class="fa fa-check"></i><b>11</b> Loss Reserving</a></li>
 <li class="chapter" data-level="12" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html"><i class="fa fa-check"></i><b>12</b> Experience Rating using Bonus-Malus</a></li>
@@ -540,10 +543,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.5.3" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#properties-of-copulas"><i class="fa fa-check"></i><b>14.5.3</b> Properties of Copulas</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#S:CopImp"><i class="fa fa-check"></i><b>14.6</b> Why is Dependence Modeling Important?</a></li>
-<li class="chapter" data-level="14.7" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#Dep:further-reading-and-resources"><i class="fa fa-check"></i><b>14.7</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#technical-supplement-a.-other-classic-measures-of-scalar-associations"><i class="fa fa-check"></i>Technical Supplement A. Other Classic Measures of Scalar Associations</a><ul>
-<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#a.1.-blomqvists-beta"><i class="fa fa-check"></i>A.1. Blomqvist’s Beta</a></li>
-<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#a.2.-nonparametric-approach-using-spearman-correlation-with-tied-ranks"><i class="fa fa-check"></i>A.2. Nonparametric Approach Using Spearman Correlation with Tied Ranks</a></li>
+<li class="chapter" data-level="14.7" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#Dep:further-reading-and-resources"><i class="fa fa-check"></i><b>14.7</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#ts-14.a.-other-classic-measures-of-scalar-associations"><i class="fa fa-check"></i>TS 14.A. Other Classic Measures of Scalar Associations</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="C-AppA.html"><a href="C-AppA.html"><i class="fa fa-check"></i><b>15</b> Appendix A: Review of Statistical Inference</a><ul>
@@ -627,18 +628,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>quantifies the overall riskiness by introducing summaries known as risk measures, and</li>
 <li>discusses options of spreading portfolio risk through reinsurance, the purchase of insurance protection by an insurer.</li>
 </ul>
-<div id="overview" class="section level2 unnumbered">
-<h2>Overview</h2>
+<div id="introduction-to-insurance-portfolios" class="section level2">
+<h2><span class="header-section-number">10.1</span> Introduction to Insurance Portfolios</h2>
 <p>Most of our analyses in prior chapters has been at the contract level which is an agreement between a policyholder and an insurer. Insurers hold, and manage, <a href="#" class="tooltip" style="color:green"><em>portfolios</em><span style="font-size:8pt">a collection of contracts</span></a> that are simply collections of contracts. As in other areas of finance, there are management decision-making choices that occur only at the portfolio level. For example, strategic decision-making does not occur at the contract level. It happens in the conference room, where management reviews available data and possibly steers a new course. From the portfolio perspective, insurers want to do capacity planning, set management policies, and balance the mix of products being booked to grow revenue while controlling volatility.</p>
 <p>Conceptually, one can think about an insurance company as nothing more than a collection, or portfolio, of insurance contracts. In Chapter <a href="C-AggLossModels.html#C:AggLossModels">5</a> we learned about modeling insurance portfolios as the sum of individual contracts based on assumptions of independence among contracts. Because of their importance, this chapter focuses directly on portfolio distributions.</p>
 <ul>
-<li><p>Insurance portfolios represent obligations of insurers and so we are particularly interested in probabilities of large outcomes as these represent unusually large obligations. To formalize this concept, we introduce the notion of a heavy-tail distribution in Section <a href="C-PortMgt.html#S:Tails">10.1</a>.</p></li>
-<li><p>Insurance portfolios represent company obligations and so insurers keep an equivalent amount of assets to meet these obligations. <em>Risk measures</em>, introduced in Section <a href="C-PortMgt.html#S:RiskMeasure">10.2</a>, summarize the distribution of the insurance portfolio and these summary measures are used to quantify the amount of assets that an insurer needs to retain to meet obligations.</p></li>
-<li><p>In Section <a href="C-Severity.html#S:CoverageModifications">3.4</a>, we learned about mechanisms that policyholders use to spread risks such as deductibles and policy limits. In the same way, insurers use similar mechanisms in order to spread portfolio risks. They purchase risk protection from reinsurers, an insurance company for insurers. This sharing of insurance portfolio risk is described in Section <a href="C-PortMgt.html#S:Reinsurance">10.3</a>.</p></li>
+<li><p>Insurance portfolios represent obligations of insurers and so we are particularly interested in probabilities of large outcomes as these represent unusually large obligations. To formalize this concept, we introduce the notion of a heavy-tail distribution in Section <a href="C-PortMgt.html#S:Tails">10.2</a>.</p></li>
+<li><p>Insurance portfolios represent company obligations and so insurers keep an equivalent amount of assets to meet these obligations. <em>Risk measures</em>, introduced in Section <a href="C-PortMgt.html#S:RiskMeasure">10.3</a>, summarize the distribution of the insurance portfolio and these summary measures are used to quantify the amount of assets that an insurer needs to retain to meet obligations.</p></li>
+<li><p>In Section <a href="C-Severity.html#S:CoverageModifications">3.4</a>, we learned about mechanisms that policyholders use to spread risks such as deductibles and policy limits. In the same way, insurers use similar mechanisms in order to spread portfolio risks. They purchase risk protection from reinsurers, an insurance company for insurers. This sharing of insurance portfolio risk is described in Section <a href="C-PortMgt.html#S:Reinsurance">10.4</a>.</p></li>
 </ul>
 </div>
 <div id="S:Tails" class="section level2">
-<h2><span class="header-section-number">10.1</span> Tails of Distributions</h2>
+<h2><span class="header-section-number">10.2</span> Tails of Distributions</h2>
 <hr />
 <p>In this section, you learn how to:</p>
 <ul>
@@ -652,7 +653,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Formally, define <span class="math inline">\(X\)</span> to be the (random) obligations that arise from a collection (portfolio) of insurance contracts. We are particularly interested in studying the right tail of the distribution of <span class="math inline">\(X\)</span>, which represents the occurrence of large losses. Informally, <em>a rv is said to be heavy-tailed if high probabilities are assigned to large values.</em> Note that this by no mean implies the probability density/mass functions are increasing as the value of <em>rv</em> goes to infinity. Ineed for a real-valued <em>rv</em>, the <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">probability density function</span></a>/<a href="#" class="tooltip" style="color:green"><em>pmf</em><span style="font-size:8pt">probability mass function</span></a> must diminish at infinity in order to guarantee the total probability to be equal to one. Instead, what we concern about is the rate of decaying of the probability function. Unwelcome outcomes are more likely to occur for an insurance portfolio that is described by a loss <em>rv</em> possessing heavier (right) tail. Tail weight can be an absolute or a relative concept. Specifically, for the former, we may consider a <em>rv</em> to be heavy-tailed if certain mathematical properties of the probability distribution are met. For the latter, we can say the tail of one distribution is heavier than the other if some tail measures are larger/smaller.</p>
 <p>Several quantitative approaches have been proposed to classify and compare tail weight. Among most of these approaches, the <a href="#" class="tooltip" style="color:green"><em>survival function</em><span style="font-size:8pt">one minus the distribution function. It gives the probability that a rv exceeds a specific value</span></a> serves as the building block. In what follows, we introduce two simple yet useful tail classification methods both of which are based on the behavior of the survival function of <span class="math inline">\(X\)</span>.</p>
 <div id="classification-based-on-moments" class="section level3">
-<h3><span class="header-section-number">10.1.1</span> Classification Based on Moments</h3>
+<h3><span class="header-section-number">10.2.1</span> Classification Based on Moments</h3>
 <p>One way of classifying the tail weight of distribution is by assessing the existence of raw moments. Since our major interest lies in the right tails of distributions, we henceforth assume the obligation or loss <em>rv</em> <span class="math inline">\(X\)</span> to be positive. At the outset, the <span class="math inline">\(k-\)</span>th raw moment of a continuous <em>rv</em> <span class="math inline">\(X\)</span>, introduced in Section <a href="C-Severity.html#S:BasicQuantities">3.1</a>, can be computed as</p>
 <span class="math display">\[\begin{eqnarray*}
     \mu_k&#39; &amp;=&amp; k \int_0^{\infty} x^{k-1} S(x) dx, \\
@@ -718,7 +719,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We conclude this section with an open discussion on the limitations of the moment-based method. Despite its simple implementation and intuitive interpretation, there are certain circumstances in which the application of the moment-based method is not suitable. First, for more complicated probabilistic models, the <span class="math inline">\(k\)</span>-th raw moment may not be simple to derive, and thus the identification of the maximal order of finite moment can be challenging. Second, the moment-based method does not well comply with main body of the well established heavy tail theory in the literature. Specifically, the existence of moment generating functions is arguably the most popular method for classifying heavy tail versus light tail within the community of academic actuaries. However, for some <em>rv</em>’s such as the lognormal <em>rv</em>’s, their moment generating functions do not exist even that all the positive moments are finite. In these cases, applications of the moment-based methods can lead to different tail weight assessment. Third, when we need to compare the tail weight between two light-tailed distributions both having all positive moments exist, the moment-based method is no longer informative (see, e.g., Examples 10.1.1 and 10.1.2).</p>
 </div>
 <div id="comparison-based-on-limiting-tail-behavior" class="section level3">
-<h3><span class="header-section-number">10.1.2</span> Comparison Based on Limiting Tail Behavior</h3>
+<h3><span class="header-section-number">10.2.2</span> Comparison Based on Limiting Tail Behavior</h3>
 <p>In order to resolve the aforementioned issues of the moment-based classification method, an alternative approach for comparing tail weight is to directly study the limiting behavior of the survival functions.</p>
 <p><strong>Definition 10.2.</strong> For two <em>rv</em>’s <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, let</p>
 <p><span class="math display">\[
@@ -772,7 +773,7 @@ href="javascript:toggleEX('toggleExamplePortMgt.1.5','displayTextExamplePortMgt.
 </div>
 </div>
 <div id="S:RiskMeasure" class="section level2">
-<h2><span class="header-section-number">10.2</span> Risk Measures</h2>
+<h2><span class="header-section-number">10.3</span> Risk Measures</h2>
 <hr />
 <p>In this section, you learn how to:</p>
 <ul>
@@ -783,7 +784,7 @@ href="javascript:toggleEX('toggleExamplePortMgt.1.5','displayTextExamplePortMgt.
 <hr />
 <p>In the previous section, we studied two methods for classifying the weight of distribution tails. We may claim that the risk associated with one distribution is more dangerous (asymptotically) than the others if the tail is heavier. However, knowing one risk is more dangerous (asymptotically) than the others may not provide sufficient information for a sophisticated risk management purpose, and in addition, one is also interested in quantifying how much more. In fact, the magnitude of risk associated with a given loss distribution is an essential input for many insurance applications, such as actuarial pricing, reserving, hedging, insurance regulatory oversight, and so forth.</p>
 <div id="coherent-risk-measures" class="section level3">
-<h3><span class="header-section-number">10.2.1</span> Coherent Risk Measures</h3>
+<h3><span class="header-section-number">10.3.1</span> Coherent Risk Measures</h3>
 <p>To compare the magnitude of risk in a practically convenient manner, we seek a function that maps the loss <em>rv</em> of interest to a numerical value indicating the level of riskiness, which is termed the <a href="#" class="tooltip" style="color:green"><em>risk measure</em><span style="font-size:8pt">a measure that summarizes the riskiness, or uncertainty, of a distribution</span></a>. Put mathematically, the risk measure simply summarizes the distribution function of a <em>rv</em> as a single number. Two simple risk measures are the mean <span class="math inline">\(\mathrm{E}[X]\)</span> and the standard deviation <span class="math inline">\(\mathrm{SD}(X)=\sqrt{\mathrm{Var}(X)}\)</span>. Other classical examples of risk measures include the standard deviation <em>principle</em></p>
 <!-- \label{eqn:SD-principle} -->
 <span class="math display" id="eq:SD-principle">\[\begin{equation}
@@ -896,7 +897,7 @@ H_{\mathrm{SD}}(X+c)=\mathrm{E}[X]+c+\alpha\mathrm{SD}(X)=H_{\mathrm{SD}}(X)+c.
 <p>The literature on risk measures has been growing rapidly in popularity and importance. In the succeeding two subsections, we introduce two indices which have recently earned an unprecedented amount of interest among theoreticians, practitioners, and regulators. They are namely the <em>Value-at-Risk</em> (<em>VaR</em>) and the <em>Tail Value-at-Risk</em> (<em>TVaR</em>) measures. The economic rationale behind these two popular risk measures is similar to that for the tail classification methods introduced in the previous section, with which we hope to capture the risk of extremal losses represented by the distribution tails.</p>
 </div>
 <div id="value-at-risk" class="section level3">
-<h3><span class="header-section-number">10.2.2</span> Value-at-Risk</h3>
+<h3><span class="header-section-number">10.3.2</span> Value-at-Risk</h3>
 <p>In Section <a href="C-ModelSelection.html#S:MS:QuantileEstimator">4.1.1.3</a>, we defined the quantile of a distribution. We now look to a special case of this and offer the formal definition of the <a href="#" class="tooltip" style="color:green"><em>value-at-risk</em><span style="font-size:8pt">a risk measure based on a quantile function</span></a>, or <em>VaR</em>.</p>
 <p><strong>Definition 10.3.</strong> Consider an insurance loss random variable <span class="math inline">\(X\)</span>. The value-at-risk measure of <span class="math inline">\(X\)</span> with confidence level <span class="math inline">\(q\in (0,1)\)</span> is formulated as</p>
 <span class="math display" id="eq:Value-at-Risk">\[\begin{eqnarray}
@@ -1006,7 +1007,7 @@ F_X(x)=\left\{
 </ul>
 </div>
 <div id="tail-value-at-risk" class="section level3">
-<h3><span class="header-section-number">10.2.3</span> Tail Value-at-Risk</h3>
+<h3><span class="header-section-number">10.3.3</span> Tail Value-at-Risk</h3>
 <p>Recall that the <em>VaR</em> represents the <span class="math inline">\((1-p)\times100\%\)</span> chance maximal loss. As we mentioned in the previous section, one major drawback of the <em>VaR</em> measure is that it does not reflect the extremal losses occurring beyond the <span class="math inline">\((1-p)\times100\%\)</span> chance worst scenario. For illustrative purposes, let us consider the following slightly unrealistic yet inspiring example.</p>
 <p><strong>Example 10.2.5.</strong> Consider two loss <em>rv</em>’s <span class="math inline">\(X\sim Uniform [0,100]\)</span>, and <span class="math inline">\(Y\sim Exp(31.71)\)</span>. We use <em>VaR</em> at <span class="math inline">\(95\%\)</span> confidence level to measure the riskiness of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Simple calculation yields (see, also, Example 10.2.1), <span class="math display">\[
 VaR_{0.95}[X]=VaR_{0.95}[Y]=95,
@@ -1145,7 +1146,7 @@ TVaR_q[X]\geq VaR_q[X].
 </div>
 </div>
 <div id="S:Reinsurance" class="section level2">
-<h2><span class="header-section-number">10.3</span> Reinsurance</h2>
+<h2><span class="header-section-number">10.4</span> Reinsurance</h2>
 <hr />
 <p>In this section, you learn how to:</p>
 <ul>
@@ -1158,9 +1159,9 @@ TVaR_q[X]\geq VaR_q[X].
 <p>Recall that <a href="#" class="tooltip" style="color:green"><em>reinsurance</em><span style="font-size:8pt">insurance purchased by an insurer</span></a> is simply insurance purchased by an insurer. Insurance purchased by non-insurers is sometimes known as <a href="#" class="tooltip" style="color:green"><em>primary insurance</em><span style="font-size:8pt">insurance purchased by an non-insurer</span></a> to distinguish it from reinsurance. Reinsurance differs from personal insurance purchased by individuals, such as auto and homeowners insurance, in contract flexibility. Like insurance purchased by major corporations, reinsurance programs are generally tailored more closely to the buyer. For contrast, in personal insurance buyers typically cannot negotiate on the contract terms although they may have a variety of different options (contracts) from which to choose.</p>
 <p>The two broad types are proportional and non-proportional reinsurance. A <a href="#" class="tooltip" style="color:green"><em>proportional reinsurance</em><span style="font-size:8pt">an agreement between a reinsurer and a ceding company (also known as the reinsured) in which the reinsurer assumes a given percent of losses and premium</span></a> contract is an agreement between a reinsurer and a <a href="#" class="tooltip" style="color:green"><em>ceding company</em><span style="font-size:8pt">a company that purchases reinsurance (also known as the reinsured)</span></a> (also known as the <em>reinsured</em>) in which the reinsurer assumes a given percent of losses and premium. A reinsurance contract is also known as a <a href="#" class="tooltip" style="color:green"><em>treaty</em><span style="font-size:8pt">a reinsurance contract</span></a>. Non-proportional agreements are simply everything else. As examples of non-proportional agreements, this chapter focuses on <a href="#" class="tooltip" style="color:green"><em>stop-loss</em><span style="font-size:8pt">Under a stop-loss arrangement, the insurer sets a retention level and pays in full total claims less than the level with the reinsurer paying the excess</span></a> and <a href="#" class="tooltip" style="color:green"><em>excess of loss</em> <span style="font-size:8pt">Under an excess of loss arrangement, the insurer sets a retention level for each claim and pays claim amounts less than the level with the reinsurer paying the excess</span></a>contracts. For all types of agreements, we split the total risk <span class="math inline">\(X\)</span> into the portion taken on by the reinsurer, <span class="math inline">\(Y_{reinsurer}\)</span>, and that retained by the insurer, <span class="math inline">\(Y_{insurer}\)</span>, that is, <span class="math inline">\(X= Y_{insurer}+Y_{reinsurer}\)</span>.</p>
 <p>The mathematical structure of a basic reinsurance treaty is the same as the coverage modifications of personal insurance introduced in Chapter 3. For a proportional reinsurance, the transformation <span class="math inline">\(Y_{insurer} = c X\)</span> is identical to a coinsurance adjustment in personal insurance. For stop-loss reinsurance, the transformation <span class="math inline">\(Y_{reinsurer} = \max(0,X-M)\)</span> is the same as an insurer’s payment with a deductible <span class="math inline">\(M\)</span> and <span class="math inline">\(Y_{insurer} = \min(X,M) = X \wedge M\)</span> is equivalent to what a policyholder pays with deductible <span class="math inline">\(M\)</span>. For practical applications of the mathematics, in personal insurance the focus is generally upon the expectation as this is a key ingredient used in pricing. In contrast, for reinsurance the focus is on the entire distribution of the risk, as the extreme events are a primary concern of the financial stability of the insurer and reinsurer.</p>
-<p>This section describes the foundational and most basic of reinsurance treaties: Section <a href="C-PortMgt.html#S:ProportionalRe">10.3.1</a> for proportional and Section <a href="C-PortMgt.html#S:NonProportionalRe">10.3.2</a> for non-proportional reinsurance. Section <a href="C-PortMgt.html#S:AdditionalRe">10.3.3</a> gives a flavor of more complex contracts.</p>
+<p>This section describes the foundational and most basic of reinsurance treaties: Section <a href="C-PortMgt.html#S:ProportionalRe">10.4.1</a> for proportional and Section <a href="C-PortMgt.html#S:NonProportionalRe">10.4.2</a> for non-proportional reinsurance. Section <a href="C-PortMgt.html#S:AdditionalRe">10.4.3</a> gives a flavor of more complex contracts.</p>
 <div id="S:ProportionalRe" class="section level3">
-<h3><span class="header-section-number">10.3.1</span> Proportional Reinsurance</h3>
+<h3><span class="header-section-number">10.4.1</span> Proportional Reinsurance</h3>
 <p>The simplest example of a proportional treaty is called <a href="#" class="tooltip" style="color:green"><em>quota share</em><span style="font-size:8pt">A proportional treaty where the reinsurer receives a flat percent of the premium for the book of business reinsured and pays a percentage of losses, including allocated loss adjustment expenses. The reinsurer may also pays the ceding company a ceding commission which is designed to reflect the differences in underwriting expenses incurred.</span></a>.</p>
 <ul>
 <li><p>In a quota share treaty, the reinsurer receives a flat percent, say 50%, of the premium for the book of business reinsured.</p></li>
@@ -1171,6 +1172,7 @@ TVaR_q[X]\geq VaR_q[X].
 Y_{insurer} = c X \ \ \text{and} \ \ \ Y_{reinsurer} = (1-c) X,
 \]</span> where <span class="math inline">\(c\in (0,1)\)</span> denotes the proportion retained by the insurer. Note that <span class="math inline">\(Y_{insurer}+Y_{reinsurer}=X\)</span>.</p>
 <p><strong>Example 10.3.1. Distribution of losses under quota share.</strong> To develop an intuition for the effect of quota-share agreement on the distribution of losses, the following is a short <code>R</code> demonstration using simulation. Note the relative shapes of the distributions of total losses, the retained portion (of the insurer), and the reinsurer’s portion.</p>
+<pre><code>Warning: package &#39;actuar&#39; was built under R version 3.4.4</code></pre>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-28-1.png" width="960" style="display: block; margin: auto;" /></p>
 <h6 style="text-align: center;">
 <a id="displayQuotaShare" href="javascript:togglecode('toggleQuotaShare','displayQuotaShare');"><i><strong>Show the R Code</strong></i></a>
@@ -1189,7 +1191,7 @@ X &lt;-<span class="st">  </span><span class="kw">rpareto</span>(nSim, <span cla
 <span class="kw">plot</span>(<span class="kw">density</span>(<span class="fl">0.25</span><span class="op">*</span>X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>theta), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.008</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer (25%)&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</code></pre></div>
 </div>
 <div id="quota-share-is-desirable-for-reinsurers" class="section level4">
-<h4><span class="header-section-number">10.3.1.1</span> Quota Share is Desirable for Reinsurers</h4>
+<h4><span class="header-section-number">10.4.1.1</span> Quota Share is Desirable for Reinsurers</h4>
 <p>The quota share contract is particularly desirable for the reinsurer. To see this, suppose that an insurer and reinsurer wish to enter a contract to share total losses <span class="math inline">\(X\)</span> such that <span class="math display">\[Y_{insurer}=g(X) \ \ \ \text{and} \ \ \ \ Y_{reinsurer}=X-g(X),\]</span> for some generic function <span class="math inline">\(g(\cdot)\)</span> (known as the <em>retention</em> function). Suppose further that the insurer only cares about the variability of retained claims and is indifferent to the choice of <span class="math inline">\(g\)</span> as long as <span class="math inline">\(Var(Y_{insurer})\)</span> stays the same and equals, say, <span class="math inline">\(Q\)</span>. Then, the following result shows that the quota share reinsurance treaty minimizes the reinsurer’s uncertainty as measured by <span class="math inline">\(Var(Y_{reinsurer})\)</span>.</p>
 <p><strong>Proposition</strong>. Suppose that <span class="math inline">\(Var(Y_{insurer})=Q.\)</span> Then, <span class="math inline">\(Var ((1-c)X) \le Var(g(X))\)</span> for all <span class="math inline">\(g(.)\)</span>, where <span class="math inline">\(c=Q/Var(X)\)</span>.</p>
 <h6 style="text-align: center;">
@@ -1212,7 +1214,7 @@ Var (Y_{reinsurer}) &amp;= Var (X-Y_{insurer}) \\
 <p>The proposition is intuitively appealing - with quota share insurance, the reinsurer shares the responsibility for very large claims in the tail of the distribution. This is in contrast to non-proportional agreements where reinsurers take responsibility for the very large claims.</p>
 </div>
 <div id="optimizing-quota-share-agreements-for-insurers" class="section level4">
-<h4><span class="header-section-number">10.3.1.2</span> Optimizing Quota Share Agreements for Insurers</h4>
+<h4><span class="header-section-number">10.4.1.2</span> Optimizing Quota Share Agreements for Insurers</h4>
 <p>Now assume <span class="math inline">\(n\)</span> risks in the porfolio, <span class="math inline">\(X_1, \ldots, X_n,\)</span> so that the portfolio sum is <span class="math inline">\(X= X_1 + \cdots + X_n\)</span>. For simplicity, we focus on the case of independent risks. Let us consider a variation of the basic quota share agreement where the amount retained by the insurer may vary with each risk, say <span class="math inline">\(c_i\)</span>. Thus, the insurer’s portion of the portfolio risk is <span class="math inline">\(Y_{insurer} = \sum_{i=1}^n c_i X_i\)</span>. What is the best choice of the proportions <span class="math inline">\(c_i\)</span>?</p>
 <p>To formalize this question, we seek to find those values of <span class="math inline">\(c_i\)</span> that minimize <span class="math inline">\(Var (Y_{insurer})\)</span> subject to the constraint that <span class="math inline">\(E (Y_{insurer}) = K.\)</span> The requirement that <span class="math inline">\(E (Y_{insurer}) = K\)</span> suggests that the insurers wishes to retain a revenue in at least the amount of the constant <span class="math inline">\(K\)</span>. Subject to this revenue constraint, the insurer wishes to minimize the uncertainty of the retained risks as measured by the variance.</p>
 <h6 style="text-align: center;">
@@ -1280,9 +1282,9 @@ c1Vec &lt;-<span class="st"> </span>c2Vec &lt;-<span class="st"> </span>c3Vec &l
 </div>
 </div>
 <div id="S:NonProportionalRe" class="section level3">
-<h3><span class="header-section-number">10.3.2</span> Non-Proportional Reinsurance</h3>
+<h3><span class="header-section-number">10.4.2</span> Non-Proportional Reinsurance</h3>
 <div id="the-optimality-of-stop-loss-insurance" class="section level4">
-<h4><span class="header-section-number">10.3.2.1</span> The Optimality of Stop-Loss Insurance</h4>
+<h4><span class="header-section-number">10.4.2.1</span> The Optimality of Stop-Loss Insurance</h4>
 <p>Under a <strong>stop-loss</strong> arrangement, the insurer sets a retention level <span class="math inline">\(M (&gt;0)\)</span> and pays in full total claims for which <span class="math inline">\(X \le M\)</span>. Further, for claims for which <span class="math inline">\(X &gt; M\)</span>, the direct insurer pays <span class="math inline">\(M\)</span> and the reinsurer pays the remaining amount <span class="math inline">\(X-M\)</span>. Thus, the insurer retains an amount <span class="math inline">\(M\)</span> of the risk. Summarizing, the amounts paid by the direct insurer and the reinsurer are</p>
 <p><span class="math display">\[
 Y_{insurer} =
@@ -1334,14 +1336,14 @@ Var(g_{SL}(X)) &amp;= E (g_{SL}(X) -M)^2 -  (M- K)^2 \\
 <p>The proposition is intuitively appealing - with stop-loss insurance, the reinsurer takes the responsibility for very large claims in the tail of the distribution, not the insurer.</p>
 </div>
 <div id="excess-of-loss" class="section level4">
-<h4><span class="header-section-number">10.3.2.2</span> Excess of Loss</h4>
+<h4><span class="header-section-number">10.4.2.2</span> Excess of Loss</h4>
 <p>A closely related form of non-proportional reinsurance is the <a href="#" class="tooltip" style="color:green"><em>excess of loss</em> <span style="font-size:8pt">Under an excess of loss arrangement, the insurer sets a retention level for each claim and pays claim amounts less than the level with the reinsurer paying the excess</span></a> coverage. Under this contract, we assume that the total risk <span class="math inline">\(X\)</span> can be thought of as composed as <span class="math inline">\(n\)</span> separate risks <span class="math inline">\(X_1, \ldots, X_n\)</span> and that each of these risks are subject to an upper limit, say, <span class="math inline">\(M_i\)</span>. So the insurer retains</p>
 <p><span class="math display">\[
 Y_{i,insurer} = X_i \wedge M_i \ \ \ \ Y_{insurer} = \sum_{i=1}^n Y_{i,insurer}
 \]</span> and the reinsurer is responsible for the excess, <span class="math inline">\(Y_{reinsurer}=X - Y_{insurer}\)</span>. The retention limits may vary by risk or may be the same for all risks, <span class="math inline">\(M_i =M\)</span>, for all <span class="math inline">\(i\)</span>.</p>
 </div>
 <div id="optimal-choice-for-excess-of-loss-retention-limits" class="section level4">
-<h4><span class="header-section-number">10.3.2.3</span> Optimal Choice for Excess of Loss Retention Limits</h4>
+<h4><span class="header-section-number">10.4.2.3</span> Optimal Choice for Excess of Loss Retention Limits</h4>
 <p>What is the best choice of the excess of loss retention limits <span class="math inline">\(M_i\)</span>? To formalize this question, we seek to find those values of <span class="math inline">\(M_i\)</span> that minimize <span class="math inline">\(Var(Y_{insurer})\)</span> subject to the constraint that <span class="math inline">\(E(Y_{insurer}) = K.\)</span> Subject to this revenue constraint, the insurer wishes to minimize the uncertainty of the retained risks (as measured by the variance).</p>
 <h6 style="text-align: center;">
 <a id="displayDerivationProofExcess" href="javascript:togglecode('toggleDerivationProofExcess','displayDerivationProofExcess');"><i><strong>Show the Optimal Retention Proportions</strong></i></a>
@@ -1433,9 +1435,9 @@ Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span cla
 </div>
 </div>
 <div id="S:AdditionalRe" class="section level3">
-<h3><span class="header-section-number">10.3.3</span> Additional Reinsurance Treaties</h3>
+<h3><span class="header-section-number">10.4.3</span> Additional Reinsurance Treaties</h3>
 <div id="surplus-share-proportional-treaty" class="section level4">
-<h4><span class="header-section-number">10.3.3.1</span> Surplus Share Proportional Treaty</h4>
+<h4><span class="header-section-number">10.4.3.1</span> Surplus Share Proportional Treaty</h4>
 <p>Another proportional treaty is known as <a href="#" class="tooltip" style="color:green"><em>surplus share</em><span style="font-size:8pt">A proportional reinsurance treaty that is common in commercial property insurance. A surplus share treaty allows the reinsured to limit its exposure on any one risk to a given amount (the retained line). The reinsurer assumes a part of the risk in proportion to the amount that the insured value exceeds the retained line, up to a given limit (expressed as a multiple of the retained line, or number of lines).</span></a>; this type of contract is common in commercial property insurance.</p>
 <ul>
 <li>A surplus share treaty allows the reinsured to limit its exposure on any one risk to a given amount (the <em>retained line</em>).</li>
@@ -1444,7 +1446,7 @@ Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span cla
 <p>For example, let the retained line be $100,000 and the given limit be 4 lines ($400,000). Then, if <span class="math inline">\(X\)</span> is the loss, the reinsurer’s portion is <span class="math inline">\(\min(400000, (X-100000)_+)\)</span>.</p>
 </div>
 <div id="layers-of-coverage" class="section level4">
-<h4><span class="header-section-number">10.3.3.2</span> Layers of Coverage</h4>
+<h4><span class="header-section-number">10.4.3.2</span> Layers of Coverage</h4>
 <p>One can also extend non-proportional stop-loss treaties by introducing additional parties to the contract. For example, instead of simply an insurer and reinsurer or an insurer and a policyholder, think about the situation with all three parties, a policyholder, insurer, and reinsurer, who agree on how to share a risk. More generally, we consider <span class="math inline">\(k\)</span> parties. If <span class="math inline">\(k=3\)</span>, it could be an insurer and two different reinsurers.</p>
 <p><strong>Example 10.3.4. Layers of coverage for three parties.</strong></p>
 <ul>
@@ -1511,7 +1513,7 @@ Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span cla
 <p>For additional reading, see the <a href="https://sites.google.com/a/wisc.edu/local-government-property-insurance-fund/home/reinsurance">Wisconsin Property Fund site</a> for an example on layers of reinsurance.</p>
 </div>
 <div id="portfolio-management-example" class="section level4">
-<h4><span class="header-section-number">10.3.3.3</span> Portfolio Management Example</h4>
+<h4><span class="header-section-number">10.4.3.3</span> Portfolio Management Example</h4>
 <p>Many other variations of the foundational contracts are possible. For one more illustration, consider the following.</p>
 <p><strong>Example. 10.3.6. Portfolio management.</strong> You are the Chief Risk Officer of a telecommunications firm. Your firm has several property and liability risks. We will consider:</p>
 <ul>
@@ -1586,7 +1588,7 @@ Total    3351.35 4675.04 6464.20 12159.02</code></pre>
 </div>
 </div>
 <div id="further-resources-and-contributors-1" class="section level2">
-<h2><span class="header-section-number">10.4</span> Further Resources and Contributors</h2>
+<h2><span class="header-section-number">10.5</span> Further Resources and Contributors</h2>
 <ul>
 <li><strong>Edward W. (Jed) Frees</strong>, University of Wisconsin-Madison, and <strong>Jianxi Su</strong>, Purdue University are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> and/or <a href="mailto:jianxi@purdue.edu">jianxi@purdue.edu</a> for chapter comments and suggested improvements.</li>
 <li>Chapter reviewers include: Fei Huang, Hirokazu (Iwahiro) Iwasawa, Peng Shi, Ping Wang, Chengguo Weng.</li>
@@ -1642,7 +1644,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -1652,6 +1654,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -1669,7 +1675,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

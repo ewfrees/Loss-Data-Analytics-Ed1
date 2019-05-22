@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Loss Data Analytics</title>
-  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 6 Simulation and Resampling | Loss Data Analytics</title>
+  <meta name="description" content="Chapter 6 Simulation and Resampling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Loss Data Analytics" />
+  <meta property="og:title" content="Chapter 6 Simulation and Resampling | Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
+  <meta property="og:description" content="Chapter 6 Simulation and Resampling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Loss Data Analytics" />
+  <meta name="twitter:title" content="Chapter 6 Simulation and Resampling | Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Chapter 6 Simulation and Resampling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
 <meta name="author" content="An open text authored by the Actuarial Community">
@@ -35,6 +35,7 @@
 <link rel="next" href="C-PremiumFoundations.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -289,8 +290,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:mixture-distributions"><i class="fa fa-check"></i><b>2.6</b> Mixture Distributions</a></li>
 <li class="chapter" data-level="2.7" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:goodness-of-fit"><i class="fa fa-check"></i><b>2.7</b> Goodness of Fit</a></li>
 <li class="chapter" data-level="2.8" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:exercises"><i class="fa fa-check"></i><b>2.8</b> Exercises</a></li>
-<li class="chapter" data-level="2.9" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#Freq-further-reading-and-resources"><i class="fa fa-check"></i><b>2.9</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="2.10" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:rcode"><i class="fa fa-check"></i><b>2.10</b> Technical Supplement 2.A. R Code for Plots</a></li>
+<li class="chapter" data-level="2.9" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#Freq-further-reading-and-resources"><i class="fa fa-check"></i><b>2.9</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:rcode"><i class="fa fa-check"></i><b>2.9.1</b> TS 2.A. R Code for Plots</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="C-Severity.html"><a href="C-Severity.html"><i class="fa fa-check"></i><b>3</b> Modeling Loss Severity</a><ul>
 <li class="chapter" data-level="3.1" data-path="C-Severity.html"><a href="C-Severity.html#S:BasicQuantities"><i class="fa fa-check"></i><b>3.1</b> Basic Distributional Quantities</a><ul>
@@ -368,8 +370,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:MS:DedImpactClmFreq"><i class="fa fa-check"></i><b>5.5.2</b> Impact of Deductibles on Claim Frequency</a></li>
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#technical-supplement-5.a.-aggregate-loss-models"><i class="fa fa-check"></i>Technical Supplement 5.A. Aggregate Loss Models</a><ul>
+<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a><ul>
 <li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
 <li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
 <li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
@@ -399,7 +400,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.5.2" data-path="C-Simulation.html"><a href="C-Simulation.html#gibbs-sampler"><i class="fa fa-check"></i><b>6.5.2</b> Gibbs sampler</a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="C-Simulation.html"><a href="C-Simulation.html#Simulation:further-reading-and-resources"><i class="fa fa-check"></i><b>6.6</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="6.7" data-path="C-Simulation.html"><a href="C-Simulation.html#technical-supplement-6.a.-applications-of-bootstrap-in-predictive-modeling"><i class="fa fa-check"></i><b>6.7</b> Technical Supplement 6.A. Applications of Bootstrap in Predictive Modeling</a></li>
+<li class="chapter" data-level="6.7" data-path="C-Simulation.html"><a href="C-Simulation.html#ts-6.a.-applications-of-bootstrap-in-predictive-modeling"><i class="fa fa-check"></i><b>6.7</b> TS 6.A. Applications of Bootstrap in Predictive Modeling</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html"><i class="fa fa-check"></i><b>7</b> Premium Foundations</a><ul>
 <li class="chapter" data-level="7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:IntroductionRatemaking"><i class="fa fa-check"></i><b>7.1</b> Introduction to Ratemaking</a></li>
@@ -423,10 +424,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:Other"><i class="fa fa-check"></i><b>7.7</b> Other Topics?</a></li>
-<li class="chapter" data-level="7.8" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.8</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="7.9" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.9</b> Technical Supplement 7.A. Rate Regulation</a></li>
-<li class="chapter" data-level="7.10" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:SelectingRateFactors"><i class="fa fa-check"></i><b>7.10</b> Technical Supplement 7.B. Selecting Rating Factors</a></li>
-<li class="chapter" data-level="7.11" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:AdverseSelection"><i class="fa fa-check"></i><b>7.11</b> Technical Supplement 7.C. Adverse Selection</a></li>
+<li class="chapter" data-level="7.8" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.8</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.8.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="7.8.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:SelectingRateFactors"><i class="fa fa-check"></i><b>7.8.2</b> TS 7.B. Selecting Rating Factors</a></li>
+<li class="chapter" data-level="7.8.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:AdverseSelection"><i class="fa fa-check"></i><b>7.8.3</b> TS 7.C. Adverse Selection</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
 <li class="chapter" data-level="8.1" data-path="C-RiskClass.html"><a href="C-RiskClass.html#S:RC:Introduction"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
@@ -442,8 +444,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.3.3" data-path="C-RiskClass.html"><a href="C-RiskClass.html#poisson-regression-for-multiplicative-tariff"><i class="fa fa-check"></i><b>8.3.3</b> Poisson Regression for Multiplicative Tariff</a></li>
 <li class="chapter" data-level="8.3.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#numerical-examples"><i class="fa fa-check"></i><b>8.3.4</b> Numerical Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#technical-supplement-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>Technical Supplement 8.A – Estimating Poisson Regression Models</a></li>
+<li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>TS 8.A – Estimating Poisson Regression Models</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="C-Credibility.html"><a href="C-Credibility.html"><i class="fa fa-check"></i><b>9</b> Experience Rating Using Credibility Theory</a><ul>
 <li class="chapter" data-level="9.1" data-path="C-Credibility.html"><a href="C-Credibility.html#introduction-to-applications-of-credibility-theory"><i class="fa fa-check"></i><b>9.1</b> Introduction to Applications of Credibility Theory</a></li>
@@ -471,22 +474,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.7" data-path="C-Credibility.html"><a href="C-Credibility.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="C-PortMgt.html"><a href="C-PortMgt.html"><i class="fa fa-check"></i><b>10</b> Insurance Portfolio Management including Reinsurance</a><ul>
-<li class="chapter" data-level="" data-path="C-PortMgt.html"><a href="C-PortMgt.html#overview"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="10.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Tails"><i class="fa fa-check"></i><b>10.1</b> Tails of Distributions</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#classification-based-on-moments"><i class="fa fa-check"></i><b>10.1.1</b> Classification Based on Moments</a></li>
-<li class="chapter" data-level="10.1.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#comparison-based-on-limiting-tail-behavior"><i class="fa fa-check"></i><b>10.1.2</b> Comparison Based on Limiting Tail Behavior</a></li>
+<li class="chapter" data-level="10.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#introduction-to-insurance-portfolios"><i class="fa fa-check"></i><b>10.1</b> Introduction to Insurance Portfolios</a></li>
+<li class="chapter" data-level="10.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Tails"><i class="fa fa-check"></i><b>10.2</b> Tails of Distributions</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#classification-based-on-moments"><i class="fa fa-check"></i><b>10.2.1</b> Classification Based on Moments</a></li>
+<li class="chapter" data-level="10.2.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#comparison-based-on-limiting-tail-behavior"><i class="fa fa-check"></i><b>10.2.2</b> Comparison Based on Limiting Tail Behavior</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:RiskMeasure"><i class="fa fa-check"></i><b>10.2</b> Risk Measures</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#coherent-risk-measures"><i class="fa fa-check"></i><b>10.2.1</b> Coherent Risk Measures</a></li>
-<li class="chapter" data-level="10.2.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#value-at-risk"><i class="fa fa-check"></i><b>10.2.2</b> Value-at-Risk</a></li>
-<li class="chapter" data-level="10.2.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#tail-value-at-risk"><i class="fa fa-check"></i><b>10.2.3</b> Tail Value-at-Risk</a></li>
+<li class="chapter" data-level="10.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:RiskMeasure"><i class="fa fa-check"></i><b>10.3</b> Risk Measures</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#coherent-risk-measures"><i class="fa fa-check"></i><b>10.3.1</b> Coherent Risk Measures</a></li>
+<li class="chapter" data-level="10.3.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#value-at-risk"><i class="fa fa-check"></i><b>10.3.2</b> Value-at-Risk</a></li>
+<li class="chapter" data-level="10.3.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#tail-value-at-risk"><i class="fa fa-check"></i><b>10.3.3</b> Tail Value-at-Risk</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Reinsurance"><i class="fa fa-check"></i><b>10.3</b> Reinsurance</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:ProportionalRe"><i class="fa fa-check"></i><b>10.3.1</b> Proportional Reinsurance</a></li>
-<li class="chapter" data-level="10.3.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:NonProportionalRe"><i class="fa fa-check"></i><b>10.3.2</b> Non-Proportional Reinsurance</a></li>
-<li class="chapter" data-level="10.3.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:AdditionalRe"><i class="fa fa-check"></i><b>10.3.3</b> Additional Reinsurance Treaties</a></li>
+<li class="chapter" data-level="10.4" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:Reinsurance"><i class="fa fa-check"></i><b>10.4</b> Reinsurance</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:ProportionalRe"><i class="fa fa-check"></i><b>10.4.1</b> Proportional Reinsurance</a></li>
+<li class="chapter" data-level="10.4.2" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:NonProportionalRe"><i class="fa fa-check"></i><b>10.4.2</b> Non-Proportional Reinsurance</a></li>
+<li class="chapter" data-level="10.4.3" data-path="C-PortMgt.html"><a href="C-PortMgt.html#S:AdditionalRe"><i class="fa fa-check"></i><b>10.4.3</b> Additional Reinsurance Treaties</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="C-PortMgt.html"><a href="C-PortMgt.html#further-resources-and-contributors-1"><i class="fa fa-check"></i><b>10.4</b> Further Resources and Contributors</a></li>
+<li class="chapter" data-level="10.5" data-path="C-PortMgt.html"><a href="C-PortMgt.html#further-resources-and-contributors-1"><i class="fa fa-check"></i><b>10.5</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="C-LossReserves.html"><a href="C-LossReserves.html"><i class="fa fa-check"></i><b>11</b> Loss Reserving</a></li>
 <li class="chapter" data-level="12" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html"><i class="fa fa-check"></i><b>12</b> Experience Rating using Bonus-Malus</a></li>
@@ -540,10 +543,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.5.3" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#properties-of-copulas"><i class="fa fa-check"></i><b>14.5.3</b> Properties of Copulas</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#S:CopImp"><i class="fa fa-check"></i><b>14.6</b> Why is Dependence Modeling Important?</a></li>
-<li class="chapter" data-level="14.7" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#Dep:further-reading-and-resources"><i class="fa fa-check"></i><b>14.7</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#technical-supplement-a.-other-classic-measures-of-scalar-associations"><i class="fa fa-check"></i>Technical Supplement A. Other Classic Measures of Scalar Associations</a><ul>
-<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#a.1.-blomqvists-beta"><i class="fa fa-check"></i>A.1. Blomqvist’s Beta</a></li>
-<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#a.2.-nonparametric-approach-using-spearman-correlation-with-tied-ranks"><i class="fa fa-check"></i>A.2. Nonparametric Approach Using Spearman Correlation with Tied Ranks</a></li>
+<li class="chapter" data-level="14.7" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#Dep:further-reading-and-resources"><i class="fa fa-check"></i><b>14.7</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#ts-14.a.-other-classic-measures-of-scalar-associations"><i class="fa fa-check"></i>TS 14.A. Other Classic Measures of Scalar Associations</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="C-AppA.html"><a href="C-AppA.html"><i class="fa fa-check"></i><b>15</b> Appendix A: Review of Statistical Inference</a><ul>
@@ -2130,7 +2131,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   <span class="kw">arrows</span>(<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),ru,<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">0</span>,<span class="dt">col=</span>clr,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
 }
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) {<span class="kw">pic_ani</span>()}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani1-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-30.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani1-.gif" width="672" /></p>
 <p>An alternative is draw according to the conditional distribution <span class="math inline">\(F^star\)</span> defined as <span class="math display">\[
 dF^\star(x) = \frac{dF(x)}{F(b)-F(a)}\boldsymbol{1}(x\in[a,b])
 \]</span> This can be related to the <strong>importance sampling</strong> mechanism : we draw more frequently in regions where we expect to have quantities that have some interest. So we consider a change of measure.</p>
@@ -2158,7 +2159,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   <span class="kw">arrows</span>(<span class="kw">qnormstar</span>(ru),ru,<span class="kw">qnormstar</span>(ru),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
 }
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) {<span class="kw">pic_ani</span>()}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-30.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-.gif" width="672" /></p>
 <p>But one can use an alternative representation, where we constraint on the <span class="math inline">\(y\)</span>-axis, to have only values between <span class="math inline">\(F^{-1}(a)\)</span> and <span class="math inline">\(F^{-1}(b)\)</span>. Thus, from <span class="math inline">\(u\)</span> (drawn from a uniform distribution on the unit interval), consider <span class="math display">\[
 \tilde{u}=(1-u)\cdot F(a)+u\cdot F(b)
 \]</span> and then use <span class="math inline">\(F^{-1}(\tilde{u})\)</span>,</p>
@@ -2175,7 +2176,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   <span class="kw">arrows</span>(<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),rutilde,<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
 }
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) {<span class="kw">pic_ani</span>()}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-30.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-.gif" width="672" /></p>
 </div>
 <div id="S:MCMC" class="section level2">
 <h2><span class="header-section-number">6.5</span> Monte Carlo Markov Chain (MCMC)</h2>
@@ -2232,7 +2233,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(k){
   <span class="kw">text</span>(k,<span class="dv">2</span>,<span class="kw">round</span>(vec[k<span class="op">+</span><span class="dv">1</span>,<span class="dv">3</span>],<span class="dt">digits=</span><span class="dv">3</span>))
 }
 <span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">23</span>) {<span class="kw">pic_ani</span>(k)}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-22.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-.gif" width="672" /></p>
 <p>Now, if we use more simulations, we get</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vec &lt;-<span class="st"> </span><span class="kw">metrop1</span>(<span class="dv">10000</span>)
 simx &lt;-<span class="st"> </span>vec[<span class="dv">1000</span><span class="op">:</span><span class="dv">10000</span>,<span class="dv">1</span>]
@@ -2290,7 +2291,7 @@ i=<span class="kw">which</span>(<span class="kw">apply</span>(sim[(n<span class=
 <span class="kw">abline</span>(<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 }</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">100</span>) {<span class="kw">pic_ani</span>(i)}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-30.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-31.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-32.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-33.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-34.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-35.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-36.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-37.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-38.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-39.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-40.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-41.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-42.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-43.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-44.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-45.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-46.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-47.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-48.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-49.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-50.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-51.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-52.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-53.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-54.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-55.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-56.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-57.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-58.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-59.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-60.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-61.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-62.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-63.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-64.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-65.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-66.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-67.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-68.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-69.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-70.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-71.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-72.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-73.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-74.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-75.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-76.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-77.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-78.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-79.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-80.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-81.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-82.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-83.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-84.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-85.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-86.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-87.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-88.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-89.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-90.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-91.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-92.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-93.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-94.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-95.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-96.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-97.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-98.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-99.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM-.gif" width="672" /></p>
 </div>
 </div>
 <div id="Simulation:further-reading-and-resources" class="section level2">
@@ -2306,8 +2307,8 @@ i=<span class="kw">which</span>(<span class="kw">apply</span>(sim[(n<span class=
 </ul>
 </div>
 </div>
-<div id="technical-supplement-6.a.-applications-of-bootstrap-in-predictive-modeling" class="section level2">
-<h2><span class="header-section-number">6.7</span> Technical Supplement 6.A. Applications of Bootstrap in Predictive Modeling</h2>
+<div id="ts-6.a.-applications-of-bootstrap-in-predictive-modeling" class="section level2">
+<h2><span class="header-section-number">6.7</span> TS 6.A. Applications of Bootstrap in Predictive Modeling</h2>
 
 </div>
 </div>
@@ -2337,7 +2338,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2347,6 +2348,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -2364,7 +2369,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
