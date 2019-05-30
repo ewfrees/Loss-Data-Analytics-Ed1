@@ -24,7 +24,7 @@ An experience rating plan attempts to capture some of the variation in the risk 
 
 For a risk whose loss experience is stable from year to year, $Z$ might be close to 1.  For a risk whose losses vary widely from year to year, $Z$ may be close to 0.    
 
-Credibility theory is also used for computing rates for individual classes within a classification rating plan.  When classification plan rates are being determined, some or many of the groups may not have sufficient data to produce stable and reliable rates.  The actual loss experience for a group will be assigned a credibility weight $Z$ and the complement of credibility $1-Z$ may be given to the average experience for risk across all classes.  Or, if a class rating plan is being updated, the complement of credibility may be assigned to the current class rate.  Credibility theory can also be applied to the calculation of expected frequencies and severities.
+Credibility theory is also used for computing rates for individual classes within a classification rating plan.  When classification plan rates are being determined, some or many of the groups may not have sufficient data to produce stable and reliable rates.  The actual loss experience for a group will be assigned a credibility weight $Z$ and the complement of credibility $1-Z$ may be given to the average experience for risks across all classes.  Or, if a class rating plan is being updated, the complement of credibility may be assigned to the current class rate.  Credibility theory can also be applied to the calculation of expected frequencies and severities.
 
 Computing numeric values for $Z$ requires analysis and understanding of the data.  What are the variances in the number of losses and sizes of losses for risks?  What is the variance between expected values across risks? 
 
@@ -67,7 +67,7 @@ In limited fluctuation credibility the standard normal distribution is used to a
 
 Let $y_p$ be the value such that $\Pr[-y_p\leq (N-\mu_N)/\sigma_N \leq y_p]=\Phi(y_p)-\Phi(-y_p)=p$ where $\Phi( )$ is the cumulative distribution function of the standard normal.  Because $\Phi(-y_p)=1-\Phi(y_p)$, the equality can be rewritten as $2\Phi(y_p)-1=p$.  Solving for $y_p$ gives $y_p=\Phi^{-1}((p+1)/2)$ where $\Phi^{-1}( )$ is the inverse of $\Phi( )$.  
 
-Equation \@ref(eq:normalized-interval) will be satisfied if $k\mu_N/\sigma_N \geq y_p$ assuming the normal approximation.  First we will consider this inequality for the case when $N$ has a Poisson distribution:  $\Pr[N=n] = \lambda^n\textrm{e}^{-\lambda}/n!$.  Because $\lambda=\mu_N=\sigma_N^2$ for the Poisson, taking square roots yields $\mu_N^{1/2}=\sigma_N$.  So, $k\mu_N/\mu_N^{1/2} \geq y_p$ which is equivalent to $\mu_N \geq (y_p/k)^2$.  Let's define $\lambda_{kp}$ to be the value of $\mu_N$ for which equality holds.  Then the full credibility standard for the Poission distribution is 
+Equation \@ref(eq:normalized-interval) will be satisfied if $k\mu_N/\sigma_N \geq y_p$ assuming the normal approximation.  First we will consider this inequality for the case when $N$ has a Poisson distribution:  $\Pr[N=n] = \lambda^n\textrm{e}^{-\lambda}/n!$.  Because $\lambda=\mu_N=\sigma_N^2$ for the Poisson, taking square roots yields $\mu_N^{1/2}=\sigma_N$.  So, $k\mu_N/\mu_N^{1/2} \geq y_p$ which is equivalent to $\mu_N \geq (y_p/k)^2$.  Let's define $\lambda_{kp}$ to be the value of $\mu_N$ for which equality holds.  Then the full credibility standard for the Poisson distribution is 
 
 \begin{equation}
 \lambda_{kp} = \left(\frac{y_p}{k}\right)^2 \textrm{with } y_p=\Phi^{-1}((p+1)/2).
@@ -120,7 +120,7 @@ with $\beta=1$.  Calculate the full credibility standard.
 
 *** 
 
-We see that the negative binomial distribution with $(\sigma_N^2/\mu_N)>1$ requires more claims for full credibility than a Poission distribution for the same $k$ and $p$ values.  The next example shows that a binomial distribution which has $(\sigma_N^2/\mu_N)<1$ will need fewer claims for full credibility.
+We see that the negative binomial distribution with $(\sigma_N^2/\mu_N)>1$ requires more claims for full credibility than a Poisson distribution for the same $k$ and $p$ values.  The next example shows that a binomial distribution which has $(\sigma_N^2/\mu_N)<1$ will need fewer claims for full credibility.
 
 
 **Example `r chapnum`.2.3.**
@@ -169,7 +169,7 @@ Because the number of exposures is not a random variable,  $\mathrm{E}(N/m)=\mat
 \Pr\left[(1-k)\frac{\mu_N}{m}\leq \frac{N}{m} \leq(1+k)\frac{\mu_N}{m}\right] \geq p.
 \end{equation*}
 
-Mulitplying through by $m$ results in equation \@ref(eq:kpercent-interval) at the beginning of the section.  The full credibility standards that were developed for estimating expected number of claims also apply to frequency.
+Multiplying through by $m$ results in equation \@ref(eq:kpercent-interval) at the beginning of the section.  The full credibility standards that were developed for estimating expected number of claims also apply to frequency.
 
 
 ### Full Credibility for Aggregate Losses and Pure Premium
@@ -225,13 +225,13 @@ If observed aggregate losses should be within 5$\%$ of the expected value with p
 
 
 **Solution** 
-Because the number of claims is Poission, $(\sigma_N^2/\mu_N)=1$.  The mean of the Pareto is $\mu_X=\theta/(\alpha-1)$ and the variance is $\sigma_X^2=\theta^{2}\alpha/[(\alpha-1)^{2}(\alpha-2)]$ so $(\sigma_X/\mu_X)^2=\alpha/(\alpha-2)$.  Combining the frequency and severity terms gives $[(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=2(\alpha-1)/(\alpha-2)$.  From a normal table $y_p=\Phi^{-1}((0.95+1)/2)=1.960$.  The full credibility standard is $n_S=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)$.  Suppose $\alpha=3$ then $n_S=6,146.56$ for a full credibility standard of 6,147.  Note that considerably more claims are needed for full credibility for aggregate losses than frequency alone.
+Because the number of claims is Poisson, $(\sigma_N^2/\mu_N)=1$.  The mean of the Pareto is $\mu_X=\theta/(\alpha-1)$ and the variance is $\sigma_X^2=\theta^{2}\alpha/[(\alpha-1)^{2}(\alpha-2)]$ so $(\sigma_X/\mu_X)^2=\alpha/(\alpha-2)$.  Combining the frequency and severity terms gives $[(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=2(\alpha-1)/(\alpha-2)$.  From a normal table $y_p=\Phi^{-1}((0.95+1)/2)=1.960$.  The full credibility standard is $n_S=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)$.  Suppose $\alpha=3$ then $n_S=6,146.56$ for a full credibility standard of 6,147.  Note that considerably more claims are needed for full credibility for aggregate losses than frequency alone.
 
 </div>
 
 *** 
 
-When the number of claims are Poisson distributed then equation \@ref(eq:full-credibility-losses) can be simplified using $(\sigma_N^2/\mu_N)=1$.  It follows that $[(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=[1+(\sigma_X/\mu_X)^2]=[(\mu_X^2+\sigma_X^2)/\mu_X^2]=\mathrm{E}(X^2)/\mathrm{E}(X)^2$ using the relationship $\mu_X^2+\sigma_X^2=\mathrm{E}(X^2)$.  The full credibility standard is $n_S=\lambda_{kp}\mathrm{E}(X^2)/\mathrm{E}(X)^2$.
+When the number of claims is Poisson distributed then equation \@ref(eq:full-credibility-losses) can be simplified using $(\sigma_N^2/\mu_N)=1$.  It follows that $[(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=[1+(\sigma_X/\mu_X)^2]=[(\mu_X^2+\sigma_X^2)/\mu_X^2]=\mathrm{E}(X^2)/\mathrm{E}(X)^2$ using the relationship $\mu_X^2+\sigma_X^2=\mathrm{E}(X^2)$.  The full credibility standard is $n_S=\lambda_{kp}\mathrm{E}(X^2)/\mathrm{E}(X)^2$.
 
 
 The pure premium $PP$ is equal to aggregate losses $S$ divided by exposures $m$:  $PP=S/m$.   The full credibility standard for pure premium will require
@@ -278,10 +278,10 @@ In Section \@ref(S:frequency) the accuracy of an estimator for frequency was def
 \noindent where $k$ and $p$ need to be specified.  Following the steps in Section \@ref(S:frequency), the mean claim severity $\mu_X$ is subtracted from each term and the standard deviation of the claim severity estimator $\sigma_{\bar{X}}$  is divided into each term yielding
 
 \begin{equation*}
-\Pr\left[\frac{-k\mu_X}{\sigma_{\bar{X}}}\leq (\bar{X}-\mu_X)/\sigma_X \leq \frac{k\mu_X}{\sigma_{\bar{X}}}\right] \geq p
+\Pr\left[\frac{-k\mu_X}{\sigma_{\bar{X}}}\leq (\bar{X}-\mu_X)/\sigma_{\bar{X}} \leq \frac{k\mu_X}{\sigma_{\bar{X}}}\right] \geq p
 \end{equation*}.  
 
-As in prior sections, it is assumed that $(\bar{X}-\mu_X)/\sigma_X$ is approximately normally distributed and the prior equation is satistifed if $k\mu_X/\sigma_{\bar{X}}\geq y_p$ with $y_p=\Phi^{-1}((p+1)/2)$.  Because $\bar{X}$ is the average of individual claims $X_1, X_2,\dots, X_n$, its standard deviation is equal to the standard deviation of an individual claim divided by $\sqrt{n}$: $\sigma_{\bar{X}}=\sigma_X/\sqrt{n}$.  So, $k\mu_X/(\sigma_X/\sqrt{n})\geq y_p$ and with a little algebra this can be rewritten as $n \geq (y_p/k)^2(\sigma_X/\mu_X)^2$.  The full credibility standard for severity is 
+As in prior sections, it is assumed that $(\bar{X}-\mu_X)/\sigma_{\bar{X}}$ is approximately normally distributed and the prior equation is satisfied if $k\mu_X/\sigma_{\bar{X}}\geq y_p$ with $y_p=\Phi^{-1}((p+1)/2)$.  Because $\bar{X}$ is the average of individual claims $X_1, X_2,\dots, X_n$, its standard deviation is equal to the standard deviation of an individual claim divided by $\sqrt{n}$: $\sigma_{\bar{X}}=\sigma_X/\sqrt{n}$.  So, $k\mu_X/(\sigma_X/\sqrt{n})\geq y_p$ and with a little algebra this can be rewritten as $n \geq (y_p/k)^2(\sigma_X/\mu_X)^2$.  The full credibility standard for severity is 
 
 \begin{equation}
 n_X=\left(\frac{y_p}{k}\right)^2\left(\frac{\sigma_X}{\mu_X}\right)^2=\lambda_{kp}\left(\frac{\sigma_X}{\mu_X}\right)^2.
@@ -327,11 +327,11 @@ The number of claims has a Poisson distribution.  Individual loss amounts are in
 Because the number of claims is Poisson,
 
 $$
-\frac{\mathrm{E}(X^2)}{[\mathrm{E}~X]^2}
+\frac{\mathrm{E}(X^2)}{[\mathrm{E}~(X)]^2}
 =\frac{\sigma_N^2}{\mu_N}+\left(\frac{\sigma_X}{\mu_X}\right)^2.  
 $$
 
-The mean of the Pareto is $\mu_X=\theta/(\alpha-1)$ and the second moment is $\mathrm{E}(X^2)=2\theta^{2}/[(\alpha-1)(\alpha-2)]$ so $\mathrm{E}(X^2)/[\mathrm{E}~X]^2=2(\alpha-1)/(\alpha-2)$.  From a normal table $y_p=\Phi^{-1}((0.95+1)/2)=1.960$.  The full credibility standard is 
+The mean of the Pareto is $\mu_X=\theta/(\alpha-1)$ and the second moment is $\mathrm{E}(X^2)=2\theta^{2}/[(\alpha-1)(\alpha-2)]$ so $\mathrm{E}(X^2)/[\mathrm{E}~(X)]^2=2(\alpha-1)/(\alpha-2)$.  From a normal table $y_p=\Phi^{-1}((0.95+1)/2)=1.960$.  The full credibility standard is 
 
 $$n_{PP}=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)$$
 and if $\alpha=3$ then $n_0=n_{PP}=6,146.56$ or 6,147 if rounded up.  The credibility assigned to 1,000 claims is $Z=(1,000/6,147)^{1/2}=0.40$.
@@ -379,7 +379,7 @@ In this section, you learn how to:
 
 A classification rating plan groups policyholders together into classes based on risk characteristics.   Although policyholders within a class have similarities, they are not identical and their expected losses will not be exactly the same.  An experience rating plan can supplement a class rating plan by credibility weighting an individual policyholder's loss experience with the class rate to produce a more accurate rate for the policyholder.
  
-In the presentation of B&uuml;hlmann credibility it is convenient to assign a risk parameter $\theta$ to each policyholder.  Losses $X$ for the policyholder will have a common distribution function $F_{\theta}(x)$ with mean $\mu(\theta)=\mathrm{E}(X|\theta)$ and variance $\sigma^2(\theta)=\mathrm{Var}(X|\theta)$.   Losses $X$ can represent pure premiums, aggegrate losses, number of claims, claim severities, or some other measure of loss for a period of time, often one year. Risk parameter $\theta$ may be continuous or discrete and may be multivariate depending on the model.  
+In the presentation of B&uuml;hlmann credibility it is convenient to assign a risk parameter $\theta$ to each policyholder.  Losses $X$ for the policyholder will have a common distribution function $F_{\theta}(x)$ with mean $\mu(\theta)=\mathrm{E}(X|\theta)$ and variance $\sigma^2(\theta)=\mathrm{Var}(X|\theta)$.   Losses $X$ can represent pure premiums, aggregate losses, number of claims, claim severities, or some other measure of loss for a period of time, often one year. Risk parameter $\theta$ may be continuous or discrete and may be multivariate depending on the model.  
 
 If a policyholder with risk parameter $\theta$ had losses $X_1, \ldots, X_n$ during $n$ time periods then the goal is to find E($\mu(\theta)|X_1,\ldots, X_n)$, the conditional expectation of $\mu(\theta)$ given $X_1,\ldots, X_n$.  The B&uuml;hlmann credibility-weighted estimate for E($\mu(\theta)|X_1,\ldots, X_n)$ for the policyholder is 
 
@@ -442,7 +442,7 @@ If a risk is selected at random from the population, what is the expected aggreg
 <h5 style="text-align: center;"><a id="displayTextExampleCred.3.2" href="javascript:toggleEX('toggleExampleCred.3.2','displayTextExampleCred.3.2');"><i><strong>Show Example Solution</strong></i></a> </h5>
 <div id="toggleExampleCred.3.2" style="display: none">
 
-**Solution** The expected number of claims for a risk is E($N$)=$\lambda$.  The expected value for a Pareto distributed random variable is E($X$)=$\theta/(\alpha-1)$.  The expected value of the aggregate loss random variable $S=X_1+\cdots+X_N$ for a risk is E($S$)=E($N$)E($X$)=$\lambda\theta/(\alpha-1)$.  The expected aggregate loss for a risk of type A is E($S_{\textrm{A}}$)=(0.5)(1000)/(2-1)=500.  The expected aggregate loss for a risk selected at random from the population is E($S$)=0.5[(0.5)(1000)]+0.3[(1.0)(1500)]+0.2[(2.0)(2000)]=1500.
+**Solution** The expected number of claims for a risk is E($N|\lambda$)=$\lambda$.  The expected value for a Pareto distributed random variable is E($X | \theta, \alpha$)=$\theta/(\alpha-1)$.  The expected value of the aggregate loss random variable $S=X_1+\cdots+X_N$ for a risk with parameters $\lambda$, $\alpha$, and $\theta$ is E($S$)=E($N$)E($X$)=$\lambda\theta/(\alpha-1)$.  The expected aggregate loss for a risk of type A is E($S_{\textrm{A}}$)=(0.5)(1000)/(2-1)=500.  The expected aggregate loss for a risk selected at random from the population is E($S$)=0.5[(0.5)(1000)]+0.3[(1.0)(1500)]+0.2[(2.0)(2000)]=1500.
 
 </div>
 
@@ -548,7 +548,7 @@ C & 20\% & \lambda=2.0 & \beta=2000 \\
 <h5 style="text-align: center;"><a id="displayTextExampleCred.3.5" href="javascript:toggleEX('toggleExampleCred.3.5','displayTextExampleCred.3.5');"><i><strong>Show Example Solution</strong></i></a> </h5>
 <div id="toggleExampleCred.3.5" style="display: none">
 
-**Solution** Because individual loss amounts $X$ are exponentially distributed, E($X$)=$\beta$ and Var($X$)=$\beta^2$.  For aggregate loss $S=X_1+\cdots+X_N$, the mean is E($S$)=E($N$)E($X$) and process variance is Var($S$)=E($N$)Var($X$)+[E($X$)]$^2$Var($N$).  With Poisson frequency and exponentially distributed loss amounts, E($S$)=$\lambda\beta$ and Var($S$)=$\lambda\beta^2+\beta^2\lambda=2\lambda\beta^2$.  
+**Solution** Because individual loss amounts $X$ are exponentially distributed, E($X| \beta$)=$\beta$ and Var($X| \beta$)=$\beta^2$.  For aggregate loss $S=X_1+\cdots+X_N$, the mean is E($S$)=E($N$)E($X$) and process variance is Var($S$)=E($N$)Var($X$)+[E($X$)]$^2$Var($N$).  With Poisson frequency and exponentially distributed loss amounts, E($S| \lambda, \beta$)=$\lambda\beta$ and Var($S| \lambda, \beta$) = $\lambda\beta^2+\beta^2\lambda=2\lambda\beta^2$.  
 **Population mean $\mu$**:  Risk means are $\mu$(A)=0.5(1000)=500; $\mu$(B)=1.0(1500)=1500; $\mu$(C)=2.0(2000)=4000; and  $\mu$=0.50(500)+0.30(1500)+0.20(4000)=1,500.  
 **VHM**:  *VHM*=$0.50(500-1500)^2+0.30(1500-1500)^2+0.20(4000-1500)^2$=1,750,000.  
 **EPV**:  Process variances are $\sigma^2(A)=2(0.5)(1000)^2=1,000,000$; $\sigma^2(B)=2(1.0)(1500)^2=4,500,000$; $\sigma^2(C)=2(2.0)(2000)^2=16,000,000$; and *EPV*=0.50(1,000,000)+0.30(4,500,000)+0.20(16,000,000)=5,050,000.  
@@ -639,10 +639,10 @@ Note that $\hat{\mu}(\theta)$ is the estimator for the expected loss for one exp
 
 In an example in the prior section it was shown that $Z$=Var(E($\bar{X}|\theta$))/Var($\bar{X}$) where $\bar{X}$ is the average loss for $n$ observations.  In equation \@ref(eq:bscred) the $\bar{X}$ is the average loss for $m$ exposures and the same $Z$ formula can be used:
 
-\begin{equation*} 
-Z=\frac{\mathrm{Var}(\mathrm{E}(\bar{X}))}{\mathrm{Var}(\bar{X})}=
-\frac{\mathrm{Var}(\mathrm{E}(\bar{X}))}{\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))+\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}. 
-\end{equation*}
+$$
+Z=\frac{\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}{\mathrm{Var}(\bar{X})}=
+\frac{\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}{\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))+\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}. 
+$$
 
 The denominator was expanded using the law of total variance.  As noted above $\mathrm{E}(\bar{X}|\theta)=\mu(\theta)$ so $\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))=\mathrm{Var}(\mu(\theta))=VHM$.
   Because Var$(\bar{X}|\theta)=\sigma^2(\theta)/m$ it follows that E(Var($\bar{X}|\theta$))=E($\sigma^2(\theta))/m$=*EPV*/m.  Making these substitutions and a little algebra gives
@@ -698,7 +698,7 @@ In this section, you learn how to:
 
 Section \@ref(S:MS:BayesInference) reviews Bayesian inference and it is assumed that the reader is familiar with that material.  The reader is also advised to read the B&uuml;hlmann credibility section in this chapter.  This section will compare Bayesian inference with B&uuml;hlmann credibility and show connections between the two models.
 
-A risk with risk parameter $\theta$ has expected loss $\mu(\theta)=E(X|\theta)$ with random variable $X$ representing pure premium, aggegrate loss, number of claims, claim severity, or some other measure of loss during a period of time.  If the risk has $n$ losses $X_1,\ldots, X_n$ during n separate periods of time, then these losses are assumed to be $iid$ for the policyholder and $\mu(\theta)=E(X_i|\theta)$ for $i=1,..,n$.  
+A risk with risk parameter $\theta$ has expected loss $\mu(\theta)=E(X|\theta)$ with random variable $X$ representing pure premium, aggregate loss, number of claims, claim severity, or some other measure of loss during a period of time.  If the risk has $n$ losses $X_1,\ldots, X_n$ during n separate periods of time, then these losses are assumed to be $iid$ for the policyholder and $\mu(\theta)=E(X_i|\theta)$ for $i=1,..,n$.  
 
 If the risk had $n$ losses $x_1,\ldots, x_n$ then  E($\mu(\theta)|x_1,\ldots, x_n)$ is the conditional expectation of $\mu(\theta)$.  The B&uuml;hlmann credibility formula $\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu$ is a linear function of $\bar{X}=(x_1+\cdots+x_n)/n$ used to estimate $E(\mu(\theta)|x_1,\ldots,x_n)$.  
 
@@ -736,9 +736,9 @@ During $n$ years the following number of claims by year was observed for the ran
 \pi(\lambda|x_1,\ldots,x_n)=C\lambda^{(\alpha+\sum_{j=1}^{n}x_j)-1}e^{-(\beta+n)\lambda}. 
 \end{equation*}
 
-This is a gamma distribution with parameters $\alpha'=\alpha+\sum_{j=1}^{n}x_i$ and $\beta'=\beta+n$.  The constant must be $C={\beta'}^{\alpha'}/\Gamma(\alpha')$ so that $\int_{0}^{\infty}\pi(\lambda|x_1,\ldots,x_n) d\lambda=1$ though we do not need to know $C$.  As explained in chapter four the gamma distribution is a conjugate prior for the Poisson distribution so the posterior distribution is also gamma.
+This is a gamma distribution with parameters $\alpha'=\alpha+\sum_{j=1}^{n}x_j$ and $\beta'=\beta+n$.  The constant must be $C={\beta'}^{\alpha'}/\Gamma(\alpha')$ so that $\int_{0}^{\infty}\pi(\lambda|x_1,\ldots,x_n) d\lambda=1$ though we do not need to know $C$.  As explained in chapter four the gamma distribution is a conjugate prior for the Poisson distribution so the posterior distribution is also gamma.
 
-Because the posterior distribtution is gamma the expected number of claims for the selected risk is
+Because the posterior distribution is gamma the expected number of claims for the selected risk is
 
 \begin{equation*}  
 \mathrm{E}(\lambda|x_1,\ldots,x_n) = \frac{\alpha+\sum_{j=1}^{n}x_j}{\beta+n}=\frac{\alpha + \textrm{number of claims}}{\beta+\textrm{number of years}}. 
@@ -775,7 +775,7 @@ Combining terms that have a $p$ and putting everything else into the constant $C
 \pi(p| x)=Cp^{\alpha+x-1}(1-p)^{\beta+(n-x)-1}.
 \end{equation*}
 
-This is a beta distribtuion with new parameters $\alpha^\prime=\alpha+x$ and $\beta^\prime=\beta+(n-x)$.  The constant must be 
+This is a beta distribution with new parameters $\alpha^\prime=\alpha+x$ and $\beta^\prime=\beta+(n-x)$.  The constant must be 
 
 \begin{equation*} 
 C=\frac{\Gamma(\alpha+\beta+n)}{\Gamma(\alpha+x)\Gamma(\beta+n-x)}.
@@ -856,7 +856,7 @@ An empirical mean and second moment for the sizes of individual claim losses can
 
 ### Nonparametric Estimation for B&uuml;hlmann and B&uuml;hlmann-Straub Models
 
-Bayesian analysis as described previously requires assumptions about a prior distribution and likelihood.  It is possible to produce estimates without these assumptions and these methods are often referred to as empirical Bayes methods.  B&uuml;hlmann and B&uuml;hlmann-Straub credibility with parameters estimated from the data are included in category of empirical Bayes methods.
+Bayesian analysis as described previously requires assumptions about a prior distribution and likelihood.  It is possible to produce estimates without these assumptions and these methods are often referred to as empirical Bayes methods.  B&uuml;hlmann and B&uuml;hlmann-Straub credibility with parameters estimated from the data are included in the category of empirical Bayes methods.
 
 
 **B&uuml;hlmann Model** First we will address the simpler B&uuml;hlmann model.  Assume that there are $r$ risks in a population.  For risk $i$ with risk parameter $\theta_i$ the losses for $n$ periods are $X_{i1},\ldots, X_{in}$.  The losses for a given risk are *iid* across periods as assumed in the B&uuml;hlmann model.  For risk $i$ the sample mean is $\bar{X}_i=\sum_{j=1}^{n}X_{ij}/n$ and the unbiased sample process variance is $s_i^2=\sum_{j=1}^{n}(X_{ij}-\bar{X}_i)^2/(n-1)$.  An unbiased estimator for the *EPV* can be calculated by taking the average of $s_i^2$ for the $r$ risks in the population:
@@ -1172,7 +1172,7 @@ For the credibility weighted estimators to be in balance we want
 
 If this equation is satisfied then the estimated losses for each risk will add up to the population total, an important goal in ratemaking, but this may not happen if $\bar{X}$ is used for the complement of credibility. 
 
-In order to find a complement of credibility that will bring the credibility-weighted estimators into balance we will set $\hat{\mu}$ as the complement of crediblity and analyze the following equation:
+In order to find a complement of credibility that will bring the credibility-weighted estimators into balance we will set $\hat{\mu}$ as the complement of credibility and analyze the following equation:
 
 \begin{equation*}   
 \sum_{i=1}^r(m_i/m) \bar{X}_i=\sum_{i=1}^r(m_i/m) (Z_i\bar{X}_i+(1-Z_i)\hat{\mu}) .
@@ -1189,7 +1189,7 @@ and
 \begin{equation*}  
 \hat{\mu}=\frac{\sum_{i=1}^r m_i(1-Z_i)\bar{X}_i}{\sum_{i=1}^r m_i(1-Z_i)}. \end{equation*}
 
-Using this value for $\hat{\mu}$  will bring the credilility weighted estimators into balance.
+Using this value for $\hat{\mu}$  will bring the credibility weighted estimators into balance.
 
 If credibilities $Z_i$ were computed using the B&uuml;hlmann-Straub model, then $Z_i=m_i/(m_i+K)$.  The prior formula can be simplified using the following relationship
 
@@ -1204,7 +1204,7 @@ Therefore, a complement of credibility that will bring the credibility-weighed e
  
 
 **Example `r chapnum`.6.6.**
-An example from the nonparametric B&uuml;hlmann-Straub section had the following data for two risks.  Find the complement of credibility $\hat{\mu}$ that will produce crediblity-weighted estimates that are in balance.
+An example from the nonparametric B&uuml;hlmann-Straub section had the following data for two risks.  Find the complement of credibility $\hat{\mu}$ that will produce credibility-weighted estimates that are in balance.
 
 $$\begin{matrix}
 \begin{array}{|c|c|c|c|c|c|}
