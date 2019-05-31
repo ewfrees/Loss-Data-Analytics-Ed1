@@ -3,7 +3,7 @@
 
 # Frequency Modeling {#C:Frequency-Modeling}
 
-*Chapter Preview.* A primary focus for insurers is estimating the magnitude of aggregate claims it must bear under its insurance contracts. Aggregate claims are affected by both the frequency of insured events and the severity of the insured event. Decomposing aggregate claims into these two components, each of which warrant significant attention, is essential for analysis and pricing. This chapter discusses frequency distributions, summary measures, and parameter estimation techniques. 
+*Chapter Preview.* A primary focus for insurers is estimating the magnitude of aggregate claims it must bear under its insurance contracts. `r Gloss('Aggregate claims')` are affected by both the frequency of insured events and the severity of the insured event. Decomposing aggregate claims into these two components, each of which warrant significant attention, is essential for analysis and pricing. This chapter discusses frequency distributions, summary measures, and parameter estimation techniques. 
 
 In Section \@ref(S:frequency-distributions), we present terminology and discuss reasons why we study frequency and severity separately. The foundations of frequency distributions and measures are presented in Section \@ref(S:basic-frequency-distributions) along with three principal distributions: the binomial, the Poisson, and the negative binomial. These three distributions are members of what is known as the (a,b,0) class of distributions, a distinguishing, identifying feature which allows for efficient calculation of probabilities, further discussed in Section \@ref(S:the-a-b-0-class). When fitting a dataset with a distribution, parameter values need to be estimated and in Section \@ref(S:estimating-frequency-distributions), the procedure for maximum likelihood estimation is explained. For insurance datasets, the observation at 0, denoting the occurrence of zero of a particular event, is notable and may deserve additional attention. By nature of the dataset, and explained further in Section \@ref(S:other-frequency-distributions), it may be impossible to have zero of the studied event, or the probability at zero could be of such a magnitude that direct fitting would lead to improper estimates. Zero truncation or modification techniques allow for more appropriate distribution fit. Noting that our insurance portfolio could consist of different sub-groups, each with its own set of individual characteristics, Section \@ref(S:mixture-distributions) introduces mixture distributions and methodology to allow for this heterogeneity within a portfolio. Section \@ref(S:goodness-of-fit) describes Goodness of Fit which measures the reasonableness of the parameter estimates. Exercises are presented in Section \@ref(S:exercises) and Section \@ref(S:rcode) concludes the chapter with `R` Code for plots depicted in Section \@ref(S:estimating-frequency-distributions).
 
@@ -11,16 +11,19 @@ In Section \@ref(S:frequency-distributions), we present terminology and discuss 
 ## Frequency Distributions {#S:frequency-distributions}
 
 ***
-In this section, you learn how to:
+In this section, you learn how to summarize the importance of frequency modeling in terms of 
 
-- Summarize the importance of frequency modeling in terms of contractual, behavioral, database and regulatory/administrative motivations
+* contractual, 
+* behavioral, 
+* database and 
+* regulatory/administrative motivations.
 
 ***
 
 ### How Frequency Augments Severity Information {#S:how-frequency-augments-severity-information}
 
 #### Basic Terminology {#S:basic-terminology}
-In this chapter, **loss**, also referred to as ground-up loss, denotes the amount suffered by the insured. We use **claim** to denote the indemnification upon the occurrence of an insured event, thus the amount paid by the insurer. While some texts use **loss** and **claim** interchangeably, we wish to make a distinction here to recognize how insurance contractual provisions, such as deductibles and limits, affect the size of the claim stemming from a loss. **Frequency** represents how often an insured event occurs, typically within a policy contract. Here, we focus on count random variables that represent the number of claims, that is, how frequently an event occurs. **Severity** denotes the amount, or size, of each payment for an insured event. In future chapters, the aggregate model, which combines frequency models with severity models, is examined.
+In this chapter, **loss**, also referred to as ground-up loss, denotes the amount suffered by the insured. We use **claim** to denote the indemnification upon the occurrence of an insured event, thus the amount paid by the insurer. While some texts use **loss** and **claim** interchangeably, we wish to make a distinction here to recognize how insurance contractual provisions, such as deductibles and limits, affect the size of the claim stemming from a loss. `r Gloss('Frequency')` represents how often an insured event occurs, typically within a policy contract. Here, we focus on count random variables that represent the number of claims, that is, how frequently an event occurs. `r Gloss('Severity')` denotes the amount, or size, of each payment for an insured event. In future chapters, the aggregate model, which combines frequency models with severity models, is examined.
 
 #### The Importance of Frequency {#S:the-importance-of-frequency}
 
@@ -60,37 +63,37 @@ In this section, you learn how to:
 In this section, we will introduce the distributions that are commonly used in actuarial practice to model count data. The claim count random variable is denoted by $N$; by its very nature it assumes only non-negative integer values. Hence the distributions below are all discrete distributions supported on the set of non-negative integers $\{0, 1, \ldots \}$.
 
 ### Foundations {#S:foundations}
-Since $N$ is a discrete random variable taking values in $\{0, 1, \ldots \}$, the most natural full description of its distribution is through the specification of the probabilities with which it assumes each of the non-negative integer values. This leads us to the concept of the **probability mass function** (*pmf*) of $N$, denoted as $p_N(\cdot)$ and defined as follows:
+Since $N$ is a discrete random variable taking values in $\{0, 1, \ldots \}$, the most natural full description of its distribution is through the specification of the probabilities with which it assumes each of the non-negative integer values. This leads us to the concept of the `r Gloss('probability mass function (pmf)')` of $N$, denoted as $p_N(\cdot)$ and defined as follows:
 \begin{equation}
 p_N(k)=\Pr(N=k), \quad \hbox{for } k=0,1,\ldots
 \end{equation}
-We note that there are alternate complete descriptions, or characterizations, of the distribution of $N$; for example, the **distribution function** of $N$ denoted by $F_N(\cdot)$ and defined below is another such: 
+We note that there are alternate complete descriptions, or characterizations, of the distribution of $N$; for example, the `r Gloss('distribution function')` of $N$ denoted by $F_N(\cdot)$ and defined below is another such: 
 \begin{equation}
 F_N(x):=\begin{cases}
 \sum\limits_{k=0}^{\lfloor x \rfloor } \Pr(N=k), &x\geq 0;\\
 0, & \hbox{otherwise}.
 \end{cases}
 \end{equation}
-In the above, $\lfloor \cdot \rfloor$ denotes the floor function; $\lfloor x \rfloor$ denotes the greatest integer less than or equal to $x$. We note that the **survival function** of $N$, denoted by $S_N(\cdot)$, is defined as the ones'-complement of $F_N(\cdot)$, *i.e.* $S_N(\cdot):=1-F_N(\cdot)$. Clearly, the latter is another characterization of the distribution of $N$.
+In the above, $\lfloor \cdot \rfloor$ denotes the floor function; $\lfloor x \rfloor$ denotes the greatest integer less than or equal to $x$. We note that the `r Gloss('survival function')` of $N$, denoted by $S_N(\cdot)$, is defined as the ones'-complement of $F_N(\cdot)$, *i.e.* $S_N(\cdot):=1-F_N(\cdot)$. Clearly, the latter is another characterization of the distribution of $N$.
 
-Often one is interested in quantifying a certain aspect of the distribution and not in its complete description. This is particularly useful when comparing distributions. A *center of location* of the distribution is one such aspect, and there are many different measures that are commonly used to quantify it. Of these, the **mean** is the most popular; the mean of $N$, denoted by $\mu_N$,[^1] is defined as
+Often one is interested in quantifying a certain aspect of the distribution and not in its complete description. This is particularly useful when comparing distributions. A *center of location* of the distribution is one such aspect, and there are many different measures that are commonly used to quantify it. Of these, the `r Gloss('mean')` is the most popular; the mean of $N$, denoted by $\mu_N$,[^1] is defined as
 
 [^1]: For convenience, we have indexed $\mu_N$ with the random variable $N$ instead of $F_N$ or $p_N$, even though it is solely a function of the distribution of the random variable.
 
 \begin{equation}
 \mu_N=\sum_{k=0}^\infty k~p_N(k).
 \end{equation}
-We note that $\mu_N$ is the expected value of the random variable $N$, *i.e.* $\mu_N=\mathrm{E}[N]$. This leads to a general class of measures, the *moments* of the distribution; the $r$-th moment of $N$, for $r> 0$,  is defined as $\mathrm{E}{[N^r]}$ and denoted by $\mu_N'(r)$. Hence, for $r>0$, we have  
+We note that $\mu_N$ is the expected value of the random variable $N$, *i.e.* $\mu_N=\mathrm{E}[N]$. This leads to a general class of measures, the `r Gloss('moments')` of the distribution; the $r$-th moment of $N$, for $r> 0$,  is defined as $\mathrm{E}{[N^r]}$ and denoted by $\mu_N'(r)$. Hence, for $r>0$, we have  
 \begin{equation}
 \mu_N'(r)= \mathrm{E}{[N^r]}= \sum_{k=0}^\infty k^r~p_N(k).
 \end{equation}
 We note that $\mu_N'(\cdot)$ is a well-defined non-decreasing function taking values in $[0,\infty]$, as $\Pr(N\in\{0, 1, \ldots \})=1$; also, note that $\mu_N=\mu_N'(1)$. In the following, when we refer to a moment it will be implicit that it is finite unless mentioned otherwise.
 
-Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the **standard deviation** is the most popular. Towards defining it, we first define the **variance** of $N$, denoted by $\mathrm{Var}[N]$, as $\mathrm{Var}[N]:=\mathrm{E}{[(N-\mu_N)^2]}$ when $\mu_N$ is finite. By basic properties of the expected value of a random variable, we see that $\mathrm{Var}[N]:=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2$. The standard deviation of $N$, denoted by $\sigma_N$, is defined as the square-root of $\mathrm{Var}~N$. Note that the latter is well-defined as $\mathrm{Var}[N]$, by its definition as the average squared deviation from the mean, is non-negative; $\mathrm{Var}[N]$ is denoted by $\sigma_N^2$. Note that these two measures take values in $[0,\infty]$.  
+Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the `r Gloss('standard deviation')` is the most popular. Towards defining it, we first define the `r Gloss('variance')` of $N$, denoted by $\mathrm{Var}[N]$, as $\mathrm{Var}[N]:=\mathrm{E}{[(N-\mu_N)^2]}$ when $\mu_N$ is finite. By basic properties of the expected value of a random variable, we see that $\mathrm{Var}[N]:=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2$. The standard deviation of $N$, denoted by $\sigma_N$, is defined as the square-root of $\mathrm{Var}~N$. Note that the latter is well-defined as $\mathrm{Var}[N]$, by its definition as the average squared deviation from the mean, is non-negative; $\mathrm{Var}[N]$ is denoted by $\sigma_N^2$. Note that these two measures take values in $[0,\infty]$.  
 
 ### Moment and Probability Generating Functions {#S:generating-functions}
 
-Now we will introduce two generating functions that are found to be useful when working with count variables. Recall that for a discrete random variable, the **moment generating function** (mgf) of $N$, denoted as $M_N(\cdot)$, is defined as 
+Now we will introduce two generating functions that are found to be useful when working with count variables. Recall that for a discrete random variable, the `r Gloss('moment generating function (mgf)')` of $N$, denoted as $M_N(\cdot)$, is defined as 
 \[
 M_N(t) = \mathrm{E}~{[e^{tN}]} = \sum^{\infty}_{k=0} ~e^{tk}~ p_N(k), \quad t\in \mathbb{R}.
 \]
@@ -113,7 +116,7 @@ The *mgf* $M_N(\cdot)$ characterizes the distribution; in other words it uniquel
 
 Another reason that the *mgf* is very useful as a tool is that for two independent random variables $X$ and $Y$, with their mgfs existing in a neighborhood of $0$, the *mgf* of $X+Y$ is the product of their respective mgfs.  
 
-A related generating function to the *mgf* is called the **probability generating function** (*pgf*), and is a useful tool for random variables taking values in the non-negative integers. For a random variable $N$, by $P_N(\cdot)$ we denote its *pgf* and we define it as follows[^2]:
+A related generating function to the *mgf* is called the `r Gloss('probability generating function (pgf)')`, and is a useful tool for random variables taking values in the non-negative integers. For a random variable $N$, by $P_N(\cdot)$ we denote its *pgf* and we define it as follows[^2]:
 \begin{equation}
 P_N(s):=\mathrm{E}~{[s^N]}, \quad s\geq 0.
 \end{equation}
@@ -155,7 +158,7 @@ In this sub-section we will study three important frequency distributions used i
 * These distributions can be motivated by natural random experiments which are good approximations to real life processes from which many insurance data arise. Hence, not surprisingly, they together offer a reasonable fit to many insurance data sets of interest. The appropriateness of a particular distribution for the set of data can be determined using standard statistical methodologies, as we discuss later in this chapter. 
 
 * They provide a rich enough basis for generating other distributions that even better approximate or well cater to more real situations of interest to us. 
-    + The three distributions are either one-parameter or two-parameter distributions. In fitting to data, a parameter is assigned a particular value. The set of these distributions can be enlarged to their convex hulls by treating the parameter(s) as a random variable (or vector) with its own probability distribution, with this larger set of distributions offering greater flexibility. A simple example that is better addressed by such an enlargement is a portfolio of claims generated by insureds belonging to many different risk classes. 
+    + The three distributions are either one-parameter or two-parameter distributions. In fitting to data, a parameter is assigned a particular value. The set of these distributions can be enlarged to their `r Gloss('convex hulls')` by treating the parameter(s) as a random variable (or vector) with its own probability distribution, with this larger set of distributions offering greater flexibility. A simple example that is better addressed by such an enlargement is a portfolio of claims generated by insureds belonging to many different `r Gloss('risk classes')`. 
     
     + In insurance data, we may observe either a marginal or inordinate number of zeros, that is, zero claims by risk. When fitting to the data, a frequency distribution in its standard specification often fails to reasonably account for this occurrence. The natural modification of the above three distributions, however, accommodate this phenomenon well towards offering a better fit.
     
@@ -164,7 +167,7 @@ In this sub-section we will study three important frequency distributions used i
 <!-- \phantom{It is useful to get an example here of a discrete distribution with three point support and derive its mgf/pgf/moments etc..} -->
 
 #### Binomial Distribution {#S:binomial-distribution}
-We begin with the binomial distribution which arises from any finite sequence of identical and independent experiments with binary outcomes. The most canonical of such experiments is the (biased or unbiased) coin tossing experiment with the outcome being heads or tails. So if $N$ denotes the number of heads in a sequence of $m$ independent coin tossing experiments with an identical coin which turns heads up with probability $q$, then the distribution of $N$ is called the binomial distribution with parameters $(m,q)$, with $m$ a positive integer and $q\in[0,1]$. Note that when $q=0$ (resp., $q=1$) then the distribution is degenerate with $N=0$ (resp., $N=m$) with probability $1$. Clearly, its support when $q\in(0,1)$ equals $\{0,1,\ldots,m\}$ with *pmf* given by [^3]
+We begin with the binomial distribution which arises from any finite sequence of identical and independent experiments with `r Gloss('binary outcomes')`. The most canonical of such experiments is the (biased or unbiased) coin tossing experiment with the outcome being heads or tails. So if $N$ denotes the number of heads in a sequence of $m$ independent coin tossing experiments with an identical coin which turns heads up with probability $q$, then the distribution of $N$ is called the `r Gloss('binomial distribution')` with parameters $(m,q)$, with $m$ a positive integer and $q\in[0,1]$. Note that when $q=0$ (resp., $q=1$) then the distribution is degenerate with $N=0$ (resp., $N=m$) with probability $1$. Clearly, its support when $q\in(0,1)$ equals $\{0,1,\ldots,m\}$ with *pmf* given by [^3]
 
 [^3]: In the following we will suppress the reference to $N$ and denote the *pmf* by the sequence $\{p_k\}_{k\geq 0}$, instead of the function $p_N(\cdot)$.
 
@@ -178,7 +181,7 @@ The reason for its name is that the *pmf* takes values among the terms that aris
 \[
 P_N(z):= \sum_{k=0}^m z^k \binom{m}{k} q^k (1-q)^{m-k} = \sum_{k=0}^m  \binom{m}{k} (zq)^k (1-q)^{m-k} = (qz+(1-q))^m = (1+q(z-1))^m.
 \]
-Note that the above expression for the *pgf* confirms the fact that the binomial distribution is the $m$-convolution of the Bernoulli distribution, which is the binomial distribution with $m=1$ and *pgf* $(1+q(z-1))$. Also, note that the *mgf* of the binomial distribution is given by $(1+q(e^t-1))^m$.  
+Note that the above expression for the *pgf* confirms the fact that the binomial distribution is the `r Gloss('m-convolution')` of the Bernoulli distribution, which is the binomial distribution with $m=1$ and *pgf* $(1+q(z-1))$. Also, note that the *mgf* of the binomial distribution is given by $(1+q(e^t-1))^m$.  
 
 The central moments of the binomial distribution can be found in a few different ways. To emphasize the key property that it is a $m$-convolution of the Bernoulli distribution, we derive below the moments using this property. We begin by observing that the Bernoulli distribution with parameter $q$ assigns probability of $q$ and $1-q$ to $1$ and $0$, respectively. So its mean equals $q$ ($=0\times (1-q) + 1\times q$); note that its raw second moment equals its mean as $N^2=N$ with probability $1$. Using these two facts we see that the variance equals $q(1-q)$. Moving on to the binomial distribution with parameters $m$ and $q$, using the fact that it is the $m$-convolution of the Bernoulli distribution, we write $N$ as the sum of $N_1,\ldots,N_m$, where $N_i$ are *iid* Bernoulli variates. Now using the moments of Bernoulli and linearity of the expectation, we see that 
 \[
@@ -191,7 +194,7 @@ Also, using the fact that the variance of the sum of independent random variable
 Alternate derivations of the above moments are suggested in the exercises. One important observation, especially from the point of view of applications, is that the mean is greater than the variance unless $q=0$.  
 
 #### Poisson Distribution{#S:poisson-distribution}
-After the binomial distribution, the Poisson distribution (named after the French polymath Simeon Denis Poisson) is probably the most well known of discrete distributions. This is partly due to  the fact that it arises naturally as the distribution of the count of the random occurrences of a type of event in a certain time period, if the rate of occurrences of such events is a constant. It also arises as the asymptotic limit of the binomial distribution with $m\rightarrow \infty$ and $mq\rightarrow \lambda$. 
+After the binomial distribution, the `r Gloss('Poisson distribution')` (named after the French polymath Simeon Denis Poisson) is probably the most well known of discrete distributions. This is partly due to  the fact that it arises naturally as the distribution of the count of the random occurrences of a type of event in a certain time period, if the rate of occurrences of such events is a constant. It also arises as the asymptotic limit of the binomial distribution with $m\rightarrow \infty$ and $mq\rightarrow \lambda$. 
 
 The Poisson distribution is parametrized by a single parameter usually denoted by $\lambda$ which takes values in $(0,\infty)$. Its *pmf* is given by 
 \[
@@ -228,7 +231,7 @@ This, in particular, implies that
 Note that interestingly for the Poisson distribution $\mathrm{Var}[N]=\mathrm{E}[N]$. 
 
 #### Negative Binomial Distribution {#S:negative-binomial-distribution}
-The third important count distribution is the negative binomial distribution. Recall that the binomial distribution arose as the distribution of the number of *successes* in $m$ independent repetition of an experiment with binary outcomes. If we instead consider the number of *successes* until we observe the $r$-th *failure* in independent repetitions of an experiment with binary outcomes, then its distribution is a negative binomial distribution. A particular case, when $r=1$, is the geometric distribution. However when $r$ in not an integer, the above random experiment would not be applicable. In the following, we will allow the parameter $r$ to be any positive real number to then motivate the distribution more generally. To explain its name, we recall the binomial series, *i.e.*
+The third important count distribution is the `r Gloss('negative binomial distribution')`. Recall that the binomial distribution arose as the distribution of the number of *successes* in $m$ independent repetition of an experiment with binary outcomes. If we instead consider the number of *successes* until we observe the $r$-th *failure* in independent repetitions of an experiment with binary outcomes, then its distribution is a negative binomial distribution. A particular case, when $r=1$, is the geometric distribution. However when $r$ in not an integer, the above random experiment would not be applicable. In the following, we will allow the parameter $r$ to be any positive real number to then motivate the distribution more generally. To explain its name, we recall the binomial series, *i.e.*
 \[
 (1+x)^s= 1 + s x + \frac{s(s-1)}{2!}x^2 + \ldots..., \quad s\in\mathbb{R}; \vert x \vert<1.
 \]
@@ -269,7 +272,7 @@ We derive its moments using Theorem \@ref(thm:freq-thm1) as follows:
 \hbox{and }\mathrm{Var}[N]&=&\mathrm{E}{[N^2]}-(\mathrm{E}[{N}])^2=r\beta(1+\beta)+r^2\beta^2-r^2\beta^2=r\beta(1+\beta)
 \end{eqnarray*}
 
-We note that when $\beta>0$, we have $\mathrm{Var}[N] >\mathrm{E}[N]$. In other words, this distribution is **overdispersed** (relative to the Poisson); similarly, when $q>0$ the binomial distribution is said to be **underdispersed** (relative to the Poisson).
+We note that when $\beta>0$, we have $\mathrm{Var}[N] >\mathrm{E}[N]$. In other words, this distribution is `r Gloss('overdispersed')` (relative to the Poisson); similarly, when $q>0$ the binomial distribution is said to be `r Gloss('underdispersed')` (relative to the Poisson).
 
 Finally, we observe that the Poisson distribution also emerges as a limit of negative binomial distributions. Towards establishing this, let $\beta_r$ be such that as $r$ approaches infinity $r\beta_r$ approaches $\lambda>0$. Then we see that the mgfs of negative binomial distributions with parameters $(r,\beta_r)$ satisfies 
 \[
@@ -329,7 +332,7 @@ p_k = \binom{k+r-1}{k} p_0 a^k, \quad k=1,2,\ldots.
 \]
 The above series converges for $a<1$ when $r>0$, with the sum given by $p_0*((1-a)^{(-r)}-1)$. Hence, equating the latter to $1-p_0$ we get $p_0=(1-a)^{(r)}$. So in this case the pair $(a,b)$ is of the form $(a,(r-1)a)$, for $r>0$ and $0<a<1$; since an equivalent parametrization is $(\beta/(1+\beta),(r-1)\beta/(1+\beta))$, for $r>0$ and $\beta>0$, we see from above that such distributions are negative binomial distributions.
 
-From the above development we see that not only does the recurrence \@ref(eq:ab0) tie these three distributions together, but also it characterizes them. For this reason these three distributions are collectively referred to in the actuarial literature as $(a,b,0)$ class of distributions, with $0$ referring to the starting point of the recurrence. Note that the value of $p_0$ is implied by $(a,b)$ since the probabilities have to sum to one. Of course, \@ref(eq:ab0) as a recurrence relation for $p_k$  makes  the computation of the *pmf* efficient by removing redundancies. Later, we will see that it does so even in the case of compound distributions with the frequency distribution belonging to the $(a,b,0)$ class - this fact is the more important motivating reason to study these three distributions from this viewpoint.
+From the above development we see that not only does the recurrence \@ref(eq:ab0) tie these three distributions together, but also it characterizes them. For this reason these three distributions are collectively referred to in the actuarial literature as `r Gloss('(a,b,0) class')` of distributions, with $0$ referring to the starting point of the recurrence. Note that the value of $p_0$ is implied by $(a,b)$ since the probabilities have to sum to one. Of course, \@ref(eq:ab0) as a recurrence relation for $p_k$  makes  the computation of the *pmf* efficient by removing redundancies. Later, we will see that it does so even in the case of compound distributions with the frequency distribution belonging to the $(a,b,0)$ class - this fact is the more important motivating reason to study these three distributions from this viewpoint.
 
 **Example `r chapnum`.3.1.** 
 A discrete probability distribution has the following properties 
@@ -341,8 +344,7 @@ p_1&= \frac{9}{256}
 \] 
 Determine the expected value of this discrete random variable.
 
-<h5 style="text-align: center;"><a id="displayTextExampleFreq.3.1" href="javascript:toggleEX('toggleExampleFreq.3.1','displayTextExampleFreq.3.1');"><i><strong>Show Example Solution</strong></i></a> </h5>
-<div id="toggleExampleFreq.3.1" style="display: none">
+`r HideExample('2.3.1')`
 
 **Solution:** Since the *pmf* satisfies the $(a,b,0)$ recurrence relation we know that the underlying distribution is one among the binomial, Poisson, and negative binomial distributions. Since the ratio of the parameters (*i.e.* $b/a$) equals $2$, we know that it is negative binomial and that $r=3$. Moreover, since for a negative binomial $p_1=r(1+\beta)^{-(r+1)}\beta$, we have 
 \[
@@ -396,7 +398,7 @@ in the case of the binomial distribution we have
 \[
 L(m,q)=\left(\prod_{i=1}^n \binom{m}{x_i}\right) q^{\sum_{i=1}^n x_i} (1-q)^{nm-\sum_{i=1}^n x_i} .
 \] 
-The **maximum likelihood estimator** (*MLE*) for $\theta$ is any maximizer of the likelihood; in a sense the  *MLE* chooses the set of parameter values that best explains the observed observations. Consider a sample of size $3$ from a Bernoulli distribution (binomial with $m=1$) with values $0,1,0$. The likelihood in this case is easily checked to equal 
+The `r Gloss('maximum likelihood estimator (MLE)')` for $\theta$ is any maximizer of the likelihood; in a sense the  *MLE* chooses the set of parameter values that best explains the observed observations. Consider a sample of size $3$ from a Bernoulli distribution (binomial with $m=1$) with values $0,1,0$. The likelihood in this case is easily checked to equal 
 \[
 L(q)=q(1-q)^2,
 \]
@@ -404,7 +406,7 @@ and the plot of the likelihood is given in Figure \@ref(fig:berlik). As shown in
 \[
 q(1-q)^2=\left(q-\frac{1}{3}\right)^2\left(q-\frac{4}{3}\right)+\frac{4}{27},
 \]
-and conclude that the maximum equals $4/27$, and is attained at $q=1/3$ (using the fact that the first term is non-positive in the interval $[0,1]$). But as is apparent, this way of deriving the *mle* using algebra does not generalize. In general, one resorts to calculus to derive the *mle* - note that for some likelihoods one may have to resort to other optimization methods, especially when the likelihood has many local extrema. It is customary to equivalently maximize the logarithm of the likelihood[^5] $L(\cdot)$, denoted by $l(\cdot)$, and look at the set of zeros of its first derivative[^6] $l'(\cdot)$. In the case of the above likelihood, $l(q)=\log(q)+2\log(1-q)$, and 
+and conclude that the maximum equals $4/27$, and is attained at $q=1/3$ (using the fact that the first term is non-positive in the interval $[0,1]$). But as is apparent, this way of deriving the *mle* using algebra does not generalize. In general, one resorts to calculus to derive the *mle* - note that for some likelihoods one may have to resort to other optimization methods, especially when the likelihood has many `r Gloss('local extrema')`. It is customary to equivalently maximize the logarithm of the likelihood[^5] $L(\cdot)$, denoted by $l(\cdot)$, and look at the set of zeros of its first derivative[^6] $l'(\cdot)$. In the case of the above likelihood, $l(q)=\log(q)+2\log(1-q)$, and 
 \[
 l'(q):=\frac{\rm d}{{\rm d}q}l(q)=\frac{1}{q}-\frac{2}{1-q}.
 \]
@@ -461,7 +463,7 @@ Note that the sample mean can be computed also as
 \[
 \frac{1}{n} \sum_{k\geq 1} km_k.
 \]
-It is noteworthy that in the case of the Poisson, the exact distribution of $\hat{\lambda}_{\rm MLE}$ is available in closed form - it is a scaled Poisson - when the underlying distribution is a Poisson. This is so as the sum of independent Poisson random variables is a Poisson as well. Of course, for large sample size one can use the ordinary Central Limit Theorem (CLT) to derive a normal approximation. Note that the latter approximation holds even if the underlying distribution is any distribution with a finite second moment.  
+It is noteworthy that in the case of the Poisson, the exact distribution of $\hat{\lambda}_{\rm MLE}$ is available in closed form - it is a scaled Poisson - when the underlying distribution is a Poisson. This is so as the sum of independent Poisson random variables is a Poisson as well. Of course, for large sample size one can use the ordinary `r Gloss('Central Limit Theorem (CLT)')` to derive a normal approximation. Note that the latter approximation holds even if the underlying distribution is any distribution with a finite second moment.  
 
 **MLE - Binomial Distribution:** Unlike the case of the Poisson distribution, the parameter space in the case of the binomial is $2$-dimensional. Hence the optimization problem is a bit more challenging. We begin by observing that the likelihood is given by 
 \[
@@ -586,7 +588,7 @@ We note that, in the above expressions for the terms involving a double summatio
 \[
 \left(\frac{1}{n}\right)\frac{\delta^2}{\delta r^2}l(r,\overline{x}/r)=\frac{\overline{x}}{r(r+\overline{x})}-\left(\frac{1}{n}\right)\sum_{i=1}^n \sum_{j=1}^{x_i}\frac{1}{(r-1+j)^2}.
 \]
-A simple but quickly converging  iterative root finding algorithm is the Newton's method, which incidentally the Babylonians are believed to have used for computing square roots. Under this method, an initial approximation is selected for the root and new approximations for the root are successively generated until convergence. Applying the Newton's method to our problem results in the following algorithm:  
+A simple but quickly converging  iterative root finding algorithm is the `r Gloss("Newton's method")`, which incidentally the Babylonians are believed to have used for computing square roots. Under this method, an initial approximation is selected for the root and new approximations for the root are successively generated until convergence. Applying the Newton's method to our problem results in the following algorithm:  
 <!-- \begin{enumerate}[leftmargin=0.5in,label=Step \roman*] -->
 *Step i*. Choose an approximate solution, say $r_0$. Set $k$ to $0$.  
 *Step ii*. Define $r_{k+1}$ as
@@ -599,7 +601,7 @@ For example, we simulated a $5$ observation sample of $41, 49, 40, 27, 23$ from 
 \[
 r\beta=\hat{\mu} \quad \hbox{and} \quad r\beta(1+\beta)=\hat{\sigma}^2
 \]
-where \hat{\mu} represents the estimated mean and hat{\sigma}^2 is the estimated variance. This leads to the starting value for $r$ of $23.14286$. The iterates of $r$ from the Newton's method are 
+where $\hat{\mu}$ represents the estimated mean and $hat{\sigma}^2$ is the estimated variance. This leads to the starting value for $r$ of $23.14286$. The iterates of $r$ from the Newton's method are 
 \[
 21.39627, 21.60287, 21.60647, 21.60647;
 \]
@@ -609,8 +611,7 @@ the rapid convergence seen above is typical of the Newton's method. Hence in thi
 
 *R Implementation of Newton's Method - Negative Binomial MLE for $r$*  
 
-<h5 style="text-align: center;"><a id="displayCodeFreq.1" href="javascript:togglecode('toggleCodeFreq.1','displayCodeFreq.1');"><i><strong>Show R Code</strong></i></a> </h5>
-<div id="toggleCodeFreq.1" style="display: none">
+`r HideRCode('Freq.1','Show R Code')`
 
 
 ``` 
@@ -673,9 +674,9 @@ In this section, you learn how to:
 
 ***
 
-In the previous sections, we discussed three distributions with supports contained in the set of non-negative integers, which well cater to many insurance applications. Moreover, typically by allowing the parameters to be a function of known (to the insurer) explanatory variables such as age, sex, geographic location (territory), and so forth, these distributions allow us to explain claim probabilities in terms of these  variables. The field of statistical study that studies such models is known as **regression analysis** - it is an important topic of actuarial interest that we will not pursue in this book; see [@freesregression].
+In the previous sections, we discussed three distributions with supports contained in the set of non-negative integers, which well cater to many insurance applications. Moreover, typically by allowing the parameters to be a function of known (to the insurer) `r Gloss('explanatory variables')` such as age, sex, geographic location (territory), and so forth, these distributions allow us to explain claim probabilities in terms of these  variables. The field of statistical study that studies such models is known as `r Gloss('regression analysis')` - it is an important topic of actuarial interest that we will not pursue in this book; see [@freesregression].
 
-There are clearly infinitely many other count distributions, and more importantly the above distributions by themselves do not cater to all practical needs. In particular, one feature of some insurance data is that the proportion of zero counts can be out of place with the proportion of other counts to be explainable by the above distributions. In the following we modify the above distributions to allow for arbitrary probability for zero count irrespective of the assignment of relative probabilities for the other counts. Another feature of a data set which is naturally comprised of homogeneous subsets is that while the above distributions may provide good fits to each subset, they may fail to do so to the whole data set. Later we naturally extend the $(a,b,0)$ distributions to be able to cater to, in particular,  such data sets. 
+There are clearly infinitely many other count distributions, and more importantly the above distributions by themselves do not cater to all practical needs. In particular, one feature of some insurance data is that the proportion of zero counts can be out of place with the proportion of other counts to be explainable by the above distributions. In the following we modify the above distributions to allow for arbitrary probability for zero count irrespective of the assignment of relative probabilities for the other counts. Another feature of a data set which is naturally comprised of `r Gloss('homogeneous')` subsets is that while the above distributions may provide good fits to each subset, they may fail to do so to the whole data set. Later we naturally extend the $(a,b,0)$ distributions to be able to cater to, in particular,  such data sets. 
   
 ### Zero Truncation or Modification{#S:zero-truncation-or-modification}
 
@@ -689,7 +690,7 @@ As presented below, we modify the probability assigned to zero count by the $(a,
 (\#eq:ab1)
 \end{equation}
 
-Note that since the recursion starts with $p_1$, and not $p_0$, we refer to this super-class of $(a,b,0)$ distributions by $(a,b,1)$. To understand this class, recall that each valid pair of values for $a$ and $b$ of the $(a,b,0)$ class corresponds to a unique vector of probabilities $\{p_k\}_{k\geq 0}$. If we now look at the probability vector $\{\tilde{p}_k\}_{k\geq 0}$ given by
+Note that since the recursion starts with $p_1$, and not $p_0$, we refer to this super-class of $(a,b,0)$ distributions by `r Gloss('(a,b,1)')`. To understand this class, recall that each valid pair of values for $a$ and $b$ of the $(a,b,0)$ class corresponds to a unique vector of probabilities $\{p_k\}_{k\geq 0}$. If we now look at the probability vector $\{\tilde{p}_k\}_{k\geq 0}$ given by
 \[
 \tilde{p}_k= \frac{1-\tilde{p}_0}{1-p_0}\cdot p_k, \quad k\geq 1,
 \]
@@ -699,7 +700,7 @@ In the above, we started with a pair of values for $a$ and $b$ that led to a val
 
 <!-- %\textcolor{blue}{Add an example with a>0 and b=-3/2*a?}    -->
 
-Zero modification of a count distribution $F$ such that it assigns zero probability to zero count is called a zero truncation of $F$. Hence, the zero truncated version of probabilities $\{p_k\}_{k\geq 0}$ is given by 
+Zero modification of a count distribution $F$ such that it assigns zero probability to zero count is called a `r Gloss('zero truncation')` of $F$. Hence, the zero truncated version of probabilities $\{p_k\}_{k\geq 0}$ is given by 
 \[
 \tilde{p}_k=\begin{cases}
 0, & k=0;\\
@@ -707,7 +708,7 @@ Zero modification of a count distribution $F$ such that it assigns zero probabil
 \end{cases}
 \]
 
-In particular, we have that a zero modification of a count distribution $\{p_k^T\}_{k\geq 0}$, denoted by $\{p^M_k\}_{k\geq 0}$, can be written as a convex combination of the degenerate distribution at $0$ and the zero truncation of $\{p_k\}_{k\geq 0}$, denoted by $\{p^T_k\}_{k\geq 0}$. That is we have 
+In particular, we have that a zero modification of a count distribution $\{p_k^T\}_{k\geq 0}$, denoted by $\{p^M_k\}_{k\geq 0}$, can be written as a `r Gloss('convex combination')` of the `r Gloss('degenerate distribution')` at $0$ and the zero truncation of $\{p_k\}_{k\geq 0}$, denoted by $\{p^T_k\}_{k\geq 0}$. That is we have 
 \[
 p^M_k= p^M_0 \cdot \delta_{0}(k) + (1-p^M_0) \cdot p^T_k, \quad k\geq 0.  
 \]
@@ -717,8 +718,7 @@ Consider a Poisson distribution with parameter \(\lambda=2\). Calculate \(p_k, k
 version with \((p_0^M=0.6)\).  
 
 
-<h5 style="text-align: center;"><a id="displayTextExampleFreq.5.1" href="javascript:toggleEX('toggleExampleFreq.5.1','displayTextExampleFreq.5.1');"><i><strong>Show Example Solution</strong></i></a> </h5>
-<div id="toggleExampleFreq.5.1" style="display: none">
+`r HideExample('2.5.1')`
 
 **Solution.** For the Poisson distribution as a member of the (\(a,b\),0) class, we have \(a=0\) and \(b=\lambda=2\). Thus, we may use the recursion \(p_k = \lambda p_{k-1}/k= 2 p_{k-1}/k\) for each type,
 after determining starting probabilities. The calculation of probabilities for $k\leq 3$ is shown in [Table 2.2].
@@ -776,7 +776,7 @@ The above expression can be seen as a direct application of the Law of Total Pro
 \alpha\cdot F_{\leq 5}(x) + (1-\alpha)F_{> 5}(x).
 \]
 
-An alternate definition of a mixture distribution is as follows. Let $N_i$ be a random variable with distribution $F_i$, $i=1,\ldots, k$. Let $I$ be a random variable taking values  $1,2,\ldots,k$ with probabilities $\alpha_1,\ldots,\alpha_k$, respectively. Then the random variable $N_I$ has a distribution given by equation \@ref(eq:mixdefn)[^7].
+An alternate definition of a `r Gloss('mixture distribution')` is as follows. Let $N_i$ be a random variable with distribution $F_i$, $i=1,\ldots, k$. Let $I$ be a random variable taking values  $1,2,\ldots,k$ with probabilities $\alpha_1,\ldots,\alpha_k$, respectively. Then the random variable $N_I$ has a distribution given by equation \@ref(eq:mixdefn)[^7].
 
 [^7]: This in particular lays out a way to simulate from a mixture distribution that makes use of efficient simulation schemes that may exist for the component distributions.
 
@@ -815,8 +815,7 @@ $$\begin{matrix}
 1. Calculate the probability that a randomly drawn person has 3 common colds in a year.
 2. Calculate the conditional probability that a person with exactly 3 common colds in a year is an adult smoker.
 
-<h5 style="text-align: center;"><a id="displayTextExampleFreq.6.1" href="javascript:toggleEX('toggleExampleFreq.6.1','displayTextExampleFreq.6.1');"><i><strong>Show Example Solution</strong></i></a> </h5>
-<div id="toggleExampleFreq.6.1" style="display: none">
+`r HideExample('2.6.1')`
 
 **Solution.**  
 
@@ -862,8 +861,7 @@ It is worth mentioning that by considering mixtures of a parametric class of dis
 **Example `r chapnum`.6.2.**
 Suppose that \(N|\Lambda \sim\) Poisson\((\Lambda)\) and that \(\Lambda \sim\) gamma with mean of 1 and variance of 2. Determine the probability that \(N=1\).
 
-<h5 style="text-align: center;"><a id="displayTextExampleFreq.6.2" href="javascript:toggleEX('toggleExampleFreq.6.2','displayTextExampleFreq.6.2');"><i><strong>Show Example Solution</strong></i></a> </h5>
-<div id="toggleExampleFreq.6.2" style="display: none">
+`r HideExample('2.6.1')`
 
 **Solution.** For a gamma distribution with parameters \((\alpha, \theta)\), we have that the mean is \(\alpha \theta\) and the variance is \(\alpha \theta^2\). Using these expressions we have
 \[
@@ -895,7 +893,7 @@ In this section, you learn how to:
 
 ***
 
-In the above we have discussed three basic frequency distributions, along with their extensions through zero modification/truncation and by looking at mixtures of these distributions. Nevertheless, these classes still remain parametric and hence by their very nature a small subset of the class of all possible frequency distributions (*i.e.* the set of distributions on non-negative integers.) Hence, even though we have talked about methods for estimating the unknown parameters, the *fitted* distribution will not be a good representation of the underlying distribution if the latter is **far** from the class of distribution used for modeling. In fact, it can be shown that the *maximum likelihood estimator* will converge to a value such that the corresponding distribution will be a Kullback-Leibler *projection* of the underlying distribution on the class of distributions used for modeling. Below we present one testing method - Pearson's chi-square statistic - to check for the *goodness of fit* of the fitted distribution. For more details on the Pearson's chi-square test, at an introductory mathematical statistics level, we refer the reader to Section 9.1 of [@zimmerman2015].
+In the above we have discussed three basic frequency distributions, along with their extensions through zero modification/truncation and by looking at mixtures of these distributions. Nevertheless, these classes still remain parametric and hence by their very nature a small subset of the class of all possible frequency distributions (*i.e.* the set of distributions on non-negative integers.) Hence, even though we have talked about methods for estimating the unknown parameters, the *fitted* distribution will not be a good representation of the underlying distribution if the latter is **far** from the class of distribution used for modeling. In fact, it can be shown that the *maximum likelihood estimator* will converge to a value such that the corresponding distribution will be a Kullback-Leibler *projection* of the underlying distribution on the class of distributions used for modeling. Below we present one testing method - Pearson's chi-square statistic - to check for the `r Gloss('goodness of fit')` of the fitted distribution. For more details on the `r Gloss("Pearson's chi-square test")`, at an introductory mathematical statistics level, we refer the reader to Section 9.1 of [@zimmerman2015].
 
 In $1993$, a portfolio of $n=7,483$ automobile insurance policies from a major Singaporean insurance company had the distribution of auto accidents per policyholder as given in [Table 2.4].
 
@@ -945,7 +943,7 @@ $$\begin{matrix}
 
 [Table 2.5] : Comparison of Observed to Fitted Counts: Singaporean Auto Data
 
-While the fit seems *reasonable*, a tabular comparison falls short of a statistical test of the hypothesis that the underlying distribution is indeed Poisson. The *Pearson's chi-square statistic* is a goodness of fit statistical measure that can be used for this purpose. To explain this statistic let us suppose that a dataset of size $n$ is grouped into $k$ cells with $m_k/n$ and $\hat{p}_k$, for $k=1\ldots,K$  being the observed and estimated probabilities of an observation belonging to the $k$-th cell, respectively. The Pearson's chi-square test statistic is then given by 
+While the fit seems *reasonable*, a tabular comparison falls short of a statistical test of the hypothesis that the underlying distribution is indeed Poisson. The Pearson's chi-square statistic is a goodness of fit statistical measure that can be used for this purpose. To explain this statistic let us suppose that a dataset of size $n$ is grouped into $k$ cells with $m_k/n$ and $\hat{p}_k$, for $k=1\ldots,K$  being the observed and estimated probabilities of an observation belonging to the $k$-th cell, respectively. The Pearson's chi-square test statistic is then given by 
 \[
 \sum_{k=1}^K\frac{\left( m_k-n\widehat{p}_k \right) ^{2}}{n\widehat{p}_k}.
 \]
@@ -953,7 +951,7 @@ The motivation for the above statistic derives from the fact that
 \[
 \sum_{k=1}^K\frac{\left( m_k-n{p}_k \right) ^{2}}{n{p}_k}
 \]
-has a limiting chi-square distribution with $K-1$ degrees of freedom if $p_k$, $k=1,\ldots,K$ are the true cell probabilities. Now suppose that only the summarized data represented by $m_k$, $k=1,\ldots,K$ is available. Further, if $p_k$'s are functions of $s$ parameters, replacing $p_k$'s by any *efficiently* estimated probabilities $\widehat{p}_k$'s results in the statistic continuing to have a limiting chi-square distribution but with degrees of freedom given by $K-1-s$. Such efficient estimates can be derived for example by using the *MLE* method (with a multinomial likelihood) or by estimating the $s$ parameters which minimizes the Pearson's chi-square statistic above. For example, the `R` code below does calculate an estimate for $\lambda$ doing the latter and results in the estimate $0.06623153$, close but different from the *MLE* of $\lambda$ using the full data:
+has a limiting `r Gloss('chi-square distribution')` with $K-1$ degrees of freedom if $p_k$, $k=1,\ldots,K$ are the true cell probabilities. Now suppose that only the summarized data represented by $m_k$, $k=1,\ldots,K$ is available. Further, if $p_k$'s are functions of $s$ parameters, replacing $p_k$'s by any *efficiently* estimated probabilities $\widehat{p}_k$'s results in the statistic continuing to have a limiting chi-square distribution but with degrees of freedom given by $K-1-s$. Such efficient estimates can be derived for example by using the *MLE* method (with a `r Gloss('multinomial likelihood')`) or by estimating the $s$ parameters which minimizes the Pearson's chi-square statistic above. For example, the `R` code below does calculate an estimate for $\lambda$ doing the latter and results in the estimate $0.06623153$, close but different from the *MLE* of $\lambda$ using the full data:
 
 ```
 m<-c(6996,455,28,4,0);
@@ -1091,8 +1089,7 @@ Appendix Chapter \@ref(C:AppA) gives a general introduction to maximum likelihoo
 
 **Code for Figure \@ref(fig:MLEab0):**
 
-<h5 style="text-align: center;"><a id="displayCodeFreq.2" href="javascript:togglecode('toggleCodeFreq.2','displayCodeFreq.2');"><i><strong>Show R Code</strong></i></a> </h5>
-<div id="toggleCodeFreq.2" style="display: none">
+`r HideRCode('Freq.2','Show R Code')`
 
 
 ```
@@ -1181,8 +1178,7 @@ dev.off();
 **Code for Figure \@ref(fig:MLEm):**
 
 
-<h5 style="text-align: center;"><a id="displayCodeFreq.3" href="javascript:togglecode('toggleCodeFreq.3','displayCodeFreq.3');"><i><strong>Show R Code</strong></i></a> </h5>
-<div id="toggleCodeFreq.3" style="display: none">
+`r HideRCode('Freq.3','Show R Code')`
 
 
 ```
