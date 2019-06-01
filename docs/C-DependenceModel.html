@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Loss Data Analytics</title>
-  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 14 Dependence Modeling | Loss Data Analytics</title>
+  <meta name="description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Loss Data Analytics" />
+  <meta property="og:title" content="Chapter 14 Dependence Modeling | Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
+  <meta property="og:description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Loss Data Analytics" />
+  <meta name="twitter:title" content="Chapter 14 Dependence Modeling | Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community">
+<meta name="author" content="An open text authored by the Actuarial Community" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="C-DataSystems.html">
 <link rel="next" href="C-AppA.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -178,6 +178,26 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover(); 
 });
 </script>
+
+<script language="javascript">
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125587869-1"></script>
@@ -595,6 +615,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="17.3.1" data-path="C-AppC.html"><a href="C-AppC.html#hypothesis-testing"><i class="fa fa-check"></i><b>17.3.1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="17.3.2" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:MLEModelVal"><i class="fa fa-check"></i><b>17.3.2</b> MLE and Model Validation</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html"><i class="fa fa-check"></i><b>18</b> Appendix D: Summary of Distributions</a><ul>
+<li class="chapter" data-level="18.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#discrete-distributions"><i class="fa fa-check"></i><b>18.1</b> Discrete Distributions</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
+<li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
+<li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
+<li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
+<li class="chapter" data-level="18.2.4" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#four-parameter-distributions"><i class="fa fa-check"></i><b>18.2.4</b> Four Parameter Distributions</a></li>
+<li class="chapter" data-level="18.2.5" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#other-distributions"><i class="fa fa-check"></i><b>18.2.5</b> Other Distributions</a></li>
+<li class="chapter" data-level="18.2.6" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#distributions-with-finite-support"><i class="fa fa-check"></i><b>18.2.6</b> Distributions with Finite Support</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -1131,6 +1166,7 @@ u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <li><em>losses </em>: general liability claims from Insurance Services Office, Inc. (ISO)</li>
 <li><em>expenses </em>: ALAE, specifically attributable to the settlement of individual claims (e.g. lawyer’s fees, claims investigation expenses)</li>
 </ul>
+<pre><code>## Warning: package &#39;copula&#39; was built under R version 3.4.4</code></pre>
 <p>To visualize the relationship between <em>losses </em> and <em>expenses </em> (ALAE), scatterplots in figure <a href="C-DependenceModel.html#fig:Scatter">14.2</a> are created on the real dollar scale and on the log scale.</p>
 <div class="figure"><span id="fig:Scatter"></span>
 <img src="LossDataAnalytics_files/figure-html/Scatter-1.png" alt="Scatter plot of Loss and ALAE" width="672" />
@@ -1749,59 +1785,59 @@ Output:
 </div>
 <h3>Bibliography</h3>
 <div id="refs" class="references">
-<div id="ref-lee1988thirteen">
-<p>Lee Rodgers, J, and W. A Nicewander. 1998. “Thirteen Ways to Look at the Correlation Coeffeicient.” <em>The American Statistician</em> 42 (01): 59–66.</p>
-</div>
-<div id="ref-hettmansperger1984statistical">
-<p>Hettmansperger, T. P. 1984. <em>Statistical Inference Based on Ranks</em>. Wiley.</p>
-</div>
-<div id="ref-spearman1904proof">
-<p>Spearman, C. 1904. “The Proof and Measurement of Association Between Two Things.” <em>The American Journal of Psychology</em> 15 (01): 72–101.</p>
-</div>
-<div id="ref-kendall1938new">
-<p>Kendall, Maurice G. 1938. “A New Measure of Rank Correlation.” <em>Biometrika</em>, 81–93.</p>
-</div>
-<div id="ref-hougaard2000analysis">
-<p>Hougaard, P. 2000. <em>Analysis of Multivariate Survival Data</em>. Springer New York.</p>
-</div>
-<div id="ref-fechnerkollektivmasslehre">
-<p>Fechner, G. T. 1897. “Kollektivmasslehre.” <em>Wilhelm Englemann, Leipzig</em>.</p>
-</div>
 <div id="ref-bishop1975discrete">
 <p>Bishop, Yvonne M., Stephen E. Fienberg, and Paul W. Holland. 1975. <em>Discrete Multivariate Analysis: Theory and Practice</em>. Cambridge [etc.]: MIT.</p>
-</div>
-<div id="ref-yule1900association">
-<p>Yule, G. Udny. 1900. “On the Association of Attributes in Statistics: With Illustrations from the Material of the Childhood Society.” <em>Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character</em>, 257–319.</p>
-</div>
-<div id="ref-yule1912methods">
-<p>Yule, G. 1912. “On the Methods of Measuring Association Between Two Attributes.” <em>Journal of the Royal Statistical Society</em>, 579–652.</p>
-</div>
-<div id="ref-joe2014dependence">
-<p>Joe, Harry. 2014. <em>Dependence Modeling with Copulas</em>. CRC Press.</p>
-</div>
-<div id="ref-genest2007methods">
-<p>Genest, Christian, and Johanna Nešlohva. 2007. “A Primer on Copulas for Count Data.” <em>Journal of the Royal Statistical Society</em>, 475–515.</p>
-</div>
-<div id="ref-frees1998understanding">
-<p>Frees, Edward W., and Emiliano A. Valdez. 1998. “Understanding Relationships Using Copulas.” <em>North American Actuarial Journal</em> 2 (01): 1–25.</p>
-</div>
-<div id="ref-hofertelements">
-<p>Hofert, Marius, Ivan Kojadinovic, Martin Mächler, and Jun Yan. 2018. <em>Elements of Copula Modeling with R</em>. Springer.</p>
-</div>
-<div id="ref-genest1986bivariate">
-<p>Genest, Christian, and Josh Mackay. 1986. “The Joy of Copulas: Bivariate Distributions with Uniform Marginals.” <em>The American Statistician</em> 40: 280–83.</p>
-</div>
-<div id="ref-nelsen1997introduction">
-<p>Nelson, Roger B. 1997. <em>An Introduction to Copulas</em>. Lecture Notes in Statistics 139.</p>
-</div>
-<div id="ref-venter2002tails">
-<p>Venter, Gary G. 2002. “Tails of Copulas.” In <em>Proceedings of the Casualty Actuarial Society</em>, 89:68–113. 171.</p>
 </div>
 <div id="ref-blomqvist1950measure">
 <p>Blomqvist, Nils. 1950. “On a Measure of Dependence Between Two Random Variables.” <em>The Annals of Mathematical Statistic</em>, 593–600.</p>
 </div>
 <div id="ref-dabrowska1988kaplan">
 <p>Dabrowska, Dorota M. 1988. “Kaplan-Meier Estimate on the Plane.” <em>The Annals of Statistics</em>, 1475–89.</p>
+</div>
+<div id="ref-fechnerkollektivmasslehre">
+<p>Fechner, G. T. 1897. “Kollektivmasslehre.” <em>Wilhelm Englemann, Leipzig</em>.</p>
+</div>
+<div id="ref-frees1998understanding">
+<p>Frees, Edward W., and Emiliano A. Valdez. 1998. “Understanding Relationships Using Copulas.” <em>North American Actuarial Journal</em> 2 (01): 1–25.</p>
+</div>
+<div id="ref-genest1986bivariate">
+<p>Genest, Christian, and Josh Mackay. 1986. “The Joy of Copulas: Bivariate Distributions with Uniform Marginals.” <em>The American Statistician</em> 40: 280–83.</p>
+</div>
+<div id="ref-genest2007methods">
+<p>Genest, Christian, and Johanna Nešlohva. 2007. “A Primer on Copulas for Count Data.” <em>Journal of the Royal Statistical Society</em>, 475–515.</p>
+</div>
+<div id="ref-hettmansperger1984statistical">
+<p>Hettmansperger, T. P. 1984. <em>Statistical Inference Based on Ranks</em>. Wiley.</p>
+</div>
+<div id="ref-hofertelements">
+<p>Hofert, Marius, Ivan Kojadinovic, Martin Mächler, and Jun Yan. 2018. <em>Elements of Copula Modeling with R</em>. Springer.</p>
+</div>
+<div id="ref-hougaard2000analysis">
+<p>Hougaard, P. 2000. <em>Analysis of Multivariate Survival Data</em>. Springer New York.</p>
+</div>
+<div id="ref-joe2014dependence">
+<p>Joe, Harry. 2014. <em>Dependence Modeling with Copulas</em>. CRC Press.</p>
+</div>
+<div id="ref-kendall1938new">
+<p>Kendall, Maurice G. 1938. “A New Measure of Rank Correlation.” <em>Biometrika</em>, 81–93.</p>
+</div>
+<div id="ref-lee1988thirteen">
+<p>Lee Rodgers, J, and W. A Nicewander. 1998. “Thirteen Ways to Look at the Correlation Coeffeicient.” <em>The American Statistician</em> 42 (01): 59–66.</p>
+</div>
+<div id="ref-nelsen1997introduction">
+<p>Nelson, Roger B. 1997. <em>An Introduction to Copulas</em>. Lecture Notes in Statistics 139.</p>
+</div>
+<div id="ref-spearman1904proof">
+<p>Spearman, C. 1904. “The Proof and Measurement of Association Between Two Things.” <em>The American Journal of Psychology</em> 15 (01): 72–101.</p>
+</div>
+<div id="ref-venter2002tails">
+<p>Venter, Gary G. 2002. “Tails of Copulas.” In <em>Proceedings of the Casualty Actuarial Society</em>, 89:68–113. 171.</p>
+</div>
+<div id="ref-yule1900association">
+<p>Yule, G. Udny. 1900. “On the Association of Attributes in Statistics: With Illustrations from the Material of the Childhood Society.” <em>Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character</em>, 257–319.</p>
+</div>
+<div id="ref-yule1912methods">
+<p>Yule, G. 1912. “On the Methods of Measuring Association Between Two Attributes.” <em>Journal of the Royal Statistical Society</em>, 579–652.</p>
 </div>
 </div>
             </section>
@@ -1830,7 +1866,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -1840,6 +1876,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -1857,7 +1897,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
