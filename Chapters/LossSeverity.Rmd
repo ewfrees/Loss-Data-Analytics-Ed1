@@ -482,20 +482,23 @@ Solving for $\pi_{0.99}$, we get $\pi_{0.99} = 118.99$.
 
 The `r Gloss('Generalized Beta Distribution of the Second Kind')` (*GB2*) was introduced by @venter1983transformed in the context of insurance loss modeling and by @mcdonald1984some as an income and wealth distribution. It is a four-parameter very flexible distribution that can model positively as well as negatively skewed distributions.
 
-The continuous variable $X$ is said to have the *GB2* distribution with parameters $a$, $\theta$, $\alpha$ and $\beta$ if its probability density function is given by
+The continuous variable $X$ is said to have the *GB2* distribution with parameters $\sigma$, $\theta$, $\alpha_1$ and $\alpha_2$ if its probability density function is given by
+
+\begin{equation}
+f_{X}\left( x \right) = \frac{(x/\theta)^{\alpha_2/\sigma}}{x \sigma~\mathrm{B}\left( \alpha_1,\alpha_2\right)\left\lbrack 1 + \left( x/\theta \right)^{1/\sigma} \right\rbrack^{\alpha_1 + \alpha_2}} \ \ \ \text{for } x > 0,
+  (\#eq:GB2Distn)
+\end{equation}
+
+$\sigma,\theta,\alpha_1,\alpha_2  > 0$, and where the beta function $\mathrm{B}\left( \alpha_1,\alpha_2 \right)$ is defined as
 $$
-f_{X}\left( x \right) = \frac{ax^{a \alpha - 1}}{\theta^{a \alpha}\mathrm{B}\left( \alpha,\beta \right)\left\lbrack 1 + \left( x/\theta \right)^{a} \right\rbrack^{\alpha + \beta}} \ \ \ \text{for } x > 0,
-$$
-$a,\theta,\alpha,\beta  > 0$, and where the beta function $\mathrm{B}\left( \alpha,\beta \right)$ is defined as
-$$
-\mathrm{B}\left( \alpha,\beta \right) = \int_{0}^{1}{t^{\alpha - 1}\left( 1 - t \right)^{\beta - 1}}~ dt.
+\mathrm{B}\left( \alpha_1,\alpha_2\right) = \int_{0}^{1}{t^{\alpha_1 - 1}\left( 1 - t \right)^{\alpha_2 - 1}}~ dt.
 $$
 
-The *GB2* provides a model for heavy as well as light tailed data. It includes the exponential, gamma, Weibull, Burr, Lomax, F, chi-square, Rayleigh, lognormal and log-logistic as special or limiting cases. For example, by setting the parameters $a = \alpha = \beta = 1$, then the *GB2* reduces to the log-logistic distribution. When $a = 1$ and $\beta \rightarrow \infty$, it reduces to the gamma distribution and when $\alpha = 1$ and $\beta \rightarrow \infty$, it reduces to the Weibull distribution.
+The *GB2* provides a model for heavy as well as light tailed data. It includes the exponential, gamma, Weibull, Burr, Lomax, F, chi-square, Rayleigh, lognormal and log-logistic as special or limiting cases. For example, by setting the parameters $\sigma = \alpha_1 = \alpha_2 = 1$, then the *GB2* reduces to the log-logistic distribution. When $\sigma = 1$ and $\alpha_2 \rightarrow \infty$, it reduces to the gamma distribution and when $\alpha = 1$ and $\alpha_2 \rightarrow \infty$, it reduces to the Weibull distribution.
 
-The $k$-th moment of the *GB2* distributed random variable is given by
+A *GB2* random variable can be defined as follows. Suppose that $G_1$ and $G_2$ are independent random variables where $G_i$ has a gamma distribution with parameters $\alpha_i$ and scale parameter 1. Then, one can show that the random variable $X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}$ has a *GB2* distribution with *pdf* summarized in equation \@ref(eq:GB2Distn). This theoretical result has several implications. For example, when the moments exist, one can show that the $k$-th moment of the *GB2* distributed random variable is given by
 $$
-\mathrm{E}\left( X^{k} \right) = \frac{\theta^{k}~\mathrm{B}\left( \alpha + \frac{k}{a},\beta - \frac{k}{a} \right)}{\mathrm{B}\left( \alpha,\beta \right)}, \ \ \ k > 0.
+\mathrm{E}\left( X^{k} \right) = \frac{\theta^{k}~\mathrm{B}\left( \alpha_1 +k \sigma,\alpha_2 - k \sigma \right)}{\mathrm{B}\left( \alpha_1,\alpha_2 \right)}, \ \ \ k > 0.
 $$
 
 Earlier applications of the *GB2* were on income data and more recently have been used to model long-tailed claims data (Section \@ref(S:Tails) describes different interpretations of the descriptor "long-tail"). *GB2* was used to model different types of automobile insurance claims, severity of fire losses as well as medical insurance claim data.
