@@ -19,9 +19,9 @@ Consider the case of a constraint Gaussian vector : we want to generate random p
 
 The algorithm is rather simple to generate from $f$ : we start with a feasible value $x_1$. Then, at step $t$, we need to specify a transition kernel : given $x_t$, we need a conditional distribution for $X_{t+1}$ given $x_t$. The algorithm will work well if that conditional distribution can easily be simulated. Let $\pi(\cdot|x_t)$ denote that probability.
 
-Draw a value $x_{t+1}^\star$, and $u$, from a uniform distribution. Compute 
+Draw a potential value $x_{t+1}^\star$, and $u$, from a uniform distribution. Compute 
 $$
-\displaystyle{R=\frac{xx}{xx}} 
+R=  \frac{f(x'⋆t+1)}{f(xt)}
 $$
 and 
 

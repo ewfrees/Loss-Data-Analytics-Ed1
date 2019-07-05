@@ -421,7 +421,7 @@ round(outMat,digits=2)
 ```
 
 **b.** For insured claims, the standard error of the simulation approximation is $s_{h,R}/\sqrt{1000000} =$ `r 
-round(sd(Yinsurer),digits=2)` $/\sqrt{1000000} =$  `r round(sd(Yinsurer)/sqrt(1000000), digits=3)`. For this example, simulation is quick and so a large value such as 1000000 is an easy choice. However, for more complex problems, the simulation size may be an issue. Figure \ref@(fig:PortfolioDF)
+round(sd(Yinsurer),digits=2)` $/\sqrt{1000000} =$  `r round(sd(Yinsurer)/sqrt(1000000), digits=3)`. For this example, simulation is quick and so a large value such as 1000000 is an easy choice. However, for more complex problems, the simulation size may be an issue. Figure \@ref(fig:PortfolioDF)
 allows us to visualize the development of the approximation as the number of simulations increases.
 
 
@@ -676,7 +676,7 @@ plot(vx,vy,type="l",xlab="x",ylab="Cumulative Distribution",main="Empirical cdf"
 lines(u,plnorm(u,1,.4),col="red",lty=2)
 ```
 
-Recall that the Kolmogorov-Smirnov statistic equals the largest discrepancy between the empirical and the hypothesized distribution. This is $\max_x\{F_n(x)-F_0(x)\}$, where $F_0$ is the hypothesized lognormal distribution. We can calculate this directly as:
+Recall that the Kolmogorov-Smirnov statistic equals the largest discrepancy between the empirical and the hypothesized distribution. This is $\max_x |F_n(x)-F_0(x)|$, where $F_0$ is the hypothesized lognormal distribution. We can calculate this directly as:
 
 ```{r comment=""}
 # test statistic
@@ -700,7 +700,7 @@ ks.test(x, plnorm, mean=1, sd=0.4)
 
 However, for many distributions of actuarial interest, pre-built programs are not available. We can use simulation to test the relevance of the test statistic. Specifically, to compute the $p$-value, let us generate thousands of random samples from a $LN(1,0.4)$ distribution (with the same size), and compute empirically the distribution of the statistic,
 
-```{r KSSimulatedDistribution, fig.align='center', comment="", fig.cap = 'Simulated Distribution of the Kolmogorove-Smirnov Test Statistic. The vertical red dashed line marks the test statistic for the sample of 100.'}
+```{r KSSimulatedDistribution, fig.align='center', comment="", fig.cap = 'Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The vertical red dashed line marks the test statistic for the sample of 100.'}
 ns <- 1e4
 d_KS <- rep(NA,ns)
 # compute the test statistics for a large (ns) number of simulated samples
@@ -716,8 +716,8 @@ The simulated distribution based on 10,000 random samples is summarized in Figur
 
 Although only an approximation, the simulation approach works in a variety of distributions and test statistics without needing to develop the nuances of the underpinning theory for each situation. We summarize the procedure for developing simulated distributions and *p*-values as follows:
 
-1. Draw a sample of size *n*, say, $X_1, \ldots, X_n$, from a known distribution function $F$. Compute a statistic of interest, denoted as $\theta(X_1, \ldots, X_n)$. Call this $\theta^r$ for the *r*th replication.
-2. Repeat this $r=1, \ldots, R$ times to get a sample of statistics, $\theta^1, \ldots,\theta^R$.
-3. From the sample of statistics in Step 2, $\{\theta^1, \ldots,\theta^R\}$, compute a summary measure of interest, such as a *p*-value.
+1. Draw a sample of size *n*, say, $X_1, \ldots, X_n$, from a known distribution function $F$. Compute a statistic of interest, denoted as $\hat{\theta}(X_1, \ldots, X_n)$. Call this $\hat{\theta}^r$ for the *r*th replication.
+2. Repeat this $r=1, \ldots, R$ times to get a sample of statistics, $\hat{\theta}^1, \ldots,\hat{\theta}^R$.
+3. From the sample of statistics in Step 2, $\{\hat{\theta}^1, \ldots,\hat{\theta}^R\}$, compute a summary measure of interest, such as a *p*-value.
  
 
