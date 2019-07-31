@@ -1004,7 +1004,7 @@ Z=\frac{n}{n+K} \quad , \quad K =\frac{EPV}{VHM}.
 Z=\frac{VHM}{VHM+(EPV/n)} . 
 \end{equation*}\]</span>
 <p>The number of observations <span class="math inline">\(n\)</span> is captured in the term (<em>EPV</em>/<span class="math inline">\(n\)</span>). As shown in bullet (1) at the beginning of the section, E(Var(<span class="math inline">\(\bar{X}|\theta)\)</span>)=<em>EPV</em>/<span class="math inline">\(n\)</span>. As the number of observations get larger, the expected variance of <span class="math inline">\(\bar{X}\)</span> gets smaller and credibility <span class="math inline">\(Z\)</span> increases so that more weight gets assigned to <span class="math inline">\(\bar{X}\)</span> in the credibility-weighted estimate <span class="math inline">\(\hat{\mu}(\theta)\)</span>.</p>
-<p><strong>Example 9.3.4.</strong> Use the ``law of total variance&quot; to show that Var(<span class="math inline">\(\bar{X}\)</span>) = <em>VHM</em> + (<em>EPV</em>/n) and derive a formula for <span class="math inline">\(Z\)</span> in terms of <span class="math inline">\(\bar{X}\)</span>.</p>
+<p><strong>Example 9.3.4.</strong> Use the law of total variance to show that Var(<span class="math inline">\(\bar{X}\)</span>) = <em>VHM</em> + (<em>EPV</em>/n) and derive a formula for <span class="math inline">\(Z\)</span> in terms of <span class="math inline">\(\bar{X}\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleCred.3.4" href="javascript:toggleEX('toggleExampleCred.3.4','displayTextExampleCred.3.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1109,8 +1109,7 @@ Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}.
 \tag{9.10} 
 \end{equation}\]</span>
 <p>This is the same <span class="math inline">\(Z\)</span> as for Bühlmann credibility except number of exposures <span class="math inline">\(m\)</span> replaces number of years or observations <span class="math inline">\(n\)</span>.</p>
-<p><strong>Example 9.4.2.</strong><br />
-A commercial automobile policyholder had the following exposures and claims over a three-year period: <span class="math display">\[\begin{matrix}
+<p><strong>Example 9.4.2.</strong> A commercial automobile policyholder had the following exposures and claims over a three-year period: <span class="math display">\[\begin{matrix}
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} &amp; \text{Number of Vehicles} &amp; \text{Number of Claims} \\
@@ -1279,7 +1278,7 @@ VHM=\textrm{Var(E}(\mu(\theta_i)) = \mathrm{Var}(\bar{X}_i) - \textrm{E(Var}(\ba
 \widehat{VHM} = \frac{1}{r-1} \sum_{i=1}^{r}(\bar{X}_i-\bar{X})^2 - \frac{\widehat{EPV}}{n} .
 \tag{9.12}
 \end{equation}\]</span>
-<p>Although the expected loss for a risk with parameter <span class="math inline">\(\theta_i\)</span> is <span class="math inline">\(\mu(\theta_i)\)</span>=E(<span class="math inline">\(\bar{X}_i|\Theta=\theta_i\)</span>), the variance of the sample mean <span class="math inline">\(\bar{X}_i\)</span> is greater than the variance of the hypothetical means: Var(<span class="math inline">\(\bar{X}_i)\geq\)</span>Var(<span class="math inline">\(\mu(\theta_i)\)</span>). The variance in the sample means Var(<span class="math inline">\(\bar{X}_i\)</span>) includes both the variance in the hypothetical means plus a process variance term because for individual observations <span class="math inline">\(X_{ij}\)</span>, <span class="math inline">\(Var(X_{ij}|\Theta=\theta_i)&gt;0\)</span>.</p>
+<p>Although the expected loss for a risk with parameter <span class="math inline">\(\theta_i\)</span> is <span class="math inline">\(\mu(\theta_i)\)</span>=E(<span class="math inline">\(\bar{X}_i|\Theta=\theta_i\)</span>), the variance of the sample mean <span class="math inline">\(\bar{X}_i\)</span> is greater than or equal to the variance of the hypothetical means: Var(<span class="math inline">\(\bar{X}_i)\geq\)</span>Var(<span class="math inline">\(\mu(\theta_i)\)</span>). The variance in the sample means Var(<span class="math inline">\(\bar{X}_i\)</span>) includes both the variance in the hypothetical means plus a process variance term.</p>
 <p>In some cases formula <a href="C-Credibility.html#eq:VHM-estimate">(9.12)</a> can produce a negative value for <span class="math inline">\(\widehat{VHM}\)</span> because of the subtraction of <span class="math inline">\(\widehat{EPV}/n\)</span>, but a variance cannot be negative. The process variance within risks is so large that it overwhelms the measurement of the variance in means between risks. In this case we cannot use this method to determine the values needed for Bühlmann credibility.</p>
 <p><strong>Example 9.6.1.</strong> Two policyholders had claims over a three-year period as shown in the table below. Estimate the expected number of claims for each policyholder using Bühlmann credibility and calculating necessary parameters from the data.</p>
 <p><span class="math display">\[\begin{matrix}

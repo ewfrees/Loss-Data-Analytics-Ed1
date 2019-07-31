@@ -16,14 +16,21 @@ Gloss <- function(term){
   return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
 }
 
-GlossNo <- function(term){
-  return(term)
-}
-
 ```
 
 ```{r echo = FALSE}
+# Switches that control the number of animations in Chapter 6
+ANIMATION = TRUE
+# Use these for html output
+numAnimation = 30     # Section 6.4 Importance Sampling
+numAnimation2 = 23    # Section 6.5.1 Hastings Metropolis 
+numAnimation3 = 100   # Section 6.5.2 Gibbs
+# Use these for pdf output - maybe later
 
+```
+
+
+```{r echo = FALSE}
 B1 <- '<h5 style="text-align: center;"><a id="displayExample.'
 B2 <- ' href="javascript:toggleEX(\'toggleExample.'
 B3 <- '\',\'displayExample.'

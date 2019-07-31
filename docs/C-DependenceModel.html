@@ -942,11 +942,6 @@ and the second in <span class="citation">(Yule <a href="#ref-yule1912methods">19
 \]</span></p>
 <p><a href="#tab:14.2">Table 14.2</a> : 2 <span class="math inline">\(\times\)</span> 2 table of counts for <em>Fire5</em> and <em>NoClaimCredit</em></p>
 <p>From <a href="#tab:14.2">Table 14.2</a>, <span class="math inline">\(OR(\pi_{11})=\frac{1611(956)}{897(2175)}=0.79\)</span>. You can obtain the <span class="math inline">\(OR(\pi_{11})\)</span>, using the <code>oddsratio()</code> function from the <code>epitools</code> library in <code>R</code>. From the output below, <span class="math inline">\(OR(\pi_{11})=0.79\)</span> for the binary variables <em>NoClaimCredit</em> and <em>Fier5</em> from the LGPIF data.</p>
-<pre><code>
-Attaching package: &#39;epitools&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:survival&#39;:
-
-    ratetable</code></pre>
 <h5 style="text-align: center;">
 <a id="display.wald.1" href="javascript:togglecode
 ('display.wald.2','display.wald.1');"><i><strong>R Code for Odds Ratios</strong></i></a>
@@ -1188,7 +1183,6 @@ u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <li><em>losses </em>: general liability claims from Insurance Services Office, Inc. (ISO)</li>
 <li><em>expenses </em>: ALAE, specifically attributable to the settlement of individual claims (e.g. lawyer’s fees, claims investigation expenses)</li>
 </ul>
-<pre><code>## Warning: package &#39;copula&#39; was built under R version 3.4.4</code></pre>
 <p>To visualize the relationship between <em>losses </em> and <em>expenses </em> (ALAE), scatterplots in figure <a href="C-DependenceModel.html#fig:Scatter">14.2</a> are created on the real dollar scale and on the log scale.</p>
 <div class="figure"><span id="fig:Scatter"></span>
 <img src="LossDataAnalytics_files/figure-html/Scatter-1.png" alt="Scatter plot of Loss and ALAE" width="672" />

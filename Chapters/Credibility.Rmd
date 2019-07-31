@@ -377,7 +377,7 @@ In this section, you learn how to:
 
 ***
 
-A classification rating plan groups policyholders together into classes based on risk characteristics.   Although policyholders within a class have similarities, they are not identical and their expected losses will not be exactly the same.  An experience rating plan can supplement a class rating plan by credibility weighting an individual policyholder's loss experience with the class rate to produce a more accurate rate for the policyholder.
+A classification rating plan groups policyholders together into classes based on risk characteristics. Although policyholders within a class have similarities, they are not identical and their expected losses will not be exactly the same.  An experience rating plan can supplement a class rating plan by credibility weighting an individual policyholder's loss experience with the class rate to produce a more accurate rate for the policyholder.
  
 In the presentation of B&uuml;hlmann credibility it is convenient to assign a risk parameter $\theta$ to each policyholder.  Losses $X$ for the policyholder will have a common distribution function $F_{\theta}(x)$ with mean $\mu(\theta)=\mathrm{E}(X|\theta)$ and variance $\sigma^2(\theta)=\mathrm{Var}(X|\theta)$.   Losses $X$ can represent pure premiums, aggregate losses, number of claims, claim severities, or some other measure of loss for a period of time, often one year. Risk parameter $\theta$ may be continuous or discrete and may be multivariate depending on the model.  
 
@@ -510,7 +510,7 @@ The number of observations $n$ is captured in the term (*EPV*/$n$). As shown in 
 
 
 **Example `r chapnum`.3.4.**
-Use the ``law of total variance" to show that Var($\bar{X}$) = *VHM* + (*EPV*/n) and derive a formula for $Z$ in terms of $\bar{X}$.
+Use the law of total variance to show that Var($\bar{X}$) = *VHM* + (*EPV*/n) and derive a formula for $Z$ in terms of $\bar{X}$.
 
 <h5 style="text-align: center;"><a id="displayTextExampleCred.3.4" href="javascript:toggleEX('toggleExampleCred.3.4','displayTextExampleCred.3.4');"><i><strong>Show Example Solution</strong></i></a> </h5>
 <div id="toggleExampleCred.3.4" style="display: none">
@@ -655,8 +655,7 @@ Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}.
 This is the same $Z$ as for B&uuml;hlmann credibility except number of exposures $m$ replaces number of years or observations $n$.  
 
 
-**Example `r chapnum`.4.2.**  
-A commercial automobile policyholder had the following exposures and claims over a three-year period: 
+**Example `r chapnum`.4.2.**  A commercial automobile policyholder had the following exposures and claims over a three-year period: 
 $$\begin{matrix}
 \begin{array}{|c|c|c|}
 \hline
@@ -891,7 +890,7 @@ As discussed previously in Section \@ref(S:EPV-VHM-Z), *EPV*/n = E(Var($\bar{X}_
 (\#eq:VHM-estimate)
 \end{equation} 
 
-Although the expected loss for a risk with parameter $\theta_i$ is $\mu(\theta_i)$=E($\bar{X}_i|\Theta=\theta_i$), the variance of the sample mean $\bar{X}_i$ is greater than the variance of the hypothetical means: Var($\bar{X}_i)\geq$Var($\mu(\theta_i)$).  The variance in the sample means Var($\bar{X}_i$) includes both the variance in the hypothetical means plus a process variance term because for individual observations $X_{ij}$, $Var(X_{ij}|\Theta=\theta_i)>0$.
+Although the expected loss for a risk with parameter $\theta_i$ is $\mu(\theta_i)$=E($\bar{X}_i|\Theta=\theta_i$), the variance of the sample mean $\bar{X}_i$ is greater than or equal to the variance of the hypothetical means: Var($\bar{X}_i)\geq$Var($\mu(\theta_i)$).  The variance in the sample means Var($\bar{X}_i$) includes both the variance in the hypothetical means plus a process variance term.
 
 In some cases formula \@ref(eq:VHM-estimate) can produce a negative value for $\widehat{VHM}$ because of the subtraction of $\widehat{EPV}/n$, but a variance cannot be negative.    The process variance within risks is so large that it overwhelms the measurement of the variance in means between risks.  In this case we cannot use this method to determine the values needed for B&uuml;hlmann credibility.
 

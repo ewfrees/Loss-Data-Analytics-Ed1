@@ -386,7 +386,7 @@ knitr::kable(OutBoot1,digits=2)
 
 ### Parametric Bootstrap {#S:ParametricBootStrap}
 
-As described in the section on bootstrap, the idea of (nonparametric) bootstrap is to resample, or equivalently, to use the inverse method on the empirical cumulative distribution function $F_n$. With parametric bootstrap, we draw independent variables from $F_\widehat{\theta}$ where the underlying distribution is assume to be in a parametric family $\mathcal{F}=\{F_{\theta},\theta\in\Theta\}$. Typically, parameters from this distribution are estimated based on a sample and denoted as $\hat{\theta}$.
+As described in the section on bootstrap, the idea of (nonparametric) bootstrap is to resample, or equivalently, to use the inverse method on the empirical cumulative distribution function $F_n$. With parametric bootstrap, we draw independent variables from $F_{\widehat{\theta}}$ where the underlying distribution is assume to be in a parametric family $\mathcal{F}=\{F_{\theta},\theta\in\Theta\}$. Typically, parameters from this distribution are estimated based on a sample and denoted as $\hat{\theta}$.
 
 **Example `r chapnum`.2.4. Lognormal distribution.** Consider again the dataset  
 ```{r}

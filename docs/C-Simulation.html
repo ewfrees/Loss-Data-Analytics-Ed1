@@ -1081,15 +1081,16 @@ sumP2 &lt;-<span class="st"> </span><span class="kw">apply</span>(simU, <span cl
 bonds &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="fl">1.96</span><span class="op">*</span><span class="kw">sd</span>(Yinsurer)<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">:</span>R)),<span class="op">-</span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sd</span>(Yinsurer)<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">:</span>R)))
 <span class="kw">matlines</span>(<span class="dv">1</span><span class="op">:</span>R,bonds<span class="op">+</span><span class="kw">mean</span>(Yinsurer),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:PortfolioDF"></span>
-<img src="LossDataAnalytics_files/figure-html/PortfolioDF-1.png" alt="Estimated Expected Insurer Claims versus Number of Simulations. There are 20 paths given in this figure, each path traces the development of the average insurer claim over the number of simulations. The solid lines are set at plus and minus 1.96 standard errors for an approximate 95% confidence band." width="768" />
+<img src="LossDataAnalytics_files/figure-html/PortfolioDF-1.png" alt="Estimated Expected Insurer Claims versus Number of Simulations." width="768" />
 <p class="caption">
-Figure 6.4: Estimated Expected Insurer Claims versus Number of Simulations. There are 20 paths given in this figure, each path traces the development of the average insurer claim over the number of simulations. The solid lines are set at plus and minus 1.96 standard errors for an approximate 95% confidence band.
+Figure 6.4: Estimated Expected Insurer Claims versus Number of Simulations.
 </p>
 </div>
 <hr />
 <p><strong>Determination of Number of Simulations</strong></p>
 <p>How many simulated values are recommended? 100? 1,000,000? We can use the central limit theorem to respond to this question.</p>
-<p>As one criterion for your confidence in the result, suppose that you wish to be within 1% of the mean with 95% certainty. That is, you want <span class="math inline">\(\Pr \left( |\overline{h}_R - \mathrm{E~}h(X)| \le 0.01 \mathrm{E~}h(X) \right) \le 0.95\)</span>. According to the central limit theorem, your estimate should be approximately normally distributed and so we want to have <span class="math inline">\(R\)</span> large enough to satisfy <span class="math inline">\(0.01 \mathrm{E~}h(X)/\sqrt{\mathrm{Var~}h(X)/R}) \ge 1.96\)</span>. (Recall that 1.96 is the 97.5th percentile from the standard normal distribution.) Replacing <span class="math inline">\(\mathrm{E~}h(X)\)</span> and <span class="math inline">\(\mathrm{Var~}h(X)\)</span> with estimates, you continue your simulation until <span class="math display">\[
+<p>As one criterion for your confidence in the result, suppose that you wish to be within 1% of the mean with 95% certainty. That is, you want <span class="math inline">\(\Pr \left( |\overline{h}_R - \mathrm{E~}h(X)| \le 0.01 \mathrm{E~}h(X) \right) \le 0.95\)</span>. According to the central limit theorem, your estimate should be approximately normally distributed and so we want to have <span class="math inline">\(R\)</span> large enough to satisfy <span class="math inline">\(0.01 \mathrm{E~}h(X)/\sqrt{\mathrm{Var~}h(X)/R}) \ge 1.96\)</span>. (Recall that 1.96 is the 97.5th percentile from the standard normal distribution.) Replacing <span class="math inline">\(\mathrm{E~}h(X)\)</span> and <span class="math inline">\(\mathrm{Var~}h(X)\)</span> with estimates, you continue your simulation until</p>
+<p><span class="math display">\[
 \frac{.01\overline{h}_R}{s_{h,R}/\sqrt{R}}\geq 1.96
 \]</span> or equivalently</p>
 <span class="math display" id="eq:NumSimulations">\[\begin{equation}
@@ -1101,7 +1102,8 @@ R \geq 38,416\frac{s_{h,R}^2}{\overline{h}_R^2}.
 <p>For our example, the average insurance claim is 235.011 and the corresponding standard deviation is 280.862. Using equation <a href="C-Simulation.html#eq:NumSimulations">(6.1)</a>, to be within 10% of the mean, we would only require at least 54.87 thousand simulations. However, to be within 1% we would want at least 5.49 million simulations.</p>
 <hr />
 <p><strong>Example. 6.1.9. Approximation choices.</strong> An important application of simulation is the approximation of <span class="math inline">\(\mathrm{E~}h(X)\)</span>. In this example, we show that the choice of the <span class="math inline">\(h(\cdot)\)</span> function and the distribution of <span class="math inline">\(X\)</span> can play a role.</p>
-<p>Consider the following question : what is <span class="math inline">\(\Pr[X&gt;2]\)</span> when <span class="math inline">\(X\)</span> has a Cauchy distribution, with density <span class="math inline">\(f(x) =\left(\pi(1+x^2)\right)^{-1}\)</span>, on the real line? The true value is <span class="math display">\[
+<p>Consider the following question : what is <span class="math inline">\(\Pr[X&gt;2]\)</span> when <span class="math inline">\(X\)</span> has a Cauchy distribution, with density <span class="math inline">\(f(x) =\left(\pi(1+x^2)\right)^{-1}\)</span>, on the real line? The true value is</p>
+<p><span class="math display">\[
 \Pr\left[X&gt;2\right] = \int_2^\infty \frac{dx}{\pi(1+x^2)} .
 \]</span> One can use an <code>R</code> numerical integration function (which works usually well on improper integrals)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">true_value &lt;-<span class="st"> </span><span class="kw">integrate</span>(<span class="cf">function</span>(x) <span class="dv">1</span><span class="op">/</span>(pi<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>x<span class="op">^</span><span class="dv">2</span>)),<span class="dt">lower=</span><span class="dv">2</span>,<span class="dt">upper=</span><span class="ot">Inf</span>)<span class="op">$</span>value</code></pre></div>
@@ -1120,27 +1122,27 @@ p1</code></pre></div>
 <pre><code>[1] 0.147439</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">se.p1</code></pre></div>
 <pre><code>[1] 0.0003545432</code></pre>
-<p>With one million simulations, we obtain an estimate of 0.14744 with standard error 0.00035. One can prove that the variance of <span class="math inline">\(p_1\)</span> is of order <span class="math inline">\(0.127/R\)</span>.</p>
+<p>With one million simulations, we obtain an estimate of 0.14744 with standard error 0.355 (divided by 1000). One can prove that the variance of <span class="math inline">\(p_1\)</span> is of order <span class="math inline">\(0.127/R\)</span>.</p>
 <!--It can be visualized below -->
 <p>With other choices of <span class="math inline">\(h(\cdot)\)</span> and <span class="math inline">\(F(\cdot)\)</span>, it is actually possible to reduce uncertainty even using the same number of simulations <code>R</code>. To begin, one can use the symmetry of the Cauchy distribution to write <span class="math inline">\(\Pr[X&gt;2]=0.5\cdot\Pr[|X|&gt;2]\)</span>. With this, can construct a new estimator</p>
 <p><span class="math display">\[
 p_2 = \frac{1}{2R}\sum_{i=1}^R \mathrm{I}(|F^{-1}(U_i)|&gt;2) .
 \]</span></p>
-<p>With one million simulations, we obtain an estimate of 0.14748 with standard error 0.00023. One can prove that the variance of <span class="math inline">\(p_2\)</span> is of order <span class="math inline">\(0.052/R\)</span>.</p>
+<p>With one million simulations, we obtain an estimate of 0.14748 with standard error 0.228 (divided by 1000). One can prove that the variance of <span class="math inline">\(p_2\)</span> is of order <span class="math inline">\(0.052/R\)</span>.</p>
 <!--It can be visualized below -->
 <p>But one can go one step further. The improper integral can be written as a proper one by a simple symmetry property (since the function is symmetry and the integral on the real line is equal to <span class="math inline">\(1\)</span>) <span class="math display">\[
 \int_2^\infty \frac{dx}{\pi(1+x^2)}=\frac{1}{2}-\int_0^2\frac{dx}{\pi(1+x^2)} .
 \]</span> From this expression, a natural approximation would be <span class="math display">\[
 p_3 = \frac{1}{2}-\frac{1}{R}\sum_{i=1}^R h_3(2U_i), ~~~~~~\text{where}~h_3(x)=\frac{2}{\pi(1+x^2)} .
 \]</span></p>
-<p>With one million simulations, we obtain an estimate of 0.14756 with standard error 0.00017. One can prove that the variance of <span class="math inline">\(p_3\)</span> is of order <span class="math inline">\(0.0285/R\)</span>.</p>
+<p>With one million simulations, we obtain an estimate of 0.14756 with standard error 0.169 (divided by 1000). One can prove that the variance of <span class="math inline">\(p_3\)</span> is of order <span class="math inline">\(0.0285/R\)</span>.</p>
 <!--It can be visualized below -->
 <p>Finally, one can also consider some change of variable in the integral <span class="math display">\[
 \int_2^\infty \frac{dx}{\pi(1+x^2)}=\int_0^{1/2}\frac{y^{-2}dy}{\pi(1-y^{-2})} .
 \]</span> From this expression, a natural approximation would be <span class="math display">\[
 p_4 = \frac{1}{R}\sum_{i=1}^R h_4(U_i/2),~~~~~\text{where}~h_4(x)=\frac{1}{2\pi(1+x^2)} .
 \]</span> The expression seems rather similar to the previous one,</p>
-<p>With one million simulations, we obtain an estimate of 0.14759 with standard error 0.00001. One can prove that the variance of <span class="math inline">\(p_4\)</span> is of order <span class="math inline">\(0.00009/R\)</span>, which is much smaller than what we had so far !</p>
+<p>With one million simulations, we obtain an estimate of 0.14759 with standard error 0.01 (divided by 1000). One can prove that the variance of <span class="math inline">\(p_4\)</span> is of order <span class="math inline">\(0.00009/R\)</span>, which is much smaller than what we had so far !</p>
 <!--It can be visualized below -->
 <p><a href="#tab:61">Table 6.1</a> summarizes the four choices of <span class="math inline">\(h(\cdot)\)</span> and <span class="math inline">\(F(\cdot)\)</span> to approximate <span class="math inline">\(\Pr[X&gt;2] =\)</span> 0.14758. The standard error varies dramatically. Thus, if we have a desired degree of accuracy, then the <em>number of simulations</em> depends strongly on how we write the integrals we try to approximate.</p>
 <p><a id=tab:61></a></p>
@@ -1830,7 +1832,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span clas
 </div>
 <div id="S:ParametricBootStrap" class="section level3">
 <h3><span class="header-section-number">6.2.4</span> Parametric Bootstrap</h3>
-<p>As described in the section on bootstrap, the idea of (nonparametric) bootstrap is to resample, or equivalently, to use the inverse method on the empirical cumulative distribution function <span class="math inline">\(F_n\)</span>. With parametric bootstrap, we draw independent variables from <span class="math inline">\(F_\widehat{\theta}\)</span> where the underlying distribution is assume to be in a parametric family <span class="math inline">\(\mathcal{F}=\{F_{\theta},\theta\in\Theta\}\)</span>. Typically, parameters from this distribution are estimated based on a sample and denoted as <span class="math inline">\(\hat{\theta}\)</span>.</p>
+<p>As described in the section on bootstrap, the idea of (nonparametric) bootstrap is to resample, or equivalently, to use the inverse method on the empirical cumulative distribution function <span class="math inline">\(F_n\)</span>. With parametric bootstrap, we draw independent variables from <span class="math inline">\(F_{\widehat{\theta}}\)</span> where the underlying distribution is assume to be in a parametric family <span class="math inline">\(\mathcal{F}=\{F_{\theta},\theta\in\Theta\}\)</span>. Typically, parameters from this distribution are estimated based on a sample and denoted as <span class="math inline">\(\hat{\theta}\)</span>.</p>
 <p><strong>Example 6.2.4. Lognormal distribution.</strong> Consider again the dataset</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sample_x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">2.46</span>,<span class="fl">2.80</span>,<span class="fl">3.28</span>,<span class="fl">3.86</span>,<span class="fl">2.85</span>,<span class="fl">3.67</span>,<span class="fl">3.37</span>,<span class="fl">3.40</span>,<span class="fl">5.22</span>,<span class="fl">2.55</span>,<span class="fl">2.79</span>,<span class="fl">4.50</span>,<span class="fl">3.37</span>,<span class="fl">2.88</span>,<span class="fl">1.44</span>,<span class="fl">2.56</span>,<span class="fl">2.00</span>,<span class="fl">2.07</span>,<span class="fl">2.19</span>,<span class="fl">1.77</span>)</code></pre></div>
 <p>The classical (nonparametric) bootstrap was based on samples</p>
@@ -2184,7 +2186,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,ru,<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),ru,<span class="dt">col=</span>clr,<span class="dt">lwd=</span><span class="dv">2</span>)
   <span class="kw">arrows</span>(<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),ru,<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">0</span>,<span class="dt">col=</span>clr,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
 }
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) {<span class="kw">pic_ani</span>()}</code></pre></div>
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/sampleani1-.gif" width="672" /></p>
 <p>An alternative is draw according to the conditional distribution <span class="math inline">\(F^{\star}\)</span> defined as <span class="math display">\[
 dF^\star(x) = \frac{dF(x)}{F(b)-F(a)}\boldsymbol{1}(x\in[a,b])
@@ -2212,7 +2214,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,ru,<span class="kw">qnormstar</span>(ru),ru,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)
   <span class="kw">arrows</span>(<span class="kw">qnormstar</span>(ru),ru,<span class="kw">qnormstar</span>(ru),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
 }
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) {<span class="kw">pic_ani</span>()}</code></pre></div>
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-.gif" width="672" /></p>
 <p>But one can use an alternative representation, where we constraint on the <span class="math inline">\(y\)</span>-axis, to have only values between <span class="math inline">\(F^{-1}(a)\)</span> and <span class="math inline">\(F^{-1}(b)\)</span>. Thus, from <span class="math inline">\(u\)</span> (drawn from a uniform distribution on the unit interval), consider <span class="math display">\[
 \tilde{u}=(1-u)\cdot F(a)+u\cdot F(b)
@@ -2229,7 +2231,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,rutilde,<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),rutilde,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)
   <span class="kw">arrows</span>(<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),rutilde,<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
 }
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) {<span class="kw">pic_ani</span>()}</code></pre></div>
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-.gif" width="672" /></p>
 </div>
 <div id="S:MCMC" class="section level2">
@@ -2297,7 +2299,7 @@ simx &lt;-<span class="st"> </span>vec[<span class="dv">1000</span><span class="
 <span class="kw">lines</span>(u,<span class="kw">dnorm</span>(u),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 <span class="kw">qqnorm</span>(simx)
 <span class="kw">acf</span>(simx,<span class="dt">lag=</span><span class="dv">100</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
 </div>
 <div id="gibbs-sampler" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> Gibbs sampler</h3>
@@ -2321,7 +2323,7 @@ simx &lt;-<span class="st"> </span>vec[<span class="dv">1000</span><span class="
 <span class="kw">plot</span>(sim,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">11</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">4.3</span>))
 <span class="kw">polygon</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">density=</span><span class="dv">15</span>,<span class="dt">border=</span><span class="ot">NA</span>)
 <span class="kw">abline</span>(<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
 <p>The construction of the sequence (MCMC algorithms are iterative) can be visualized below</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lambda &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)
 X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>)

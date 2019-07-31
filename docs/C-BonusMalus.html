@@ -697,7 +697,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 \text{Table 1: Classes of NCD (Malaysia)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Classes (claim-free years)} &amp; \text{Discounts (%)}\\
+\text{Classes (claim-free years)} &amp; \text{Discounts}\\
 \hline\\
 {0} &amp; {0}\\
 {1} &amp; {25}\\
@@ -724,7 +724,7 @@ Figure 12.1: Transition diagram for NCD classes (Malaysia)
 \text{Table 2: Classes of NCD (Brazil)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Classes (claim-free years)} &amp; \text{Discounts (%)}\\
+\text{Classes (claim-free years)} &amp; \text{Discounts}\\
 \hline\\
 {0} &amp; {0}\\
 {1} &amp; {10}\\
@@ -749,7 +749,7 @@ Figure 12.2: Transition diagram for NCD classes (Brazil)
 \text{Table 3: Classes of NCD (Switzerland)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Classes} &amp; \text{Loadings (%)} &amp; \text{Classes} &amp; \text{Discounts (%)}\\
+\text{Classes} &amp; \text{Loadings} &amp; \text{Classes} &amp; \text{Discounts}\\
 \text{(claim-free years)} &amp; &amp; \text{(claim-free years)} &amp; \\
 \hline\\
 {0} &amp; {170} &amp; {12} &amp; {0}\\
@@ -839,23 +839,25 @@ p_{50}&amp;0&amp;0&amp;0&amp;0&amp;p_{55}
 <p><em>Provide the transition matrix for the NCD system in Switzerland.</em></p>
 <p><strong><em>Solution</em></strong></p>
 <p><em>From Table 3 and Figure</em> <a href="C-BonusMalus.html#fig:TransitionSwitz">12.3</a><em>, the probability of a no-claim year is equal to the probability of moving one-class forward, whereas the probability of having one or more claims within the year is equal to the probability of moving four-classes backward. The transition matrix is:</em></p>
-<p><span class="math display">\[\begin{matrix}
+<p><span class="math display">\[
+\begin{matrix}
 \left|
-{\begin{array}{{12}{c}}
-1 - {p_{01}} &amp; p_{01} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; ...\\
-1 - {p_{12}} &amp; 0 &amp; p_{12} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; ...\\
-1 - {p_{23}} &amp; 0 &amp; 0 &amp; p_{23} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; ...\\
-1 - {p_{34}} &amp; 0 &amp; 0 &amp; 0 &amp; p_{34} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; ...\\
-1 - {p_{45}} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{45} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; ...\\
-1 - \sum\limits_j {p_{5j}} &amp; p_{51} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{56} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; ...\\
-1 - \sum\limits_j {p_{6j}} &amp; 0 &amp; p_{62} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{67} &amp; 0 &amp; 0 &amp; 0 &amp; ...\\
-1 - \sum\limits_j {p_{7j}} &amp; 0 &amp; 0 &amp; p_{73} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{78} &amp; 0 &amp; 0 &amp; ...\\
+{\begin{array}{*{12}{c}}
+1 - {p_{01}} &amp; p_{01} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
+1 - {p_{12}} &amp; 0 &amp; p_{12} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
+1 - {p_{23}} &amp; 0 &amp; 0 &amp; p_{23} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
+1 - {p_{34}} &amp; 0 &amp; 0 &amp; 0 &amp; p_{34} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
+1 - {p_{45}} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{45} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
+1 - \sum\limits_j {p_{5j}} &amp; p_{51} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{56} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
+1 - \sum\limits_j {p_{6j}} &amp; 0 &amp; p_{62} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{67} &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
+1 - \sum\limits_j {p_{7j}} &amp; 0 &amp; 0 &amp; p_{73} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_{78} &amp; 0 &amp; 0 &amp; \cdots\\
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots\\
 1 - \sum\limits_j {p_{19,j}} &amp; 0 &amp; 0 &amp; p_{19,3} &amp; 0 &amp; 0 &amp; 0 &amp; p_{19,7} &amp; 0 &amp; 0 &amp; 0 &amp; \cdots\\
 1 - \sum\limits_j {p_{20,j}} &amp; 0 &amp; 0 &amp; 0 &amp; p_{20,4} &amp; 0 &amp; 0 &amp; 0 &amp; p_{20,8} &amp; 0 &amp; 0 &amp; \cdots\\
 1 - \sum\limits_j {p_{21,j}} &amp; p_{21,1} &amp; 0 &amp; 0 &amp; 0 &amp; p_{21,5} &amp; 0 &amp; 0 &amp; 0 &amp; p_{21,9} &amp; 0 &amp; \cdots
 \end{array}} \right|
-\end{matrix}\]</span></p>
+\end{matrix}
+\]</span></p>
 </div>
 </div>
 <div id="S:ERBM:StatDist" class="section level2">
@@ -883,16 +885,6 @@ p_{50}&amp;0&amp;0&amp;0&amp;0&amp;p_{55}
 <p><em>Find the stationary distribution for the NCD system in Malaysia assuming that the probability of a no-claim year for all NCD classes are <span class="math inline">\({p_0}\)</span>.</em></p>
 <p><strong><em>Solution</em></strong></p>
 <p><em>The transition matrix can be re-written as:</em></p>
-<p><span class="math display">\[
-\left[ {\begin{array}{*{20}{c}}
-{1 -{p_0}}&amp;{{p_0}}&amp;0&amp;0&amp;0&amp;0\\\\
-{1 - {p_0}}&amp;0&amp;{{p_0}}&amp;0&amp;0&amp;0\\\\
-{1 - {p_0}}&amp;0&amp;0&amp;{{p_0}}&amp;0&amp;0\\\\
-{1 - {p_0}}&amp;0&amp;0&amp;0&amp;{{p_0}}&amp;0\\\\
-{1 - {p_0}}&amp;0&amp;0&amp;0&amp;0&amp;{{p_0}}\\\\
-{1 - {p_0}}&amp;0&amp;0&amp;0&amp;0&amp;{{p_0}}
-\end{array}}\right]
-\]</span></p>
 <p><em>The stationary distribution can be calculated using</em> <span class="math inline">\({\pi _j} = \sum\limits_i {\pi _i}p_{ij}\)</span><em>. The solutions are:</em></p>
 <p><span class="math display">\[
 \begin{array}{l}
@@ -1040,7 +1032,7 @@ TP</code></pre></div>
 <p><span class="math display">\[
 \begin{array}{l} = 
 \sum\limits_j \text{(premium)} \times 
-\text{(proportion in class } j \text{ in the long run)} \times \text{(1 - NCD% in class } j)\\\\ 
+\text{(proportion in class } j \text{ in the long run)} \times \text{(1 - NCD in class } j)\\\\ 
 = m[{\pi _0}(1) + {\pi _1}(1 - 0.9) + {\pi _2}(1 - 0.15) + \ldots + {\pi _6}(1 - 0.35)]\\\\ 
 = m[0 + 0 + (0.0003)(0.85) + \ldots + (0.8894)(0.65)]\\\\
 = 0.6565m
@@ -1069,14 +1061,16 @@ TP</code></pre></div>
 \]</span></p>
 <p><em>The premium in the first year, after implementing the NCD, is:</em></p>
 <p><span class="math display">\[
-\begin{array}{l} = \sum\limits_j \text{(premium)} \times 
-\text{(average proportion in class } j) \times \text{(1 - NCD% in class }j)\\\\
-= m\left[ \frac{\sum\limits_i {p_{i0}}}{6}{(1)} +
+\begin{aligned} 
+&amp;= \sum\limits_j \text{(premium)} \times 
+\text{(average proportion in class } j) \times \text{(1 - NCD in class }j) \\
+&amp;= m\left[ \frac{\sum\limits_i {p_{i0}}}{6}{(1)} +
 \frac{\sum\limits_i {p_{i1}}}{6}{(1 - 0.25)} + \ldots +
-\frac{\sum\limits_i {p_{i5}}}{6}{(1 - 0.55)} \right]\\\\ =
-100[0.0952(1) + 0.1508(0.75) + ... + 0.3016(0.45)]\\\\
-= 62.55
-\end{array}
+\frac{\sum\limits_i {p_{i5}}}{6}{(1 - 0.55)} \right]\\
+&amp;=
+100[0.0952(1) + 0.1508(0.75) + \cdots + 0.3016(0.45)]\\
+&amp;= 62.55.
+\end{aligned}
 \]</span></p>
 <p><em>Using similar steps, the premium in the</em> <span class="math inline">\(n\)</span><em>-th year for</em> <span class="math inline">\(n = 1,2,...,20\)</span> <em>can be observed. From R program, the premiums in 20 years are:</em></p>
 <p><em>62.55, 59.87, 58.06, 57.06, 56.58, 56.58, 56.58, 56.58, 56.58, 56.58,</em></p>
@@ -1394,7 +1388,7 @@ v)}}{y_i{!}\Gamma (v)}
 \text{Table 8: Premium relativities (Canadian data)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Class} &amp; \text{Merit} &amp; \text{Premium} &amp; \text{Premium relativity} &amp; \text{Discount (%)} \\
+\text{Class} &amp; \text{Merit} &amp; \text{Premium} &amp; \text{Premium relativity} &amp; \text{Discount} \\
 \hline\\
     1     &amp; \text{A} &amp; 80    &amp; 0.61  &amp; 39 \\
           &amp; \text{X} &amp; 105   &amp; 0.80 &amp; 20 \\
@@ -1425,7 +1419,7 @@ v)}}{y_i{!}\Gamma (v)}
 \begin{array}{*{20}c}
 \hline
 \text{Class} &amp; \text{Premium} &amp; \text{Years of} &amp; \text{Discount for} \\
-&amp; &amp; \text{accident-free} &amp; \text{bonus-malus (%)}\\
+&amp; &amp; \text{accident-free} &amp; \text{bonus-malus }\\
 \hline\\
     1     &amp; 131   &amp; {3+} &amp; 39 \\
           &amp;       &amp; 2     &amp; 20 \\
@@ -1506,7 +1500,7 @@ _2} = 0.0810,\rm{ }{\pi _3} = 0.0729,\rm{ }{\pi _4} =
 <p>which indicates that 10% of insureds eventually belong to class 0 (zero claim-free years), 9% of insureds eventually belong to class 1 (one claim-free year), and so forth, until 59% of insureds eventually belong to class 5 (or five successive claim-free years). After implementing the NCD, the premium (in the long run) will be reduced (on average) by the following factor:</p>
 <p><span class="math display">\[
 \begin{array}{l} 
-= \sum\limits_j \text{(proportion of insureds in class }j)\text{(1 - NCD%
+= \sum\limits_j \text{(proportion of insureds in class }j)\text{(1 - NCD
 in class }j) \\\\ 
 = (0.1000)(1) + (0.0900)(1 - 0.25) + ... + (0.5905)(1 - 0.55)\\\\ 
 = {0}{.570962}

@@ -763,9 +763,11 @@ M_N(t) = \mathrm{E}~{[e^{tN}]} = \sum^{\infty}_{k=0} ~e^{tk}~ p_N(k), \quad t\in
 
 <div class="theorem">
 <p><span id="thm:freq-thm1" class="theorem"><strong>Theorem 2.1  </strong></span>Let <span class="math inline">\(N\)</span> be a count random variable such that <span class="math inline">\(\mathrm{E}~{[e^{t^\ast N}]}\)</span> is finite for some <span class="math inline">\(t^\ast&gt;0\)</span>. We have the following:</p>
-All moments of <span class="math inline">\(N\)</span> are finite, <em>i.e.</em> <span class="math display">\[
-\mathrm{E}{[N^r]}&lt;\infty, \quad r \gt 0.
-\]</span> The <em>mgf</em> can be used to <em>generate</em> its moments as follows: <span class="math display">\[
+<p>All moments of <span class="math inline">\(N\)</span> are finite, <em>i.e.</em></p>
+<p><span class="math display">\[
+\mathrm{E}{[N^r]}&lt;\infty, \quad r &gt; 0.
+\]</span></p>
+The <em>mgf</em> can be used to <em>generate</em> its moments as follows: <span class="math display">\[
 \left.\frac{{\rm d}^m}{{\rm d}t^m} M_N(t)\right\vert_{t=0}=\mathrm{E}{N^m}, \quad m\geq 1.
 \]</span> The <em>mgf</em> <span class="math inline">\(M_N(\cdot)\)</span> characterizes the distribution; in other words it uniquely specifies the distribution.
 </div>
@@ -863,11 +865,11 @@ kp_k=\begin{cases}
 p_k = \binom{k+r-1}{k} \left(\frac{1}{1+\beta}\right)^r \left(\frac{\beta}{1+\beta}\right)^k, \quad k=0,1,\ldots
 \]</span> for <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(\beta\geq0\)</span>, then it defines a valid <em>pmf</em>. Such defined distribution is called the negative binomial distribution with parameters <span class="math inline">\((r,\beta)\)</span> with <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(\beta\geq 0\)</span>. Moreover, the binomial series also implies that the <em>pgf</em> of this distribution is given by <span class="math display">\[
 \begin{aligned}
-  P_N(z) &amp;= (1-\beta(z-1))^{-r}, \quad \vert z \vert \lt 1+\frac{1}{\beta}, \beta\geq0. 
+  P_N(z) &amp;= (1-\beta(z-1))^{-r}, \quad \vert z \vert &lt; 1+\frac{1}{\beta}, \beta\geq0. 
 \end{aligned}
 \]</span> The above implies that the <em>mgf</em> is given by <span class="math display">\[
 \begin{aligned}
-  M_N(t) &amp;= (1-\beta(e^t-1))^{-r}, \quad t \lt \log\left(1+\frac{1}{\beta}\right), \beta\geq0. 
+  M_N(t) &amp;= (1-\beta(e^t-1))^{-r}, \quad t &lt; \log\left(1+\frac{1}{\beta}\right), \beta\geq0. 
 \end{aligned}
 \]</span> We derive its moments using Theorem <a href="C-Frequency-Modeling.html#thm:freq-thm1">2.1</a> as follows:</p>
 <span class="math display">\[\begin{eqnarray*}
@@ -990,7 +992,7 @@ L(\lambda)=\left(\prod_{i=1}^n x_i!\right)^{-1}e^{-n\lambda}\lambda^{\sum_{i=1}^
 l(\lambda)= -\sum_{i=1}^n \log(x_i!) -n\lambda +\log(\lambda) \cdot \sum_{i=1}^n x_i,
 \]</span> and <span class="math display">\[
 l&#39;(\lambda)= -n +\frac{1}{\lambda}\sum_{i=1}^n x_i.
-\]</span> In evaluating <span class="math inline">\(l&#39;&#39;(\lambda)\)</span>, when <span class="math inline">\(\sum_{i=1}^n x_i&gt;0\)</span>, <span class="math inline">\(l&#39;&#39;&lt; 0\)</span>. Consequently, the maximum is attained at the sample mean, , presented below. When <span class="math inline">\(\sum_{i=1}^n x_i=0\)</span>, the likelihood is a decreasing function and hence the maximum is attained at the least possible parameter value; this results in the maximum likelihood estimate being zero. Hence, we have<br />
+\]</span> In evaluating <span class="math inline">\(l&#39;&#39;(\lambda)\)</span>, when <span class="math inline">\(\sum_{i=1}^n x_i&gt;0\)</span>, <span class="math inline">\(l&#39;&#39;&lt; 0\)</span>. Consequently, the maximum is attained at the sample mean, <span class="math inline">\(\overline{x}\)</span>, presented below. When <span class="math inline">\(\sum_{i=1}^n x_i=0\)</span>, the likelihood is a decreasing function and hence the maximum is attained at the least possible parameter value; this results in the maximum likelihood estimate being zero. Hence, we have<br />
 <span class="math display">\[
 \overline{x} = \hat{\lambda}_{\rm MLE} = \frac{1}{n}\sum_{i=1}^n x_i. 
 \]</span> Note that the sample mean can be computed also as <span class="math display">\[
