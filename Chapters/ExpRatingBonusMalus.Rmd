@@ -91,7 +91,7 @@ automatically returns to class 0.
 \text{Table 1: Classes of NCD (Malaysia)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Classes (claim-free years)} & \text{Discounts (%)}\\
+\text{Classes (claim-free years)} & \text{Discounts}\\
 \hline\\
 {0} & {0}\\
 {1} & {25}\\
@@ -126,7 +126,7 @@ system in Brazil.
 \text{Table 2: Classes of NCD (Brazil)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Classes (claim-free years)} & \text{Discounts (%)}\\
+\text{Classes (claim-free years)} & \text{Discounts}\\
 \hline\\
 {0} & {0}\\
 {1} & {10}\\
@@ -162,7 +162,7 @@ classes and the transition diagram for the NCD system in Switzerland.
 \text{Table 3: Classes of NCD (Switzerland)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Classes} & \text{Loadings (%)} & \text{Classes} & \text{Discounts (%)}\\
+\text{Classes} & \text{Loadings} & \text{Classes} & \text{Discounts}\\
 \text{(claim-free years)} & & \text{(claim-free years)} & \\
 \hline\\
 {0} & {170} & {12} & {0}\\
@@ -313,23 +313,25 @@ transition matrix is:*
 
 *From Table 3 and Figure* \@ref(fig:TransitionSwitz)*, the probability of a no-claim year is equal to the probability of moving one-class forward, whereas the probability of having one or more claims within the year is equal to the probability of moving four-classes backward. The transition matrix is:*
 
-\[\begin{matrix}
+$$
+\begin{matrix}
 \left|
-{\begin{array}{{12}{c}}
-1 - {p_{01}} & p_{01} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & ...\\
-1 - {p_{12}} & 0 & p_{12} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & ...\\
-1 - {p_{23}} & 0 & 0 & p_{23} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & ...\\
-1 - {p_{34}} & 0 & 0 & 0 & p_{34} & 0 & 0 & 0 & 0 & 0 & 0 & ...\\
-1 - {p_{45}} & 0 & 0 & 0 & 0 & p_{45} & 0 & 0 & 0 & 0 & 0 & ...\\
-1 - \sum\limits_j {p_{5j}} & p_{51} & 0 & 0 & 0 & 0 & p_{56} & 0 & 0 & 0 & 0 & ...\\
-1 - \sum\limits_j {p_{6j}} & 0 & p_{62} & 0 & 0 & 0 & 0 & p_{67} & 0 & 0 & 0 & ...\\
-1 - \sum\limits_j {p_{7j}} & 0 & 0 & p_{73} & 0 & 0 & 0 & 0 & p_{78} & 0 & 0 & ...\\
+{\begin{array}{*{12}{c}}
+1 - {p_{01}} & p_{01} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots\\
+1 - {p_{12}} & 0 & p_{12} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots\\
+1 - {p_{23}} & 0 & 0 & p_{23} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots\\
+1 - {p_{34}} & 0 & 0 & 0 & p_{34} & 0 & 0 & 0 & 0 & 0 & 0 & \cdots\\
+1 - {p_{45}} & 0 & 0 & 0 & 0 & p_{45} & 0 & 0 & 0 & 0 & 0 & \cdots\\
+1 - \sum\limits_j {p_{5j}} & p_{51} & 0 & 0 & 0 & 0 & p_{56} & 0 & 0 & 0 & 0 & \cdots\\
+1 - \sum\limits_j {p_{6j}} & 0 & p_{62} & 0 & 0 & 0 & 0 & p_{67} & 0 & 0 & 0 & \cdots\\
+1 - \sum\limits_j {p_{7j}} & 0 & 0 & p_{73} & 0 & 0 & 0 & 0 & p_{78} & 0 & 0 & \cdots\\
 \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots\\
 1 - \sum\limits_j {p_{19,j}} & 0 & 0 & p_{19,3} & 0 & 0 & 0 & p_{19,7} & 0 & 0 & 0 & \cdots\\
 1 - \sum\limits_j {p_{20,j}} & 0 & 0 & 0 & p_{20,4} & 0 & 0 & 0 & p_{20,8} & 0 & 0 & \cdots\\
 1 - \sum\limits_j {p_{21,j}} & p_{21,1} & 0 & 0 & 0 & p_{21,5} & 0 & 0 & 0 & p_{21,9} & 0 & \cdots
 \end{array}} \right|
-\end{matrix}\]
+\end{matrix}
+$$
 
 ## BMS and Stationary Distribution {#S:ERBM:StatDist}
 
@@ -414,16 +416,7 @@ $0 \le {\pi _j} \le 1$ and $\sum\limits_j {{\pi_j}} = 1$.
 
 *The transition matrix can be re-written as:*
 
-\[
-\left[ {\begin{array}{*{20}{c}}
-{1 -{p_0}}&{{p_0}}&0&0&0&0\\\\
-{1 - {p_0}}&0&{{p_0}}&0&0&0\\\\
-{1 - {p_0}}&0&0&{{p_0}}&0&0\\\\
-{1 - {p_0}}&0&0&0&{{p_0}}&0\\\\
-{1 - {p_0}}&0&0&0&0&{{p_0}}\\\\
-{1 - {p_0}}&0&0&0&0&{{p_0}}
-\end{array}}\right]
-\]
+
 
 *The stationary distribution can be calculated using* ${\pi _j} = \sum\limits_i {\pi _i}p_{ij}$*. The solutions are:*
 
@@ -563,15 +556,15 @@ the NCD is* $m.$
 *Using the stationary probabilities from Example 4, the stationary final
 premium is:*
 
-\[
+$$
 \begin{array}{l} = 
 \sum\limits_j \text{(premium)} \times 
-\text{(proportion in class } j \text{ in the long run)} \times \text{(1 - NCD% in class } j)\\\\ 
+\text{(proportion in class } j \text{ in the long run)} \times \text{(1 - NCD in class } j)\\\\ 
 = m[{\pi _0}(1) + {\pi _1}(1 - 0.9) + {\pi _2}(1 - 0.15) + \ldots + {\pi _6}(1 - 0.35)]\\\\ 
 = m[0 + 0 + (0.0003)(0.85) + \ldots + (0.8894)(0.65)]\\\\
 = 0.6565m
 \end{array}
-\]
+$$
 
 *The results indicate that the final premium reduce from m to 0.6565m in
 the long run (under steady state condition or stationary condition) if
@@ -617,16 +610,18 @@ ${\bf{P}}$, which is ${\bf{P}^n}.$
 
 *The premium in the first year, after implementing the NCD, is:*
 
-\[
-\begin{array}{l} = \sum\limits_j \text{(premium)} \times 
-\text{(average proportion in class } j) \times \text{(1 - NCD% in class }j)\\\\
-= m\left[ \frac{\sum\limits_i {p_{i0}}}{6}{(1)} +
+$$
+\begin{aligned} 
+&= \sum\limits_j \text{(premium)} \times 
+\text{(average proportion in class } j) \times \text{(1 - NCD in class }j) \\
+&= m\left[ \frac{\sum\limits_i {p_{i0}}}{6}{(1)} +
 \frac{\sum\limits_i {p_{i1}}}{6}{(1 - 0.25)} + \ldots +
-\frac{\sum\limits_i {p_{i5}}}{6}{(1 - 0.55)} \right]\\\\ =
-100[0.0952(1) + 0.1508(0.75) + ... + 0.3016(0.45)]\\\\
-= 62.55
-\end{array}
-\]
+\frac{\sum\limits_i {p_{i5}}}{6}{(1 - 0.55)} \right]\\
+&=
+100[0.0952(1) + 0.1508(0.75) + \cdots + 0.3016(0.45)]\\
+&= 62.55.
+\end{aligned}
+$$
 
 *Using similar steps, the premium in the* $n$*-th year for*
 $n = 1,2,...,20$ *can be observed. From R program, the premiums in 20 years are:*
@@ -1055,7 +1050,7 @@ bonus-malus information. Using the Canadian automobile insurance data:
 \text{Table 8: Premium relativities (Canadian data)}\\
 \begin{array}{*{20}c}
 \hline
-\text{Class} & \text{Merit} & \text{Premium} & \text{Premium relativity} & \text{Discount (%)} \\
+\text{Class} & \text{Merit} & \text{Premium} & \text{Premium relativity} & \text{Discount} \\
 \hline\\
     1     & \text{A} & 80    & 0.61  & 39 \\
           & \text{X} & 105   & 0.80 & 20 \\
@@ -1087,7 +1082,7 @@ bonus-malus information. Using the Canadian automobile insurance data:
 \begin{array}{*{20}c}
 \hline
 \text{Class} & \text{Premium} & \text{Years of} & \text{Discount for} \\
-& & \text{accident-free} & \text{bonus-malus (%)}\\
+& & \text{accident-free} & \text{bonus-malus }\\
 \hline\\
     1     & 131   & {3+} & 39 \\
           &       & 2     & 20 \\
@@ -1218,7 +1213,7 @@ implementing the NCD, the premium (in the long run) will be reduced
 
 \[
 \begin{array}{l} 
-= \sum\limits_j \text{(proportion of insureds in class }j)\text{(1 - NCD%
+= \sum\limits_j \text{(proportion of insureds in class }j)\text{(1 - NCD
 in class }j) \\\\ 
 = (0.1000)(1) + (0.0900)(1 - 0.25) + ... + (0.5905)(1 - 0.55)\\\\ 
 = {0}{.570962}
@@ -1298,7 +1293,7 @@ implementing the NCD.
 \end{matrix}
 \]
 
-\[
+$$
 \begin{matrix}
 \text{Table 13: Premium rates (Malaysian data)}\\
 \begin{array}{*{20}c}
@@ -1336,9 +1331,9 @@ implementing the NCD.
 \hline
 \end{array}
 \end{matrix}
-\]
+$$
 
-\[
+$$
 \begin{matrix}
 \text{Table 14: Premium, final premium and NCD (Malaysian data)}\\
 \begin{array}{*{20}c}
@@ -1382,7 +1377,7 @@ implementing the NCD.
 \hline
 \end{array}
 \end{matrix}
-\]
+$$
 
 **FURTHER READING AND REFERENCES:**
 

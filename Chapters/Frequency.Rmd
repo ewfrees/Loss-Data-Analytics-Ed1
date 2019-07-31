@@ -100,13 +100,16 @@ M_N(t) = \mathrm{E}~{[e^{tN}]} = \sum^{\infty}_{k=0} ~e^{tk}~ p_N(k), \quad t\in
 We note that while $M_N(\cdot)$ is well defined as it is the expectation of a non-negative random variable ($e^{tN}$), though it can assume the value $\infty$. Note that for a count random variable, $M_N(\cdot)$ is finite valued on $(-\infty,0]$ with $M_N(0)=1$. The following theorem, whose proof can be found in [@billingsley] (pages 285-6), encapsulates the reason for its name.  
 
 <!-- \begin{theorem}\label{freq:thm1} -->
+
 ```{theorem, freq-thm1}
 Let $N$ be a count random variable such that $\mathrm{E}~{[e^{t^\ast N}]}$ is finite for some $t^\ast>0$. We have the following:
 
 All moments of $N$ are finite, *i.e.*
-\[
-\mathrm{E}{[N^r]}<\infty, \quad r \gt 0.
-\]
+  
+$$
+\mathrm{E}{[N^r]}<\infty, \quad r > 0.
+$$
+
 The *mgf* can be used to *generate* its moments as follows:
 \[
 \left.\frac{{\rm d}^m}{{\rm d}t^m} M_N(t)\right\vert_{t=0}=\mathrm{E}{N^m}, \quad m\geq 1.
@@ -254,13 +257,13 @@ p_k = \binom{k+r-1}{k} \left(\frac{1}{1+\beta}\right)^r \left(\frac{\beta}{1+\be
 for $r>0$ and $\beta\geq0$, then it defines a valid *pmf*. Such defined distribution is called the negative binomial distribution with parameters $(r,\beta)$ with $r>0$ and $\beta\geq 0$. Moreover, the binomial series also implies that the *pgf* of this distribution is given by 
 \[
 \begin{aligned}
-  P_N(z) &= (1-\beta(z-1))^{-r}, \quad \vert z \vert \lt 1+\frac{1}{\beta}, \beta\geq0. 
+  P_N(z) &= (1-\beta(z-1))^{-r}, \quad \vert z \vert < 1+\frac{1}{\beta}, \beta\geq0. 
 \end{aligned}
 \]
 The above implies that the *mgf* is given by 
 \[
 \begin{aligned}
-  M_N(t) &= (1-\beta(e^t-1))^{-r}, \quad t \lt \log\left(1+\frac{1}{\beta}\right), \beta\geq0. 
+  M_N(t) &= (1-\beta(e^t-1))^{-r}, \quad t < \log\left(1+\frac{1}{\beta}\right), \beta\geq0. 
 \end{aligned}
 \]
 We derive its moments using Theorem \@ref(thm:freq-thm1) as follows:
@@ -455,7 +458,7 @@ and
 \[
 l'(\lambda)= -n +\frac{1}{\lambda}\sum_{i=1}^n x_i.
 \]
-In evaluating $l''(\lambda)$, when $\sum_{i=1}^n x_i>0$, $l''< 0$. Consequently, the maximum is attained at the sample mean, \overline{x}, presented below. When $\sum_{i=1}^n x_i=0$, the likelihood is a decreasing function and hence the maximum is attained at the least possible parameter value; this results in the maximum likelihood estimate being zero. Hence, we have  
+In evaluating $l''(\lambda)$, when $\sum_{i=1}^n x_i>0$, $l''< 0$. Consequently, the maximum is attained at the sample mean, $\overline{x}$, presented below. When $\sum_{i=1}^n x_i=0$, the likelihood is a decreasing function and hence the maximum is attained at the least possible parameter value; this results in the maximum likelihood estimate being zero. Hence, we have  
 \[
 \overline{x} = \hat{\lambda}_{\rm MLE} = \frac{1}{n}\sum_{i=1}^n x_i. 
 \]
