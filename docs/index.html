@@ -568,6 +568,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.2.1" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#association-measures-for-quantitative-variables"><i class="fa fa-check"></i><b>14.2.1</b> Association Measures for Quantitative Variables</a></li>
 <li class="chapter" data-level="14.2.2" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#rank-based-measures"><i class="fa fa-check"></i><b>14.2.2</b> Rank Based Measures</a></li>
 <li class="chapter" data-level="14.2.3" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#nominal-variables"><i class="fa fa-check"></i><b>14.2.3</b> Nominal Variables</a></li>
+<li class="chapter" data-level="14.2.4" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#ordinal-variables"><i class="fa fa-check"></i><b>14.2.4</b> Ordinal Variables</a></li>
+<li class="chapter" data-level="14.2.5" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#interval-variables"><i class="fa fa-check"></i><b>14.2.5</b> Interval Variables</a></li>
+<li class="chapter" data-level="14.2.6" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#discrete-and-continuous-variables"><i class="fa fa-check"></i><b>14.2.6</b> Discrete and Continuous Variables</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#S:Copula"><i class="fa fa-check"></i><b>14.3</b> Introduction to Copulas</a></li>
 <li class="chapter" data-level="14.4" data-path="C-DependenceModel.html"><a href="C-DependenceModel.html#S:CopAppl"><i class="fa fa-check"></i><b>14.4</b> Application Using Copulas</a><ul>
@@ -681,7 +684,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <p style="text-align:right;">
-<em>Date: 31 July 2019</em>
+<em>Date: 01 August 2019</em>
 </p>
 <div id="book-description" class="section level4 unnumbered">
 <h4>Book Description</h4>
@@ -768,8 +771,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p><img src = "ContributorPics/JosephKimPic.jpg" width = "150" height = "150" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
 <ul>
-<li><p><strong>Joseph H.T. Kim</strong>, Ph.D., FSA, CERA, is Associate Professor of Applied Statistics at Yonsei University, Seoul, Korea. He holds a Ph.D. degree in Actuarial Science from the University of Waterloo, at which he taught as Assistant Professor. He also worked in the life insurance industry. He has published papers in <em>Insurance Mathematics and Economics</em>, <em>Journal of Risk and Insurance</em>, <em>Journal of Banking and Finance</em>, <em>ASTIN Bulletin</em>, and <em>North American Actuarial Journal</em>, among others.</p></li>
-<li><p><strong>Shyamalkumar Nariankadu</strong> - University of Iowa</p></li>
+<li><strong>Joseph H.T. Kim</strong>, Ph.D., FSA, CERA, is Associate Professor of Applied Statistics at Yonsei University, Seoul, Korea. He holds a Ph.D. degree in Actuarial Science from the University of Waterloo, at which he taught as Assistant Professor. He also worked in the life insurance industry. He has published papers in <em>Insurance Mathematics and Economics</em>, <em>Journal of Risk and Insurance</em>, <em>Journal of Banking and Finance</em>, <em>ASTIN Bulletin</em>, and <em>North American Actuarial Journal</em>, among others.</li>
 </ul>
 <p><img src = "ContributorPics/Okine_A.jpg" width = "150" height = "150" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
 <ul>
@@ -784,6 +786,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src = "ContributorPics/Shi_Peng_150x188.jpg" width = "150" height = "180" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
 <ul>
 <li><strong>Peng Shi</strong> is an associate professor in the Risk and Insurance Department at the Wisconsin School of Business. He is also the Charles &amp; Laura Albright Professor in Business and Finance. Professor Shi is an Associate of the Casualty Actuarial Society (ACAS) and a Fellow of the Society of Actuaries (FSA). He received a Ph.D. in actuarial science from the University of Wisconsin-Madison. His research interests are problems at the intersection of insurance and statistics. He has won several research awards, including the Charles A. Hachemeister Prize, the Ronald Bornhuetter Loss Reserve Prize, and the American Risk and Insurance Association Prize.</li>
+</ul>
+<p><img src = "ContributorPics/Shyamal.jpg" width = "150" height = "180" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
+<ul>
+<li><strong>Nariankadu D. Shyamalkumar (Shyamal)</strong> is an associate professor in the Department of Statistics and Actuarial Science at The University of Iowa. He is an Associate of the Society of Actuaries, and has volunteered in various elected and non-elected roles within the SoA. Having a broad theoretical interest as well as interest in computing, he has published in prominent actuarial, computer science, probability theory, and statistical journals. Moreover, he has worked in the financial industry, and since then served as an independent consultant to the insurance industry. He has experience educating actuaries in both Mexico and the US, serving in the roles of directing an undergraduate program, and as a graduate adviser for both masters and doctoral students.</li>
 </ul>
 <p><img src = "ContributorPics/jianxi_m.jpg" width = "150" height = "180" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
 <ul>
@@ -855,143 +861,6 @@ table(Insample2010$Freq)</code></pre>
 <p>We hide the code because we don’t want to insist that you use the <code>R</code> statistical software (although we like it). Still, we encourage you to try some statistical code as you read the book – we have opted to make it easy to learn <code>R</code> as you go. We have even set up a separate <a href="https://openacttexts.github.io/LDARcode">R Code for Loss Data Analytics</a> site to explain more of the details of the code.</p>
 <p>Freely available, interactive textbooks represent a new venture in actuarial education and we need your input. Although a lot of effort has gone into the development, we expect hiccoughs. Please let your instructor know about opportunities for improvement, write us through our project site, or contact chapter contributors directly with suggested improvements.</p>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;actuar&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;actuar&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;actuar&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:grDevices&#39;:
-## 
-##     cm</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;alabama&quot;</span>)</code></pre></div>
-<pre><code>## Loading required package: numDeriv</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;epitools&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;GB2&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;pander&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;pander&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;VGAM&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;VGAM&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## Loading required package: stats4</code></pre>
-<pre><code>## Loading required package: splines</code></pre>
-<pre><code>## 
-## Attaching package: &#39;VGAM&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:GB2&#39;:
-## 
-##     fisk</code></pre>
-<pre><code>## The following objects are masked from &#39;package:actuar&#39;:
-## 
-##     dgumbel, dlgamma, dpareto, pgumbel, plgamma, ppareto, qgumbel,
-##     qlgamma, qpareto, rgumbel, rlgamma, rpareto</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;psych&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;psych&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;psych&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:VGAM&#39;:
-## 
-##     fisherz, logistic, logit</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;copula&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;copula&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;copula&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:VGAM&#39;:
-## 
-##     log1mexp, log1pexp, rlog</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;statmod&quot;</span>)</code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;statmod&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:actuar&#39;:
-## 
-##     dinvgauss, pinvgauss, qinvgauss, rinvgauss</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;tseries&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;tseries&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;boot&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;boot&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;boot&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:psych&#39;:
-## 
-##     logit</code></pre>
-<pre><code>## The following objects are masked from &#39;package:VGAM&#39;:
-## 
-##     logit, simplex</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;scales&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;scales&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;scales&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:psych&#39;:
-## 
-##     alpha, rescale</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;rpart&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;rpart&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;rpart.plot&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;rpart.plot&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;RColorBrewer&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;forecast&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;forecast&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;splines&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;MASS&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;MASS&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;survival&quot;</span>)</code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;survival&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:boot&#39;:
-## 
-##     aml</code></pre>
-<pre><code>## The following object is masked from &#39;package:epitools&#39;:
-## 
-##     ratetable</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;Hmisc&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;Hmisc&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## 
-## Attaching package: &#39;lattice&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:boot&#39;:
-## 
-##     melanoma</code></pre>
-<pre><code>## Loading required package: Formula</code></pre>
-<pre><code>## Warning: package &#39;Formula&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## 
-## Attaching package: &#39;ggplot2&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:psych&#39;:
-## 
-##     %+%, alpha</code></pre>
-<pre><code>## 
-## Attaching package: &#39;Hmisc&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:psych&#39;:
-## 
-##     describe</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     format.pval, units</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;goftest&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;gifski&quot;</span>)</code></pre></div>
-<pre><code>## Warning: package &#39;gifski&#39; was built under R version 3.4.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install as needed</span>
-<span class="co">#install.packages(&quot;actuar&quot;)</span>
-<span class="co">#install.packages(&quot;alabama&quot;)</span>
-<span class="co">#install.packages(&quot;epitools&quot;)</span>
-<span class="co">#install.packages(&quot;GB2&quot;)</span>
-<span class="co">#install.packages(&quot;pander&quot;)</span>
-<span class="co">#install.packages(&quot;VGAM&quot;)</span>
-<span class="co">#install.packages(&quot;psych&quot;)</span>
-<span class="co">#install.packages(&quot;copula&quot;)</span>
-<span class="co">#install.packages(&quot;statmod&quot;)</span>
-
-<span class="co">#install.packages(&quot;tseries&quot;)</span>
-<span class="co">#install.packages(&quot;boot&quot;)</span>
-<span class="co">#install.packages(&quot;scales&quot;)</span>
-<span class="co">#install.packages(&quot;rpart&quot;)</span>
-<span class="co">#install.packages(&quot;rpart.plot&quot;)</span>
-<span class="co">#install.packages(&quot;RColorBrewer&quot;)</span>
-<span class="co">#install.packages(&quot;forecast&quot;)</span>
-<span class="co">#install.packages(&quot;splines&quot;)</span>
-<span class="co">#install.packages(&quot;MASS&quot;)</span>
-<span class="co">#install.packages(&quot;survival&quot;)</span>
-<span class="co">#install.packages(&quot;Hmisc&quot;)</span>
-<span class="co">#install.packages(&quot;goftest&quot;)</span>
-<span class="co">#install.packages(&quot;gifski&quot;)</span></code></pre></div>
 
 
 
@@ -1040,7 +909,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
