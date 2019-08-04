@@ -95,6 +95,31 @@ const jsonHeader = {
     startSurveyText: "Start Quiz" //,
 //    title: "Does This Make Sense?"
 }
+// One and Two question quizzes
+function jsonSummary1EWF(json) {  
+let jsonEnd1 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd1;
+};
+
+
+function jsonSummary2EWF(json) {  
+let jsonEnd2 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd2;
+};
 
 // Three, four, and five question quizzes
 function jsonSummary3EWF(json) {  
@@ -136,6 +161,77 @@ json["pages"][5]["questions"][0]["name"]+ "<br>"+
 ;  
 return jsonEnd5;
 };
+
+function jsonSummary6EWF(json) {  
+jsonEnd6 = jsonSummary5EWF(json);
+jsonEnd6.completedHtml = jsonEnd6.completedHtml +  
+"<br>"+
+json["pages"][6]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][6]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][6]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd6;
+};
+
+function jsonSummary7EWF(json) {  
+jsonEnd7 = jsonSummary6EWF(json);
+jsonEnd7.completedHtml = jsonEnd7.completedHtml +  
+"<br>"+
+json["pages"][7]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][7]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][7]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd7;
+};
+
+function jsonSummary8EWF(json) {  
+jsonEnd8 = jsonSummary7EWF(json);
+jsonEnd8.completedHtml = jsonEnd8.completedHtml +  
+"<br>"+
+json["pages"][8]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][8]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][8]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd8;
+};
+
+function jsonSummary9EWF(json) {  
+jsonEnd9 = jsonSummary8EWF(json);
+jsonEnd9.completedHtml = jsonEnd9.completedHtml +  
+"<br>"+
+json["pages"][9]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][9]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][9]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd9;
+};
+
+
+function jsonSummary10EWF(json) {  
+jsonEnd10 = jsonSummary9EWF(json);
+jsonEnd10.completedHtml = jsonEnd10.completedHtml +  
+"<br>"+
+json["pages"][10]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][10]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][10]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd10;
+};
+
+
+function jsonSummary11EWF(json) {  
+jsonEnd11 = jsonSummary10EWF(json);
+jsonEnd11.completedHtml = jsonEnd11.completedHtml +  
+"<br>"+
+json["pages"][11]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][11]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][11]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd11;
+};
+
+
+
 </script>  
 <!-- This completes the code for the quizzes -->
 
@@ -752,6 +848,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p><strong>Merging datasets</strong> Raw data may come from different sources. In such cases, we need to merge the data from different sources to ensure compatibility.</p></li>
 </ul>
 <p>For more information about how to handle data in R, readers are referred to <span class="citation">Forte (<a href="#ref-forte2015">2015</a>)</span> and <span class="citation">Buttrey and Whitaker (<a href="#ref-buttrey2017">2017</a>)</span>.</p>
+<div id="surveyElement131">
+
+</div>
+<div id="surveyResult131">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz131.1" href="javascript:toggleQuiz
+('display.Quiz131.2','display.Quiz131.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz131.2" style="display: none">
+<p id="Quiz131Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz131.js">
+</script>
 </div>
 </div>
 <div id="data-analysis-preliminaries" class="section level2">
@@ -899,6 +1012,23 @@ Y = f(X_1, X_2, \ldots, X_p),
 <li><p><strong>Benefits, costs, and reciprocity</strong> Will each stakeholder gain from the project? Are the benefit and the cost equitable? A project will likely to fail if the benefit and the cost for a stakeholder do not match.</p></li>
 <li><p><strong>Privacy and confidentiality</strong> How do we make sure that the information is kept confidentially? Where raw data and analysis results are stored and how will have access to them should be documented in explicit confidentiality agreements.</p></li>
 </ul>
+<div id="surveyElement132">
+
+</div>
+<div id="surveyResult132">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz132.1" href="javascript:toggleQuiz
+('display.Quiz132.2','display.Quiz132.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz132.2" style="display: none">
+<p id="Quiz132Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz132.js">
+</script>
 </div>
 </div>
 <div id="data-analysis-techniques" class="section level2">
@@ -997,6 +1127,23 @@ Y = f(X_1, X_2, \ldots, X_p),
 <p><span class="math display">\[f(R_1,R_2,\ldots,R_J) = \sum_{j=1}^J \sum_{i=1}^n I_{R_j}(\textbf{x}_i)(y_i - \mu_j)^2\]</span> is minimized, where <span class="math inline">\(I\)</span> is an indicator function, <span class="math inline">\(R_j\)</span> denotes the set of indices of the observations that belong to the <span class="math inline">\(j\)</span>th box, <span class="math inline">\(\mu_j\)</span> is the mean response of the observations in the <span class="math inline">\(j\)</span>th box, <span class="math inline">\(\textbf{x}_i\)</span> is the vector of predictor values for the <span class="math inline">\(i\)</span>th observation, and <span class="math inline">\(y_i\)</span> is the response value for the <span class="math inline">\(i\)</span>th observation.</p>
 <p>In terms of predictive accuracy, decision trees generally do not perform to the level of other regression and classification models. However, tree-based models may outperform linear models when the relationship between the response and the predictors is nonlinear. For more information about decision trees, readers are referred to <span class="citation">Breiman et al. (<a href="#ref-breiman1984">1984</a>)</span> and <span class="citation">Mitchell (<a href="#ref-mitchell1997">1997</a>)</span>.</p>
 <!-- ###Statistical Inference -->
+<div id="surveyElement133">
+
+</div>
+<div id="surveyResult133">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz133.1" href="javascript:toggleQuiz
+('display.Quiz133.2','display.Quiz133.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz133.2" style="display: none">
+<p id="Quiz133Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz133.js">
+</script>
 </div>
 </div>
 </div>

@@ -95,6 +95,31 @@ const jsonHeader = {
     startSurveyText: "Start Quiz" //,
 //    title: "Does This Make Sense?"
 }
+// One and Two question quizzes
+function jsonSummary1EWF(json) {  
+let jsonEnd1 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd1;
+};
+
+
+function jsonSummary2EWF(json) {  
+let jsonEnd2 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd2;
+};
 
 // Three, four, and five question quizzes
 function jsonSummary3EWF(json) {  
@@ -136,6 +161,77 @@ json["pages"][5]["questions"][0]["name"]+ "<br>"+
 ;  
 return jsonEnd5;
 };
+
+function jsonSummary6EWF(json) {  
+jsonEnd6 = jsonSummary5EWF(json);
+jsonEnd6.completedHtml = jsonEnd6.completedHtml +  
+"<br>"+
+json["pages"][6]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][6]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][6]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd6;
+};
+
+function jsonSummary7EWF(json) {  
+jsonEnd7 = jsonSummary6EWF(json);
+jsonEnd7.completedHtml = jsonEnd7.completedHtml +  
+"<br>"+
+json["pages"][7]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][7]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][7]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd7;
+};
+
+function jsonSummary8EWF(json) {  
+jsonEnd8 = jsonSummary7EWF(json);
+jsonEnd8.completedHtml = jsonEnd8.completedHtml +  
+"<br>"+
+json["pages"][8]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][8]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][8]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd8;
+};
+
+function jsonSummary9EWF(json) {  
+jsonEnd9 = jsonSummary8EWF(json);
+jsonEnd9.completedHtml = jsonEnd9.completedHtml +  
+"<br>"+
+json["pages"][9]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][9]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][9]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd9;
+};
+
+
+function jsonSummary10EWF(json) {  
+jsonEnd10 = jsonSummary9EWF(json);
+jsonEnd10.completedHtml = jsonEnd10.completedHtml +  
+"<br>"+
+json["pages"][10]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][10]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][10]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd10;
+};
+
+
+function jsonSummary11EWF(json) {  
+jsonEnd11 = jsonSummary10EWF(json);
+jsonEnd11.completedHtml = jsonEnd11.completedHtml +  
+"<br>"+
+json["pages"][11]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][11]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][11]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd11;
+};
+
+
+
 </script>  
 <!-- This completes the code for the quizzes -->
 
@@ -695,6 +791,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>For a risk whose loss experience is stable from year to year, <span class="math inline">\(Z\)</span> might be close to 1. For a risk whose losses vary widely from year to year, <span class="math inline">\(Z\)</span> may be close to 0.</p>
 <p>Credibility theory is also used for computing rates for individual classes within a classification rating plan. When classification plan rates are being determined, some or many of the groups may not have sufficient data to produce stable and reliable rates. The actual loss experience for a group will be assigned a credibility weight <span class="math inline">\(Z\)</span> and the complement of credibility <span class="math inline">\(1-Z\)</span> may be given to the average experience for risks across all classes. Or, if a class rating plan is being updated, the complement of credibility may be assigned to the current class rate. Credibility theory can also be applied to the calculation of expected frequencies and severities.</p>
 <p>Computing numeric values for <span class="math inline">\(Z\)</span> requires analysis and understanding of the data. What are the variances in the number of losses and sizes of losses for risks? What is the variance between expected values across risks?</p>
+<div id="surveyElement91">
+
+</div>
+<div id="surveyResult91">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz91.1" href="javascript:toggleQuiz
+('display.Quiz91.2','display.Quiz91.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz91.2" style="display: none">
+<p id="Quiz91Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz91.js">
+</script>
 </div>
 <div id="limited-fluctuation-credibility" class="section level2">
 <h2><span class="header-section-number">9.2</span> Limited Fluctuation Credibility</h2>
@@ -909,6 +1022,23 @@ Z=\quad \sqrt{\frac{n}{n_{0}}} \quad \textrm{if} \quad   n &lt; n_{0} \quad \tex
 \mathrm{Var}(\hat{\mu}_X)=\frac{n}{n_0}\mathrm{Var}(\bar{X})=\frac{n}{n_0}\frac{\mathrm{Var}(X_i)}{n}=\frac{\mathrm{Var}(X_i)}{n_0}.
 \end{equation*}\]</span>
 <p>The last term is exactly the variance of a sample mean <span class="math inline">\(\bar{X}\)</span> when the sample size is equal to the full credibility standard <span class="math inline">\(n_0=n_X\)</span>.</p>
+<div id="surveyElement92">
+
+</div>
+<div id="surveyResult92">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz92.1" href="javascript:toggleQuiz
+('display.Quiz92.2','display.Quiz92.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz92.2" style="display: none">
+<p id="Quiz92Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz92.js">
+</script>
 </div>
 </div>
 <div id="buhlmann-credibility" class="section level2">
@@ -1051,6 +1181,23 @@ C &amp; 20\% &amp; \lambda=2.0 &amp; \beta=2000 \\
 <p>For a policyholder with risk parameter <span class="math inline">\(\theta\)</span>, Bühlmann credibility uses a linear approximation <span class="math inline">\(\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu\)</span> to estimate E(<span class="math inline">\(\mu(\theta)|X_1,\ldots,X_n\)</span>), the expected loss for the policyholder given prior losses <span class="math inline">\(X_1,\ldots, X_n\)</span>. We can rewrite this as <span class="math inline">\(\hat{\mu}(\theta)=a+b\bar{X}\)</span> which makes it obvious that the credibility estimate is a linear function of <span class="math inline">\(\bar{X}\)</span>.</p>
 <p>If E(<span class="math inline">\(\mu(\theta)|X_1,\ldots,X_n\)</span>) is approximated by the linear function <span class="math inline">\(a+b\bar{X}\)</span> and constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are chosen so that E[(E(<span class="math inline">\(\mu(\theta)|X_1,\ldots,X_n)-(a+b\bar{X}))^2\)</span>] is minimized, what are <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>? The answer is <span class="math inline">\(b=n/(n+K)\)</span> and <span class="math inline">\(a=(1-b)\mu\)</span> with <span class="math inline">\(K=EPV/VHM\)</span> and <span class="math inline">\(\mu=E(\mu(\theta))\)</span>. More details can be found in references <span class="citation">(Bühlmann <a href="#ref-buhlmann">1967</a>)</span>, <span class="citation">(Bühlmann and Gisler <a href="#ref-buhlmanngisler">2005</a>)</span>, <span class="citation">(Klugman, Panjer, and Willmot <a href="#ref-klugman2012">2012</a>)</span>, and <span class="citation">(Tse <a href="#ref-tse">2009</a>)</span>.</p>
 <p>Bühlmann credibility is also called least-squares credibility, greatest accuracy credibility, or Bayesian credibility.</p>
+<div id="surveyElement93">
+
+</div>
+<div id="surveyResult93">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz93.1" href="javascript:toggleQuiz
+('display.Quiz93.2','display.Quiz93.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz93.2" style="display: none">
+<p id="Quiz93Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz93.js">
+</script>
 </div>
 </div>
 <div id="buhlmann-straub-credibility" class="section level2">
@@ -1522,6 +1669,23 @@ m_i(1-Z_i)=m_i\left(1-\frac{m_i}{m_i+K}\right)=m_i\left(\frac{(m_i+K)-m_i}{m_i+K
 <p>The updated credibility estimates are <span class="math inline">\(\hat{\mu}_A=0.7703(1)+(1-0.7703)(.6579)=0.9214\)</span> versus the previous 0.9139 and <span class="math inline">\(\hat{\mu}_B=0.8118(1/3)+(1-0.8118)(.6579)=0.3944\)</span> versus the previous 0.3882. Checking the balance on the new estimators: (7/16)(0.9214)+(9/16)(0.3944)=0.6250. This exactly matches <span class="math inline">\(\bar{X}=10/16=0.6250\)</span>.</p>
 </div>
 <hr />
+<div id="surveyElement96">
+
+</div>
+<div id="surveyResult96">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz96.1" href="javascript:toggleQuiz
+('display.Quiz96.2','display.Quiz96.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz96.2" style="display: none">
+<p id="Quiz96Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz96.js">
+</script>
 </div>
 </div>
 <div id="Cred-further-reading-and-resources" class="section level2">

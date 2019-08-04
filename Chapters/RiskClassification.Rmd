@@ -40,6 +40,11 @@ On the quantitative side, an important task for the actuary in building any risk
 <!-- %\subsection{Fundamental concept of insurance pricing} -->
 <!-- %================================ -->
 
+
+```{r child = './Quizzes/Quiz81.html'}
+```
+
+
 ## Poisson Regression Model {#S:RC:PoissonRegression}
 
 
@@ -305,6 +310,10 @@ which gives
 \end{equation}
 
 Adding $\log m_i$ in \@ref(eq:mean-ft-Pois-7) does not pose a problem in fitting as we can always specify this as an extra explanatory variable, as it is a known constant, and fix its coefficient to 1. In the literature the log of exposure, $\log m_i$, is commonly called the **offset**.
+
+
+```{r child = './Quizzes/Quiz82.html'}
+```
 
 
 ### Exercises
@@ -679,6 +688,11 @@ detach(mydat)
 *** 
 
 As a concluding remark, we comment that the Poisson regression is not the only possible count regression model. Actually, the Poisson distribution can be restrictive in the sense that it has a single parameter and its mean and the variance are always equal. There are other count regression models that allow more flexible distributional structure, such as negative binomial regressions and zero-inflated (ZI) regressions; details of these alternative regressions can be found in other texts listed in the next section.
+
+
+```{r child = './Quizzes/Quiz83.html'}
+```
+
 
 ## Further Resources and Contributors {#RC:further-reading-and-resources }
 

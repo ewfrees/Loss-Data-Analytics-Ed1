@@ -48,6 +48,11 @@ Insurers and other stakeholders, including governmental organizations, have vari
 
 * **Regulatory and Administrative.** Insurance is a highly regulated and monitored industry, given its importance in providing financial security to individuals and companies facing risk. As part of its duties, regulators routinely require the reporting of claims numbers as well as amounts. This may be due to the fact that there can be alternative definitions of an "amount," e.g., paid versus incurred, and there is less potential error when reporting claim numbers. This continual monitoring helps ensure financial stability of these insurance companies.
 
+
+```{r child = './Quizzes/Quiz21.html'}
+```
+
+
 ## Basic Frequency Distributions {#S:basic-frequency-distributions}
 
 ***
@@ -285,6 +290,11 @@ with the right hand side of the above equation being the *mgf* of the Poisson di
 
 [^4]: For the theoretical basis underlying the above argument, see [@billingsley]. 
 
+
+```{r child = './Quizzes/Quiz22.html'}
+```
+
+
 ## The (a, b, 0) Class {#S:the-a-b-0-class}
 
 ***
@@ -362,6 +372,11 @@ Finally, since the mean of a negative binomial is $r\beta$ we have the mean of t
 </div>
 
 *** 
+
+
+```{r child = './Quizzes/Quiz23.html'}
+```
+
 
 ## Estimating Frequency Distributions {#S:estimating-frequency-distributions}
 
@@ -519,41 +534,6 @@ The above discussion suggests the following simple algorithm:
 We note that if the underlying distribution is the binomial distribution with parameters $(m,q)$ (with $q>0$) then $\hat{m}_{MLE}$ will equal $m$ for large sample sizes. Also, $\hat{q}_{MLE}$ will have an asymptotically normal distribution and converge with probability one to $q$.  
 
 
-<!-- label{MLEm} -->
-
-<!-- ```{r echo=FALSE, include=FALSE} -->
-<!-- library(ggplot2) -->
-<!-- likm<-function(m){ -->
-<!--   prod((dbinom(x,m,mean(x)/m))) -->
-<!-- } -->
-<!-- x<-c(2,2,2,4,5); -->
-<!-- n<-(5:100); -->
-<!-- ll<-unlist(lapply(n,likm)); -->
-<!-- n[ll==max(ll)] -->
-<!-- y<-cbind(n,ll); -->
-<!-- x<-c(2,2,2,4,6); -->
-<!-- ll<-unlist(lapply(n,likm)); -->
-<!-- n[ll==max(ll)] -->
-<!-- y<-cbind(y,ll); -->
-<!-- x<-c(2,2,2,4,7); -->
-<!-- ll<-unlist(lapply(n,likm)); -->
-<!-- n[ll==max(ll)] -->
-<!-- y<-cbind(y,ll); -->
-<!-- colnames(y)<-c("m","$\\tilde{x}=(2,2,2,4,5)$","$\\tilde{x}=(2,2,2,4,6)$","$\\tilde{x}=(2,2,2,4,7)$"); -->
-<!-- dy<-data.frame(y); -->
-<!-- ``` -->
-
-
-<!-- ```{r, MLEm, echo=FALSE, fig.cap="Plot of $L(m,\\overline{x}/m)$ for binomial distribution", out.width='80%', fig.align='center'} -->
-<!-- ggplot(dy) +  -->
-<!--   geom_point(aes(x=m, y=(X..tilde.x...2.2.2.4.5..),shape="$\\tilde{x}=(2,2,2,4,5):\\hat{m}=7$"),size=0.75) +  -->
-<!--   geom_point(aes(x=m, y=(X..tilde.x...2.2.2.4.6..),shape="$\\tilde{x}=(2,2,2,4,6):\\hat{m}=18$"),size=0.75) + -->
-<!--   geom_point(aes(x=m, y=(X..tilde.x...2.2.2.4.7..),shape="$\\tilde{x}=(2,2,2,4,7):\\hat{m}=\\infty$"),size=0.75) + -->
-<!--   geom_point(aes(x=c(7),y=dy$X..tilde.x...2.2.2.4.5..[3],colour="$\\hat{m}$",shape="$\\tilde{x}=(2,2,2,4,5):\\hat{m}=7$"),size=0.75)+ -->
-<!--   geom_point(aes(x=c(18),y=dy$X..tilde.x...2.2.2.4.6..[14],colour="$\\hat{m}$",shape="$\\tilde{x}=(2,2,2,4,6):\\hat{m}=18$"),size=0.75)+ -->
-<!--   labs(x="m",y=expression(L(m,bar(x)/m)),title="MLE for m: Non-Robustness of MLE ")  -->
-<!-- ``` -->
-
 ```{r, MLEm, echo=FALSE, fig.cap="Plot of $L(m,\\overline{x}/m)$ for binomial distribution", out.width='80%', fig.align='center'}
 knitr::include_graphics("Figures/figure2.2.png")
 ```
@@ -665,6 +645,11 @@ $$\begin{matrix}
 knitr::include_graphics("Figures/figure2.3.png")
 ```
 
+
+```{r child = './Quizzes/Quiz24.html'}
+```
+
+
 ## Other Frequency Distributions {#S:other-frequency-distributions}
 
 ***
@@ -752,9 +737,18 @@ p_3^M=p_2^M\left(\frac{\lambda}{3}\right)=0.083476\\\hline
 
 </div>
 
+
+
 *** 
 
+
+```{r child = './Quizzes/Quiz25.html'}
+```
+
+
 ## Mixture Distributions {#S:mixture-distributions} 
+
+
 
 ***
 
@@ -885,6 +879,11 @@ Now, one can directly use the above result to conclude that $N$ is distributed a
 
 *** 
 
+
+```{r child = './Quizzes/Quiz26.html'}
+```
+
+
 ## Goodness of Fit {#S:goodness-of-fit}
 
 ***
@@ -968,6 +967,13 @@ When one uses the full data to estimate the probabilities, the asymptotic distri
 For the Singaporean auto data the Pearson's chi-square statistic equals $41.98$ using the full data *MLE* for ${\lambda}$. Using the limiting distribution of chi-square with $5-1-1=3$ degrees of freedom, we see that the value of $41.98$ is way out in the tail ($99$-th percentile is below $12$). Hence we can conclude that the Poisson distribution provides an inadequate fit for the data. 
 
 In the above, we started with the cells as given in the above tabular summary. In practice, a relevant question is how to define the cells so that the chi-square distribution is a good approximation to the finite sample distribution of the statistic.  A rule of thumb is to define the cells in such a way to have at least $80\%$, if not all, of the cells having expected counts greater than $5$. Also, it is clear that a larger number of cells results in a higher power of the test, and hence a simple rule of thumb is to maximize the number of cells such that each cell has at least 5 observations. 
+
+
+
+```{r child = './Quizzes/Quiz27.html'}
+```
+
+
 
 ## Exercises {#S:exercises}
 ####Theoretical Exercises  {-}
@@ -1066,6 +1072,7 @@ A discrete probability distribution has the following properties
 \end{aligned}
 \]
 Determine the value of $\Pr(N=3)$. (Ans: 0.1609) 
+
 
 
 ####Additional Exercises {-}
