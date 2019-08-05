@@ -141,6 +141,8 @@ Another special case of a multivariate variable, less obvious, involves coding f
 
 Perhaps the most complicated type of multivariate variable is a realization of a <a href="#" class="tooltip" style="color:green">*stochastic process*<span style="font-size:8pt"> Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.</span></a>. You will recall that a stochastic process is little more than a collection of random variables. For example, in insurance, we might think about the times that claims arrive to an insurance company in a one year time horizon. This is a high dimensional variable that theoretically is infinite dimensional. Special techniques are required to understand realizations of stochastic processes that will not be addressed here.
 
+```{r child = './Quizzes/Quiz141.html'}
+```
 
 ## Classic Measures of Scalar Associations {#S:Measures}
 
@@ -716,7 +718,8 @@ Output:
 </div>  
 
 
-
+```{r child = './Quizzes/Quiz142.html'}
+```
 
 
 ## Introduction to Copulas  {#S:Copula}
@@ -754,6 +757,9 @@ $${C}(u_1,u_2) = \frac{1}{\theta} \ln \left( 1+ \frac{ (\exp(\theta
 u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).$$
 
 This is a bivariate distribution function with its domain on the unit square $[0,1]^2.$ Here $\theta$ is dependence parameter and the range of dependence is controlled by the parameter $\theta$. Positive association increases as $\theta$ increases and this positive association can be summarized with Spearman's rho ($\rho$) and Kendall's tau ($\tau$). Frank's copula is one of the commonly used copula functions in the copula literature. We will see other copula functions in Section \@ref(S:CopTyp).
+
+```{r child = './Quizzes/Quiz143.html'}
+```
 
 
 ## Application Using Copulas  {#S:CopAppl}
@@ -1372,7 +1378,10 @@ arrows(.17, 0.1, .07, 0.12,code=2, angle=20, length=0.1)
 text(0.9, 0.4, "t with 5 df", cex=1.3)   #4
 
 ```
-</div> 
+</div>
+
+```{r child = './Quizzes/Quiz145.html'}
+```
 
 ## Why is Dependence Modeling Important? {#S:CopImp}
 
@@ -1586,7 +1595,8 @@ plot(density(S), main="Density of Total Portfolio Risk S", xlab="S")
 ```
 </div>  
 
-
+```{r child = './Quizzes/Quiz146.html'}
+```
 
 
 ## Further Resources and Contributors {#Dep:further-reading-and-resources}

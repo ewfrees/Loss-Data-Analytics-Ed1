@@ -95,6 +95,31 @@ const jsonHeader = {
     startSurveyText: "Start Quiz" //,
 //    title: "Does This Make Sense?"
 }
+// One and Two question quizzes
+function jsonSummary1EWF(json) {  
+let jsonEnd1 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd1;
+};
+
+
+function jsonSummary2EWF(json) {  
+let jsonEnd2 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd2;
+};
 
 // Three, four, and five question quizzes
 function jsonSummary3EWF(json) {  
@@ -136,6 +161,77 @@ json["pages"][5]["questions"][0]["name"]+ "<br>"+
 ;  
 return jsonEnd5;
 };
+
+function jsonSummary6EWF(json) {  
+jsonEnd6 = jsonSummary5EWF(json);
+jsonEnd6.completedHtml = jsonEnd6.completedHtml +  
+"<br>"+
+json["pages"][6]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][6]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][6]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd6;
+};
+
+function jsonSummary7EWF(json) {  
+jsonEnd7 = jsonSummary6EWF(json);
+jsonEnd7.completedHtml = jsonEnd7.completedHtml +  
+"<br>"+
+json["pages"][7]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][7]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][7]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd7;
+};
+
+function jsonSummary8EWF(json) {  
+jsonEnd8 = jsonSummary7EWF(json);
+jsonEnd8.completedHtml = jsonEnd8.completedHtml +  
+"<br>"+
+json["pages"][8]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][8]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][8]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd8;
+};
+
+function jsonSummary9EWF(json) {  
+jsonEnd9 = jsonSummary8EWF(json);
+jsonEnd9.completedHtml = jsonEnd9.completedHtml +  
+"<br>"+
+json["pages"][9]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][9]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][9]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd9;
+};
+
+
+function jsonSummary10EWF(json) {  
+jsonEnd10 = jsonSummary9EWF(json);
+jsonEnd10.completedHtml = jsonEnd10.completedHtml +  
+"<br>"+
+json["pages"][10]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][10]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][10]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd10;
+};
+
+
+function jsonSummary11EWF(json) {  
+jsonEnd11 = jsonSummary10EWF(json);
+jsonEnd11.completedHtml = jsonEnd11.completedHtml +  
+"<br>"+
+json["pages"][11]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][11]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][11]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd11;
+};
+
+
+
 </script>  
 <!-- This completes the code for the quizzes -->
 
@@ -694,6 +790,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Insurance portfolios represent company obligations and so insurers keep an equivalent amount of assets to meet these obligations. <em>Risk measures</em>, introduced in Section <a href="C-PortMgt.html#S:RiskMeasure">10.3</a>, summarize the distribution of the insurance portfolio and these summary measures are used to quantify the amount of assets that an insurer needs to retain to meet obligations.</p></li>
 <li><p>In Section <a href="C-Severity.html#S:CoverageModifications">3.4</a>, we learned about mechanisms that policyholders use to spread risks such as deductibles and policy limits. In the same way, insurers use similar mechanisms in order to spread portfolio risks. They purchase risk protection from reinsurers, an insurance company for insurers. This sharing of insurance portfolio risk is described in Section <a href="C-PortMgt.html#S:Reinsurance">10.4</a>.</p></li>
 </ul>
+<div id="surveyElement101">
+
+</div>
+<div id="surveyResult101">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz101.1" href="javascript:toggleQuiz
+('display.Quiz101.2','display.Quiz101.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz101.2" style="display: none">
+<p id="Quiz101Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz101.js">
+</script>
 </div>
 <div id="S:Tails" class="section level2">
 <h2><span class="header-section-number">10.2</span> Tails of Distributions</h2>
@@ -827,6 +940,23 @@ href="javascript:toggleEX('toggleExamplePortMgt.1.5','displayTextExamplePortMgt.
 <p>as exponentials go to infinity faster than polynomials.</p>
 </div>
 <hr />
+<div id="surveyElement102">
+
+</div>
+<div id="surveyResult102">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz102.1" href="javascript:toggleQuiz
+('display.Quiz102.2','display.Quiz102.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz102.2" style="display: none">
+<p id="Quiz102Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz102.js">
+</script>
 </div>
 </div>
 <div id="S:RiskMeasure" class="section level2">
@@ -1200,6 +1330,23 @@ F_X(x)=1-\left(\frac{\theta}{\theta+x} \right)^{\alpha}, \text{ for } x&gt;0 .
 <p>In this respect, it is a simple matter for us to see that for any given <span class="math inline">\(q\in (0,1)\)</span> <span class="math display">\[
 TVaR_q[X]\geq VaR_q[X].
 \]</span> Third and perhaps foremost, <em>TVaR</em> is a coherent risk measure and thus is able to more accurately capture the diversification effects of insurance portfolio. Herein, we do not intend to provide the proof of the coherent feature for <em>TVaR</em>, which is considered to be challenging technically.</p>
+<div id="surveyElement103">
+
+</div>
+<div id="surveyResult103">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz103.1" href="javascript:toggleQuiz
+('display.Quiz103.2','display.Quiz103.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz103.2" style="display: none">
+<p id="Quiz103Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz103.js">
+</script>
 </div>
 </div>
 <div id="S:Reinsurance" class="section level2">
@@ -1229,7 +1376,7 @@ TVaR_q[X]\geq VaR_q[X].
 Y_{insurer} = c X \ \ \text{and} \ \ \ Y_{reinsurer} = (1-c) X,
 \]</span> where <span class="math inline">\(c\in (0,1)\)</span> denotes the proportion retained by the insurer. Note that <span class="math inline">\(Y_{insurer}+Y_{reinsurer}=X\)</span>.</p>
 <p><strong>Example 10.3.1. Distribution of losses under quota share.</strong> To develop an intuition for the effect of quota-share agreement on the distribution of losses, the following is a short <code>R</code> demonstration using simulation. Note the relative shapes of the distributions of total losses, the retained portion (of the insurer), and the reinsurer’s portion.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-34-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-65-1.png" width="960" style="display: block; margin: auto;" /></p>
 <h6 style="text-align: center;">
 <a id="displayQuotaShare" href="javascript:togglecode('toggleQuotaShare','displayQuotaShare');"><i><strong>Show the R Code</strong></i></a>
 </h6>
@@ -1333,7 +1480,7 @@ c1Vec &lt;-<span class="st"> </span>c2Vec &lt;-<span class="st"> </span>c3Vec &l
 <span class="kw">text</span>(<span class="dv">1200</span>,<span class="fl">0.80</span>, <span class="kw">expression</span>(c[<span class="dv">1</span>]))
 <span class="kw">text</span>(<span class="dv">2000</span>,<span class="fl">0.75</span>, <span class="kw">expression</span>(c[<span class="dv">2</span>]))
 <span class="kw">text</span>(<span class="dv">1500</span>,<span class="fl">0.30</span>, <span class="kw">expression</span>(c[<span class="dv">3</span>]))</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-36-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-67-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -1485,7 +1632,7 @@ Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span cla
 <span class="kw">plot</span>(<span class="kw">density</span>(YTotal),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Total Loss&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yinsur),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer&quot;</span>,    <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yreinsur), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer&quot;</span>,  <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-39-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-70-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <hr />
 </div>
@@ -1638,7 +1785,7 @@ Total    6351.35 7675.04 9464.20 15159.02</code></pre>
 <span class="kw">plot</span>(<span class="kw">density</span>(Yretained), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">500</span>), <span class="dt">main=</span><span class="st">&quot;Retained Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss (Note the different horizontal scale)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Density (Note different vertical scale)&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yinsurer), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Total Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-45-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-76-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>

@@ -95,6 +95,31 @@ const jsonHeader = {
     startSurveyText: "Start Quiz" //,
 //    title: "Does This Make Sense?"
 }
+// One and Two question quizzes
+function jsonSummary1EWF(json) {  
+let jsonEnd1 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd1;
+};
+
+
+function jsonSummary2EWF(json) {  
+let jsonEnd2 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd2;
+};
 
 // Three, four, and five question quizzes
 function jsonSummary3EWF(json) {  
@@ -136,6 +161,77 @@ json["pages"][5]["questions"][0]["name"]+ "<br>"+
 ;  
 return jsonEnd5;
 };
+
+function jsonSummary6EWF(json) {  
+jsonEnd6 = jsonSummary5EWF(json);
+jsonEnd6.completedHtml = jsonEnd6.completedHtml +  
+"<br>"+
+json["pages"][6]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][6]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][6]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd6;
+};
+
+function jsonSummary7EWF(json) {  
+jsonEnd7 = jsonSummary6EWF(json);
+jsonEnd7.completedHtml = jsonEnd7.completedHtml +  
+"<br>"+
+json["pages"][7]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][7]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][7]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd7;
+};
+
+function jsonSummary8EWF(json) {  
+jsonEnd8 = jsonSummary7EWF(json);
+jsonEnd8.completedHtml = jsonEnd8.completedHtml +  
+"<br>"+
+json["pages"][8]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][8]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][8]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd8;
+};
+
+function jsonSummary9EWF(json) {  
+jsonEnd9 = jsonSummary8EWF(json);
+jsonEnd9.completedHtml = jsonEnd9.completedHtml +  
+"<br>"+
+json["pages"][9]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][9]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][9]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd9;
+};
+
+
+function jsonSummary10EWF(json) {  
+jsonEnd10 = jsonSummary9EWF(json);
+jsonEnd10.completedHtml = jsonEnd10.completedHtml +  
+"<br>"+
+json["pages"][10]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][10]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][10]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd10;
+};
+
+
+function jsonSummary11EWF(json) {  
+jsonEnd11 = jsonSummary10EWF(json);
+jsonEnd11.completedHtml = jsonEnd11.completedHtml +  
+"<br>"+
+json["pages"][11]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][11]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][11]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd11;
+};
+
+
+
 </script>  
 <!-- This completes the code for the quizzes -->
 
@@ -771,6 +867,23 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <p>In contrast, for some variables, it makes little sense to only look at one dimensional aspects. For example, insurers typically organize <em>spatial</em> data by longitude and latitude to analyze the location of weather related insurance claims due hailstorms. Having only a single number, either longitude or latitude, provides little information in understanding geographical location.</p>
 <p>Another special case of a multivariate variable, less obvious, involves coding for <a href="#" class="tooltip" style="color:green"><em>missing data</em><span style="font-size:8pt"> Missing data occur when no data value is stored for a variable in an observation. Missing data can occur because of nonresponse: no information is provided for one or more items or for a whole unit or subject.</span></a>. Historically, some statistical packages used a -99 to report when a variable, such as policyholder’s age, was not available or not reported. This led to many unsuspecting analysts providing strange statistics when summarizing a set of data. When data are missing, it is better to think about the variable as two dimensions, one to indicate whether or not the variable is reported and the second providing the age (if reported). In the same way, insurance data are commonly <a href="#" class="tooltip" style="color:green"><em>censored</em><span style="font-size:8pt"> Censored data have unknown values beyond a bound on either end of the number line or both. Here, the data is observed but the values (measurements) are not known completely.</span></a> and <a href="#" class="tooltip" style="color:green"><em>truncated</em><span style="font-size:8pt"> Truncation occurs when values beyond a boundary are either excluded when gathered or excluded when analyzed. An object can be detected only if its value is greater than some number.</span></a>. We refer you to Chapter 4 for more on censored and truncated data. <a href="#" class="tooltip" style="color:green"><em>Aggregate claims</em><span style="font-size:8pt"> Aggregate claims refers to the total amount of claims from a portfolio of insurance contracts.</span></a> can also be coded as another special type of multivariate variable. We refer you to Chapter 5 for more Aggregate claims.</p>
 <p>Perhaps the most complicated type of multivariate variable is a realization of a <a href="#" class="tooltip" style="color:green"><em>stochastic process</em><span style="font-size:8pt"> Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.</span></a>. You will recall that a stochastic process is little more than a collection of random variables. For example, in insurance, we might think about the times that claims arrive to an insurance company in a one year time horizon. This is a high dimensional variable that theoretically is infinite dimensional. Special techniques are required to understand realizations of stochastic processes that will not be addressed here.</p>
+<div id="surveyElement141">
+
+</div>
+<div id="surveyResult141">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz141.1" href="javascript:toggleQuiz
+('display.Quiz141.2','display.Quiz141.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz141.2" style="display: none">
+<p id="Quiz141Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz141.js">
+</script>
 </div>
 </div>
 <div id="S:Measures" class="section level2">
@@ -1143,6 +1256,23 @@ round(rhoN,2)
 Output:
 [1] -0.04</code></pre>
 </div>
+<div id="surveyElement142">
+
+</div>
+<div id="surveyResult142">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz142.1" href="javascript:toggleQuiz
+('display.Quiz142.2','display.Quiz142.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz142.2" style="display: none">
+<p id="Quiz142Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz142.js">
+</script>
 </div>
 </div>
 <div id="S:Copula" class="section level2">
@@ -1167,6 +1297,23 @@ u_2),\]</span></p>
 <p><span class="math display">\[{C}(u_1,u_2) = \frac{1}{\theta} \ln \left( 1+ \frac{ (\exp(\theta
 u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <p>This is a bivariate distribution function with its domain on the unit square <span class="math inline">\([0,1]^2.\)</span> Here <span class="math inline">\(\theta\)</span> is dependence parameter and the range of dependence is controlled by the parameter <span class="math inline">\(\theta\)</span>. Positive association increases as <span class="math inline">\(\theta\)</span> increases and this positive association can be summarized with Spearman’s rho (<span class="math inline">\(\rho\)</span>) and Kendall’s tau (<span class="math inline">\(\tau\)</span>). Frank’s copula is one of the commonly used copula functions in the copula literature. We will see other copula functions in Section <a href="C-DependenceModel.html#S:CopTyp">14.5</a>.</p>
+<div id="surveyElement143">
+
+</div>
+<div id="surveyResult143">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz143.1" href="javascript:toggleQuiz
+('display.Quiz143.2','display.Quiz143.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz143.2" style="display: none">
+<p id="Quiz143Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz143.js">
+</script>
 </div>
 <div id="S:CopAppl" class="section level2">
 <h2><span class="header-section-number">14.4</span> Application Using Copulas</h2>
@@ -1565,6 +1712,23 @@ arrows(.17, 0.1, .07, 0.12,code=2, angle=20, length=0.1)
 text(0.9, 0.4, &quot;t with 5 df&quot;, cex=1.3)   #4
 </code></pre>
 </div>
+<div id="surveyElement145">
+
+</div>
+<div id="surveyResult145">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz145.1" href="javascript:toggleQuiz
+('display.Quiz145.2','display.Quiz145.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz145.2" style="display: none">
+<p id="Quiz145Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz145.js">
+</script>
 </div>
 </div>
 </div>
@@ -1682,6 +1846,23 @@ round(quantMat,digits=2)
 plot(density(S), main=&quot;Density of Total Portfolio Risk S&quot;, xlab=&quot;S&quot;)
 </code></pre>
 </div>
+<div id="surveyElement146">
+
+</div>
+<div id="surveyResult146">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz146.1" href="javascript:toggleQuiz
+('display.Quiz146.2','display.Quiz146.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz146.2" style="display: none">
+<p id="Quiz146Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz146.js">
+</script>
 </div>
 <div id="Dep:further-reading-and-resources" class="section level2">
 <h2><span class="header-section-number">14.7</span> Further Resources and Contributors</h2>

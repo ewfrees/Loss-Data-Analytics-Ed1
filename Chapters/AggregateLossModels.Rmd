@@ -23,6 +23,9 @@ S_N=X_1 +X_2 +\cdots+X_N.
 Here, one thinks of a random number of claims $N$ that may represent either the number of losses or the number of payments. In contrast, in the individual risk model, we use a fixed number of contracts $n$. We think of $X_1, X_2, \ldots, X_N$ as representing the amount of each loss. Each loss may or may not correspond to a unique contract. For instance, there may be multiple claims arising from a single contract. It is natural to think about $X_i>0$ because if $X_i=0$ then no claim has occurred. Typically we assume that conditional on $N=n$, $X_{1},X_{2},\ldots ,X_{n}$ are *iid* random variables. The distribution of $N$ is known as the *frequency distribution*, and the common distribution of $X$ is known as the *severity distribution*. We further assume $N$ and $X$ are independent. With the collective risk model, we may decompose the aggregate losses into the frequency ($N$) process and the severity ($X$) model. This flexibility allows the analyst to comment on these two separate components. For example, sales growth due to lower underwriting standards could lead to higher frequency of losses but might not affect severity. Similarly, inflation or other economic forces could have an impact on severity but not on frequency.
 
 
+```{r child = './Quizzes/Quiz51.html'}
+```
+
 ## Individual Risk Model
 
 As noted earlier, for the *individual risk model*, we think of $X_i$ as the loss from $i$th contract and interpret
@@ -324,6 +327,11 @@ $$\begin{aligned}
 </div>
 
 *** 
+
+
+```{r child = './Quizzes/Quiz52.html'}
+```
+
 
 ## Collective Risk Model
 
@@ -889,7 +897,12 @@ C(s;\phi/\omega_i)=\left\{\begin{array}{ll}
 \end{equation*}
 Hence, the distribution of $S_N$ belongs to the exponential family with parameters $\mu$, $\phi$, and $1 < p < 2$, and we have
 $${\rm E} (S_N)=\mu~~~~{\rm and}~~~~{\rm Var} (S_N)=\phi\mu^{p}.$$
-This allows us to use the Tweedie distribution with generalized linear models to model claims. It is also worth mentioning the two limiting cases of the Tweedie model: $p\rightarrow 1$ results in the Poisson distribution and $p\rightarrow 2$ results in the gamma distribution. Thus, the Tweedie model accommodates the situations in between the gamma and Poisson distributions, which makes intuitive sense as it is the Poisson sum of gamma random variables. 
+This allows us to use the Tweedie distribution with generalized linear models to model claims. It is also worth mentioning the two limiting cases of the Tweedie model: $p\rightarrow 1$ results in the Poisson distribution and $p\rightarrow 2$ results in the gamma distribution. Thus, the Tweedie model accommodates the situations in between the gamma and Poisson distributions, which makes intuitive sense as it is the Poisson sum of gamma random variables.
+
+
+```{r child = './Quizzes/Quiz53.html'}
+```
+
 
 
 ## Computing the Aggregate Claims Distribution
@@ -1029,6 +1042,11 @@ The simulated losses are slightly more right-skewed than the normal distribution
 </div>
 
 *** 
+
+
+```{r child = './Quizzes/Quiz54.html'}
+```
+
 
 ## Effects of Coverage Modifications
 
@@ -1438,6 +1456,11 @@ Putting this together, we produce the same answer using the per payment basis as
 $$\mathrm{E}(S) = \mathrm{E} (X^P)~ \mathrm{E} (N^P)= 200(9.7) = 1,941$$
 
 ***  
+
+
+```{r child = './Quizzes/Quiz55.html'}
+```
+
 
 ## Further Resources and Contributors {#AL-further-reading-and-resources}
 

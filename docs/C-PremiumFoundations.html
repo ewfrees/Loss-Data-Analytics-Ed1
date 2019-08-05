@@ -95,6 +95,31 @@ const jsonHeader = {
     startSurveyText: "Start Quiz" //,
 //    title: "Does This Make Sense?"
 }
+// One and Two question quizzes
+function jsonSummary1EWF(json) {  
+let jsonEnd1 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd1;
+};
+
+
+function jsonSummary2EWF(json) {  
+let jsonEnd2 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd2;
+};
 
 // Three, four, and five question quizzes
 function jsonSummary3EWF(json) {  
@@ -136,6 +161,77 @@ json["pages"][5]["questions"][0]["name"]+ "<br>"+
 ;  
 return jsonEnd5;
 };
+
+function jsonSummary6EWF(json) {  
+jsonEnd6 = jsonSummary5EWF(json);
+jsonEnd6.completedHtml = jsonEnd6.completedHtml +  
+"<br>"+
+json["pages"][6]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][6]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][6]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd6;
+};
+
+function jsonSummary7EWF(json) {  
+jsonEnd7 = jsonSummary6EWF(json);
+jsonEnd7.completedHtml = jsonEnd7.completedHtml +  
+"<br>"+
+json["pages"][7]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][7]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][7]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd7;
+};
+
+function jsonSummary8EWF(json) {  
+jsonEnd8 = jsonSummary7EWF(json);
+jsonEnd8.completedHtml = jsonEnd8.completedHtml +  
+"<br>"+
+json["pages"][8]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][8]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][8]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd8;
+};
+
+function jsonSummary9EWF(json) {  
+jsonEnd9 = jsonSummary8EWF(json);
+jsonEnd9.completedHtml = jsonEnd9.completedHtml +  
+"<br>"+
+json["pages"][9]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][9]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][9]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd9;
+};
+
+
+function jsonSummary10EWF(json) {  
+jsonEnd10 = jsonSummary9EWF(json);
+jsonEnd10.completedHtml = jsonEnd10.completedHtml +  
+"<br>"+
+json["pages"][10]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][10]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][10]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd10;
+};
+
+
+function jsonSummary11EWF(json) {  
+jsonEnd11 = jsonSummary10EWF(json);
+jsonEnd11.completedHtml = jsonEnd11.completedHtml +  
+"<br>"+
+json["pages"][11]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][11]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][11]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd11;
+};
+
+
+
 </script>  
 <!-- This completes the code for the quizzes -->
 
@@ -1365,7 +1461,7 @@ Specifically, the Gini statistic can be calculated as follows. Suppose that the 
 </h5>
 <div id="toggleAreaDemo" style="display: none">
 <p>To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points <span class="math inline">\((a_1, b_1)\)</span>, <span class="math inline">\((a_2, b_2)\)</span>, and a 45 degree line. You can use basic geometry to check that the area of the figure is <span class="math inline">\(Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}\)</span>. The definition of the Gini statistic in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is simply twice the sum of the parallelograms. The second equality in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is the result of some straight-forward algebra.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-157-1.png" width="672" /></p>
 <hr />
 </div>
 <p><strong>Example – Loss Distribution: Continued.</strong> The Gini statistic for the Lorenz curve (left-hand panel of Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a>) is 34.4 percent. In contrast, the Gini statistic for concentration curve (right-hand panel) is 1.7 percent.</p>
@@ -1417,7 +1513,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,
 <span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)
 <span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-121-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-160-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
 </div>

@@ -95,6 +95,31 @@ const jsonHeader = {
     startSurveyText: "Start Quiz" //,
 //    title: "Does This Make Sense?"
 }
+// One and Two question quizzes
+function jsonSummary1EWF(json) {  
+let jsonEnd1 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd1;
+};
+
+
+function jsonSummary2EWF(json) {  
+let jsonEnd2 = { 
+completedHtml: 
+json["pages"][1]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
++"<br>"+
+json["pages"][2]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
+};  
+return jsonEnd2;
+};
 
 // Three, four, and five question quizzes
 function jsonSummary3EWF(json) {  
@@ -136,6 +161,77 @@ json["pages"][5]["questions"][0]["name"]+ "<br>"+
 ;  
 return jsonEnd5;
 };
+
+function jsonSummary6EWF(json) {  
+jsonEnd6 = jsonSummary5EWF(json);
+jsonEnd6.completedHtml = jsonEnd6.completedHtml +  
+"<br>"+
+json["pages"][6]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][6]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][6]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd6;
+};
+
+function jsonSummary7EWF(json) {  
+jsonEnd7 = jsonSummary6EWF(json);
+jsonEnd7.completedHtml = jsonEnd7.completedHtml +  
+"<br>"+
+json["pages"][7]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][7]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][7]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd7;
+};
+
+function jsonSummary8EWF(json) {  
+jsonEnd8 = jsonSummary7EWF(json);
+jsonEnd8.completedHtml = jsonEnd8.completedHtml +  
+"<br>"+
+json["pages"][8]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][8]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][8]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd8;
+};
+
+function jsonSummary9EWF(json) {  
+jsonEnd9 = jsonSummary8EWF(json);
+jsonEnd9.completedHtml = jsonEnd9.completedHtml +  
+"<br>"+
+json["pages"][9]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][9]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][9]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd9;
+};
+
+
+function jsonSummary10EWF(json) {  
+jsonEnd10 = jsonSummary9EWF(json);
+jsonEnd10.completedHtml = jsonEnd10.completedHtml +  
+"<br>"+
+json["pages"][10]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][10]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][10]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd10;
+};
+
+
+function jsonSummary11EWF(json) {  
+jsonEnd11 = jsonSummary10EWF(json);
+jsonEnd11.completedHtml = jsonEnd11.completedHtml +  
+"<br>"+
+json["pages"][11]["questions"][0]["name"]+ "<br>"+
+"<i>Question: </i>"+json["pages"][11]["questions"][0]["title"]+"<br>"+
+"<i>Answer: </i>"+json["pages"][11]["questions"][0]["correctAnswer"]
+;  
+return jsonEnd11;
+};
+
+
+
 </script>  
 <!-- This completes the code for the quizzes -->
 
@@ -1000,7 +1096,7 @@ Figure 4.9: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. T
 </div>
 <hr />
 <p><strong>Example 4.1.6. Actuarial Exam Question.</strong> The graph below shows a <span class="math inline">\(pp\)</span> plot of a fitted distribution compared to a sample.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-14-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-26-1.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>Comment on the two distributions with respect to left tail, right tail, and median probabilities.</p>
 <h5 style="text-align: center;">
 <a id="displayTextExampleSelect.1.6" href="javascript:toggleEX('toggleExampleSelect.1.6','displayTextExampleSelect.1.6');"><i><strong>Show Example Solution</strong></i></a>
@@ -1143,6 +1239,23 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 </div>
 <hr />
 <p>Like the method of moments, percentile matching is almost too flexible in the sense that many estimators can be based on percentile matches; for example, one actuary can base estimation on the 25th and 95th percentiles whereas another actuary uses the 20th and 80th percentiles. In general these estimators will differ and there is no compelling reason to prefer one over the other. Also as with the method of moments, percentile matching is appealing because it provides a technique that can be readily applied in selected situations and has an intuitive basis. Although most actuarial applications use maximum likelihood estimators, it can be convenient to have alternative approaches such as method of moments and percentile matching available.</p>
+<div id="surveyElement41">
+
+</div>
+<div id="surveyResult41">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz41.1" href="javascript:toggleQuiz
+('display.Quiz41.2','display.Quiz41.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz41.2" style="display: none">
+<p id="Quiz41Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz41.js">
+</script>
 </div>
 </div>
 </div>
@@ -1221,6 +1334,23 @@ Figure 4.11: Model Validation. A data set is randomly split into two subsamples.
 </ul>
 <p>Repeat these steps for several candidate models and choose the model with the lowest cumulative out-of-sample statistic.</p>
 <p>Cross-validation is widely used because it retains the predictive flavor of the out-of-sample model validation process but, due to the re-use of the data, is more stable over random samples.</p>
+<div id="surveyElement42">
+
+</div>
+<div id="surveyResult42">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz42.1" href="javascript:toggleQuiz
+('display.Quiz42.2','display.Quiz42.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz42.2" style="display: none">
+<p id="Quiz42Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz42.js">
+</script>
 </div>
 </div>
 <div id="S:MS:ModifiedData" class="section level2">
@@ -1722,6 +1852,23 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 \]</span></p>
 </div>
 <hr />
+<div id="surveyElement43">
+
+</div>
+<div id="surveyResult43">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz43.1" href="javascript:toggleQuiz
+('display.Quiz43.2','display.Quiz43.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz43.2" style="display: none">
+<p id="Quiz43Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz43.js">
+</script>
 </div>
 </div>
 </div>
@@ -2101,6 +2248,23 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <li>The uncertainty of parameters is summarized using a normal distribution and the outcomes are conditionally normally distributed.</li>
 </ul>
 <p>Additional results on conjugate distributions are summarized in the Appendix Section <a href="C-AppB.html#S:AppConjugateDistributions">16.3</a>.</p>
+<div id="surveyElement44">
+
+</div>
+<div id="surveyResult44">
+
+</div>
+<h5 style="text-align: center;">
+<a id="display.Quiz44.1" href="javascript:toggleQuiz
+('display.Quiz44.2','display.Quiz44.1');"><i><strong>Show Quiz Solution</strong></i></a>
+</h5>
+<div id="display.Quiz44.2" style="display: none">
+<p id="Quiz44Soln">
+</p>
+<hr />
+</div>
+<script type="text/javascript" src="./Quizzes/QuizJavascript/Quiz44.js">
+</script>
 </div>
 </div>
 <div id="MS:further-reading-and-resources" class="section level2">
