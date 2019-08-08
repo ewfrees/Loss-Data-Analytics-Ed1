@@ -129,7 +129,6 @@ $$
 **Illustrative Graph**
 
 ```{r}
-library(invgamma)
 theta <- 0.01
 X <- seq(from = 0, to = 1000, by = 1)
 plot(x=X,y=dinvexp(X, rate =  1/theta),type="l",
@@ -192,7 +191,6 @@ $$
 **Illustrative Graph**
 
 ```{r}
-library(actuar)
 alpha <- 3
 theta <- 100
 X <- seq(from = 0, to = 1000, by = 1)
