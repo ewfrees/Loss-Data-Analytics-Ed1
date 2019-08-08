@@ -24,6 +24,8 @@ $$
 \begin{array}{l|c}
 \hline
   \text{Name} & \text{Function} \\
+      \hline
+  \small{\text{Parameter assumptions}} & \lambda>0 \\
 \hline
   ~~p_0 & e^{-\lambda} \\
 \hline
@@ -79,6 +81,8 @@ $$
 \begin{array}{l|c}
 \hline
   \text{Name} & \text{Function} \\
+      \hline
+  \small{\text{Parameter assumptions}} & \beta>0 \\
 \hline
   ~~p_0 & \frac{1}{1+\beta} \\
 \hline
@@ -192,6 +196,8 @@ $$
 \begin{array}{l|c}
 \hline
   \text{Name} & \text{Function} \\
+      \hline
+  \small{\text{Parameter assumptions}} & r>0, \beta>0 \\
 \hline
   ~~p_0 & (1+\beta)^{-r} \\
 \hline
@@ -259,6 +265,8 @@ $$
 \begin{array}{l|c}
 \hline
   \text{Name} & \text{Function} \\
+      \hline
+  \small{\text{Parameter assumptions}} & \lambda>0 \\
 \hline
   ~~p^T_1 & \frac{\lambda}{e^\lambda-1} \\
 \hline
@@ -317,6 +325,8 @@ $$
 \begin{array}{l|c}
 \hline
   \text{Name} & \text{Function} \\
+      \hline
+  \small{\text{Parameter assumptions}} & \beta>0 \\
 \hline
   ~~p^T_1 & \frac{1}{1+\beta} \\
 \hline
@@ -393,7 +403,7 @@ $$
   \small{\text{Probability generating function}} & \frac{[1+q(z-1)^m]-(1-q)^m}{1-(1-q)^m} \\
   ~~P(z) & \\
 \hline
-  a \small{\text{ and }} b \small{\text{ for recursion}} & a=\frac{1}{1-q} \\
+  a \small{\text{ and }} b \small{\text{ for recursion}} & a=\frac{-q}{1-q} \\
    & b=\frac{(m+1)q}{1-q} \\
 \hline
 \end{array}
@@ -496,6 +506,8 @@ $$
 \begin{array}{l|c}
 \hline
   \text{Name} & \text{Function} \\
+      \hline
+  \small{\text{Parameter assumptions}} & \beta>0 \\
 \hline
   ~~p^T_1 & \frac{\beta}{(1+\beta)ln(1+\beta)} \\
 \hline
