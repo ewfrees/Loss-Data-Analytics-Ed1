@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Risk Classification | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 8 Risk Classification | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 8 Risk Classification | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 8 Risk Classification | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Risk Classification | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 8 Risk Classification | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-PremiumFoundations.html">
 <link rel="next" href="C-Credibility.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -796,7 +796,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>If all policyholders in the insurance pool have identical risk profiles, the insurer simply charges the same premium for all policyholders because they have the same expected loss. In reality, however, the policyholders are hardly homogeneous. For example, mortality risk in life insurance depends on the characteristics of the policyholder, such as, age, sex and life style. In auto insurance, those characteristics may include age, occupation, the type or use of the car, and the area where the driver resides. The knowledge of these characteristics or variables can enhance the ability of calculating fair premiums for individual policyholders, as they can be used to estimate or predict the expected losses more accurately.</p>
 <p><strong>Adverse Selection.</strong> Indeed, if the insurer does not differentiate the risk characteristics of individual policyholders and simply charges the same premium to all insureds based on the average loss in the portfolio, the insurer would face <em>adverse selection</em>, a situation where individuals with a higher chance of loss are attracted in the portfolio and low-risk individuals are repelled. For example, consider a health insurance industry where smoking status is an important risk factor for mortality and morbidity. Most health insurers in the market require different premiums depending on smoking status, so smokers pay higher premiums than non-smokers, with other characteristics being identical. Now suppose that there is an insurer, we will call EquitabAll, that offers the same premium to all insureds regardless of smoking status, unlike other competitors. The net premium of EquitabAll is naturally an average mortality loss accounting for both smokers and non-smokers. That is, the net premium is a weighted average of the losses with the weights being the proportion of smokers and non-smokers, respectively. Thus it is easy to see that that a smoker would have a good incentive to purchase insurance from EquitabAll than from other insurers as the offered premium by EquitabAll is relatively lower. At the same time non-smokers would prefer buying insurance from somewhere else where lower premiums, computed from the non-smoker group only, are offered. As a result, there will be more smokers and less non-smokers in the EquitabAll’s portfolio, which leads to larger-than-expected losses and hence a higher premium for insureds in the next period to cover the higher costs. With the raised new premium in the next period, non-smokers in EquitabAll will have even greater incentives to switch the insurer. As this cycle continues over time, EquitabAll would gradually retain more smokers and less non-smokers in its portfolio with the premium continually raised, eventually leading to a collapsing of business. In the literature, this phenomenon is known as the <em>adverse selection spiral</em> or death spiral. Therefore, incorporating and differentiating important risk characteristics of individuals in the insurance pricing process are a pertinent component for both the determination of fair premium for individual policyholders and the long term sustainability of insurers.</p>
 <p><strong>Rating Factors</strong>. In order to incorporate relevant risk characteristics of policyholders in the pricing process, insurers maintain some classification system that assigns each policyholder to one of the risk classes based on a relatively small number of risk characteristics that are deemed most relevant. These characteristics used in the classification system are called the <em>rating factors</em>, which are <em>a priori</em> variables in the sense that they are known before the contract begins (e.g., sex, health status, vehicle type, etc, are known during the underwriting). All policyholders sharing identical risk factors thus are assigned to the same risk class, and are considered homogeneous from the pricing viewpoint; the insurer consequently charge them the same premium or rate.</p>
-<p>Regarding the risk factors and premiums, the <em>Actuarial Standard of Practice</em> (ASOP No. 12) of the <span class="citation">Actuarial Standards Board (<a href="#ref-ASBStandards">2018</a>)</span> states that the actuary should select risk characteristics that are related to expected outcomes, and that rates within a risk classification system would be considered equitable if differences in rates reflect material differences in expected cost for risk characteristics. In the process of choosing risk factors, ASOP also requires the actuary to consider the following: relationship of risk characteristics and expected outcomes, causality, objectivity, practicality, applicable law, industry practices, and business practices.</p>
+<p>Regarding the risk factors and premiums, the <em>Actuarial Standard of Practice</em> (ASOP No. 12) of the <span class="citation">@ASBStandards</span> states that the actuary should select risk characteristics that are related to expected outcomes, and that rates within a risk classification system would be considered equitable if differences in rates reflect material differences in expected cost for risk characteristics. In the process of choosing risk factors, ASOP also requires the actuary to consider the following: relationship of risk characteristics and expected outcomes, causality, objectivity, practicality, applicable law, industry practices, and business practices.</p>
 <p>On the quantitative side, an important task for the actuary in building any risk classification is to construct a statistical model that can determine the expected loss given various rating factors of a policyholder. The standard approach is to adopt a regression model which produces the expected loss as the output when the relevant risk factors are given as the inputs. In this chapter we learn the Poisson regression, which can be used when the loss is a count variable, as a prominent example of an insurance pricing tool.</p>
 <!-- %\subsection{Fundamental concept of insurance pricing} -->
 <!-- %================================ -->
@@ -1219,7 +1219,7 @@ Residual Deviance: 0.6514   AIC: 30.37</code></pre></div>
 </div>
 <hr />
 <p><strong>Example 8.2. Poisson regression for Singapore insurance claims data</strong></p>
-<p>This actual dataset is a subset of the data used by <span class="citation">(Frees and Valdez <a href="#ref-frees2008hierarchical">2008</a>)</span>. The data are from the General Insurance Association of Singapore, an organisation consisting of non-life insurers in Singapore. The data contains the number of car accidents for <span class="math inline">\(n=7,483\)</span> auto insurance policies with several categorical explanatory variables and the exposure for each policy. The explanatory variables include four risk factors: the type of the vehicle insured (either automobile (A) or other (O), denoted by <span class="math inline">\(\tt{Vtype}\)</span>), the age of the vehicle in years (<span class="math inline">\(\tt{Vage}\)</span>), gender of the policyholder (<span class="math inline">\(\tt{Sex}\)</span>) and the age of the policyholder (in years, grouped into seven categories, denoted <span class="math inline">\(\tt{Age}\)</span>).</p>
+<p>This actual dataset is a subset of the data used by <span class="citation">[@frees2008hierarchical]</span>. The data are from the General Insurance Association of Singapore, an organisation consisting of non-life insurers in Singapore. The data contains the number of car accidents for <span class="math inline">\(n=7,483\)</span> auto insurance policies with several categorical explanatory variables and the exposure for each policy. The explanatory variables include four risk factors: the type of the vehicle insured (either automobile (A) or other (O), denoted by <span class="math inline">\(\tt{Vtype}\)</span>), the age of the vehicle in years (<span class="math inline">\(\tt{Vage}\)</span>), gender of the policyholder (<span class="math inline">\(\tt{Sex}\)</span>) and the age of the policyholder (in years, grouped into seven categories, denoted <span class="math inline">\(\tt{Age}\)</span>).</p>
 <p>Based on the data description, there are several things to remember before constructing a model. First, there are 3,842 policies with vehicle type A (automobile) and 3,641 policies with other vehicle types. However, age and sex information is available for the policies of vehicle type A only; the drivers of all other types of vehicles are recorded to be aged 21 or less with sex unspecified, except for one policy, indicating that no driver information has been collected for non-automobile vehicles. Second, type A vehicles are all classified as private vehicles and all the other types are not.</p>
 <p>When we include these risk factors, we assume all unspecified sex to be male. As the age information is only applicable to type A vehicles, we set the model accordingly. That is, we apply the age variable only to vehicles of type A. Also we used five vehicle age bands, simplifying the original seven bands, by combining vehicle ages 0,1 and 2; the combined band is marked as level 2<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> in the data file. Thus our Poisson model has the following explicit form:</p>
 <span class="math display">\[\begin{align*}
@@ -1337,7 +1337,7 @@ exp(Pois_reg2<span class="ss">$coefficients)</span>
 <h2><span class="header-section-number">8.4</span> Further Resources and Contributors</h2>
 <div id="further-reading-and-references" class="section level4 unnumbered">
 <h4>Further Reading and References</h4>
-<p>The Poisson regression is a special member of a more general regression model class known as the generalized linear model (glm). The glm develops a unified regression framework for datasets when the response variables are continuous, binary or discrete. The classical linear regression model with normal error is also a member of the glm. There are many standard statistical texts dealing with the glm, including <span class="citation">(McCullagh and Nelder <a href="#ref-mccullagh1989generalized">1989</a>)</span>. More accessible texts are <span class="citation">(Dobson and Barnett <a href="#ref-dobson2008introduction">2008</a>)</span>, <span class="citation">(Agresti <a href="#ref-agresti1996introduction">1996</a>)</span> and <span class="citation">(Faraway <a href="#ref-faraway2016extending">2016</a>)</span>. For actuarial and insurance applications of the glm see <span class="citation">(Edward W. Frees <a href="#ref-frees2009regression">2009</a><a href="#ref-frees2009regression">a</a>)</span>, <span class="citation">(De Jong and Heller <a href="#ref-de2008generalized">2008</a>)</span>. Also, <span class="citation">(Ohlsson and Johansson <a href="#ref-ohlsson2010non">2010</a>)</span> discusses the glm in non-life insurance pricing context with tariff analyses.</p>
+<p>The Poisson regression is a special member of a more general regression model class known as the generalized linear model (glm). The glm develops a unified regression framework for datasets when the response variables are continuous, binary or discrete. The classical linear regression model with normal error is also a member of the glm. There are many standard statistical texts dealing with the glm, including <span class="citation">[@mccullagh1989generalized]</span>. More accessible texts are <span class="citation">[@dobson2008introduction]</span>, <span class="citation">[@agresti1996introduction]</span> and <span class="citation">[@faraway2016extending]</span>. For actuarial and insurance applications of the glm see <span class="citation">[@frees2009regression]</span>, <span class="citation">[@de2008generalized]</span>. Also, <span class="citation">[@ohlsson2010non]</span> discusses the glm in non-life insurance pricing context with tariff analyses.</p>
 </div>
 <div id="contributor-1" class="section level4 unnumbered">
 <h4>Contributor</h4>
@@ -1400,36 +1400,6 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 </div>
 </div>
 </div>
-<h3>Bibliography</h3>
-<div id="refs" class="references">
-<div id="ref-ASBStandards">
-<p>Actuarial Standards Board. 2018. “Actuarial Standards of Practice.” In. American Academy of Actuaries. <a href="http://www.actuarialstandardsboard.org/standards-of-practice/" class="uri">http://www.actuarialstandardsboard.org/standards-of-practice/</a>.</p>
-</div>
-<div id="ref-agresti1996introduction">
-<p>Agresti, Alan. 1996. <em>An Introduction to Categorical Data Analysis</em>. Vol. 135. Wiley New York.</p>
-</div>
-<div id="ref-de2008generalized">
-<p>De Jong, Piet, and Gillian Z. Heller. 2008. <em>Generalized Linear Models for Insurance Data</em>. Cambridge University Press Cambridge.</p>
-</div>
-<div id="ref-dobson2008introduction">
-<p>Dobson, Annette J, and Adrian Barnett. 2008. <em>An Introduction to Generalized Linear Models</em>. CRC press.</p>
-</div>
-<div id="ref-faraway2016extending">
-<p>Faraway, Julian J. 2016. <em>Extending the Linear Model with R: Generalized Linear, Mixed Effects and Nonparametric Regression Models</em>. Vol. 124. CRC press.</p>
-</div>
-<div id="ref-frees2009regression">
-<p>Frees, Edward W. 2009a. <em>Regression Modeling with Actuarial and Financial Applications</em>. Cambridge University Press.</p>
-</div>
-<div id="ref-frees2008hierarchical">
-<p>Frees, Edward W., and Emiliano A. Valdez. 1998. “Understanding Relationships Using Copulas.” <em>North American Actuarial Journal</em> 2 (01): 1–25.</p> 2008. “Hierarchical Insurance Claims Modeling.” <em>Journal of the American Statistical Association</em> 103 (484). Taylor &amp; Francis: 1457–69.</p>
-</div>
-<div id="ref-mccullagh1989generalized">
-<p>McCullagh, Peter, and John A. Nelder. 1989. <em>Generalized Linear Models</em>. Vol. 37. CRC press.</p>
-</div>
-<div id="ref-ohlsson2010non">
-<p>Ohlsson, Esbjörn, and Björn Johansson. 2010. <em>Non-Life Insurance Pricing with Generalized Linear Models</em>. Vol. 21. Springer.</p>
-</div>
-</div>
 <div class="footnotes">
 <hr />
 <ol start="9">
@@ -1465,7 +1435,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -1475,10 +1445,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -1496,7 +1462,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

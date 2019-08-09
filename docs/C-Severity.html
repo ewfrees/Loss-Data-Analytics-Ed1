@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Modeling Loss Severity | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-Frequency-Modeling.html">
 <link rel="next" href="C-ModelSelection.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -1101,7 +1101,7 @@ S_{X}\left( \pi_{0.99} \right) = \exp\left\{- \left( \frac{\pi_{0.99}}{33.33} \r
 </div>
 <div id="the-generalized-beta-distribution-of-the-second-kind" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> The Generalized Beta Distribution of the Second Kind</h3>
-<p>The <a href="#" class="tooltip" style="color:green"><em>Generalized Beta Distribution of the Second Kind</em><span style="font-size:8pt">a 4-parameter flexible distribution that encompasses many common distributions</span></a> (<em>GB2</em>) was introduced by <span class="citation">Venter (<a href="#ref-venter1983transformed">1983</a>)</span> in the context of insurance loss modeling and by <span class="citation">McDonald (<a href="#ref-mcdonald1984some">1984</a>)</span> as an income and wealth distribution. It is a four-parameter very flexible distribution that can model positively as well as negatively skewed distributions.</p>
+<p>The <a href="#" class="tooltip" style="color:green"><em>Generalized Beta Distribution of the Second Kind</em><span style="font-size:8pt">a 4-parameter flexible distribution that encompasses many common distributions</span></a> (<em>GB2</em>) was introduced by <span class="citation">@venter1983transformed</span> in the context of insurance loss modeling and by <span class="citation">@mcdonald1984some</span> as an income and wealth distribution. It is a four-parameter very flexible distribution that can model positively as well as negatively skewed distributions.</p>
 <p>The continuous variable <span class="math inline">\(X\)</span> is said to have the <em>GB2</em> distribution with parameters <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span> if its probability density function is given by</p>
 <span class="math display" id="eq:GB2Distn">\[\begin{equation}
 f_{X}\left( x \right) = \frac{(x/\theta)^{\alpha_2/\sigma}}{x \sigma~\mathrm{B}\left( \alpha_1,\alpha_2\right)\left\lbrack 1 + \left( x/\theta \right)^{1/\sigma} \right\rbrack^{\alpha_1 + \alpha_2}} \ \ \ \text{for } x &gt; 0,
@@ -2087,36 +2087,9 @@ L\left( \alpha \right) = \frac{\alpha^{8}}{\prod_{i = 1}^{8}x_{i}^{\alpha + 1}}\
 </div>
 <div id="further-readings-and-references" class="section level4 unnumbered">
 <h4>Further Readings and References</h4>
-<p>Notable contributions include: <span class="citation">Cummins and Derrig (<a href="#ref-cummins1991managing">2012</a>)</span>, <span class="citation">Frees and Valdez (<a href="#ref-frees2008hierarchical">2008</a>)</span>, <span class="citation">Klugman, Panjer, and Willmot (<a href="#ref-klugman2012">2012</a>)</span>, <span class="citation">Kreer et al. (<a href="#ref-kreer2015goodness">2015</a>)</span>, <span class="citation">McDonald (<a href="#ref-mcdonald1984some">1984</a>)</span>, <span class="citation">McDonald and Xu (<a href="#ref-mcdonald1995generalization">1995</a>)</span>, <span class="citation">Tevet (<a href="#ref-tevet2016applying">2016</a>)</span>, and <span class="citation">Venter (<a href="#ref-venter1983transformed">1983</a>)</span>.</p>
+<p>Notable contributions include: <span class="citation">@cummins1991managing</span>, <span class="citation">@frees2008hierarchical</span>, <span class="citation">@klugman2012</span>, <span class="citation">@kreer2015goodness</span>, <span class="citation">@mcdonald1984some</span>, <span class="citation">@mcdonald1995generalization</span>, <span class="citation">@tevet2016applying</span>, and <span class="citation">@venter1983transformed</span>.</p>
 
 </div>
-</div>
-</div>
-<h3>Bibliography</h3>
-<div id="refs" class="references">
-<div id="ref-cummins1991managing">
-<p>Cummins, J. David, and Richard A. Derrig. 2012. <em>Managing the Insolvency Risk of Insurance Companies: Proceedings of the Second International Conference on Insurance Solvency</em>. Vol. 12. Springer Science &amp; Business Media.</p>
-</div>
-<div id="ref-frees2008hierarchical">
-<p>Frees, Edward W., and Emiliano A. Valdez. 1998. “Understanding Relationships Using Copulas.” <em>North American Actuarial Journal</em> 2 (01): 1–25.</p> 2008. “Hierarchical Insurance Claims Modeling.” <em>Journal of the American Statistical Association</em> 103 (484). Taylor &amp; Francis: 1457–69.</p>
-</div>
-<div id="ref-klugman2012">
-<p>Klugman, Stuart A., Harry H. Panjer, and Gordon E. Willmot. 2012. <em>Loss Models: From Data to Decisions</em>. John Wiley &amp; Sons.</p>
-</div>
-<div id="ref-kreer2015goodness">
-<p>Kreer, Markus, Ayşe Kizilersü, Anthony W Thomas, and Alfredo D Egídio dos Reis. 2015. “Goodness-of-Fit Tests and Applications for Left-Truncated Weibull Distributions to Non-Life Insurance.” <em>European Actuarial Journal</em> 5 (1). Springer: 139–63.</p>
-</div>
-<div id="ref-mcdonald1984some">
-<p>McDonald, James B. 1984. “Some Generalized Functions for the Size Distribution of Income.” <em>Econometrica: Journal of the Econometric Society</em>. JSTOR, 647–63.</p>
-</div>
-<div id="ref-mcdonald1995generalization">
-<p>McDonald, James B, and Yexiao J Xu. 1995. “A Generalization of the Beta Distribution with Applications.” <em>Journal of Econometrics</em> 66 (1-2). Elsevier: 133–52.</p>
-</div>
-<div id="ref-tevet2016applying">
-<p>Tevet, Dan. 2016. “Applying Generalized Linear Models to Insurance Data.” <em>Predictive Modeling Applications in Actuarial Science: Volume 2, Case Studies in Insurance</em>. Cambridge University Press, 39.</p>
-</div>
-<div id="ref-venter1983transformed">
-<p>Venter, Gary. 1983. “Transformed Beta and Gamma Distributions and Aggregate Losses.” In <em>Proceedings of the Casualty Actuarial Society</em>, 70:289–308. 133 &amp; 134.</p>
 </div>
 </div>
             </section>
@@ -2145,7 +2118,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2155,10 +2128,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -2176,7 +2145,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

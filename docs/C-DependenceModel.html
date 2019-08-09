@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 14 Dependence Modeling | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 14 Dependence Modeling | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 14 Dependence Modeling | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-DataSystems.html">
 <link rel="next" href="C-AppA.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -908,7 +908,7 @@ r = \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Cov}(X,X)\widehat{Cov}(Y,Y)}}.
 \end{equation*}\]</span>
 <p>The correlation statistic <span class="math inline">\(r\)</span> is widely used to capture linear association between random variables. It is a (nonparametric) estimator of the correlation parameter <span class="math inline">\(\rho\)</span>, defined to be the covariance divided by the product of standard deviations. In this sense, it captures association for any pair of random variables.</p>
 <p>This statistic has several important features. Unlike regression estimators, it is symmetric between random variables, so the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> equals the correlation between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. It is unchanged by linear transformations of random variables (up to sign changes) so that we can multiply random variables or add constants as is helpful for interpretation. The range of the statistic is <span class="math inline">\([-1,1]\)</span> which does not depend on the distribution of either <span class="math inline">\(X\)</span> or <span class="math inline">\(Y\)</span>.</p>
-<p>Further, in the case of independence, the correlation coefficient <span class="math inline">\(r\)</span> is 0. However, it is well known that zero correlation does not imply independence, except for normally distributed random variables. The correlation statistic <span class="math inline">\(r\)</span> is also a (maximum likelihood) estimator of the association parameter for bivariate normal distribution. So, for normally distributed data, the correlation statistic <span class="math inline">\(r\)</span> can be used to assess independence. For additional interpretations of this well-known statistic, readers will enjoy <span class="citation">(Lee Rodgers and Nicewander <a href="#ref-lee1988thirteen">1998</a>)</span>.</p>
+<p>Further, in the case of independence, the correlation coefficient <span class="math inline">\(r\)</span> is 0. However, it is well known that zero correlation does not imply independence, except for normally distributed random variables. The correlation statistic <span class="math inline">\(r\)</span> is also a (maximum likelihood) estimator of the association parameter for bivariate normal distribution. So, for normally distributed data, the correlation statistic <span class="math inline">\(r\)</span> can be used to assess independence. For additional interpretations of this well-known statistic, readers will enjoy <span class="citation">[@lee1988thirteen]</span>.</p>
 <p>You can obtain the Pearson correlation statistic <span class="math inline">\(r\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>pearson</code> method. This is demonstrated below by using the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars from the LGPIF data introduced in chapter 1.</p>
 <h5 style="text-align: center;">
 <a id="display.pearson.1" href="javascript:togglecode
@@ -937,8 +937,8 @@ Output:
 <div id="spearmans-rho" class="section level4">
 <h4><span class="header-section-number">14.2.2.1</span> Spearman’s Rho</h4>
 <p>The Pearson correlation coefficient does have the drawback that it is not invariant to nonlinear transforms of the data. For example, the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(\ln Y\)</span> can be quite different from the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. As we see from the <code>R</code> code for Pearson correlation statistic above, the correlation statistic <span class="math inline">\(r\)</span> between <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amounts variable in dollars is <span class="math inline">\(0.1\)</span> as compared to <span class="math inline">\(0.31\)</span> when we calculate the correlation between <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amounts variable in dollars. This limitation is one reason for considering alternative statistics.</p>
-<p>Alternative measures of correlation are based on ranks of the data. Let <span class="math inline">\(R(X_j)\)</span> denote the rank of <span class="math inline">\(X_j\)</span> from the sample <span class="math inline">\(X_1, \ldots, X_n\)</span> and similarly for <span class="math inline">\(R(Y_j)\)</span>. Let <span class="math inline">\(R(X) = \left(R(X_1), \ldots, R(X_n)\right)&#39;\)</span> denote the vector of ranks, and similarly for <span class="math inline">\(R(Y)\)</span>. For example, if <span class="math inline">\(n=3\)</span> and <span class="math inline">\(X=(24, 13, 109)\)</span>, then <span class="math inline">\(R(X)=(2,1,3)\)</span>. A comprehensive introduction of rank statistics can be found in, for example, <span class="citation">(Hettmansperger <a href="#ref-hettmansperger1984statistical">1984</a>)</span>. Also, ranks can be used to obtain the empirical distribution function, refer to section 4.1.1 for more on the empirical distribution function.</p>
-With this, the correlation measure of <span class="citation">(Spearman <a href="#ref-spearman1904proof">1904</a>)</span> is simply the product-moment correlation computed on the ranks:
+<p>Alternative measures of correlation are based on ranks of the data. Let <span class="math inline">\(R(X_j)\)</span> denote the rank of <span class="math inline">\(X_j\)</span> from the sample <span class="math inline">\(X_1, \ldots, X_n\)</span> and similarly for <span class="math inline">\(R(Y_j)\)</span>. Let <span class="math inline">\(R(X) = \left(R(X_1), \ldots, R(X_n)\right)&#39;\)</span> denote the vector of ranks, and similarly for <span class="math inline">\(R(Y)\)</span>. For example, if <span class="math inline">\(n=3\)</span> and <span class="math inline">\(X=(24, 13, 109)\)</span>, then <span class="math inline">\(R(X)=(2,1,3)\)</span>. A comprehensive introduction of rank statistics can be found in, for example, <span class="citation">[@hettmansperger1984statistical]</span>. Also, ranks can be used to obtain the empirical distribution function, refer to section 4.1.1 for more on the empirical distribution function.</p>
+With this, the correlation measure of <span class="citation">[@spearman1904proof]</span> is simply the product-moment correlation computed on the ranks:
 <span class="math display">\[\begin{equation*}
 r_S = \frac{\widehat{Cov}(R(X),R(Y))}{\sqrt{\widehat{Cov}(R(X),R(X))\widehat{Cov}(R(Y),R(Y))}}
 = \frac{\widehat{Cov}(R(X),R(Y))}{(n^2-1)/12} .
@@ -971,15 +971,15 @@ Output:
 <span class="math display">\[\begin{eqnarray*}
 \tau(X,Y)= \Pr(concordance) - \Pr(discordance) = 2\Pr(concordance) - 1 + \Pr(tie).
 \end{eqnarray*}\]</span>
-<p>To estimate this, the pairs <span class="math inline">\((X_i,Y_i)\)</span> and <span class="math inline">\((X_j,Y_j)\)</span> are said to be concordant if the product <span class="math inline">\(sgn(X_j-X_i)sgn(Y_j-Y_i)\)</span> equals 1 and discordant if the product equals -1. Here, <span class="math inline">\(sgn(x)=1,0,-1\)</span> as <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x&lt;0\)</span>, respectively. With this, we can express the association measure of <span class="citation">(Kendall <a href="#ref-kendall1938new">1938</a>)</span>, known as <em>Kendall’s tau</em>, as</p>
+<p>To estimate this, the pairs <span class="math inline">\((X_i,Y_i)\)</span> and <span class="math inline">\((X_j,Y_j)\)</span> are said to be concordant if the product <span class="math inline">\(sgn(X_j-X_i)sgn(Y_j-Y_i)\)</span> equals 1 and discordant if the product equals -1. Here, <span class="math inline">\(sgn(x)=1,0,-1\)</span> as <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x&lt;0\)</span>, respectively. With this, we can express the association measure of <span class="citation">[@kendall1938new]</span>, known as <em>Kendall’s tau</em>, as</p>
 <span class="math display">\[\begin{equation*}
 \begin{array}{rl}
 \tau &amp;= \frac{2}{n(n-1)} \sum_{i&lt;j}sgn(X_j-X_i)sgn(Y_j-Y_i)\\
 &amp;= \frac{2}{n(n-1)} \sum_{i&lt;j}sgn(R(X_j)-R(X_i))sgn(R(Y_j)-R(Y_i)) 
 \end{array}.
 \end{equation*}\]</span>
-<p>Interestingly, <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, page 137, attributes the original discovery of this statistic to <span class="citation">(Fechner <a href="#ref-fechnerkollektivmasslehre">1897</a>)</span>, noting that Kendall’s discovery was independent and more complete than the original work.</p>
-<p>You can obtain the Kendall’s tau, using the <code>cor()</code> function in <code>R</code> and selecting the <code>kendall</code> method. From below, <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars. When there are ties in the data, the <code>cor()</code> function computes <em>Kendall’s tau_b</em>, as proposed by <span class="citation">(Kendall <a href="#ref-kendall1945">1945</a>)</span>.</p>
+<p>Interestingly, <span class="citation">[@hougaard2000analysis]</span>, page 137, attributes the original discovery of this statistic to <span class="citation">[@fechnerkollektivmasslehre]</span>, noting that Kendall’s discovery was independent and more complete than the original work.</p>
+<p>You can obtain the Kendall’s tau, using the <code>cor()</code> function in <code>R</code> and selecting the <code>kendall</code> method. From below, <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars. When there are ties in the data, the <code>cor()</code> function computes <em>Kendall’s tau_b</em>, as proposed by <span class="citation">[@kendall1945]</span>.</p>
 <h5 style="text-align: center;">
 <a id="display.kendall.1" href="javascript:togglecode
 ('display.kendall.2','display.kendall.1');"><i><strong>R Code for Kendall’s Tau</strong></i></a>
@@ -1015,13 +1015,13 @@ Unlike the case for continuous data, it is not possible for this measure to achi
 \frac{2\pi - 1 - \pi^2}{\pi(1-\pi)} = -\frac{1-\pi}{\pi} .
 \end{eqnarray*}\]</span>
 <p>For example, if <span class="math inline">\(\pi=0.8\)</span>, then the smallest that the Pearson correlation could be is -0.25. More generally, there are bounds on <span class="math inline">\(\rho\)</span> that depend on <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> that make it difficult to interpret this measure.</p>
-<p>As noted by <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete">1975</a>)</span> (page 382), squaring this correlation coefficient yields the Pearson chi-square statistic (introduced in chapter 2) . Despite the boundary problems described above, this feature makes the Pearson correlation coefficient a good choice for describing dependence with binary data. The other is the odds ratio, described as follows.</p>
+<p>As noted by <span class="citation">[@bishop1975discrete]</span> (page 382), squaring this correlation coefficient yields the Pearson chi-square statistic (introduced in chapter 2) . Despite the boundary problems described above, this feature makes the Pearson correlation coefficient a good choice for describing dependence with binary data. The other is the odds ratio, described as follows.</p>
 As an alternative measure for Bernoulli variables, the <em>odds ratio</em> is given by
 <span class="math display">\[\begin{eqnarray*}
 OR(\pi_{11}) = \frac{\pi_{11} \pi_{00}}{\pi_{01} \pi_{10}} = \frac{\pi_{11} \left( 1+\pi_{11}-\pi_X -\pi_Y\right)}{(\pi_X-\pi_{11})(\pi_Y- \pi_{11})} .
 \end{eqnarray*}\]</span>
 <p>Pleasant calculations show that <span class="math inline">\(OR(z)\)</span> is <span class="math inline">\(0\)</span> at the lower Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding bound <span class="math inline">\(z= \max\{0, \pi_X+\pi_Y-1\}\)</span> and is <span class="math inline">\(\infty\)</span> at the upper bound <span class="math inline">\(z=\min\{\pi_X,\pi_Y\}\)</span>. Thus, the bounds on this measure do not depend on the marginal probabilities <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span>, making it easier to interpret this measure.</p>
-<p>As noted by <span class="citation">(Yule <a href="#ref-yule1900association">1900</a>)</span>, odds ratios are invariant to the labeling of 0 and 1. Further, they are invariant to the marginals in the sense that one can rescale <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> by positive constants and the odds ratio remains unchanged. Specifically, suppose that <span class="math inline">\(a_i\)</span>, <span class="math inline">\(b_j\)</span> are sets of positive constants and that</p>
+<p>As noted by <span class="citation">[@yule1900association]</span>, odds ratios are invariant to the labeling of 0 and 1. Further, they are invariant to the marginals in the sense that one can rescale <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> by positive constants and the odds ratio remains unchanged. Specifically, suppose that <span class="math inline">\(a_i\)</span>, <span class="math inline">\(b_j\)</span> are sets of positive constants and that</p>
 <span class="math display">\[\begin{eqnarray*}
 \pi_{ij}^{new} &amp;=&amp; a_i b_j \pi_{ij}
 \end{eqnarray*}\]</span>
@@ -1030,16 +1030,16 @@ and <span class="math inline">\(\sum_{ij} \pi_{ij}^{new}=1.\)</span> Then,
 OR^{new} = \frac{(a_1 b_1 \pi_{11})( a_0 b_0 \pi_{00})}{(a_0 b_1 \pi_{01})( a_1 b_0\pi_{10})}
 = \frac{\pi_{11} \pi_{00}}{\pi_{01} \pi_{10}} =OR^{old} .
 \end{eqnarray*}\]</span>
-For additional help with interpretation, Yule proposed two transforms for the odds ratio, the first in <span class="citation">(Yule <a href="#ref-yule1900association">1900</a>)</span>,
+For additional help with interpretation, Yule proposed two transforms for the odds ratio, the first in <span class="citation">[@yule1900association]</span>,
 <span class="math display">\[\begin{eqnarray*}
 \frac{OR-1}{OR+1},
 \end{eqnarray*}\]</span>
-and the second in <span class="citation">(Yule <a href="#ref-yule1912methods">1912</a>)</span>,
+and the second in <span class="citation">[@yule1912methods]</span>,
 <span class="math display">\[\begin{eqnarray*}
 \frac{\sqrt{OR}-1}{\sqrt{OR}+1}.
 \end{eqnarray*}\]</span>
 <p>Although these statistics provide the same information as is the original odds ration <span class="math inline">\(OR\)</span>, they have the advantage of taking values in the interval <span class="math inline">\([-1,1]\)</span>, making them easier to interpret.</p>
-<p>In a later section, we will also see that the marginal distributions have no effect on the Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding of the tetrachoric correlation, another measure of association, see also, <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, page 48.</p>
+<p>In a later section, we will also see that the marginal distributions have no effect on the Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding of the tetrachoric correlation, another measure of association, see also, <span class="citation">[@joe2014dependence]</span>, page 48.</p>
 <p><a id=tab:14.2></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1090,7 +1090,7 @@ and
 \frac{G^2}{n} \approx 2 \sum_{jk} \pi_{jk} \ln\frac{\pi_{jk}}{\pi_{X,j}\pi_{Y,k}} .
 \end{eqnarray*}\]</span>
 <p>Under the null hypothesis of independence, we have <span class="math inline">\(\pi_{jk} =\pi_{X,j}\pi_{Y,k}\)</span> and it is clear from these approximations that we anticipate that these statistics will be small under this hypothesis.</p>
-<p>Classical approaches, as described in <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete">1975</a>)</span> (page 374), distinguish between tests of independence and measures of associations. The former are designed to detect whether a relationship exists whereas the latter are meant to assess the type and extent of a relationship. We acknowledge these differing purposes but also less concerned with this distinction for actuarial applications.</p>
+<p>Classical approaches, as described in <span class="citation">[@bishop1975discrete]</span> (page 374), distinguish between tests of independence and measures of associations. The former are designed to detect whether a relationship exists whereas the latter are meant to assess the type and extent of a relationship. We acknowledge these differing purposes but also less concerned with this distinction for actuarial applications.</p>
 <p><a id=tab:14.3></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1154,11 +1154,11 @@ Table: Log likelihood ratio (G-test) test of independence without correction
 </div>
 <div id="ordinal-variables" class="section level3">
 <h3><span class="header-section-number">14.2.4</span> Ordinal Variables</h3>
-<p>As the analyst moves from the continuous to the nominal scale, there are two main sources of loss of information <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete">1975</a>)</span> (page 343). The first is breaking the precise continuous measurements into groups. The second is losing the ordering of the groups. So, it is sensible to describe what we can do with variables that in discrete groups but where the ordering is known.</p>
+<p>As the analyst moves from the continuous to the nominal scale, there are two main sources of loss of information <span class="citation">[@bishop1975discrete]</span> (page 343). The first is breaking the precise continuous measurements into groups. The second is losing the ordering of the groups. So, it is sensible to describe what we can do with variables that in discrete groups but where the ordering is known.</p>
 <p>As described in Section <a href="C-DependenceModel.html#S:QuaVar">14.1.1</a>, ordinal variables provide a clear ordering of levels of a variable but distances between levels are unknown. Associations have traditionally been quantified parametrically using normal-based correlations and nonparametrically using Spearman correlations with tied ranks.</p>
 <div id="parametric-approach-using-normal-based-correlations" class="section level4">
 <h4><span class="header-section-number">14.2.4.1</span> Parametric Approach Using Normal Based Correlations</h4>
-<p>Refer to page 60, Section 2.12.7 of <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>. Let <span class="math inline">\((y_1,y_2)\)</span> be a bivariate pair with discrete values on <span class="math inline">\(m_1, \ldots, m_2\)</span>. For a two-way table of ordinal counts, let <span class="math inline">\(n_{st}\)</span> be the number in the <span class="math inline">\(s\)</span>th row, <span class="math inline">\(t\)</span> column. Let <span class="math inline">\((n_{m_1\centerdot}, \ldots, n_{m_2\centerdot})\)</span> be the row margin total, <span class="math inline">\((n_{\centerdot m_1}, \ldots, n_{\centerdot m_2})\)</span> be the column margin total and <span class="math inline">\(n=\sum_{s,t} n_{s,t}\)</span>.</p>
+<p>Refer to page 60, Section 2.12.7 of <span class="citation">[@joe2014dependence]</span>. Let <span class="math inline">\((y_1,y_2)\)</span> be a bivariate pair with discrete values on <span class="math inline">\(m_1, \ldots, m_2\)</span>. For a two-way table of ordinal counts, let <span class="math inline">\(n_{st}\)</span> be the number in the <span class="math inline">\(s\)</span>th row, <span class="math inline">\(t\)</span> column. Let <span class="math inline">\((n_{m_1\centerdot}, \ldots, n_{m_2\centerdot})\)</span> be the row margin total, <span class="math inline">\((n_{\centerdot m_1}, \ldots, n_{\centerdot m_2})\)</span> be the column margin total and <span class="math inline">\(n=\sum_{s,t} n_{s,t}\)</span>.</p>
 <p>Let <span class="math inline">\(\hat{\xi}_{1s} = \Phi^{-1}((n_{m_1}+\cdots+n_{s\centerdot})/n)\)</span> for <span class="math inline">\(s=m_1, \ldots, m_2\)</span> be a cutpoint and similarly for <span class="math inline">\(\hat{\xi}_{2t}\)</span>. The <em>polychoric</em> correlation, based on a two-step estimation procedure, is</p>
 <span class="math display">\[\begin{eqnarray*}
 \begin{array}{cr}
@@ -1288,7 +1288,7 @@ Output:
 <p>is a copula. We seek to use copulas in applications that are based on more than just uniformly distributed data. Thus, consider arbitrary marginal distribution functions <span class="math inline">\({F}_1(y_1)\)</span>,…,<span class="math inline">\({F}_p(y_p)\)</span>. Then, we can define a multivariate distribution function using the copula such that <span class="math display">\[{F}(y_1, \ldots, y_p)= {C}({F}_1(y_1), \ldots,
 {F}_p(y_p)).\]</span></p>
 <p>Here, <span class="math inline">\(F\)</span> is a multivariate distribution function in this equation. Sklar (1959) showed that <span class="math inline">\(any\)</span> multivariate distribution function <span class="math inline">\(F\)</span>, can be written in the form of this equation, that is, using a copula representation.</p>
-<p>Sklar also showed that, if the marginal distributions are continuous, then there is a unique copula representation. In this chapter we focus on copula modeling with continuous variables. For discrete case, readers can see <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span> and <span class="citation">(Genest and Nešlohva <a href="#ref-genest2007methods">2007</a>)</span>.</p>
+<p>Sklar also showed that, if the marginal distributions are continuous, then there is a unique copula representation. In this chapter we focus on copula modeling with continuous variables. For discrete case, readers can see <span class="citation">[@joe2014dependence]</span> and <span class="citation">[@genest2007methods]</span>.</p>
 <p>For bivariate case, <span class="math inline">\(p=2\)</span> , the distribution function of two random variables can be written by the bivariate copula function: <span class="math display">\[{C}(u_1, \, u_2) = \Pr(U_1 \leq u_1, \, U_2 \leq
 u_2),\]</span></p>
 <p><span class="math display">\[{F}(y_1, \, y_2)= {C}({F}_1(y_1), \,
@@ -1324,7 +1324,7 @@ u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <li>Model the dependence with a copula function</li>
 </ul>
 <hr />
-<p>This section analyzes the insurance <em>losses </em> and <em>expenses </em> data with the statistical programming <code>R</code>. This data set was introduced in <span class="citation">(Frees and Valdez <a href="#ref-frees1998understanding">1998</a>)</span> and is now readily available in the <code>copula</code> package. The model fitting process is started by marginal modeling of two variables (<span class="math inline">\(loss\)</span> and <span class="math inline">\(expense\)</span>). Then we model the joint distribution of these marginal outcomes.</p>
+<p>This section analyzes the insurance <em>losses </em> and <em>expenses </em> data with the statistical programming <code>R</code>. This data set was introduced in <span class="citation">[@frees1998understanding]</span> and is now readily available in the <code>copula</code> package. The model fitting process is started by marginal modeling of two variables (<span class="math inline">\(loss\)</span> and <span class="math inline">\(expense\)</span>). Then we model the joint distribution of these marginal outcomes.</p>
 <div id="data-description" class="section level3">
 <h3><span class="header-section-number">14.4.1</span> Data Description</h3>
 <p>We start with getting a sample (<span class="math inline">\(n = 1500\)</span>) from the whole data. We consider first two variables of the data; <em>losses</em> and <em>expenses</em>.</p>
@@ -1458,7 +1458,7 @@ Output:
 
 [1] 0.451872</code></pre>
 </div>
-<p>Scatter plots and Spearman’s rho correlation value (0.451) shows us there is a positive dependency between these two uniform random variables. It is more clear to see the relationship with normal scores in the second graph. To learn more details about normal scores and their applications in copula modeling, see <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>.</p>
+<p>Scatter plots and Spearman’s rho correlation value (0.451) shows us there is a positive dependency between these two uniform random variables. It is more clear to see the relationship with normal scores in the second graph. To learn more details about normal scores and their applications in copula modeling, see <span class="citation">[@joe2014dependence]</span>.</p>
 <p><span class="math inline">\((U_1, U_2)\)</span>, (<span class="math inline">\(U_1 = F_1(ALAE)\)</span> and <span class="math inline">\(U_2=F_2(LOSS)\)</span>), is fit to Frank’s copula with maximum likelihood method.</p>
 <h5 style="text-align: center;">
 <a id="display.FrankCopula.1" href="javascript:togglecode
@@ -1544,8 +1544,8 @@ persp(frank.cop, dCopula, theta=0, zlab=&quot;c(u,v)&quot;,
 <p>There are several families of copulas have been described in the literature. Two main families of the copula families are the <strong>Archimedian</strong> and <strong>Elliptical</strong> copulas.</p>
 <div id="elliptical-copulas" class="section level3">
 <h3><span class="header-section-number">14.5.1</span> Elliptical Copulas</h3>
-<p>Elliptical copulas are constructed from elliptical distributions. This copula decompose (multivariate) elliptical distributions into their univariate elliptical marginal distributions by Sklar’s theorem <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
-<p>Properties of elliptical copulas are typically obtained from the properties of corresponding elliptical distributions <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
+<p>Elliptical copulas are constructed from elliptical distributions. This copula decompose (multivariate) elliptical distributions into their univariate elliptical marginal distributions by Sklar’s theorem <span class="citation">[@hofertelements]</span>.</p>
+<p>Properties of elliptical copulas are typically obtained from the properties of corresponding elliptical distributions <span class="citation">[@hofertelements]</span>.</p>
 <p>For example, the normal distribution is a special type of elliptical distribution. To introduce the elliptical class of copulas, we start with the familiar multivariate normal distribution with probability density function <span class="math display">\[\phi_N (\mathbf{z})= \frac{1}{(2 \pi)^{p/2}\sqrt{\det \boldsymbol \Sigma}}
 \exp\left( -\frac{1}{2} \mathbf{z}^{\prime} \boldsymbol
 \Sigma^{-1}\mathbf{z}\right).\]</span></p>
@@ -1576,7 +1576,7 @@ H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
 \]</span></p>
 <p><a href="#tab:14.6">Table 14.6</a> : Distribution and Generator Functions (<span class="math inline">\(\mathrm{g}_p(x)\)</span>) for Selected Elliptical Copulas</p>
 <p>Most empirical work focuses on the normal copula and <span class="math inline">\(t\)</span>-copula. That is, <span class="math inline">\(t\)</span>-copulas are useful for modeling the dependency in the tails of bivariate distributions, especially in financial risk analysis applications.</p>
-<p>The <span class="math inline">\(t\)</span>-copulas with same association parameter in varying the degrees of freedom parameter show us different tail dependency structures. For more information on about <span class="math inline">\(t\)</span>-copulas readers can see <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
+<p>The <span class="math inline">\(t\)</span>-copulas with same association parameter in varying the degrees of freedom parameter show us different tail dependency structures. For more information on about <span class="math inline">\(t\)</span>-copulas readers can see <span class="citation">[@joe2014dependence]</span>, <span class="citation">[@hofertelements]</span>.</p>
 </div>
 <div id="archimedian-copulas" class="section level3">
 <h3><span class="header-section-number">14.5.2</span> Archimedian Copulas</h3>
@@ -1595,7 +1595,7 @@ H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
 <div id="gumbel-hougaard-copula" class="section level4">
 <h4><span class="header-section-number">14.5.2.2</span> Gumbel-Hougaard copula</h4>
 <p>The Gumbel-Hougaarg copula is parametrized by <span class="math inline">\(\theta \in [1,\infty)\)</span> and defined by <span class="math display">\[C_{\theta}^{GH}(u)=\exp\left(-\left(\sum_{i=1}^2 (-\log u_i)^{\theta}\right)^{1/\theta}\right), \quad u\in[0,1]^2.\]</span></p>
-<p>Readers seeking deeper background on Archimedean copulas can see <span class="citation">Joe (<a href="#ref-joe2014dependence">2014</a>)</span>, <span class="citation">Frees and Valdez (<a href="#ref-frees1998understanding">1998</a>)</span>, and <span class="citation">Genest and Mackay (<a href="#ref-genest1986bivariate">1986</a>)</span>.</p>
+<p>Readers seeking deeper background on Archimedean copulas can see <span class="citation">@joe2014dependence</span>, <span class="citation">@frees1998understanding</span>, and <span class="citation">@genest1986bivariate</span>.</p>
 </div>
 </div>
 <div id="properties-of-copulas" class="section level3">
@@ -1604,7 +1604,7 @@ H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
 <h4><span class="header-section-number">14.5.3.1</span> Bounds on Association</h4>
 <p>Like all multivariate distribution functions, copulas are bounded. The Fr<span class="math inline">\(&#39;{e}\)</span>chet-Hoeffding bounds are</p>
 <p><span class="math display">\[\max( u_1 +\cdots+ u_p + p -1, 0) \leq  \mathrm{C}(u_1,  \ldots, u_p) \leq \min (u_1,  \ldots,u_p).\]</span></p>
-<p>To see the right-hand side of the equation, note that <span class="math display">\[\mathrm{C}(u_1,\ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p) \leq  \Pr(U_j \leq u_j)\]</span>, for <span class="math inline">\(j=1,\ldots,p\)</span>. The bound is achieved when <span class="math inline">\(U_1 = \cdots = U_p\)</span>. To see the left-hand side when <span class="math inline">\(p=2\)</span>, consider <span class="math inline">\(U_2=1-U_1\)</span>. In this case, if <span class="math inline">\(1-u_2 &lt; u_1\)</span> then <span class="math inline">\(\Pr(U_1 \leq u_1, U_2 \leq u_2) = \Pr ( 1-u_2 \leq U_1 &lt; u_1) =u_1+u_2-1.\)</span> <span class="citation">(Nelson <a href="#ref-nelsen1997introduction">1997</a>)</span></p>
+<p>To see the right-hand side of the equation, note that <span class="math display">\[\mathrm{C}(u_1,\ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p) \leq  \Pr(U_j \leq u_j)\]</span>, for <span class="math inline">\(j=1,\ldots,p\)</span>. The bound is achieved when <span class="math inline">\(U_1 = \cdots = U_p\)</span>. To see the left-hand side when <span class="math inline">\(p=2\)</span>, consider <span class="math inline">\(U_2=1-U_1\)</span>. In this case, if <span class="math inline">\(1-u_2 &lt; u_1\)</span> then <span class="math inline">\(\Pr(U_1 \leq u_1, U_2 \leq u_2) = \Pr ( 1-u_2 \leq U_1 &lt; u_1) =u_1+u_2-1.\)</span> <span class="citation">[@nelsen1997introduction]</span></p>
 <p>The product copula is <span class="math inline">\(\mathrm{C}(u_1,u_2)=u_1u_2\)</span> is the result of assuming independence between random variables.</p>
 <p>The lower bound is achieved when the two random variables are perfectly negatively related (<span class="math inline">\(U_2=1-U_1\)</span>) and the upper bound is achieved when they are perfectly positively related (<span class="math inline">\(U_2=U_1\)</span>).</p>
 <p>We can see The Frechet-Hoeffding bounds for two random variables in the Figure <a href="C-DependenceModel.html#fig:Bounds">14.7</a>.</p>
@@ -1645,7 +1645,7 @@ plot (cbind(U,U), xlab=quote(U[1]),ylab=quote(U[2]),main=&quot;Perfect Positive 
 <p>From this equation , <span class="math inline">\(R(z)\)</span> will equal to <span class="math inline">\(z\)</span> under independence. Joe (1997) uses the term “upper tail dependence parameter” for <span class="math inline">\(R = \lim_{z \rightarrow 1} R(z)\)</span>. Similarly, the left-tail concentration function is</p>
 <p><span class="math display">\[L(z) = \frac{\Pr(U_1 \leq z, U_2 \leq z)}{z}=\Pr(U_1 \leq z | U_2 \leq z) =\frac{ \mathrm{C}(z,z)}{1-z}.\]</span></p>
 <p>Tail dependency concentration function captures the probability of two random variables both catching up extreme values.</p>
-<p>We calculate the left and right tail concentration functions for four different types of copulas; Normal, Frank,Gumbel and t copula. After getting tail concentration functions for each copula, we show concentration function’s values for these four copulas in <a href="#tab:14.7">Table 14.7</a>. As in <span class="citation">Venter (<a href="#ref-venter2002tails">2002</a>)</span>, we show <span class="math inline">\(L(z)\)</span> for <span class="math inline">\(z\leq 0.5\)</span> and <span class="math inline">\(R(z)\)</span> for <span class="math inline">\(z&gt;0.5\)</span> in the tail dependence plot in Figure <a href="C-DependenceModel.html#fig:DepTails">14.8</a>. We interpret the tail dependence plot, to mean that both the Frank and Normal copula exhibit no tail dependence whereas the <span class="math inline">\(t\)</span> and the Gumbel may do so. The <span class="math inline">\(t\)</span> copula is symmetric in its treatment of upper and lower tails.</p>
+<p>We calculate the left and right tail concentration functions for four different types of copulas; Normal, Frank,Gumbel and t copula. After getting tail concentration functions for each copula, we show concentration function’s values for these four copulas in <a href="#tab:14.7">Table 14.7</a>. As in <span class="citation">@venter2002tails</span>, we show <span class="math inline">\(L(z)\)</span> for <span class="math inline">\(z\leq 0.5\)</span> and <span class="math inline">\(R(z)\)</span> for <span class="math inline">\(z&gt;0.5\)</span> in the tail dependence plot in Figure <a href="C-DependenceModel.html#fig:DepTails">14.8</a>. We interpret the tail dependence plot, to mean that both the Frank and Normal copula exhibit no tail dependence whereas the <span class="math inline">\(t\)</span> and the Gumbel may do so. The <span class="math inline">\(t\)</span> copula is symmetric in its treatment of upper and lower tails.</p>
 <p><a id=tab:14.7></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1876,7 +1876,7 @@ plot(density(S), main=&quot;Density of Total Portfolio Risk S&quot;, xlab=&quot;
 <h3>TS 14.A. Other Classic Measures of Scalar Associations</h3>
 <div id="ts-14.a.1.-blomqvists-beta" class="section level4 unnumbered">
 <h4>TS 14.A.1. Blomqvist’s Beta</h4>
-<p><span class="citation">Blomqvist (<a href="#ref-blomqvist1950measure">1950</a>)</span> developed a measure of dependence now known as <em>Blomqvist’s beta</em>, also called the <em>median concordance coefficient</em> and the <em>medial correlation coefficient</em>. Using distribution functions, this parameter can be expressed as</p>
+<p><span class="citation">@blomqvist1950measure</span> developed a measure of dependence now known as <em>Blomqvist’s beta</em>, also called the <em>median concordance coefficient</em> and the <em>medial correlation coefficient</em>. Using distribution functions, this parameter can be expressed as</p>
 <span class="math display">\[\begin{equation*}
 \beta = 4F\left(F^{-1}_X(1/2),F^{-1}_Y(1/2) \right) - 1.
 \end{equation*}\]</span>
@@ -1885,8 +1885,8 @@ Like Spearman’s rho and Kendall’s tau, an estimator based on ranks is easy t
 <span class="math display">\[\begin{equation*}
 \hat{\beta} = \frac{2}{n} \sum_{i=1}^n I\left( (R(X_{i})-\frac{n+1}{2})(R(Y_{i})-\frac{n+1}{2}) \ge 0 \right)-1 .
 \end{equation*}\]</span>
-<p>See, for example, <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, page 57 or <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, page 135, for more details.</p>
-<p>Because Blomqvist’s parameter is based on the center of the distribution, it is particularly useful when data are censored; in this case, information in extreme parts of the distribution are not always reliable. How does this affect a choice of association measures? First, recall that association measures are based on a bivariate distribution function. So, if one has knowledge of a good approximation of the distribution function, then calculation of an association measure is straightforward in principle. Second, for censored data, bivariate extensions of the univariate Kaplan-Meier distribution function estimator are available. For example, the version introduced in <span class="citation">(Dabrowska <a href="#ref-dabrowska1988kaplan">1988</a>)</span> is appealing. However, because of instances when large masses of data appear at the upper range of the data, this and other estimators of the bivariate distribution function are unreliable. This means that, summary measures of the estimated distribution function based on Spearman’s rho or Kendall’s tau can be unreliable. For this situation, Blomqvist’s beta appears to be a better choice as it focuses on the center of the distribution. <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, Chapter 14, provides additional discussion.</p>
+<p>See, for example, <span class="citation">[@joe2014dependence]</span>, page 57 or <span class="citation">[@hougaard2000analysis]</span>, page 135, for more details.</p>
+<p>Because Blomqvist’s parameter is based on the center of the distribution, it is particularly useful when data are censored; in this case, information in extreme parts of the distribution are not always reliable. How does this affect a choice of association measures? First, recall that association measures are based on a bivariate distribution function. So, if one has knowledge of a good approximation of the distribution function, then calculation of an association measure is straightforward in principle. Second, for censored data, bivariate extensions of the univariate Kaplan-Meier distribution function estimator are available. For example, the version introduced in <span class="citation">[@dabrowska1988kaplan]</span> is appealing. However, because of instances when large masses of data appear at the upper range of the data, this and other estimators of the bivariate distribution function are unreliable. This means that, summary measures of the estimated distribution function based on Spearman’s rho or Kendall’s tau can be unreliable. For this situation, Blomqvist’s beta appears to be a better choice as it focuses on the center of the distribution. <span class="citation">[@hougaard2000analysis]</span>, Chapter 14, provides additional discussion.</p>
 <p>You can obtain the Blomqvist’s beta, using the <code>betan()</code> function from the <code>copula</code> library in <code>R</code>. From below, <span class="math inline">\(\beta=0.3\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 <h5 style="text-align: center;">
 <a id="display.beta.1" href="javascript:togglecode
@@ -1981,66 +1981,6 @@ Output:
 </div>
 </div>
 </div>
-<h3>Bibliography</h3>
-<div id="refs" class="references">
-<div id="ref-bishop1975discrete">
-<p>Bishop, Yvonne M., Stephen E. Fienberg, and Paul W. Holland. 1975. <em>Discrete Multivariate Analysis: Theory and Practice</em>. Cambridge [etc.]: MIT.</p>
-</div>
-<div id="ref-blomqvist1950measure">
-<p>Blomqvist, Nils. 1950. “On a Measure of Dependence Between Two Random Variables.” <em>The Annals of Mathematical Statistic</em>, 593–600.</p>
-</div>
-<div id="ref-dabrowska1988kaplan">
-<p>Dabrowska, Dorota M. 1988. “Kaplan-Meier Estimate on the Plane.” <em>The Annals of Statistics</em>, 1475–89.</p>
-</div>
-<div id="ref-fechnerkollektivmasslehre">
-<p>Fechner, G. T. 1897. “Kollektivmasslehre.” <em>Wilhelm Englemann, Leipzig</em>.</p>
-</div>
-<div id="ref-frees1998understanding">
-<p>Frees, Edward W., and Emiliano A. Valdez. 1998. “Understanding Relationships Using Copulas.” <em>North American Actuarial Journal</em> 2 (01): 1–25.</p>
-</div>
-<div id="ref-genest1986bivariate">
-<p>Genest, Christian, and Josh Mackay. 1986. “The Joy of Copulas: Bivariate Distributions with Uniform Marginals.” <em>The American Statistician</em> 40: 280–83.</p>
-</div>
-<div id="ref-genest2007methods">
-<p>Genest, Christian, and Johanna Nešlohva. 2007. “A Primer on Copulas for Count Data.” <em>Journal of the Royal Statistical Society</em>, 475–515.</p>
-</div>
-<div id="ref-hettmansperger1984statistical">
-<p>Hettmansperger, T. P. 1984. <em>Statistical Inference Based on Ranks</em>. Wiley.</p>
-</div>
-<div id="ref-hofertelements">
-<p>Hofert, Marius, Ivan Kojadinovic, Martin Mächler, and Jun Yan. 2018. <em>Elements of Copula Modeling with R</em>. Springer.</p>
-</div>
-<div id="ref-hougaard2000analysis">
-<p>Hougaard, P. 2000. <em>Analysis of Multivariate Survival Data</em>. Springer New York.</p>
-</div>
-<div id="ref-joe2014dependence">
-<p>Joe, Harry. 2014. <em>Dependence Modeling with Copulas</em>. CRC Press.</p>
-</div>
-<div id="ref-kendall1945">
-<p>Kendall, M. G. 1945. “The Treatment of Ties in Ranking Problems.” <em>Biometrika</em> 33(3): 239–51.</p>
-</div>
-<div id="ref-kendall1938new">
-<p>Kendall, Maurice G. 1938. “A New Measure of Rank Correlation.” <em>Biometrika</em>, 81–93.</p>
-</div>
-<div id="ref-lee1988thirteen">
-<p>Lee Rodgers, J, and W. A Nicewander. 1998. “Thirteen Ways to Look at the Correlation Coeffeicient.” <em>The American Statistician</em> 42 (01): 59–66.</p>
-</div>
-<div id="ref-nelsen1997introduction">
-<p>Nelson, Roger B. 1997. <em>An Introduction to Copulas</em>. Lecture Notes in Statistics 139.</p>
-</div>
-<div id="ref-spearman1904proof">
-<p>Spearman, C. 1904. “The Proof and Measurement of Association Between Two Things.” <em>The American Journal of Psychology</em> 15 (01): 72–101.</p>
-</div>
-<div id="ref-venter2002tails">
-<p>Venter, Gary G. 2002. “Tails of Copulas.” In <em>Proceedings of the Casualty Actuarial Society</em>, 89:68–113. 171.</p>
-</div>
-<div id="ref-yule1900association">
-<p>Yule, G. Udny. 1900. “On the Association of Attributes in Statistics: With Illustrations from the Material of the Childhood Society.” <em>Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character</em>, 257–319.</p>
-</div>
-<div id="ref-yule1912methods">
-<p>Yule, G. 1912. “On the Methods of Measuring Association Between Two Attributes.” <em>Journal of the Royal Statistical Society</em>, 579–652.</p>
-</div>
-</div>
             </section>
 
           </div>
@@ -2067,7 +2007,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2077,10 +2017,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -2098,7 +2034,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

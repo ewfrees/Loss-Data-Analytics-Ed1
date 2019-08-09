@@ -278,8 +278,6 @@ $$
 \hline
   \small{\text{Variance}} & \frac{\lambda[1-(\lambda+1)e^{-\lambda}]}{(1-e^{-\lambda})^2} \\
 \hline
-  \tilde\lambda & \ln(\frac{n\hat\mu}{n_1}) \\
-\hline
   \small{\text{Probability generating function}} & \frac{e^{\lambda z}-1}{e^\lambda-1} \\
   ~~P(z) & \\
 \hline
@@ -337,8 +335,6 @@ $$
   ~~\mathrm{E}[N] & \\
 \hline
   \small{\text{Variance}} & \beta(1+\beta) \\
-\hline
-  \tilde\beta & \hat\mu-1 \\
 \hline
   \small{\text{Probability generating function}} & \frac{[1-\beta(z-1)]^{-1}-(1+\beta)^{-1}}{1-(1+\beta)^{-1}} \\
   ~~P(z) & \\
@@ -398,8 +394,6 @@ $$
 \hline
   \small{\text{Variance}} & \frac{mq[(1-q)-(1-q+mq)(1-q)^m]}{[1-(1-q)^m]^2} \\
 \hline
-  \tilde q & \frac{\hat\mu}{m} \\
-\hline
   \small{\text{Probability generating function}} & \frac{[1+q(z-1)^m]-(1-q)^m}{1-(1-q)^m} \\
   ~~P(z) & \\
 \hline
@@ -458,10 +452,6 @@ $$
 \hline
   \small{\text{Variance}} & \frac{r\beta[(1+\beta)-(1+\beta+r\beta)(1+\beta)^{-r}]}{[1-(1+\beta)^{-r}]^2} \\
 \hline
-  \tilde\beta & \frac{\hat\sigma^2}{\hat\mu}-1 \\
-\hline
-  \tilde r & \frac{\hat\mu^2}{\hat\sigma^2-\hat\mu} \\
-\hline
   \small{\text{Probability generating function}} & \frac{[1-\beta(z-1)]^{-r}-(1+\beta)^{-r}}{1-(1+\beta)^{-r}} \\
   ~~P(z) & \\
 \hline
@@ -518,8 +508,6 @@ $$
   ~~\mathrm{E}[N] & \\
 \hline
   \small{\text{Variance}} & \frac{\beta[1+\beta-\frac{\beta}{ln(1+\beta)}]}{\ln (1+\beta)} \\
-\hline
-  \tilde\beta & \frac{n\hat\mu}{n_1}-1~=~ \frac{2(\hat\mu-1)}{\hat\mu} \\
 \hline
   \small{\text{Probability generating function}} & 1-\frac{ln[1-\beta(z-1)]}{\ln (1+\beta)} \\
   ~~P(z) & \\

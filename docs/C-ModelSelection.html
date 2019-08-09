@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Model Selection and Estimation | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 4 Model Selection and Estimation | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-Severity.html">
 <link rel="next" href="C-AggLossModels.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -1045,7 +1045,7 @@ X_i &amp; \frac{x-X_i}{b} &amp; w\left(\frac{x-X_i}{b} \right) \\
 LER(d) = \frac{\mathrm{E~}(\min(X,d) )}{\mathrm{E~}(X)}
 \]</span> for a fixed deductible <span class="math inline">\(d\)</span>.</p>
 <p><strong>Example. 4.1.11. Bodily Injury Claims and Loss Elimination Ratios</strong></p>
-<p>We use a sample of 432 closed auto claims from Boston from <span class="citation">Derrig, Ostaszewski, and Rempala (<a href="#ref-derrig2001applications">2001</a>)</span>. Losses are recorded for payments due to bodily injuries in auto accidents. Losses are not subject to deductibles but are subject to various policy limits also available in the data. It turns out that only 17 out of 432 (<span class="math inline">\(\approx\)</span> 4%) were subject to policy limit and so we ignore these data for this illustration.</p>
+<p>We use a sample of 432 closed auto claims from Boston from <span class="citation">@derrig2001applications</span>. Losses are recorded for payments due to bodily injuries in auto accidents. Losses are not subject to deductibles but are subject to various policy limits also available in the data. It turns out that only 17 out of 432 (<span class="math inline">\(\approx\)</span> 4%) were subject to policy limit and so we ignore these data for this illustration.</p>
 <p>The average loss paid is 6906. Figure <a href="C-ModelSelection.html#fig:BIClaims">4.5</a> shows other aspects of the distribution. Specifically, the left-hand panel shows the empirical distribution function, the right-hand panel gives a nonparametric density plot.</p>
 <div class="figure" style="text-align: center"><span id="fig:BIClaims"></span>
 <img src="LossDataAnalytics_files/figure-html/BIClaims-1.png" alt="Bodily Injury Claims. The left-hand panel gives the empirical distribution function. The right-hand panel presents a nonparametric density plot." width="672" />
@@ -1277,7 +1277,7 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 </ul>
 <div id="iterative-model-selection" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Iterative Model Selection</h3>
-<p>In our development, we examine the data graphically, hypothesize a model structure, and compare the data to a candidate model in order to formulate an improved model. <span class="citation">Box (<a href="#ref-box1980sampling">1980</a>)</span> describes this as an <em>iterative process</em> which is shown in Figure <a href="C-ModelSelection.html#fig:Iterative">4.10</a>.</p>
+<p>In our development, we examine the data graphically, hypothesize a model structure, and compare the data to a candidate model in order to formulate an improved model. <span class="citation">@box1980sampling</span> describes this as an <em>iterative process</em> which is shown in Figure <a href="C-ModelSelection.html#fig:Iterative">4.10</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Iterative"></span>
 <img src="Figures/F5Iterative.png" alt="The iterative model specification process." width="80%" />
 <p class="caption">
@@ -1314,8 +1314,8 @@ Figure 4.10: The iterative model specification process.
 Figure 4.11: Model Validation. A data set is randomly split into two subsamples.
 </p>
 </div>
-<p>Various researchers recommend different proportions for the allocation. <span class="citation">Snee (<a href="#ref-snee1977validation">1977</a>)</span> suggests that data-splitting not be done unless the sample size is moderately large. The guidelines of <span class="citation">Picard and Berk (<a href="#ref-picard1990data">1990</a>)</span> show that the greater the number of parameters to be estimated, the greater the proportion of observations needed for the model development subsample.</p>
-<p><strong>Model Validation Statistics.</strong> Much of the literature supporting the establishment of a model validation process is based on regression and classification models that you can think of as an <em>input-output</em> problem (<span class="citation">James et al. (<a href="#ref-james2013introduction">2013</a>)</span>). That is, we have several inputs <span class="math inline">\(x_1, \ldots, x_k\)</span> that are related to an output <span class="math inline">\(y\)</span> through a function such as <span class="math display">\[y = \mathrm{g}\left(x_1, \ldots, x_k\right).\]</span> One uses the training sample to develop an estimate of <span class="math inline">\(\mathrm{g}\)</span>, say, <span class="math inline">\(\hat{\mathrm{g}}\)</span>, and then calibrate the distance from the observed outcomes to the predictions using a criterion of the form</p>
+<p>Various researchers recommend different proportions for the allocation. <span class="citation">@snee1977validation</span> suggests that data-splitting not be done unless the sample size is moderately large. The guidelines of <span class="citation">@picard1990data</span> show that the greater the number of parameters to be estimated, the greater the proportion of observations needed for the model development subsample.</p>
+<p><strong>Model Validation Statistics.</strong> Much of the literature supporting the establishment of a model validation process is based on regression and classification models that you can think of as an <em>input-output</em> problem (<span class="citation">@james2013introduction</span>). That is, we have several inputs <span class="math inline">\(x_1, \ldots, x_k\)</span> that are related to an output <span class="math inline">\(y\)</span> through a function such as <span class="math display">\[y = \mathrm{g}\left(x_1, \ldots, x_k\right).\]</span> One uses the training sample to develop an estimate of <span class="math inline">\(\mathrm{g}\)</span>, say, <span class="math inline">\(\hat{\mathrm{g}}\)</span>, and then calibrate the distance from the observed outcomes to the predictions using a criterion of the form</p>
 <span class="math display" id="eq:OutSampleCriter">\[\begin{equation}
 \sum_i \mathrm{d}(y_i,\hat{\mathrm{g}}\left(x_{i1}, \ldots, x_{ik}\right) ) .
 \tag{4.4}
@@ -1684,10 +1684,10 @@ F_n(c_j) = \frac{\text{number of observations } \le c_j}{n}.
 </div>
 <div id="right-censored-empirical-distribution-function" class="section level4">
 <h4><span class="header-section-number">4.3.2.2</span> Right-Censored Empirical Distribution Function</h4>
-<p>It can be useful to calibrate parametric estimators with nonparametric methods that do not rely on a parametric form of the distribution. The product-limit estimator due to <span class="citation">(Kaplan and Meier <a href="#ref-kaplan1958">1958</a>)</span> is a well-known estimator of the distribution function in the presence of censoring.</p>
+<p>It can be useful to calibrate parametric estimators with nonparametric methods that do not rely on a parametric form of the distribution. The product-limit estimator due to <span class="citation">[@kaplan1958]</span> is a well-known estimator of the distribution function in the presence of censoring.</p>
 <p><strong>Motivation for the Kaplan-Meier Product Limit Estimator.</strong> To explain why the product-limit works so well with censored observations, let us first return to the “usual” case without censoring. Here, the empirical distribution function <span class="math inline">\(F_n(x)\)</span> is an <em>unbiased</em> estimator of the distribution function <span class="math inline">\(F(x)\)</span>. This is because <span class="math inline">\(F_n(x)\)</span> is the average of indicator variables each of which are unbiased, that is, <span class="math inline">\(\mathrm{E~} I(X_i \le x) = \Pr(X_i \le x) = F(x)\)</span>.</p>
 <p>Now suppose the the random outcome is censored on the right by a limiting amount, say, <span class="math inline">\(C_U\)</span>, so that we record the smaller of the two, <span class="math inline">\(X^* = \min(X, C_U)\)</span>. For values of <span class="math inline">\(x\)</span> that are smaller than <span class="math inline">\(C_U\)</span>, the indicator variable still provides an unbiased estimator of the distribution function before we reach the censoring limit. That is, <span class="math inline">\(\mathrm{E~} I(X^* \le x) = F(x)\)</span> because <span class="math inline">\(I(X^* \le x) = I(X \le x)\)</span> for <span class="math inline">\(x &lt; C_U\)</span>. In the same way, <span class="math inline">\(\mathrm{E~} I(X^* &gt; x) = 1 -F(x) = S(x)\)</span>. But, for <span class="math inline">\(x&gt;C_U\)</span>, <span class="math inline">\(I(X^* \le x)\)</span> is in general not an unbiased estimator of <span class="math inline">\(F(x)\)</span>.</p>
-<p>As an alternative, consider <em>two</em> random variables that have different censoring limits. For illustration, suppose that we observe <span class="math inline">\(X_1^* = \min(X_1, 5)\)</span> and <span class="math inline">\(X_2^* = \min(X_2, 10)\)</span> where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent draws from the same distribution. For <span class="math inline">\(x \le 5\)</span>, the empirical distribution function <span class="math inline">\(F_2(x)\)</span> is an unbiased estimator of <span class="math inline">\(F(x)\)</span>. However, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the first observation cannot be used for the distribution function because of the censoring limitation. Instead, the strategy developed by <span class="citation">(Kaplan and Meier <a href="#ref-kaplan1958">1958</a>)</span> is to use <span class="math inline">\(S_2(5)\)</span> as an estimator of <span class="math inline">\(S(5)\)</span> and then to use the second observation to estimate the survival function conditional on survival to time 5, <span class="math inline">\(\Pr(X &gt; x | X &gt;5) = \frac{S(x)}{S(5)}\)</span>. Specifically, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the estimator of the survival function is</p>
+<p>As an alternative, consider <em>two</em> random variables that have different censoring limits. For illustration, suppose that we observe <span class="math inline">\(X_1^* = \min(X_1, 5)\)</span> and <span class="math inline">\(X_2^* = \min(X_2, 10)\)</span> where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent draws from the same distribution. For <span class="math inline">\(x \le 5\)</span>, the empirical distribution function <span class="math inline">\(F_2(x)\)</span> is an unbiased estimator of <span class="math inline">\(F(x)\)</span>. However, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the first observation cannot be used for the distribution function because of the censoring limitation. Instead, the strategy developed by <span class="citation">[@kaplan1958]</span> is to use <span class="math inline">\(S_2(5)\)</span> as an estimator of <span class="math inline">\(S(5)\)</span> and then to use the second observation to estimate the survival function conditional on survival to time 5, <span class="math inline">\(\Pr(X &gt; x | X &gt;5) = \frac{S(x)}{S(5)}\)</span>. Specifically, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the estimator of the survival function is</p>
 <p><span class="math display">\[
 \hat{S}(x) = S_2(5) \times I(X_2^* &gt; x ) .
 \]</span></p>
@@ -1737,7 +1737,7 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 \]</span></p>
 </div>
 <hr />
-<p><strong>Example. 4.3.6. Bodily Injury Claims.</strong> We consider again the Boston auto bodily injury claims data from <span class="citation">Derrig, Ostaszewski, and Rempala (<a href="#ref-derrig2001applications">2001</a>)</span> that was introduced in Example 4.1.11. In that example, we omitted the 17 claims that were censored by policy limits. Now, we include the full dataset and use the Kaplan-Meier product limit to estimate the survival function. This is given in Figure <a href="C-ModelSelection.html#fig:KMSurvival">4.14</a>.</p>
+<p><strong>Example. 4.3.6. Bodily Injury Claims.</strong> We consider again the Boston auto bodily injury claims data from <span class="citation">@derrig2001applications</span> that was introduced in Example 4.1.11. In that example, we omitted the 17 claims that were censored by policy limits. Now, we include the full dataset and use the Kaplan-Meier product limit to estimate the survival function. This is given in Figure <a href="C-ModelSelection.html#fig:KMSurvival">4.14</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:KMSurvival"></span>
 <img src="LossDataAnalytics_files/figure-html/KMSurvival-1.png" alt="Kaplan-Meier Estimate of the Survival Function for Bodily Injury Claims" width="672" />
 <p class="caption">
@@ -1759,10 +1759,10 @@ KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="k
 <h4><span class="header-section-number">4.3.2.3</span> Right-Censored, Left-Truncated Empirical Distribution Function</h4>
 <p>In addition to right-censoring, we now extend the framework to allow for left-truncated data. As before, for each observation <span class="math inline">\(i\)</span>, let <span class="math inline">\(u_i\)</span> be the upper censoring limit (<span class="math inline">\(=\infty\)</span> if no censoring). Further, let <span class="math inline">\(d_i\)</span> be the lower truncation limit (0 if no truncation). Thus, the recorded value (if it is greater than <span class="math inline">\(d_i\)</span>) is <span class="math inline">\(x_i\)</span> in the case of no censoring and <span class="math inline">\(u_i\)</span> if there is censoring. Let <span class="math inline">\(t_{1} &lt;\cdots&lt; t_{k}\)</span> be <span class="math inline">\(k\)</span> distinct points at which an event of interest occurs, and let <span class="math inline">\(s_j\)</span> be the number of recorded events <span class="math inline">\(x_i\)</span>’s at time point <span class="math inline">\(t_{j}\)</span>. The corresponding risk set is <span class="math display">\[R_j = \sum_{i=1}^n I(x_i \geq t_{j}) + \sum_{i=1}^n I(u_i \geq t_{j}) - \sum_{i=1}^n I(d_i \geq t_{j}).\]</span></p>
 <p>With this new definition of the risk set, the product-limit estimator of the distribution function is as in equation <a href="C-ModelSelection.html#eq:KaplanMeier">(4.6)</a>.</p>
-<p><strong>Greenwood’s Formula</strong>. <span class="citation">(Greenwood <a href="#ref-greenwood1926">1926</a>)</span> derived the formula for the estimated variance of the product-limit estimator to be</p>
+<p><strong>Greenwood’s Formula</strong>. <span class="citation">[@greenwood1926]</span> derived the formula for the estimated variance of the product-limit estimator to be</p>
 <p><span class="math display">\[\widehat{Var}(\hat{F}(x)) = (1-\hat{F}(x))^{2} \sum _{j:t_{j} \leq x} \dfrac{s_j}{R_{j}(R_{j}-s_j)}.\]</span></p>
 <p><code>R</code>‘s <code>survfit</code> method takes a survival data object and creates a new object containing the Kaplan-Meier estimate of the survival function along with confidence intervals. The Kaplan-Meier method (<code>type='kaplan-meier'</code>) is used by default to construct an estimate of the survival curve. The resulting discrete survival function has point masses at the observed event times (discharge dates) <span class="math inline">\(t_j\)</span>, where the probability of an event given survival to that duration is estimated as the number of observed events at the duration <span class="math inline">\(s_j\)</span> divided by the number of subjects exposed or ’at-risk’ just prior to the event duration <span class="math inline">\(R_j\)</span>.</p>
-<p>Two alternate types of estimation are also available for the <code>survfit</code> method. The alternative (<code>type='fh2'</code>) handles ties, in essence, by assuming that multiple events at the same duration occur in some arbitrary order. Another alternative (<code>type='fleming-harrington'</code>) uses the Nelson-Äalen (see <span class="citation">(Aalen <a href="#ref-aalen1978">1978</a>)</span>) estimate of the <strong>cumulative hazard function</strong> to obtain an estimate of the survival function. The estimated cumulative hazard <span class="math inline">\(\hat{H}(x)\)</span> starts at zero and is incremented at each observed event duration <span class="math inline">\(t_j\)</span> by the number of events <span class="math inline">\(s_j\)</span> divided by the number at risk <span class="math inline">\(R_j\)</span>. With the same notation as above, the <strong>Nelson-Äalen</strong> estimator of the distribution function is</p>
+<p>Two alternate types of estimation are also available for the <code>survfit</code> method. The alternative (<code>type='fh2'</code>) handles ties, in essence, by assuming that multiple events at the same duration occur in some arbitrary order. Another alternative (<code>type='fleming-harrington'</code>) uses the Nelson-Äalen (see <span class="citation">[@aalen1978]</span>) estimate of the <strong>cumulative hazard function</strong> to obtain an estimate of the survival function. The estimated cumulative hazard <span class="math inline">\(\hat{H}(x)\)</span> starts at zero and is incremented at each observed event duration <span class="math inline">\(t_j\)</span> by the number of events <span class="math inline">\(s_j\)</span> divided by the number at risk <span class="math inline">\(R_j\)</span>. With the same notation as above, the <strong>Nelson-Äalen</strong> estimator of the distribution function is</p>
 <p><span class="math display">\[
 \begin{aligned}
 \hat{F}_{NA}(x) &amp;=
@@ -1936,7 +1936,7 @@ d\lambda .
 \]</span> Here, we used the gamma distribution equality with the substitution <span class="math inline">\(\theta_r = 1 + 1/\theta\)</span>. As can be seen from Section <a href="C-Frequency-Modeling.html#S:negative-binomial-distribution">2.2.3.3</a>, this is a negative binomial distribution with parameter <span class="math inline">\(r = \alpha\)</span> and <span class="math inline">\(\beta = \theta\)</span>.</p>
 <hr />
 </div>
-<p>In this chapter, we use small examples that can be done by hand in order to focus on the foundations. For practical implementation, analysts rely heavily on simulation methods using modern computational methods such as Markov Chain Monte Carlo (<em>MCMC</em>) simulation. We will get an exposure to simulation techniques in Chapter <a href="C-Simulation.html#C:Simulation">6</a> but more intensive techniques such as <em>MCMC</em> requires yet more background. See <span class="citation">Hartman (<a href="#ref-hartman2016">2016</a>)</span> for an introduction to computational Bayesian methods from an actuarial perspective.</p>
+<p>In this chapter, we use small examples that can be done by hand in order to focus on the foundations. For practical implementation, analysts rely heavily on simulation methods using modern computational methods such as Markov Chain Monte Carlo (<em>MCMC</em>) simulation. We will get an exposure to simulation techniques in Chapter <a href="C-Simulation.html#C:Simulation">6</a> but more intensive techniques such as <em>MCMC</em> requires yet more background. See <span class="citation">@hartman2016</span> for an introduction to computational Bayesian methods from an actuarial perspective.</p>
 </div>
 <div id="bayesian-model" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Bayesian Model</h3>
@@ -2286,36 +2286,6 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </div>
 </div>
 </div>
-<h3>Bibliography</h3>
-<div id="refs" class="references">
-<div id="ref-aalen1978">
-<p>Aalen, Odd. 1978. “Nonparametric Inference for a Family of Counting Processes.” <em>The Annals of Statistics</em> 6 (4). Institute of Mathematical Statistics: 701–26.</p>
-</div>
-<div id="ref-box1980sampling">
-<p>Box, George EP. 1980. “Sampling and Bayes’ Inference in Scientific Modelling and Robustness.” <em>Journal of the Royal Statistical Society. Series A (General)</em>. JSTOR, 383–430.</p>
-</div>
-<div id="ref-derrig2001applications">
-<p>Derrig, Richard A, Krzysztof M Ostaszewski, and Grzegorz A Rempala. 2001. “Applications of Resampling Methods in Actuarial Practice.” In <em>Proceedings of the Casualty Actuarial Society</em>, 87:322–64. Casualty Actuarial Society.</p>
-</div>
-<div id="ref-greenwood1926">
-<p>Greenwood, Major. 1926. “The Errors of Sampling of the Survivorship Tables.” In <em>Reports on Public Health and Statistical Subjects</em>. Vol. 33. London: Her Majesty’s Stationary Office.</p>
-</div>
-<div id="ref-hartman2016">
-<p>Hartman, Brian. 2016. “Bayesian Computational Methods.” <em>Predictive Modeling Applications in Actuarial Science: Volume 2, Case Studies in Insurance</em>. Cambridge University Press.</p>
-</div>
-<div id="ref-james2013introduction">
-<p>James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2013. <em>An Introduction to Statistical Learning</em>. Vol. 112. Springer.</p>
-</div>
-<div id="ref-kaplan1958">
-<p>Kaplan, Edward L., and Paul Meier. 1958. “Nonparametric Estimation from Incomplete Observations.” <em>Journal of the American Statistical Association</em> 53 (282). Taylor &amp; Francis: 457–81.</p>
-</div>
-<div id="ref-picard1990data">
-<p>Picard, Richard R., and Kenneth N. Berk. 1990. “Data Splitting.” <em>The American Statistician</em> 44 (2). Taylor &amp; Francis: 140–47.</p>
-</div>
-<div id="ref-snee1977validation">
-<p>Snee, Ronald D. 1977. “Validation of Regression Models: Methods and Examples.” <em>Technometrics</em> 19 (4). Taylor &amp; Francis Group: 415–28.</p>
-</div>
-</div>
             </section>
 
           </div>
@@ -2342,7 +2312,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2352,10 +2322,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -2373,7 +2339,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

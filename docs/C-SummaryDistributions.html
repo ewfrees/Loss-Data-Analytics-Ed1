@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-AppC.html">
 <link rel="next" href="bibliography.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -775,13 +775,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="C:SummaryDistributions" class="section level1">
 <h1><span class="header-section-number">Chapter 18</span> Appendix D: Summary of Distributions</h1>
-<hr />
-<p><strong>This Summary is being written and is not yet complete nor edited. It is here to give you a flavor of what will be in the final version.</strong></p>
-<hr />
 <p><strong>User Notes</strong></p>
 <ul>
-<li>The <code>R</code> functions are from the package <code>actuar</code>.</li>
+<li>The <code>R</code> functions are from the packages <code>actuar</code> and <code>invgamma</code>.</li>
 <li>Tables appear when first loaded by the browser. To hide them, click on one of the distributions, e.g., <em>Poisson</em>, and then click on the <em>Hide</em> button.</li>
+<li>More information on the <code>R</code> codes is available at the <a href="https://ewfrees.github.io/LDARcode/index.html">R Codes for Loss Data Analytics</a> site.</li>
 </ul>
 <div id="discrete-distributions" class="section level2">
 <h2><span class="header-section-number">18.1</span> Discrete Distributions</h2>
@@ -1077,8 +1075,6 @@ Zero Truncated Poisson
 \hline
   \small{\text{Variance}} &amp; \frac{\lambda[1-(\lambda+1)e^{-\lambda}]}{(1-e^{-\lambda})^2} \\
 \hline
-  \tilde\lambda &amp; \ln(\frac{n\hat\mu}{n_1}) \\
-\hline
   \small{\text{Probability generating function}} &amp; \frac{e^{\lambda z}-1}{e^\lambda-1} \\
   ~~P(z) &amp; \\
 \hline
@@ -1134,8 +1130,6 @@ Zero Truncated Geometric
   ~~\mathrm{E}[N] &amp; \\
 \hline
   \small{\text{Variance}} &amp; \beta(1+\beta) \\
-\hline
-  \tilde\beta &amp; \hat\mu-1 \\
 \hline
   \small{\text{Probability generating function}} &amp; \frac{[1-\beta(z-1)]^{-1}-(1+\beta)^{-1}}{1-(1+\beta)^{-1}} \\
   ~~P(z) &amp; \\
@@ -1194,8 +1188,6 @@ Zero Truncated Binomial
 \hline
   \small{\text{Variance}} &amp; \frac{mq[(1-q)-(1-q+mq)(1-q)^m]}{[1-(1-q)^m]^2} \\
 \hline
-  \tilde q &amp; \frac{\hat\mu}{m} \\
-\hline
   \small{\text{Probability generating function}} &amp; \frac{[1+q(z-1)^m]-(1-q)^m}{1-(1-q)^m} \\
   ~~P(z) &amp; \\
 \hline
@@ -1252,10 +1244,6 @@ Zero Truncated Negative Binomial
 \hline
   \small{\text{Variance}} &amp; \frac{r\beta[(1+\beta)-(1+\beta+r\beta)(1+\beta)^{-r}]}{[1-(1+\beta)^{-r}]^2} \\
 \hline
-  \tilde\beta &amp; \frac{\hat\sigma^2}{\hat\mu}-1 \\
-\hline
-  \tilde r &amp; \frac{\hat\mu^2}{\hat\sigma^2-\hat\mu} \\
-\hline
   \small{\text{Probability generating function}} &amp; \frac{[1-\beta(z-1)]^{-r}-(1+\beta)^{-r}}{1-(1+\beta)^{-r}} \\
   ~~P(z) &amp; \\
 \hline
@@ -1311,8 +1299,6 @@ Logarithmic
   ~~\mathrm{E}[N] &amp; \\
 \hline
   \small{\text{Variance}} &amp; \frac{\beta[1+\beta-\frac{\beta}{ln(1+\beta)}]}{\ln (1+\beta)} \\
-\hline
-  \tilde\beta &amp; \frac{n\hat\mu}{n_1}-1~=~ \frac{2(\hat\mu-1)}{\hat\mu} \\
 \hline
   \small{\text{Probability generating function}} &amp; 1-\frac{ln[1-\beta(z-1)]}{\ln (1+\beta)} \\
   ~~P(z) &amp; \\
@@ -2433,25 +2419,7 @@ Generalized Beta of the Second Kind (GB2)
 \end{matrix}
 \]</span></p>
 <p><strong><code>R</code> Commands</strong></p>
-<p><span class="math display">\[
-\begin{matrix}
-\begin{array}{l|c}
-\hline
-  \text{Function Name} &amp; \text{R Command} \\
-\hline
-  \small{\text{Density function}} &amp; \text{insert text}(x=,) \\
-\hline
-  \small{\text{Distribution function}} &amp; \text{insert text}(q=,) \\
-\hline
-  \small{\text{Quantile function}} &amp; \text{insert text}(p=,) \\ 
-\hline
-  \small{\text{Random sampling function}} &amp; \text{insert text}(r=,) \\
-\hline
-\end{array}
-\end{matrix}
-\]</span></p>
-<p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># f(x) needed</span></code></pre></div>
+<p>Please see the <a href="https://ewfrees.github.io/LDARcode/index.html">R Codes for Loss Data Analytics</a> site for information about this distribution.</p>
 </div>
 <div id="other-distributions" class="section level3">
 <h3><span class="header-section-number">18.2.5</span> Other Distributions</h3>
@@ -2507,7 +2475,7 @@ mu &lt;-<span class="st"> </span><span class="dv">20</span>
 sigma &lt;-<span class="st"> </span><span class="dv">12</span>
 X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
 <span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dlognorm</span>(X,<span class="dt">mu=</span>mu,<span class="dt">sigma=</span>sigma),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-179-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
 </p>
 </div>
 <div id="odB" class="tabcontent">
@@ -2569,7 +2537,7 @@ theta &lt;-<span class="st"> </span><span class="dv">1000</span>
 X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">100</span>,<span class="dt">by=</span><span class="dv">1</span>)
 <span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvgauss</span>(X,<span class="dt">mean=</span>mu,<span class="dt">dispersion=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
      <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Gaussian Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-179-1.png" width="672" /></p>
 </div>
 </div>
 <div id="distributions-with-finite-support" class="section level3">
@@ -2641,7 +2609,7 @@ theta &lt;-<span class="st"> </span><span class="dv">1</span>
 X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">1</span>,<span class="dt">by=</span>.<span class="dv">0001</span>)
 <span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dbeta</span>(X,<span class="dt">shape1=</span>a,<span class="dt">shape2=</span>b,<span class="dt">ncp=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
      <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Beta Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
 </div>
 <div id="fsB" class="tabcontent">
 <span onclick="this.parentElement.style.display='none'" class="topright">
@@ -2701,7 +2669,7 @@ theta &lt;-<span class="st"> </span><span class="dv">1000</span>
 X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
 <span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dgenbeta</span>(X,<span class="dt">shape1=</span>a,<span class="dt">shape2=</span>b,<span class="dt">shape3=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
      <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Generalized Beta Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-182-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -2747,7 +2715,7 @@ Functions
 \hline
   \text{Inverse Pareto} &amp; \theta\tau\int^{x/(x+\theta)}_0~y^\tau(1-y)^{-1}dy+x[1-\Big(\frac{x}{x+\theta}\Big)^\tau] \\
 \hline
-  \text{Logistic} &amp; \theta\Gamma(1+\frac{1}{\gamma})\Gamma(1-\frac{1}{\gamma})\beta(1+\frac{1}{\gamma},1-\frac{1}{\gamma};\frac{(x/\theta)^\gamma}{1+(x/\theta)^\gamma})+x(1-\frac{(x/\theta)^\gamma}{1+(x/\theta)^\gamma})  \\
+  \text{Loglogistic} &amp; \theta\Gamma(1+\frac{1}{\gamma})\Gamma(1-\frac{1}{\gamma})\beta(1+\frac{1}{\gamma},1-\frac{1}{\gamma};\frac{(x/\theta)^\gamma}{1+(x/\theta)^\gamma})+x(1-\frac{(x/\theta)^\gamma}{1+(x/\theta)^\gamma})  \\
 \hline
   \text{Paralogistic} &amp; \frac{\theta\Gamma(1+\frac{1}{\alpha})\Gamma(\alpha-\frac{1}{\alpha})}{\Gamma(\alpha)}\beta(1+\frac{1}{\alpha},\alpha-\frac{1}{\alpha};1-\frac{1}{1+(x/\theta)^\alpha})+x\Big(\frac{1}{1+(x/\theta)^\alpha}\Big)^\alpha \\
 \hline
@@ -2757,9 +2725,9 @@ Functions
 \hline
   \text{Inverse Gamma} &amp; \frac{\theta\Gamma(\alpha-1)}{\Gamma(\alpha)}[1-\Gamma(\alpha-1;\frac{\theta}{x})]+x\Gamma(\alpha;\frac{\theta}{x}) \\
 \hline
-  \text{Weibull} &amp; \theta\Gamma(1+\frac{1}{\tau})\Gamma(1+\frac{1}{\tau};\Big(\frac{x}{\theta}\Big)^\tau)+x*\exp(-(x/\theta)^\tau) \\
+  \text{Weibull} &amp; \theta\Gamma(1+\frac{1}{\alpha})\Gamma(1+\frac{1}{\alpha};\Big(\frac{x}{\theta}\Big)^\alpha)+x*\exp(-(x/\theta)^\alpha) \\
 \hline
-  \text{Inverse Weibull} &amp; \theta\Gamma(1-\frac{1}{\tau})[1-\Gamma(1-\frac{1}{\tau};\Big(\frac{\theta}{x}\Big)^\tau)]+x[1-\exp(-(\theta/x)^\tau)] \\
+  \text{Inverse Weibull} &amp; \theta\Gamma(1-\frac{1}{\alpha})[1-\Gamma(1-\frac{1}{\alpha};\Big(\frac{\theta}{x}\Big)^\alpha)]+x[1-\exp(-(\theta/x)^\alpha)] \\
 \hline
   \text{Exponential} &amp; \theta(1-\exp(-(x/\theta))) \\
 \hline
@@ -2808,7 +2776,7 @@ Illustrative Graph
 \end{array}
 \end{matrix}
 \]</span></p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-183-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-182-1.png" width="672" /></p>
 </div>
 
 </div>
@@ -2839,7 +2807,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2849,10 +2817,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -2870,7 +2834,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
