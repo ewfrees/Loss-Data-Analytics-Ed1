@@ -33,7 +33,7 @@ If all policyholders in the insurance pool have identical risk profiles, the ins
 
 **Rating Factors**. In order to incorporate relevant risk characteristics of policyholders in the pricing process, insurers maintain some classification system that assigns each policyholder to one of the risk classes based on a relatively small number of risk characteristics that are deemed most relevant. These characteristics used in the classification system are called the *rating factors*, which are *a priori* variables in the sense that they are known before the contract begins (e.g., sex, health status, vehicle type, etc, are known during the underwriting). All policyholders sharing identical risk factors thus are assigned to the same risk class, and are considered homogeneous from the pricing viewpoint; the insurer consequently charge them the same premium or rate.
 
-Regarding the risk factors and premiums, the *Actuarial Standard of Practice* (ASOP No. 12) of the @ASBStandards states that the actuary should select risk characteristics that are related to expected outcomes, and that rates within a risk classification system would be considered equitable if differences in rates reflect material differences in expected cost for risk characteristics. In the process of choosing risk factors, ASOP also requires the actuary to  consider the following: relationship of risk characteristics and expected outcomes, causality, objectivity, practicality, applicable law, industry practices, and business practices. 
+Regarding the risk factors and premiums, the *Actuarial Standard of Practice* (ASOP No. 12) of the @ASBStandards states that the actuary should select risk characteristics that are related to expected outcomes, and that rates within a risk classification system would be considered equitable if differences in rates reflect material differences in expected cost for risk characteristics. In the process of choosing risk factors, ASOP also requires the actuary to  consider the following: relationship of risk characteristics and expected outcomes, causality, objectivity, practicality, applicable law, industry practices, and business practices. Technical Supplement **TS 8.B** provides additional discussion of selection of rating factors.
 
 On the quantitative side, an important task for the actuary in building any risk classification is to construct a statistical model that can determine the expected loss given various rating factors of a policyholder. The standard approach is to adopt a regression model which produces the expected loss as the output when the relevant risk factors are given as the inputs. In this chapter we learn the Poisson regression, which can be used when the loss is a count variable, as a prominent example of an insurance pricing tool.  
 
@@ -783,6 +783,12 @@ For grouped datasets, we have
 \begin{equation}
 \mathbf{ I}(\beta)=\sum^K_{k=1} \Big{\{}\sum_{i \in C_k}m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ \beta})\mathbf{ x}_i \mathbf{ x}_i^{\prime} \Big{\}}=\sum^K_{k=1} m_{(k)} \exp(\mathbf{ x}^{\prime}_{(k)} \mathbf{ \beta})\mathbf{ x}_{(k)} \mathbf{ x}_{(k)}^{\prime}.
 \end{equation}
+
+### TS `r chapnum`.B. Selecting Rating Factors {-}
+
+
+```{r child = 'Chapters/PremiumSections/RateFactorSelection.Rmd'}
+```
 
 
 
