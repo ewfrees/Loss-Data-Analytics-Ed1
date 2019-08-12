@@ -357,7 +357,7 @@ p_1&= \frac{9}{256}
 \] 
 Determine the expected value of this discrete random variable.
 
-`r HideExample('2.3.1')`
+`r HideExample('2.3.1', 'Show Example Solution')`
 
 **Solution:** Since the *pmf* satisfies the $(a,b,0)$ recurrence relation we know that the underlying distribution is one among the binomial, Poisson, and negative binomial distributions. Since the ratio of the parameters (*i.e.* $b/a$) equals $2$, we know that it is negative binomial and that $r=3$. Moreover, since for a negative binomial $p_1=r(1+\beta)^{-(r+1)}\beta$, we have 
 \[
@@ -596,8 +596,7 @@ the rapid convergence seen above is typical of the Newton's method. Hence in thi
 
 `r HideRCode('Freq.1','Show R Code')`
 
-
-``` 
+```{r, echo=ShowCode(), eval=FALSE}
 Newton<-function(x,abserr){
 mu<-mean(x);
 sigma2<-mean(x^2)-mu^2;
@@ -706,7 +705,7 @@ Consider a Poisson distribution with parameter \(\lambda=2\). Calculate \(p_k, k
 version with \((p_0^M=0.6)\).  
 
 
-`r HideExample('2.5.1')`
+`r HideExample('2.5.1', 'Show Example Solution')`
 
 **Solution.** For the Poisson distribution as a member of the (\(a,b\),0) class, we have \(a=0\) and \(b=\lambda=2\). Thus, we may use the recursion \(p_k = \lambda p_{k-1}/k= 2 p_{k-1}/k\) for each type,
 after determining starting probabilities. The calculation of probabilities for $k\leq 3$ is shown in [Table 2.2].
@@ -812,7 +811,7 @@ $$\begin{matrix}
 1. Calculate the probability that a randomly drawn person has 3 common colds in a year.
 2. Calculate the conditional probability that a person with exactly 3 common colds in a year is an adult smoker.
 
-`r HideExample('2.6.1')`
+`r HideExample('2.6.1', 'Show Example Solution')`
 
 **Solution.**  
 
@@ -858,7 +857,7 @@ It is worth mentioning that by considering mixtures of a parametric class of dis
 **Example `r chapnum`.6.2.**
 Suppose that \(N|\Lambda \sim\) Poisson\((\Lambda)\) and that \(\Lambda \sim\) gamma with mean of 1 and variance of 2. Determine the probability that \(N=1\).
 
-`r HideExample('2.6.1')`
+`r HideExample('2.6.2', 'Show Example Solution')`
 
 **Solution.** For a gamma distribution with parameters \((\alpha, \theta)\), we have that the mean is \(\alpha \theta\) and the variance is \(\alpha \theta^2\). Using these expressions we have
 \[
@@ -1101,8 +1100,7 @@ Appendix Chapter \@ref(C:AppA) gives a general introduction to maximum likelihoo
 
 `r HideRCode('Freq.2','Show R Code')`
 
-
-```
+```{r,echo=ShowCode(),eval=FALSE}
 likbinm<-function(m){ 
   # binomial likelihood maximized w.r.t. p
   prod((dbinom(x,m,mean(x)/m)))
@@ -1191,7 +1189,7 @@ dev.off();
 `r HideRCode('Freq.3','Show R Code')`
 
 
-```
+```{r,echo=ShowCode(),eval=FALSE}
 likm<-function(m){
   prod((dbinom(x,m,mean(x)/m)))
 }
