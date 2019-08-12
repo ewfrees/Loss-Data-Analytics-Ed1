@@ -360,11 +360,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Loss Data Analytics</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
 <li class="chapter" data-level="1.1" data-path="C-Intro.html"><a href="C-Intro.html#S:Intro"><i class="fa fa-check"></i><b>1.1</b> Relevance of Analytics to Insurance Activities</a><ul>
@@ -538,8 +538,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
 <li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
-<li class="chapter" data-level="7.7.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:SelectingRateFactors"><i class="fa fa-check"></i><b>7.7.2</b> TS 7.B. Selecting Rating Factors</a></li>
-<li class="chapter" data-level="7.7.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:AdverseSelection"><i class="fa fa-check"></i><b>7.7.3</b> TS 7.C. Adverse Selection</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -558,6 +556,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Further Resources and Contributors</a><ul>
 <li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>TS 8.A – Estimating Poisson Regression Models</a></li>
+<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.b.-selecting-rating-factors"><i class="fa fa-check"></i>TS 8.B. Selecting Rating Factors</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="C-Credibility.html"><a href="C-Credibility.html"><i class="fa fa-check"></i><b>9</b> Experience Rating Using Credibility Theory</a><ul>
@@ -805,7 +804,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a> will describe why the expectation is a useful baseline premium principle. Although a useful baseline, expectations do not account for all aspects of a contract; for example, expectations do not account for the uncertainty of an insurance contract. To illustrate, using only expectations a deterministic value of 0.5 is treated in the same way as a 50% loss of 1 (with 50% chance of 0 corresponding to no loss). There are important insurance situations where we wish to incorporate uncertainty into our pricing and so Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a> also summarizes alternative premium principles that do so. Note that an emphasis of this text is estimation of the entire distribution of losses so the analyst is not restricted to working only with expectations.</p>
 <p>The aggregate methods derived from the accounting equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> focus on collections of <a href="#" class="tooltip" style="color:green"><em>homogeneous risks</em><span style="font-size:8pt">Risks that have the same distribution, that is, the distributions are identical.</span></a> that are similar except for the occurrence of random losses. In statistical language that we have introduced, this is a discussion about risks that have identical distributions. When adding the assumption of independence, we summarize this by saying that the risks are <em>iid</em>. Naturally, when examining risks that insurers work with, there are many variations in the risks being insured including the features of the contracts and the people being insured. Section <a href="C-PremiumFoundations.html#S:HeterogeneousRisks">7.4</a> extends pricing considerations to <a href="#" class="tooltip" style="color:green"><em>heterogeneous</em><span style="font-size:8pt">Heterogeneous risks have different distributions. Often, we can attribute differences to varying exposures or risk factors.</span></a> collections of risks.</p>
 <p>Section <a href="C-PremiumFoundations.html#S:TrendDevelopment">7.5</a> introduces ideas of development and trending. The goal is to develop rates that are forward looking. At contract initiation the rates are known but the losses that are being insured against have not yet occurred. Just because an insurer has a bad year, this should not be reflected in rates. (However, the idea of <a href="#" class="tooltip" style="color:green"><em>experience rating</em><span style="font-size:8pt"></span></a> suggests that experience reveals hidden information about the insured and so should be incorporated in our forward thinking viewpoint. Chapter <a href="C-Credibility.html#C:Credibility">9</a> discusses this idea in more detail.).</p>
-<p>Section <a href="#S:Other"><strong>??</strong></a> introduces other ideas. For example, we might get into the idea of demand-side rates in contrast to the cost-based or supply-side nature of rating introduced. A bit of regulation might also be interesting.</p>
 </div>
 <div id="S:AggRateMaking" class="section level2">
 <h2><span class="header-section-number">7.2</span> Aggregate Ratemaking Methods</h2>
@@ -1070,7 +1068,7 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q} = \frac{0.65 + 0
 \end{matrix}
 }
 \]</span> <a href="#tab:7.3">Table 7.3</a> : Losses and Premium by Amount of Insurance and Territory</p>
-<p>In this case, the rating factors <em>AOI</em> and <em>Terr</em> produce nine cells. Note that one might combine the cell “territory one with a low amount of insurance”&quot; with another cell because there are only 7 policies in that cell. Doing so is perfectly acceptable - considerations of this sort is one of the main jobs of the analyst. An outline on selecting variables is in Section <a href="C-PremiumFoundations.html#S:SelectingRateFactors">7.7.2</a>. Alternatively, you can also think about reinforcing information about the cell (<em>Terr</em> 1, Low <em>AOI</em>) by “borrowing” information from neighboring cells (e.g., other territories with the same <em>AOI</em>, or other amounts of <em>AOI</em> within <em>Terr</em> 1). This is the subject of <strong>credibility</strong> that is introduced in Chapter <a href="C-Credibility.html#C:Credibility">9</a>.</p>
+<p>In this case, the rating factors <em>AOI</em> and <em>Terr</em> produce nine cells. Note that one might combine the cell “territory one with a low amount of insurance”&quot; with another cell because there are only 7 policies in that cell. Doing so is perfectly acceptable - considerations of this sort is one of the main jobs of the analyst. An outline on selecting variables is in Chapter <a href="C-RiskClass.html#C:RiskClass">8</a>, including Technical Supplement TS <strong>8.B</strong>. Alternatively, you can also think about reinforcing information about the cell (<em>Terr</em> 1, Low <em>AOI</em>) by “borrowing” information from neighboring cells (e.g., other territories with the same <em>AOI</em>, or other amounts of <em>AOI</em> within <em>Terr</em> 1). This is the subject of <strong>credibility</strong> that is introduced in Chapter <a href="C-Credibility.html#C:Credibility">9</a>.</p>
 <hr />
 <p>To understand the impact of rating factors, it is common to use relativities. A <a href="#" class="tooltip" style="color:green"><em>relativity</em><span style="font-size:8pt">The difference of the expected risk between a specific level of a rating factor and an accepted baseline value. This difference may be arithmetic or proportional.</span></a> is the difference of the expected risk between a specific level of a rating factor and an accepted baseline value. In this book, we work with relativities defined through ratios; it is also possible to define relativities through arithmetic differences. Thus, our relativity is defined as</p>
 <p><span class="math display">\[
@@ -1098,7 +1096,7 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q} = \frac{0.65 + 0
 <p>Thus, for example, losses and expenses per unit of exposure are 23.2% higher for risks with a high amount of insurance compared to those with a medium amount. These relativities do not control for territory.</p>
 <hr />
 <p>The introduction of rating factors allows the analyst to create cells that define small collections of risks – the goal is to choose the right combination of rating factors so that all risks within a cell may be treated the same. In statistical terminology, we want all risks within a cell to have the same distribution (subject to rescaling by an exposure variable). This is the foundation of insurance pricing. All risks within a cell have the same price yet risks from different cells may have different prices.</p>
-<p>Said another way, insurers are allowed to charge different rates for different risks; <em>discrimination</em> of risks is legal and routinely done. Nonetheless, the basis of discrimination, the choice of risk factors, is the subject of extensive debate. The actuarial community, insurance management, regulators, and consumer advocates are all active participants in this debate. In addition to statistical criteria for assessing the significance of a rating factor, analysts much pay attention to business concerns of the company (e.g., is it expensive to implement a rating factor?), social criteria (is a variable under the control of a policyholder?), legal criteria (are there regulations that prohibit the use of a rating factor such as gender?), and other societal issues. These questions are largely beyond the scope of this book that seeks to introduce analytics in the insurance industry. Nonetheless, because they are so fundamental to pricing of insurance, a brief overview is given in Technical Supplement Section <a href="C-PremiumFoundations.html#S:SelectingRateFactors">7.7.2</a>.</p>
+<p>Said another way, insurers are allowed to charge different rates for different risks; <em>discrimination</em> of risks is legal and routinely done. Nonetheless, the basis of discrimination, the choice of risk factors, is the subject of extensive debate. The actuarial community, insurance management, regulators, and consumer advocates are all active participants in this debate. In addition to statistical criteria for assessing the significance of a rating factor, analysts much pay attention to business concerns of the company (e.g., is it expensive to implement a rating factor?), social criteria (is a variable under the control of a policyholder?), legal criteria (are there regulations that prohibit the use of a rating factor such as gender?), and other societal issues. These questions are largely beyond the scope of this book that seeks to introduce analytics in the insurance industry. Nonetheless, because they are so fundamental to pricing of insurance, a brief overview is given in Technical Supplement Section <a href="#S:SelectingRateFactors"><strong>??</strong></a>.</p>
 </div>
 </div>
 <div id="S:TrendDevelopment" class="section level2">
@@ -1461,7 +1459,7 @@ Specifically, the Gini statistic can be calculated as follows. Suppose that the 
 </h5>
 <div id="toggleAreaDemo" style="display: none">
 <p>To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points <span class="math inline">\((a_1, b_1)\)</span>, <span class="math inline">\((a_2, b_2)\)</span>, and a 45 degree line. You can use basic geometry to check that the area of the figure is <span class="math inline">\(Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}\)</span>. The definition of the Gini statistic in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is simply twice the sum of the parallelograms. The second equality in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is the result of some straight-forward algebra.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-157-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-156-1.png" width="672" /></p>
 <hr />
 </div>
 <p><strong>Example – Loss Distribution: Continued.</strong> The Gini statistic for the Lorenz curve (left-hand panel of Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a>) is 34.4 percent. In contrast, the Gini statistic for concentration curve (right-hand panel) is 1.7 percent.</p>
@@ -1513,7 +1511,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,
 <span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)
 <span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-160-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-159-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
 </div>
@@ -1598,119 +1596,8 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <li>Sometimes no. Just the act of collecting them means that we may become biased in subtle ways, a type of moral hazard.</li>
 <li>Sometimes yes. Either the status is uncertain or we may wish to understand their effects and prove that we are not being biased.</li>
 </ul>
-</div>
-</div>
-<div id="S:SelectingRateFactors" class="section level3">
-<h3><span class="header-section-number">7.7.2</span> TS 7.B. Selecting Rating Factors</h3>
-<!-- ###  Rate Factor Selection {#S:LossRatio} -->
-<hr />
-<p><em>This may become a Technical Supplement for Chapter 8</em>.</p>
-<hr />
-<p>A complete discussion of rating factor selection is beyond the scope of this book. In addition to technical analyses, you have to think carefully about the type of business (personal, commercial) as well as the regulatory landscape. Nonetheless, a broad overview of some key concerns may serve to ground the reader as one thinks about the pricing of insurance contracts.</p>
-<div id="statistical-criteria" class="section level4">
-<h4><span class="header-section-number">7.7.2.1</span> Statistical Criteria</h4>
-<p>From an analyst’s perspective, the discussion starts with the statistical significance of a rating factor. If the factor is not statistically significant, then the variable is not even worthy of consideration for inclusion in a rating plan. The statistical significance is judged not only on an in-sample basis but also on how well it fares on an out-of-sample basis, as per our discussion in <strong>Section 4.2.</strong></p>
-<p>It is common in insurance applications to have many rating factors. Handling multivariate aspects can be difficult with traditional univariate methods. Analysts employ techniques such as <em>generalized linear models</em>; <em>Section 8.4</em> provides references that introduce you to this topic from statistical and insurance perspectives.</p>
-<p>Rating factors are introduced are use to create cells that contain similar risks. A rating group should be large enough to measure costs with sufficient accuracy. There is an inherent trade-off between theoretical accuracy and homogeneity</p>
-<p>As an example, most insurers charge the same automobile insurance premiums for drivers between the ages of 30 and 50, not varying the premium by age. Presumably costs do not vary much by age, or cost variances are due to other identifiable factors.</p>
-</div>
-<div id="operational-criteria" class="section level4">
-<h4><span class="header-section-number">7.7.2.2</span> Operational Criteria</h4>
-<p>From a business perspective, statistical criteria only provide a starting point for discussions of potential inclusion of rating factors. Inclusion of a rating factor must also induce economically meaningful results. From an insured’s perspective, if differentiation by a factor produces little change in a rate then it is not worth including. From an insurer’s perspective, the inclusion of a factor should help segment the marketplace in a way that helps attract the business that they seek. For example, we introduce the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">The Gini index is twice the area between a Lorenz curve and a 45 degree line.</span></a> in Section <a href="C-PremiumFoundations.html#S:GiniStatistic">7.6</a> as one metric that insurers use to describe the financial impact of a rating variable.</p>
-<p>Rating factors should also be objective, inexpensive to administer, and verifiable. For example, automobile insurance underwriters often talk of “maturity” and “responsibility” as important criteria for youthful drivers. Yet, these are difficult to define objectively and to apply consistently. As another example, in automobile it has long been known that amount of miles (or kilometers) driven is an excellent rating factor. However, insurers have been reluctant to adopt this factor because it is subject to abuse. Historically, driving mileage has not been used because of the difficulty in verifying this variable (it is far too easy to alter the car’s odometer to change reported mileage). Going forward, modern day drivers and cars are equipped with global positioning devices and other equipment that allow insurers to use distance driven as a rating factor because it can be verified.</p>
-</div>
-<div id="rating-factors-from-the-perspective-of-a-consumer" class="section level4">
-<h4><span class="header-section-number">7.7.2.3</span> Rating Factors from the Perspective of a Consumer</h4>
-<p>Insurance companies sell insurance products to a variety of consumers; consequently, companies are affected by public perception. On the one hand, free market competition dictates rating factors that insurers use, as is common in commercial insurance. On the other hand, insurance may be required by law. This is common in personal insurance such as third party automobile liability and homeowners. In these instances, the mandatory and de facto mandatory purchase of insurance may mean that free market competition is insufficient to protect policyholders. Here, the following items affect the social acceptability of using a particular risk characteristic as a rating variable:</p>
-<ul>
-<li>Affordability - introduction of some variables may be mitigated by resulting high costs of insurance.</li>
-<li>Causality - other things being equal, a rating variable is easier to justify if there is a “causal” relationship with losses. A good example is the effects of smoking in life insurance. For many years, this factor was viewed with suspicion by the industry. However, over time, scientific evidence provided overwhelming evidence as this an important predictor of mortality.</li>
-<li>Controllability - A controllable variable is one that is under the control of the insured, e.g., installing burglar alarms. The use of controllable rating variables encourages accident prevention.</li>
-<li>Privacy concerns - people are reluctant to disclose personal information. In today’s world with increasing emphasis on social media and the availability of personal information, consumer advocates are concerned that the benefits of big data skew heavily in insurers’ favor. They reason that insureds do not have equivalent new tools to compare quality of coverage/policies and performance of insurance companies.</li>
-</ul>
-<p><strong>Example: Youthful Drivers.</strong> In some cases, a particular risk characteristic may identify a small group of insureds whose risk level is extremely high, and if used as a rating variable, the resulting premium may be unaffordable for that high-risk class. To the extent that this occurs, companies may wish to or be required by regulators to combine classes and introduce subsidies. For example, 16-year-old drivers are generally higher risk than 17-year-old drivers. Some companies have chosen to use the same rates for 16- and 17-year-old drivers to minimize the affordability issues that arise when a family adds a 16-year-old to the auto policy.</p>
-</div>
-<div id="societal-effects-of-rating-factors" class="section level4">
-<h4><span class="header-section-number">7.7.2.4</span> Societal Effects of Rating Factors</h4>
-<p>With public discussions of rating factors, it is also important to think about the societal effects of classification.</p>
-<p>For example, does a rating variable encourage “good” behavior? As an example, we return to the use of distance driven as a rating factor. Many people advocate for including this variable as a factor. The motivation is that if insurance, like fuel, is priced based on distance driven, this will induce consumers to reduce the amount driven, thereby benefitting society.</p>
-<p>One can consider other aspects of societal effects of classification, see, for example, <span class="citation">Niehaus and Harrington (<a href="#ref-niehaus2003risk">2003</a>)</span>:</p>
-<ul>
-<li>Re-distributive Effects - provide a cross-subsidy from e.g., high risks to low risks</li>
-<li>Classification Costs - Money spent by society, insurers, to classify people appropriately.</li>
-</ul>
-</div>
-<div id="legal-criteria" class="section level4">
-<h4><span class="header-section-number">7.7.2.5</span> Legal Criteria</h4>
-<p>For example, some states have statutes prohibiting the use of gender in rating insurance while others permit it as a rating variable. As a result, an insurer writing in multiple states may include gender as a rating variable in those states where it is permitted, but not include it in a state that prohibits its use for rating. See the discussion in Section <a href="C-PremiumFoundations.html#S:RateRegulation">7.7.1</a>.</p>
-<p>If allowed by law, the company may continue to charge the average rate but utilize the characteristic to identify, attract, and select the lower-risk insureds that exist in the insured population; this is called <em>skimming the cream.</em></p>
-</div>
-</div>
-<div id="S:AdverseSelection" class="section level3">
-<h3><span class="header-section-number">7.7.3</span> TS 7.C. Adverse Selection</h3>
-<!-- ###  AdverseSelection {#S:LossRatio} -->
-<hr />
-<p><em>This section might be deleted as it overlaps with the presentation in Section 8.1. It is here as a placeholder.</em></p>
-<hr />
-<p><strong>The Importance of Charging Equitable Rates</strong></p>
-<p>For a single period, it is important that a company charge premiums that in the aggregate are sufficient to pay claims, expenses and meet profit goals. For a sustainable business in a competitive environment, the company must also price insurance on an equitable basis.</p>
-<p>In this context, <em>equitable</em> does not mean charging all policyholders the same but instead refers to charging each insured a premium related to expected losses. To illustrate, consider the following example from Werner and Modlin (2010).</p>
-<p><strong>Example: Adverse Selection</strong></p>
-<ul>
-<li>The average loss ( L ) and LAE ( EL ) is $180. There are no underwriting expenses or profit, so the average total cost is $180, and rates are set accordingly.</li>
-<li>The insured population consists of 50,000 high-risk insureds (Level H) and 50,000 low-risk insureds (Level L).</li>
-<li>The insurance market consists of two companies (Simple Company and Refined Company) that each currently insure 25,000 of each class of risk.</li>
-<li>H risks have a cost of $230, and L risks have a cost of $130.</li>
-<li>Simple Company charges H and L risks the same rate, $180. Refined Company implements a rating variable to vary the rates according to the cost and, therefore, charges H and L risks $230 and $130, respectively.</li>
-<li>1 out of every 10 insureds shops at renewal and bases the purchasing decision on price.</li>
-</ul>
-<p>Period 1 Profit and Losses for Two Competing Firms <span class="math display">\[
-\small{
-\begin{matrix}
-\begin{array}{lc|ccccccc}
-\hline
-Company &amp; Risk &amp; Number &amp; Cost       &amp; Total Cost &amp; Premium  &amp; Total Premium  &amp; Total  \\
-        &amp;      &amp;        &amp; Per Number &amp; (millions) &amp;  Per Number &amp; (millions) &amp;Excess \\ \hline
-Simple &amp; H     &amp; 25,000 &amp; 230        &amp;  5.75    &amp;  180    &amp;   4.50 &amp; -1.25 \\
-       &amp; L     &amp; 25,000 &amp; 130        &amp;   3.25   &amp;  180    &amp;   4.50 &amp;  1.25\\
-\hline
-Refined &amp; H     &amp; 25,000 &amp; 230        &amp;  5.75    &amp;  230    &amp;   5.75 &amp; 0 \\
-        &amp; L     &amp; 25,000 &amp; 130        &amp;   3.25   &amp;  180    &amp;   3.25 &amp;  0\\
- \hline
-\end{array}
-\end{matrix}
-}
-\]</span></p>
-<p>At renewal, 1 out of 10 insureds shops and makes the purchase decision based on price. For the Simple company, all 25,000 H customers renew but 2,250 L customers switch. For the Refined Company, all 25,000 L customers renew but 2,250 H customers switch. This results in the following distribution at the end of the second policy year:</p>
-<p>Period 2 Profit and Losses for Two Competing Firms <span class="math display">\[
-\small{
-\begin{matrix}
-\begin{array}{lc|ccccccc}
-\hline
-Company &amp; Risk &amp; Number &amp; Cost       &amp; Total Cost &amp; Premium  &amp; Total Premium  &amp; Total  \\
-        &amp;      &amp;        &amp; Per Number &amp; (millions) &amp;  Per Number &amp; (millions) &amp;Excess \\ \hline
-Simple &amp; H     &amp; 27,500 &amp; 230        &amp;  6.325    &amp;  180    &amp;   4.95 &amp; -1.375 \\
-       &amp; L     &amp; 22,500 &amp; 130        &amp;  2.925  &amp;  180    &amp;   4.05 &amp;  1.125\\
-\hline
-Refined &amp; H     &amp; 22,500 &amp; 230        &amp;  5.175    &amp;  230    &amp;   5.175 &amp; 0 \\
-        &amp; L     &amp; 27,500 &amp; 130        &amp;   3.575   &amp;  180    &amp;   3.575 &amp;  0\\
- \hline
-\end{array}
-\end{matrix}
-}
-\]</span></p>
-<p>In this world of no contingencies, the Refined company breaks even for each risk class and thus on an overall basis. In contrast, the Simple company has lost $250,000 in period 2 or may have raised rates by $5, from $180 to $185, to break even. This cycle will continue, with high risks moving from the refined company to the simple company and low risks moving in the opposite direction. Because Simple company continues to take on high risks and lose low risks, either they lose more and more money every year or charge higher and higher premiums (or both). It sometimes known as a “death spiral”.</p>
-<p>From the perspective of managers of the Simple company, insureds are displaying <em>adverse selection</em> in their choice of insurers.</p>
-<hr />
-<p>When a company identifies a characteristic that differentiates risk that other companies are not using, the company has two options for making use of this information:</p>
-<ol style="list-style-type: decimal">
-<li><p>Implement a new rating variable.</p></li>
-<li><p>Use the characteristic for purposes outside of ratemaking (e.g., for risk selection, marketing, agency management).</p></li>
-</ol>
-<p><strong>Example: Motorcycle Insurance.</strong> Originally, motorcycle insurers used very simple rating algorithms that did not include any variation based on the age of the operator. The first companies that recognized that the age of the operator is an important predictor of risk implemented higher rates for youthful operators. In order to keep their overall premium revenue neutral, they lowered rates for non-youthful operators. By doing this, the companies were able to attract a large portion of the profitable adult risks from their competitors. Furthermore, those youthful operators who chose to insure with them were written profitably.</p>
-<hr />
-<p>If allowed by law, the company may continue to charge the average rate but utilize the characteristic to identify, attract, and select the lower-risk insureds that exist in the insured population; this is called </p>
 
+</div>
 </div>
 </div>
 </div>
