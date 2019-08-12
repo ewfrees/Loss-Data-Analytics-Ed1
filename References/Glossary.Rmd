@@ -12,9 +12,9 @@ Glossfunction <- function(term){
   ifelse(length(temp2) == 0, return(''), return(Gloss_data[temp2[[1]],2]))
 }
 
-Gloss <- function(term){
-  return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
-}
+#Gloss <- function(term){
+#  return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
+#}
 
 ```
 
@@ -34,11 +34,12 @@ numAnimation3 = 100   # Section 6.5.2 Gibbs
 B1 <- '<h5 style="text-align: center;"><a id="displayExample.'
 B2 <- ' href="javascript:toggleEX(\'toggleExample.'
 B3 <- '\',\'displayExample.'
-B4 <- '\');"><i><strong>Show Example Solution</strong></i></a> </h5><div id="toggleExample.'
+B4a <- '\');"><i><strong>'
+B4b <- '</strong></i></a> </h5><div id="toggleExample.'
 B5 <- '" style="display: none">'
 
-HideExample <- function(arg){
-  return(paste(B1,arg,'"',B2,arg,B3,arg,B4,arg,B5, sep=""))
+HideExample <- function(arg1,arg2){
+  return(paste(B1,arg1,'"',B2,arg1,B3,arg1,B4a,arg2,B4b,arg1,B5, sep=""))
 } 
 
 C1 <- '<h5 style="text-align: center;"><a id="displayCode.'
@@ -51,5 +52,22 @@ C5 <- '" style="display: none">'
 HideRCode <- function(arg1,arg2){
   return(paste(C1,arg1,'"',C2,arg1,C3,arg1,C4a,arg2,C4b,arg1,C5, sep=""))
 }
+
+# to display R code
+ShowCode <- function() {
+  return(TRUE)
+}
+
+D1 <- '<h5 style="text-align: center;"><a id="displayTheory.'
+D2 <- ' href="javascript:toggleTheory(\'toggleTheory.'
+D3 <- '\',\'displayTheory.'
+D4a<- '\');"><i><strong>'
+D4b<- '</strong></i></a> </h5><div id="toggleTheory.'
+D5 <- '" style="display: none">'
+
+HideProofTheory <- function(arg1,arg2){
+  return(paste(D1,arg1,'"',D2,arg1,C3,arg1,D4a,arg2,D4b,arg1,D5, sep=""))
+}
+
 ```
 
