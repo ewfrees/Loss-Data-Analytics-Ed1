@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -795,8 +795,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>estimate the parameters of that distribution, and then</li>
 <li>use the distribution with the estimated parameters to calculate the desired summary measure.</li>
 </ol>
-<p>This is the <strong>parametric</strong> approach. Another strategy is to estimate the desired summary measure directly from the observations <em>without</em> reference to a parametric model. Not surprisingly, this is known as the <a href="#" class="tooltip" style="color:green"><strong>nonparametric</strong><span style="font-size:8pt"> An approach to inference that does not rely on references to a parametric model.</span></a> approach.</p>
-<p>Let us start by considering the most basic type of sampling scheme and assume that observations are realizations from a set of random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> that are <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt"> identically and independently distributed</span></a> draws from an unknown population distribution <span class="math inline">\(F(\cdot)\)</span>. An equivalent way of saying this is that <span class="math inline">\(X_1, \ldots, X_n\)</span>, is a <em>random sample</em> (with replacement) from <span class="math inline">\(F(\cdot)\)</span>. To see how this works, we now describe nonparametric estimators of many important measures that summarize a distribution.</p>
+<p>This is the <strong>parametric</strong> approach. Another strategy is to estimate the desired summary measure directly from the observations <em>without</em> reference to a parametric model. Not surprisingly, this is known as the <a href="#" class="tooltip" style="color:green"><em>nonparametric</em><span style="font-size:8pt">An approach to inference that does not rely on references to a parametric model.</span></a> approach.</p>
+<p>Let us start by considering the most basic type of sampling scheme and assume that observations are realizations from a set of random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> that are <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Identically and independently distributed.</span></a> draws from an unknown population distribution <span class="math inline">\(F(\cdot)\)</span>. An equivalent way of saying this is that <span class="math inline">\(X_1, \ldots, X_n\)</span>, is a <em>random sample</em> (with replacement) from <span class="math inline">\(F(\cdot)\)</span>. To see how this works, we now describe nonparametric estimators of many important measures that summarize a distribution.</p>
 <div id="S:MS:MomentEstimator" class="section level4">
 <h4><span class="header-section-number">4.1.1.1</span> Moment Estimators</h4>
 <p>We learned how to define moments in Section <a href="C-Frequency-Modeling.html#S:generating-functions">2.2.2</a> for frequency and Section <a href="C-Severity.html#S:Chap3Moments">3.1.1</a> for severity. In particular, the <span class="math inline">\(k\)</span>-th moment, <span class="math inline">\(\mathrm{E~}[X^k] = \mu^{\prime}_k\)</span>, summarizes many aspects of the distribution for different choices of <em>k</em>. Here, <span class="math inline">\(\mu^{\prime}_k\)</span> is sometimes called the <em>k</em>th <em>population</em> moment to distinguish it from the <em>k</em>th sample moment, <span class="math display">\[
@@ -833,9 +833,9 @@ X_i&amp; 10 &amp;15 &amp;15 &amp;15 &amp;20 &amp;23 &amp;23 &amp;23 &amp;23 &amp
 }
 \]</span></p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.1" href="javascript:toggleEX('toggleExampleSelect.1.1','displayTextExampleSelect.1.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.1" href="javascript:toggleEX('toggleExample.4.1.1','displayExample.4.1.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.1" style="display: none">
+<div id="toggleExample.4.1.1" style="display: none">
 <p>You should check that the sample mean is <span class="math inline">\(\bar{X} = 19.7\)</span> and that the sample variance is <span class="math inline">\(s^2 =34.45556\)</span>. The corresponding empirical distribution function is</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -859,12 +859,12 @@ Figure 4.1: Empirical Distribution Function of a Toy Example
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="displayTextToy.4f" href="javascript:togglecode('toggleToy','displayTextToy.4f');"><i><strong>Show R Code</strong></i></a>
+<a id="displayCode.Toy.4f" href="javascript:togglecode('toggleCode.Toy.4f','displayCode.Toy.4f');"><i><strong>Show R Code</strong></i></a>
 </h5>
-<div id="toggleToy" style="display: none">
-<pre><code>(xExample &lt;- c(10,rep(15,3),20,rep(23,4),30))
-PercentilesxExample &lt;- ecdf(xExample)
-plot(PercentilesxExample, main=&quot;&quot;,xlab=&quot;x&quot;)</code></pre>
+<div id="toggleCode.Toy.4f" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(xExample &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">15</span>,<span class="dv">3</span>),<span class="dv">20</span>,<span class="kw">rep</span>(<span class="dv">23</span>,<span class="dv">4</span>),<span class="dv">30</span>))
+PercentilesxExample &lt;-<span class="st"> </span><span class="kw">ecdf</span>(xExample)
+<span class="kw">plot</span>(PercentilesxExample, <span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>)</code></pre></div>
 </div>
 </div>
 <hr />
@@ -896,9 +896,9 @@ Figure 4.3: Three Quantile Cases
 <hr />
 <p><strong>Example 4.1.2. Toy Data Set: Continued.</strong> Determine quantiles corresponding to the 20th, 50th, and 95th percentiles.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.2" href="javascript:toggleEX('toggleExampleSelect.1.2','displayTextExampleSelect.1.2');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.2" href="javascript:toggleEX('toggleExample.4.1.2','displayExample.4.1.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.2" style="display: none">
+<div id="toggleExample.4.1.2" style="display: none">
 <p><strong>Solution</strong>. Consider Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a>. The case of <span class="math inline">\(q=0.20\)</span> corresponds to the middle panel, so the 20th percentile is 15. The case of <span class="math inline">\(q=0.50\)</span> corresponds to the right panel, so the median is any number between 20 and 23 inclusive. Many software packages use the average 21.5 (e.g. <code>R</code>, as seen below). For the 95th percentile, the solution is 30. We can see from the graph that 30 also corresponds to the 99th and the 99.99th percentiles.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(xExample, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>), <span class="dt">type=</span><span class="dv">6</span>)</code></pre></div>
 <pre><code>##  20%  50%  95% 
@@ -910,9 +910,9 @@ Figure 4.3: Three Quantile Cases
 \]</span> where <span class="math inline">\(j=\lfloor(n+1)q\rfloor\)</span>, <span class="math inline">\(h=(n+1)q-j\)</span>, and <span class="math inline">\(X_{(1)}, \ldots, X_{(n)}\)</span> are the ordered values (known as the <em>order statistics</em>) corresponding to <span class="math inline">\(X_1, \ldots, X_n\)</span>. Note that <span class="math inline">\(\hat{\pi}_q\)</span> is simply a linear interpolation between <span class="math inline">\(X_{(j)}\)</span> and <span class="math inline">\(X_{(j+1)}\)</span>.</p>
 <p><strong>Example 4.1.3. Toy Data Set: Continued.</strong> Determine the 50th and 20th smoothed percentiles.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.3" href="javascript:toggleEX('toggleExampleSelect.1.3','displayTextExampleSelect.1.3');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.3" href="javascript:toggleEX('toggleExample.4.1.3','displayExample.4.1.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.3" style="display: none">
+<div id="toggleExample.4.1.3" style="display: none">
 <p><strong>Solution</strong> Take <span class="math inline">\(n=10\)</span> and <span class="math inline">\(q=0.5\)</span>. Then, <span class="math inline">\(j=\lfloor(11)0.5 \rfloor= \lfloor5.5 \rfloor=5\)</span> and <span class="math inline">\(h=(11)(0.5)-5=0.5\)</span>. Then the 0.5-th smoothed empirical quantile is <span class="math display">\[\hat{\pi}_{0.5} = (1-0.5) X_{(5)} + (0.5) X_{(6)} = 0.5 (20) + (0.5)(23) = 21.5.\]</span> Now take <span class="math inline">\(n=10\)</span> and <span class="math inline">\(q=0.2\)</span>. In this case, <span class="math inline">\(j=\lfloor(11)0.2\rfloor=\lfloor 2.2 \rfloor=2\)</span> and <span class="math inline">\(h=(11)(0.2)-2=0.2\)</span>. Then the 0.2-th smoothed empirical quantile is <span class="math display">\[\hat{\pi}_{0.2} = (1-0.2) X_{(2)} + (0.2) X_{(3)} = 0.2 (15) + (0.8)(15) = 15.\]</span></p>
 </div>
 <hr />
@@ -928,11 +928,11 @@ Figure 4.3: Three Quantile Cases
   \tag{4.2}
 \end{equation}\]</span>
 <h5 style="text-align: center;">
-<a id="displayTheory.1" href="javascript:toggleTheory('Theorykerneldensity','displayTheory.1');"><i><strong>Show A Snippet of Theory</strong></i></a>
+<a id="displayTheory.kernel.1" href="javascript:toggleTheory('toggleTheory.kernel.1','displayCode.kernel.1');"><i><strong>Show A Snippet of Theory</strong></i></a>
 </h5>
-<div id="Theorykerneldensity" style="display: none">
+<div id="toggleTheory.kernel.1" style="display: none">
 <hr />
-<p>The idea is that the estimator <span class="math inline">\(f_n(x)\)</span> in equation <a href="C-ModelSelection.html#eq:KDF">(4.2)</a> is the average over <span class="math inline">\(n\)</span> <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt"> identically and independently distributed</span></a> realizations of a random variable with mean</p>
+<p>The idea is that the estimator <span class="math inline">\(f_n(x)\)</span> in equation <a href="C-ModelSelection.html#eq:KDF">(4.2)</a> is the average over <span class="math inline">\(n\)</span> <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Identically and independently distributed.</span></a> realizations of a random variable with mean</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathrm{E~ } \frac{1}{2b} I(x-b &lt; X \le x + b) &amp;=  \frac{1}{2b}\left(F(x+b)-F(x-b)\right) \\
@@ -944,7 +944,7 @@ Figure 4.3: Three Quantile Cases
 <p>as <span class="math inline">\(b\rightarrow 0\)</span>. That is, <span class="math inline">\(f_n(x)\)</span> is an asymptotically unbiased estimator of <span class="math inline">\(f(x)\)</span> (its expectation approaches the true value as sample size increases to infinity). This development assumes some smoothness of <span class="math inline">\(F(\cdot)\)</span>, in particular, twice differentiability at <span class="math inline">\(x\)</span>, but makes no assumptions on the form of the distribution function <span class="math inline">\(F\)</span>. Because of this, the density estimator <span class="math inline">\(f_n\)</span> is said to be <em>nonparametric</em>.</p>
 <hr />
 </div>
-<p>More generally, define the <strong>kernel density estimator</strong> of the <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt"> probability density function</span></a> at <em>x</em> as</p>
+<p>More generally, define the <strong>kernel density estimator</strong> of the <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">probability density function</span></a> at <em>x</em> as</p>
 <span class="math display" id="eq:kernelDens">\[\begin{equation} 
   f_n(x) = \frac{1}{nb} \sum_{i=1}^n w\left(\frac{x-X_i}{b}\right) ,
   \tag{4.3}
@@ -977,16 +977,16 @@ Figure 4.4: Histogram of Logarithmic Property Claims with Superimposed Kernel De
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="displaykpdf" href="javascript:togglecode('togglekpdf','displaykpdf');"><i><strong>Show R Code</strong></i></a>
+<a id="displayCode.kpdf" href="javascript:togglecode('toggleCode.kpdf','displayCode.kpdf');"><i><strong>Show R Code</strong></i></a>
 </h5>
-<div id="togglekpdf" style="display: none">
-<pre><code>#Density Comparison
-hist(log(ClaimData$Claim), main=&quot;&quot;, ylim=c(0,.35),xlab=&quot;Log Expenditures&quot;, freq=FALSE, col=&quot;lightgray&quot;)
-lines(density(log(ClaimData$Claim)), col=&quot;blue&quot;,lwd=2.5)
-lines(density(log(ClaimData$Claim), bw=1), col=&quot;green&quot;)
-lines(density(log(ClaimData$Claim), bw=.1), col=&quot;red&quot;, lty=3)
-legend(&quot;topright&quot;, c(&quot;b=0.3255 (default)&quot;, &quot;b=0.1&quot;, &quot;b=1.0&quot;), lty=c(1,3,1),
-            lwd=c(2.5,1,1), col=c(&quot;blue&quot;, &quot;red&quot;, &quot;green&quot;), cex=1)</code></pre>
+<div id="toggleCode.kpdf" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Density Comparison</span>
+<span class="kw">hist</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">35</span>),<span class="dt">xlab=</span><span class="st">&quot;Log Expenditures&quot;</span>, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>)
+<span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim)), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="fl">2.5</span>)
+<span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span><span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)
+<span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span>.<span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;b=0.3255 (default)&quot;</span>, <span class="st">&quot;b=0.1&quot;</span>, <span class="st">&quot;b=1.0&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>),
+            <span class="dt">lwd=</span><span class="kw">c</span>(<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">cex=</span><span class="dv">1</span>)</code></pre></div>
 </div>
 <hr />
 <p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as</p>
@@ -1014,9 +1014,9 @@ W(y) =
 \]</span></p>
 <p>Using a triangular kernel with bandwith <span class="math inline">\(2\)</span>, calculate the density function estimate at 2.5.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.5" href="javascript:toggleEX('toggleExampleSelect.1.5','displayTextExampleSelect.1.5');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.5" href="javascript:toggleEX('toggleExample.4.1.5','displayExample.4.1.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.5" style="display: none">
+<div id="toggleExample.4.1.5" style="display: none">
 <p><strong>Solution.</strong> For the kernel density estimate, we have <span class="math display">\[f_n(x) = \frac{1}{nb} \sum_{i=1}^n w\left(\frac{x-X_i}{b}\right),\]</span> where <span class="math inline">\(n=5\)</span>, <span class="math inline">\(b=2\)</span>, and <span class="math inline">\(x=2.5\)</span>. For the triangular kernel, <span class="math inline">\(w(x) = (1-|x|)\times I(|x| \le 1)\)</span>. Thus,</p>
 <p><span class="math display">\[
 \begin{array}{c|c|c}
@@ -1095,12 +1095,12 @@ Figure 4.9: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. T
 </div>
 <hr />
 <p><strong>Example 4.1.6. Actuarial Exam Question.</strong> The graph below shows a <span class="math inline">\(pp\)</span> plot of a fitted distribution compared to a sample.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-26-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-40-1.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>Comment on the two distributions with respect to left tail, right tail, and median probabilities.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.6" href="javascript:toggleEX('toggleExampleSelect.1.6','displayTextExampleSelect.1.6');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.6" href="javascript:toggleEX('toggleExample.4.1.6','displayExample.4.1.6');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.6" style="display: none">
+<div id="toggleExample.4.1.6" style="display: none">
 <p><strong>Solution.</strong> The tail of the fitted distribution is too thick on the left, too thin on the right, and the fitted distribution has less probability around the median than the sample. To see this, recall that the <span class="math inline">\(pp\)</span> plot graphs the cumulative distribution of two distributions on its axes (empirical on the x-axis and fitted on the y-axis in this case). For small values of <span class="math inline">\(x\)</span>, the fitted model assigns greater probability to being below that value than occurred in the sample (i.e. <span class="math inline">\(F(x) &gt; F_n(x)\)</span>). This indicates that the model has a heavier left tail than the data. For large values of <span class="math inline">\(x\)</span>, the model again assigns greater probability to being below that value and thus less probability to being above that value (i.e. <span class="math inline">\(S(x) &lt; S_n(x)\)</span>. This indicates that the model has a lighter right tail than the data. In addition, as we go from 0.4 to 0.6 on the horizontal axis (thus looking at the middle 20% of the data), the <span class="math inline">\(pp\)</span> plot increases from about 0.3 to 0.4. This indicates that the model puts only about 10% of the probability in this range.</p>
 </div>
 <hr />
@@ -1137,9 +1137,9 @@ Figure 4.9: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. T
 \]</span></p>
 <p>Compare the empirical claims distribution to an exponential distribution with mean <span class="math inline">\(100\)</span> by calculating the value of the Kolmogorov-Smirnov test statistic.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.7" href="javascript:toggleEX('toggleExampleSelect.1.7','displayTextExampleSelect.1.7');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.7" href="javascript:toggleEX('toggleExample.4.1.7','displayExample.4.1.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.7" style="display: none">
+<div id="toggleExample.4.1.7" style="display: none">
 <p><strong>Solution.</strong> For an exponential distribution with mean <span class="math inline">\(100\)</span>, the cumulative distribution function is <span class="math inline">\(F(x)=1-e^{-x/100}\)</span>. Thus,</p>
 <p><span class="math display">\[
 \begin{array}{ccccc}
@@ -1171,9 +1171,9 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 \text{and} \ \ \ \
  m_2 = \frac{1}{n} \sum_{i=1}^n X_i^2 = 136154.6 .\]</span> Fit the parameters of the gamma and Pareto distributions using the method of moments.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.8" href="javascript:toggleEX('toggleExampleSelect.1.8','displayTextExampleSelect.1.8');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.8" href="javascript:toggleEX('toggleExample.4.1.8','displayExample.4.1.8');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.8" style="display: none">
+<div id="toggleExample.4.1.8" style="display: none">
 <p><strong>Solution.</strong> To fit a gamma distribution, we have <span class="math inline">\(\mu_1 = \alpha \theta\)</span> and <span class="math inline">\(\mu_2^{\prime} = \alpha(\alpha+1) \theta^2\)</span>. Equating the two yields the method of moments estimators, easy algebra shows that</p>
 <p><span class="math display">\[\alpha = \frac{\mu_1^2}{\mu_2^{\prime}-\mu_1^2}  \ \ \ \text{and} \ \ \  \theta = \frac{\mu_2^{\prime}-\mu_1^2}{\mu_1}.\]</span></p>
 <p>Thus, the method of moment estimators are</p>
@@ -1208,9 +1208,9 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 <p><span class="math display">\[F^{-1}(q) = \theta \left( (1-q)^{-1/\alpha} -1 \right).\]</span> for a fraction <span class="math inline">\(q\)</span>, <span class="math inline">\(0&lt;q&lt;1\)</span>.</p>
 <p>Determine estimates of the Pareto distribution parameters using the 25th and 95th empirical quantiles.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.9" href="javascript:toggleEX('toggleExampleSelect.1.9','displayTextExampleSelect.1.9');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.9" href="javascript:toggleEX('toggleExample.4.1.9','displayExample.4.1.9');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.9" style="display: none">
+<div id="toggleExample.4.1.9" style="display: none">
 <p><strong>Solution.</strong></p>
 <p>The 25th percentile (the first quartile) turns out to be <span class="math inline">\(0.78853\)</span> and the 95th percentile is <span class="math inline">\(50.98293\)</span> (both in thousands of dollars). With two equations <span class="math display">\[0.78853 = \theta \left( 1- (1-.25)^{-1/\alpha} \right) \ \ \ \ \text{and} \ \ \ \ 50.98293 = \theta \left( 1- (1-.75)^{-1/\alpha} \right)\]</span> and two unknowns, the solution is <span class="math display">\[\hat{\alpha} = 0.9412076 \ \ \ \ \ \text{and} \ \ \ \
 \hat{\theta} = 2.205617 .\]</span> We remark here that a numerical routine is required for these solutions as no analytic solution is available. Furthermore, recall that the maximum likelihood estimates are <span class="math inline">\(\hat{\alpha}_{MLE} = 0.9990936\)</span> and <span class="math inline">\(\hat{\theta}_{MLE} = 2.2821147\)</span>, so the percentile matching provides a better approximation for the Pareto distribution than the method of moments.</p>
@@ -1228,9 +1228,9 @@ x &amp; F(x) &amp; F_n(x) &amp; F_n(x-) &amp; \max(|F(x)-F_n(x)|,|F(x)-F_n(x-)|)
 \]</span></p>
 <p>Calculate the estimate of <span class="math inline">\(\theta\)</span> by percentile matching, using the 40th and 80th empirically smoothed percentile estimates.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.1.10" href="javascript:toggleEX('toggleExampleSelect.1.10','displayTextExampleSelect.1.10');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.10" href="javascript:toggleEX('toggleExample.4.1.10','displayExample.4.1.10');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.1.10" style="display: none">
+<div id="toggleExample.4.1.10" style="display: none">
 <p><strong>Solution.</strong> With 11 observations, we have <span class="math inline">\(j=\lfloor(n+1)q\rfloor = \lfloor 12(0.4) \rfloor = \lfloor 4.8\rfloor=4\)</span> and <span class="math inline">\(h=(n+1)q-j = 12(0.4)-4=0.8\)</span>. By interpolation, the 40th empirically smoothed percentile estimate is <span class="math inline">\(\hat{\pi}_{0.4} = (1-h) X_{(j)} + h X_{(j+1)} = 0.2(86)+0.8(90)=89.2\)</span>.</p>
 <p>Similarly, for the 80th empirically smoothed percentile estimate, we have <span class="math inline">\(12(0.8)=9.6\)</span> so the estimate is <span class="math inline">\(\hat{\pi}_{0.8} = 0.4(200)+0.6(210)=206\)</span>.</p>
 <p>Using the loglogistic cumulative distribution, we need to solve the following two equations for parameters <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\gamma\)</span>: <span class="math display">\[0.4=\frac{(89.2/\theta)^\gamma}{1+(89.2/\theta)^\gamma} \ \ \ \text{and} \ \ \ \   0.8=\frac{(206/\theta)^\gamma}{1+(206+\theta)^\gamma}\]</span></p>
@@ -1320,7 +1320,7 @@ Figure 4.11: Model Validation. A data set is randomly split into two subsamples.
 \tag{4.4}
 \end{equation}\]</span>
 <p>Here, the sum <em>i</em> is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2\)</span>. In actuarial applications, Euclidean distance <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|\)</span> is often preferred because of the skewed nature of the data (large outlying values of <span class="math inline">\(y\)</span> can have a large effect on the measure). Chapter <a href="C-PremiumFoundations.html#C:PremiumFoundations">7</a> describes another measure, the <em>Gini index</em>, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).</p>
-<p><strong>Selecting a Distribution.</strong> Still, our focus so far has been to select a distribution for a data set that can be used for actuarial modeling without additional inputs <span class="math inline">\(x_1, \ldots, x_k\)</span>. Even in this more fundamental problem, the model validation approach is valuable. If we base all inference on only in-sample data, then there is a tendency to select more complicated models then needed. For example, we might select a four parameter GB2, generalized beta of the second kind, distribution when only a two parameter Pareto is needed. Information criteria such as <a href="#" class="tooltip" style="color:green"><em>AIC</em><span style="font-size:8pt"> Akaike’s information criterion</span></a> and <a href="#" class="tooltip" style="color:green"><em>BIC</em><span style="font-size:8pt"> Bayesian information criterion</span></a> included penalties for model complexity and so provide some protection but using a test sample is the best guarantee to achieve parsimonious models. From a quote often attributed to Albert Einstein, we want to “use the simplest model as possible but no simpler.”</p>
+<p><strong>Selecting a Distribution.</strong> Still, our focus so far has been to select a distribution for a data set that can be used for actuarial modeling without additional inputs <span class="math inline">\(x_1, \ldots, x_k\)</span>. Even in this more fundamental problem, the model validation approach is valuable. If we base all inference on only in-sample data, then there is a tendency to select more complicated models then needed. For example, we might select a four parameter GB2, generalized beta of the second kind, distribution when only a two parameter Pareto is needed. Information criteria such as <a href="#" class="tooltip" style="color:green"><em>AIC</em><span style="font-size:8pt">Akaike’s information criterion</span></a> and <a href="#" class="tooltip" style="color:green"><em>BIC</em><span style="font-size:8pt">Bayesian information criterion</span></a> included penalties for model complexity and so provide some protection but using a test sample is the best guarantee to achieve parsimonious models. From a quote often attributed to Albert Einstein, we want to “use the simplest model as possible but no simpler.”</p>
 </div>
 <div id="model-selection-based-on-cross-validation" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Model Selection Based on Cross-Validation</h3>
@@ -1414,9 +1414,9 @@ L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_
 \]</span></p>
 <p>Calculate the maximum likelihood estimate of <span class="math inline">\(\theta\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.3.1" href="javascript:toggleEX('toggleExampleSelect.3.1','displayTextExampleSelect.3.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.3.1" href="javascript:toggleEX('toggleExample.4.3.1','displayExample.4.3.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.3.1" style="display: none">
+<div id="toggleExample.4.3.1" style="display: none">
 <p><strong>Solution.</strong> <span class="math display">\[
 \begin{aligned}
 \mathcal{L}(\theta) &amp;= F(1000)^7[F(2000)-F(1000)]^6[1-F(2000)]^7 \\
@@ -1476,9 +1476,9 @@ Figure 4.12: Censoring and Truncation
 </div>
 <hr />
 <h5 style="text-align: center;">
-<a id="displayTextExampleMort.4f" href="javascript:toggleEX('toggleExampleMort','displayTextExampleMort.4f');"><i><strong>Show Mortality Study Example </strong></i></a>
+<a id="displayExample.Mort.4f" href="javascript:toggleEX('toggleExample.Mort.4f','displayExample.Mort.4f');"><i><strong>Show Mortality Study Example</strong></i></a>
 </h5>
-<div id="toggleExampleMort" style="display: none">
+<div id="toggleExample.Mort.4f" style="display: none">
 <p><strong>Example – Mortality Study.</strong> Suppose that you are conducting a two-year study of mortality of high-risk subjects, beginning January 1, 2010 and finishing January 1, 2012. Figure <a href="C-ModelSelection.html#fig:Mortality">4.13</a> graphically portrays the six types of subjects recruited. For each subject, the beginning of the arrow represents that the the subject was recruited and the arrow end represents the event time. Thus, the arrow represents exposure time.</p>
 <div class="figure" style="text-align: center"><span id="fig:Mortality"></span>
 <img src="LossDataAnalytics_files/figure-html/Mortality-1.png" alt="Timeline for Several Subjects on Test in a Mortality Study" width="60%" />
@@ -1575,9 +1575,9 @@ F(C_{Li}) \prod_{I} (F(C_{Ui})-F(C_{Li})),\]</span> where “<span class="math i
 <p>For right-censored and left-truncated data, the likelihood is <span class="math display">\[\mathcal{L} = \prod_{E} \frac{f(x_i)}{1-F(C_{Li})} \prod_{R} \frac{1-F(C_{Ui})}{1-F(C_{Li})},\]</span> and similarly for other combinations. To get further insights, consider the following.</p>
 <hr />
 <h5 style="text-align: center;">
-<a id="displayTextExampleEXP.4f" href="javascript:toggleEX('toggleExampleEXP','displayTextExampleEXP.4f');"><i><strong>Show Special Case - Exponential Distribution</strong></i></a>
+<a id="displayExample.Exp.4f" href="javascript:toggleEX('toggleExample.Exp.4f','displayExample.Exp.4f');"><i><strong>Show Special Case - Exponential Distribution</strong></i></a>
 </h5>
-<div id="toggleExampleEXP" style="display: none">
+<div id="toggleExample.Exp.4f" style="display: none">
 <p><strong>Special Case: Exponential Distribution.</strong> Consider data that are right-censored and left-truncated, with random variables <span class="math inline">\(X_i\)</span> that are exponentially distributed with mean <span class="math inline">\(\theta\)</span>. With these specifications, recall that <span class="math inline">\(f(x) = \theta^{-1} \exp(-x/\theta)\)</span> and <span class="math inline">\(F(x) = 1-\exp(-x/\theta)\)</span>.</p>
 <p>For this special case, the log-likelihood is</p>
 <p><span class="math display">\[
@@ -1604,9 +1604,9 @@ L(\theta) &amp;= \sum_{E} \left\{ \ln f(x_i) - \ln (1-F(C_{Li})) \right\} + \sum
 </ol>
 <p>Calculate the maximum likelihood estimate of <span class="math inline">\(\theta\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.3.2" href="javascript:toggleEX('toggleExampleSelect.3.2','displayTextExampleSelect.3.2');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.3.2" href="javascript:toggleEX('toggleExample.4.3.2','displayExample.4.3.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.3.2" style="display: none">
+<div id="toggleExample.4.3.2" style="display: none">
 <p><strong>Solution.</strong> These observations are truncated at 500. The contribution of each observation to the likelihood function is <span class="math display">\[\frac{f(x)}{1-F(500)} = \frac{\theta^{-1}e^{-x/\theta}}{e^{-500/\theta}}\]</span></p>
 <p>Then the likelihood function is</p>
 <p><span class="math display">\[\mathcal{L}(\theta)= \frac{\theta^{-1} e^{-600/\theta} \theta^{-1} e^{-700/\theta} \theta^{-1} e^{-900/\theta}}{(e^{-500/\theta})^3} = \theta^{-3}e^{-700/\theta}\]</span></p>
@@ -1624,9 +1624,9 @@ L(\theta) &amp;= \sum_{E} \left\{ \ln f(x_i) - \ln (1-F(C_{Li})) \right\} + \sum
 </ol>
 <p>Calculate the maximum likelihood estimate of <span class="math inline">\(\theta\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.3.3" href="javascript:toggleEX('toggleExampleSelect.3.3','displayTextExampleSelect.3.3');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.3.3" href="javascript:toggleEX('toggleExample.4.3.3','displayExample.4.3.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.3.3" style="display: none">
+<div id="toggleExample.4.3.3" style="display: none">
 <p><strong>Solution.</strong> The likelihood function is</p>
 <p><span class="math display">\[
 \begin{aligned} 
@@ -1674,9 +1674,9 @@ F_n(c_j) = \frac{\text{number of observations } \le c_j}{n}.
 \]</span></p>
 <p>Using the ogive, calculate the estimate of the probability that a randomly chosen claim is between 2000 and 6000.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.3.4" href="javascript:toggleEX('toggleExampleSelect.3.4','displayTextExampleSelect.3.4');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.3.4" href="javascript:toggleEX('toggleExample.4.3.4','displayExample.4.3.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.3.4" style="display: none">
+<div id="toggleExample.4.3.4" style="display: none">
 <p><strong>Solution.</strong> At the boundaries, the empirical distribution function is defined in the usual way, so we have <span class="math display">\[F_{100}(1000) = 0.16, \ F_{100}(3000)=0.38, \ F_{100}(5000)=0.63, \ F_{100}(10000)=0.81\]</span> For other claim sizes, the ogive estimator linearly interpolates between these values: <span class="math display">\[F_{100}(2000) = 0.5F_{100}(1000) + 0.5F_{100}(3000) = 0.5(0.16)+0.5(0.38)=0.27\]</span> <span class="math display">\[F_{100}(6000)=0.8F_{100}(5000)+0.2F_{100}(10000) = 0.8(0.63)+0.2(0.81)=0.666\]</span> Thus, the probability that a claim is between 2000 and 6000 is <span class="math inline">\(F_{100}(6000) - F_{100}(2000) = 0.666-0.27 = 0.396\)</span>.</p>
 </div>
 <hr />
@@ -1712,9 +1712,9 @@ F_n(c_j) = \frac{\text{number of observations } \le c_j}{n}.
 <p>where <span class="math inline">\(+\)</span> indicates that a loss has exceeded the policy limit.</p>
 <p>Using the Kaplan-Meier product-limit estimator, calculate the probability that the loss on a policy exceeds 11, <span class="math inline">\(\hat{S}(11)\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.3.5" href="javascript:toggleEX('toggleExampleSelect.3.5','displayTextExampleSelect.3.5');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.3.5" href="javascript:toggleEX('toggleExample.4.3.5','displayExample.4.3.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.3.5" style="display: none">
+<div id="toggleExample.4.3.5" style="display: none">
 <p><strong>Solution.</strong> There are four event times (non-censored observations). For each time <span class="math inline">\(t_j\)</span>, we can calculate the number of events <span class="math inline">\(s_j\)</span> and the risk set <span class="math inline">\(R_j\)</span> as the following:</p>
 <p><span class="math display">\[
 \begin{array}{cccc}
@@ -1744,9 +1744,9 @@ Figure 4.14: Kaplan-Meier Estimate of the Survival Function for Bodily Injury Cl
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="displayTextKaplanMeier.4f" href="javascript:togglecode('toggleKaplanMeier','displayTextKaplanMeier.4f');"><i><strong>Show R Code</strong></i></a>
+<a id="displayCode.KaplanMeier.4f" href="javascript:togglecode('toggleCode.KaplanMeier.4f','displayCode.KaplanMeier.4f');"><i><strong>Show R Code</strong></i></a>
 </h5>
-<div id="toggleKaplanMeier" style="display: none">
+<div id="toggleCode.KaplanMeier.4f" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(survival)                <span class="co"># for Surv(), survfit()</span>
 ## KM estimate
 KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)
@@ -1796,9 +1796,9 @@ u_i &amp; - &amp; 1.2 &amp; - &amp; 1.5 &amp; 1.6 &amp; - &amp; 1.7 &amp; - &amp
 \]</span></p>
 <p>Calculate the Kaplan-Meier product-limit estimate, <span class="math inline">\(\hat{S}(1.6)\)</span></p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.3.6" href="javascript:toggleEX('toggleExampleSelect.3.6','displayTextExampleSelect.3.6');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.3.7" href="javascript:toggleEX('toggleExample.4.3.7','displayExample.4.3.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.3.6" style="display: none">
+<div id="toggleExample.4.3.7" style="display: none">
 <p><strong>Solution.</strong> Recall the risk set <span class="math inline">\(R_j = \sum_{i=1}^n \left\{ I(x_i \geq t_{j}) + I(u_i \geq t_{j}) - I(d_i \geq t_{j}) \right\}\)</span>. Then</p>
 <p><span class="math display">\[
 \begin{array}{ccccc}
@@ -1821,9 +1821,9 @@ j &amp; t_j &amp; s_j &amp; R_j &amp; \hat{S}(t_j) \\
 <li>Calculate Greenwood’s approximation to the variance of the product-limit estimate <span class="math inline">\(\hat{S}(11)\)</span>.</li>
 </ol>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.3.7" href="javascript:toggleEX('toggleExampleSelect.3.7','displayTextExampleSelect.3.7');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.3.8" href="javascript:toggleEX('toggleExample.4.3.8','displayExample.4.3.8');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.3.7" style="display: none">
+<div id="toggleExample.4.3.8" style="display: none">
 <p><strong>Solution.</strong> As before, there are four event times (non-censored observations). For each time <span class="math inline">\(t_j\)</span>, we can calculate the number of events <span class="math inline">\(s_j\)</span> and the risk set <span class="math inline">\(R_j\)</span> as the following:</p>
 <p><span class="math display">\[
 \begin{array}{cccc}
@@ -1910,18 +1910,18 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 <li>As in the frequentist context, the goal is to make statments about likely values of parameters such as <span class="math inline">\(\lambda\)</span> given the observed data <span class="math inline">\(X_1, \ldots, X_n\)</span>. However, because now both the parameter and the data are random variables, we can use the language of conditional probability to make such statements. As we will see in Section <a href="C-ModelSelection.html#S:ConjugateDistributions">4.4.4</a>, it turns out that the distribution of <span class="math inline">\(\lambda\)</span> given the data <span class="math inline">\(X_1, \ldots, X_n\)</span> is also gamma (with updated parameters), a result that simplifies the task of inferring likely values of the parameter <span class="math inline">\(\lambda\)</span>.</li>
 </ul>
 <h5 style="text-align: center;">
-<a id="displayTheory.2" href="javascript:toggleTheory('TheoryBayesPoisson','displayTheory.2');"><i><strong>Show A Snippet of Theory</strong></i></a>
+<a id="displayTheory.Theory.2" href="javascript:toggleTheory('toggleTheory.Theory.2','displayCode.Theory.2');"><i><strong>Show A Snippet of Theory</strong></i></a>
 </h5>
-<div id="TheoryBayesPoisson" style="display: none">
+<div id="toggleTheory.Theory.2" style="display: none">
 <hr />
 <p>Let us demonstrate that the distribution of <span class="math inline">\(X\)</span> is negative binomial. We assume that the distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(\lambda\)</span> is Poisson, so that <span class="math display">\[
 \Pr(X = x|\lambda) = \frac{\lambda^x}{\Gamma(x+1)} e^{-\lambda} ,
-\]</span> using notation <span class="math inline">\(\Gamma(x+1) = x!\)</span> for integer <span class="math inline">\(x\)</span>. Assume that <span class="math inline">\(\lambda\)</span> is a draw from a gamma distribution with fixed parameters, say, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\theta\)</span>, so this has <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt"> probability density function</span></a> <span class="math display">\[
+\]</span> using notation <span class="math inline">\(\Gamma(x+1) = x!\)</span> for integer <span class="math inline">\(x\)</span>. Assume that <span class="math inline">\(\lambda\)</span> is a draw from a gamma distribution with fixed parameters, say, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\theta\)</span>, so this has <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">probability density function</span></a> <span class="math display">\[
 f(\lambda) = \frac{\lambda^{\alpha-1}}{\theta^{\alpha}\Gamma(\alpha)}\exp(-\lambda/\theta).
 \]</span> We know that a <em>pdf</em> integrates to one. To make the development easier, define the reciprocal parameter <span class="math inline">\(\theta_r = 1/\theta\)</span> and so we have <span class="math display">\[
 \int_0^{\infty} f(\lambda) ~d\lambda =1 ~~~ ==&gt; ~~~ \theta_r^{-\alpha} \Gamma(\alpha) = \int_0^{\infty} \lambda^{\alpha-1} \exp\left(-\lambda\theta_r\right) ~
 d\lambda .
-\]</span> From Appendix Chapter <a href="C-AppB.html#C:AppB">16</a> on iterated expectations, we have that the <a href="#" class="tooltip" style="color:green"><em>pmf</em><span style="font-size:8pt"> probability mass function</span></a> of <span class="math inline">\(X\)</span> can be computed in an iterated fashion as</p>
+\]</span> From Appendix Chapter <a href="C-AppB.html#C:AppB">16</a> on iterated expectations, we have that the <a href="#" class="tooltip" style="color:green"><em>pmf</em><span style="font-size:8pt">probability mass function</span></a> of <span class="math inline">\(X\)</span> can be computed in an iterated fashion as</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Pr(X = x) 
@@ -1939,7 +1939,7 @@ d\lambda .
 </div>
 <div id="bayesian-model" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Bayesian Model</h3>
-<p>With the intuition developed in the preceding Section <a href="C-ModelSelection.html#S:IntroBayes">4.4.1</a>, we now restate the Bayesian model with a bit more precision using mathematical notation. For simplicity, this summary assumes both the outcomes and parameters are continuous random variables. In the examples, we sometimes ask the viewer to apply these same principles to discrete versions. Conceptually both the continuous and discrete cases are the same; mechanically, one replaces a <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt"> probability density function</span></a> by a <a href="#" class="tooltip" style="color:green"><em>pmf</em><span style="font-size:8pt"> probability mass function</span></a> and an integral by a sum.</p>
+<p>With the intuition developed in the preceding Section <a href="C-ModelSelection.html#S:IntroBayes">4.4.1</a>, we now restate the Bayesian model with a bit more precision using mathematical notation. For simplicity, this summary assumes both the outcomes and parameters are continuous random variables. In the examples, we sometimes ask the viewer to apply these same principles to discrete versions. Conceptually both the continuous and discrete cases are the same; mechanically, one replaces a <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">probability density function</span></a> by a <a href="#" class="tooltip" style="color:green"><em>pmf</em><span style="font-size:8pt">probability mass function</span></a> and an integral by a sum.</p>
 <p>As stated earlier, under the Bayesian perspective, the model parameters and data are both viewed as random. Our uncertainty about the parameters of the underlying data generating process is reflected in the use of probability tools.</p>
 <p><strong>Prior Distribution.</strong> Specifically, think about parameters <span class="math inline">\(\boldsymbol \theta\)</span> as a random vector and let <span class="math inline">\(\pi(\boldsymbol \theta)\)</span> denote the distribution of possible outcomes. This is knowledge that we have before outcomes are observed and is called the prior distribution. Typically, the prior distribution is a regular distribution and so integrates or sums to one, depending on whether <span class="math inline">\(\boldsymbol \theta\)</span> is continuous or discrete. However, we may be very uncertain (or have no clue) about the distribution of <span class="math inline">\(\boldsymbol \theta\)</span>; the Bayesian machinery allows the following situation <span class="math display">\[\int \pi(\theta) d\theta = \infty,\]</span> in which case <span class="math inline">\(\pi(\cdot)\)</span> is called an <strong>improper prior</strong>.</p>
 <p><strong>Model Distribution.</strong> The distribution of outcomes given an assumed value of <span class="math inline">\(\boldsymbol \theta\)</span> is known as the model distribution and denoted as <span class="math inline">\(f(x | \boldsymbol \theta) = f_{X|\boldsymbol \theta} (x|\boldsymbol \theta )\)</span>. This is the usual frequentist mass or density function. This is simply the likelihood in the frequentist context and so it is also convenient to use this as a descriptor for the model distribution.</p>
@@ -1976,9 +1976,9 @@ I(\hat{\theta} =\theta) &amp; \text{zero-one loss (for discrete probabilities)} 
 </ol>
 <p>A randomly selected policyholder has one claim in Year 1 and zero claims in Year 2. For this policyholder, calculate the posterior probability that <span class="math inline">\(0.7 &lt; q &lt; 0.8\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.4.1" href="javascript:toggleEX('toggleExampleSelect.4.1','displayTextExampleSelect.4.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.4.1" href="javascript:toggleEX('toggleExample.4.4.1','displayExample.4.4.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.4.1" style="display: none">
+<div id="toggleExample.4.4.1" style="display: none">
 <p><strong>Solution.</strong> The posterior density is proportional to the product of the likelihood function and prior density. Thus, <span class="math display">\[\pi(q|1,0) \propto f(1|q)\ f(0|q)\ \pi(q) \propto q(1-q)q^3 = q^4-q^5\]</span></p>
 <p>To get the exact posterior density, we integrate the above function over its range <span class="math inline">\((0.6, 0.8)\)</span></p>
 <p><span class="math display">\[\int_{0.6}^{0.8} q^4-q^5 dq = \frac{q^5}{5} - \left. \frac{q^6}{6} \right|_{0.6}^{0.8} = 0.014069 \ \Rightarrow \ \pi(q|1,0)=\frac{q^4-q^5}{0.014069}\]</span></p>
@@ -1992,9 +1992,9 @@ I(\hat{\theta} =\theta) &amp; \text{zero-one loss (for discrete probabilities)} 
 </ol>
 <p>A claim of 3 is observed. Calculate the posterior probability that <span class="math inline">\(\Theta\)</span> exceeds 2.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.4.2" href="javascript:toggleEX('toggleExampleSelect.4.2','displayTextExampleSelect.4.2');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.4.2" href="javascript:toggleEX('toggleExample.4.4.2','displayExample.4.4.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.4.2" style="display: none">
+<div id="toggleExample.4.4.2" style="display: none">
 <p><em>Solution:</em> The posterior density, given an observation of 3 is</p>
 <p><span class="math display">\[\pi(\theta|3) =  \frac{f(3|\theta)\pi(\theta)}{\int_1^\infty f(3|\theta)\pi(\theta)d\theta} =
 \frac{\frac{2\theta^2}{(3+\theta)^3}\frac{1}{\theta^2}}{\int_1^\infty 2(3+\theta)^{-3} d\theta} =
@@ -2038,9 +2038,9 @@ I(\hat{\theta} =\theta) &amp; \text{zero-one loss (for discrete probabilities)} 
 \]</span></p>
 <p>Two claims are observed in Year 1. Calculate the Bayesian prediction of the number of claims in Year 2.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.4.3" href="javascript:toggleEX('toggleExampleSelect.4.3','displayTextExampleSelect.4.3');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.4.3" href="javascript:toggleEX('toggleExample.4.4.3','displayExample.4.4.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.4.3" style="display: none">
+<div id="toggleExample.4.4.3" style="display: none">
 <p><strong>Solution.</strong> Start with the posterior distribution of the parameter <span class="math display">\[
 \Pr(\theta|X) = \frac{\Pr(X|\theta)\Pr(\theta)}{\sum_{\theta}\Pr(X|\theta)\Pr(\theta)}
 \]</span> so <span class="math display">\[
@@ -2074,9 +2074,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </ol>
 <p>For a randomly selected policy, losses in Year 1 were 5. Calculate the posterior probability that losses for this policy in Year 2 will exceed 8.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.4.4" href="javascript:toggleEX('toggleExampleSelect.4.4','displayTextExampleSelect.4.4');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.4.4" href="javascript:toggleEX('toggleExample.4.4.4','displayExample.4.4.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.4.4" style="display: none">
+<div id="toggleExample.4.4.4" style="display: none">
 <p><strong>Solution.</strong> We are given the prior distribution of <span class="math inline">\(\theta\)</span> as <span class="math inline">\(\Pr(\theta=1)=\Pr(\theta=3)=\frac{1}{2}\)</span>, the conditional distribution <span class="math inline">\(f(x|\theta)\)</span>, and the fact that we observed <span class="math inline">\(X_1=5\)</span>. The goal is to find the predictive probability <span class="math inline">\(\Pr(X_2&gt;8|X_1=5)\)</span>.</p>
 <p>The posterior probabilities are</p>
 <p><span class="math display">\[
@@ -2116,9 +2116,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </ol>
 <p>Calculate the posterior probability that the insured will have at least one loss during Year 9.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.4.5" href="javascript:toggleEX('toggleExampleSelect.4.5','displayTextExampleSelect.4.5');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.4.5" href="javascript:toggleEX('toggleExample.4.4.5','displayExample.4.4.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.4.5" style="display: none">
+<div id="toggleExample.4.4.5" style="display: none">
 <p><strong>Solution.</strong> The posterior probability density is <span class="math display">\[
 \begin{aligned}
 \pi(p|1,1,1,1,1,1,1,1) &amp;\propto \Pr(1,1,1,1,1,1,1,1|p)\ \pi(p) = p^8(2) \propto p^8 \\ 
@@ -2152,9 +2152,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </ol>
 <p>One randomly chosen risk has three claims during Years 1-6. Calculate the posterior probability of a claim for this risk in Year 7.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.4.6" href="javascript:toggleEX('toggleExampleSelect.4.6','displayTextExampleSelect.4.6');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.4.6" href="javascript:toggleEX('toggleExample.4.4.6','displayExample.4.4.6');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.4.6" style="display: none">
+<div id="toggleExample.4.4.6" style="display: none">
 <p><strong>Solution.</strong> The probabilities are from a binomial distribution with 6 trials in which 3 successes were observed.</p>
 <p><span class="math display">\[
 \begin{aligned} 
@@ -2187,7 +2187,7 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </div>
 <div id="S:ConjugateDistributions" class="section level3">
 <h3><span class="header-section-number">4.4.4</span> Conjugate Distributions</h3>
-<p>In the Bayesian framework, the key to statistical inference is understanding the posterior distribution of the parameters. As described in Section <a href="C-ModelSelection.html#S:IntroBayes">4.4.1</a>, modern data analysis using Bayesian methods utilize computationally intensive techniques such as <a href="#" class="tooltip" style="color:green"><em>MCMC</em><span style="font-size:8pt"> Markov Chain Monte Carlo</span></a> simulation. Another approach for computing posterior distributions are based on <strong>conjugate distributions.</strong> Although this approach is available only for a limited number of distributions, it has the appeal that it provides closed-form expressions for the distributions, allowing for easy interpretations of results.</p>
+<p>In the Bayesian framework, the key to statistical inference is understanding the posterior distribution of the parameters. As described in Section <a href="C-ModelSelection.html#S:IntroBayes">4.4.1</a>, modern data analysis using Bayesian methods utilize computationally intensive techniques such as <a href="#" class="tooltip" style="color:green"><em>MCMC</em><span style="font-size:8pt">Markov Chain Monte Carlo</span></a> simulation. Another approach for computing posterior distributions are based on <strong>conjugate distributions.</strong> Although this approach is available only for a limited number of distributions, it has the appeal that it provides closed-form expressions for the distributions, allowing for easy interpretations of results.</p>
 <p>To relate the prior and posterior distributions of the parameters, we have the relationship</p>
 <p><span class="math display">\[
 \begin{array}{ccc}
@@ -2199,9 +2199,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 <p>For conjugate distributions, the posterior and the prior come from the same family of distributions. The following illustration looks at the Poisson-gamma special case, the most well-known in actuarial applications.</p>
 <p><strong>Special Case – Poisson-Gamma - Continued.</strong> Assume a Poisson(<span class="math inline">\(\lambda\)</span>) model distribution and that <span class="math inline">\(\lambda\)</span> follows a gamma(<span class="math inline">\(\alpha, \theta\)</span>) prior distribution. Then, the posterior distribution of <span class="math inline">\(\lambda\)</span> given the data follows a gamma distribution with new parameters <span class="math inline">\(\alpha_{post} = \sum_i x_i + \alpha\)</span> and <span class="math inline">\(\theta_{post} = 1/(n + 1/\theta)\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleConj.4f" href="javascript:toggleEX('toggleExampleConj','displayTextExampleConj.4f');"><i><strong>Show Special Case Details</strong></i></a>
+<a id="displayExample.Conj.4f" href="javascript:toggleEX('toggleExample.Conj.4f','displayExample.Conj.4f');"><i><strong>Show Special Case Details</strong></i></a>
 </h5>
-<div id="toggleExampleConj" style="display: none">
+<div id="toggleExample.Conj.4f" style="display: none">
 <p><strong>Special Case – Poisson-Gamma - Continued.</strong> The model distribution is <span class="math display">\[f(\mathbf{x} | \lambda) = \prod_{i=1}^n \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} .\]</span> The prior distribution is <span class="math display">\[\pi(\lambda) = \frac{\left(\lambda/\theta\right)^{\alpha} \exp(-\lambda/\theta)}{\lambda \Gamma(\alpha)}.\]</span> Thus, the posterior distribution is proportional to <span class="math display">\[
 \begin{aligned}
 \pi(\lambda | \mathbf{x}) &amp;\propto f(\mathbf{x}|\theta ) \pi(\lambda) \\
@@ -2221,9 +2221,9 @@ f(x|\theta) = \frac{\theta}{(x+\theta)^2}, \ \ 0 &lt; x &lt; \infty
 </ol>
 <p>Calculate <span class="math inline">\(\theta\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleSelect.4.7" href="javascript:toggleEX('toggleExampleSelect.4.7','displayTextExampleSelect.4.7');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.4.7" href="javascript:toggleEX('toggleExample.4.4.7','displayExample.4.4.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleSelect.4.7" style="display: none">
+<div id="toggleExample.4.4.7" style="display: none">
 <p><strong>Solution.</strong></p>
 <p>Since the conditional distribution of the number of claims per policyholder, <span class="math inline">\(E(X|\lambda)=Var(X|\lambda)=\lambda\)</span>, the Bayes prediction is</p>
 <p><span class="math display">\[
@@ -2358,7 +2358,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

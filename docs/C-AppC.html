@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -791,9 +791,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Given a realized of a random sample <span class="math inline">\(\mathbf{x}=(x_1,x_2,\cdots,x_n)\)</span> of size <span class="math inline">\(n\)</span>, the <strong>likelihood function</strong> is defined as <span class="math display">\[L(\boldsymbol{\theta}|\mathbf{x})=f(\mathbf{x}|\boldsymbol{\theta})=\prod_{i=1}^nf(x_i|\boldsymbol{\theta}),\]</span> with the corresponding <strong>log-likelihood function</strong> given by <span class="math display">\[l(\boldsymbol{\theta}|\mathbf{x})=\ln L(\boldsymbol{\theta}|\mathbf{x})=\sum_{i=1}^n\ln f(x_i|\boldsymbol{\theta}),\]</span> where <span class="math inline">\(f(\mathbf{x}|\boldsymbol{\theta})\)</span> denotes the joint probability function of <span class="math inline">\(\mathbf{x}\)</span>. The log-likelihood function leads to an additive structure that is easy to work with.</p>
 <p>In Appendix <a href="C-AppA.html#C:AppA">15</a>, we have used the normal distribution to illustrate concepts of the likelihood function and the log-likelihood function. Here, we derive the likelihood and corresponding log-likelihood functions when the population distribution is from the Pareto distribution family.</p>
 <h5 style="text-align: center;">
-<a id="EXM:S2b:LLK:display" href="javascript:toggleEX('EXM:S2b:LLK','EXM:S2b:LLK:display');"><i><strong>Show Example</strong></i></a>
+<a id="displayExample.LLK" href="javascript:toggleEX('toggleExample.LLK','displayExample.LLK');"><i><strong>Show Example</strong></i></a>
 </h5>
-<div id="EXM:S2b:LLK" style="display: none">
+<div id="toggleExample.LLK" style="display: none">
 <p><strong>Example – Pareto Distribution.</strong> Suppose that <span class="math inline">\(X_1, \ldots, X_n\)</span> represents a random sample from a single-parameter Pareto distribution with the <strong>cumulative distribution function</strong> given by <span class="math display">\[F(x) = \Pr(X_i\leq x)=1- \left(\frac{500}{x}\right)^{\alpha}, ~~~~ x&gt;500,\]</span> where the parameter <span class="math inline">\(\theta = \alpha\)</span>.</p>
 <p>The corresponding probability density function is <span class="math inline">\(f(x) = 500^{\alpha} \alpha x^{-\alpha-1}\)</span> and the log-likelihood function can be derived as <span class="math display">\[l(\boldsymbol \alpha|\mathbf{x}) = \sum_{i=1}^n \ln f(x_i;\alpha) = n \alpha \ln 500 +n \ln \alpha -(\alpha+1)  \sum_{i=1}^n \ln x_i .\]</span></p>
 </div>
@@ -847,14 +847,14 @@ l(\boldsymbol \theta|\mathbf{x})}{\partial \boldsymbol \theta^{\prime}}
 <p>Given the analytical form of the likelihood function, the MLE can be obtained by taking the first derivative of the log-likelihood function with respect to <span class="math inline">\(\boldsymbol{\theta}\)</span>, and setting the values of the partial derivatives to zero. That is, the MLE are the solutions of the equations of <span class="math display">\[\frac{\partial l(\hat{\boldsymbol{\theta}}|\mathbf{x})}{\partial\hat{\boldsymbol{\theta}}}=\mathbf 0.\]</span></p>
 <hr />
 <h5 style="text-align: center;">
-<a id="EXM:S2b:MLE:display" href="javascript:toggleEX('EXM:S2b:MLE','EXM:S2b:MLE:display');"><i><strong>Show Example</strong></i></a>
+<a id="displayExample.MLE.1" href="javascript:toggleEX('toggleExample.MLE.1','displayExample.MLE.1');"><i><strong>Show Example</strong></i></a>
 </h5>
-<div id="EXM:S2b:MLE" style="display: none">
+<div id="toggleExample.MLE.1" style="display: none">
 <p><strong>Example. Course C/Exam 4. May 2000, 21.</strong> You are given the following five observations: 521, 658, 702, 819, 1217. You use the single-parameter Pareto with cumulative distribution function: <span class="math display">\[F(x) = 1- \left(\frac{500}{x}\right)^{\alpha}, ~~~~ x&gt;500 .\]</span> Calculate the maximum likelihood estimate of the parameter <span class="math inline">\(\alpha\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="SOL:S2b:MLE:display" href="javascript:toggle('SOL:S2b:MLE','SOL:S2b:MLE:display');"><i><strong>Show Solution</strong></i></a>
+<a id="displayExample.MLE.2" href="javascript:toggleEX('toggleExample.MLE.2','displayExample.MLE.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="SOL:S2b:MLE" style="display: none">
+<div id="toggleExample.MLE.2" style="display: none">
 <p><em>Solution</em>. With <span class="math inline">\(n=5\)</span>, the log-likelihood function is <span class="math display">\[l(\alpha|\mathbf{x} ) =  \sum_{i=1}^5 \ln f(x_i;\alpha ) =  5 \alpha \ln 500 + 5 \ln \alpha
 -(\alpha+1) \sum_{i=1}^5 \ln x_i.\]</span> Solving for the root of the score function yields <span class="math display">\[\frac{ \partial}{\partial \alpha } l(\alpha |\mathbf{x}) =    5  \ln 500 + 5 / \alpha -  \sum_{i=1}^5 \ln x_i
 =_{set} 0 \Rightarrow \hat{\alpha}_{MLE} = \frac{5}{\sum_{i=1}^5 \ln x_i - 5  \ln 500 } = 2.453 .\]</span></p>
@@ -873,15 +873,15 @@ l(\boldsymbol \theta|\mathbf{x})}{\partial \boldsymbol \theta^{\prime}}
 <p>Based on the above results, we may perform statistical inference based on the procedures defined in Appendix <a href="C-AppA.html#C:AppA">15</a>.</p>
 <hr />
 <h5 style="text-align: center;">
-<a id="EXM:S2b:COV:display" href="javascript:toggleEX('EXM:S2b:COV','EXM:S2b:COV:display');"><i><strong>Show Example</strong></i></a>
+<a id="displayExample.COV.1" href="javascript:toggleEX('toggleExample.COV.1','displayExample.COV.1');"><i><strong>Show Example</strong></i></a>
 </h5>
-<div id="EXM:S2b:COV" style="display: none">
+<div id="toggleExample.COV.1" style="display: none">
 <p><strong>Example. Course C/Exam 4. Nov 2000, 13.</strong> A sample of ten observations comes from a parametric family <span class="math inline">\(f(x,; \theta_1, \theta_2)\)</span> with log-likelihood function <span class="math display">\[l(\theta_1, \theta_2)= \sum_{i=1}^{10} f(x_i; \theta_1, \theta_2) = -2.5 \theta_1^2 - 3
     \theta_1 \theta_2 - \theta_2^2 + 5 \theta_1 + 2 \theta_2 + k,\]</span> where <span class="math inline">\(k\)</span> is a constant. Determine the estimated covariance matrix of the maximum likelihood estimator, <span class="math inline">\(\hat{\theta_1}, \hat{\theta_2}\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="SOL:S2b:COV:display" href="javascript:toggle('SOL:S2b:COV','SOL:S2b:COV:display');"><i><strong>Show Solution</strong></i></a>
+<a id="displayExample.COV.2" href="javascript:toggleEX('toggleExample.COV.2','displayExample.COV.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="SOL:S2b:COV" style="display: none">
+<div id="toggleExample.COV.2" style="display: none">
 <p><em>Solution</em>. Denoting <span class="math inline">\(l=l(\theta_1, \theta_2)\)</span>, the hessian matrix of second derivatives is <span class="math display">\[\left(
 \begin{array}{cc}
   \frac{ \partial ^2}{\partial \theta_1 ^2 } l &amp; \frac{ \partial ^2}{\partial \theta_1 \partial \theta_2 } l  \\
@@ -1000,7 +1000,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }
