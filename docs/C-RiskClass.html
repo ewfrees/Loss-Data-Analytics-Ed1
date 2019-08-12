@@ -360,11 +360,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Loss Data Analytics</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
 <li class="chapter" data-level="1.1" data-path="C-Intro.html"><a href="C-Intro.html#S:Intro"><i class="fa fa-check"></i><b>1.1</b> Relevance of Analytics to Insurance Activities</a><ul>
@@ -538,8 +538,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
 <li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
-<li class="chapter" data-level="7.7.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:SelectingRateFactors"><i class="fa fa-check"></i><b>7.7.2</b> TS 7.B. Selecting Rating Factors</a></li>
-<li class="chapter" data-level="7.7.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:AdverseSelection"><i class="fa fa-check"></i><b>7.7.3</b> TS 7.C. Adverse Selection</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -558,6 +556,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Further Resources and Contributors</a><ul>
 <li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>TS 8.A – Estimating Poisson Regression Models</a></li>
+<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.b.-selecting-rating-factors"><i class="fa fa-check"></i>TS 8.B. Selecting Rating Factors</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="C-Credibility.html"><a href="C-Credibility.html"><i class="fa fa-check"></i><b>9</b> Experience Rating Using Credibility Theory</a><ul>
@@ -796,7 +795,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>If all policyholders in the insurance pool have identical risk profiles, the insurer simply charges the same premium for all policyholders because they have the same expected loss. In reality, however, the policyholders are hardly homogeneous. For example, mortality risk in life insurance depends on the characteristics of the policyholder, such as, age, sex and life style. In auto insurance, those characteristics may include age, occupation, the type or use of the car, and the area where the driver resides. The knowledge of these characteristics or variables can enhance the ability of calculating fair premiums for individual policyholders, as they can be used to estimate or predict the expected losses more accurately.</p>
 <p><strong>Adverse Selection.</strong> Indeed, if the insurer does not differentiate the risk characteristics of individual policyholders and simply charges the same premium to all insureds based on the average loss in the portfolio, the insurer would face <em>adverse selection</em>, a situation where individuals with a higher chance of loss are attracted in the portfolio and low-risk individuals are repelled. For example, consider a health insurance industry where smoking status is an important risk factor for mortality and morbidity. Most health insurers in the market require different premiums depending on smoking status, so smokers pay higher premiums than non-smokers, with other characteristics being identical. Now suppose that there is an insurer, we will call EquitabAll, that offers the same premium to all insureds regardless of smoking status, unlike other competitors. The net premium of EquitabAll is naturally an average mortality loss accounting for both smokers and non-smokers. That is, the net premium is a weighted average of the losses with the weights being the proportion of smokers and non-smokers, respectively. Thus it is easy to see that that a smoker would have a good incentive to purchase insurance from EquitabAll than from other insurers as the offered premium by EquitabAll is relatively lower. At the same time non-smokers would prefer buying insurance from somewhere else where lower premiums, computed from the non-smoker group only, are offered. As a result, there will be more smokers and less non-smokers in the EquitabAll’s portfolio, which leads to larger-than-expected losses and hence a higher premium for insureds in the next period to cover the higher costs. With the raised new premium in the next period, non-smokers in EquitabAll will have even greater incentives to switch the insurer. As this cycle continues over time, EquitabAll would gradually retain more smokers and less non-smokers in its portfolio with the premium continually raised, eventually leading to a collapsing of business. In the literature, this phenomenon is known as the <em>adverse selection spiral</em> or death spiral. Therefore, incorporating and differentiating important risk characteristics of individuals in the insurance pricing process are a pertinent component for both the determination of fair premium for individual policyholders and the long term sustainability of insurers.</p>
 <p><strong>Rating Factors</strong>. In order to incorporate relevant risk characteristics of policyholders in the pricing process, insurers maintain some classification system that assigns each policyholder to one of the risk classes based on a relatively small number of risk characteristics that are deemed most relevant. These characteristics used in the classification system are called the <em>rating factors</em>, which are <em>a priori</em> variables in the sense that they are known before the contract begins (e.g., sex, health status, vehicle type, etc, are known during the underwriting). All policyholders sharing identical risk factors thus are assigned to the same risk class, and are considered homogeneous from the pricing viewpoint; the insurer consequently charge them the same premium or rate.</p>
-<p>Regarding the risk factors and premiums, the <em>Actuarial Standard of Practice</em> (ASOP No. 12) of the <span class="citation">Actuarial Standards Board (<a href="#ref-ASBStandards">2018</a>)</span> states that the actuary should select risk characteristics that are related to expected outcomes, and that rates within a risk classification system would be considered equitable if differences in rates reflect material differences in expected cost for risk characteristics. In the process of choosing risk factors, ASOP also requires the actuary to consider the following: relationship of risk characteristics and expected outcomes, causality, objectivity, practicality, applicable law, industry practices, and business practices.</p>
+<p>Regarding the risk factors and premiums, the <em>Actuarial Standard of Practice</em> (ASOP No. 12) of the <span class="citation">Actuarial Standards Board (<a href="#ref-ASBStandards">2018</a>)</span> states that the actuary should select risk characteristics that are related to expected outcomes, and that rates within a risk classification system would be considered equitable if differences in rates reflect material differences in expected cost for risk characteristics. In the process of choosing risk factors, ASOP also requires the actuary to consider the following: relationship of risk characteristics and expected outcomes, causality, objectivity, practicality, applicable law, industry practices, and business practices. Technical Supplement <strong>TS 8.B</strong> provides additional discussion of selection of rating factors.</p>
 <p>On the quantitative side, an important task for the actuary in building any risk classification is to construct a statistical model that can determine the expected loss given various rating factors of a policyholder. The standard approach is to adopt a regression model which produces the expected loss as the output when the relevant risk factors are given as the inputs. In this chapter we learn the Poisson regression, which can be used when the loss is a count variable, as a prominent example of an insurance pricing tool.</p>
 <!-- %\subsection{Fundamental concept of insurance pricing} -->
 <!-- %================================ -->
@@ -1396,7 +1395,50 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 <span class="math display">\[\begin{equation}
 \mathbf{ I}(\beta)=\sum^K_{k=1} \Big{\{}\sum_{i \in C_k}m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ \beta})\mathbf{ x}_i \mathbf{ x}_i^{\prime} \Big{\}}=\sum^K_{k=1} m_{(k)} \exp(\mathbf{ x}^{\prime}_{(k)} \mathbf{ \beta})\mathbf{ x}_{(k)} \mathbf{ x}_{(k)}^{\prime}.
 \end{equation}\]</span>
+</div>
+<div id="ts-8.b.-selecting-rating-factors" class="section level3 unnumbered">
+<h3>TS 8.B. Selecting Rating Factors</h3>
+<!-- ###  Rate Factor Selection {#S:LossRatio} -->
+<p>A complete discussion of rating factor selection is beyond the scope of this book. In addition to technical analyses, you have to think carefully about the type of business (personal, commercial) as well as the regulatory landscape. Nonetheless, a broad overview of some key concerns may serve to ground the reader as one thinks about the pricing of insurance contracts.</p>
+<div id="statistical-criteria" class="section level4">
+<h4><span class="header-section-number">8.4.0.1</span> Statistical Criteria</h4>
+<p>From an analyst’s perspective, the discussion starts with the statistical significance of a rating factor. If the factor is not statistically significant, then the variable is not even worthy of consideration for inclusion in a rating plan. The statistical significance is judged not only on an in-sample basis but also on how well it fares on an out-of-sample basis, as per our discussion in <strong>Section 4.2.</strong></p>
+<p>It is common in insurance applications to have many rating factors. Handling multivariate aspects can be difficult with traditional univariate methods. Analysts employ techniques such as <em>generalized linear models</em> as described in <em>Section 8.3</em>.</p>
+<p>Rating factors are introduced are use to create cells that contain similar risks. A rating group should be large enough to measure costs with sufficient accuracy. There is an inherent trade-off between theoretical accuracy and homogeneity</p>
+<p>As an example, most insurers charge the same automobile insurance premiums for drivers between the ages of 30 and 50, not varying the premium by age. Presumably costs do not vary much by age, or cost variances are due to other identifiable factors.</p>
+</div>
+<div id="operational-criteria" class="section level4">
+<h4><span class="header-section-number">8.4.0.2</span> Operational Criteria</h4>
+<p>From a business perspective, statistical criteria only provide a starting point for discussions of potential inclusion of rating factors. Inclusion of a rating factor must also induce economically meaningful results. From an insured’s perspective, if differentiation by a factor produces little change in a rate then it is not worth including. From an insurer’s perspective, the inclusion of a factor should help segment the marketplace in a way that helps attract the business that they seek. For example, we introduce the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">The Gini index is twice the area between a Lorenz curve and a 45 degree line.</span></a> in Section <a href="C-PremiumFoundations.html#S:GiniStatistic">7.6</a> as one metric that insurers use to describe the financial impact of a rating variable.</p>
+<p>Rating factors should also be objective, inexpensive to administer, and verifiable. For example, automobile insurance underwriters often talk of “maturity” and “responsibility” as important criteria for youthful drivers. Yet, these are difficult to define objectively and to apply consistently. As another example, in automobile it has long been known that amount of miles (or kilometers) driven is an excellent rating factor. However, insurers have been reluctant to adopt this factor because it is subject to abuse. Historically, driving mileage has not been used because of the difficulty in verifying this variable (it is far too easy to alter the car’s odometer to change reported mileage). Going forward, modern day drivers and cars are equipped with global positioning devices and other equipment that allow insurers to use distance driven as a rating factor because it can be verified.</p>
+</div>
+<div id="rating-factors-from-the-perspective-of-a-consumer" class="section level4">
+<h4><span class="header-section-number">8.4.0.3</span> Rating Factors from the Perspective of a Consumer</h4>
+<p>Insurance companies sell insurance products to a variety of consumers; consequently, companies are affected by public perception. On the one hand, free market competition dictates rating factors that insurers use, as is common in commercial insurance. On the other hand, insurance may be required by law. This is common in personal insurance such as third party automobile liability and homeowners. In these instances, the mandatory and de facto mandatory purchase of insurance may mean that free market competition is insufficient to protect policyholders. Here, the following items affect the social acceptability of using a particular risk characteristic as a rating variable:</p>
+<ul>
+<li>Affordability - introduction of some variables may be mitigated by resulting high costs of insurance.</li>
+<li>Causality - other things being equal, a rating variable is easier to justify if there is a “causal” relationship with losses. A good example is the effects of smoking in life insurance. For many years, this factor was viewed with suspicion by the industry. However, over time, scientific evidence provided overwhelming evidence as this an important predictor of mortality.</li>
+<li>Controllability - A controllable variable is one that is under the control of the insured, e.g., installing burglar alarms. The use of controllable rating variables encourages accident prevention.</li>
+<li>Privacy concerns - people are reluctant to disclose personal information. In today’s world with increasing emphasis on social media and the availability of personal information, consumer advocates are concerned that the benefits of big data skew heavily in insurers’ favor. They reason that insureds do not have equivalent new tools to compare quality of coverage/policies and performance of insurance companies.</li>
+</ul>
+<p><strong>Example: Youthful Drivers.</strong> In some cases, a particular risk characteristic may identify a small group of insureds whose risk level is extremely high, and if used as a rating variable, the resulting premium may be unaffordable for that high-risk class. To the extent that this occurs, companies may wish to or be required by regulators to combine classes and introduce subsidies. For example, 16-year-old drivers are generally higher risk than 17-year-old drivers. Some companies have chosen to use the same rates for 16- and 17-year-old drivers to minimize the affordability issues that arise when a family adds a 16-year-old to the auto policy.</p>
+</div>
+<div id="societal-effects-of-rating-factors" class="section level4">
+<h4><span class="header-section-number">8.4.0.4</span> Societal Effects of Rating Factors</h4>
+<p>With public discussions of rating factors, it is also important to think about the societal effects of classification.</p>
+<p>For example, does a rating variable encourage “good” behavior? As an example, we return to the use of distance driven as a rating factor. Many people advocate for including this variable as a factor. The motivation is that if insurance, like fuel, is priced based on distance driven, this will induce consumers to reduce the amount driven, thereby benefitting society.</p>
+<p>One can consider other aspects of societal effects of classification, see, for example, <span class="citation">Niehaus and Harrington (<a href="#ref-niehaus2003risk">2003</a>)</span>:</p>
+<ul>
+<li>Re-distributive Effects - provide a cross-subsidy from e.g., high risks to low risks</li>
+<li>Classification Costs - Money spent by society, insurers, to classify people appropriately.</li>
+</ul>
+</div>
+<div id="legal-criteria" class="section level4">
+<h4><span class="header-section-number">8.4.0.5</span> Legal Criteria</h4>
+<p>For example, some states have statutes prohibiting the use of gender in rating insurance while others permit it as a rating variable. As a result, an insurer writing in multiple states may include gender as a rating variable in those states where it is permitted, but not include it in a state that prohibits its use for rating. See the discussion in Section <a href="C-PremiumFoundations.html#S:RateRegulation">7.7.1</a>.</p>
+<p>If allowed by law, the company may continue to charge the average rate but utilize the characteristic to identify, attract, and select the lower-risk insureds that exist in the insured population; this is called <em>skimming the cream.</em></p>
 
+</div>
 </div>
 </div>
 </div>
@@ -1425,6 +1467,9 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 </div>
 <div id="ref-mccullagh1989generalized">
 <p>McCullagh, Peter, and John A. Nelder. 1989. <em>Generalized Linear Models</em>. Vol. 37. CRC press.</p>
+</div>
+<div id="ref-niehaus2003risk">
+<p>Niehaus, Gregory, and Scott Harrington. 2003. <em>Risk Management and Insurance</em>. New York: McGraw Hill.</p>
 </div>
 <div id="ref-ohlsson2010non">
 <p>Ohlsson, Esbjörn, and Björn Johansson. 2010. <em>Non-Life Insurance Pricing with Generalized Linear Models</em>. Vol. 21. Springer.</p>
