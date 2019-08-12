@@ -12,9 +12,9 @@ Glossfunction <- function(term){
   ifelse(length(temp2) == 0, return(''), return(Gloss_data[temp2[[1]],2]))
 }
 
-#Gloss <- function(term){
-#  return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
-#}
+Gloss <- function(term){
+  return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
+}
 
 ```
 
