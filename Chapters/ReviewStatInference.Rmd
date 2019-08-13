@@ -34,7 +34,7 @@ In this section, you learn the following concepts related to statistical inferen
 | Logarithmic Claims   |        0 |          6.670 |  7.719 |  7.804 |          8.728 |     16.370 |              1.683 |
 
 
-```{r ClaimDistn1, fig.cap='Distribution of Claims', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r ClaimDistn1, fig.cap='Distribution of Claims', out.width='80%', fig.asp=.75, fig.align='center', echo=ShowCode()}
 ClaimLev <- read.csv("Data/CLAIMLEVEL.csv", header=TRUE)
 ClaimLevBC10<-subset(ClaimLev,Year==2010); 
 cat("Sample size: ", nrow(ClaimLevBC10), "\n")

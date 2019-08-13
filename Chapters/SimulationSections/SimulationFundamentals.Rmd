@@ -48,7 +48,7 @@ The following code shows how to generate three uniform (0,1) numbers in `R` usin
 
 ##### Three Uniform Random Variates {-}
 
-```{r myirischunk, results = 'asis', comment = ""}
+```{r myirischunk, results = 'asis', comment = "", echo=ShowCode()}
 set.seed(2017)
 U <- runif(3)
 knitr::kable(U, digits=5, align = "c", col.names = "Uniform")
@@ -99,7 +99,7 @@ Thus, if $U$ has a uniform (0,1) distribution, then $X = -\theta \ln(1-U)$ has a
 
 The following `R` code shows how we can start with the same three uniform random numbers as in *Example 6.1.2* and transform them to independent exponentially distributed random variables with a mean of 10. Alternatively, you can directly use the `rexp` function in `R` to generate random numbers from the exponential distribution. The algorithm built into this routine is different so even with the same starting seed number, individual realizations will differ.
 
-```{r}
+```{r, echo=ShowCode()}
 set.seed(2017)
 U <- runif(3)
 X1 <- -10*log(1-U)
@@ -198,7 +198,7 @@ X = \left\{ \begin{array}{cc}
 $$
 For illustration, we generate three random numbers to get
 
-```{r}
+```{r, echo=ShowCode()}
 set.seed(2017)
 U <- runif(3)
 X <- 1*(U > 0.85)
@@ -394,7 +394,7 @@ To be specific, we use $M=$ `r M` as well as $R=$ `r nSim` simulations.
 
 **a.** With the settings, we wish to determine the expected claim amount and the associated standard deviation of (i) that retained, (ii) that accepted by the insurer, and (iii) the total overall amount.
 
-```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment=""}
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=ShowCode()}
 
 # Simulate the risks
 nSim <- 1e6  #number of simulations
@@ -410,7 +410,7 @@ Yinsurer  <- X - Yretained
 
 Here is the code for the expected claim amounts.
 
-```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment=""}
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=ShowCode()}
 # Expected Claim Amounts
 ExpVec <- t(as.matrix(c(mean(Yretained),mean(Yinsurer),mean(X))))
 sdVec <- t(as.matrix(c(sd(Yretained),sd(Yinsurer),sd(X))))
@@ -425,7 +425,7 @@ round(sd(Yinsurer),digits=2)` $/\sqrt{1000000} =$  `r round(sd(Yinsurer)/sqrt(10
 allows us to visualize the development of the approximation as the number of simulations increases.
 
 
-```{r PortfolioDF, warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", fig.cap = 'Estimated Expected Insurer Claims versus Number of Simulations.'}
+```{r PortfolioDF, warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", fig.cap = 'Estimated Expected Insurer Claims versus Number of Simulations.', echo=ShowCode()}
 Yinsurefct <- function(numSim){
 X1 <- rgamma(numSim,alpha1,scale = theta1)  
 X2 <- rgamma(numSim,alpha2,scale = theta2)  
@@ -486,7 +486,7 @@ $$
 \Pr\left[X>2\right] = \int_2^\infty \frac{dx}{\pi(1+x^2)} .
 $$
 One can use an `R` numerical integration function (which works usually well on improper integrals)
-```{r}
+```{r, echo=ShowCode()}
 true_value <- integrate(function(x) 1/(pi*(1+x^2)),lower=2,upper=Inf)$value
 ```
 which is equal to `r round(true_value,digits=5)`.
@@ -497,7 +497,7 @@ $$
 p_1 = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(F^{-1}(U_i)>2) = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(\tan \left( \pi(U_i-0.5) \right)>2) .
 $$
 
-```{r comment = ""}
+```{r comment = "", echo=ShowCode()}
 Q <- function(u) tan(pi*(u-.5))
 R <- 1e6
 set.seed(1)
@@ -666,7 +666,7 @@ Suppose that we have available $n=100$ observations $\{x_1,\cdots,x_n\}$ that, u
 The first step is to visualize the data. Figure \@ref(fig:KSTestData) provides a graph of a histogram and empirical distribution. For reference, superimposed are red dashed lines from the lognormal distribution. 
 
 
-```{r KSTestData, fig.align='center', comment="", fig.cap = 'Histogram and Empirical Distribution Function of Data used in Kolmogorov-Smirnov Test. The red dashed lines are fits based on (incorrectly) hypothesized lognormal distribution.'}
+```{r KSTestData, fig.align='center', comment="", fig.cap = 'Histogram and Empirical Distribution Function of Data used in Kolmogorov-Smirnov Test. The red dashed lines are fits based on (incorrectly) hypothesized lognormal distribution.', echo=ShowCode()}
 set.seed(1)
 n <- 100
 x <- rgamma(n, 6, 2)
@@ -682,7 +682,7 @@ lines(u,plnorm(u,1,.4),col="red",lty=2)
 
 Recall that the Kolmogorov-Smirnov statistic equals the largest discrepancy between the empirical and the hypothesized distribution. This is $\max_x |F_n(x)-F_0(x)|$, where $F_0$ is the hypothesized lognormal distribution. We can calculate this directly as:
 
-```{r comment=""}
+```{r comment="", echo=ShowCode()}
 # test statistic
 D <- function(data, F0){
    F <- Vectorize(function(x) mean((data<=x)))
@@ -697,14 +697,14 @@ D(x,function(x) plnorm(x,1,.4))
 
 Fortunately, for the lognormal distribution, `R` has built-in tests that allow us to determine this without complex programming:
 
-```{r comment=""}
+```{r comment="", echo=ShowCode()}
 ks.test(x, plnorm, mean=1, sd=0.4)
 ```
 
 
 However, for many distributions of actuarial interest, pre-built programs are not available. We can use simulation to test the relevance of the test statistic. Specifically, to compute the $p$-value, let us generate thousands of random samples from a $LN(1,0.4)$ distribution (with the same size), and compute empirically the distribution of the statistic,
 
-```{r KSSimulatedDistribution, fig.align='center', comment="", fig.cap = 'Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The vertical red dashed line marks the test statistic for the sample of 100.'}
+```{r KSSimulatedDistribution, fig.align='center', comment="", fig.cap = 'Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The vertical red dashed line marks the test statistic for the sample of 100.', echo=ShowCode()}
 ns <- 1e4
 d_KS <- rep(NA,ns)
 # compute the test statistics for a large (ns) number of simulated samples
