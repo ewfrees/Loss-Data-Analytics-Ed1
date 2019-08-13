@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -794,7 +794,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 \]</span> that is based on the survival function, denoted as <span class="math inline">\(S_X(x) = 1-F_{X}(x)\)</span>. This formula is particularly useful when <span class="math inline">\(k=1\)</span>.</p>
 <p>The <em>k</em>-th <a href="#" class="tooltip" style="color:green"><em>central moment</em><span style="font-size:8pt">the kth central moment of a random variable X is the expected value of (X-its mean)^k</span></a> of <span class="math inline">\(X\)</span>, denoted by <span class="math inline">\(\mu_{k}\)</span>, is the expected value of the <em>k</em>-th power of the deviation of <span class="math inline">\(X\)</span> from its mean <span class="math inline">\(\mu\)</span>. The formula for <span class="math inline">\(\mu_{k}\)</span> is given as <span class="math display">\[
 \mu_{k} = \mathrm{E}\left\lbrack {(X - \mu)}^{k} \right\rbrack = \int_{0}^{\infty}{\left( x - \mu \right)^{k}f_{X}\left( x \right) dx }.
-\]</span> The second central moment <span class="math inline">\(\mu_{2}\)</span> defines the <a href="#" class="tooltip" style="color:green"><em>variance</em><span style="font-size:8pt">The second central moment of a distribution</span></a> of <span class="math inline">\(X\)</span>, denoted by <span class="math inline">\(\sigma^{2}\)</span>. The square root of the variance is the <a href="#" class="tooltip" style="color:green"><em>standard deviation</em><span style="font-size:8pt">the square-root of variance</span></a> <span class="math inline">\(\sigma\)</span>.</p>
+\]</span> The second central moment <span class="math inline">\(\mu_{2}\)</span> defines the <a href="#" class="tooltip" style="color:green"><em>variance</em><span style="font-size:8pt">second central moment of a random variable X, measuring the expected squared deviation of between the variable and its mean</span></a> of <span class="math inline">\(X\)</span>, denoted by <span class="math inline">\(\sigma^{2}\)</span>. The square root of the variance is the <a href="#" class="tooltip" style="color:green"><em>standard deviation</em><span style="font-size:8pt">the square-root of variance</span></a> <span class="math inline">\(\sigma\)</span>.</p>
 <p>From a classical perspective, further characterization of the shape of the distribution includes its degree of symmetry as well as its flatness compared to the normal distribution. The ratio of the third central moment to the cube of the standard deviation <span class="math inline">\(\left( \mu_{3} / \sigma^{3} \right)\)</span> defines the coefficient of <a href="#" class="tooltip" style="color:green"><em>skewness</em><span style="font-size:8pt">measure of the symmetry of a distribution, 3rd central moment/standard deviation^3</span></a> which is a measure of symmetry. A positive coefficient of skewness indicates that the distribution is skewed to the right (positively skewed). The ratio of the fourth central moment to the fourth power of the standard deviation <span class="math inline">\(\left(\mu_{4} / \sigma^{4} \right)\)</span> defines the coefficient of <a href="#" class="tooltip" style="color:green"><em>kurtosis</em><span style="font-size:8pt">measure of the peaked-ness of a distribution, 4th central moment/standard deviation^4</span></a>. The normal distribution has a coefficient of kurtosis of 3. Distributions with a coefficient of kurtosis greater than 3 have heavier tails and higher peak than the normal, whereas distributions with a coefficient of kurtosis less than 3 have lighter tails and are flatter. Section <a href="C-PortMgt.html#S:Tails">10.2</a> describes the tails of distributions from an insurance and actuarial perspective.</p>
 <p><strong>Example 3.1.1. Actuarial Exam Question.</strong> Assume that the <em>rv</em> <span class="math inline">\(X\)</span> has a gamma distribution with mean 8 and skewness 1. Find the variance of <span class="math inline">\(X\)</span>. (<em>Hint</em>: The gamma distribution is reviewed in Section <a href="C-Severity.html#S:Loss:Gamma">3.2.1</a>.)</p>
 <h5 style="text-align: center;">
@@ -926,28 +926,28 @@ Figure 3.1: Gamma Densities. The left-hand panel is with shape=2 and Varying Sca
 <a id="displayCode.gamma.1" href="javascript:togglecode('toggleCode.gamma.1','displayCode.gamma.1');"><i><strong>R Code for Gamma Density Plots</strong></i></a>
 </h5>
 <div id="toggleCode.gamma.1" style="display: none">
-<pre><code>par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))
 
-# Varying Scale Gamma Densities
-scaleparam &lt;- seq(100, 250, by = 50)
-shapeparam &lt;- 2:5
-x &lt;- seq(0, 1000, by = 1)
-fgamma &lt;- dgamma(x, shape = 2, scale = scaleparam[1])
-plot(x, fgamma, type = &quot;l&quot;, ylab = &quot;Gamma Density&quot;)
-for(k in 2:length(scaleparam)){
-  fgamma &lt;- dgamma(x,shape = 2, scale = scaleparam[k])
-  lines(x,fgamma, col = k)
+<span class="co"># Varying Scale Gamma Densities</span>
+scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">100</span>, <span class="dv">250</span>, <span class="dt">by =</span> <span class="dv">50</span>)
+shapeparam &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">5</span>
+x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
+fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x, <span class="dt">shape =</span> <span class="dv">2</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>])
+<span class="kw">plot</span>(x, fgamma, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gamma Density&quot;</span>)
+<span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){
+  fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x,<span class="dt">shape =</span> <span class="dv">2</span>, <span class="dt">scale =</span> scaleparam[k])
+  <span class="kw">lines</span>(x,fgamma, <span class="dt">col =</span> k)
 }
-legend(&quot;topright&quot;, c(&quot;scale=100&quot;, &quot;scale=150&quot;, &quot;scale=200&quot;, &quot;scale=250&quot;), lty=1, col = 1:4)
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;scale=100&quot;</span>, <span class="st">&quot;scale=150&quot;</span>, <span class="st">&quot;scale=200&quot;</span>, <span class="st">&quot;scale=250&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)
 
-# Varying Shape Gamma Densities
-fgamma &lt;- dgamma(x, shape = shapeparam[1], scale = 100)
-plot(x, fgamma, type = &quot;l&quot;, ylab = &quot;Gamma Density&quot;)
-for(k in 2:length(shapeparam)){
-  fgamma &lt;- dgamma(x,shape = shapeparam[k], scale = 100)
-  lines(x,fgamma, col = k)
+<span class="co"># Varying Shape Gamma Densities</span>
+fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">100</span>)
+<span class="kw">plot</span>(x, fgamma, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gamma Density&quot;</span>)
+<span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){
+  fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x,<span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">100</span>)
+  <span class="kw">lines</span>(x,fgamma, <span class="dt">col =</span> k)
 }
-legend(&quot;topright&quot;, c(&quot;shape=2&quot;, &quot;shape=3&quot;, &quot;shape=4&quot;, &quot;shape=5&quot;), lty=1, col = 1:4)</code></pre>
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;shape=2&quot;</span>, <span class="st">&quot;shape=3&quot;</span>, <span class="st">&quot;shape=4&quot;</span>, <span class="st">&quot;shape=5&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</code></pre></div>
 </div>
 <p>When <span class="math inline">\(\alpha = 1\)</span> the gamma reduces to an <a href="#" class="tooltip" style="color:green"><em>exponential distribution</em><span style="font-size:8pt">a single parameter continous probability distribution that is defined by its rate parameter</span></a> and when <span class="math inline">\(\alpha = \frac{n}{2}\)</span> and <span class="math inline">\(\theta = 2\)</span> the gamma reduces to a <a href="#" class="tooltip" style="color:green"><em>chi-square distribution</em><span style="font-size:8pt">the chi-squared distribution with k degrees of freedom is the distribution of a sum of the squares of k independent standard normal random variables</span></a> with <span class="math inline">\(n\)</span> degrees of freedom. As we will see in Section <a href="C-AppA.html#S:AppA:HT">15.4</a>, the chi-square distribution is used extensively in statistical hypothesis testing.</p>
 <p>The distribution function of the gamma model is the incomplete gamma function, denoted by <span class="math inline">\(\Gamma\left(\alpha; \frac{x}{\theta} \right)\)</span>, and defined as <span class="math display">\[
@@ -974,29 +974,28 @@ Figure 3.2: Pareto Densities. The left-hand panel is with scale=2000 and Varying
 <a id="displayCode.Pareto.1" href="javascript:togglecode('toggleCode.Pareto.1','displayCode.Pareto.1');"><i><strong>R Code for Pareto Density Plots</strong></i></a>
 </h5>
 <div id="toggleCode.Pareto.1" style="display: none">
-<pre><code>library(VGAM)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(VGAM)
 
-par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))
 
-# Varying Shape Pareto Densities
-x &lt;- seq(1, 3000, by = 1)
-scaleparam &lt;- seq(2000, 3500, 500)
-shapeparam &lt;- 1:4
+<span class="co"># Varying Shape Pareto Densities</span>
+x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">3000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
+scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">2000</span>, <span class="dv">3500</span>, <span class="dv">500</span>)
+shapeparam &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>
 
-# varying the shape parameter
-plot(x, dparetoII(x, loc=0, shape = shapeparam[1], scale = 2000), ylim=c(0,0.002),type = &quot;l&quot;, ylab = &quot;Pareto density&quot;)
-for(k in 2:length(shapeparam)){
-  lines(x, dparetoII(x, loc=0, shape = shapeparam[k], scale = 2000), col = k)
+<span class="co"># varying the shape parameter</span>
+<span class="kw">plot</span>(x, <span class="kw">dparetoII</span>(x, <span class="dt">loc=</span><span class="dv">0</span>, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">2000</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.002</span>),<span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Pareto density&quot;</span>)
+<span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){
+  <span class="kw">lines</span>(x, <span class="kw">dparetoII</span>(x, <span class="dt">loc=</span><span class="dv">0</span>, <span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">2000</span>), <span class="dt">col =</span> k)
 }
-legend(&quot;topright&quot;, c(expression(alpha~&#39;=1&#39;), expression(alpha~&#39;=2&#39;), expression(alpha~&#39;=3&#39;), expression(alpha~&#39;=4&#39;)), lty=1, col = 1:4)
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=1&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=2&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=3&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=4&#39;</span>)), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)
 
-# Varying Scale Pareto Densities
-plot(x, dparetoII(x, loc=0, shape = 3, scale = scaleparam[1]), type = &quot;l&quot;, ylab = &quot;Pareto density&quot;)
-for(k in 2:length(scaleparam)){
-  lines(x, dparetoII(x, loc=0, shape = 3, scale = scaleparam[k]), col = k)
+<span class="co"># Varying Scale Pareto Densities</span>
+<span class="kw">plot</span>(x, <span class="kw">dparetoII</span>(x, <span class="dt">loc=</span><span class="dv">0</span>, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>]), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Pareto density&quot;</span>)
+<span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){
+  <span class="kw">lines</span>(x, <span class="kw">dparetoII</span>(x, <span class="dt">loc=</span><span class="dv">0</span>, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[k]), <span class="dt">col =</span> k)
 }
-legend(&quot;topright&quot;, c(expression(theta~&#39;=2000&#39;), expression(theta~&#39;=2500&#39;), expression(theta~&#39;=3000&#39;), expression(theta~&#39;=3500&#39;)), lty=1, col = 1:4)
-</code></pre>
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=2000&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=2500&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=3000&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=3500&#39;</span>)), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</code></pre></div>
 </div>
 <p>The distribution function of the Pareto distribution is given by <span class="math display">\[
 F_{X}\left( x \right) = 1 - \left( \frac{\theta}{x + \theta} \right)^{\alpha}  \ \ \ x &gt; 0,\ \alpha &gt; 0,\ \theta &gt; 0.
@@ -1041,22 +1040,22 @@ Figure 3.3: Weibull Densities. The left-hand panel is with shape=3 and Varying S
 <a id="displayCode.Weibull.1" href="javascript:togglecode('toggleCode.Weibull.1','displayCode.Weibull.1');"><i><strong>R Code for Weibull Density Plots</strong></i></a>
 </h5>
 <div id="toggleCode.Weibull.1" style="display: none">
-<pre><code>par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))
 
-# Varying Scale Weibull Densities
-z&lt;- seq(0,400,by=1)
-scaleparam &lt;- seq(50,200,50)
-shapeparam &lt;- seq(1.5,3,0.5)
-plot(z, dweibull(z, shape = 3, scale = scaleparam[1]), type = &quot;l&quot;, ylab = &quot;Weibull density&quot;)
-for(k in 2:length(scaleparam)){
-  lines(z,dweibull(z,shape = 3, scale = scaleparam[k]), col = k)}
-legend(&quot;topright&quot;, c(&quot;scale=50&quot;, &quot;scale=100&quot;, &quot;scale=150&quot;, &quot;scale=200&quot;), lty=1, col = 1:4)
+<span class="co"># Varying Scale Weibull Densities</span>
+z&lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">400</span>,<span class="dt">by=</span><span class="dv">1</span>)
+scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">50</span>,<span class="dv">200</span>,<span class="dv">50</span>)
+shapeparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">1.5</span>,<span class="dv">3</span>,<span class="fl">0.5</span>)
+<span class="kw">plot</span>(z, <span class="kw">dweibull</span>(z, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>]), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weibull density&quot;</span>)
+<span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){
+  <span class="kw">lines</span>(z,<span class="kw">dweibull</span>(z,<span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[k]), <span class="dt">col =</span> k)}
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;scale=50&quot;</span>, <span class="st">&quot;scale=100&quot;</span>, <span class="st">&quot;scale=150&quot;</span>, <span class="st">&quot;scale=200&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)
 
-# Varying Shape Weibull Densities
-plot(z, dweibull(z, shape = shapeparam[1], scale = 100), ylim=c(0,0.012), type = &quot;l&quot;, ylab = &quot;Weibull density&quot;)
-for(k in 2:length(shapeparam)){
-  lines(z,dweibull(z,shape = shapeparam[k], scale = 100), col = k)}
-legend(&quot;topright&quot;, c(&quot;shape=1.5&quot;, &quot;shape=2&quot;, &quot;shape=2.5&quot;, &quot;shape=3&quot;), lty=1, col = 1:4)</code></pre>
+<span class="co"># Varying Shape Weibull Densities</span>
+<span class="kw">plot</span>(z, <span class="kw">dweibull</span>(z, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">100</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.012</span>), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weibull density&quot;</span>)
+<span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){
+  <span class="kw">lines</span>(z,<span class="kw">dweibull</span>(z,<span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">100</span>), <span class="dt">col =</span> k)}
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;shape=1.5&quot;</span>, <span class="st">&quot;shape=2&quot;</span>, <span class="st">&quot;shape=2.5&quot;</span>, <span class="st">&quot;shape=3&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</code></pre></div>
 </div>
 <p>The distribution function of the Weibull distribution is given by <span class="math display">\[
 F_{X}\left( x \right) = 1 - e^{- \left( x / \theta \right)^{\alpha}}  \ \ \ x &gt;  0,\ \alpha &gt;  0,\ \theta &gt; 0.
@@ -1586,7 +1585,7 @@ X - 100 &amp; 100 &lt;  X \leq 600, \\
 </div>
 <div id="S:Chap3Reinsurance" class="section level3">
 <h3><span class="header-section-number">3.4.4</span> Reinsurance</h3>
-<p>In Section <a href="C-Severity.html#S:PolicyDeduct">3.4.1</a> we introduced the policy deductible, which is a contractual arrangement under which an insured transfers part of the risk by securing coverage from an insurer in return for an insurance premium. Under that policy, the insured must pay all losses up to the deductible, and the insurer only pays the amount (if any) above the deductible. We now introduce <a href="#" class="tooltip" style="color:green"><em>reinsurance</em><span style="font-size:8pt">insurance purchased by an insurer</span></a>, a mechanism of insurance for insurance companies. Reinsurance is a contractual arrangement under which an insurer transfers part of the underlying insured risk by securing coverage from another insurer (referred to as a reinsurer) in return for a reinsurance premium. Although reinsurance involves a relationship between three parties: the original insured, the insurer (often referred to as <a href="#" class="tooltip" style="color:green"><em>cedent</em><span style="font-size:8pt">party that is transferring the risk to a reinsurer</span></a> or cedant) and the reinsurer, the parties of the reinsurance agreement are only the primary insurer and the reinsurer. There is no contractual agreement between the original insured and the reinsurer. Though many different types of reinsurance contracts exist, a common form is <a href="#" class="tooltip" style="color:green"><em>excess of loss coverage</em><span style="font-size:8pt">contract where an insurer pays all claims up to a specified amount and then the reinsurer pays claims in excess of stated reinsurance deductible</span></a>. In such contracts, the primary insurer must make all required payments to the insured until the primary insurer’s total payments reach a fixed reinsurance deducible. The reinsurer is then only responsible for paying losses above the reinsurance deductible. The maximum amount retained by the primary insurer in the reinsurance agreement (the reinsurance deductible) is called <a href="#" class="tooltip" style="color:green"><em>retention</em><span style="font-size:8pt">maximum amount payable by the primary insurer in a reinsurance arrangement </span></a>.</p>
+<p>In Section <a href="C-Severity.html#S:PolicyDeduct">3.4.1</a> we introduced the policy deductible, which is a contractual arrangement under which an insured transfers part of the risk by securing coverage from an insurer in return for an insurance premium. Under that policy, the insured must pay all losses up to the deductible, and the insurer only pays the amount (if any) above the deductible. We now introduce <a href="#" class="tooltip" style="color:green"><em>reinsurance</em><span style="font-size:8pt">a transaction where the primary insurer buys insurance from a re-insurer who will cover part of the losses and/or loss adjustment expenses of the primary insurer</span></a>, a mechanism of insurance for insurance companies. Reinsurance is a contractual arrangement under which an insurer transfers part of the underlying insured risk by securing coverage from another insurer (referred to as a reinsurer) in return for a reinsurance premium. Although reinsurance involves a relationship between three parties: the original insured, the insurer (often referred to as <a href="#" class="tooltip" style="color:green"><em>cedent</em><span style="font-size:8pt">party that is transferring the risk to a reinsurer</span></a> or cedant) and the reinsurer, the parties of the reinsurance agreement are only the primary insurer and the reinsurer. There is no contractual agreement between the original insured and the reinsurer. Though many different types of reinsurance contracts exist, a common form is <a href="#" class="tooltip" style="color:green"><em>excess of loss coverage</em><span style="font-size:8pt">contract where an insurer pays all claims up to a specified amount and then the reinsurer pays claims in excess of stated reinsurance deductible</span></a>. In such contracts, the primary insurer must make all required payments to the insured until the primary insurer’s total payments reach a fixed reinsurance deducible. The reinsurer is then only responsible for paying losses above the reinsurance deductible. The maximum amount retained by the primary insurer in the reinsurance agreement (the reinsurance deductible) is called <a href="#" class="tooltip" style="color:green"><em>retention</em><span style="font-size:8pt">maximum amount payable by the primary insurer in a reinsurance arrangement </span></a>.</p>
 <p>Reinsurance arrangements allow insurers with limited financial resources to increase the capacity to write insurance and meet client requests for larger insurance coverage while reducing the impact of potential losses and protecting the insurance company against catastrophic losses. Reinsurance also allows the primary insurer to benefit from underwriting skills, expertise and proficient complex claim file handling of the larger reinsurance companies.</p>
 <p><strong>Example 3.4.6. Actuarial Exam Question.</strong> Losses arising in a certain portfolio have a two-parameter Pareto distribution with <span class="math inline">\(\alpha=5\)</span> and <span class="math inline">\(\theta=3,600\)</span>. A reinsurance arrangement has been made, under which (a) the reinsurer accepts 15% of losses up to <span class="math inline">\(u=5,000\)</span> and all amounts in excess of 5,000 and (b) the insurer pays for the remaining losses.</p>
 <ol style="list-style-type: lower-alpha">
@@ -2161,7 +2160,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

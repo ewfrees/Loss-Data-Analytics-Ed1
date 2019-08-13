@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -849,9 +849,9 @@ M_{S_n}(t) &amp; =\prod_{i=1}^n \left( 1-q_i+q_i M_{B_i}(t) \right)
 (iii) Claim occurrences are independent.</p>
 <p>Calculate the mean, <span class="math inline">\(\mathrm{E~}(S_{300})\)</span>, and variance, <span class="math inline">\(\mathrm{Var~}(S_{300})\)</span>, of the aggregate claims. How would these results change if every claim is equal to the policy maximum?</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.2.1" href="javascript:toggleEX('toggleExampleAggLoss.2.1','displayTextExampleAggLoss.2.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.2.1" href="javascript:toggleEX('toggleExample.5.2.1','displayExample.5.2.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.2.1" style="display: none">
+<div id="toggleExample.5.2.1" style="display: none">
 <p><strong>Solution.</strong> The aggregate claims are <span class="math inline">\(S_{300} = X_1+\cdots+X_{300}\)</span>, where <span class="math inline">\(X_1, \ldots, X_{300}\)</span> are independent but not identically distributed. Policy claims amounts are uniformly distributed on <span class="math inline">\((0,M_i)\)</span>, so the mean claim amount is <span class="math inline">\(M_i/2\)</span> and the variance is<span class="math inline">\(M_i^2/12\)</span>. Thus, for policy <span class="math inline">\(i=1,\ldots,300\)</span>, we have <span class="math display">\[
 {\small 
 \begin{matrix}
@@ -906,9 +906,9 @@ P_{X_i}(z) = p_{i0} +(1-p_{i0}) P_{X_i^{T}}(z),
 }
 \]</span> Find the expected value and variance of the claim frequency for the entire portfolio.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.2.2" href="javascript:toggleEX('toggleExampleAggLoss.2.2','displayTextExampleAggLoss.2.2');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.2.2" href="javascript:toggleEX('toggleExample.5.2.2','displayExample.5.2.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.2.2" style="display: none">
+<div id="toggleExample.5.2.2" style="display: none">
 <p><strong>Solution.</strong> For each policy, we can write the zero-modified Poisson claim frequency <span class="math inline">\(N_i\)</span> as <span class="math inline">\(N_i = I_i \times B_i\)</span>, where <span class="math display">\[q_i = \Pr(I_i = 1) = \Pr(N_i &gt; 0) = 1-p_{i0}\]</span> For the low-risk policies, we have <span class="math inline">\(q_i = 0.03\)</span> and for the high-risk policies, we have <span class="math inline">\(q_i=0.05\)</span>. Further, <span class="math inline">\(B_i = N_i^T\)</span>, the zero-truncated version of <span class="math inline">\(N_i\)</span>. Thus, we have <span class="math display">\[\begin{aligned}
 \mu_i &amp;={\rm E}(B_i) = {\rm E}(N_i^T) = \frac{\lambda}{1-e^{-\lambda}} \\
 \sigma_i^2 &amp;={\rm Var}(B_i) = {\rm Var}(N_i^T) = \frac{\lambda [1-(\lambda+1)e^{-\lambda}]}{(1-e^{-\lambda})^2}
@@ -931,9 +931,9 @@ P_{X_i}(z) = p_{i0} +(1-p_{i0}) P_{X_i^{T}}(z),
 <hr />
 <p><strong>Example 5.2.3. Actuarial Exam Question - Follow-Up.</strong> As in the Example 5.2.1 earlier, an insurance company sold 300 fire insurance policies, with claim amounts <span class="math inline">\(X_i\)</span> uniformly distributed between 0 and the policy maximum <span class="math inline">\(M_i\)</span>. Using the normal approximation, calculate the probability that the aggregate claim amount <span class="math inline">\(S_{300}\)</span> exceeds <span class="math inline">\(\$3,500\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.2.3" href="javascript:toggleEX('toggleExampleAggLoss.2.3','displayTextExampleAggLoss.2.3');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.2.3" href="javascript:toggleEX('toggleExample.5.2.3','displayExample.5.2.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.2.3" style="display: none">
+<div id="toggleExample.5.2.3" style="display: none">
 <p><strong>Solution.</strong> We have seen earlier that <span class="math inline">\(\mathrm{E}(S_{300})=2,800\)</span> and <span class="math inline">\(\mathrm{Var}(S_{300}) = 600,467\)</span>. Then <span class="math display">\[\begin{aligned}
 {\rm Pr}(S_{300} &gt; 3,500) &amp;= 1 - {\rm Pr}(S_{300} \leq 3,500) \\
 &amp;\approx 1- \Phi \left( \frac{3,500-2,800}{\sqrt{600,467}} \right) = 1 - \Phi \left( 0.90334 \right) \\
@@ -1003,10 +1003,9 @@ P_{S_n}(z) &amp;= \mathrm{E~}\left[ z^{S_n} \right] = \mathrm{E~}\left[ z^{X_1+\
 <hr />
 <p><strong>Example 5.2.6. Actuarial Exam Question (modified).</strong> The annual number of doctor visits for each individual in a family of 4 has geometric distribution with mean 1.5. The annual numbers of visits for the family members are mutually independent. An insurance pays 100 per doctor visit beginning with the 4th visit per family. Calculate the probability that the family will receive an insurance payment this year.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.2.6"
-href="javascript:toggleEX('toggleExampleAggLoss.2.6','displayTextExampleAggLoss.2.6');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.2.6" href="javascript:toggleEX('toggleExample.5.2.6','displayExample.5.2.6');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.2.6" style="display: none">
+<div id="toggleExample.5.2.6" style="display: none">
 <p><strong>Solution.</strong> Let <span class="math inline">\(X_i \sim Geo(\beta=1.5)\)</span> be the number of doctor visits for one individual in the family and <span class="math inline">\(S_4 = X_1 + X_2 + X_3 + X_4\)</span> be the number of doctor visits for the family. The sum of 4 independent geometric random variables each with mean <span class="math inline">\(\beta=1.5\)</span> follows a negative binomial distribution, i.e. <span class="math inline">\(S_4 \sim NB(\beta=1.5, r=4)\)</span>.</p>
 <p>If the insurance pays 100 per visit beginning with the 4th visit for the family, then the family will not receive an insurance payment if they have less than 4 claims. This probability is <span class="math display">\[\begin{aligned}
     \Pr(S_4 &lt; 4) &amp;= \Pr(S_4 = 0) + \Pr(S_4 = 1) + \Pr(S_4 = 2) +\Pr(S_4 = 3) \\
@@ -1057,9 +1056,9 @@ Under the collective risk model <span class="math inline">\(S_N=X_1+\cdots+X_N\)
 <p><strong>Example 5.3.1. Actuarial Exam Question.</strong> The number of accidents follows a Poisson distribution with mean 12. Each accident generates 1, 2, or 3 claimants with probabilities 1/2, 1/3, and 1/6 respectively.</p>
 <p>Calculate the variance in the total number of claimants.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.3.1" href="javascript:toggleEX('toggleExampleAggLoss.3.1','displayTextExampleAggLoss.3.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.3.1" href="javascript:toggleEX('toggleExample.5.3.1','displayExample.5.3.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.3.1" style="display: none">
+<div id="toggleExample.5.3.1" style="display: none">
 <p><strong>Solution.</strong> <span class="math display">\[\begin{aligned} 
 &amp; \mathrm{E}(X^2) = 1^2 \left( \frac{1}{2}\right) + 2^2\left(\frac{1}{3} \right) + 3^2\left(\frac{1}{6}\right)
 = \frac{10}{3} \\
@@ -1125,9 +1124,9 @@ M_{S_N}&#39;&#39;(t) &amp;= M_{S}(t) ~\lambda~ M_{X}&#39;&#39;(t) + [~M_{S}(t)~\
 \]</span></p>
 <p>Your budget for prizes equals the expected aggregate cash prizes plus the standard deviation of aggregate cash prizes. Calculate your budget.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.3.2" href="javascript:toggleEX('toggleExampleAggLoss.3.2','displayTextExampleAggLoss.3.2');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.3.2" href="javascript:toggleEX('toggleExample.5.3.2','displayExample.5.3.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.3.2" style="display: none">
+<div id="toggleExample.5.3.2" style="display: none">
 <p><strong>Solution.</strong> We need to calculate the mean and standard deviation of the aggregate (sum) of cash prizes. The moments of the frequency distribution <span class="math inline">\(N\)</span> are <span class="math display">\[\begin{aligned}
 \mathrm{E}(N) &amp;= 1 (0.8) + 2 (0.2) =1.2\\
 \mathrm{E}(N^2) &amp;=  1^2 (0.8) + 2^2 (0.2) =1.6\\
@@ -1158,9 +1157,9 @@ F_{S_N}(s) &amp;= \Pr \left(X_1 + \cdots + X_N \le s \right) \\
 <hr />
 <p><strong>Example 5.3.3. Actuarial Exam Question.</strong> The number of claims in a period has a geometric distribution with mean <span class="math inline">\(4\)</span>. The amount of each claim <span class="math inline">\(X\)</span> follows <span class="math inline">\(\Pr(X=x) = 0.25, \ x=1,2,3,4\)</span>, i.e. a discrete uniform distribution on <span class="math inline">\(\{1,2,3,4\}\)</span>. The number of claims and the claim amounts are independent. Let <span class="math inline">\(S_N\)</span> denote the aggregate claim amount in the period. Calculate <span class="math inline">\(F_{S_N}(3)\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.3.3" href="javascript:toggleEX('toggleExampleAggLoss.3.3','displayTextExampleAggLoss.3.3');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.3.3" href="javascript:toggleEX('toggleExample.5.3.3','displayExample.5.3.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.3.3" style="display: none">
+<div id="toggleExample.5.3.3" style="display: none">
 <p><strong>Solution.</strong> By definition, we have <span class="math display">\[\begin{aligned}
 F_{S_N}\left(3 \right) &amp;= {\rm Pr}\left(\sum_{i=1}^N X_i \leq 3\right) = \sum_{n=0}^\infty {\rm Pr}\left(\sum_{i=1}^n X_i\leq 3|N=n\right){\rm Pr}(N=n) \\
 &amp;= \sum_n F^{\ast n} \left(3 \right) p_n = \sum_{n=0}^3 F^{\ast n}(3) p_n \\
@@ -1207,9 +1206,9 @@ F_{S_N}(3) &amp;= p_0 + F^{\ast 1}(3) \ p_1 + F^{\ast 2}(3) \ p_2 + F^{\ast 3}(3
 }
 \]</span> Using the normal approximation, determine the probability that the aggregate loss will exceed 150<span class="math inline">\(\%\)</span> of the expected loss.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.3.4" href="javascript:toggleEX('toggleExampleAggLoss.3.4','displayTextExampleAggLoss.3.4');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.3.4" href="javascript:toggleEX('toggleExample.5.3.4','displayExample.5.3.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.3.4" style="display: none">
+<div id="toggleExample.5.3.4" style="display: none">
 <p><strong>Solution.</strong> To use the normal approximation, we must first find the mean and variance of the aggregate loss <span class="math inline">\(S\)</span> <span class="math display">\[\begin{aligned}
 \mathrm{E}(S_N) &amp;= \mu \ \mathrm{E}(N) = 10,000(8) = 80,000\\
 \mathrm{Var}(S_N) &amp;= \sigma^2 \ \mathrm{E}(N) + \mu^2 \ \mathrm{Var}(N)\\
@@ -1230,9 +1229,9 @@ F_{S_N}(3) &amp;= p_0 + F^{\ast 1}(3) \ p_1 + F^{\ast 2}(3) \ p_2 + F^{\ast 3}(3
 (iii) The amounts of the claims and the number of claims are mutually independent.<br />
 Estimate the probability that aggregate claims for this individual will exceed <span class="math inline">\(2000\)</span> using the normal approximation.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.3.5" href="javascript:toggleEX('toggleExampleAggLoss.3.5','displayTextExampleAggLoss.3.5');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.3.5" href="javascript:toggleEX('toggleExample.5.3.5','displayExample.5.3.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.3.5" style="display: none">
+<div id="toggleExample.5.3.5" style="display: none">
 <p><strong>Solution.</strong> We have claim frequency <span class="math inline">\(N \sim Poi(\lambda = 25)\)</span> and claim severity <span class="math inline">\(X \sim U \left(5, 95 \right)\)</span>. To use the normal approximation, we need to find the mean and variance of the aggregate claims <span class="math inline">\(S_N\)</span>. Note</p>
 <p><span class="math display">\[\begin{matrix}
 \begin{array}{lll}
@@ -1286,9 +1285,9 @@ Estimate the probability that aggregate claims for this individual will exceed <
 \]</span></p>
 <p>The number of projects and the number of overtime hours are independent. You will get paid for overtime hours in excess of 15 hours in the week. Calculate the expected number of overtime hours for which you will get paid in the week.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.3.6" href="javascript:toggleEX('toggleExampleAggLoss.3.6','displayTextExampleAggLoss.3.6');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.3.6" href="javascript:toggleEX('toggleExample.5.3.6','displayExample.5.3.6');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.3.6" style="display: none">
+<div id="toggleExample.5.3.6" style="display: none">
 <p><strong>Solution.</strong> The number of projects in a week requiring overtime work has distribution <span class="math inline">\(N \sim Geo(\beta=2)\)</span>, while the number of overtime hours worked per project has distribution <span class="math inline">\(X\)</span> as described above. The aggregate number of overtime hours in a week is <span class="math inline">\(S_N\)</span> and we are therefore looking for <span class="math display">\[\mathrm{E}(S_N-15)_+ = \mathrm{E}(S_N) - \mathrm{E}(S_N \wedge 15).\]</span></p>
 <p>To find <span class="math inline">\(\mathrm{E}(S_N) = \mathrm{E}(X) ~\mathrm{E}(N)\)</span>, we have <span class="math display">\[\begin{aligned}
 &amp;\mathrm{E}(X) = 5(0.2) + 10(0.3)+ 20(0.5)= 14 \\
@@ -1479,9 +1478,9 @@ m} x f_X (x) f_{S_N} (s-x)\right\} .
 <hr />
 <p><strong>Example 5.4.1. Actuarial Exam Question.</strong> The number of claims in a period <span class="math inline">\(N\)</span> has a geometric distribution with mean 4. The amount of each claim <span class="math inline">\(X\)</span> follows <span class="math inline">\({\rm Pr} (X = x) = 0.25\)</span>, for <span class="math inline">\(x = 1,2,3,4\)</span>. The number of claims and the claim amount are independent. <span class="math inline">\(S_N\)</span> is the aggregate claim amount in the period. Calculate <span class="math inline">\(F_{S_N}(3)\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.4.1" href="javascript:toggleEX('toggleExampleAggLoss.4.1','displayTextExampleAggLoss.4.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.4.1" href="javascript:toggleEX('toggleExample.5.4.1','displayExample.5.4.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.4.1" style="display: none">
+<div id="toggleExample.5.4.1" style="display: none">
 <p><strong>Solution.</strong> The severity distribution <span class="math inline">\(X\)</span> follows <span class="math display">\[f_X (x) = \frac{1}{4}, \ \ x=1, 2, 3, 4.\]</span> The frequency distribution <span class="math inline">\(N\)</span> is geometric with mean 4, which is a member of the <span class="math inline">\((a,b,0)\)</span> class with <span class="math inline">\(b=0\)</span>, <span class="math inline">\(a=\frac{\beta}{1+\beta} = \frac{4}{5}\)</span>, and <span class="math inline">\(p_0 = \frac{1}{1+\beta} = \frac{1}{5}\)</span>. The support of severity component <span class="math inline">\(X\)</span> is <span class="math inline">\(\{1,\ldots,m=4 \}\)</span>, discrete and finite. Thus, we can use the recursive method <span class="math display">\[\begin{aligned}
 f_{S_N} (x) &amp;= 1 \sum_{y=1}^{x\wedge m} (a+0) f_X (y) f_{S_N} (x-y) \\
 &amp;= \frac{4}{5} \sum_{y=1}^{x\wedge m} f_X (y) f_{S_N} (x-y)
@@ -1525,9 +1524,9 @@ f_{S_N} (3) &amp;= \frac{4}{5} \left[ f_X(1) f_{S_N}(2) + f_X(2)f_{S_N}(1) + f_X
 <hr />
 <p><strong>Example 5.4.2.</strong> Recall Example 5.3.5 with an individual’s claim frequency <span class="math inline">\(N \sim Poi(\lambda=25)\)</span> and claim severity <span class="math inline">\(X \sim U(5,95)\)</span>. Using a simulated sample of 10000 observations, estimate the mean and variance of the aggregate loss <span class="math inline">\(S_N\)</span>. In addition, use the simulated sample to estimate the probability that aggregate claims for this individual will exceed 2000 and compare with the normal approximation estimates from Example 5.3.5.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.4.2" href="javascript:toggleEX('toggleExampleAggLoss.4.2','displayTextExampleAggLoss.4.2');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.4.2" href="javascript:toggleEX('toggleExample.5.4.2','displayExample.5.4.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.4.2" style="display: none">
+<div id="toggleExample.5.4.2" style="display: none">
 <p><strong>Solution.</strong> We follow the algorithm for the collective risk model, where we first simulate frequencies <span class="math inline">\(n_1,\ldots,n_{10000}\)</span>, and conditional on <span class="math inline">\(n_j,~j=1,\ldots,10000\)</span>, simulate each individual loss <span class="math inline">\(x_{ij},~i=1,\ldots n_j\)</span>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">4321</span>)  <span class="co"># For reproducibility of results</span>
 m &lt;-<span class="st"> </span><span class="dv">10000</span>      <span class="co"># Number of observations to simulate</span>
@@ -1551,7 +1550,7 @@ n &lt;-<span class="st"> </span><span class="kw">rpois</span>(m, lambda) <span c
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compare to normal approximation method of 0.003884</span></code></pre></div>
 <p>Using simulation, we estimate the mean and variance of the aggregate claims to be approximately 1248 and 77441 respectively, compared to the theoretical values of 1,250 and 79,375. In addition, we estimate the probability that aggregate losses exceed 2000 to be 0.0062, compared to the normal approximation estimate of 0.003884.</p>
 <p>We can assess the appropriateness of the normal approximation by comparing the empirical distribution of the simulated aggregate losses to the density of the normal distribution used for the normal approximation, <span class="math inline">\(N(\mu=1,250~, ~\sigma^2=79,375)\)</span>:</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-50-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The simulated losses are slightly more right-skewed than the normal distribution, with a longer right tail. This explains why the normal approximation estimate of <span class="math inline">\(\Pr(S_N &gt; 2000)\)</span> is lower than the simulated estimate.</p>
 </div>
 <hr />
@@ -1605,9 +1604,9 @@ P_{S}(z)&amp;={\rm E}(z^S)={\rm E}\left(z^{\sum_{i=1}^nX_i}\right)\\
 }
 \]</span></p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.5.1" href="javascript:toggleEX('toggleExampleAggLoss.5.1','displayTextExampleAggLoss.5.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.5.1" href="javascript:toggleEX('toggleExample.5.5.1','displayExample.5.5.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.5.1" style="display: none">
+<div id="toggleExample.5.5.1" style="display: none">
 <p><strong>Solution.</strong> Each of the 5 households has number of exposures <span class="math inline">\(n_j\)</span> (number of vehicles) and number of claims <span class="math inline">\(S_j\)</span>, <span class="math inline">\(j=1,...,5\)</span>. Note for each household, the number of claims <span class="math inline">\(S_j \sim Poi (n_j \lambda)\)</span>. The likelihood function is<br />
 <span class="math display">\[\begin{aligned}
 L(\lambda) &amp;= \prod_{j=1}^5 \Pr(S_j=s_j) = \prod_{j=1}^5 \frac{e^{-n_j\lambda} (n_j \lambda)^{s_j}}{s_j!} \\
@@ -1663,9 +1662,9 @@ P_{N^P}(z)&amp;= \left( 1-\beta (1+v(z-1)-1)\right)^{-r}\\
 <hr />
 <p><strong>Example 5.5.2.</strong> Suppose that loss amounts <span class="math inline">\(X_i\sim Pareto(\alpha=4,\ \theta=150)\)</span>. You are given that the loss frequency is <span class="math inline">\(N^L\sim Poi(\lambda)\)</span> and the payment frequency distribution is <span class="math inline">\(N^{P}_1\sim Poi(0.4)\)</span> at deductible level <span class="math inline">\(d_1=30\)</span>. Find the distribution of the payment frequency <span class="math inline">\(N^{P}_2\)</span> when the deductible level is <span class="math inline">\(d_2=100\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.5.2" href="javascript:toggleEX('toggleExampleAggLoss.5.2','displayTextExampleAggLoss.5.2');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.5.2" href="javascript:toggleEX('toggleExample.5.5.2','displayExample.5.5.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.5.2" style="display: none">
+<div id="toggleExample.5.5.2" style="display: none">
 <p><strong>Solution.</strong> Because the loss frequency <span class="math inline">\(N^L\)</span> is Poisson, we can relate the means of the loss distribution <span class="math inline">\(N^L\)</span> and the first payment distribution <span class="math inline">\(N^{P}_1\)</span> (under deductible <span class="math inline">\(d_1=30\)</span>) through <span class="math inline">\(0.4 = \lambda v_1\)</span>, where <span class="math display">\[\begin{aligned}
 &amp;v_1 = \Pr(X &gt; 30) = \left( \frac{150}{30+150}\right)^4=\left( \frac{5}{6}\right)^4 \\
 \Rightarrow \ &amp; \lambda = 0.4 \left( \frac{6}{5} \right)^4
@@ -1677,9 +1676,9 @@ P_{N^P}(z)&amp;= \left( 1-\beta (1+v(z-1)-1)\right)^{-r}\\
 <hr />
 <p><strong>Example 5.5.3. Follow-Up.</strong> Now suppose instead that the loss frequency is <span class="math inline">\(N^L \sim NB(\beta,\ r)\)</span> and for deductible <span class="math inline">\(d_1=30\)</span>, the payment frequency <span class="math inline">\(N^{P}_1\)</span> is negative binomial with mean <span class="math inline">\(0.4\)</span>. Find the mean of the payment frequency <span class="math inline">\(N^{P}_2\)</span> for deductible <span class="math inline">\(d_2=100\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.5.3" href="javascript:toggleEX('toggleExampleAggLoss.5.3','displayTextExampleAggLoss.5.3');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.5.3" href="javascript:toggleEX('toggleExample.5.5.3','displayExample.5.5.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.5.3" style="display: none">
+<div id="toggleExample.5.5.3" style="display: none">
 <p><strong>Solution.</strong> Because the loss frequency <span class="math inline">\(N^L\)</span> is negative binomial, we can relate the parameter <span class="math inline">\(\beta\)</span> of the <span class="math inline">\(N^L\)</span> distribution and the parameter <span class="math inline">\(\beta_1\)</span> of the first payment distribution <span class="math inline">\(N^{P}_1\)</span> using <span class="math inline">\(\beta_1 = \beta v_1\)</span>, where <span class="math display">\[v_1 = \Pr(X &gt; 30) = \left( \frac{5}{6} \right)^4\]</span> Thus, the mean of <span class="math inline">\(N^{P}_1\)</span> and the mean of <span class="math inline">\(N^L\)</span> are related via <span class="math display">\[\begin{aligned}
 &amp;0.4 =  r \beta_1 = r \left(\beta v_1\right) \\
 \Rightarrow \ &amp; r\beta = \frac{0.4}{v_1} = 0.4 \left(\frac{6}{5} \right)^4
@@ -1706,9 +1705,9 @@ P^M(z) &amp;= 1-c+c~P^0(z),
 (iv) The number of losses and the amounts of the losses are mutually independent.</p>
 <p>Calculate <span class="math inline">\(\mathrm{E}(N^P)\)</span> and <span class="math inline">\(\mathrm{Var}(N^P)\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.5.4" href="javascript:toggleEX('toggleExampleAggLoss.5.4','displayTextExampleAggLoss.5.4');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.5.4" href="javascript:toggleEX('toggleExample.5.5.4','displayExample.5.5.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.5.4" style="display: none">
+<div id="toggleExample.5.5.4" style="display: none">
 <p><strong>Solution.</strong> Since <span class="math inline">\(N^L\)</span> follows a ZM-Poisson distribution with parameters <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(p_0^M\)</span>, we know that <span class="math inline">\(N^P\)</span> also follows a ZM-Poisson distribution, but with parameters <span class="math inline">\(\lambda v\)</span> and <span class="math inline">\(p_0^M\)</span>, where</p>
 <p><span class="math display">\[v = \Pr(X&gt;30) = \left( \frac{1}{1+(30/50)} \right)^3 = 0.2441\]</span></p>
 <p>Thus, <span class="math inline">\(N^P\)</span> follows a ZM-Poisson distribution with parameters <span class="math inline">\(\lambda^\ast = \lambda v= 0.7324\)</span> and <span class="math inline">\(p_0^M = 0.5\)</span>. Finally, <span class="math display">\[\begin{aligned}
@@ -1773,9 +1772,9 @@ S &amp;= X^L_1 + \cdots + X^L_{N^L} \\
 \]</span></p>
 <p>You expect severity to increase 50% with no change in frequency. You decide to impose a per claim deductible of 100. Calculate the expected total claim payment <span class="math inline">\(S\)</span> after these changes.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.5.5" href="javascript:toggleEX('toggleExampleAggLoss.5.5','displayTextExampleAggLoss.5.5');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.5.5" href="javascript:toggleEX('toggleExample.5.5.5','displayExample.5.5.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.5.5" style="display: none">
+<div id="toggleExample.5.5.5" style="display: none">
 <strong>Solution.</strong> The cost per loss with a 50% increase in severity and a 100 deductible per claim is
 <span class="math display">\[\begin{eqnarray*}
 X^L &amp;=&amp;
@@ -1798,9 +1797,9 @@ X^L &amp;=&amp;
 <hr />
 <p><strong>Example 5.5.6. Follow-Up.</strong> What is the variance of the total claim payment, <span class="math inline">\(\mathrm{Var~}S\)</span>?</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.5.6" href="javascript:toggleEX('toggleExampleAggLoss.5.6','displayTextExampleAggLoss.5.6');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.5.6" href="javascript:toggleEX('toggleExample.5.5.6','displayExample.5.5.6');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.5.6" style="display: none">
+<div id="toggleExample.5.5.6" style="display: none">
 <p><strong>Solution.</strong> On a per loss basis, we have <span class="math display">\[\begin{aligned}
 \mathrm{Var}(S) &amp;= \mathrm{E}(N) ~ \mathrm{Var}\left(  X^L \right) + \left[ \mathrm{E} \left(X^L\right) \right]^2 ~ \mathrm{Var} (N)
 \end{aligned}\]</span> where <span class="math inline">\(\mathrm{E}(N) = 300\)</span> and <span class="math inline">\(\mathrm{Var}(N) = 800\)</span>. We find <span class="math display">\[\begin{aligned}
@@ -1829,9 +1828,9 @@ X^P &amp;=&amp;
 (ii) A deductible of 100 per loss will be imposed.</p>
 <p>Calculate the expected aggregate amount paid by the insurer after the modifications.</p>
 <h5 style="text-align: center;">
-<a id="displayTextExampleAggLoss.5.7" href="javascript:toggleEX('toggleExampleAggLoss.5.7','displayTextExampleAggLoss.5.7');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.5.5.7" href="javascript:toggleEX('toggleExample.5.5.7','displayExample.5.5.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExampleAggLoss.5.7" style="display: none">
+<div id="toggleExample.5.5.7" style="display: none">
 <p><strong>Solution.</strong> On a per loss basis, we have a 100 deductible. Thus, the expectation per loss is <span class="math display">\[\begin{aligned}
 \mathrm{E}( X^L) &amp;= E[(X-100)_+] = E(X) - E(X\wedge 100) \\
 &amp;= 200 - 200(1-e^{-100/200}) = 121.31
@@ -1997,7 +1996,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

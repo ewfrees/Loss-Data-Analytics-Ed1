@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -867,7 +867,7 @@ We note that <span class="math inline">\(\mu_N\)</span> is the expected value of
 \mu_N&#39;(r)= \mathrm{E}{[N^r]}= \sum_{k=0}^\infty k^r~p_N(k).
 \end{equation}\]</span>
 <p>We note that <span class="math inline">\(\mu_N&#39;(\cdot)\)</span> is a well-defined non-decreasing function taking values in <span class="math inline">\([0,\infty]\)</span>, as <span class="math inline">\(\Pr(N\in\{0, 1, \ldots \})=1\)</span>; also, note that <span class="math inline">\(\mu_N=\mu_N&#39;(1)\)</span>. In the following, when we refer to a moment it will be implicit that it is finite unless mentioned otherwise.</p>
-<p>Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the <a href="#" class="tooltip" style="color:green"><em>standard deviation</em><span style="font-size:8pt">the square-root of variance</span></a> is the most popular. Towards defining it, we first define the <a href="#" class="tooltip" style="color:green"><em>variance</em><span style="font-size:8pt">The second central moment of a distribution</span></a> of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\mathrm{Var}[N]\)</span>, as <span class="math inline">\(\mathrm{Var}[N]:=\mathrm{E}{[(N-\mu_N)^2]}\)</span> when <span class="math inline">\(\mu_N\)</span> is finite. By basic properties of the expected value of a random variable, we see that <span class="math inline">\(\mathrm{Var}[N]:=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2\)</span>. The standard deviation of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\sigma_N\)</span>, is defined as the square-root of <span class="math inline">\(\mathrm{Var}~N\)</span>. Note that the latter is well-defined as <span class="math inline">\(\mathrm{Var}[N]\)</span>, by its definition as the average squared deviation from the mean, is non-negative; <span class="math inline">\(\mathrm{Var}[N]\)</span> is denoted by <span class="math inline">\(\sigma_N^2\)</span>. Note that these two measures take values in <span class="math inline">\([0,\infty]\)</span>.</p>
+<p>Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the <a href="#" class="tooltip" style="color:green"><em>standard deviation</em><span style="font-size:8pt">the square-root of variance</span></a> is the most popular. Towards defining it, we first define the <a href="#" class="tooltip" style="color:green"><em>variance</em><span style="font-size:8pt">second central moment of a random variable X, measuring the expected squared deviation of between the variable and its mean</span></a> of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\mathrm{Var}[N]\)</span>, as <span class="math inline">\(\mathrm{Var}[N]:=\mathrm{E}{[(N-\mu_N)^2]}\)</span> when <span class="math inline">\(\mu_N\)</span> is finite. By basic properties of the expected value of a random variable, we see that <span class="math inline">\(\mathrm{Var}[N]:=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2\)</span>. The standard deviation of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\sigma_N\)</span>, is defined as the square-root of <span class="math inline">\(\mathrm{Var}~N\)</span>. Note that the latter is well-defined as <span class="math inline">\(\mathrm{Var}[N]\)</span>, by its definition as the average squared deviation from the mean, is non-negative; <span class="math inline">\(\mathrm{Var}[N]\)</span> is denoted by <span class="math inline">\(\sigma_N^2\)</span>. Note that these two measures take values in <span class="math inline">\([0,\infty]\)</span>.</p>
 </div>
 <div id="S:generating-functions" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Moment and Probability Generating Functions</h3>
@@ -1220,22 +1220,22 @@ r\beta=\hat{\mu} \quad \hbox{and} \quad r\beta(1+\beta)=\hat{\sigma}^2
 <a id="displayCode.Freq.1" href="javascript:togglecode('toggleCode.Freq.1','displayCode.Freq.1');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.Freq.1" style="display: none">
-<pre><code>Newton&lt;-function(x,abserr){
-mu&lt;-mean(x);
-sigma2&lt;-mean(x^2)-mu^2;
-r&lt;-mu^2/(sigma2-mu);
-b&lt;-TRUE;
-iter&lt;-0;
-while (b) {
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Newton&lt;-<span class="cf">function</span>(x,abserr){
+mu&lt;-<span class="kw">mean</span>(x);
+sigma2&lt;-<span class="kw">mean</span>(x<span class="op">^</span><span class="dv">2</span>)<span class="op">-</span>mu<span class="op">^</span><span class="dv">2</span>;
+r&lt;-mu<span class="op">^</span><span class="dv">2</span><span class="op">/</span>(sigma2<span class="op">-</span>mu);
+b&lt;-<span class="ot">TRUE</span>;
+iter&lt;-<span class="dv">0</span>;
+<span class="cf">while</span> (b) {
 tr&lt;-r;
-m1&lt;-mean(c(x[x==0],sapply(x[x&gt;0],function(z){sum(1/(tr:(tr-1+z)))})));
-m2&lt;-mean(c(x[x==0],sapply(x[x&gt;0],function(z){sum(1/(tr:(tr-1+z))^2)})));
-r&lt;-tr-(m1-log(1+mu/tr))/(mu/(tr*(tr+mu))-m2);
-b&lt;-!(abs(tr-r)&lt;abserr);
-iter&lt;-iter+1;
+m1&lt;-<span class="kw">mean</span>(<span class="kw">c</span>(x[x<span class="op">==</span><span class="dv">0</span>],<span class="kw">sapply</span>(x[x<span class="op">&gt;</span><span class="dv">0</span>],<span class="cf">function</span>(z){<span class="kw">sum</span>(<span class="dv">1</span><span class="op">/</span>(tr<span class="op">:</span>(tr<span class="op">-</span><span class="dv">1</span><span class="op">+</span>z)))})));
+m2&lt;-<span class="kw">mean</span>(<span class="kw">c</span>(x[x<span class="op">==</span><span class="dv">0</span>],<span class="kw">sapply</span>(x[x<span class="op">&gt;</span><span class="dv">0</span>],<span class="cf">function</span>(z){<span class="kw">sum</span>(<span class="dv">1</span><span class="op">/</span>(tr<span class="op">:</span>(tr<span class="op">-</span><span class="dv">1</span><span class="op">+</span>z))<span class="op">^</span><span class="dv">2</span>)})));
+r&lt;-tr<span class="op">-</span>(m1<span class="op">-</span><span class="kw">log</span>(<span class="dv">1</span><span class="op">+</span>mu<span class="op">/</span>tr))<span class="op">/</span>(mu<span class="op">/</span>(tr<span class="op">*</span>(tr<span class="op">+</span>mu))<span class="op">-</span>m2);
+b&lt;-<span class="op">!</span>(<span class="kw">abs</span>(tr<span class="op">-</span>r)<span class="op">&lt;</span>abserr);
+iter&lt;-iter<span class="op">+</span><span class="dv">1</span>;
 }
-c(r,iter)
-}</code></pre>
+<span class="kw">c</span>(r,iter)
+}</code></pre></div>
 </div>
 <hr />
 <p>To summarize our discussion of <em>MLE</em> for the <span class="math inline">\((a,b,0)\)</span> class of distributions, in Figure <a href="C-Frequency-Modeling.html#fig:MLEab0">2.3</a> below we plot the maximum value of the Poisson likelihood, <span class="math inline">\(L(m,\overline{x}/m)\)</span> for the binomial, and <span class="math inline">\(L(r,\overline{x}/r)\)</span> for the negative binomial, for the three samples of size <span class="math inline">\(5\)</span> given in <a href="#tab:2.1">Table 2.1</a>. The data was constructed to cover the three orderings of the sample mean and variance. As show in the Figure <a href="C-Frequency-Modeling.html#fig:MLEab0">2.3</a>, and supported by theory, if <span class="math inline">\(\hat{\mu}&lt;\hat{\sigma}^2\)</span> then the negative binomial will result in a higher maximum likelihood value; if <span class="math inline">\(\hat{\mu}=\hat{\sigma}^2\)</span> the Poisson will have the highest likelihood value; and finally in the case that <span class="math inline">\(\hat{\mu}&gt;\hat{\sigma}^2\)</span> the binomial will give a better fit than the others. So before fitting a frequency data with an <span class="math inline">\((a,b,0,)\)</span> distribution, it is best to start with examining the ordering of <span class="math inline">\(\hat{\mu}\)</span> and <span class="math inline">\(\hat{\sigma}^2\)</span>. We again emphasize that the Poisson is on the <strong>boundary</strong> of the negative binomial and binomial distributions. So in the case that <span class="math inline">\(\hat{\mu}\geq\hat{\sigma}^2\)</span> (<span class="math inline">\(\hat{\mu}\leq\hat{\sigma}^2\)</span>, resp.) the Poisson will yield a better fit than the negative binomial (binomial, resp.), which will also be indicated by <span class="math inline">\(\hat{r}=\infty\)</span> (<span class="math inline">\(\hat{m}=\infty\)</span>, resp.).</p>
@@ -1435,9 +1435,9 @@ f_{N\vert\Lambda=\lambda}(N=k)=\frac{e^{-\lambda}\lambda^k}{k!}, \quad k\geq 0; 
 <p>It is worth mentioning that by considering mixtures of a parametric class of distributions we increase the richness of the class. This expansion of distributions results in the mixture class being able to cater well to more applications that the parametric class we started with. Mixture modeling is a very important modeling technique in insurance applications, and later chapters will cover more aspects of this modeling technique.</p>
 <p><strong>Example 2.6.2.</strong> Suppose that <span class="math inline">\(N|\Lambda \sim\)</span> Poisson<span class="math inline">\((\Lambda)\)</span> and that <span class="math inline">\(\Lambda \sim\)</span> gamma with mean of 1 and variance of 2. Determine the probability that <span class="math inline">\(N=1\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayExample.2.6.1" href="javascript:toggleEX('toggleExample.2.6.1','displayExample.2.6.1');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.2.6.2" href="javascript:toggleEX('toggleExample.2.6.2','displayExample.2.6.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExample.2.6.1" style="display: none">
+<div id="toggleExample.2.6.2" style="display: none">
 <p><strong>Solution.</strong> For a gamma distribution with parameters <span class="math inline">\((\alpha, \theta)\)</span>, we have that the mean is <span class="math inline">\(\alpha \theta\)</span> and the variance is <span class="math inline">\(\alpha \theta^2\)</span>. Using these expressions we have <span class="math display">\[
 \begin{aligned}
 \alpha &amp;= \frac{1}{2} \text{   and   } \theta =2.
@@ -1635,79 +1635,79 @@ f_p(x)=p\cdot\phi(x+2)+(1-p)\cdot\phi(x-2), \quad x\in\mathbb{R},
 <a id="displayCode.Freq.2" href="javascript:togglecode('toggleCode.Freq.2','displayCode.Freq.2');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.Freq.2" style="display: none">
-<pre><code>likbinm&lt;-function(m){ 
-  # binomial likelihood maximized w.r.t. p
-  prod((dbinom(x,m,mean(x)/m)))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">likbinm&lt;-<span class="cf">function</span>(m){ 
+  <span class="co"># binomial likelihood maximized w.r.t. p</span>
+  <span class="kw">prod</span>((<span class="kw">dbinom</span>(x,m,<span class="kw">mean</span>(x)<span class="op">/</span>m)))
 }
 
-liknbinm&lt;-function(r){
-  # negative binomial likelihood maximized w.r.t. beta
-  prod(dnbinom(x,r,1-mean(x)/(mean(x)+r)))
+liknbinm&lt;-<span class="cf">function</span>(r){
+  <span class="co"># negative binomial likelihood maximized w.r.t. beta</span>
+  <span class="kw">prod</span>(<span class="kw">dnbinom</span>(x,r,<span class="dv">1</span><span class="op">-</span><span class="kw">mean</span>(x)<span class="op">/</span>(<span class="kw">mean</span>(x)<span class="op">+</span>r)))
 }
 
-# Data Matrix; Three Samples, one in each Column; 
-# First Sample has Var&lt;Mean
-# Second Sample has Var=Mean
-# Third Sample has Var&gt;Mean
+<span class="co"># Data Matrix; Three Samples, one in each Column; </span>
+<span class="co"># First Sample has Var&lt;Mean</span>
+<span class="co"># Second Sample has Var=Mean</span>
+<span class="co"># Third Sample has Var&gt;Mean</span>
 
-  X&lt;-cbind(c(2,5,6,8,9)+2,c(2,5,6,8,9),c(2,3,6,8,9)); 
+  X&lt;-<span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>)<span class="op">+</span><span class="dv">2</span>,<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>),<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>)); 
 
-# Used for creating the labels in the z matrix
-  ord_char&lt;-c(&quot;&lt;&quot;,&quot;=&quot;,&quot;&gt;&quot;); 
+<span class="co"># Used for creating the labels in the z matrix</span>
+  ord_char&lt;-<span class="kw">c</span>(<span class="st">&quot;&lt;&quot;</span>,<span class="st">&quot;=&quot;</span>,<span class="st">&quot;&gt;&quot;</span>); 
   
-# Empty matrices; 
-  Y&lt;-matrix(1,ncol=2,nrow=0); 
-  Z&lt;-matrix(1,ncol=2,nrow=0); 
+<span class="co"># Empty matrices; </span>
+  Y&lt;-<span class="kw">matrix</span>(<span class="dv">1</span>,<span class="dt">ncol=</span><span class="dv">2</span>,<span class="dt">nrow=</span><span class="dv">0</span>); 
+  Z&lt;-<span class="kw">matrix</span>(<span class="dv">1</span>,<span class="dt">ncol=</span><span class="dv">2</span>,<span class="dt">nrow=</span><span class="dv">0</span>); 
 
-for (i in (1:3)) {
-  # Work with data in the i-th sample
+<span class="cf">for</span> (i <span class="cf">in</span> (<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)) {
+  <span class="co"># Work with data in the i-th sample</span>
     x&lt;-X[,i]; 
   
-  # Binomial Likelihood
-      # Interval of n values covering the MLE
-        n&lt;-(9:100);
-      # Evaluating the Likelihood at various values of n
-        ll&lt;-sapply(n,likbinm); 
-      # Finding the MLE of n
-        n[ll==max(ll[!is.na(ll)])] 
-      # Storing the data and the labels
-        Y&lt;-rbind(Y,cbind(n,ll));
-        Z&lt;-rbind(Z,cbind(rep(paste(&quot;$\\hat{\\sigma}^2&quot;,ord_char[i],&quot;\\hat{\\mu}$&quot;),length(n)),rep(&quot;Binomial - $L(m,\\overline{x}/m)$&quot;,length(n))));
+  <span class="co"># Binomial Likelihood</span>
+      <span class="co"># Interval of n values covering the MLE</span>
+        n&lt;-(<span class="dv">9</span><span class="op">:</span><span class="dv">100</span>);
+      <span class="co"># Evaluating the Likelihood at various values of n</span>
+        ll&lt;-<span class="kw">sapply</span>(n,likbinm); 
+      <span class="co"># Finding the MLE of n</span>
+        n[ll<span class="op">==</span><span class="kw">max</span>(ll[<span class="op">!</span><span class="kw">is.na</span>(ll)])] 
+      <span class="co"># Storing the data and the labels</span>
+        Y&lt;-<span class="kw">rbind</span>(Y,<span class="kw">cbind</span>(n,ll));
+        Z&lt;-<span class="kw">rbind</span>(Z,<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="kw">paste</span>(<span class="st">&quot;$</span><span class="ch">\\</span><span class="st">hat{</span><span class="ch">\\</span><span class="st">sigma}^2&quot;</span>,ord_char[i],<span class="st">&quot;</span><span class="ch">\\</span><span class="st">hat{</span><span class="ch">\\</span><span class="st">mu}$&quot;</span>),<span class="kw">length</span>(n)),<span class="kw">rep</span>(<span class="st">&quot;Binomial - $L(m,</span><span class="ch">\\</span><span class="st">overline{x}/m)$&quot;</span>,<span class="kw">length</span>(n))));
 
-  # Negative Binomial Likelihood
-    # Interval of r values 
-      r&lt;-(1:100);
-    # Evaluating the Likelihood at various values of r
-      ll&lt;-sapply(r,liknbinm); 
-    # Finding the MLE of r
-      ll[is.na(ll)]=0;
-      r[ll==max(ll[!is.na(ll)])]; 
-    # Storing the data and the labels
-      Y&lt;-rbind(Y,cbind(r,ll));
-      Z&lt;-rbind(Z,cbind(rep(paste(&quot;$\\hat{\\sigma}^2&quot;,ord_char[i],&quot;\\hat{\\mu}$&quot;),length(r)),rep(&quot;Neg.Binomial - $L(r,\\overline{x}/r)$&quot;,length(r))));
+  <span class="co"># Negative Binomial Likelihood</span>
+    <span class="co"># Interval of r values </span>
+      r&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>);
+    <span class="co"># Evaluating the Likelihood at various values of r</span>
+      ll&lt;-<span class="kw">sapply</span>(r,liknbinm); 
+    <span class="co"># Finding the MLE of r</span>
+      ll[<span class="kw">is.na</span>(ll)]=<span class="dv">0</span>;
+      r[ll<span class="op">==</span><span class="kw">max</span>(ll[<span class="op">!</span><span class="kw">is.na</span>(ll)])]; 
+    <span class="co"># Storing the data and the labels</span>
+      Y&lt;-<span class="kw">rbind</span>(Y,<span class="kw">cbind</span>(r,ll));
+      Z&lt;-<span class="kw">rbind</span>(Z,<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="kw">paste</span>(<span class="st">&quot;$</span><span class="ch">\\</span><span class="st">hat{</span><span class="ch">\\</span><span class="st">sigma}^2&quot;</span>,ord_char[i],<span class="st">&quot;</span><span class="ch">\\</span><span class="st">hat{</span><span class="ch">\\</span><span class="st">mu}$&quot;</span>),<span class="kw">length</span>(r)),<span class="kw">rep</span>(<span class="st">&quot;Neg.Binomial - $L(r,</span><span class="ch">\\</span><span class="st">overline{x}/r)$&quot;</span>,<span class="kw">length</span>(r))));
       
-  # Poisson Likelihood
-    # Storing the data and the labels
-    # In the Poisson case MLE is the sample mean
-      Y&lt;-rbind(Y,cbind(r,rep(prod(dpois(x,mean(x))),length(r))));
-      Z&lt;-rbind(Z,cbind(rep(paste(&quot;$\\hat{\\sigma}^2&quot;,ord_char[i],&quot;\\hat{\\mu}$&quot;),length(r)),rep(&quot;Poisson - $L(\\overline{x})$&quot;,length(r))));
+  <span class="co"># Poisson Likelihood</span>
+    <span class="co"># Storing the data and the labels</span>
+    <span class="co"># In the Poisson case MLE is the sample mean</span>
+      Y&lt;-<span class="kw">rbind</span>(Y,<span class="kw">cbind</span>(r,<span class="kw">rep</span>(<span class="kw">prod</span>(<span class="kw">dpois</span>(x,<span class="kw">mean</span>(x))),<span class="kw">length</span>(r))));
+      Z&lt;-<span class="kw">rbind</span>(Z,<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="kw">paste</span>(<span class="st">&quot;$</span><span class="ch">\\</span><span class="st">hat{</span><span class="ch">\\</span><span class="st">sigma}^2&quot;</span>,ord_char[i],<span class="st">&quot;</span><span class="ch">\\</span><span class="st">hat{</span><span class="ch">\\</span><span class="st">mu}$&quot;</span>),<span class="kw">length</span>(r)),<span class="kw">rep</span>(<span class="st">&quot;Poisson - $L(</span><span class="ch">\\</span><span class="st">overline{x})$&quot;</span>,<span class="kw">length</span>(r))));
 }
 
-  # Assigning Column Names
-    colnames(Y)&lt;-c(&quot;x&quot;,&quot;lik&quot;);
-    colnames(Z)&lt;-c(&quot;dataset&quot;,&quot;Distribution&quot;);
-  # Creating a Dataframe for using ggplot
-    dy&lt;-cbind(data.frame(Y),data.frame(Z));
+  <span class="co"># Assigning Column Names</span>
+    <span class="kw">colnames</span>(Y)&lt;-<span class="kw">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;lik&quot;</span>);
+    <span class="kw">colnames</span>(Z)&lt;-<span class="kw">c</span>(<span class="st">&quot;dataset&quot;</span>,<span class="st">&quot;Distribution&quot;</span>);
+  <span class="co"># Creating a Dataframe for using ggplot</span>
+    dy&lt;-<span class="kw">cbind</span>(<span class="kw">data.frame</span>(Y),<span class="kw">data.frame</span>(Z));
 
 
-library(tikzDevice);
-library(ggplot2);
-options(tikzMetricPackages = c(&quot;\\usepackage[utf8]{inputenc}&quot;,&quot;\\usepackage[T1]{fontenc}&quot;, &quot;\\usetikzlibrary{calc}&quot;, 
-                               &quot;\\usepackage{amssymb}&quot;,&quot;\\usepackage{amsmath}&quot;,&quot;\\usepackage[active]{preview}&quot;))
-tikz(file = &quot;plot_test_2.tex&quot;, width = 6.25, height = 6.25);
-ggplot(data=dy,aes(x=x,y=lik,col=Distribution)) + geom_point(size=0.25) + facet_grid(dataset~.)+
-  labs(x=&quot;m/r&quot;,y=&quot;Likelihood&quot;,title=&quot;&quot;); 
-dev.off();</code></pre>
+<span class="kw">library</span>(tikzDevice);
+<span class="kw">library</span>(ggplot2);
+<span class="kw">options</span>(<span class="dt">tikzMetricPackages =</span> <span class="kw">c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage[utf8]{inputenc}&quot;</span>,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage[T1]{fontenc}&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">usetikzlibrary{calc}&quot;</span>, 
+                               <span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage{amssymb}&quot;</span>,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage{amsmath}&quot;</span>,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage[active]{preview}&quot;</span>))
+<span class="kw">tikz</span>(<span class="dt">file =</span> <span class="st">&quot;plot_test_2.tex&quot;</span>, <span class="dt">width =</span> <span class="fl">6.25</span>, <span class="dt">height =</span> <span class="fl">6.25</span>);
+<span class="kw">ggplot</span>(<span class="dt">data=</span>dy,<span class="kw">aes</span>(<span class="dt">x=</span>x,<span class="dt">y=</span>lik,<span class="dt">col=</span>Distribution)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size=</span><span class="fl">0.25</span>) <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(dataset<span class="op">~</span>.)<span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;m/r&quot;</span>,<span class="dt">y=</span><span class="st">&quot;Likelihood&quot;</span>,<span class="dt">title=</span><span class="st">&quot;&quot;</span>); 
+<span class="kw">dev.off</span>();</code></pre></div>
 </div>
 <hr />
 <p><strong>Code for Figure <a href="C-Frequency-Modeling.html#fig:MLEm">2.2</a>:</strong></p>
@@ -1715,45 +1715,45 @@ dev.off();</code></pre>
 <a id="displayCode.Freq.3" href="javascript:togglecode('toggleCode.Freq.3','displayCode.Freq.3');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.Freq.3" style="display: none">
-<pre><code>likm&lt;-function(m){
-  prod((dbinom(x,m,mean(x)/m)))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">likm&lt;-<span class="cf">function</span>(m){
+  <span class="kw">prod</span>((<span class="kw">dbinom</span>(x,m,<span class="kw">mean</span>(x)<span class="op">/</span>m)))
 }
-x&lt;-c(2,2,2,4,5);
-n&lt;-(5:100);
-# Computing the Likelihood 
-ll&lt;-sapply(n,likm); 
-# Computing the MLE
-n[ll==max(ll)]
-# Storing the Likelihood Curve
-y&lt;-cbind(n,ll);
+x&lt;-<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>);
+n&lt;-(<span class="dv">5</span><span class="op">:</span><span class="dv">100</span>);
+<span class="co"># Computing the Likelihood </span>
+ll&lt;-<span class="kw">sapply</span>(n,likm); 
+<span class="co"># Computing the MLE</span>
+n[ll<span class="op">==</span><span class="kw">max</span>(ll)]
+<span class="co"># Storing the Likelihood Curve</span>
+y&lt;-<span class="kw">cbind</span>(n,ll);
 
-# Second Dataset
-x&lt;-c(2,2,2,4,6);
-ll&lt;-sapply(n,likm);
-n[ll==max(ll)]
-y&lt;-cbind(y,ll);
+<span class="co"># Second Dataset</span>
+x&lt;-<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>);
+ll&lt;-<span class="kw">sapply</span>(n,likm);
+n[ll<span class="op">==</span><span class="kw">max</span>(ll)]
+y&lt;-<span class="kw">cbind</span>(y,ll);
 
-# Third Dataset
-x&lt;-c(2,2,2,4,7);
-ll&lt;-sapply(n,likm);
-n[ll==max(ll)]
-y&lt;-cbind(y,ll);
+<span class="co"># Third Dataset</span>
+x&lt;-<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>);
+ll&lt;-<span class="kw">sapply</span>(n,likm);
+n[ll<span class="op">==</span><span class="kw">max</span>(ll)]
+y&lt;-<span class="kw">cbind</span>(y,ll);
 
-colnames(y)&lt;-c(&quot;m&quot;,&quot;$\\tilde{x}=(2,2,2,4,5)$&quot;,&quot;$\\tilde{x}=(2,2,2,4,6)$&quot;,&quot;$\\tilde{x}=(2,2,2,4,7)$&quot;);
-dy&lt;-data.frame(y);
-library(tikzDevice);
-library(ggplot2);
-options(tikzMetricPackages = c(&quot;\\usepackage[utf8]{inputenc}&quot;,&quot;\\usepackage[T1]{fontenc}&quot;, &quot;\\usetikzlibrary{calc}&quot;, 
-                               &quot;\\usepackage{amssymb}&quot;,&quot;\\usepackage{amsmath}&quot;,&quot;\\usepackage[active]{preview}&quot;))
-tikz(file = &quot;plot_test.tex&quot;, width = 6.25, height = 3.125);
-ggplot(dy) + 
-  geom_point(aes(x=m, y=(X..tilde.x...2.2.2.4.5..),shape=&quot;$\\tilde{x}=(2,2,2,4,5):\\hat{m}=7$&quot;),size=0.75) + 
-  geom_point(aes(x=m, y=(X..tilde.x...2.2.2.4.6..),shape=&quot;$\\tilde{x}=(2,2,2,4,6):\\hat{m}=18$&quot;),size=0.75) +
-  geom_point(aes(x=m, y=(X..tilde.x...2.2.2.4.7..),shape=&quot;$\\tilde{x}=(2,2,2,4,7):\\hat{m}=\\infty$&quot;),size=0.75) +
-  geom_point(aes(x=c(7),y=dy$X..tilde.x...2.2.2.4.5..[3],colour=&quot;$\\hat{m}$&quot;,shape=&quot;$\\tilde{x}=(2,2,2,4,5):\\hat{m}=7$&quot;),size=0.75)+
-  geom_point(aes(x=c(18),y=dy$X..tilde.x...2.2.2.4.6..[14],colour=&quot;$\\hat{m}$&quot;,shape=&quot;$\\tilde{x}=(2,2,2,4,6):\\hat{m}=18$&quot;),size=0.75)+
-  labs(x=&quot;m&quot;,y=&quot;$L(m,\\overline{x}/m)$&quot;,title=&quot;MLE for $m$: Non-Robustness of MLE &quot;); 
-dev.off();</code></pre>
+<span class="kw">colnames</span>(y)&lt;-<span class="kw">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,5)$&quot;</span>,<span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,6)$&quot;</span>,<span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,7)$&quot;</span>);
+dy&lt;-<span class="kw">data.frame</span>(y);
+<span class="kw">library</span>(tikzDevice);
+<span class="kw">library</span>(ggplot2);
+<span class="kw">options</span>(<span class="dt">tikzMetricPackages =</span> <span class="kw">c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage[utf8]{inputenc}&quot;</span>,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage[T1]{fontenc}&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">usetikzlibrary{calc}&quot;</span>, 
+                               <span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage{amssymb}&quot;</span>,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage{amsmath}&quot;</span>,<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage[active]{preview}&quot;</span>))
+<span class="kw">tikz</span>(<span class="dt">file =</span> <span class="st">&quot;plot_test.tex&quot;</span>, <span class="dt">width =</span> <span class="fl">6.25</span>, <span class="dt">height =</span> <span class="fl">3.125</span>);
+<span class="kw">ggplot</span>(dy) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>m, <span class="dt">y=</span>(X..tilde.x...<span class="fl">2.2</span>.<span class="fl">2.4</span>.<span class="dv">5</span>..),<span class="dt">shape=</span><span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,5):</span><span class="ch">\\</span><span class="st">hat{m}=7$&quot;</span>),<span class="dt">size=</span><span class="fl">0.75</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>m, <span class="dt">y=</span>(X..tilde.x...<span class="fl">2.2</span>.<span class="fl">2.4</span>.<span class="dv">6</span>..),<span class="dt">shape=</span><span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,6):</span><span class="ch">\\</span><span class="st">hat{m}=18$&quot;</span>),<span class="dt">size=</span><span class="fl">0.75</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span>m, <span class="dt">y=</span>(X..tilde.x...<span class="fl">2.2</span>.<span class="fl">2.4</span>.<span class="dv">7</span>..),<span class="dt">shape=</span><span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,7):</span><span class="ch">\\</span><span class="st">hat{m}=</span><span class="ch">\\</span><span class="st">infty$&quot;</span>),<span class="dt">size=</span><span class="fl">0.75</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">c</span>(<span class="dv">7</span>),<span class="dt">y=</span>dy<span class="op">$</span>X..tilde.x...<span class="fl">2.2</span>.<span class="fl">2.4</span>.<span class="dv">5</span>..[<span class="dv">3</span>],<span class="dt">colour=</span><span class="st">&quot;$</span><span class="ch">\\</span><span class="st">hat{m}$&quot;</span>,<span class="dt">shape=</span><span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,5):</span><span class="ch">\\</span><span class="st">hat{m}=7$&quot;</span>),<span class="dt">size=</span><span class="fl">0.75</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">c</span>(<span class="dv">18</span>),<span class="dt">y=</span>dy<span class="op">$</span>X..tilde.x...<span class="fl">2.2</span>.<span class="fl">2.4</span>.<span class="dv">6</span>..[<span class="dv">14</span>],<span class="dt">colour=</span><span class="st">&quot;$</span><span class="ch">\\</span><span class="st">hat{m}$&quot;</span>,<span class="dt">shape=</span><span class="st">&quot;$</span><span class="ch">\\</span><span class="st">tilde{x}=(2,2,2,4,6):</span><span class="ch">\\</span><span class="st">hat{m}=18$&quot;</span>),<span class="dt">size=</span><span class="fl">0.75</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;m&quot;</span>,<span class="dt">y=</span><span class="st">&quot;$L(m,</span><span class="ch">\\</span><span class="st">overline{x}/m)$&quot;</span>,<span class="dt">title=</span><span class="st">&quot;MLE for $m$: Non-Robustness of MLE &quot;</span>); 
+<span class="kw">dev.off</span>();</code></pre></div>
 </div>
 <hr />
 
@@ -1833,7 +1833,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

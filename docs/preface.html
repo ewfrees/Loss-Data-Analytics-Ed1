@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -779,7 +779,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <p style="text-align:right;">
-<em>Date: 11 August 2019</em>
+<em>Date: 12 August 2019</em>
 </p>
 <div id="book-description" class="section level4 unnumbered">
 <h4>Book Description</h4>
@@ -949,7 +949,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ('display.T:Frequency.2Intro','display.T:Frequency.1Intro');"><i><strong>R Code for Frequency Table</strong></i></a>
 </h5>
 <div id="display.T:Frequency.2Intro" style="display: none">
-<pre><code>Insample &lt;- read.csv(&quot;Insample.csv&quot;, header=T,  na.strings=c(&quot;.&quot;), stringsAsFactors=FALSE)
+<pre><code>Insample &lt;- read.csv(&quot;Insample.csv&quot;, header=T,  na.strings=c(&quot;.&quot;), 
+                      stringsAsFactors=FALSE)
 Insample2010 &lt;- subset(Insample, Year==2010)
 table(Insample2010$Freq)</code></pre>
 </div>
@@ -1001,7 +1002,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -1190,31 +1190,31 @@ Under this specification, let us consider <span class="math inline">\(n\)</span>
 \end{equation}\]</span>
 <p>from the relation given in <a href="C-RiskClass.html#eq:relativity-1">(8.22)</a>. The <code>R</code> script and the output are as follows.</p>
 <h5 style="text-align: center;">
-<a id="displayCodeRiskClass.1" href="javascript:togglecode('toggleCodeRiskClass.1','displayCodeRiskClass.1');"><i><strong>Show R Code</strong></i></a>
+<a id="displayCode.RiskClass.1" href="javascript:togglecode('toggleCode.RiskClass.1','displayCode.RiskClass.1');"><i><strong>Show R Code</strong></i></a>
 </h5>
-<div id="toggleCodeRiskClass.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">&gt; mydat1&lt;- read.csv(&quot;eg1_v1a.csv&quot;)
-&gt; mydat1
+<div id="toggleCode.RiskClass.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span>mydat1&lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;eg1_v1a.csv&quot;</span>)
+<span class="op">&gt;</span><span class="st"> </span>mydat1
   Vtype Agebnd Expsr Claims
-1     1      1  89.1      9
-2     1      2 208.5      8
-3     1      3 155.2      6
-4     2      1  19.3      1
-5     2      2 360.4     13
-6     2      3 276.7      6
-&gt; VtypeF &lt;- relevel(factor(Vtype), ref=&quot;1&quot;) # treat Vtype as factors with 1 as base.
-&gt; AgebndF &lt;- relevel(factor(Agebnd), ref=&quot;1&quot;) # treat Age band as factors.
-&gt; Pois_reg1 = glm(Claims ~ VtypeF + AgebndF,
-                    data = mydat1, family = poisson(link = log), offset = log(Expsr) )
-&gt; Pois_reg1
+<span class="dv">1</span>     <span class="dv">1</span>      <span class="dv">1</span>  <span class="fl">89.1</span>      <span class="dv">9</span>
+<span class="dv">2</span>     <span class="dv">1</span>      <span class="dv">2</span> <span class="fl">208.5</span>      <span class="dv">8</span>
+<span class="dv">3</span>     <span class="dv">1</span>      <span class="dv">3</span> <span class="fl">155.2</span>      <span class="dv">6</span>
+<span class="dv">4</span>     <span class="dv">2</span>      <span class="dv">1</span>  <span class="fl">19.3</span>      <span class="dv">1</span>
+<span class="dv">5</span>     <span class="dv">2</span>      <span class="dv">2</span> <span class="fl">360.4</span>     <span class="dv">13</span>
+<span class="dv">6</span>     <span class="dv">2</span>      <span class="dv">3</span> <span class="fl">276.7</span>      <span class="dv">6</span>
+<span class="op">&gt;</span><span class="st"> </span>VtypeF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Vtype), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Vtype as factors with 1 as base.</span>
+<span class="op">&gt;</span><span class="st"> </span>AgebndF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Agebnd), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Age band as factors.</span>
+<span class="op">&gt;</span><span class="st"> </span>Pois_reg1 =<span class="st"> </span><span class="kw">glm</span>(Claims <span class="op">~</span><span class="st"> </span>VtypeF <span class="op">+</span><span class="st"> </span>AgebndF,
+                    <span class="dt">data =</span> mydat1, <span class="dt">family =</span> <span class="kw">poisson</span>(<span class="dt">link =</span> log), <span class="dt">offset =</span> <span class="kw">log</span>(Expsr) )
+<span class="op">&gt;</span><span class="st"> </span>Pois_reg1
 
-Coefficients:
+Coefficients<span class="op">:</span>
 (Intercept)      VtypeF2     AgebndF2     AgebndF3  
-    -2.3359      -0.3004      -0.7837      -1.0655  
+    <span class="op">-</span><span class="fl">2.3359</span>      <span class="op">-</span><span class="fl">0.3004</span>      <span class="op">-</span><span class="fl">0.7837</span>      <span class="op">-</span><span class="fl">1.0655</span>  
 
-Degrees of Freedom: 5 Total (i.e. Null);  2 Residual
-Null Deviance:      8.774 
-Residual Deviance: 0.6514   AIC: 30.37</code></pre></div>
+Degrees of Freedom<span class="op">:</span><span class="st"> </span><span class="dv">5</span> <span class="kw">Total</span> (i.e. Null);  <span class="dv">2</span> Residual
+Null Deviance<span class="op">:</span><span class="st">      </span><span class="fl">8.774</span> 
+Residual Deviance<span class="op">:</span><span class="st"> </span><span class="fl">0.6514</span>   AIC<span class="op">:</span><span class="st"> </span><span class="fl">30.37</span></code></pre></div>
 </div>
 <hr />
 <p><strong>Example 8.2. Poisson regression for Singapore insurance claims data</strong></p>
@@ -1271,45 +1271,45 @@ Residual Deviance: 0.6514   AIC: 30.37</code></pre></div>
 \end{equation}\]</span>
 <p>Note that for this policy the age band variable is not used as the vehicle type is not A. The <code>R</code> script is given as follows.</p>
 <h5 style="text-align: center;">
-<a id="displayCodeRiskClass.2" href="javascript:togglecode('toggleCodeRiskClass.2','displayCodeRiskClass.2');"><i><strong>Show R Code</strong></i></a>
+<a id="displayCode.RiskClass.2" href="javascript:togglecode('toggleCode.RiskClass.2','displayCode.RiskClass.2');"><i><strong>Show R Code</strong></i></a>
 </h5>
-<div id="toggleCodeRiskClass.2" style="display: none">
-<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">mydat &lt;- read.csv(&quot;SingaporeAuto.csv&quot;,  quote = &quot;&quot;, header = TRUE)
-attach(mydat)
+<div id="toggleCode.RiskClass.2" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;SingaporeAuto.csv&quot;</span>,  <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)
+<span class="kw">attach</span>(mydat)
 
-# create vehicle type as factor
-TypeA = 1 * (VehicleType == &quot;A&quot;)
-table(VehicleType)
-VtypeF &lt;- as.character(VehicleType)
-VtypeF[VtypeF != &quot;A&quot;] &lt;- &quot;O&quot;
-VtypeF = relevel(factor(VtypeF), ref=&quot;A&quot;)
+<span class="co"># create vehicle type as factor</span>
+TypeA =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(VehicleType <span class="op">==</span><span class="st"> &quot;A&quot;</span>)
+<span class="kw">table</span>(VehicleType)
+VtypeF &lt;-<span class="st"> </span><span class="kw">as.character</span>(VehicleType)
+VtypeF[VtypeF <span class="op">!=</span><span class="st"> &quot;A&quot;</span>] &lt;-<span class="st"> &quot;O&quot;</span>
+VtypeF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(VtypeF), <span class="dt">ref=</span><span class="st">&quot;A&quot;</span>)
 
-# create gender as factor
-Female = 1 * (SexInsured == &quot;F&quot; )
-Sex = as.character(SexInsured)
-Sex[Sex != &quot;F&quot;] &lt;- &quot;M&quot;
-SexF = relevel(factor(Sex), ref = &quot;F&quot;)
+<span class="co"># create gender as factor</span>
+Female =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(SexInsured <span class="op">==</span><span class="st"> &quot;F&quot;</span> )
+Sex =<span class="st"> </span><span class="kw">as.character</span>(SexInsured)
+Sex[Sex <span class="op">!=</span><span class="st"> &quot;F&quot;</span>] &lt;-<span class="st"> &quot;M&quot;</span>
+SexF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Sex), <span class="dt">ref =</span> <span class="st">&quot;F&quot;</span>)
 
-# create driver age as factor
-AgeCat = pmax(AgeCat - 1, 0)
-AgeCatF = relevel(factor(AgeCat), ref = &quot;0&quot;)
-table(AgeCatF) # No policy in the first age band
+<span class="co"># create driver age as factor</span>
+AgeCat =<span class="st"> </span><span class="kw">pmax</span>(AgeCat <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">0</span>)
+AgeCatF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(AgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span>)
+<span class="kw">table</span>(AgeCatF) <span class="co"># No policy in the first age band</span>
 
-# create vehicle age as factor
-VAgeCatF = relevel( factor(VAgeCat), ref = &quot;0&quot; )
-VAgecat1 = factor(VAgecat1, labels = 
-                    c(&quot;Vage0-2&quot;, &quot;Vage3-5&quot;, &quot;Vage6-10&quot;, &quot;Vage11-15&quot;, &quot;Vage15+&quot;) )
-VAgecat1F = relevel( factor(VAgecat1), ref = &quot;Vage0-2&quot; )
+<span class="co"># create vehicle age as factor</span>
+VAgeCatF =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span> )
+VAgecat1 =<span class="st"> </span><span class="kw">factor</span>(VAgecat1, <span class="dt">labels =</span> 
+                    <span class="kw">c</span>(<span class="st">&quot;Vage0-2&quot;</span>, <span class="st">&quot;Vage3-5&quot;</span>, <span class="st">&quot;Vage6-10&quot;</span>, <span class="st">&quot;Vage11-15&quot;</span>, <span class="st">&quot;Vage15+&quot;</span>) )
+VAgecat1F =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgecat1), <span class="dt">ref =</span> <span class="st">&quot;Vage0-2&quot;</span> )
 
-# Poisson reg model
-Pois_reg2 = glm(Clm_Count ~ SexF + TypeA:AgeCatF + VAgecat1F, 
-                   offset = LNWEIGHT, poisson(link = log) )
-summary(Pois_reg2) 
+<span class="co"># Poisson reg model</span>
+Pois_reg2 =<span class="st"> </span><span class="kw">glm</span>(Clm_Count <span class="op">~</span><span class="st"> </span>SexF <span class="op">+</span><span class="st"> </span>TypeA<span class="op">:</span>AgeCatF <span class="op">+</span><span class="st"> </span>VAgecat1F, 
+                   <span class="dt">offset =</span> LNWEIGHT, <span class="kw">poisson</span>(<span class="dt">link =</span> log) )
+<span class="kw">summary</span>(Pois_reg2) 
 
-# compute relativities
-exp(Pois_reg2<span class="ss">$coefficients)</span>
+<span class="co"># compute relativities</span>
+<span class="kw">exp</span>(Pois_reg2<span class="op">$</span>coefficients)
 
-<span class="ss">detach(mydat)</span></code></pre></div>
+<span class="kw">detach</span>(mydat)</code></pre></div>
 </div>
 <hr />
 <p>As a concluding remark, we comment that the Poisson regression is not the only possible count regression model. Actually, the Poisson distribution can be restrictive in the sense that it has a single parameter and its mean and the variance are always equal. There are other count regression models that allow more flexible distributional structure, such as negative binomial regressions and zero-inflated (ZI) regressions; details of these alternative regressions can be found in other texts listed in the next section.</p>
@@ -1435,7 +1435,7 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 </div>
 <div id="legal-criteria" class="section level4">
 <h4><span class="header-section-number">8.4.0.5</span> Legal Criteria</h4>
-<p>For example, some states have statutes prohibiting the use of gender in rating insurance while others permit it as a rating variable. As a result, an insurer writing in multiple states may include gender as a rating variable in those states where it is permitted, but not include it in a state that prohibits its use for rating. See the discussion in Section <a href="C-PremiumFoundations.html#S:RateRegulation">7.7.1</a>.</p>
+<p>For example, some states have statutes prohibiting the use of gender in rating insurance while others permit it as a rating variable. As a result, an insurer writing in multiple states may include gender as a rating variable in those states where it is permitted, but not include it in a state that prohibits its use for rating.</p>
 <p>If allowed by law, the company may continue to charge the average rate but utilize the characteristic to identify, attract, and select the lower-risk insureds that exist in the insured population; this is called <em>skimming the cream.</em></p>
 
 </div>
@@ -1527,7 +1527,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

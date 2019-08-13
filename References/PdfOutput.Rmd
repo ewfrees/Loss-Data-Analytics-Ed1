@@ -1,7 +1,8 @@
-```{r echo = FALSE, eval = FALSE}
+```{r echo = FALSE, eval = TRUE}
 # Make eval = TRUE for pdf output
 # Make eval = FALSE for html output
 # Switches that control the number of animations in Chapter 6
+QUIZ = FALSE
 ANIMATION = FALSE 
 # Use these for pdf output - maybe later
 #numAnimation = 1
@@ -13,20 +14,20 @@ Gloss <- function(term){
   return(term)
 }
 
-#HideExample <- function(arg1,arg2){
-#  return("")
-#}
+HideExample <- function(arg1,arg2){
+  return("")
+}
 
-#HideRCode <- function(arg1,arg2){
-#  return("")
-#}
+HideRCode <- function(arg1,arg2){
+  return("")
+}
 
-#HideProofTheory <- function(arg1,arg2){
-#  return("")
-#}
+HideProofTheory <- function(arg1,arg2){
+  return("")
+}
 
-#ShowCode <- function() {
-#  return(FALSE)
-#}
+ShowCode <- function() {
+  return(FALSE)
+}
 
 ```

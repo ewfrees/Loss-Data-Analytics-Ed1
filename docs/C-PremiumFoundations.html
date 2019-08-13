@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -1096,7 +1096,7 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q} = \frac{0.65 + 0
 <p>Thus, for example, losses and expenses per unit of exposure are 23.2% higher for risks with a high amount of insurance compared to those with a medium amount. These relativities do not control for territory.</p>
 <hr />
 <p>The introduction of rating factors allows the analyst to create cells that define small collections of risks – the goal is to choose the right combination of rating factors so that all risks within a cell may be treated the same. In statistical terminology, we want all risks within a cell to have the same distribution (subject to rescaling by an exposure variable). This is the foundation of insurance pricing. All risks within a cell have the same price yet risks from different cells may have different prices.</p>
-<p>Said another way, insurers are allowed to charge different rates for different risks; <em>discrimination</em> of risks is legal and routinely done. Nonetheless, the basis of discrimination, the choice of risk factors, is the subject of extensive debate. The actuarial community, insurance management, regulators, and consumer advocates are all active participants in this debate. In addition to statistical criteria for assessing the significance of a rating factor, analysts much pay attention to business concerns of the company (e.g., is it expensive to implement a rating factor?), social criteria (is a variable under the control of a policyholder?), legal criteria (are there regulations that prohibit the use of a rating factor such as gender?), and other societal issues. These questions are largely beyond the scope of this book that seeks to introduce analytics in the insurance industry. Nonetheless, because they are so fundamental to pricing of insurance, a brief overview is given in Technical Supplement Section <a href="#S:SelectingRateFactors"><strong>??</strong></a>.</p>
+<p>Said another way, insurers are allowed to charge different rates for different risks; <em>discrimination</em> of risks is legal and routinely done. Nonetheless, the basis of discrimination, the choice of risk factors, is the subject of extensive debate. The actuarial community, insurance management, regulators, and consumer advocates are all active participants in this debate. In addition to statistical criteria for assessing the significance of a rating factor, analysts much pay attention to business concerns of the company (e.g., is it expensive to implement a rating factor?), social criteria (is a variable under the control of a policyholder?), legal criteria (are there regulations that prohibit the use of a rating factor such as gender?), and other societal issues. These questions are largely beyond the scope of this book that seeks to introduce analytics in the insurance industry. Nonetheless, because they are so fundamental to pricing of insurance, a brief overview is given in Chapter <a href="C-RiskClass.html#C:RiskClass">8</a>, including Technical Supplement TS <strong>8.B.</strong></p>
 </div>
 </div>
 <div id="S:TrendDevelopment" class="section level2">
@@ -1459,7 +1459,7 @@ Specifically, the Gini statistic can be calculated as follows. Suppose that the 
 </h5>
 <div id="toggleAreaDemo" style="display: none">
 <p>To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points <span class="math inline">\((a_1, b_1)\)</span>, <span class="math inline">\((a_2, b_2)\)</span>, and a 45 degree line. You can use basic geometry to check that the area of the figure is <span class="math inline">\(Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}\)</span>. The definition of the Gini statistic in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is simply twice the sum of the parallelograms. The second equality in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is the result of some straight-forward algebra.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-156-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-195-1.png" width="672" /></p>
 <hr />
 </div>
 <p><strong>Example – Loss Distribution: Continued.</strong> The Gini statistic for the Lorenz curve (left-hand panel of Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a>) is 34.4 percent. In contrast, the Gini statistic for concentration curve (right-hand panel) is 1.7 percent.</p>
@@ -1511,7 +1511,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,
 <span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)
 <span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-159-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-198-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
 </div>
@@ -1529,8 +1529,8 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <li><strong>Edward W. (Jed) Frees</strong>, University of Wisconsin-Madison, and <strong>José Garrido</strong>, Concordia University are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> and/or <a href="mailto:jose.garrido@concordia.ca">jose.garrido@concordia.ca</a> for chapter comments and suggested improvements.</li>
 <li>Chapter reviewers include: Write Jed or José to add you name here.</li>
 </ul>
-<div id="S:RateRegulation" class="section level3">
-<h3><span class="header-section-number">7.7.1</span> TS 7.A. Rate Regulation</h3>
+<div id="ts-7.a.-rate-regulation" class="section level3 unnumbered">
+<h3>TS 7.A. Rate Regulation</h3>
 <!-- ###  Rate Regulation {#S:RateRegulation} -->
 <p>The purposes of insurance regulation are to ensure the financial stability of insurers and to protect consumers. Insurers receive premiums in return for promises to pay in the event of a contingent (insured) event. Like other financial institutions such as banks, there is a strong public interest in promoting the continuing viability of an insurance company. Further, regulation is needed to protect consumers because:</p>
 <ol style="list-style-type: lower-alpha">
@@ -1538,7 +1538,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <li>Insurers write insurance policies and sell them to the public on a “take it or leave it” basis. Personal insurance is not a contract where each party has equal access to information (with their resources, insurers are thought to have greater access to information about risks they are insuring than consumers).</li>
 </ol>
 <div id="market-conduct" class="section level4">
-<h4><span class="header-section-number">7.7.1.1</span> Market Conduct</h4>
+<h4><span class="header-section-number">7.7.0.1</span> Market Conduct</h4>
 <p>One aspects of regulation is known as <em>market conduct</em> regulation - systems of regulatory controls that have been established requiring insurers to demonstrate that they are providing fair and reliable services, including product regulation.</p>
 <ol style="list-style-type: decimal">
 <li>Product regulation serves to protect consumers by ensuring that insurance policy provisions are reasonable and fair, and do not contain major gaps in coverage that might be misunderstood by consumers and leave them unprotected.</li>
@@ -1551,7 +1551,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <p>Market conduct includes rules for intermediaries such as agents (who sell insurance to individuals) and brokers (who sell insurance to businesses). Market conduct also includes competition policy regulation, designed to ensure an efficient and competitive marketplace that offers low prices to consumers.</p>
 </div>
 <div id="rate-regulation" class="section level4">
-<h4><span class="header-section-number">7.7.1.2</span> Rate Regulation</h4>
+<h4><span class="header-section-number">7.7.0.2</span> Rate Regulation</h4>
 <p>The focus of the premium chapter is rate (and policy form) regulation. The intent of these regulations is to ensure that insurers not take unfair advantage of consumers. Rate and policy form regulation are common worldwide.</p>
 <p>The amount of regulatory scrutiny varies by insurance product. Rate regulation is uncommon in life insurance. Further, in non-life insurance, most commercial lines and reinsurance are free from regulation. Rate regulation is most common in automobile insurance, health insurance, workers compensation, medical malpractice, and homeowners insurance. These are markets in which insurance is mandatory or in which universal coverage is thought to be socially desirable.</p>
 <p>There are three principles that guide rate regulation:</p>
@@ -1563,7 +1563,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <p>Recently, in auto and home insurance, the twin issues of availability and affordability, which are not explicitly included in the guiding principles, have been assuming greater importance in regulatory decisions.</p>
 </div>
 <div id="types-of-rate-regulation" class="section level4">
-<h4><span class="header-section-number">7.7.1.3</span> Types of Rate Regulation</h4>
+<h4><span class="header-section-number">7.7.0.3</span> Types of Rate Regulation</h4>
 <p>There are several methods, that vary by the level of scrutiny, by which regulators may restrict the rates that insurers offer.</p>
 <p>The most restrictive is a <em>government prescribed</em> regulatory system, where the government regulator determines and promulgates the rates, classifications, forms, and so forth, to which all insurers must adhere. Also restrictive are <em>prior approval</em> systems. Here, the insurer must file rates, rules, and so forth, with government regulators. Depending on the statute, the filing becomes effective when a specified waiting period elapses (if the government regulator does not take specific action on the filing, it is deemed approved automatically) or when the government regulator formally approves the filing.</p>
 <p>The least restrictive would be a <em>no file</em> or <em>record maintenance</em> system where the insurer need not file rates, rules, and so forth, with the government regulator. The regulator may periodically examine the insurer to ensure compliance with the law. Another relatively flexible system is the <em>file only</em> system, also known as <em>competitive</em> rating, where the insurer simply keeps files to ensure compliance with the law.</p>
@@ -1576,7 +1576,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 </ol>
 </div>
 <div id="rates-are-not-unfairly-discriminatory" class="section level4">
-<h4><span class="header-section-number">7.7.1.4</span> Rates are Not Unfairly Discriminatory</h4>
+<h4><span class="header-section-number">7.7.0.4</span> Rates are Not Unfairly Discriminatory</h4>
 <p>Government regulation of prices takes on two forms:</p>
 <ol style="list-style-type: decimal">
 <li>The size of premium rates</li>
@@ -1680,7 +1680,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

@@ -212,7 +212,8 @@ In developing this book, we are emphasizing the [online version](https://openact
 <div id="display.T:Frequency.2Intro" style="display: none">
 
 ```
-Insample <- read.csv("Insample.csv", header=T,  na.strings=c("."), stringsAsFactors=FALSE)
+Insample <- read.csv("Insample.csv", header=T,  na.strings=c("."), 
+                      stringsAsFactors=FALSE)
 Insample2010 <- subset(Insample, Year==2010)
 table(Insample2010$Freq)
 ```

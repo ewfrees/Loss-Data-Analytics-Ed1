@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -787,9 +787,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <hr />
 <p><strong>Statistical inference</strong> is the process of making conclusions on the characteristics of a large set of items/individuals (i.e., the <strong>population</strong>), using a representative set of data (e.g., a <strong>random sample</strong>) from a list of items or individuals from the population that can be sampled. While the process has a broad spectrum of applications in various areas including science, engineering, health, social, and economic fields, statistical inference is important to insurance companies that use data from their existing policy holders in order to make inference on the characteristics (e.g., risk profiles) of a specific segment of target customers (i.e., the population) whom the insurance companies do not directly observe.</p>
 <h5 style="text-align: center;">
-<a id="EXM:S1:SI:display" href="javascript:toggleEX('EXM:S1:SI','EXM:S1:SI:display');"><i><strong>Show An Empirical Example Using the Wisconsin Property Fund</strong></i></a>
+<a id="displayExample.SI" href="javascript:toggleEX('toggleExample.SI','displayExample.SI');"><i><strong>Show An Empirical Example Using the Wisconsin Property Fund</strong></i></a>
 </h5>
-<div id="EXM:S1:SI" style="display: none">
+<div id="toggleExample.SI" style="display: none">
 <p><strong>Example – Wisconsin Property Fund.</strong> Assume there are 1,377 <em>individual</em> claims from the 2010 experience.</p>
 <!---
  (slightly different from the analysis of 403 average claims in Chapter 1)
@@ -880,9 +880,9 @@ Figure 15.1: Distribution of Claims
 <p>In <strong>parametric</strong> analysis, on the other hand, we may assume specific families of distributions with specific parameters. For example, people usually think of logarithm of claim amounts to be normally distributed with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. That is, we assume that the claims have a <em>lognormal</em> distribution with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. Alternatively, insurance companies commonly assume that claim severity follows a gamma distribution with a shape parameter <span class="math inline">\(\alpha\)</span> and a scale parameter <span class="math inline">\(\theta\)</span>. Here, the normal, lognormal, and gamma distributions are examples of parametric distributions. In the above examples, the quantities of <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\alpha\)</span>, and <span class="math inline">\(\theta\)</span> are known as <em>parameters</em>. For a given parametric distribution family, the distribution is uniquely determined by the values of the parameters.</p>
 <p>One often uses <span class="math inline">\(\theta\)</span> to denote a summary attribute of the population. In parametric models, <span class="math inline">\(\theta\)</span> can be a parameter or a function of parameters from a distribution such as the normal mean and variance parameters. In nonparametric analysis, it can take a form of a nonparametric summary such as the population mean or standard deviation. Let <span class="math inline">\(\hat{\theta} =\hat{\theta}(X_1, \ldots, X_n)\)</span> be a function of the sample that provides a proxy, or an <strong>estimate</strong>, of <span class="math inline">\(\theta\)</span>. It is referred to as a <strong>statistic</strong>, a function of the sample <span class="math inline">\(X_1, \ldots, X_n\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="EXM:S1:PE:display" href="javascript:toggleEX('EXM:S1:PE','EXM:S1:PE:display');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
+<a id="displayExample.PE" href="javascript:toggleEX('toggleExample.PE','displayExample.PE');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
 </h5>
-<div id="EXM:S1:PE" style="display: none">
+<div id="toggleExample.PE" style="display: none">
 <p><strong>Example – Wisconsin Property Fund.</strong> The sample mean 7.804 and the sample standard deviation 1.683 can be either deemed as nonparametric estimates of the population mean and standard deviation, or as parametric estimates of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> of the normal distribution concerning the logarithmic claims. Using results from the lognormal distribution, we may estimate the expected claim, the lognormal mean, as 10,106.8 ( <span class="math inline">\(=\exp(7.804+1.683^2/2)\)</span> ).</p>
 <p>For the Wisconsin Property Fund data, we may denote <span class="math inline">\(\hat{\mu} =7.804\)</span> and <span class="math inline">\(\hat{\sigma} = 1.683\)</span>, with the hat notation denoting an <strong>estimate</strong> of the parameter based on the sample. In particular, such an estimate is referred to as a <strong>point estimate</strong>, a single approximation of the corresponding parameter. For point estimation, we introduce the two commonly used methods called the method of moments estimation and maximum likelihood estimation.</p>
 </div>
@@ -892,9 +892,9 @@ Figure 15.1: Distribution of Claims
 <p>Using the random sample <span class="math inline">\(X_1, \ldots, X_n\)</span>, we may construct the corresponding sample moment, <span class="math inline">\(\hat{\mu}_k=(1/n)\sum_{i=1}^n X_i^k\)</span>, for estimating the population attribute <span class="math inline">\(\mu_k\)</span>. For example, we have used the sample mean <span class="math inline">\(\bar{X}\)</span> as an estimator for the population mean <span class="math inline">\(\mu\)</span>. Similarly, the second central moment can be estimated as <span class="math inline">\((1/n)\sum_{i=1}^n(X_i-\bar{X})^2\)</span>. Without assuming a parametric form for <span class="math inline">\(F(\cdot)\)</span>, the sample moments constitute nonparametric estimates of the corresponding population attributes. Such an estimator based on matching of the corresponding sample and population moments is called a <strong>method of moments estimator</strong> (MME).</p>
 <p>While the MME works naturally in a nonparametric model, it can be used to estimate parameters when a specific parametric family of distribution is assumed for <span class="math inline">\(F(\cdot)\)</span>. Denote by <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\cdots,\theta_m)\)</span> the vector of parameters corresponding to a parametric distribution <span class="math inline">\(F(\cdot)\)</span>. Given a distribution family, we commonly know the relationships between the parameters and the moments. In particular, we know the specific forms of the functions <span class="math inline">\(h_1(\cdot),h_2(\cdot),\cdots,h_m(\cdot)\)</span> such that <span class="math inline">\(\mu_1=h_1(\boldsymbol{\theta}),\,\mu_2=h_2(\boldsymbol{\theta}),\,\cdots,\,\mu_m=h_m(\boldsymbol{\theta})\)</span>. Given the MME <span class="math inline">\(\hat{\mu}_1, \ldots, \hat{\mu}_m\)</span> from the random sample, the MME of the parameters <span class="math inline">\(\hat{\theta}_1,\cdots,\hat{\theta}_m\)</span> can be obtained by solving the equations of <span class="math display">\[\hat{\mu}_1=h_1(\hat{\theta}_1,\cdots,\hat{\theta}_m);\]</span> <span class="math display">\[\hat{\mu}_2=h_2(\hat{\theta}_1,\cdots,\hat{\theta}_m);\]</span> <span class="math display">\[\cdots\]</span> <span class="math display">\[\hat{\mu}_m=h_m(\hat{\theta}_1,\cdots,\hat{\theta}_m).\]</span></p>
 <h5 style="text-align: center;">
-<a id="EXM:S1:MME:display" href="javascript:toggleEX('EXM:S1:MME','EXM:S1:MME:display');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
+<a id="displayExample.MME" href="javascript:toggleEX('toggleExample.MME','displayExample.MME');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
 </h5>
-<div id="EXM:S1:MME" style="display: none">
+<div id="toggleExample.MME" style="display: none">
 <p><strong>Example – Wisconsin Property Fund.</strong> Assume that the claims follow a lognormal distribution, so that logarithmic claims follow a normal distribution. Specifically, assume <span class="math inline">\(\ln(X)\)</span> has a normal distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, denoted as <span class="math inline">\(\ln(X) \sim N(\mu, \sigma^2)\)</span>. It is straightforward that the MME <span class="math inline">\(\hat{\mu}=\bar{X}\)</span> and <span class="math inline">\(\hat{\sigma}=\sqrt{(1/n)\sum_{i=1}^n(X_i-\bar{X})^2}\)</span>. For the Wisconsin Property Fund example, the method of moments estimates are <span class="math inline">\(\hat{\mu} =7.804\)</span> and <span class="math inline">\(\hat{\sigma} = 1.683\)</span>.</p>
 </div>
 </div>
@@ -939,9 +939,9 @@ Figure 15.1: Distribution of Claims
 <p><strong>Normal distribution.</strong> For the normal population mean <span class="math inline">\(\mu\)</span>, the MLE has an exact sampling distribution <span class="math inline">\(\bar{X}\sim N(\mu,\sigma/\sqrt{n})\)</span>, in which we can estimate <span class="math inline">\(se(\hat{\theta})\)</span> by <span class="math inline">\(\hat{\sigma}/\sqrt{n}\)</span>. Based on the <strong>Cochran’s theorem</strong>, the resulting statistic has an exact Student-<span class="math inline">\(t\)</span> distribution with degrees of freedom <span class="math inline">\(n-1\)</span>. Hence, we can derive the lower and upper bounds of the confidence interval as <span class="math display">\[\hat{\mu}_1 = \hat{\mu} - t_{n-1}\left(1-\frac{\alpha}{2}\right)\frac{ \hat{\sigma}}{\sqrt{n}}\]</span> and <span class="math display">\[\hat{\mu}_2 = \hat{\mu} + t_{n-1}\left(1-\frac{\alpha}{2}\right)\frac{ \hat{\sigma}}{\sqrt{n}}.\]</span> When <span class="math inline">\(\alpha = 0.05\)</span>, <span class="math inline">\(t_{n-1}(1-\alpha/2) \approx 1.96\)</span> for large values of <span class="math inline">\(n\)</span>. Based on the Cochran’s theorem, the confidence interval is valid regardless of the sample size.</p>
 <hr />
 <h5 style="text-align: center;">
-<a id="EXM:S1:CI:display" href="javascript:toggleEX('EXM:S1:CI','EXM:S1:CI:display');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
+<a id="displayExample.CI" href="javascript:toggleEX('toggleExample.CI','displayExample.CI');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
 </h5>
-<div id="EXM:S1:CI" style="display: none">
+<div id="toggleExample.CI" style="display: none">
 <p><strong>Example – Wisconsin Property Fund.</strong> For the lognormal claim model, (7.715235, 7.893208) is a 95% confidence interval for <span class="math inline">\(\mu\)</span>.</p>
 <p>More details regarding interval estimation based the MLE of other parameters and distribution families are given in Appendix Chapter <a href="C-AppC.html#C:AppC">17</a>.</p>
 </div>
@@ -973,15 +973,15 @@ Figure 15.1: Distribution of Claims
 <p>Similarly, we can construct a one-sided test for the null hypothesis <span class="math inline">\(H_0:\theta\leq\theta_0\)</span> (or <span class="math inline">\(H_0:\theta\geq\theta_0\)</span>). Using the same test statistic, we reject the null hypothesis when <span class="math inline">\(t\text{-stat}&gt; t_{n-p}\left(1-{\alpha}\right)\)</span> (or <span class="math inline">\(t\text{-stat}&lt;- t_{n-p}\left(1-{\alpha}\right)\)</span> for the test on <span class="math inline">\(H_0:\theta\geq\theta_0\)</span>). The corresponding <span class="math inline">\(p\)</span>-value is defined as <span class="math inline">\(\Pr(T&gt;|t\text{-stat}|)\)</span> (or <span class="math inline">\(\Pr(T&lt;|t\text{-stat}|)\)</span> for the test on <span class="math inline">\(H_0:\theta\geq\theta_0\)</span>). Note that the test is not valid for small samples, except for the case of the test on the normal mean.</p>
 <p><strong>One-sample <span class="math inline">\(t\)</span> Test for Normal Mean.</strong> For the test on the normal mean of the form <span class="math inline">\(H_0:\mu=\mu_0\)</span>, <span class="math inline">\(H_0:\mu\leq\mu_0\)</span> or <span class="math inline">\(H_0:\mu\geq\mu_0\)</span>, we can define the test statistic as <span class="math display">\[t\text{-stat}=\frac{\bar{X}-\mu_0}{{\hat{\sigma}}/{\sqrt{n}}},\]</span> for which we have an exact sampling distribution <span class="math inline">\(t\text{-stat}\sim T_{n-1}\)</span> from the Cochran’s theorem, with <span class="math inline">\(T_{n-1}\)</span> denoting a Student-<span class="math inline">\(t\)</span> distribution with degrees of freedom <span class="math inline">\(n-1\)</span>. According to the Cochran’s theorem, the test is valid for both small and large samples.</p>
 <h5 style="text-align: center;">
-<a id="EXM:S1:TST1:display" href="javascript:toggleEX('EXM:S1:TST1','EXM:S1:TST1:display');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
+<a id="displayExample.TST1" href="javascript:toggleEX('toggleExample.TST1','displayExample.TST1');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
 </h5>
-<div id="EXM:S1:TST1" style="display: none">
+<div id="toggleExample.TST1" style="display: none">
 <p><strong>Example – Wisconsin Property Fund.</strong> Assume that mean logarithmic claims have historically been approximately by <span class="math inline">\(\mu_0 = \ln(5000)= 8.517\)</span>. We might want to use the 2010 data to assess whether the mean of the distribution has changed (a two-sided test), or whether it has increased (a one-sided test). Given the actual 2010 average <span class="math inline">\(\hat{\mu} =7.804\)</span>, we may use the one-sample <span class="math inline">\(t\)</span> test to assess whether this is a significant departure from <span class="math inline">\(\mu_0 = 8.517\)</span> (i.e., in testing <span class="math inline">\(H_0:\mu=8.517\)</span>). The test statistic <span class="math inline">\(t\text{-stat}=(8.517-7.804)/(1.683/\sqrt{1377}) = 15.72&gt;t_{1376}\left(0.975\right)\)</span>. Hence, we reject the two-sided test at <span class="math inline">\(\alpha=5\%\)</span>. Similarly, we will reject the one-sided test at <span class="math inline">\(\alpha=5\%\)</span>.</p>
 </div>
 <h5 style="text-align: center;">
-<a id="EXM:S1:TST2:display" href="javascript:toggleEX('EXM:S1:TST2','EXM:S1:TST2:display');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
+<a id="displayExample.TST2" href="javascript:toggleEX('toggleExample.TST2','displayExample.TST2');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
 </h5>
-<div id="EXM:S1:TST2" style="display: none">
+<div id="toggleExample.TST2" style="display: none">
 <p><strong>Example – Wisconsin Property Fund.</strong> For numerical stability and extensions to regression applications, statistical packages often work with transformed versions of parameters. The following estimates are from the <strong>R</strong> package <strong>VGAM</strong> (the function). More details on the MLE of other distribution families are given in Appendix Chapter <a href="C-AppC.html#C:AppC">17</a>.</p>
 <table>
 <tbody>
@@ -1073,9 +1073,9 @@ Figure 15.1: Distribution of Claims
 <p>In particular, the <strong>Akaike’s information criterion</strong> (<span class="math inline">\(AIC\)</span>) is defined as <span class="math display">\[AIC = -2\ln L(\hat{\boldsymbol \theta}) + 2p,\]</span> where <span class="math inline">\(\hat{\boldsymbol \theta}\)</span> denotes the MLE of <span class="math inline">\({\boldsymbol \theta}\)</span>, and <span class="math inline">\(p\)</span> is the number of parameters in the model. The additional term <span class="math inline">\(2 p\)</span> represents a penalty for the complexity of the model. That is, with the same maximized likelihood function, the <span class="math inline">\(AIC\)</span> favors model with less parameters. We note that the <span class="math inline">\(AIC\)</span> does not consider the impact from the sample size <span class="math inline">\(n\)</span>.</p>
 <p>Alternatively, people use the <strong>Bayesian information criterion</strong> (<span class="math inline">\(BIC\)</span>) that takes into consideration the sample size. The <span class="math inline">\(BIC\)</span> is defined as <span class="math display">\[BIC = -2\ln L(\hat{\boldsymbol \theta}) + p\,\ln(n).\]</span> We observe that the <span class="math inline">\(BIC\)</span> generally puts a higher weight on the number of parameters. With the same maximized likelihood function, the <span class="math inline">\(BIC\)</span> will suggest a more parsimonious model than the <span class="math inline">\(AIC\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="EXM:S1:AIC:display" href="javascript:toggleEX('EXM:S1:AIC','EXM:S1:AIC:display');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
+<a id="displayExample.AIC" href="javascript:toggleEX('toggleExample.AIC','displayExample.AIC');"><i><strong>Show Wisconsin Property Fund Example - Continued</strong></i></a>
 </h5>
-<div id="EXM:S1:AIC" style="display: none">
+<div id="toggleExample.AIC" style="display: none">
 <p><strong>Example – Wisconsin Property Fund.</strong> Both the <span class="math inline">\(AIC\)</span> and <span class="math inline">\(BIC\)</span> statistics suggest that the <em>GB2</em> is the best fitting model whereas gamma is the worst.</p>
 <table>
 <thead>
@@ -1123,63 +1123,63 @@ Figure 15.2: Fitted Claims Distribution
 </div>
 <pre><code>## Sample size:  6258</code></pre>
 <h5 style="text-align: center;">
-<a id="CODE:S1:FIT:display" href="javascript:togglecode('CODE:S1:FIT','CODE:S1:FIT:display');"><i><strong>Show R Code</strong></i></a>
+<a id="displayCode.FIT" href="javascript:togglecode('toggleCode.FIT','displayCode.FIT');"><i><strong>Show R Code</strong></i></a>
 </h5>
-<div id="CODE:S1:FIT" style="display: none">
+<div id="toggleCode.FIT" style="display: none">
 <p>R Code for Fitted Claims Distributions</p>
-<pre><code># R Code to fit several claims distributions
-ClaimLev &lt;- read.csv(&quot;Data/CLAIMLEVEL.csv&quot;, header=TRUE); nrow(ClaimLev)
-ClaimData&lt;-subset(ClaimLev,Year==2010); 
-#Use &quot;VGAM&quot; library for estimation of parameters 
-library(VGAM)
-fit.LN &lt;- vglm(Claim ~ 1, family=lognormal, data = ClaimData)
-fit.gamma &lt;- vglm(Claim ~ 1, family=gamma2, data = ClaimData)
-  theta.gamma&lt;-exp(coef(fit.gamma)[1])/exp(coef(fit.gamma)[2]) 
-  alpha.gamma&lt;-exp(coef(fit.gamma)[2])
-fit.exp &lt;- vglm(Claim ~ 1, exponential, data = ClaimData)
-fit.pareto &lt;- vglm(Claim ~ 1, paretoII, loc=0, data = ClaimData)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R Code to fit several claims distributions</span>
+ClaimLev &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CLAIMLEVEL.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>); <span class="kw">nrow</span>(ClaimLev)
+ClaimData&lt;-<span class="kw">subset</span>(ClaimLev,Year<span class="op">==</span><span class="dv">2010</span>); 
+<span class="co">#Use &quot;VGAM&quot; library for estimation of parameters </span>
+<span class="kw">library</span>(VGAM)
+fit.LN &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">family=</span>lognormal, <span class="dt">data =</span> ClaimData)
+fit.gamma &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">family=</span>gamma2, <span class="dt">data =</span> ClaimData)
+  theta.gamma&lt;-<span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">1</span>])<span class="op">/</span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">2</span>]) 
+  alpha.gamma&lt;-<span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">2</span>])
+fit.exp &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, exponential, <span class="dt">data =</span> ClaimData)
+fit.pareto &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">loc=</span><span class="dv">0</span>, <span class="dt">data =</span> ClaimData)
 
 ###################################################
-#  Inference assuming a GB2 Distribution - this is more complicated
-# The likelihood functon of GB2 distribution (negative for optimization)
-likgb2 &lt;- function(param) {
-  a1 &lt;- param[1]
-  a2 &lt;- param[2]
-  mu &lt;- param[3]
-  sigma &lt;- param[4]
-  yt &lt;- (log(ClaimData$Claim)-mu)/sigma
-  logexpyt&lt;-ifelse(yt&gt;23,yt,log(1+exp(yt)))
-  logdens &lt;- a1*yt - log(sigma) - log(beta(a1,a2)) - (a1+a2)*logexpyt -log(ClaimData$Claim) 
-  return(-sum(logdens))
+<span class="co">#  Inference assuming a GB2 Distribution - this is more complicated</span>
+<span class="co"># The likelihood functon of GB2 distribution (negative for optimization)</span>
+likgb2 &lt;-<span class="st"> </span><span class="cf">function</span>(param) {
+  a1 &lt;-<span class="st"> </span>param[<span class="dv">1</span>]
+  a2 &lt;-<span class="st"> </span>param[<span class="dv">2</span>]
+  mu &lt;-<span class="st"> </span>param[<span class="dv">3</span>]
+  sigma &lt;-<span class="st"> </span>param[<span class="dv">4</span>]
+  yt &lt;-<span class="st"> </span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim)<span class="op">-</span>mu)<span class="op">/</span>sigma
+  logexpyt&lt;-<span class="kw">ifelse</span>(yt<span class="op">&gt;</span><span class="dv">23</span>,yt,<span class="kw">log</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(yt)))
+  logdens &lt;-<span class="st"> </span>a1<span class="op">*</span>yt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(sigma) <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(<span class="kw">beta</span>(a1,a2)) <span class="op">-</span><span class="st"> </span>(a1<span class="op">+</span>a2)<span class="op">*</span>logexpyt <span class="op">-</span><span class="kw">log</span>(ClaimData<span class="op">$</span>Claim) 
+  <span class="kw">return</span>(<span class="op">-</span><span class="kw">sum</span>(logdens))
 }
-#  &quot;optim&quot; is a general purpose minimization function
-gb2bop &lt;- optim(c(1,1,0,1),likgb2,method=c(&quot;L-BFGS-B&quot;),
-                lower=c(0.01,0.01,-500,0.01),upper=c(500,500,500,500),hessian=TRUE)
+<span class="co">#  &quot;optim&quot; is a general purpose minimization function</span>
+gb2bop &lt;-<span class="st"> </span><span class="kw">optim</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>),likgb2,<span class="dt">method=</span><span class="kw">c</span>(<span class="st">&quot;L-BFGS-B&quot;</span>),
+                <span class="dt">lower=</span><span class="kw">c</span>(<span class="fl">0.01</span>,<span class="fl">0.01</span>,<span class="op">-</span><span class="dv">500</span>,<span class="fl">0.01</span>),<span class="dt">upper=</span><span class="kw">c</span>(<span class="dv">500</span>,<span class="dv">500</span>,<span class="dv">500</span>,<span class="dv">500</span>),<span class="dt">hessian=</span><span class="ot">TRUE</span>)
 ###################################################
-# Plotting the fit using densities (on a logarithmic scale)
-plot(density(log(ClaimData$Claim)), ylim=c(0,0.36),main=&quot;&quot;, xlab=&quot;Log Expenditures&quot;)
-x &lt;- seq(0,15,by=0.01)
-fexp_ex = dgamma(exp(x), scale = exp(-coef(fit.exp)), shape = 1)*exp(x)
-lines(x,fexp_ex, col=&quot;red&quot;)
-fgamma_ex = dgamma(exp(x), shape = alpha.gamma, scale=theta.gamma)*exp(x)
-lines(x,fgamma_ex,col=&quot;blue&quot;)
-fpareto_ex = dparetoII(exp(x),loc=0,shape = exp(coef(fit.pareto)[2]), scale = exp(coef(fit.pareto)[1]))*exp(x)
-lines(x,fpareto_ex,col=&quot;purple&quot;)
-flnorm_ex = dlnorm(exp(x), mean = coef(fit.LN)[1], sd = exp(coef(fit.LN)[2]))*exp(x)
-lines(x,flnorm_ex, col=&quot;lightblue&quot;)
-# density for GB II
-gb2density &lt;- function(x){
-  a1 &lt;- gb2bop$par[1]
-  a2 &lt;- gb2bop$par[2]
-  mu &lt;- gb2bop$par[3]
-  sigma &lt;- gb2bop$par[4]
-  xt &lt;- (log(x)-mu)/sigma
-  logexpxt&lt;-ifelse(xt&gt;23,yt,log(1+exp(xt)))
-  logdens &lt;- a1*xt - log(sigma) - log(beta(a1,a2)) - (a1+a2)*logexpxt -log(x) 
-  exp(logdens)
+<span class="co"># Plotting the fit using densities (on a logarithmic scale)</span>
+<span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim)), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.36</span>),<span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Log Expenditures&quot;</span>)
+x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">15</span>,<span class="dt">by=</span><span class="fl">0.01</span>)
+fexp_ex =<span class="st"> </span><span class="kw">dgamma</span>(<span class="kw">exp</span>(x), <span class="dt">scale =</span> <span class="kw">exp</span>(<span class="op">-</span><span class="kw">coef</span>(fit.exp)), <span class="dt">shape =</span> <span class="dv">1</span>)<span class="op">*</span><span class="kw">exp</span>(x)
+<span class="kw">lines</span>(x,fexp_ex, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+fgamma_ex =<span class="st"> </span><span class="kw">dgamma</span>(<span class="kw">exp</span>(x), <span class="dt">shape =</span> alpha.gamma, <span class="dt">scale=</span>theta.gamma)<span class="op">*</span><span class="kw">exp</span>(x)
+<span class="kw">lines</span>(x,fgamma_ex,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+fpareto_ex =<span class="st"> </span><span class="kw">dparetoII</span>(<span class="kw">exp</span>(x),<span class="dt">loc=</span><span class="dv">0</span>,<span class="dt">shape =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">2</span>]), <span class="dt">scale =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">1</span>]))<span class="op">*</span><span class="kw">exp</span>(x)
+<span class="kw">lines</span>(x,fpareto_ex,<span class="dt">col=</span><span class="st">&quot;purple&quot;</span>)
+flnorm_ex =<span class="st"> </span><span class="kw">dlnorm</span>(<span class="kw">exp</span>(x), <span class="dt">mean =</span> <span class="kw">coef</span>(fit.LN)[<span class="dv">1</span>], <span class="dt">sd =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.LN)[<span class="dv">2</span>]))<span class="op">*</span><span class="kw">exp</span>(x)
+<span class="kw">lines</span>(x,flnorm_ex, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)
+<span class="co"># density for GB II</span>
+gb2density &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+  a1 &lt;-<span class="st"> </span>gb2bop<span class="op">$</span>par[<span class="dv">1</span>]
+  a2 &lt;-<span class="st"> </span>gb2bop<span class="op">$</span>par[<span class="dv">2</span>]
+  mu &lt;-<span class="st"> </span>gb2bop<span class="op">$</span>par[<span class="dv">3</span>]
+  sigma &lt;-<span class="st"> </span>gb2bop<span class="op">$</span>par[<span class="dv">4</span>]
+  xt &lt;-<span class="st"> </span>(<span class="kw">log</span>(x)<span class="op">-</span>mu)<span class="op">/</span>sigma
+  logexpxt&lt;-<span class="kw">ifelse</span>(xt<span class="op">&gt;</span><span class="dv">23</span>,yt,<span class="kw">log</span>(<span class="dv">1</span><span class="op">+</span><span class="kw">exp</span>(xt)))
+  logdens &lt;-<span class="st"> </span>a1<span class="op">*</span>xt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(sigma) <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(<span class="kw">beta</span>(a1,a2)) <span class="op">-</span><span class="st"> </span>(a1<span class="op">+</span>a2)<span class="op">*</span>logexpxt <span class="op">-</span><span class="kw">log</span>(x) 
+  <span class="kw">exp</span>(logdens)
 }
-fGB2_ex = gb2density(exp(x))*exp(x)
-lines(x,fGB2_ex, col=&quot;green&quot;)</code></pre>
+fGB2_ex =<span class="st"> </span><span class="kw">gb2density</span>(<span class="kw">exp</span>(x))<span class="op">*</span><span class="kw">exp</span>(x)
+<span class="kw">lines</span>(x,fGB2_ex, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</code></pre></div>
 </div>
 </div>
 <div id="contributors-8" class="section level4 unnumbered">
@@ -1235,7 +1235,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

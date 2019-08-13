@@ -537,7 +537,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RateRegulation"><i class="fa fa-check"></i><b>7.7.1</b> TS 7.A. Rate Regulation</a></li>
+<li class="chapter" data-level="" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#ts-7.a.-rate-regulation"><i class="fa fa-check"></i>TS 7.A. Rate Regulation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="C-RiskClass.html"><a href="C-RiskClass.html"><i class="fa fa-check"></i><b>8</b> Risk Classification</a><ul>
@@ -785,7 +785,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Describe multivariate variables.</li>
 </ul>
 <hr />
-<p>People, firms, and other entities that we want to understand are described in a dataset by numerical characteristics. As these characteristics vary by entity, they are commonly known as <a href="#" class="tooltip" style="color:green"><em>variables</em><span style="font-size:8pt"> A variable is any characteristics, number, or quantity that can be measured or counted.</span></a>. To manage insurance systems, it will be critical to understand the distribution of each variable and how they are associated with one another. It is common for data sets to have many variables (<a href="#" class="tooltip" style="color:green"><em>high dimensional</em><span style="font-size:8pt"> Data set is high dimensional when it has many variables. In many applications, the number of variables may be larger than the sample size.</span></a>) and so it useful to begin by classifying them into different types. As will be seen, these classifications are not strict; there is overlap among the groups. Nonetheless, the grouping summarized in <a href="#tab:14.1">Table 14.1</a> and explained in the remainder of this section provides a solid first step in framing a data set.</p>
+<p>People, firms, and other entities that we want to understand are described in a dataset by numerical characteristics. As these characteristics vary by entity, they are commonly known as <a href="#" class="tooltip" style="color:green"><em>variables</em><span style="font-size:8pt">A variable is any characteristics, number, or quantity that can be measured or counted.</span></a>. To manage insurance systems, it will be critical to understand the distribution of each variable and how they are associated with one another. It is common for data sets to have many variables (<a href="#" class="tooltip" style="color:green"><em>high dimensional</em><span style="font-size:8pt">Data set is high dimensional when it has many variables. In many applications, the number of variables may be larger than the sample size.</span></a>) and so it useful to begin by classifying them into different types. As will be seen, these classifications are not strict; there is overlap among the groups. Nonetheless, the grouping summarized in <a href="#tab:14.1">Table 14.1</a> and explained in the remainder of this section provides a solid first step in framing a data set.</p>
 <p><a id=tab:14.1></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -835,9 +835,9 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <li>Describe binary variable</li>
 </ul>
 <hr />
-<p>A <a href="#" class="tooltip" style="color:green"><em>qualitative</em><span style="font-size:8pt"> This is a type of variable in which the measurement denotes membership in a set of groups, or categories.</span></a>,or <a href="#" class="tooltip" style="color:green"><em>categorical variable</em><span style="font-size:8pt"> Same as Qualitative variable.</span></a> is one for which the measurement denotes membership in a set of groups, or categories. For example, if you were coding which area of the country an insured resides, you might use a 1 for the northern part, 2 for southern, and 3 for everything else. This location variable is an example of a <a href="#" class="tooltip" style="color:green"><em>nominal variable</em><span style="font-size:8pt"> This is a type of qualitative/ categorical variable which has two or more categories without having any kind of natural order.</span></a>, one for which the levels have no natural ordering. Any analysis of nominal variables should not depend on the labeling of the categories. For example, instead of using a 1,2,3 for north, south, other, I should arrive at the same set of summary statistics if I used a 2,1,3 coding instead, interchanging north and south.</p>
-<p>In contrast, an <a href="#" class="tooltip" style="color:green"><em>ordinal variable</em><span style="font-size:8pt"> This is a type of qualitative/ categorical variable which has two or more ordered categories.</span></a> is a type of categorical variable for which an ordering does exist. For example, with a survey to see how satisfied customers are with our claims servicing department, we might use a five point scale that ranges from 1 meaning dissatisfied to a 5 meaning satisfied. Ordinal variables provide a clear ordering of levels of a variable but the amount of separation between levels is unknown.</p>
-<p>A <a href="#" class="tooltip" style="color:green"><em>binary variable</em><span style="font-size:8pt"> Is a special type of categorical variable where there are only two categories.</span></a> is a special type of categorical variable where there are only two categories commonly taken to be a 0 and a 1. For example, we might code a variable in a dataset to be a 1 if an insured is female and a 0 if male.</p>
+<p>A <a href="#" class="tooltip" style="color:green"><em>qualitative</em><span style="font-size:8pt">This is a type of variable in which the measurement denotes membership in a set of groups, or categories</span></a>,or <a href="#" class="tooltip" style="color:green"><em>categorical variable</em><span style="font-size:8pt">Same as Qualitative variable.</span></a> is one for which the measurement denotes membership in a set of groups, or categories. For example, if you were coding which area of the country an insured resides, you might use a 1 for the northern part, 2 for southern, and 3 for everything else. This location variable is an example of a <a href="#" class="tooltip" style="color:green"><em>nominal variable</em><span style="font-size:8pt">This is a type of qualitative/ categorical variable which has two or more categories without having any kind of natural order.</span></a>, one for which the levels have no natural ordering. Any analysis of nominal variables should not depend on the labeling of the categories. For example, instead of using a 1,2,3 for north, south, other, I should arrive at the same set of summary statistics if I used a 2,1,3 coding instead, interchanging north and south.</p>
+<p>In contrast, an <a href="#" class="tooltip" style="color:green"><em>ordinal variable</em><span style="font-size:8pt">This is a type of qualitative/ categorical variable which has two or more ordered categories.</span></a> is a type of categorical variable for which an ordering does exist. For example, with a survey to see how satisfied customers are with our claims servicing department, we might use a five point scale that ranges from 1 meaning dissatisfied to a 5 meaning satisfied. Ordinal variables provide a clear ordering of levels of a variable but the amount of separation between levels is unknown.</p>
+<p>A <a href="#" class="tooltip" style="color:green"><em>binary variable</em><span style="font-size:8pt">Is a special type of categorical variable where there are only two categories.</span></a> is a special type of categorical variable where there are only two categories commonly taken to be a 0 and a 1. For example, we might code a variable in a dataset to be a 1 if an insured is female and a 0 if male.</p>
 </div>
 <div id="S:QuanVar" class="section level3">
 <h3><span class="header-section-number">14.1.2</span> Quantitative Variables</h3>
@@ -849,9 +849,9 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <li>Describe circular data</li>
 </ul>
 <hr />
-<p>Unlike a qualitative variable, a <a href="#" class="tooltip" style="color:green"><em>quantitative variable</em><span style="font-size:8pt"> A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.</span></a> is one in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning. A <a href="#" class="tooltip" style="color:green"><em>continuous variable</em><span style="font-size:8pt"> A continuous variable is a quantitative variable that can take on any value within a finite interval.</span></a> is one that can take on any value within a finite interval. For example, it is common to represent a <a href="#" class="tooltip" style="color:green"><em>policyholder</em><span style="font-size:8pt"> Person in actual possession of insurance policy; policy owner.</span></a>’s age, weight, or income, as a continuous variable. In contrast, a <a href="#" class="tooltip" style="color:green"><em>discrete variable</em><span style="font-size:8pt"> A discrete variable is quantitative variable that takes on only a finite number of values in any finite interval.</span></a> is one that takes on only a finite number of values in any finite interval. For example, when examining a policyholder’s choice of <a href="#" class="tooltip" style="color:green"><em>deductibles</em><span style="font-size:8pt"> A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer’s responsibility (subject to policy limits and coninsurance).</span></a>, it may be that values of 0, 250, 500, and 1000 are the only possible outcomes. Like an ordinal variable, these represent distinct categories that are ordered. Unlike an ordinal variable, the numerical difference between levels takes on economic meaning. A special type of discrete variable is a <a href="#" class="tooltip" style="color:green"><em>count variable</em><span style="font-size:8pt"> A count variable is a discrete variable with values on nonnegative integers.</span></a>, one with values on the nonnegative integers. For example, we will be particularly interested in the number of claims arising from a policy during a given period.</p>
-<p>Some variables are inherently a <em>combination of discrete and continuous</em> components. For example, when we analyze the insured <a href="#" class="tooltip" style="color:green"><em>loss</em><span style="font-size:8pt"> The loss amount is the size of the loss incurred by the policyholder for incurred hurt, loss, or damage that is covered by the policy.</span></a> of a policyholder, we will encounter a discrete outcome at zero, representing no insured loss, and a continuous amount for positive outcomes, representing the amount of the insured loss. Another interesting variation is an <a href="#" class="tooltip" style="color:green"><em>interval variable</em><span style="font-size:8pt"> An interval variable is a type of variable that gives a range of possible outcomes.</span></a>,one that gives a range of possible outcomes.</p>
-<p><a href="#" class="tooltip" style="color:green"><em>Circular data</em><span style="font-size:8pt"> In a circular data, all values around the circle are equally likely. Example, imagine an analog picture of a clock.</span></a> represent an interesting category typically not analyzed by <a href="#" class="tooltip" style="color:green"><em>insurers</em><span style="font-size:8pt"> An insurance company authorized to write insurance under the laws of any state.</span></a>. As an example of circular data, suppose that you monitor calls to your customer service center and would like to know when is the peak time of the day for calls to arrive. In this context, one can think about the time of the day as a variable with realizations on a circle, e.g., imagine an analog picture of a clock. For circular data, the distance between observations at 00:15 and 00:45 are just as close as observations 23:45 and 00:15 (here, we use the convention <em>HH:MM</em> means hours and minutes).</p>
+<p>Unlike a qualitative variable, a <a href="#" class="tooltip" style="color:green"><em>quantitative variable</em><span style="font-size:8pt">A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.</span></a> is one in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning. A <a href="#" class="tooltip" style="color:green"><em>continuous variable</em><span style="font-size:8pt">A continuous variable is a quantitative variable that can take on any value within a finite interval.</span></a> is one that can take on any value within a finite interval. For example, it is common to represent a <a href="#" class="tooltip" style="color:green"><em>policyholder</em><span style="font-size:8pt">Person in actual possession of insurance policy; policy owner.</span></a>’s age, weight, or income, as a continuous variable. In contrast, a <a href="#" class="tooltip" style="color:green"><em>discrete variable</em><span style="font-size:8pt">A discrete variable is quantitative variable that takes on only a finite number of values in any finite interval.</span></a> is one that takes on only a finite number of values in any finite interval. For example, when examining a policyholder’s choice of <a href="#" class="tooltip" style="color:green"><em>deductibles</em><span style="font-size:8pt">A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer’s responsibility (subject to policy limits and coninsurance).</span></a>, it may be that values of 0, 250, 500, and 1000 are the only possible outcomes. Like an ordinal variable, these represent distinct categories that are ordered. Unlike an ordinal variable, the numerical difference between levels takes on economic meaning. A special type of discrete variable is a <a href="#" class="tooltip" style="color:green"><em>count variable</em><span style="font-size:8pt">A count variable is a discrete variable with values on nonnegative integers.</span></a>, one with values on the nonnegative integers. For example, we will be particularly interested in the number of claims arising from a policy during a given period.</p>
+<p>Some variables are inherently a <em>combination of discrete and continuous</em> components. For example, when we analyze the insured <a href="#" class="tooltip" style="color:green"><em>loss</em><span style="font-size:8pt">The amount of damages sustained by an individual or corporation, typically as the result of an insurable event.</span></a> of a policyholder, we will encounter a discrete outcome at zero, representing no insured loss, and a continuous amount for positive outcomes, representing the amount of the insured loss. Another interesting variation is an <a href="#" class="tooltip" style="color:green"><em>interval variable</em><span style="font-size:8pt"></span></a>,one that gives a range of possible outcomes.</p>
+<p><a href="#" class="tooltip" style="color:green"><em>Circular data</em><span style="font-size:8pt">In a circular data, all values around the circle are equally likely. Example, imagine an analog picture of a clock.</span></a> represent an interesting category typically not analyzed by <a href="#" class="tooltip" style="color:green"><em>insurers</em><span style="font-size:8pt">An insurance company authorized to write insurance under the laws of any state.</span></a>. As an example of circular data, suppose that you monitor calls to your customer service center and would like to know when is the peak time of the day for calls to arrive. In this context, one can think about the time of the day as a variable with realizations on a circle, e.g., imagine an analog picture of a clock. For circular data, the distance between observations at 00:15 and 00:45 are just as close as observations 23:45 and 00:15 (here, we use the convention <em>HH:MM</em> means hours and minutes).</p>
 </div>
 <div id="multivariate-variables" class="section level3">
 <h3><span class="header-section-number">14.1.3</span> Multivariate Variables</h3>
@@ -862,10 +862,10 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <li>Handle missing variables</li>
 </ul>
 <hr />
-<p>Insurance data typically are <a href="#" class="tooltip" style="color:green"><em>multivariate</em><span style="font-size:8pt"> Multivariate variable involves taking many measurements on a single entity.</span></a> in the sense that we can take many measurements on a single entity. For example, when studying losses associated with a firm’s <a href="#" class="tooltip" style="color:green"><em>worker’s compensation</em><span style="font-size:8pt"> Insurance that covers an employer’s liability for injuries, disability or death to persons in their employment, without regard to fault, as prescribed by state or federal workers’ compensation laws and other statutes.</span></a> plan, we might want to know the location of its manufacturing plants, the industry in which it operates, the number of employees, and so forth. The usual strategy for analyzing multivariate data is to begin by examining each variable in isolation of the others. This is known as a <a href="#" class="tooltip" style="color:green"><em>univariate</em><span style="font-size:8pt"> Univariate analysis is the simplest form of analyzing data. “Uni” means “one”, so in other words your data has only one variable.</span></a> approach.</p>
+<p>Insurance data typically are <a href="#" class="tooltip" style="color:green"><em>multivariate</em><span style="font-size:8pt">Multivariate variable involves taking many measurements on a single entity.</span></a> in the sense that we can take many measurements on a single entity. For example, when studying losses associated with a firm’s <a href="#" class="tooltip" style="color:green"><em>worker’s compensation</em><span style="font-size:8pt">Insurance that covers an employer’s liability for injuries, disability or death to persons in their employment, without regard to fault, as prescribed by state or federal workers’ compensation laws and other statutes.</span></a> plan, we might want to know the location of its manufacturing plants, the industry in which it operates, the number of employees, and so forth. The usual strategy for analyzing multivariate data is to begin by examining each variable in isolation of the others. This is known as a <a href="#" class="tooltip" style="color:green"><em>univariate</em><span style="font-size:8pt">Univariate analysis is the simplest form of analyzing data. “Uni” means “one”, so in other words your data has only one variable.</span></a> approach.</p>
 <p>In contrast, for some variables, it makes little sense to only look at one dimensional aspects. For example, insurers typically organize <em>spatial</em> data by longitude and latitude to analyze the location of weather related insurance claims due hailstorms. Having only a single number, either longitude or latitude, provides little information in understanding geographical location.</p>
-<p>Another special case of a multivariate variable, less obvious, involves coding for <a href="#" class="tooltip" style="color:green"><em>missing data</em><span style="font-size:8pt"> Missing data occur when no data value is stored for a variable in an observation. Missing data can occur because of nonresponse: no information is provided for one or more items or for a whole unit or subject.</span></a>. Historically, some statistical packages used a -99 to report when a variable, such as policyholder’s age, was not available or not reported. This led to many unsuspecting analysts providing strange statistics when summarizing a set of data. When data are missing, it is better to think about the variable as two dimensions, one to indicate whether or not the variable is reported and the second providing the age (if reported). In the same way, insurance data are commonly <a href="#" class="tooltip" style="color:green"><em>censored</em><span style="font-size:8pt"> Censored data have unknown values beyond a bound on either end of the number line or both. Here, the data is observed but the values (measurements) are not known completely.</span></a> and <a href="#" class="tooltip" style="color:green"><em>truncated</em><span style="font-size:8pt"> Truncation occurs when values beyond a boundary are either excluded when gathered or excluded when analyzed. An object can be detected only if its value is greater than some number.</span></a>. We refer you to Chapter 4 for more on censored and truncated data. <a href="#" class="tooltip" style="color:green"><em>Aggregate claims</em><span style="font-size:8pt"> Aggregate claims refers to the total amount of claims from a portfolio of insurance contracts.</span></a> can also be coded as another special type of multivariate variable. We refer you to Chapter 5 for more Aggregate claims.</p>
-<p>Perhaps the most complicated type of multivariate variable is a realization of a <a href="#" class="tooltip" style="color:green"><em>stochastic process</em><span style="font-size:8pt"> Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.</span></a>. You will recall that a stochastic process is little more than a collection of random variables. For example, in insurance, we might think about the times that claims arrive to an insurance company in a one year time horizon. This is a high dimensional variable that theoretically is infinite dimensional. Special techniques are required to understand realizations of stochastic processes that will not be addressed here.</p>
+<p>Another special case of a multivariate variable, less obvious, involves coding for <a href="#" class="tooltip" style="color:green"><em>missing data</em><span style="font-size:8pt">Missing data occur when no data value is stored for a variable in an observation. Missing data can occur because of nonresponse: no information is provided for one or more items or for a whole unit or subject.</span></a>. Historically, some statistical packages used a -99 to report when a variable, such as policyholder’s age, was not available or not reported. This led to many unsuspecting analysts providing strange statistics when summarizing a set of data. When data are missing, it is better to think about the variable as two dimensions, one to indicate whether or not the variable is reported and the second providing the age (if reported). In the same way, insurance data are commonly <a href="#" class="tooltip" style="color:green"><em>censored</em><span style="font-size:8pt">Censored data have unknown values beyond a bound on either end of the number line or both. Here, the data is observed but the values (measurements) are not known completely.</span></a> and <a href="#" class="tooltip" style="color:green"><em>truncated</em><span style="font-size:8pt">Truncation occurs when values beyond a boundary are either excluded when gathered or excluded when analyzed. An object can be detected only if its value is greater than some number.</span></a>. We refer you to Chapter 4 for more on censored and truncated data. <a href="#" class="tooltip" style="color:green"><em>Aggregate claims</em><span style="font-size:8pt">The sum of all claims observed in a period of time</span></a> can also be coded as another special type of multivariate variable. We refer you to Chapter 5 for more Aggregate claims.</p>
+<p>Perhaps the most complicated type of multivariate variable is a realization of a <a href="#" class="tooltip" style="color:green"><em>stochastic process</em><span style="font-size:8pt">Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.</span></a>. You will recall that a stochastic process is little more than a collection of random variables. For example, in insurance, we might think about the times that claims arrive to an insurance company in a one year time horizon. This is a high dimensional variable that theoretically is infinite dimensional. Special techniques are required to understand realizations of stochastic processes that will not be addressed here.</p>
 <div id="surveyElement141">
 
 </div>
@@ -910,23 +910,22 @@ r = \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Cov}(X,X)\widehat{Cov}(Y,Y)}}.
 <p>Further, in the case of independence, the correlation coefficient <span class="math inline">\(r\)</span> is 0. However, it is well known that zero correlation does not imply independence, except for normally distributed random variables. The correlation statistic <span class="math inline">\(r\)</span> is also a (maximum likelihood) estimator of the association parameter for bivariate normal distribution. So, for normally distributed data, the correlation statistic <span class="math inline">\(r\)</span> can be used to assess independence. For additional interpretations of this well-known statistic, readers will enjoy <span class="citation">(Lee Rodgers and Nicewander <a href="#ref-lee1988thirteen">1998</a>)</span>.</p>
 <p>You can obtain the Pearson correlation statistic <span class="math inline">\(r\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>pearson</code> method. This is demonstrated below by using the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars from the LGPIF data introduced in chapter 1.</p>
 <h5 style="text-align: center;">
-<a id="display.pearson.1" href="javascript:togglecode
-('display.pearson.2','display.pearson.1');"><i><strong>R Code for Pearson Correlation Statistic</strong></i></a>
+<a id="displayCode.pearson.1" href="javascript:togglecode('toggleCode.pearson.1','displayCode.pearson.1');"><i><strong>R Code for Pearson Correlation Statistic</strong></i></a>
 </h5>
-<div id="display.pearson.2" style="display: none">
-<pre><code>### Pearson correlation between Claim and Coverage ###
-r&lt;-cor(Claim,Coverage, method = c(&quot;pearson&quot;))
-round(r,2)
+<div id="toggleCode.pearson.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Pearson correlation between Claim and Coverage
+r&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))
+<span class="kw">round</span>(r,<span class="dv">2</span>)
 
-Output:
-[1] 0.31
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="fl">0.31</span>
 
-### Pearson correlation between Claim and log(Coverage) ###
-r&lt;-cor(Claim,log(Coverage), method = c(&quot;pearson&quot;))
-round(r,2)
+### Pearson correlation between Claim and log(Coverage)
+r&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))
+<span class="kw">round</span>(r,<span class="dv">2</span>)
 
-Output:
-[1] 0.1</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="fl">0.1</span></code></pre></div>
 </div>
 <p>From <code>R</code> output above, <span class="math inline">\(r=0.31\)</span> , which indicates a positive association between <em>Claim</em> and <em>Coverage</em>. This means that as the coverage amount of a policy increases we expect claim to increase.</p>
 </div>
@@ -944,23 +943,22 @@ r_S = \frac{\widehat{Cov}(R(X),R(Y))}{\sqrt{\widehat{Cov}(R(X),R(X))\widehat{Cov
 \end{equation*}\]</span>
 <p>You can obtain the Spearman correlation statistic <span class="math inline">\(r_S\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>spearman</code> method. From below, the Spearman correlation between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars is <span class="math inline">\(0.41\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="display.spearman.1" href="javascript:togglecode
-('display.spearman.2','display.spearman.1');"><i><strong>R Code for Spearman Correlation Statistic</strong></i></a>
+<a id="displayCode.spearman.1" href="javascript:togglecode('toggleCode.spearman.1','displayCode.spearman.1');"><i><strong>R Code for Spearman Correlation Statistic</strong></i></a>
 </h5>
-<div id="display.spearman.2" style="display: none">
-<pre><code>### Spearman correlation between Claim and Coverage ###
-rs&lt;-cor(Claim,Coverage, method = c(&quot;spearman&quot;))
-round(rs,2)
+<div id="toggleCode.spearman.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Spearman correlation between Claim and Coverage <span class="al">###</span>
+rs&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))
+<span class="kw">round</span>(rs,<span class="dv">2</span>)
 
-Output:
-[1] 0.41
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="fl">0.41</span>
 
-### Spearman correlation between Claim and log(Coverage) ###
-rs&lt;-cor(Claim,log(Coverage), method = c(&quot;spearman&quot;))
-round(rs,2)
+### Spearman correlation between Claim and log(Coverage) <span class="al">###</span>
+rs&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))
+<span class="kw">round</span>(rs,<span class="dv">2</span>)
 
-Output:
-[1] 0.41</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="fl">0.41</span></code></pre></div>
 </div>
 <p>We can show that the Spearman correlation statistic is invariant under strictly increasing transformations. From the <code>R</code> Code for Spearman correlation statistic above, <span class="math inline">\(r_S=0.41\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
@@ -980,23 +978,22 @@ Output:
 <p>Interestingly, <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, page 137, attributes the original discovery of this statistic to <span class="citation">(Fechner <a href="#ref-fechnerkollektivmasslehre">1897</a>)</span>, noting that Kendall’s discovery was independent and more complete than the original work.</p>
 <p>You can obtain the Kendall’s tau, using the <code>cor()</code> function in <code>R</code> and selecting the <code>kendall</code> method. From below, <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars. When there are ties in the data, the <code>cor()</code> function computes <em>Kendall’s tau_b</em>, as proposed by <span class="citation">(Kendall <a href="#ref-kendall1945">1945</a>)</span>.</p>
 <h5 style="text-align: center;">
-<a id="display.kendall.1" href="javascript:togglecode
-('display.kendall.2','display.kendall.1');"><i><strong>R Code for Kendall’s Tau</strong></i></a>
+<a id="displayCode.kendall.1" href="javascript:togglecode('toggleCode.kendall.1','displayCode.kendall.1');"><i><strong>R Code for Kendall’s Tau</strong></i></a>
 </h5>
-<div id="display.kendall.2" style="display: none">
-<pre><code>### Kendall&#39;s tau correlation between Claim and Coverage ###
-tau&lt;-cor(Claim,Coverage, method = c(&quot;kendall&quot;))
-round(tau,2)
+<div id="toggleCode.kendall.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Kendall&#39;s tau correlation between Claim and Coverage <span class="al">###</span>
+tau&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))
+<span class="kw">round</span>(tau,<span class="dv">2</span>)
 
-Output:
-[1]  0.32
+Output<span class="op">:</span>
+[<span class="dv">1</span>]  <span class="fl">0.32</span>
 
-### Kendall&#39;s tau correlation between Claim and log(Coverage) ###
-tau&lt;-cor(Claim,log(Coverage), method = c(&quot;kendall&quot;))
-round(tau,2)
+### Kendall&#39;s tau correlation between Claim and log(Coverage) <span class="al">###</span>
+tau&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))
+<span class="kw">round</span>(tau,<span class="dv">2</span>)
 
-Output:
-[1] 0.32</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="fl">0.32</span></code></pre></div>
 </div>
 <p>Also,to show that the Kendall’s tau is invariate under strictly increasing transformations , <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
@@ -1058,15 +1055,14 @@ and the second in <span class="citation">(Yule <a href="#ref-yule1912methods">19
 <p><a href="#tab:14.2">Table 14.2</a> : 2 <span class="math inline">\(\times\)</span> 2 table of counts for <em>Fire5</em> and <em>NoClaimCredit</em> variables from LGPIF data.</p>
 <p>From <a href="#tab:14.2">Table 14.2</a>, <span class="math inline">\(OR(\pi_{11})=\frac{1611(956)}{897(2175)}=0.79\)</span>. You can obtain the <span class="math inline">\(OR(\pi_{11})\)</span>, using the <code>oddsratio()</code> function from the <code>epitools</code> library in <code>R</code>. From the output below, <span class="math inline">\(OR(\pi_{11})=0.79\)</span> for the binary variables <em>NoClaimCredit</em> and <em>Fier5</em> from the LGPIF data.</p>
 <h5 style="text-align: center;">
-<a id="display.wald.1" href="javascript:togglecode
-('display.wald.2','display.wald.1');"><i><strong>R Code for Odds Ratios</strong></i></a>
+<a id="displayCode.wald.1" href="javascript:togglecode('toggleCode.wald.1','displayCode.wald.1');"><i><strong>R Code for Odds Ratios</strong></i></a>
 </h5>
-<div id="display.wald.2" style="display: none">
-<pre><code>library(epitools)
-oddsratio(NoClaimCredit, Fire5,method = c(&quot;wald&quot;))$measure
+<div id="toggleCode.wald.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(epitools)
+<span class="kw">oddsratio</span>(NoClaimCredit, Fire5,<span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;wald&quot;</span>))<span class="op">$</span>measure
 
-Output:
-[1]  0.79</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>]  <span class="fl">0.79</span></code></pre></div>
 </div>
 </div>
 <div id="categorical-variables" class="section level4">
@@ -1111,43 +1107,40 @@ and
 <p><a href="#tab:14.3">Table 14.3</a> : Two-way table of counts for <em>EntityType</em> and <em>NoClaimCredit</em> variables from LGPIF data.</p>
 <p>You can obtain the Pearson chi-square statistic, using the <code>chisq.test()</code> function from the <code>MASS</code> library in <code>R</code>. Here, we test whether the <em>EntityType</em> variable is independent of <em>NoClaimCredit</em> variable using <a href="#tab:14.3">Table 14.3</a>.</p>
 <h5 style="text-align: center;">
-<a id="display.chi.1" href="javascript:togglecode
-('display.chi.2','display.chi.1');"><i><strong>R Code for Pearson Chi-square Statistic</strong></i></a>
+<a id="displayCode.chi.1" href="javascript:togglecode('toggleCode.chi.1','displayCode.chi.1');"><i><strong>R Code for Pearson Chi-square Statistic</strong></i></a>
 </h5>
-<div id="display.chi.2" style="display: none">
-<pre><code>library(MASS)
-table = table(EntityType, NoClaimCredit)
-chisq.test(table)
+<div id="toggleCode.chi.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
+table =<span class="st"> </span><span class="kw">table</span>(EntityType, NoClaimCredit)
+<span class="kw">chisq.test</span>(table)
 
 
-Output:
-------------------------------------
- Test statistic   df     P value    
----------------- ---- --------------
-     344.2        5   3.15e-72 * * *
-------------------------------------
+Output<span class="op">:</span>
+<span class="op">------------------------------------</span>
+<span class="st"> </span>Test statistic   df     P value    
+<span class="op">----------------</span><span class="st"> </span><span class="op">----</span><span class="st"> </span><span class="op">--------------</span>
+<span class="st">     </span><span class="fl">344.2</span>        <span class="dv">5</span>   <span class="fl">3.15e-72</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span>
+<span class="op">------------------------------------</span>
 
-Table: Pearson&#39;s Chi-squared test</code></pre>
+Table<span class="op">:</span><span class="st"> </span>Pearson<span class="st">&#39;s Chi-squared test</span></code></pre></div>
 </div>
 <p>As the p-value is less than the .05 significance level, we reject the null hypothesis that the <em>EntityType</em> is independent of <em>NoClaimCredit</em>.</p>
 <p>Furthermore, you can obtain the likelihood ratio test statistic , using the <code>likelihood.test()</code> function from the <code>Deducer</code> library in <code>R</code>. From below, we test whether the <em>EntityType</em> variable is independent of <em>NoClaimCredit</em> variable from the LGPIF data. Same conclusion is drawn as the Pearson chi-square test.</p>
 <h5 style="text-align: center;">
-<a id="display.lik.1" href="javascript:togglecode
-('display.lik.2','display.lik.1');"><i><strong>R Code for Likelihood Ratio Test Statistic</strong></i></a>
+<a id="displayCode.lik.1" href="javascript:togglecode('toggleCode.lik.1','displayCode.lik.1');"><i><strong>R Code for Likelihood Ratio Test Statistic</strong></i></a>
 </h5>
-<div id="display.lik.2" style="display: none">
-<pre><code>library(Deducer)
-likelihood.test(EntityType, NoClaimCredit)
+<div id="toggleCode.lik.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(Deducer)
+<span class="kw">likelihood.test</span>(EntityType, NoClaimCredit)
 
-Output:
------------------------------------------
- Test statistic   X-squared df   P value 
----------------- -------------- ---------
-     378.7             5         0 * * * 
------------------------------------------
+Output<span class="op">:</span>
+<span class="op">-----------------------------------------</span>
+<span class="st"> </span>Test statistic   X<span class="op">-</span>squared df   P value 
+<span class="op">----------------</span><span class="st"> </span><span class="op">--------------</span><span class="st"> </span><span class="op">---------</span>
+<span class="st">     </span><span class="fl">378.7</span>             <span class="dv">5</span>         <span class="dv">0</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span>
+<span class="op">-----------------------------------------</span>
 
-Table: Log likelihood ratio (G-test) test of independence without correction
-</code></pre>
+Table<span class="op">:</span><span class="st"> </span>Log likelihood <span class="kw">ratio</span> (G<span class="op">-</span>test) test of independence without correction</code></pre></div>
 </div>
 </div>
 </div>
@@ -1190,21 +1183,20 @@ Table: Log likelihood ratio (G-test) test of independence without correction
 <p><a href="#tab:14.4">Table 14.4</a> : Two-way table of counts for <em>AlarmCredit</em> and <em>NoClaimCredit</em> variables from LGPIF data.</p>
 <p>You can obtain the polychoric or tetrachoric correlation using the <code>polychoric()</code> or <code>tetrachoric()</code> function from the <code>psych</code> library in <code>R</code>. The polychoric correlation is illustrated using <a href="#tab:14.4">Table 14.4</a>. <span class="math inline">\(\hat{\rho}_N=-0.14\)</span>, which means that there is a negative relationship between <em>AlarmCredit</em> and <em>NoClaimCredit</em>.</p>
 <h5 style="text-align: center;">
-<a id="display.poly.1" href="javascript:togglecode
-('display.poly.2','display.poly.1');"><i><strong>R Code for Polychoric Correlation</strong></i></a>
+<a id="displayCode.poly.1" href="javascript:togglecode('toggleCode.poly.1','displayCode.poly.1');"><i><strong>R Code for Polychoric Correlation</strong></i></a>
 </h5>
-<div id="display.poly.2" style="display: none">
-<pre><code>library(psych)
-AlarmCredit&lt;-as.numeric(ifelse(Insample$AC00==1,&quot;1&quot;,
-                   ifelse(Insample$AC05==1,&quot;2&quot;,
-                          ifelse(Insample$AC10==1,&quot;3&quot;,
-                                 ifelse(Insample$AC15==1,&quot;4&quot;,0)))))
-x &lt;- table(AlarmCredit,NoClaimCredit)
-rhoN&lt;-polychoric(x,correct=FALSE)$rho
-round(rhoN,2)
+<div id="toggleCode.poly.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(psych)
+AlarmCredit&lt;-<span class="kw">as.numeric</span>(<span class="kw">ifelse</span>(Insample<span class="op">$</span>AC00<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;1&quot;</span>,
+                   <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC05<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;2&quot;</span>,
+                          <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC10<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;3&quot;</span>,
+                                 <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC15<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;4&quot;</span>,<span class="dv">0</span>)))))
+x &lt;-<span class="st"> </span><span class="kw">table</span>(AlarmCredit,NoClaimCredit)
+rhoN&lt;-<span class="kw">polychoric</span>(x,<span class="dt">correct=</span><span class="ot">FALSE</span>)<span class="op">$</span>rho
+<span class="kw">round</span>(rhoN,<span class="dv">2</span>)
 
-Output:
-[1] -0.14</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="op">-</span><span class="fl">0.14</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1244,16 +1236,15 @@ Output:
 <p><a href="#tab:14.5">Table 14.5</a> : Summary of <em>Claim</em> by <em>NoClaimCredit</em> variable from LGPIF data.</p>
 <p>You can obtain the polyserial or biserial correlation using the <code>polyserial()</code> or <code>biserial()</code> function from the <code>psych</code> library in <code>R</code>. <a href="#tab:14.5">Table 14.5</a> gives the summary of <em>Claim</em> by <em>NoClaimCredit</em> and the biserial correlation is illustrated using <code>R</code> code below. The <span class="math inline">\(\hat{\rho}_N=-0.04\)</span> which means that there is a negative correlation between <em>Claim</em> and <em>NoClaimCredit</em>.</p>
 <h5 style="text-align: center;">
-<a id="display.bis.1" href="javascript:togglecode
-('display.bis.2','display.bis.1');"><i><strong>R Code for Biserial Correlation </strong></i></a>
+<a id="displayCode.bis.1" href="javascript:togglecode('toggleCode.bis.1','displayCode.bis.1');"><i><strong>R Code for Biserial Correlation</strong></i></a>
 </h5>
-<div id="display.bis.2" style="display: none">
-<pre><code>library(psych)
-rhoN&lt;-biserial(Claim,NoClaimCredit)
-round(rhoN,2)
+<div id="toggleCode.bis.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(psych)
+rhoN&lt;-<span class="kw">biserial</span>(Claim,NoClaimCredit)
+<span class="kw">round</span>(rhoN,<span class="dv">2</span>)
 
-Output:
-[1] -0.04</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="op">-</span><span class="fl">0.04</span></code></pre></div>
 </div>
 <div id="surveyElement142">
 
@@ -1339,20 +1330,18 @@ Figure 14.2: Scatter plot of Loss and ALAE
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="display.ScaHis.1" href="javascript:togglecode
-('display.ScaHis.2','display.ScaHis.1');"><i><strong>R Code for Scatterplots</strong></i></a>
+<a id="displayCode.ScaHis.1" href="javascript:togglecode('toggleCode.ScaHis.1','displayCode.ScaHis.1');"><i><strong>R Code for Scatterplots</strong></i></a>
 </h5>
-<div id="display.ScaHis.2" style="display: none">
-<pre><code>library(copula)
-data(loss) # loss data
-Lossdata &lt;- loss 
-attach(Lossdata) 
-loss &lt;- Lossdata$loss
-par(mfrow=c(1, 2))
-plot(loss,alae, cex=.5) # real dollar scale
-plot(log(loss),log(alae),cex=.5) # log scale
-par(mfrow=c(1, 2))
-</code></pre>
+<div id="toggleCode.ScaHis.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(copula)
+<span class="kw">data</span>(loss) <span class="co"># loss data</span>
+Lossdata &lt;-<span class="st"> </span>loss 
+<span class="kw">attach</span>(Lossdata) 
+loss &lt;-<span class="st"> </span>Lossdata<span class="op">$</span>loss
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">plot</span>(loss,alae, <span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># real dollar scale</span>
+<span class="kw">plot</span>(<span class="kw">log</span>(loss),<span class="kw">log</span>(alae),<span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># log scale</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</code></pre></div>
 </div>
 </div>
 <div id="marginal-models" class="section level3">
@@ -1362,38 +1351,35 @@ par(mfrow=c(1, 2))
 <p><span class="math display">\[ F(y)=1- \left( 1 + \frac{y}{\theta} \right) ^{-\alpha},\]</span> where <span class="math inline">\(\theta\)</span> is the scale parameter and <span class="math inline">\(\alpha\)</span> is the shape parameter.</p>
 <p>The marginal distributions of losses and expenses are fitted with maximum likelihood. Specifically, we use the <span class="math inline">\(vglm\)</span> function from the <code>R VGAM</code> package. Firstly, we fit the marginal distribution of <em>expenses </em>.</p>
 <h5 style="text-align: center;">
-<a id="display.Reg.1" href="javascript:togglecode
-('display.Reg.2','display.Reg.1');"><i><strong>R Code for Pareto Fitting</strong></i></a>
+<a id="displayCode.Reg.1" href="javascript:togglecode('toggleCode.Reg.1','displayCode.Reg.1');"><i><strong>R Code for Pareto Fitting</strong></i></a>
 </h5>
-<div id="display.Reg.2" style="display: none">
-<pre><code>library(VGAM)
+<div id="toggleCode.Reg.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(VGAM)
 
-fit = vglm(alae ~ 1, paretoII(location=0, lscale=&quot;loge&quot;, lshape=&quot;loge&quot;)) # fit the model by vlgm function
-coef(fit, matrix=TRUE) # extract fitted model coefficients, matrix=TRUE gives logarithm of estimated parameters instead of default normal scale estimates
-Coef(fit)
+fit =<span class="st"> </span><span class="kw">vglm</span>(alae <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="kw">paretoII</span>(<span class="dt">location=</span><span class="dv">0</span>, <span class="dt">lscale=</span><span class="st">&quot;loge&quot;</span>, <span class="dt">lshape=</span><span class="st">&quot;loge&quot;</span>)) <span class="co"># fit the model by vlgm function</span>
+<span class="kw">coef</span>(fit, <span class="dt">matrix=</span><span class="ot">TRUE</span>) <span class="co"># extract fitted model coefficients, matrix=TRUE gives logarithm of estimated parameters instead of default normal scale estimates</span>
+<span class="kw">Coef</span>(fit)
 
-Output: 
-               loge(scale) loge(shape)
- (Intercept)     9.624673   0.7988753
+Output<span class="op">:</span><span class="st"> </span>
+<span class="st">               </span><span class="kw">loge</span>(scale) <span class="kw">loge</span>(shape)
+ (Intercept)     <span class="fl">9.624673</span>   <span class="fl">0.7988753</span>
  
                   scale        shape 
- (Intercept)  15133.603598     2.223039 </code></pre>
+ (Intercept)  <span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </code></pre></div>
 </div>
 <p>We repeat this procedure to fit the marginal distribution of the <em>loss</em> variable. Because the loss data also seems right-skewed and heavy-tail data, we also model the marginal distribution with Pareto II distribution.</p>
 <h5 style="text-align: center;">
-<a id="display.ParFit.1" href="javascript:togglecode
-('display.ParFit.2','display.ParFit.1');"><i><strong>R Code for Pareto Fitting </strong></i></a>
+<a id="displayCode.ParFit.1" href="javascript:togglecode('toggleCode.ParFit.1','displayCode.ParFit.1');"><i><strong>R Code for Pareto Fitting</strong></i></a>
 </h5>
-<div id="display.ParFit.2" style="display: none">
-<pre><code>fitloss = vglm(loss ~ 1, paretoII, trace=TRUE)
-Coef(fit)
-summary(fit)
+<div id="toggleCode.ParFit.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fitloss =<span class="st"> </span><span class="kw">vglm</span>(loss <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">trace=</span><span class="ot">TRUE</span>)
+<span class="kw">Coef</span>(fit)
+<span class="kw">summary</span>(fit)
 
 
-Output: 
-       scale        shape 
-15133.603598     2.223039 
-</code></pre>
+Output<span class="op">:</span><span class="st"> </span>
+<span class="st">       </span>scale        shape 
+<span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </code></pre></div>
 </div>
 <p>To visualize the fitted distribution of <em>expenses </em> and <em>loss</em> variables, we use the estimated parameters and plot the corresponding distribution function and density function. For more details on marginal model selection, see Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
 </div>
@@ -1417,19 +1403,18 @@ Figure 14.4: Histogram of Transformed Loss. The left-hand panel shows the distri
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="display.transalae.1" href="javascript:togglecode
-('display.transalae.2','display.transalae.1');"><i><strong>R Code for Histograms of Transformed Variables </strong></i></a>
+<a id="displayCode.transalae.1" href="javascript:togglecode('toggleCode.transalae.1','displayCode.transalae.1');"><i><strong>R Code for Histograms of Transformed Variables</strong></i></a>
 </h5>
-<div id="display.transalae.2" style="display: none">
-<pre><code>u1 &lt;- 1 - (1 + (alae/b))^(-s) # or u1 &lt;- pparetoII(alae, location=0, scale=b, shape=s)
-hist(u1, main = &quot;&quot;, xlab = &quot;Histogram of Transformed alae&quot;)
+<div id="toggleCode.transalae.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">u1 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(alae<span class="op">/</span>b))<span class="op">^</span>(<span class="op">-</span>s) <span class="co"># or u1 &lt;- pparetoII(alae, location=0, scale=b, shape=s)</span>
+<span class="kw">hist</span>(u1, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed alae&quot;</span>)
 
-scaleloss &lt;- Coef(fitloss)[1]
-shapeloss &lt;- Coef(fitloss)[2]
-u2 &lt;- 1 - (1 + (loss/scaleloss))^(-shapeloss)
-par(mfrow = c(1, 2))
-hist(u2, main = &quot;&quot;, xlab = &quot;Histogram of Transformed Loss&quot;)
-hist(qnorm(u2), main = &quot;&quot;, xlab = &quot;Histogram of qnorm(Loss)&quot;)</code></pre>
+scaleloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">1</span>]
+shapeloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">2</span>]
+u2 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(loss<span class="op">/</span>scaleloss))<span class="op">^</span>(<span class="op">-</span>shapeloss)
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">hist</span>(u2, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed Loss&quot;</span>)
+<span class="kw">hist</span>(<span class="kw">qnorm</span>(u2), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of qnorm(Loss)&quot;</span>)</code></pre></div>
 </div>
 </div>
 <div id="joint-modeling-with-copula-function" class="section level3">
@@ -1443,67 +1428,63 @@ Figure 14.5: Left: Scatter plot for transformed variables. Right:Scatter plot fo
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="display.Cor.1" href="javascript:togglecode
-('display.Cor.2','display.Cor.1');"><i><strong>R Code for Scatter Plots and Correlation </strong></i></a>
+<a id="displayCode.Cor.1" href="javascript:togglecode('toggleCode.Cor.1','displayCode.Cor.1');"><i><strong>R Code for Scatter Plots and Correlation</strong></i></a>
 </h5>
-<div id="display.Cor.2" style="display: none">
-<pre><code>par(mfrow = c(1, 2))
-plot(u1, u2, cex = 0.5, xlim = c(-0.1,1.1), ylim = c(-0.1,1.1),
-     xlab = &quot;Transformed Alae&quot;, ylab = &quot;Transformed Loss&quot;)
-plot(qnorm(u1), qnorm(u2))
-cor(u1, u2, method = &quot;spearman&quot;)
+<div id="toggleCode.Cor.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">plot</span>(u1, u2, <span class="dt">cex =</span> <span class="fl">0.5</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>),
+     <span class="dt">xlab =</span> <span class="st">&quot;Transformed Alae&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Transformed Loss&quot;</span>)
+<span class="kw">plot</span>(<span class="kw">qnorm</span>(u1), <span class="kw">qnorm</span>(u2))
+<span class="kw">cor</span>(u1, u2, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)
 
-Output: 
+Output<span class="op">:</span><span class="st"> </span>
 
-[1] 0.451872</code></pre>
+[<span class="dv">1</span>] <span class="fl">0.451872</span></code></pre></div>
 </div>
 <p>Scatter plots and Spearman’s rho correlation value (0.451) shows us there is a positive dependency between these two uniform random variables. It is more clear to see the relationship with normal scores in the second graph. To learn more details about normal scores and their applications in copula modeling, see <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>.</p>
 <p><span class="math inline">\((U_1, U_2)\)</span>, (<span class="math inline">\(U_1 = F_1(ALAE)\)</span> and <span class="math inline">\(U_2=F_2(LOSS)\)</span>), is fit to Frank’s copula with maximum likelihood method.</p>
 <h5 style="text-align: center;">
-<a id="display.FrankCopula.1" href="javascript:togglecode
-('display.FrankCopula.2','display.FrankCopula.1');"><i><strong>R Code for Modeling with Frank Copula</strong></i></a>
+<a id="displayCode.FrankCopula.1" href="javascript:togglecode('toggleCode.FrankCopula.1','displayCode.FrankCopula.1');"><i><strong>R Code for Modeling with Frank Copula</strong></i></a>
 </h5>
-<div id="display.FrankCopula.2" style="display: none">
-<pre><code>uu = cbind(u1,u2) 
-frank.cop &lt;- archmCopula(&quot;frank&quot;, param= c(5), dim = 2)
-fit.ml &lt;- fitCopula(frank.cop, uu, method=&quot;ml&quot;, start=c(0.4))
-summary(fit.ml)
+<div id="toggleCode.FrankCopula.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">uu =<span class="st"> </span><span class="kw">cbind</span>(u1,u2) 
+frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="dv">5</span>), <span class="dt">dim =</span> <span class="dv">2</span>)
+fit.ml &lt;-<span class="st"> </span><span class="kw">fitCopula</span>(frank.cop, uu, <span class="dt">method=</span><span class="st">&quot;ml&quot;</span>, <span class="dt">start=</span><span class="kw">c</span>(<span class="fl">0.4</span>))
+<span class="kw">summary</span>(fit.ml)
 
 
-Output: 
+Output<span class="op">:</span><span class="st"> </span>
 
-Call: fitCopula(copula, data = data, method = &quot;ml&quot;, start = ..2)
-Fit based on &quot;maximum likelihood&quot; and 1500 2-dimensional observations.
-Copula: frankCopula 
+Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)
+Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.
+Copula<span class="op">:</span><span class="st"> </span>frankCopula 
 param 
-3.114 
-The maximized loglikelihood is 172.6 
-Convergence problems: code is 52 see ?optim.
-Call: fitCopula(copula, data = data, method = &quot;ml&quot;, start = ..2)
-Fit based on &quot;maximum likelihood&quot; and 1500 2-dimensional observations.
-Frank copula, dim. d = 2 
+<span class="fl">3.114</span> 
+The maximized loglikelihood is <span class="fl">172.6</span> 
+Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.
+Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)
+Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.
+Frank copula, dim. d =<span class="st"> </span><span class="dv">2</span> 
       Estimate Std. Error
-param    3.114         NA
-The maximized loglikelihood is 172.6 
-Convergence problems: code is 52 see ?optim.
-Number of loglikelihood evaluations:
-function gradient 
-      45       45 </code></pre>
+param    <span class="fl">3.114</span>         <span class="ot">NA</span>
+The maximized loglikelihood is <span class="fl">172.6</span> 
+Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.
+Number of loglikelihood evaluations<span class="op">:</span>
+<span class="cf">function</span> gradient 
+      <span class="dv">45</span>       <span class="dv">45</span> </code></pre></div>
 </div>
 <p>The fitted model implies that losses and expenses are positively dependent and their dependence is significant.</p>
 <p>We use the fitted parameter to update the Frank’s copula. The Spearman’s correlation corresponding to the fitted copula parameter(3.114) is calculated with the <code>rho</code> function. In this case, the Spearman’s correlation coefficient is 0.462, which is very close to the sample Spearman’s correlation coefficient; 0.452.</p>
 <h5 style="text-align: center;">
-<a id="display.fittedCop.1" href="javascript:togglecode
-('display.fittedCop.2','display.fittedCop.1');"><i><strong>R Code for Spearman’s Correlation Using Frank’s Copula</strong></i></a>
+<a id="displayCode.fittedCop.1" href="javascript:togglecode('toggleCode.fittedCop.1','displayCode.fittedCop.1');"><i><strong>R Code for Spearman’s Correlation Using Frank’s Copula</strong></i></a>
 </h5>
-<div id="display.fittedCop.2" style="display: none">
-<pre><code>(param = fit.ml@estimate)
-frank.cop &lt;- archmCopula(&quot;frank&quot;, param= param, dim = 2)
-rho(frank.cop) 
+<div id="toggleCode.fittedCop.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">param =</span> fit.ml<span class="op">@</span>estimate)
+frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> param, <span class="dt">dim =</span> <span class="dv">2</span>)
+<span class="kw">rho</span>(frank.cop) 
 
-Output : 
-[1] 0.4622722
-</code></pre>
+Output <span class="op">:</span><span class="st"> </span>
+[<span class="dv">1</span>] <span class="fl">0.4622722</span></code></pre></div>
 </div>
 <p>To visualize the fitted Frank’s copula, the distribution function and density function perspective plots are drawn in Figure <a href="C-DependenceModel.html#fig:FrankCop">14.6</a>.</p>
 <div class="figure"><span id="fig:FrankCop"></span>
@@ -1513,15 +1494,14 @@ Figure 14.6: Left: Plot for distribution function for Franks Copula. Right:Plot 
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="display.DistriPlot.1" href="javascript:togglecode
-('display.DistriPlot.2','display.DistriPlot.1');"><i><strong>R Code for Frank’s Copula Plots</strong></i></a>
+<a id="displayCode.DistriPlot.1" href="javascript:togglecode('toggleCode.DistriPlot.1','displayCode.DistriPlot.1');"><i><strong>R Code for Frank’s Copula Plots</strong></i></a>
 </h5>
-<div id="display.DistriPlot.2" style="display: none">
-<pre><code>par(mar=c(3.2,3,.2,.2),mfrow=c(1,2))
-persp(frank.cop, pCopula, theta=50, zlab=&quot;C(u,v)&quot;,
-        xlab =&quot;u&quot;, ylab=&quot;v&quot;, cex.lab=1.3)
-persp(frank.cop, dCopula, theta=0, zlab=&quot;c(u,v)&quot;,
-        xlab =&quot;u&quot;, ylab=&quot;v&quot;, cex.lab=1.3)</code></pre>
+<div id="toggleCode.DistriPlot.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="fl">3.2</span>,<span class="dv">3</span>,.<span class="dv">2</span>,.<span class="dv">2</span>),<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+<span class="kw">persp</span>(frank.cop, pCopula, <span class="dt">theta=</span><span class="dv">50</span>, <span class="dt">zlab=</span><span class="st">&quot;C(u,v)&quot;</span>,
+        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)
+<span class="kw">persp</span>(frank.cop, dCopula, <span class="dt">theta=</span><span class="dv">0</span>, <span class="dt">zlab=</span><span class="st">&quot;c(u,v)&quot;</span>,
+        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</code></pre></div>
 </div>
 <p>Frank’s copula models positive dependence for this data set, with <span class="math inline">\(\theta=3.114\)</span>. For Frank’s copula, the dependence is related to values of <span class="math inline">\(\theta\)</span>. That is:</p>
 <ul>
@@ -1614,17 +1594,16 @@ Figure 14.7: Perfect Positive and Perfect negative dependence plots
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="display.plot.1" href="javascript:togglecode
-('display.plot.2','display.plot.1');"><i><strong>R Code for Frechet-Hoeffding Bounds for Two Random Variables</strong></i></a>
+<a id="displayCode.plot.1" href="javascript:togglecode('toggleCode.plot.1','displayCode.plot.1');"><i><strong>R Code for Frechet-Hoeffding Bounds for Two Random Variables</strong></i></a>
 </h5>
-<div id="display.plot.2" style="display: none">
-<pre><code>library(copula)
-n&lt;-100
-set.seed(1980)
-U&lt;-runif(n)
-par(mfrow=c(1, 2))
-plot(cbind(U,1-U), xlab=quote(U[1]), ylab=quote(U[2]),main=&quot;Perfect Negative Dependency&quot;) # W for p=2
-plot (cbind(U,U), xlab=quote(U[1]),ylab=quote(U[2]),main=&quot;Perfect Positive Dependency&quot;)  #M for p=2</code></pre>
+<div id="toggleCode.plot.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(copula)
+n&lt;-<span class="dv">100</span>
+<span class="kw">set.seed</span>(<span class="dv">1980</span>)
+U&lt;-<span class="kw">runif</span>(n)
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">plot</span>(<span class="kw">cbind</span>(U,<span class="dv">1</span><span class="op">-</span>U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]), <span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Negative Dependency&quot;</span>) <span class="co"># W for p=2</span>
+<span class="kw">plot</span> (<span class="kw">cbind</span>(U,U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]),<span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Positive Dependency&quot;</span>)  <span class="co">#M for p=2</span></code></pre></div>
 </div>
 </div>
 <div id="measures-of-association" class="section level4">
@@ -1662,32 +1641,30 @@ plot (cbind(U,U), xlab=quote(U[1]),ylab=quote(U[2]),main=&quot;Perfect Positive 
 \]</span></p>
 <p><a href="#tab:14.7">Table 14.7</a> : Tail concentration function values for different copulas</p>
 <h5 style="text-align: center;">
-<a id="display.Tail.1" href="javascript:togglecode
-('display.Tail.2','display.Tail.1');"><i><strong>R Code for Tail Copula Functions for Different Copulas</strong></i></a>
+<a id="displayCode.Tail.1" href="javascript:togglecode('toggleCode.Tail.1','displayCode.Tail.1');"><i><strong>R Code for Tail Copula Functions for Different Copulas</strong></i></a>
 </h5>
-<div id="display.Sim.2" style="display: none">
-<pre><code>
-library(copula)
-U1 = seq(0,0.5, by=0.002)
-U2 = seq(0.5,1, by=0.002)
-U = rbind(U1, U2)
-TailFunction &lt;- function(Tailcop) {
-  lowertail &lt;- pCopula(cbind(U1,U1), Tailcop)/U1
-  uppertail &lt;- (1-2*U2 +pCopula(cbind(U2,U2), Tailcop))/(1-U2)
-  jointtail &lt;- rbind(lowertail,uppertail)
+<div id="toggleCode.Tail.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(copula)
+U1 =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="fl">0.5</span>, <span class="dt">by=</span><span class="fl">0.002</span>)
+U2 =<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.5</span>,<span class="dv">1</span>, <span class="dt">by=</span><span class="fl">0.002</span>)
+U =<span class="st"> </span><span class="kw">rbind</span>(U1, U2)
+TailFunction &lt;-<span class="st"> </span><span class="cf">function</span>(Tailcop) {
+  lowertail &lt;-<span class="st"> </span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U1,U1), Tailcop)<span class="op">/</span>U1
+  uppertail &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>U2 <span class="op">+</span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U2,U2), Tailcop))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>U2)
+  jointtail &lt;-<span class="st"> </span><span class="kw">rbind</span>(lowertail,uppertail)
 }
-Tailcop1 &lt;- archmCopula(family = &quot;frank&quot;, param= c(0.05), dim = 2)
-Tailcop2 &lt;- archmCopula(family = &quot;gumbel&quot;,param = 3)
-Tailcop3 &lt;- ellipCopula(&quot;normal&quot;, param = c(0.25),dim = 2, dispstr = &quot;un&quot;)
-Tailcop4 &lt;- ellipCopula(&quot;t&quot;, param = c(0.25),dim = 2, dispstr = &quot;un&quot;, df=5)
-jointtail1 &lt;- TailFunction(Tailcop1)
-jointtail2 &lt;- TailFunction(Tailcop2)
-jointtail3 &lt;- TailFunction(Tailcop3)
-jointtail4 &lt;- TailFunction(Tailcop4)
-tailIndex(Tailcop1)
-tailIndex(Tailcop2)
-tailIndex(Tailcop3)
-tailIndex(Tailcop4)</code></pre>
+Tailcop1 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="fl">0.05</span>), <span class="dt">dim =</span> <span class="dv">2</span>)
+Tailcop2 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;gumbel&quot;</span>,<span class="dt">param =</span> <span class="dv">3</span>)
+Tailcop3 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;normal&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)
+Tailcop4 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;t&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>, <span class="dt">df=</span><span class="dv">5</span>)
+jointtail1 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop1)
+jointtail2 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop2)
+jointtail3 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop3)
+jointtail4 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop4)
+<span class="kw">tailIndex</span>(Tailcop1)
+<span class="kw">tailIndex</span>(Tailcop2)
+<span class="kw">tailIndex</span>(Tailcop3)
+<span class="kw">tailIndex</span>(Tailcop4)</code></pre></div>
 </div>
 <div class="figure"><span id="fig:DepTails"></span>
 <img src="LossDataAnalytics_files/figure-html/DepTails-1.png" alt="Tail dependence plots" width="672" />
@@ -1696,20 +1673,18 @@ Figure 14.8: Tail dependence plots
 </p>
 </div>
 <h5 style="text-align: center;">
-<a id="display.Tailplot.1" href="javascript:togglecode
-('display.Tailplot.2','display.Tailplot.1');"><i><strong>R Code for Tail Dependence Plots for Different Copulas</strong></i></a>
+<a id="displayCode.Tailplot.1" href="javascript:togglecode('toggleCode.Tailplot.1','displayCode.Tailplot.1');"><i><strong>R Code for Tail Dependence Plots for Different Copulas</strong></i></a>
 </h5>
-<div id="display.Sim.2" style="display: none">
-<pre><code>plot(U,jointtail1, cex=.2, xlim=c(0,1),ylab=&quot;Tail Dependence&quot;, ylim=c(0,1))
-lines(U,jointtail2, type=&quot;p&quot;,lty=1, cex=.2)
-lines(U,jointtail3, type=&quot;p&quot;,lty=1, cex=.2)
-lines(U,jointtail4, type=&quot;p&quot;,lty=1, cex=.2)
-text(0.75, 0.1, &quot;Frank&quot;, cex=1.3)        #1
-text(0.1, 0.8, &quot;Gumbel&quot;, cex=1.3)        #2
-text(0.25, 0.1, &quot;normal&quot;, cex=1.3)       #3
-arrows(.17, 0.1, .07, 0.12,code=2, angle=20, length=0.1)
-text(0.9, 0.4, &quot;t with 5 df&quot;, cex=1.3)   #4
-</code></pre>
+<div id="toggleCode.Tailplot.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(U,jointtail1, <span class="dt">cex=</span>.<span class="dv">2</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylab=</span><span class="st">&quot;Tail Dependence&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))
+<span class="kw">lines</span>(U,jointtail2, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)
+<span class="kw">lines</span>(U,jointtail3, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)
+<span class="kw">lines</span>(U,jointtail4, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)
+<span class="kw">text</span>(<span class="fl">0.75</span>, <span class="fl">0.1</span>, <span class="st">&quot;Frank&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#1</span>
+<span class="kw">text</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>, <span class="st">&quot;Gumbel&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#2</span>
+<span class="kw">text</span>(<span class="fl">0.25</span>, <span class="fl">0.1</span>, <span class="st">&quot;normal&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)       <span class="co">#3</span>
+<span class="kw">arrows</span>(.<span class="dv">17</span>, <span class="fl">0.1</span>, .<span class="dv">07</span>, <span class="fl">0.12</span>,<span class="dt">code=</span><span class="dv">2</span>, <span class="dt">angle=</span><span class="dv">20</span>, <span class="dt">length=</span><span class="fl">0.1</span>)
+<span class="kw">text</span>(<span class="fl">0.9</span>, <span class="fl">0.4</span>, <span class="st">&quot;t with 5 df&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)   <span class="co">#4</span></code></pre></div>
 </div>
 <div id="surveyElement145">
 
@@ -1759,91 +1734,89 @@ text(0.9, 0.4, &quot;t with 5 df&quot;, cex=1.3)   #4
 \]</span></p>
 <p><a href="#tab:14.8">Table 14.8</a> : Results for portfolio expected value and quantiles (<span class="math inline">\(VaR_q\)</span>)</p>
 <h5 style="text-align: center;">
-<a id="display.SimG.1" href="javascript:togglecode
-('display.SimG.2','display.SimG.1');"><i><strong>R Code for Simulation Using Gaussian Copula</strong></i></a>
+<a id="displayCode.SimG.1" href="javascript:togglecode('toggleCode.SimG.1','displayCode.SimG.1');"><i><strong>R Code for Simulation Using Gaussian Copula</strong></i></a>
 </h5>
-<div id="display.SimG.2" style="display: none">
-<pre><code># For the gamma distributions, use
-alpha1 &lt;- 2;      theta1 &lt;- 100
-alpha2 &lt;- 2;      theta2 &lt;- 200
-# For the Pareto distributions, use
-alpha3 &lt;- 2;      theta3 &lt;- 1000
-alpha4 &lt;- 3;      theta4 &lt;- 2000
-# Deductibles
-d1     &lt;- 100
-d2     &lt;- 200
+<div id="toggleCode.SimG.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># For the gamma distributions, use</span>
+alpha1 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta1 &lt;-<span class="st"> </span><span class="dv">100</span>
+alpha2 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta2 &lt;-<span class="st"> </span><span class="dv">200</span>
+<span class="co"># For the Pareto distributions, use</span>
+alpha3 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta3 &lt;-<span class="st"> </span><span class="dv">1000</span>
+alpha4 &lt;-<span class="st"> </span><span class="dv">3</span>;      theta4 &lt;-<span class="st"> </span><span class="dv">2000</span>
+<span class="co"># Deductibles</span>
+d1     &lt;-<span class="st"> </span><span class="dv">100</span>
+d2     &lt;-<span class="st"> </span><span class="dv">200</span>
 
 
-# Simulate the risks
-nSim &lt;- 10000  #number of simulations
-set.seed(2017) #set seed to reproduce work 
-X1 &lt;- rgamma(nSim,alpha1,scale = theta1)  
-X2 &lt;- rgamma(nSim,alpha2,scale = theta2)  
-# For the Pareto Distribution, use
-library(VGAM)
-X3 &lt;- rparetoII(nSim,scale=theta3,shape=alpha3)
-X4 &lt;- rparetoII(nSim,scale=theta4,shape=alpha4)
-# Portfolio Risks
-S         &lt;- X1 + X2 + X3 + X4
-Sretained &lt;- pmin(X1,d1) + pmin(X2,d2)
-Sinsurer  &lt;- S - Sretained
+<span class="co"># Simulate the risks</span>
+nSim &lt;-<span class="st"> </span><span class="dv">10000</span>  <span class="co">#number of simulations</span>
+<span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span>
+X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha1,<span class="dt">scale =</span> theta1)  
+X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<span class="dt">scale =</span> theta2)  
+<span class="co"># For the Pareto Distribution, use</span>
+<span class="kw">library</span>(VGAM)
+X3 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta3,<span class="dt">shape=</span>alpha3)
+X4 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta4,<span class="dt">shape=</span>alpha4)
+<span class="co"># Portfolio Risks</span>
+S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4
+Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)
+Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained
 
-# Expected Claim Amounts
-ExpVec &lt;- t(as.matrix(c(mean(Sretained),mean(Sinsurer),mean(S))))
-colnames(ExpVec) &lt;- c(&quot;Retained&quot;, &quot;Insurer&quot;,&quot;Total&quot;)
-round(ExpVec,digits=2)
+<span class="co"># Expected Claim Amounts</span>
+ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))
+<span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
+<span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)
 
-# Quantiles
-quantMat &lt;- rbind(
-  quantile(Sretained, probs=c(0.80, 0.90, 0.95, 0.99)),
-  quantile(Sinsurer,  probs=c(0.80, 0.90, 0.95, 0.99)),
-  quantile(S       ,  probs=c(0.80, 0.90, 0.95, 0.99)))
-rownames(quantMat) &lt;- c(&quot;Retained&quot;, &quot;Insurer&quot;,&quot;Total&quot;)
-round(quantMat,digits=2)
+<span class="co"># Quantiles</span>
+quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(
+  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
+  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
+  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))
+<span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
+<span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)
 
-plot(density(S), main=&quot;Density of Total Portfolio Risk S&quot;, xlab=&quot;S&quot;)
+<span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)
 
 ### Normal Copula ##
-library(VGAM)
-library(copula)
-library(GB2)
-library(statmod)
-library(numDeriv)
-set.seed(2017)
-parm&lt;-c(0.5,0.5,0.5,0.5,0.5,0.5)
-nc &lt;- normalCopula(parm, dim = 4, dispstr = &quot;un&quot;)
-mcc &lt;- mvdc(nc, margins = c(&quot;gamma&quot;, &quot;gamma&quot;,&quot;paretoII&quot;,&quot;paretoII&quot;), 
-            paramMargins = list(list(scale = theta1, shape=alpha1),
-                                list(scale = theta2, shape=alpha2),
-                                list(scale = theta3, shape=alpha3),
-                                list(scale = theta4, shape=alpha4)))
-X &lt;- rMvdc(nSim, mvdc = mcc)
+<span class="kw">library</span>(VGAM)
+<span class="kw">library</span>(copula)
+<span class="kw">library</span>(GB2)
+<span class="kw">library</span>(statmod)
+<span class="kw">library</span>(numDeriv)
+<span class="kw">set.seed</span>(<span class="dv">2017</span>)
+parm&lt;-<span class="kw">c</span>(<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>)
+nc &lt;-<span class="st"> </span><span class="kw">normalCopula</span>(parm, <span class="dt">dim =</span> <span class="dv">4</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)
+mcc &lt;-<span class="st"> </span><span class="kw">mvdc</span>(nc, <span class="dt">margins =</span> <span class="kw">c</span>(<span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;gamma&quot;</span>,<span class="st">&quot;paretoII&quot;</span>,<span class="st">&quot;paretoII&quot;</span>), 
+            <span class="dt">paramMargins =</span> <span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">scale =</span> theta1, <span class="dt">shape=</span>alpha1),
+                                <span class="kw">list</span>(<span class="dt">scale =</span> theta2, <span class="dt">shape=</span>alpha2),
+                                <span class="kw">list</span>(<span class="dt">scale =</span> theta3, <span class="dt">shape=</span>alpha3),
+                                <span class="kw">list</span>(<span class="dt">scale =</span> theta4, <span class="dt">shape=</span>alpha4)))
+X &lt;-<span class="st"> </span><span class="kw">rMvdc</span>(nSim, <span class="dt">mvdc =</span> mcc)
 
-X1&lt;-X[,1]
-X2&lt;-X[,2]
-X3&lt;-X[,3]
-X4&lt;-X[,4]
+X1&lt;-X[,<span class="dv">1</span>]
+X2&lt;-X[,<span class="dv">2</span>]
+X3&lt;-X[,<span class="dv">3</span>]
+X4&lt;-X[,<span class="dv">4</span>]
 
-# Portfolio Risks
-S         &lt;- X1 + X2 + X3 + X4
-Sretained &lt;- pmin(X1,d1) + pmin(X2,d2)
-Sinsurer  &lt;- S - Sretained
+<span class="co"># Portfolio Risks</span>
+S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4
+Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)
+Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained
 
-# Expected Claim Amounts
-ExpVec &lt;- t(as.matrix(c(mean(Sretained),mean(Sinsurer),mean(S))))
-colnames(ExpVec) &lt;- c(&quot;Retained&quot;, &quot;Insurer&quot;,&quot;Total&quot;)
-round(ExpVec,digits=2)
+<span class="co"># Expected Claim Amounts</span>
+ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))
+<span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
+<span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)
 
-# Quantiles
-quantMat &lt;- rbind(
-  quantile(Sretained, probs=c(0.80, 0.90, 0.95, 0.99)),
-  quantile(Sinsurer,  probs=c(0.80, 0.90, 0.95, 0.99)),
-  quantile(S       ,  probs=c(0.80, 0.90, 0.95, 0.99)))
-rownames(quantMat) &lt;- c(&quot;Retained&quot;, &quot;Insurer&quot;,&quot;Total&quot;)
-round(quantMat,digits=2)
+<span class="co"># Quantiles</span>
+quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(
+  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
+  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
+  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))
+<span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
+<span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)
 
-plot(density(S), main=&quot;Density of Total Portfolio Risk S&quot;, xlab=&quot;S&quot;)
-</code></pre>
+<span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</code></pre></div>
 </div>
 <div id="surveyElement146">
 
@@ -1888,28 +1861,27 @@ Like Spearman’s rho and Kendall’s tau, an estimator based on ranks is easy t
 <p>Because Blomqvist’s parameter is based on the center of the distribution, it is particularly useful when data are censored; in this case, information in extreme parts of the distribution are not always reliable. How does this affect a choice of association measures? First, recall that association measures are based on a bivariate distribution function. So, if one has knowledge of a good approximation of the distribution function, then calculation of an association measure is straightforward in principle. Second, for censored data, bivariate extensions of the univariate Kaplan-Meier distribution function estimator are available. For example, the version introduced in <span class="citation">(Dabrowska <a href="#ref-dabrowska1988kaplan">1988</a>)</span> is appealing. However, because of instances when large masses of data appear at the upper range of the data, this and other estimators of the bivariate distribution function are unreliable. This means that, summary measures of the estimated distribution function based on Spearman’s rho or Kendall’s tau can be unreliable. For this situation, Blomqvist’s beta appears to be a better choice as it focuses on the center of the distribution. <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, Chapter 14, provides additional discussion.</p>
 <p>You can obtain the Blomqvist’s beta, using the <code>betan()</code> function from the <code>copula</code> library in <code>R</code>. From below, <span class="math inline">\(\beta=0.3\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 <h5 style="text-align: center;">
-<a id="display.beta.1" href="javascript:togglecode
-('display.beta.2','display.beta.1');"><i><strong>R Code for Blomqvist’s Beta</strong></i></a>
+<a id="displayCode.beta.1" href="javascript:togglecode('toggleCode.beta.1','displayCode.beta.1');"><i><strong>R Code for Blomqvist’s Beta</strong></i></a>
 </h5>
-<div id="display.beta.2" style="display: none">
-<pre><code>### Blomqvist&#39;s beta correlation between Claim and Coverage ###
-library(copula)
-n&lt;-length(Claim)
-U&lt;-cbind(((n+1)/n*pobs(Claim)),((n+1)/n*pobs(Coverage)))
-beta&lt;-betan(U, scaling=FALSE)
-round(beta,2)
+<div id="toggleCode.beta.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Blomqvist&#39;s beta correlation between Claim and Coverage <span class="al">###</span>
+<span class="kw">library</span>(copula)
+n&lt;-<span class="kw">length</span>(Claim)
+U&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Coverage)))
+beta&lt;-<span class="kw">betan</span>(U, <span class="dt">scaling=</span><span class="ot">FALSE</span>)
+<span class="kw">round</span>(beta,<span class="dv">2</span>)
 
-Output:
-[1]  0.3
+Output<span class="op">:</span>
+[<span class="dv">1</span>]  <span class="fl">0.3</span>
 
-### Blomqvist&#39;s beta correlation between Claim and log(Coverage) ###
-n&lt;-length(Claim)
-Fx&lt;-cbind(((n+1)/n*pobs(Claim)),((n+1)/n*pobs(log(Coverage))))
-beta&lt;-betan(Fx, scaling=FALSE)
-round(beta,2)
+### Blomqvist&#39;s beta correlation between Claim and log(Coverage) <span class="al">###</span>
+n&lt;-<span class="kw">length</span>(Claim)
+Fx&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(<span class="kw">log</span>(Coverage))))
+beta&lt;-<span class="kw">betan</span>(Fx, <span class="dt">scaling=</span><span class="ot">FALSE</span>)
+<span class="kw">round</span>(beta,<span class="dv">2</span>)
 
-Output:
-[1]  0.3</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>]  <span class="fl">0.3</span></code></pre></div>
 </div>
 <p>In addition,to show that the Blomqvist’s beta is invariate under strictly increasing transformations , <span class="math inline">\(\beta=0.3\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
@@ -1927,10 +1899,9 @@ and similarly <span class="math inline">\(r_{2t} = \frac{1}{2} \left[(n_{\center
 \end{equation*}\]</span>
 <p>where the average rank is <span class="math inline">\(\bar{r} = (n+1)/2\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="display.Thry.1" href="javascript:togglecode
-('display.Thry.2','display.Thry.1');"><i><strong>Click to Show Proof for Special Case: Binary Data.</strong></i></a>
+<a id="displayCode.Thry.1" href="javascript:togglecode('toggleCode.Thry.1','displayCode.Thry.1');"><i><strong>Click to Show Proof for Special Case: Binary Data.</strong></i></a>
 </h5>
-<div id="display.Thry.2" style="display: none">
+<div id="toggleCode.Thry.1" style="display: none">
 Special Case: Binary Data. Here, <span class="math inline">\(m_1=0\)</span> and <span class="math inline">\(m_2=1\)</span>. For the first variable ranks, we have <span class="math inline">\(r_{10} = (1+n_{0\centerdot})/2\)</span> and <span class="math inline">\(r_{11} = (n_{0\centerdot}+1+n)/2\)</span>. Thus, <span class="math inline">\(r_{10} -\bar{r}= (n_{0\centerdot}-n)/2\)</span> and <span class="math inline">\(r_{11}-\bar{r} = n_{0\centerdot}/2\)</span>. This means that we have <span class="math inline">\(\sum_{s=0}^{1}n_{s\centerdot}(r_{1s} - \bar{r})^2 = n (n-n_{0\centerdot})n_{0\centerdot}/4\)</span> and similarly for the second variable. For the numerator, we have
 <span class="math display">\[\begin{eqnarray*}
 \sum_{s=0}^{1}  \sum_{t=0}^{1} &amp;&amp; n_{st}(r_{1s} - \bar{r})(r_{2t} - \bar{r})\\
@@ -1965,15 +1936,14 @@ This yields
 
 <p>You can obtain the ties-corrected Spearman correlation statistic <span class="math inline">\(r_S\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>spearman</code> method. From below <span class="math inline">\(\hat{\rho}_S=-0.09\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="display.spearT.1" href="javascript:togglecode
-('display.spearT.2','display.spearT.1');"><i><strong>R Code for Ties-corrected Spearman Correlation</strong></i></a>
+<a id="displayCode.spearT.1" href="javascript:togglecode('toggleCode.spearT.1','displayCode.spearT.1');"><i><strong>R Code for Ties-corrected Spearman Correlation</strong></i></a>
 </h5>
-<div id="display.spearT.2" style="display: none">
-<pre><code>rs_ties&lt;-cor(AlarmCredit,NoClaimCredit, method = c(&quot;spearman&quot;))
-round(rs_ties,2)
+<div id="toggleCode.spearT.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rs_ties&lt;-<span class="kw">cor</span>(AlarmCredit,NoClaimCredit, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))
+<span class="kw">round</span>(rs_ties,<span class="dv">2</span>)
 
-Output:
-[1] -0.09</code></pre>
+Output<span class="op">:</span>
+[<span class="dv">1</span>] <span class="op">-</span><span class="fl">0.09</span></code></pre></div>
 </div>
 
 </div>
@@ -2083,7 +2053,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }
