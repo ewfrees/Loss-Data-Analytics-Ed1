@@ -13,8 +13,8 @@ Further, the aggregate level detail is useful in ratemaking because many expense
 
 ### Exposures and Premiums
 
-A financial reporting period is a length of time that is fixed in the calendar; we use January 1 to December 31 for the examples in this book although other reporting periods are also common. The reporting period is fixed but policies may begin at any time during the year. Even if all policies have a common contract length of (say) one year, because of the variable starting time, they can end at any time during the financial reporting. Figure 
-\@ref(fig:Exposures) presents four illustrative policies. Because of these variable starting and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.
+A financial reporting period is a length of time that is fixed in the calendar; we use January 1 to December 31 for the examples in this book although other reporting periods are also common. The reporting period is fixed but policies may begin at any time during the year. Even if all policies have a common contract length of (say) one year, because of the differing starting time, they can end at any time during the financial reporting. Figure 
+\@ref(fig:Exposures) presents four illustrative policies. Because of these differing starting and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.
 
 
 (ref:Exposures) Timeline of Exposures for Four 12-Month Policies.
@@ -58,7 +58,7 @@ text(x[8],y[1],labels="|", adj = 0, cex = 1.4)
 ```
 
 
-The most commonly used exposure statistics are:
+Some commonly used exposure measures are:
 
 - *written exposures*, the amount of exposures on policies issued (underwritten or written) during the period in question,
 - *earned exposures*, the exposure units actually exposed to loss during the period, that is, where coverage has already been provided
@@ -117,9 +117,8 @@ E. & 900 & 750 & 900 \\\hline
 }
 $$
 
+`r HideExample('7.5.1', 'Show Example Solution')`
 
-<h5 style="text-align: center;"><a id="displayTextExamplePremium.5.1" href="javascript:toggleEX('toggleExamplePremium.5.1','displayTextExampleSPremium.5.1');"><i><strong>Show Example Solution</strong></i></a> </h5>
-<div id="toggleExamplePremium.5.1" style="display: none">
 
 Only earned premium differs from written premium and inforce premium and therefore needs to be computed. Thus, earned premium at Dec 31, 2002, equals $\$900 \times 10/12 = \$750$. Answer E.
 
@@ -129,15 +128,15 @@ Only earned premium differs from written premium and inforce premium and therefo
 
 ###Losses, Claims, and Payments
 
-Broadly speaking, the terms `r Gloss('loss')` and `r Gloss('claim')` refer the amount of compensation paid or potentially payable to the claimant under the terms of the insurance policy. Definitions can vary:
+Broadly speaking, the terms `r Gloss('loss')` and `r Gloss('claim')` refer to the amount of compensation paid or potentially payable to the claimant under the terms of the insurance policy. Definitions can vary:
 
-* Sometimes, the term *claim* is used interchageably with the term *loss*. 
+* Sometimes, the term *claim* is used interchangeably with the term *loss*. 
 * In some insurance and actuarial sources, the term *loss* is used for the amount of damage sustained in an insured event. The *claim* is the amount paid by the insurer with differences typically due to deductibles, upper policy limits, and the like. 
 * In economic usages, a *claim* is a demand  for payment by an insured  or by  an injured third-party under the terms and conditions of insurance contract and the *loss* is the amount paid by the insurer.
 
 This text will follow the second bullet. However, when reading other sources, you will need to take care when thinking about definitions for the terms loss and claim.
 
-To set additional terminology, it is helpful to follow the timeline of a claim as it develops. In Figure \@ref(fig:ClaimDevelopment), the claim occurs at time $t_1$ and the insuring company is notified at time $t_3$. There can be a long gap between occurrence and notification such that the
+To establish additional terminology, it is helpful to follow the timeline of a claim as it develops. In Figure \@ref(fig:ClaimDevelopment), the claim occurs at time $t_1$ and the insuring company is notified at time $t_3$. There can be a long gap between occurrence and notification such that the
 end of a company financial reporting period, known as a `r Gloss('valuation date')`, occurs ($t_2$). In this case, the claim is said to be
 `r Gloss('incurred but not reported')` at this valuation date.
 
@@ -212,7 +211,7 @@ The *ultimate loss* is the amount of money required to close and settle all clai
 
 ### Comparing Pure Premium and Loss Ratio Methods {#S:CompareMethods}
 
-Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the *mix of business*. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as **trending**. For example, an *on-level earned premium* is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given the contractual and adminstrative complexities. We refer the reader to standard references that describe approaches in details such as @werner2016basic and @friedland2013fundamentals.
+Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the *mix of business*. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as **trending**. For example, an *on-level earned premium* is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given the contractual and administrative complexities. We refer the reader to standard references that describe approaches in details such as @werner2016basic and @friedland2013fundamentals.
 
 #### Loss Ratio Method {-}
 
@@ -294,8 +293,7 @@ In many developed countries like the US where lines of business have been in exi
 (c) Describe one situation in which it is preferable to use the loss ratio method, and one situation in which it is preferable to use the pure premium method.
 
 
-<h5 style="text-align: center;"><a id="displayTextExamplePremium.5.2" href="javascript:toggleEX('toggleExamplePremium.5.2','displayTextExampleSPremium.5.2');"><i><strong>Show Example Solution</strong></i></a> </h5>
-<div id="toggleExamplePremium.5.2" style="display: none">
+`r HideExample('7.5.2', 'Show Example Solution')`
 
 (a) We will calculate the experience and target loss ratios, then take the ratio to get the indicated rate change. The experience loss ratio is
 $$

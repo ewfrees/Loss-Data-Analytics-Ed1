@@ -60,7 +60,7 @@ and the loss distribution is
 (\#eq:EmpLossDF)
 \end{equation}
 
-where $\mathrm{I}(\cdot)$ is the indicator function, returning a 1 if the event is true and zero otherwise. The graph $\left(\hat{F}_P(s),\hat{F}_{L}(s) \right)$ is a **concentration curve**.
+where $\mathrm{I}(\cdot)$ is the indicator function, returning a 1 if the event is true and zero otherwise. For a given value $s$, $\hat{F}_P(s)$ gives the proportion of premiums less than or equal to $s$, and $\hat{F}_{L}(s)$ gives the proportion of losses for those policyholders with premiums less than or equal to $s$. The graph $\left(\hat{F}_P(s),\hat{F}_{L}(s) \right)$ is known as a **concentration curve**.
 
 
 **Example -- Loss Distribution.** Suppose we have $n=5$ policyholders with experience as follows. The data have been ordered by premiums.
@@ -355,5 +355,5 @@ For these data, the Gini statistics are `r round(100*Gini1,digits=1)` percent fo
 In insurance claims modeling, standard out-of-sample validation measures are not the most informative due to the high proportions of zeros (corresponding to no claim) and the skewed fat-tailed distribution of the positive values. In contrast, the Gini statistic works well with many zeros (see the demonstration in [@frees2014insurance]). 
 
 The value of the concentration curves and Gini statistics have been recently advanced in the paper of @denuit2019concentrationGini.
-Properties of an extended version, dealing with relatives for new premiums, were developed by [@frees2011summarizing] and [@frees2014insurance]. In these articles you can find formulas for the standard errors and additional background information.
+Properties of an extended version, dealing with relatives for new premiums, were developed by @frees2011summarizing and @frees2014insurance. In these articles you can find formulas for the standard errors and additional background information.
 
