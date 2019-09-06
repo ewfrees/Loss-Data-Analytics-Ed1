@@ -1,248 +1,375 @@
-Term,Definition,
-loss adjustment expenses,"Loss adjustment expenses are costs to the insurer that are directly attributable to settling a claims. For example, the cost of an adjuster is someone who assess the claim cost or a lawyer who becomes involve in settling an insurer's legal obligation on a claim",
-unallocated,"Unallocated loss adjustment expenses are costs that can only be indirectly attributed to claim settlement; for example, the cost of an office to support claims staff",
-allocated,"Allocated loss adjustment expenses, sometimes known by the acronym ALEA, are costs that can be directly attributed to settling a claim; for example, the cost of an adjuster",
-loss amount,"The loss amount is the size of the loss incurred by the policyholder for incurred hurt, loss, or damage that is covered by the policy.",
-analytics,Analytics is the process of using data to make decisions.,
-renters insurance,Renters insurance is an insurance policy that covers the contents of an apartment or house that you are renting.,
-automobile insurance,"An insurance policy that covers damage to your vehicle, damage to other vehicles in the accident, as well as medical expenses of those injured in the accident.",
-casualty insurance,"Causalty insurance is a form of liability insurance providing coverage for negligent acts and omissions. Examples include workers compensation, errors and omissions, fidelity, crime, glass, boiler, and various malpractice coverages.",
-valuation date,"A valuation date is the date at which a company summarizes its financial position, typically quarterly or annually.",
-underwriting,Underwriting is the process where the company makes a decision as to whether or not to take on a risk.,
-ratemaking,,
-reinsurer,A reinsurer is an insurance company that offers insurance to an insurer.,
-loss reserve,A loss reserve is an estimate of liability indicating the amount the insurer expects to pay for claims that have not yet been realized. This includes losses incurred but not yet reported (IBNR) and those claims that have been reported claims that haven't been paid (known by the acronym RBNS for reported but not settled).,
-experience rating,,
-merit rating,,
-risk classification,"Risk classification is the process of grouping policyholders into categories, or classes, where each insured in the class has a risk profile that is similar to others in the class.",
-cream skimming,,
-claims triage,,
-loss cost,"Loss cost is the total severity divided by the number of claims. It does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. Also called pure premium. Some definitions include allocated loss adjustment expenses (ALAE).",
-rating variables,,
-coinsurance,"Coinsurance is an arrangement whereby the insured and insurer share the covered losses. Typically, a coinsurance parameter specified means that both parties receive a proportional share, e.g., 50%, of the loss.",
-personal lines,,
-bonus,,
-retrospective premiums,The process of determining the cost of an insurance policy based on the actual loss experience determined as an adjustment to the initial premium payment.,
-prospective premiums,,
-claims adjustment,"Claims adjustment is the process of determining coverage, legal liability, and settling claims.",
-claims leakage,Claims leakage respresents money lost through claims management inefficiencies.,
-fraud detection,,
-case reserve,A case reserve is an estimate of the insurer's future liability made by the claims adjuster.,
-adjuster,An adjuster is a person who investigates claims and recommends settlement options based on estimates of damage and insurance policies held.,
-capital allocation,,
-commercial insurance,insurance purchased by an insurer,
-term,The duration of an insurance contract,
-policy upper limits,Temp,
-Aggregate claims,The sum of all claims observed in a period of time,2
-Frequency,Count random variables that represent the number of claims,2.1
-Severity,"The amount, or size, of each payment for an insured event",2.1
-probability mass function (pmf) ,a function that gives the probability that a discrete random variable is exactly equal to some value,2.1
-distribution function,"the chance that the random variable is less than or equal to x, as a function of x",2.1
-survival function,the probability that the random variable takes on a value greater than a number x,2.1
-mean,average,2.1
-moments,The rth moment of a list is the average value of the random variable raised to the rth power,
-standard deviation,the square-root of variance,"2.1,3.1"
-moment generating function (mgf),"the mgf of random variable N is defined the expectation of exp(tN), as a function of t",2.2
-probability generating function (pgf),"For a random variable N, its pgf is defined as the expectation of s^N, as a function of s",2.2
-convex hulls,the convex hull of a set of points X is the smallest convex set that contains X,2.2
-risk classes,The formation of different premiums for the same coverage based on each homogeneous group's characteristics.,2.2
-Binomial Distribution,"A random variable has a binomial distribution (with parameters m and q) if it is the number of ""successes"" in a fixed number m of independent random trials, all of which have the same probability q of resulting in ""success."" ",2.2
-binary outcomes,"Outcomes whose unit can take on only two possible states, traditionally labeled as 0 and 1",2.2
-m-convolution,the addition of m independent random variables,2.2
-Poisson Distribution,a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant rate and independently of the time since the last event,2.2
-Negative Binomial Distribution,the number of successes until we observe the rth failure in independent repetitions of an experiment with binary outcomes,2.2
-overdispersed,the presence of greater variability (statistical dispersion) in a data set than would be expected based on a given statistical model,2.2
-underdispersed,there was less variation in the data than predicted,2.2
-"(a, b, 0) Class","the Poisson, binomial and negative binomial distributions",2.3
-maximum likelihood estimator (MLE),the possible value of the parameter for which the chance of observing the data largest,2.4
-local extrema,the largest and smallest value of the function within a given range,2.4
-Central Limit Theorem (CLT),"in some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution even if the original variables themselves are not normally distributed",2.4
-robust,"resistant to errors in the results, produced by deviations from assumptions",2.4
-Newton’s method,a root-finding algorithm which produces successively better approximations to the roots of a real-valued function,2.4
-explanatory variables,"In regression, the explanatory variable is the one that is supposed to ""explain"" the other.",2.5
-regression analysis,a set of statistical processes for estimating the relationships among variables,2.5
-homogeneous,Units of exposure that face approximately the same expected frequency and severity of loss.,2.5
-"(a,b,1) class","A count distribution with probabilities satisfying p_k/p_{k-1}=a+b/k, for some some constants a and b and k>=2",2.5
-zero truncation,Zero modification of a count distribution such that it assigns zero probability to zero count ,2.5
-degenerate distribution,a deterministic distribution and takes only a single value,2.5
-mixture distribution,"The probability distribution of a random variable that is derived from a collection of other random variables as follows: first, a random variable is selected by chance from the collection according to given probabilities of selection, and then the value of the selected random variable is realized",2.6
-convex combination,a linear combination of points where all coefficients are non-negative and sum to 1,2.6
-convex function,A real-valued function defined on an interval is called convex if the line segment between any two points on the graph of the function lies above or on the graph.,2.6
-Goodness of Fit,The goodness of fit of a statistical model describes how well it fits a set of observations.,2.7
-Pearson’s chi-square test,a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance,2.7
-chi-square distribution,the chi-squared distribution with k degrees of freedom is the distribution of a sum of the squares of k independent standard normal random variables,2.7
-multinomial,The multinomial distribution models the probability of counts for rolling a k-sided die n times,2.7
-aggregate losses,"aggregate claims, or total claims observed in the time period",3
-continuous random variable,random variable which can take infinitely many values in its specified domain,3
-mixture distribution,"a weighted average of other distributions, which may be continuous or discrete",3
-liability insurance,insurance that compensates an insured for loss due to legal liability towards others,3
-raw moment,the kth moment of a random variable X is the average (expected) value of X^k,3.1
-central moment,the kth central moment of a random variable X is the expected value of (X-its mean)^k,3.1
-percentile,the pth percentile of a random variable X is the smallest value x_p such that the probability of not exceeding it is p%,3.1
-variance,"second central moment of a random variable X, measuring the expected squared deviation of between the variable and its mean","2.1,3.1"
-skewness,"measure of the symmetry of a distribution, 3rd central moment/standard deviation^3",3.1
-kurtosis,"measure of the peaked-ness of a distribution, 4th central moment/standard deviation^4",3.1
-median,"50th percentile of a definition, or middle value where half of the distribution lies below",3.1
-expected value,average,3.1
-exponential distribution,a single parameter continous probability distribution that is defined by its rate parameter,3.1
-independent,two variables are independent if conditional information given about one variable provides no information regarding the other variable,3.1
-chi-square distribution,a common distribution used in chi-square tests for determining goodness of fit of observed data to a theorized distribution,3.2
-light tailed distribution,a distribution with thinner tails than the benchmark exponential distribution,3.2
-Pareto distribution,a heavy-tailed and positively skewed distribution with 2 parameters,3.2
-hazard function,"ratio of the probability density function and the survival function: f(x)/S(x), and represents an instantaneous probability within a small time frame",3.2
-Weibull distribution,a positively skewed continuous distribution with 2 parameters that can have an increasing or decreasing hazard function depending on the shape parameter,3.2
-Generalized Beta distribution of the second kind,a 4-parameter flexible distribution that encompasses many common distributions,3.2
-parametric distributions,probability distribution defined by a fixed set of parameters,3.3
-transformation,a function or method that turns one distribution into another,3.3
-distribution function technique,a transformation technique that involves finding the CDF of the transformed distribution through its relation with the original CDF,3.3
-change-of-variable technique,a transformation technique that involves finding the PDF of the transformed distribution through its relation with the original PDF using inverse functions,3.3
-moment-generating function technique,a transformation technique that uses moment generating functions properties to determine the MGF of a linear combination of variables,3.3
-scale distribution,a distribution with the property that multiplying all values by a constant leads to the same distribution family with only the scale parameter changed,3.3
-lognormal distribution,"a heavy-tailed, positively skewed 2-parameter continuous distribution such that the natural log of the random variable is normally distributed with the same parameter values",3.3
-reliability data,a dataset consisting of failure times for failed units and run times for units still functioning,3.3
-power transformation,a transformation type that involves raising a random variable to a power,3.3
-exponential transformation,a transformation type that involves raising a random variable in the exponent,3.3
-mixing parameters,proportion weight given to each subpopulation in a mixture,3.3
-heterogeneous population,a dataset where the subpopulations are represented by separate distinct distributions,3.3
-finite mixture,a mixture distribution with a finite k number of subpopulations,3.3
-continuous mixture,"a mixture distribution with an infinite number of subpopulations, where the mixing parameter is itself a continuous distribution",3.3
-conditional distribution,a probability distribution that applies to a subpopulation satisfying the condition,3.3
-prior distribution,a probability distribution assigned prior to observing additional data,3.3
-unconditional distribution,a probability distribution independent of any another imposed conditions,3.3
-moral hazard,situation where an insured is more likely to be risk seeking if they do not bear sufficient consequences for a loss,3.4
-payment per loss,amount insurer pays when a loss occurs and can be 0,3.4
-payment per payment,amount insurer pays given a payment is needed and is greater than 0,3.4
-left censored,values below a threshold d are not ignored but converted to 0,3.4
-left truncated,values below a threshold d are not reported and unknown,3.4
-loss elimination ratio (ler),% decrease of the expected payment by the insurer as a result of the deductible,3.4
-franchise deductible,"insurer pays nothing for losses below the deductible, but pays the full amount for any loss above the deductible",3.4
-limit of coverage,"policy limit, or maximum contractual financial obligation of the insurer for a loss",3.4
-group insurance,insurance provided to groups of people to take advantage of lower administrative costs vs. individual policies,3.4
-growth factor,"multiplicative factor applied to a distribution to account for the impact of inflation, typically (1+rate)",3.4
-reinsurance,a transaction where the primary insurer buys insurance from a re-insurer who will cover part of the losses and/or loss adjustment expenses of the primary insurer,3.4
-cedent,party that is transferring the risk to a reinsurer,3.4
-excess of loss coverage,contract where an insurer pays all claims up to a specified amount and then the reinsurer pays claims in excess of stated reinsurance deductible,3.4
-retention,maximum amount payable by the primary insurer in a reinsurance arrangement ,3.4
-method of maximum likelihood,statistical method used to derive the parameter values from data that maximize the probability of observing the data given the parameters,3.5
-grouped data,"data bucketed into categories with ranges, such as for use in histograms or frequency tables",3.5
-large-sample properties,asymptotic properties of a distribution as the amount of data increases towards infinity,3.5
-asymptotic variance,variability of the distribution of an estimator as the amount of data increases towards infinity,3.5
-delta method,statistical method used to approximate the asymptotic variance for a function based on parameters whose asymptotic variance can be determined,3.5
-confidence interval,an interval constructed from data such that the probability this interval contains the true value of the parameter can be specified,3.5
-likelihood function,probability of the observed data as a function of the model parameters,3.5
-log-likelihood function,natural log of the likelihood function,3.5
-covariance matrix,"matrix where the (i,j)^th element represents the covariance between the ith and jth random variables",3.5
-complete,"data where each individual observation is known, and no values are censored, truncated, or grouped",3.5
-right censored variable,values above a threshold u are not ignored but converted to u,3.5
-=======,,
-indemnification,Indemnification is the compensation provided by the insurer.,
-insurance claim,"An insurance claim is the compensation provided by the insurer for incurred hurt, loss, or damage that is covered by the policy.",
-homeowners insurance,Homeowners insurance is an insurance policy that covers the contents and property of a building that is owned by you or a friend.,
-property insurance,"Property insurance is a policy that protects the insured against loss or damage to real or personal property. The cause of loss might be  fire, lightening, business interruption, loss of rents, glass breakage, tornado, windstorm, hail, water damage, explosion, riot, civil commotion, rain, or damage from aircraft or vehicles.",
-nonlife insurance,"Nonlife insurance is any type of insurance where payments are not based on the death (or survivorship) of a named insured. Examples include automobile, homeowners, and so on. Also known as property and casualty or general insurance.",
-ratemaking,,
-technical provisions,Technical provisions is another name for loss reserves.,
-experience rating,,
-merit rating,,
-cream skimming,,
-claims triage,,
-pure premium,"Pure premium is the total severity divided by the number of claims. It does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. Also called loss costs. Some definitions include allocated loss adjustment expenses (ALAE).",
-rating variables,,
-deductible,"A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer's responsibility (subject to policy limits and coninsurance).",
-policy limit,A policy limit is the maximum value covered by a policy.,
-personal lines,,
-dividend,A dividend is the refund of a portion of the premium paid by the insured from insurer surplus.,
-bonus,,
-prospective premiums,,
-Commercial line,Commercial line is insurance purchased by commercial ventures (businesses),
-line of business,A line of business is a classification of business written by insurers.,
-fraud detection,,
-life Insurance,Life insurance is a contract where the insurer promises to pay upon the death of an insured person. The person being paid is the beneficiary. ,
-capital allocation,,
-reinsurance,insurance purchased by an insurer,
-personal insurance,insurance purchased by a person,
-,,
-price,"A quantity, usually of money, that is exchanged for a good or service",7.1
-premium,The amount of money charged for insurance protection against contingent events.,7.1
-rate,"A rate is the price, or premium, charged per unit of exposure. A rate is a premium expressed in standardized units.",7.1
-rates,"A rate is the price, or premium, charged per unit of exposure. A rate is a premium expressed in standardized units.",7.1
-iid,Identically and independently distributed.,7.1
-,,
-loss cost,The sum of losses divided by an exposure; it is also known as the pure premium.,7.1
-loss ratio,The sum of losses divided by the premium.,7.1
-homogeneous risks,"Risks that have the same distribution, that is, the distributions are identical.",7.1
-heterogeneous risks,"Risks that have different distributions. Often, we can attribute differences to varying exposures or risk factors.",7.1
-heterogeneous,"Heterogeneous risks have different distributions. Often, we can attribute differences to varying exposures or risk factors.",7.1
-experience rating,Rating algorithms where one combines experience for an individual risk or class with other data to produce more stable and accurate estimates. Credibility theory provides an important example of these algorithms.,7.1
-,,
-rating factor,"A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.",7.4
-rating variable,"A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.",7.4
-exposure,"A type of rating variable that is so important that premiums and losses are often quoted on a ""per exposure"" basis. That is, premiums and losses are commonly standardized by exposure variables.",7.4
-profit loading,The required underwriting profit divided by premiums. ,7.2
-indicated rate,"In a rate filing, the amount that the loss experience suggests that the insurer should charge to cover costs.",7.2
-scale distribution,"Suppose that Y = c X, where X comes from a parametric distribution family and c is a positive constant. The distribution is said to be a scale distribution if (i) the distributions of Y and X come from the same family and (ii) only a single parameter differs and that by a factor of c.",7.4
-factor,A variable that varies by groups or categories.,7.4
-relativity,The difference of the expected risk between a specific level of a rating factor and an accepted baseline value. This difference may be arithmetic or proportional.,7.4
-claim,"The amount paid to an individual or corporation for the recovery, under a policy of insurance, for loss that comes within that policy.",7.5
-loss,"The amount of damages sustained by an individual or corporation, typically as the result of an insurable event.",7.5
-policy year,This is the period between a policy's anniversary dates.,
-written premium,The written premium is the contractually determined amount paid by the policyholder for the entire effective period of the contract for policies issued during the period in question.,7.5
-incurred but not reported,A claim is said to be incurred but not reported if the insured event occurs prior to a valuation date (and hence the insurer is liable for payment) but the event has not been reported to the insurer.,7.5
-closed,A claim is said to be closed when the company deems its financial obligations on the claim to be resolved.,7.5
-,,
-,,
-,,
-Lorenz curve,A graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis.,7.6
-Gini index,The Gini index is twice the area between a Lorenz curve and a 45 degree line.,7.6
-concentration curve,"A concentration curve is a graph of the distribution of two variables, where both variables are ordered by only one of variables. For insurance applications, it is a graph of distribution of losses versus premiums, where both losses and premiums are ordered by premiums.",7.6
-community rating,This generally refers to the premium principle where all risks pay the same amount.,7.6
-=======,,
-variables,"A variable is any characteristics, number, or quantity that can be measured or counted.",14
-high dimensional,"Data set is high dimensional when it has many variables. In many applications, the number of variables may be larger than the sample size.",
-qualitative,"This is a type of variable in which the measurement denotes membership in a set of groups, or categories",
-categorical variable,Same as Qualitative variable.,
-nominal variable,This is a type of qualitative/ categorical variable which has two or more categories without having any kind of natural order.,
-ordinal variable,This is a type of qualitative/ categorical variable which has two or more ordered categories.,
-binary variable,Is a special type of categorical variable where there are only two categories.,
-quantitative variable,A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.,
-continuous variable,A continuous variable is a quantitative variable that can take on any value within a finite interval.,
-policyholder,Person in actual possession of insurance policy; policy owner.,
-discrete variable,A discrete variable is quantitative variable that takes on only a finite number of values in any finite interval.,
-deductibles,"A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer's responsibility (subject to policy limits and coninsurance).",
-count variable,A count variable is a discrete variable with values on nonnegative integers.,
-loss,"The loss amount is the size of the loss incurred by the policyholder for incurred hurt, loss, or damage that is covered by the policy.",
-internal variable,An interval variable is a type of variable that gives a range of possible outcomes.,
-Circular data,"In a circular data, all values around the circle are equally likely. Example, imagine an analog picture of a clock.",
-insurers,An insurance company authorized to write insurance under the laws of any state.,
-multivariate,Multivariate variable involves taking many measurements on a single entity.,
-worker's compensation,"Insurance that covers an employer's liability for injuries, disability or death to persons in their employment, without regard to fault, as prescribed by state or federal workers' compensation laws and other statutes.",
-univariate,"Univariate analysis is the simplest form of analyzing data. “Uni” means “one”, so in other words your data has only one variable.",
-missing data,Missing data occur when no data value is stored for a variable in an observation. Missing data can occur because of nonresponse: no information is provided for one or more items or for a whole unit or subject.,
-censored,"Censored data have unknown values beyond a bound on either end of the number line or both. Here, the data is observed but the values (measurements) are not known completely.",
-truncated,Truncation occurs when values beyond a boundary are either excluded when gathered or excluded when analyzed. An object can be detected only if its value is greater than some number.,
-Aggregate claims,Aggregate claims refers to the total amount of claims from a portfolio of insurance contracts.,
-stochastic process,"Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.",
-=======,,
-nonparametric,An approach to inference that does not rely on references to a parametric model.,4
-iid,identically and independently distributed,
-pdf,probability density function,
-AIC,Akaike's information criterion,
-BIC,Bayesian information criterion,
-pmf,probability mass function,
-MCMC,Markov Chain Monte Carlo,
-=======,,
-portfolios,a collection of contracts,10
-survival function,one minus the distribution function. It gives the probability that a rv exceeds a specific value,
-risk measure,"a measure that summarizes the riskiness, or uncertainty, of a distribution",
-coherent risk measures,"a risk measure that is is subadditive, monontonic, has positive homogeneity, and is translation invariant",
-value-at-risk,a risk measure based on a quantile function,
-cdf,cumulative distribution function,
-tail value-at-risk,the expected value of a risk given that the risk exceeds a value-at-risk,
-primary insurance,insurance purchased by an non-insurer,
-proportional reinsurance,an agreement between a reinsurer and a ceding company (also known as the reinsured) in which the reinsurer assumes a given percent of losses and premium,
-ceding company,a company that purchases reinsurance (also known as the reinsured),
-treaty,a reinsurance contract,
-stop-loss,"Under a stop-loss arrangement, the insurer sets a retention level and pays in full total claims less than the level with the reinsurer paying the excess",
-excess of loss,"Under an excess of loss arrangement, the insurer sets a retention level for each claim and pays claim amounts less than the level with the reinsurer paying the excess",
-quota share,"A proportional treaty where the reinsurer receives a flat percent of the premium for the book of business reinsured and pays a percentage of losses, including allocated loss adjustment expenses. The reinsurer may also pays the ceding company a ceding commission which is designed to reflect the differences in underwriting expenses incurred.",
-surplus share,"A proportional reinsurance treaty that is common in commercial property insurance. A surplus share treaty allows the reinsured to limit its exposure on any one risk to a given amount (the retained line). The reinsurer assumes a part of the risk in proportion to the amount that the insured value exceeds the retained line, up to a given limit (expressed as a multiple of the retained line, or number of lines).",
+Term,Definition,,
+loss adjustment expenses,"Loss adjustment expenses are costs to the insurer that are directly attributable to settling a claims. For example, the cost of an adjuster is someone who assess the claim cost or a lawyer who becomes involve in settling an insurer's legal obligation on a claim",,
+unallocated,"Unallocated loss adjustment expenses are costs that can only be indirectly attributed to claim settlement; for example, the cost of an office to support claims staff",,
+allocated,"Allocated loss adjustment expenses, sometimes known by the acronym ALEA, are costs that can be directly attributed to settling a claim; for example, the cost of an adjuster",,
+loss amount,"The loss amount is the size of the loss incurred by the policyholder for incurred hurt, loss, or damage that is covered by the policy.",,
+analytics,Analytics is the process of using data to make decisions.,,
+renters insurance,Renters insurance is an insurance policy that covers the contents of an apartment or house that you are renting.,,
+automobile insurance,"An insurance policy that covers damage to your vehicle, damage to other vehicles in the accident, as well as medical expenses of those injured in the accident.",,
+casualty insurance,"Causalty insurance is a form of liability insurance providing coverage for negligent acts and omissions. Examples include workers compensation, errors and omissions, fidelity, crime, glass, boiler, and various malpractice coverages.",,
+valuation date,"A valuation date is the date at which a company summarizes its financial position, typically quarterly or annually.",,
+underwriting,Underwriting is the process where the company makes a decision as to whether or not to take on a risk.,,
+ratemaking,,,
+reinsurer,A reinsurer is an insurance company that offers insurance to an insurer.,,
+loss reserve,A loss reserve is an estimate of liability indicating the amount the insurer expects to pay for claims that have not yet been realized. This includes losses incurred but not yet reported (IBNR) and those claims that have been reported claims that haven't been paid (known by the acronym RBNS for reported but not settled).,,
+experience rating,,,
+merit rating,,,
+risk classification,"Risk classification is the process of grouping policyholders into categories, or classes, where each insured in the class has a risk profile that is similar to others in the class.",,
+cream skimming,,,
+claims triage,,,
+loss cost,"Loss cost is the total severity divided by the number of claims. It does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. Also called pure premium. Some definitions include allocated loss adjustment expenses (ALAE).",,
+rating variables,,,
+coinsurance,"Coinsurance is an arrangement whereby the insured and insurer share the covered losses. Typically, a coinsurance parameter specified means that both parties receive a proportional share, e.g., 50%, of the loss.",,
+personal lines,,,
+bonus,,,
+retrospective premiums,The process of determining the cost of an insurance policy based on the actual loss experience determined as an adjustment to the initial premium payment.,,
+prospective premiums,,,
+claims adjustment,"Claims adjustment is the process of determining coverage, legal liability, and settling claims.",,
+claims leakage,Claims leakage respresents money lost through claims management inefficiencies.,,
+fraud detection,,,
+case reserve,A case reserve is an estimate of the insurer's future liability made by the claims adjuster.,,
+adjuster,An adjuster is a person who investigates claims and recommends settlement options based on estimates of damage and insurance policies held.,,
+capital allocation,,,
+commercial insurance,insurance purchased by an insurer,,
+term,The duration of an insurance contract,,
+policy upper limits,Temp,,
+Aggregate claims,The sum of all claims observed in a period of time,2,
+Frequency,Count random variables that represent the number of claims,2.1,
+Severity,"The amount, or size, of each payment for an insured event",2.1,
+probability mass function (pmf) ,a function that gives the probability that a discrete random variable is exactly equal to some value,2.1,
+distribution function,"the chance that the random variable is less than or equal to x, as a function of x",2.1,
+survival function,the probability that the random variable takes on a value greater than a number x,2.1,
+mean,average,2.1,
+moments,The rth moment of a list is the average value of the random variable raised to the rth power,,
+standard deviation,the square-root of variance,"2.1,3.1",
+moment generating function (mgf),"the mgf of random variable N is defined the expectation of exp(tN), as a function of t",2.2,
+probability generating function (pgf),"For a random variable N, its pgf is defined as the expectation of s^N, as a function of s",2.2,
+convex hulls,the convex hull of a set of points X is the smallest convex set that contains X,2.2,
+risk classes,The formation of different premiums for the same coverage based on each homogeneous group's characteristics.,2.2,
+Binomial Distribution,"A random variable has a binomial distribution (with parameters m and q) if it is the number of ""successes"" in a fixed number m of independent random trials, all of which have the same probability q of resulting in ""success."" ",2.2,
+binary outcomes,"Outcomes whose unit can take on only two possible states, traditionally labeled as 0 and 1",2.2,
+m-convolution,the addition of m independent random variables,2.2,
+Poisson Distribution,a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant rate and independently of the time since the last event,2.2,
+Negative Binomial Distribution,the number of successes until we observe the rth failure in independent repetitions of an experiment with binary outcomes,2.2,
+overdispersed,the presence of greater variability (statistical dispersion) in a data set than would be expected based on a given statistical model,2.2,
+underdispersed,there was less variation in the data than predicted,2.2,
+"(a, b, 0) Class","the Poisson, binomial and negative binomial distributions",2.3,
+maximum likelihood estimator (MLE),the possible value of the parameter for which the chance of observing the data largest,2.4,
+local extrema,the largest and smallest value of the function within a given range,2.4,
+Central Limit Theorem (CLT),"in some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution even if the original variables themselves are not normally distributed",2.4,
+robust,"resistant to errors in the results, produced by deviations from assumptions",2.4,
+Newton’s method,a root-finding algorithm which produces successively better approximations to the roots of a real-valued function,2.4,
+explanatory variables,"In regression, the explanatory variable is the one that is supposed to ""explain"" the other.",2.5,
+regression analysis,a set of statistical processes for estimating the relationships among variables,2.5,
+homogeneous,Units of exposure that face approximately the same expected frequency and severity of loss.,2.5,
+"(a,b,1) class","A count distribution with probabilities satisfying p_k/p_{k-1}=a+b/k, for some some constants a and b and k>=2",2.5,
+zero truncation,Zero modification of a count distribution such that it assigns zero probability to zero count ,2.5,
+degenerate distribution,a deterministic distribution and takes only a single value,2.5,
+mixture distribution,"The probability distribution of a random variable that is derived from a collection of other random variables as follows: first, a random variable is selected by chance from the collection according to given probabilities of selection, and then the value of the selected random variable is realized",2.6,
+convex combination,a linear combination of points where all coefficients are non-negative and sum to 1,2.6,
+convex function,A real-valued function defined on an interval is called convex if the line segment between any two points on the graph of the function lies above or on the graph.,2.6,
+Goodness of Fit,The goodness of fit of a statistical model describes how well it fits a set of observations.,2.7,
+Pearson’s chi-square test,a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance,2.7,
+chi-square distribution,the chi-squared distribution with k degrees of freedom is the distribution of a sum of the squares of k independent standard normal random variables,2.7,
+multinomial,The multinomial distribution models the probability of counts for rolling a k-sided die n times,2.7,
+aggregate losses,"aggregate claims, or total claims observed in the time period",3,
+continuous random variable,random variable which can take infinitely many values in its specified domain,3,
+mixture distribution,"a weighted average of other distributions, which may be continuous or discrete",3,
+liability insurance,insurance that compensates an insured for loss due to legal liability towards others,3,
+raw moment,the kth moment of a random variable X is the average (expected) value of X^k,3.1,
+central moment,the kth central moment of a random variable X is the expected value of (X-its mean)^k,3.1,
+percentile,the pth percentile of a random variable X is the smallest value x_p such that the probability of not exceeding it is p%,3.1,
+variance,"second central moment of a random variable X, measuring the expected squared deviation of between the variable and its mean","2.1,3.1",
+skewness,"measure of the symmetry of a distribution, 3rd central moment/standard deviation^3",3.1,
+kurtosis,"measure of the peaked-ness of a distribution, 4th central moment/standard deviation^4",3.1,
+median,"50th percentile of a definition, or middle value where half of the distribution lies below",3.1,
+expected value,average,3.1,
+exponential distribution,a single parameter continous probability distribution that is defined by its rate parameter,3.1,
+independent,two variables are independent if conditional information given about one variable provides no information regarding the other variable,3.1,
+chi-square distribution,a common distribution used in chi-square tests for determining goodness of fit of observed data to a theorized distribution,3.2,
+light tailed distribution,a distribution with thinner tails than the benchmark exponential distribution,3.2,
+Pareto distribution,a heavy-tailed and positively skewed distribution with 2 parameters,3.2,
+hazard function,"ratio of the probability density function and the survival function: f(x)/S(x), and represents an instantaneous probability within a small time frame",3.2,
+Weibull distribution,a positively skewed continuous distribution with 2 parameters that can have an increasing or decreasing hazard function depending on the shape parameter,3.2,
+Generalized Beta distribution of the second kind,a 4-parameter flexible distribution that encompasses many common distributions,3.2,
+parametric distributions,probability distribution defined by a fixed set of parameters,3.3,
+transformation,a function or method that turns one distribution into another,3.3,
+distribution function technique,a transformation technique that involves finding the CDF of the transformed distribution through its relation with the original CDF,3.3,
+change-of-variable technique,a transformation technique that involves finding the PDF of the transformed distribution through its relation with the original PDF using inverse functions,3.3,
+moment-generating function technique,a transformation technique that uses moment generating functions properties to determine the MGF of a linear combination of variables,3.3,
+scale distribution,a distribution with the property that multiplying all values by a constant leads to the same distribution family with only the scale parameter changed,3.3,
+lognormal distribution,"a heavy-tailed, positively skewed 2-parameter continuous distribution such that the natural log of the random variable is normally distributed with the same parameter values",3.3,
+reliability data,a dataset consisting of failure times for failed units and run times for units still functioning,3.3,
+power transformation,a transformation type that involves raising a random variable to a power,3.3,
+exponential transformation,a transformation type that involves raising a random variable in the exponent,3.3,
+mixing parameters,proportion weight given to each subpopulation in a mixture,3.3,
+heterogeneous population,a dataset where the subpopulations are represented by separate distinct distributions,3.3,
+finite mixture,a mixture distribution with a finite k number of subpopulations,3.3,
+continuous mixture,"a mixture distribution with an infinite number of subpopulations, where the mixing parameter is itself a continuous distribution",3.3,
+conditional distribution,a probability distribution that applies to a subpopulation satisfying the condition,3.3,
+prior distribution,a probability distribution assigned prior to observing additional data,3.3,
+unconditional distribution,a probability distribution independent of any another imposed conditions,3.3,
+moral hazard,situation where an insured is more likely to be risk seeking if they do not bear sufficient consequences for a loss,3.4,
+payment per loss,amount insurer pays when a loss occurs and can be 0,3.4,
+payment per payment,amount insurer pays given a payment is needed and is greater than 0,3.4,
+left censored,values below a threshold d are not ignored but converted to 0,3.4,
+left truncated,values below a threshold d are not reported and unknown,3.4,
+loss elimination ratio (ler),% decrease of the expected payment by the insurer as a result of the deductible,3.4,
+franchise deductible,"insurer pays nothing for losses below the deductible, but pays the full amount for any loss above the deductible",3.4,
+limit of coverage,"policy limit, or maximum contractual financial obligation of the insurer for a loss",3.4,
+group insurance,insurance provided to groups of people to take advantage of lower administrative costs vs. individual policies,3.4,
+growth factor,"multiplicative factor applied to a distribution to account for the impact of inflation, typically (1+rate)",3.4,
+reinsurance,a transaction where the primary insurer buys insurance from a re-insurer who will cover part of the losses and/or loss adjustment expenses of the primary insurer,3.4,
+cedent,party that is transferring the risk to a reinsurer,3.4,
+excess of loss coverage,contract where an insurer pays all claims up to a specified amount and then the reinsurer pays claims in excess of stated reinsurance deductible,3.4,
+retention,maximum amount payable by the primary insurer in a reinsurance arrangement ,3.4,
+method of maximum likelihood,statistical method used to derive the parameter values from data that maximize the probability of observing the data given the parameters,3.5,
+grouped data,"data bucketed into categories with ranges, such as for use in histograms or frequency tables",3.5,
+large-sample properties,asymptotic properties of a distribution as the amount of data increases towards infinity,3.5,
+asymptotic variance,variability of the distribution of an estimator as the amount of data increases towards infinity,3.5,
+delta method,statistical method used to approximate the asymptotic variance for a function based on parameters whose asymptotic variance can be determined,3.5,
+confidence interval,an interval constructed from data such that the probability this interval contains the true value of the parameter can be specified,3.5,
+likelihood function,probability of the observed data as a function of the model parameters,3.5,
+log-likelihood function,natural log of the likelihood function,3.5,
+covariance matrix,"matrix where the (i,j)^th element represents the covariance between the ith and jth random variables",3.5,
+complete,"data where each individual observation is known, and no values are censored, truncated, or grouped",3.5,
+right censored variable,values above a threshold u are not ignored but converted to u,3.5,
+=======,,,
+indemnification,Indemnification is the compensation provided by the insurer.,,
+insurance claim,"An insurance claim is the compensation provided by the insurer for incurred hurt, loss, or damage that is covered by the policy.",,
+homeowners insurance,Homeowners insurance is an insurance policy that covers the contents and property of a building that is owned by you or a friend.,,
+property insurance,"Property insurance is a policy that protects the insured against loss or damage to real or personal property. The cause of loss might be  fire, lightening, business interruption, loss of rents, glass breakage, tornado, windstorm, hail, water damage, explosion, riot, civil commotion, rain, or damage from aircraft or vehicles.",,
+nonlife insurance,"Nonlife insurance is any type of insurance where payments are not based on the death (or survivorship) of a named insured. Examples include automobile, homeowners, and so on. Also known as property and casualty or general insurance.",,
+ratemaking,,,
+technical provisions,Technical provisions is another name for loss reserves.,,
+experience rating,,,
+merit rating,,,
+cream skimming,,,
+claims triage,,,
+pure premium,"Pure premium is the total severity divided by the number of claims. It does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. Also called loss costs. Some definitions include allocated loss adjustment expenses (ALAE).",,
+rating variables,,,
+deductible,"A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer's responsibility (subject to policy limits and coninsurance).",,
+policy limit,A policy limit is the maximum value covered by a policy.,,
+personal lines,,,
+dividend,A dividend is the refund of a portion of the premium paid by the insured from insurer surplus.,,
+bonus,,,
+prospective premiums,,,
+Commercial line,Commercial line is insurance purchased by commercial ventures (businesses),,
+line of business,A line of business is a classification of business written by insurers.,,
+fraud detection,,,
+life Insurance,Life insurance is a contract where the insurer promises to pay upon the death of an insured person. The person being paid is the beneficiary. ,,
+capital allocation,,,
+reinsurance,insurance purchased by an insurer,,
+personal insurance,insurance purchased by a person,,
+,,,
+price,"A quantity, usually of money, that is exchanged for a good or service",7.1,
+premium,The amount of money charged for insurance protection against contingent events.,7.1,
+rate,"A rate is the price, or premium, charged per unit of exposure. A rate is a premium expressed in standardized units.",7.1,
+rates,"A rate is the price, or premium, charged per unit of exposure. A rate is a premium expressed in standardized units.",7.1,
+iid,Identically and independently distributed.,7.1,
+,,,
+loss cost,The sum of losses divided by an exposure; it is also known as the pure premium.,7.1,
+loss ratio,The sum of losses divided by the premium.,7.1,
+homogeneous risks,"Risks that have the same distribution, that is, the distributions are identical.",7.1,
+heterogeneous risks,"Risks that have different distributions. Often, we can attribute differences to varying exposures or risk factors.",7.1,
+heterogeneous,"Heterogeneous risks have different distributions. Often, we can attribute differences to varying exposures or risk factors.",7.1,
+experience rating,Rating algorithms where one combines experience for an individual risk or class with other data to produce more stable and accurate estimates. Credibility theory provides an important example of these algorithms.,7.1,
+,,,
+rating factor,"A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.",7.4,
+rating variable,"A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.",7.4,
+exposure,"A type of rating variable that is so important that premiums and losses are often quoted on a ""per exposure"" basis. That is, premiums and losses are commonly standardized by exposure variables.",7.4,
+profit loading,The required underwriting profit divided by premiums. ,7.2,
+indicated rate,"In a rate filing, the amount that the loss experience suggests that the insurer should charge to cover costs.",7.2,
+scale distribution,"Suppose that Y = c X, where X comes from a parametric distribution family and c is a positive constant. The distribution is said to be a scale distribution if (i) the distributions of Y and X come from the same family and (ii) only a single parameter differs and that by a factor of c.",7.4,
+factor,A variable that varies by groups or categories.,7.4,
+relativity,The difference of the expected risk between a specific level of a rating factor and an accepted baseline value. This difference may be arithmetic or proportional.,7.4,
+claim,"The amount paid to an individual or corporation for the recovery, under a policy of insurance, for loss that comes within that policy.",7.5,
+loss,"The amount of damages sustained by an individual or corporation, typically as the result of an insurable event.",7.5,
+policy year,This is the period between a policy's anniversary dates.,,
+written premium,The written premium is the contractually determined amount paid by the policyholder for the entire effective period of the contract for policies issued during the period in question.,7.5,
+incurred but not reported,A claim is said to be incurred but not reported if the insured event occurs prior to a valuation date (and hence the insurer is liable for payment) but the event has not been reported to the insurer.,7.5,
+closed,A claim is said to be closed when the company deems its financial obligations on the claim to be resolved.,7.5,
+,,,
+,,,
+,,,
+Lorenz curve,A graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis.,7.6,
+Gini index,The Gini index is twice the area between a Lorenz curve and a 45 degree line.,7.6,
+concentration curve,"A concentration curve is a graph of the distribution of two variables, where both variables are ordered by only one of variables. For insurance applications, it is a graph of distribution of losses versus premiums, where both losses and premiums are ordered by premiums.",7.6,
+community rating,This generally refers to the premium principle where all risks pay the same amount.,7.6,
+=======,,,
+variables,"A variable is any characteristics, number, or quantity that can be measured or counted.",14,
+high dimensional,"Data set is high dimensional when it has many variables. In many applications, the number of variables may be larger than the sample size.",,
+qualitative,"This is a type of variable in which the measurement denotes membership in a set of groups, or categories",,
+categorical variable,Same as Qualitative variable.,,
+nominal variable,This is a type of qualitative/ categorical variable which has two or more categories without having any kind of natural order.,,
+ordinal variable,This is a type of qualitative/ categorical variable which has two or more ordered categories.,,
+binary variable,Is a special type of categorical variable where there are only two categories.,,
+quantitative variable,A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.,,
+continuous variable,A continuous variable is a quantitative variable that can take on any value within a finite interval.,,
+policyholder,Person in actual possession of insurance policy; policy owner.,,
+discrete variable,A discrete variable is quantitative variable that takes on only a finite number of values in any finite interval.,,
+deductibles,"A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer's responsibility (subject to policy limits and coninsurance).",,
+count variable,A count variable is a discrete variable with values on nonnegative integers.,,
+loss,"The loss amount is the size of the loss incurred by the policyholder for incurred hurt, loss, or damage that is covered by the policy.",,
+internal variable,An interval variable is a type of variable that gives a range of possible outcomes.,,
+Circular data,"In a circular data, all values around the circle are equally likely. Example, imagine an analog picture of a clock.",,
+insurers,An insurance company authorized to write insurance under the laws of any state.,,
+multivariate,Multivariate variable involves taking many measurements on a single entity.,,
+worker's compensation,"Insurance that covers an employer's liability for injuries, disability or death to persons in their employment, without regard to fault, as prescribed by state or federal workers' compensation laws and other statutes.",,
+univariate,"Univariate analysis is the simplest form of analyzing data. “Uni” means “one”, so in other words your data has only one variable.",,
+missing data,Missing data occur when no data value is stored for a variable in an observation. Missing data can occur because of nonresponse: no information is provided for one or more items or for a whole unit or subject.,,
+censored,"Censored data have unknown values beyond a bound on either end of the number line or both. Here, the data is observed but the values (measurements) are not known completely.",,
+truncated,Truncation occurs when values beyond a boundary are either excluded when gathered or excluded when analyzed. An object can be detected only if its value is greater than some number.,,
+Aggregate claims,Aggregate claims refers to the total amount of claims from a portfolio of insurance contracts.,,
+stochastic process,"Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.",,
+=======,,,
+nonparametric,An approach to inference that does not rely on references to a parametric model.,4,
+iid,identically and independently distributed,,
+pdf,probability density function,,
+AIC,Akaike's information criterion,,
+BIC,Bayesian information criterion,,
+pmf,probability mass function,,
+MCMC,Markov Chain Monte Carlo,,
+=======,,,
+portfolios,a collection of contracts,10,
+survival function,one minus the distribution function. It gives the probability that a rv exceeds a specific value,,
+risk measure,"a measure that summarizes the riskiness, or uncertainty, of a distribution",,
+coherent risk measures,"a risk measure that is is subadditive, monontonic, has positive homogeneity, and is translation invariant",,
+value-at-risk,a risk measure based on a quantile function,,
+cdf,cumulative distribution function,,
+tail value-at-risk,the expected value of a risk given that the risk exceeds a value-at-risk,,
+primary insurance,insurance purchased by an non-insurer,,
+proportional reinsurance,an agreement between a reinsurer and a ceding company (also known as the reinsured) in which the reinsurer assumes a given percent of losses and premium,,
+ceding company,a company that purchases reinsurance (also known as the reinsured),,
+treaty,a reinsurance contract,,
+stop-loss,"Under a stop-loss arrangement, the insurer sets a retention level and pays in full total claims less than the level with the reinsurer paying the excess",,
+excess of loss,"Under an excess of loss arrangement, the insurer sets a retention level for each claim and pays claim amounts less than the level with the reinsurer paying the excess",,
+quota share,"A proportional treaty where the reinsurer receives a flat percent of the premium for the book of business reinsured and pays a percentage of losses, including allocated loss adjustment expenses. The reinsurer may also pays the ceding company a ceding commission which is designed to reflect the differences in underwriting expenses incurred.",,
+surplus share,"A proportional reinsurance treaty that is common in commercial property insurance. A surplus share treaty allows the reinsured to limit its exposure on any one risk to a given amount (the retained line). The reinsurer assumes a part of the risk in proportion to the amount that the insured value exceeds the retained line, up to a given limit (expressed as a multiple of the retained line, or number of lines).",,
+=======,,,
+grouped data,Data that is only available in groups instead of exact values. Also known as interval-censored data.,,
+censored data,Data that is observed as a limited value instead of the exact value.,,
+truncated data,Data that may be observed or missing based on the value of the outcome.,,
+model selection,The process of selecting a statistical model from a set of candidate models using data.,,
+parametric,"Distributional assumptions made on the population from which the data is drawn, with properties defined using parameters.",,
+nonparametric,No distributional assumptions are made on the population from which the data is drawn.,,
+sampling scheme,How the data is obtained from the population and what data is observed.,,
+unbiased,"An estimator that has no bias, that is, the expected value of an estimator equals the parameter being estimated.",,
+analog principle,The analog principle of estimation proposes that population parameters be estimated by sample statistics which have the same property in the sample as the parameters do in the population.,,
+indicator,"A categorical variable that has only two groups. The numerical values are usually taken to be one to indicate the presence of an attribute, and zero otherwise. Another name for a binary variable.",,
+empirical distribution function,"The empirical distribution is a non-parametric estimate of the underlying distribution of a random variable. It directly uses the data observations to construct the distribution, with each observed data point in a size-n sample having probability 1/n. ",,
+median,The 50th percentile; the number such that approximately 50% of the data is below it.,,
+first quartile,The 25th percentile; the number such that approximately 25% of the data is below it.,,
+third quartile,The 75th percentile; the number such that approximately 75% of the data is below it.,,
+percentile,A 100p-th percentile is the number such that 100 \times p percent of the data is below it.,,
+quantile,"The q-th quantile is the point(s) at which the distribution function is equal to q, i.e. the inverse of the cumulative distribution function.",,
+smoothed empirical quantile,"A quantile obtained by linear interpolation between two empirical quantiles, i.e. data points.",,
+bandwidth,A small positive constant that defines the width of the steps and the degree of smoothing.,,
+asymptotically unbiased,An estimator is asymptotically unbiased if its expectation approaches the true value as sample size increases to infinity.,,
+kernel density estimator,A nonparametric estimator of the density function of a random variable.,,
+bias-variance tradeoff,The tradeoff between model simplicity (underfitting; high bias) and flexibility (overfitting; high variance).,,
+model diagnostics,Procedures to assess the validity of a model.,,
+Probability-probability (pp) plot,A plot that compares two models through their cumulative probabilities.,,
+Lorenz curve,"A graph for assessing income inequality, with the proportion of a population on the horizational axis and a distribution function of interest on the vertical axis.",,
+Quantile-quantile (qq) plot,A plot that compares two models through their quantiles.,,
+goodness of fit statistics,"A measure used to assess how well a statistical model fits the data, usually by summarizing the discrepancy between the observations and the expected values under the model.",,
+likelihood function,"A function of the likeliness of the parameters in a model, given the observed data.",,
+maximum likelihood estimates,"A parameter estimation principle. One finds parameters that maximize a likelihood (or log-likelihood). The likelihood is the observed value of the probability of a data set, either density (for continuous) or mass (for discrete).",,
+method of moments,The estimation of population parameters by approximating parametric moments using empirical sample moments.,,
+percentile matching,The estimation of population parameters by approximating parametric percentiles using empirical quantiles.,,
+in-sample,A dataset used for analysis and model development. Also known as a training dataset.,,
+out-of-sample,A dataset used for model validation. Also known as a test dataset.,,
+cross-validation,"A model validation procedure in which the data sample is partitioned into subsamples, where splits are formed by separately taking each subsample as the out-of-sample dataset.",,
+model validation,The process of confirming that the proposed model is appropriate.,,
+data-snooping,Repeatedly fitting models to a data set without a prior hypothesis of interest.,,
+predictive inference,Preditive inference is the process of using past data observations to predict future observations.,,
+Gini index,A measure for assessing income inequality. It measures the discrepancy between the income and population distributions and is calculated from the Lorenz curve.,,
+ogive estimator,A nonparametric estimator for the distribution function in the presence of grouped data.,,
+product-limit estimator,A nonparametric estimator of the survival function in the presence of incomplete data. Also known as the Kaplan-Meier estimator.,,
+risk set,The number of observations that are active (not censored) at a specific point.,,
+Nelson-Aalen estimator,A nonparametric estimator of the cumulative hazard function in the presence of incomplete data.,,
+frequentist,"A type of statistical inference in which samples are repeatedly drawn from a population, the model parameters are fixed but unknown, and the data are realizations of random variables.",,
+Bayesian,A type of statistical inference in which the model parameters and the data are random variables.,,
+prior distribution,The distribution of the parameters prior to observing data under the Bayesian framework.,,
+sampling distribution,The distribution of the data conditional on the values of the parameters.,,
+posterior distribution,"The distribution of the parameters, having observed the data, under the Bayesian framework.",,
+predictive distribution,"The distribution of new data, conditional on a base set of data, under the Bayesian framework.",,
+least squares,"A technique for estimating parameters in linear regression. It is a standard approach in regression analysis to the approximate solution of overdetermined systems. In this technique, one determines the parameters that minimize the sum of squared differences between each observation and the corresponding linear combination of explanatory variables.",,
+credibility,An actuarial method of balancing an individual's loss experience and the experience in the overall portfolio to improve ratemaking estimates.,,
+iterated expectations,"A decomposition of the expected value of a random variable into conditional components. Specifically, for random variables X and Y, E(X) = E[E(X|Y)].",,
+Markov Chain Monte Carlo simulation,The class of numerical methods that use Markov chains to generate draws from a posterior distribution.,,
+improper prior,A prior distribution in which the sum or integral of the distribution is not finite.,,
+confidence interval,"Another term for interval estimate. Unlike a point estimate, it gives a range of reliability for approximating a parameter of interest.",,
+credibility interval,A summary of the posterior distribution of parameters under the Bayesian framework.,,
+decision analysis,"Bayesian decision theory is the study of an agent's choices, which is informed by Bayesian probability.",,
+conjugate distributions,Distributions such that the posterior and the prior come from the same family of distributions.,,
+ordered Lorenz curve,"A graph of the distribution of losses versus premiums, where both are ordered by relativities. It is a modification of the classic Lorenz curve for insurance applications.",,
+=======,,,
+aggregate claims,"[already provided, see Chapter2 tab]",,
+deductible,"[already provided, see Main tab]",,
+coinsurance,"[already provided, see Main tab]",,
+inflation,Inflation is a sustained increase in the general price level of goods and services over a period of time.,,
+policy limits,"[already provided, see Main tab]",,
+business line,"[already provided, see Main tab] However, I suggest adding: (e.g. auto insurance, dental insurance, etc.).",,
+individual risk model,A modeling approach for aggregate losses in which the loss from each individual contract is considered.,,
+collective risk model,A modeling approach for aggregate losses in which the aggregate loss is represented in terms of a frequency distribution and a severity distribution.,,
+coverage,Insurance coverage is the amount of risk or liability that is covered for an individual or entity by an insurance policy.,,
+exposure,"A measure of the rating units for which rates are applied to determine the premium. For example, exposures may be measured on a per unit basis (e.g. a family with auto insurance under one contract may have an exposure of 2 cars) or per $1,000 of value (e.g. homeowners insurance).",,
+frequency distribution,The random number of claims that occur under the collective risk model.,,
+severity distribution,The randomly distributed amount of each loss under the collective risk model.,,
+term life insurance,"A term life insurance policy is payable only if death of the insured occurs within a specified time, such as 5 or 10 years, or before a specified age.",,
+pure endowment,"A pure endowment is an insurance policy that is payable at the end of the policy period if the insured is still alive. If the insured has died, there is nothing paid in the form of benefits.",,
+support,"The set of all outcomes for a random variable following some distribution. For example, exponentially distributed random variable X has support x>0.",,
+central limit theorem,"[already provided, see Regression Terms tab]",,
+convolution,The convolution of probability distributions is the distribution corresponding to the addition of independent random variables.,,
+law of iterated expectations,"A decomposition of the expected value of a random variable into conditional components. Specifically, for random variables X and Y, E(X) = E[E(X|Y)].",,
+law of total variance,"A decomposition of the variance of a random variable into conditional components. Specifically, for random variables X and Y on the same probability space, Var(X) = E[Var(Y|X)] + Var[E(X|Y)].",,
+compound distribution,"A random variable follows a compound distribution if it is parameterized and contains at least one parameter that is itself a random variable. For example, the Tweedie distribution is a compound distribution.",,
+Tweedie distribution,"A compound distribution that is a Poisson sum of Gamma random variables. Because it can accommodate a discrete probability mass at zero and a continuous positive component, it is suitable for modeling aggregate insurance claims.",,
+shape parameter,A numerical parameter of a parametric distribution affecting the shape of a distribution rather than simply shifting it (as a location parameter does) or stretching/shrinking it (as a scale parameter does).,,
+scale parameter,"A numerical parameter of a parametric distribution that stretches/shrinks the distribution without changing its location or shape. The larger the scale parameter, the more spread out the distribution. The scale parameter is also the reciprocal of the rate parameter. For example, the normal distribution has scale parameter \sigma.",,
+exponential dispersion,A set of distributions that represents a generalisation of the natural exponential family and also plays an important role in generalized linear models.,,
+generalized linear models,"[already provided, see Regression Terms tab]",,
+exponential family,"A family of parametric distributions that are practical for modeling the underlying response variable in generalized linear models. This family includes the normal, Bernoulli, Poisson, and Tweedie distributions as special cases, among many others.",,
+Monte Carlo simulation,A computerized statistical model that simulates the effects of various types of uncertainty.,,
+empirical distribution,"The empirical distribution is a non-parametric estimate of the underlying distribution of a random variable. It directly uses the data observations to construct the distribution, with each observed data point in a size-n sample having probability 1/n.",,
+converge,"A type of stochastic convergence for a sequence of random variables X_1,…, X_n that approaches some other distribution as n approaches \infty.",,
+ground-up loss,"The total amount of loss sustained before policy adjustments are made (i.e. before deductions are applied for coinsurance, deductibles, and/or policy limits.)",,
+per-loss basis,"Due to policy modifications (e.g. deductibles), not all losses that occur result in payment. The per-loss basis considers every loss that occurs, as opposed to the per-payment basis which considers only the losses that result in some payment to the insured.",,
+per-payment basis,"Due to policy modifications (e.g. deductibles), not all losses that occur result in payment. The per-loss basis considers every loss that occurs, as opposed to the per-payment basis which considers only the losses that result in some payment to the insured.",,
+memoryless,"The memoryless property means that a given probability distribution is independent of its history and what has already elapsed. Specifically, random variable X is memoryless if Pr(X > s+t | X >= s) = Pr(X > t). Note that it does not mean X > s+t and X >= s are independent events.",,
+=======,,,
+simulations,"a computer generation of various hypothetical conditions and outputs, based on the model structure provided",6.1,
+linear congruential generator,algorithm that yields pseudo-randomized numbers calculated using a linear recursive relationship and a starting seed value,6.1,
+pseudo-random numbers,values that appear random but can be replicated by formula,6.1,
+inverse transform method,"samples a uniform number between 0 and 1 to represent the randomly selected percentile, then uses the inverse of the cumulative density function of the desired distribution to simulate from in order to find the simulated value from the desired distribution",6.1,
+quantile function,"Inverse function for the cumulative density function which takes a percentile value in [0,1] as the input, and outputs the corresponding value in the distribution",6.1,
+greatest lower bound,largest value that is less than or equal to a specified subset of values/elements,6.1,
+universal life insurance,"type of cash value life insurance where the policy's cash value is the excess of premium payments over the cost of insurance, accumulated with interest, with adjustable premiums and coverage over time",6.1,-
+variable life insurance,type of life insurance whose face value and coverage term can vary depending upon the performance of underlying invested securities,6.1,-
+sampling variability,how much an estimate can vary between samples,6.1,-
+central limit theorem,The sample mean and sample sum of a random sample of n from a populatio will converge to a normal curve as the sample size n grows,6.1,
+Cauchy distribution,"a continuous distribution that represents the distribution of the ratio of two independent normally random variables, where the denominator distribution has mean zero",6.1,
+Kolmogorov-Smirnov test,a nonparametric statistical test used to determine if a data sample could come from a hypothesized continuous probability distribution,6.1,
+bootstrap,a method of sampling with replacement from the original dataset to create additional simulated datasets of the same size as the original,6.2,
+non-parametric method,a statistical method where no assumption is made about the distribution of the population,6.2,
+parametric method,a statistical method where a prior assumption is made about the distribution or model form,6.2,
+bias,The difference between the expected value of an estimator and the parameter being estimated. Bias is an estimation error that does not become smaller as one observes larger sample sizes.,6.2,
+bias-corrected estimator,"if an estimator is known to be consistently biased in a manner, it can be corrected using a factor to be come less biased or unbiased",6.2,
+Jensen inequality,"for a convex function f(x), f(expected value of x) <= Expected value of f(x)",6.2,
+natural estimator,an estimator that uses the sample moments as the estimators for the population,6.2,
+percentile bootstrap interval,"confidence interval for the parameter estimates determined using the actual percentile results from the bootstrap sampling approach, as every bootstrap sample has an associated parameter estimate(s) that can be ranked against the others",6.2,
+tail value-at-risk,the expected value of a risk given that the risk exceeds a value-at-risk,6.2,
+k-Fold Cross-Validation,"a type of validation method where the data is randomly split into k groups, and each of the k groups is held out as a test dataset in turn, while the other k-1 gropus are used for distribution or model fitting, with the process repeated k times in total",6.3,
+leave-one-out cross-validation,"a special case of k-fold cross validation, where each single data point gets a turn in being the lone hold-out test data point, and n separate models in total are built and tested",6.3,
+jackknife statistics,"to calculate an estimator, leave out each observation in turn, calculate the sample estimator statistic each time, and average over the n separate estimates",6.3,
+coefficient of variation,"standard deviation divided by the mean of a distribution, to measure variability in terms of units of the mean",6.3,
+accept-reject mechanism,"a sampling method that is used where the random sample is discarded if not within a certain pre-specified range [a, b] and is commonly used when the traditional inverse transform method cannot be easily used",6.4,
+importance sampling mechanism,type of sampling method where values in the region of interest can be over-sampled or values outside the region of interest can be under-sampled,6.4,
+ergodic theorem,ergodic theory studies the behavior of a dynamical system when it is allowed to run for an extended time,6.5,
+Markov Process,"a stochastic (time dependent) process that satisfies memorylessness, meaning future predictions of the process can be made solely based on its present state and not the historical path",6.5,
+invariant measure,any mathematical measure that is preserved by a function (the mean is an example),6.5,
+composant,"component (smaller, self-contained part of larger entity)",6.5,
+Markov chain Monte Carlo (MCMC) methods,a family of algorithms for sampling from a probability distribution using a Markov chain with the target distribution as its equilibrium distribution,6.5,
+Hastings Metropolis algorithm,"a Markov chain Monte Carlo (MCMC) method for random sampling from a probability distribution where values are iteratively generated, with the distribution of the next sample dependent only on the current sample value, and at each iteration, the candidate sample can be either accepted or rejected",6.5,
+Gibbs sampler,a Markov chain Monte Carlo (MCMC) method to obtain a sequence of random samples from a specified multivariate continuous probability distribution,6.5,
