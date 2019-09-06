@@ -187,8 +187,7 @@ Specifically, the Gini statistic can be calculated as follows. Suppose that the 
 \end{eqnarray}
 
 
-<h5 style="text-align: center;"><a id="displayAreaDemo" href="javascript:toggleEX('toggleAreaDemo','displayAreaDemo');"><i><strong>Show Gini Formula Details</strong></i></a> </h5><div id="toggleAreaDemo" style="display: none">
-
+`r HideExample('AreaDemo', 'Show Gini Formula Details')`
 
 To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points $(a_1, b_1)$, $(a_2, b_2)$, and a 45 degree line. You can use basic geometry to check that the area of the figure is $Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}$. The definition of the Gini statistic in equation \@ref(eq:GiniDefn) is simply twice the sum of the parallelograms. The second equality in equation \@ref(eq:GiniDefn) is the result of some straight-forward algebra.
 
@@ -255,10 +254,7 @@ Outy     <- as.vector(OutClaims)
 
 An out of sample validation set of `r NOutsamp` losses from each state is available. For each of the two rating procedures, determine the performance curve and the corresponding Gini statistic. Choose the rate procedure with the lower Gini statistic.
 
-
-
-
-<h5 style="text-align: center;"><a id="displayLorenzeExample" href="javascript:toggleEX('toggleExampleLor','displayLorenzeExample');"><i><strong>Show Example Solution</strong></i></a> </h5><div id="toggleExampleLor" style="display: none">
+`r HideExample('Lorenze','Show Example Solution')`
 
 ***
 
@@ -316,7 +312,7 @@ Gini2 <- GiniCalc(Claims=Outy,PIx=Predvec,Sx=Flatpred)[[2]];#Gini
 ```
 
 
-```{r, fig.cap='', out.width='90%', fig.align='center', echo=TRUE} 
+```{r, fig.cap='', out.width='90%', fig.align='center', echo=ShowCode()} 
 y <- Outy 
 P1 <- Flatpred
 P2 <- Predvec

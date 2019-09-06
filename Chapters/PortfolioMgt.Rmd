@@ -1066,7 +1066,7 @@ op <- auglag(par=par0,fn=f,hin=h,control.outer=list(trace=FALSE))
 
 The optimal retention limits $M_1$, $M_2$, and $M_3$ resulting retention limit minus expected insurer's claims, $M_i - E(X_i \wedge M_i)$, is the same for all risks, as we derived theoretically. 
 
-```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center'}
+```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center', echo=ShowCode()}
 
 M1star = op$par[1];M2star = op$par[2];M3star = op$par[3]
 M1star -levpareto(M1star,shape=alpha1, scale=theta1,order=1)
@@ -1076,7 +1076,7 @@ M3star -levpareto(M3star,shape=alpha3, scale=theta3,order=1)
 
 We graphically compare the distribution of total risks to that retained by the insurer and by the reinsurer.
 
-```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center'}
+```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center', echo=ShowCode()}
 set.seed(2018)
 nSim = 10000
 library(actuar)

@@ -44,7 +44,7 @@ ksResultGamma <- ks.test(claim_data$Claim, "pgamma", shape = alpha, scale = gamm
 To see how $k$-fold cross-validation works, we randomly split the data into $k=8$ groups, or folds, each having about $1377/8 \approx 172$ observations. Then, we fit gamma and Pareto models to a data set with the first seven folds (about $172*7 = 1204$ observations), determined estimated parameters, and then used these fitted models with the held-out data to determine the Kolmogorov-Smirnov statistic. The results appear in 
 Figure \@ref(fig:KScvFig) where horizontal axis is Fold=1. This process was repeated for the other seven folds. The results summarized in Figure \@ref(fig:KScvFig) show that the Pareto is a consistently provides a more reliable predictive distribution than the gamma.
 
-```{r KScvFig, warning = FALSE, message = FALSE, comment = "", fig.align='center', fig.cap='Cross Validated Kolmogorov-Smirnov (KS) Statistics for the Property Fund Claims Data. The solid black line is for the Pareto distribution, the green dashed line is for the gamma distribution. The KS statistic measures the largest deviation between the fitted distribution and the empirical distribution for each of 8 groups, or folds, of randomly selected data.'}
+```{r KScvFig, warning = FALSE, message = FALSE, comment = "", fig.align='center', fig.cap='Cross Validated Kolmogorov-Smirnov (KS) Statistics for the Property Fund Claims Data. The solid black line is for the Pareto distribution, the green dashed line is for the gamma distribution. The KS statistic measures the largest deviation between the fitted distribution and the empirical distribution for each of 8 groups, or folds, of randomly selected data.', echo=ShowCode()}
 ## Cross - Validation
 # Randomly re-order the data - "shuffle it"
 n <- nrow(claim_data)
@@ -120,7 +120,7 @@ sdJack <- sd(JackTheta)
 With this dataset, the estimator of the coefficient of variation turns out to be `r round(CVar(sample_x),digits = 5)`. But how reliable is it? To answer this question, we can compute the jackknife estimates of bias and its standard deviation. The following code shows that the jackknife estimator of the bias is $Bias_{jack} =$ `r round(BiasJack,digits = 5)` and the jackknife standard deviation is $s_{jack} =$ `r round(sdJack,digits = 5)`.
 
 
-```{r eval = FALSE}
+```{r eval = FALSE, echo=ShowCode()}
 CVar <- function(x) sqrt(var(x))/mean(x)
 JackCVar <- function(i) sqrt(var(sample_x[-i]))/mean(sample_x[-i])
 JackTheta <- Vectorize(JackCVar)(1:length(sample_x))
@@ -201,7 +201,7 @@ One can mix the idea of cross-validation and bootstrap :
 - create a bootstrap sample with re-sampling (with replacement) $n$ indices in $\{1,\cdots,n\}$ : let $\mathcal{I}_b$ denote that set of indices. That will be our *training sample*
 - the validation sample will observations that were not
 
-```{r, warning=FALSE, comment=FALSE, eval = ANIMATION}
+```{r, warning=FALSE, comment=FALSE, eval = ANIMATION, echo=ShowCode()}
 indices <- sample(nrow(cars))
 List_indices = List_indices_C = list()
 for(i in 1:100){
