@@ -21,6 +21,7 @@ Gloss <- function(term){
 ```{r echo = FALSE}
 QUIZ = TRUE
 ANIMATION = TRUE
+SHOW_PDF = TRUE
 # Switches that control the number of animations in Chapter 6
 # Use these for html output
 numAnimation = 30     # Section 6.4 Importance Sampling
@@ -52,11 +53,6 @@ C5 <- '" style="display: none">'
 
 HideRCode <- function(arg1,arg2){
   return(paste(C1,arg1,'"',C2,arg1,C3,arg1,C4a,arg2,C4b,arg1,C5, sep=""))
-}
-
-# to display R code
-ShowCode <- function() {
-  return(TRUE)
 }
 
 D1 <- '<h5 style="text-align: center;"><a id="displayTheory.'

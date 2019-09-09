@@ -777,7 +777,7 @@ plot(density(0.25*X), xlim=c(0,3*theta), ylim=c(0,0.008), main="Reinsurer (25%)"
 
 `r HideRCode('QuotaShare', 'Show the R Code')`
 
-```{r comment="", echo=ShowCode(), message=FALSE, eval=FALSE, fig.width=10, fig.height=4, fig.align='center'}
+```{r comment="", echo=SHOW_PDF, message=FALSE, eval=FALSE, fig.width=10, fig.height=4, fig.align='center'}
 set.seed(2018)
 theta = 1000
 alpha = 3
@@ -869,7 +869,7 @@ From the math, it turns out that the constant for the $i$th risk, $c_i$ is propo
 `r HideRCode('ParetoRisksProp', 'Show an Example with Three Pareto Risks')`
 
 
-```{r comment="", message=FALSE, echo=ShowCode(), fig.width=8, fig.height=4, fig.align='center'}
+```{r comment="", message=FALSE, echo=SHOW_PDF, fig.width=8, fig.height=4, fig.align='center'}
 
 theta1 = 1000; theta2 = 2000; theta3 = 3000;
 alpha1 = 3; alpha2 = 3; alpha3 = 4;
@@ -1038,7 +1038,7 @@ From the math, it turns out that the retention limit less the expected insurer's
 We first optimize the Lagrangian using the `R` package `alabama` for *Augmented Lagrangian Adaptive Barrier Minimization Algorithm*. 
 
 
-```{r comment="", echo=ShowCode(), message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center'}
+```{r comment="", echo=SHOW_PDF, message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center'}
 
 theta1 = 1000;theta2 = 2000;theta3 = 3000;
 alpha1 = 3;   alpha2 = 3;   alpha3 = 4;
@@ -1066,7 +1066,7 @@ op <- auglag(par=par0,fn=f,hin=h,control.outer=list(trace=FALSE))
 
 The optimal retention limits $M_1$, $M_2$, and $M_3$ resulting retention limit minus expected insurer's claims, $M_i - E(X_i \wedge M_i)$, is the same for all risks, as we derived theoretically. 
 
-```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center', echo=ShowCode()}
+```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center', echo=SHOW_PDF}
 
 M1star = op$par[1];M2star = op$par[2];M3star = op$par[3]
 M1star -levpareto(M1star,shape=alpha1, scale=theta1,order=1)
@@ -1076,7 +1076,7 @@ M3star -levpareto(M3star,shape=alpha3, scale=theta3,order=1)
 
 We graphically compare the distribution of total risks to that retained by the insurer and by the reinsurer.
 
-```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center', echo=ShowCode()}
+```{r comment="", message=FALSE, warning=FALSE, fig.width=8, fig.height=4, fig.align='center', echo=SHOW_PDF}
 set.seed(2018)
 nSim = 10000
 library(actuar)
@@ -1200,7 +1200,7 @@ c. Compare the distributions by plotting the densities for (i) that retained, (i
 
 In preparation, here is the code needed to set the parameters.
 
-```{r warning=FALSE, message=FALSE, comment="", eval=FALSE, echo=ShowCode()}
+```{r warning=FALSE, message=FALSE, comment="", eval=FALSE, echo=SHOW_PDF}
 # For the gamma distributions, use
 alpha1 <- 2;      theta1 <- 100
 alpha2 <- 2;      theta2 <- 200
@@ -1214,7 +1214,7 @@ M2     <- 200
 
 With these parameters, we can now simulate realizations of the portfolio risks.
 
-```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=ShowCode()}
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
 # Simulate the risks
 nSim <- 10000  #number of simulations
 set.seed(2017) #set seed to reproduce work 
@@ -1232,7 +1232,7 @@ Yinsurer  <- X - Yretained
 
 **(a)** Here is the code for the expected claim amounts.
 
-```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=ShowCode()}
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
 # Expected Claim Amounts
 ExpVec <- t(as.matrix(c(mean(Yretained),mean(Yinsurer),mean(X))))
 colnames(ExpVec) <- c("Retained", "Insurer","Total")
@@ -1241,7 +1241,7 @@ round(ExpVec,digits=2)
 
 **(b)** Here is the code for the quantiles.
 
-```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=ShowCode()}
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
 # Quantiles
 quantMat <- rbind(
   quantile(Yretained, probs=c(0.80, 0.90, 0.95, 0.99)),
@@ -1253,7 +1253,7 @@ round(quantMat,digits=2)
 
 **(c)** Here is the code for the density plots of the retained, insurer, and total portfolio risk.
 
-```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=ShowCode()}
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
 
 par(mfrow=c(1,3))
 plot(density(Yretained), xlim=c(0,500), main="Retained Portfolio Risk", xlab="Loss (Note the different horizontal scale)", ylab = "Density (Note different vertical scale)")

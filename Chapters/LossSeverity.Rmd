@@ -228,7 +228,7 @@ legend("topright", c("shape=2", "shape=3", "shape=4", "shape=5"), lty=1, col = 1
 
 `r HideRCode('gamma.1','R Code for Gamma Density Plots')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
 
 # Varying Scale Gamma Densities
@@ -312,7 +312,7 @@ legend("topright", c(expression(theta~'=2000'), expression(theta~'=2500'), expre
 
 `r HideRCode('Pareto.1','R Code for Pareto Density Plots')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 library(VGAM)
 
 par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
@@ -408,7 +408,7 @@ legend("topright", c("shape=1.5", "shape=2", "shape=2.5", "shape=3"), lty=1, col
 
 `r HideRCode('Weibull.1','R Code for Weibull Density Plots')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
 
 # Varying Scale Weibull Densities
@@ -1330,7 +1330,7 @@ Naturally, there are many problems where it is not practical to use hand calcula
 
 `r HideRCode('optim.1','R Code for Optimization')`
 
-```{r, echo=ShowCode(), message=FALSE, warning=FALSE}
+```{r, echo=SHOW_PDF, message=FALSE, warning=FALSE}
 c1 <- log(521)+log(658)+log(702)+log(819)+log(1217)
 nloglike <- function(alpha){-(5*alpha*log(500)+5*log(alpha)-(alpha+1)*c1)}
 MLE <- optim(par=1, fn=nloglike)$par
@@ -1559,7 +1559,7 @@ The following snippet of code shows how to fit the exponential, gamma, Pareto, l
 `r HideExample('3.5.4','Show Example Solution')`
 
 
-```{r message = FALSE, warning = FALSE, fig.cap='Density Comparisons for the Wisconsin Property Fund', fig.align='center', eval= FALSE, echo=ShowCode()}
+```{r message = FALSE, warning = FALSE, fig.cap='Density Comparisons for the Wisconsin Property Fund', fig.align='center', eval= FALSE, echo=SHOW_PDF}
 
 library(VGAM)
 claim_lev <- read.csv("Data/CLAIMLEVEL.csv", header = TRUE) 

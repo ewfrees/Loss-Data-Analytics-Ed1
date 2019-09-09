@@ -537,7 +537,7 @@ from the relation given in \@ref(eq:relativity-1). The `R` script and the output
 
 `r HideRCode('RiskClass.1', 'Show R Code')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 > mydat1<- read.csv("eg1_v1a.csv")
 > mydat1
   Vtype Agebnd Expsr Claims
@@ -641,7 +641,7 @@ Note that for this policy the age band variable is not used as the vehicle type 
 
 `r HideRCode('RiskClass.2', 'Show R Code')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 mydat <- read.csv("SingaporeAuto.csv",  quote = "", header = TRUE)
 attach(mydat)
 

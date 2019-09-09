@@ -596,7 +596,7 @@ the rapid convergence seen above is typical of the Newton's method. Hence in thi
 
 `r HideRCode('Freq.1','Show R Code')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 Newton<-function(x,abserr){
 mu<-mean(x);
 sigma2<-mean(x^2)-mu^2;
@@ -1100,7 +1100,7 @@ Appendix Chapter \@ref(C:AppA) gives a general introduction to maximum likelihoo
 
 `r HideRCode('Freq.2','Show R Code')`
 
-```{r,echo=ShowCode(),eval=FALSE}
+```{r,echo=SHOW_PDF,eval=FALSE}
 likbinm<-function(m){ 
   # binomial likelihood maximized w.r.t. p
   prod((dbinom(x,m,mean(x)/m)))
@@ -1189,7 +1189,7 @@ dev.off();
 `r HideRCode('Freq.3','Show R Code')`
 
 
-```{r,echo=ShowCode(),eval=FALSE}
+```{r,echo=SHOW_PDF,eval=FALSE}
 likm<-function(m){
   prod((dbinom(x,m,mean(x)/m)))
 }

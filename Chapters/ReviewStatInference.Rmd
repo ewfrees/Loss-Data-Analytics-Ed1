@@ -34,7 +34,7 @@ In this section, you learn the following concepts related to statistical inferen
 | Logarithmic Claims   |        0 |          6.670 |  7.719 |  7.804 |          8.728 |     16.370 |              1.683 |
 
 
-```{r ClaimDistn1, fig.cap='Distribution of Claims', out.width='80%', fig.asp=.75, fig.align='center', echo=ShowCode()}
+```{r ClaimDistn1, fig.cap='Distribution of Claims', out.width='80%', fig.asp=.75, fig.align='center', echo=SHOW_PDF}
 ClaimLev <- read.csv("Data/CLAIMLEVEL.csv", header=TRUE)
 ClaimLevBC10<-subset(ClaimLev,Year==2010); 
 cat("Sample size: ", nrow(ClaimLevBC10), "\n")
@@ -377,7 +377,7 @@ lines(x,fGB2_ex, col="green")
 
 R Code for Fitted Claims Distributions
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 # R Code to fit several claims distributions
 ClaimLev <- read.csv("Data/CLAIMLEVEL.csv", header=TRUE); nrow(ClaimLev)
 ClaimData<-subset(ClaimLev,Year==2010); 

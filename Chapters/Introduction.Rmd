@@ -496,7 +496,7 @@ Table: (\#tab:Frequency2010)  2010 Claims Frequency Distribution
   
 `r HideRCode('T:Frequency.1',"R Code for Frequency Table")`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 Insample <- read.csv("Insample.csv", header=T,  na.strings=c("."), stringsAsFactors=FALSE)
 Insample2010 <- subset(Insample, Year==2010)
 table(Insample2010$Freq)
@@ -548,7 +548,7 @@ hist(log(InsamplePos2010$yAvg), main="", xlab="Logarithmic Average Claims")
 
 `r HideRCode('SeverityFig.1',"R Code for Severity Distribution Table and Figures")`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 Insample <- read.csv("Data/PropertyFundInsample.csv", header=T, na.strings=c("."), stringsAsFactors=FALSE)
 Insample2010 <- subset(Insample, Year==2010)
 InsamplePos2010 <- subset(Insample2010, yAvg>0)
@@ -613,7 +613,7 @@ known.
 
 `r HideRCode('CoverageBC.1',"R Code for Claims Summary by Policyholder")`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 Insample <- read.csv("Data/PropertyFundInsample.csv", header=T, na.strings=c("."), stringsAsFactors=FALSE)
 library(doBy)
 T1A <- summaryBy(Freq ~ Year, data = Insample, 
@@ -662,7 +662,7 @@ Table: (\#tab:DeductCov) Summary of Claim Frequency and Severity, Deductibles, a
   
 `r HideRCode('DeductCov.1',"R Code for Summary of Claim Frequency and Severity, Deductibles, and Coverages")`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 Insample <- read.csv("Data/PropertyFundInsample.csv", header=T, na.strings=c("."), stringsAsFactors=FALSE)
 t1<- summaryBy(Insample$Freq ~ 1, data = Insample, 
    FUN = function(x) { c(ma=min(x), m1=median(x),m=mean(x),mb=max(x)) } )
@@ -766,7 +766,7 @@ intuitive, appealing (negative) sign for the ${\tt Fire5}$ variable.
   
 `r HideRCode('ClaimRateVar.1',"R Code for Claims Summary by Entity Type, Fire Class, and No Claim Credit")`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 ByVarSumm<-function(datasub){
   tempA <- summaryBy(Freq    ~ 1 , data = datasub,   
      FUN = function(x) { c(m = mean(x), num=length(x)) } )
@@ -872,7 +872,7 @@ coverage amounts) that affect claims.
   
 `r HideRCode('RateAlarmCredit.1',"R Code for Claims Summary by Entity Type and Alarm Credit Category")`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 #Claims Summary by Entity Type and Alarm Credit
 ByVarSumm<-function(datasub){
   tempA <- summaryBy(Freq    ~ AC00 , data = datasub,   
