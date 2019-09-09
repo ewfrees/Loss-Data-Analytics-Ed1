@@ -533,7 +533,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:GiniStatistic"><i class="fa fa-check"></i><b>7.6</b> Selecting a Premium</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#classic-lorenz-curve"><i class="fa fa-check"></i><b>7.6.1</b> Classic Lorenz Curve</a></li>
-<li class="chapter" data-level="7.6.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#concentration-curve-and-a-gini-statistic"><i class="fa fa-check"></i><b>7.6.2</b> Concentration Curve and a Gini Statistic</a></li>
+<li class="chapter" data-level="7.6.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#performance-curve-and-a-gini-statistic"><i class="fa fa-check"></i><b>7.6.2</b> Performance Curve and a Gini Statistic</a></li>
 <li class="chapter" data-level="7.6.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#out-of-sample-validation"><i class="fa fa-check"></i><b>7.6.3</b> Out-of-Sample Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>7.7</b> Further Resources and Contributors</a><ul>
@@ -555,7 +555,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.3.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#numerical-examples"><i class="fa fa-check"></i><b>8.3.4</b> Numerical Examples</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="C-RiskClass.html"><a href="C-RiskClass.html#RC:further-reading-and-resources"><i class="fa fa-check"></i><b>8.4</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.a-estimating-poisson-regression-models"><i class="fa fa-check"></i>TS 8.A – Estimating Poisson Regression Models</a></li>
+<li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.a.-estimating-poisson-regression-models"><i class="fa fa-check"></i>TS 8.A. Estimating Poisson Regression Models</a></li>
 <li class="chapter" data-level="" data-path="C-RiskClass.html"><a href="C-RiskClass.html#ts-8.b.-selecting-rating-factors"><i class="fa fa-check"></i>TS 8.B. Selecting Rating Factors</a></li>
 </ul></li>
 </ul></li>
@@ -1345,8 +1345,8 @@ Pois_reg2 =<span class="st"> </span><span class="kw">glm</span>(Clm_Count <span 
 <li>Chapter reviewers include: Chun Yong Chew, Lina Xu, Jeffrey Zheng.</li>
 </ul>
 </div>
-<div id="ts-8.a-estimating-poisson-regression-models" class="section level3 unnumbered">
-<h3>TS 8.A – Estimating Poisson Regression Models</h3>
+<div id="ts-8.a.-estimating-poisson-regression-models" class="section level3 unnumbered">
+<h3>TS 8.A. Estimating Poisson Regression Models</h3>
 <p>The principles of maximum likelihood estimation (<em>mle</em>) are introduced in Sections <a href="C-Frequency-Modeling.html#S:parameter-estimation">2.4.1</a> and <a href="C-Severity.html#S:MaxLikeEstimation">3.5</a>, defined in Section <a href="C-AppA.html#S:AppA:MLE">15.2.2</a>, and theoretically developed in Chapter <a href="C-AppC.html#C:AppC">17</a>. Here we present the <em>mle</em> procedure of the Poisson regression so that the reader can see how the explanatory variables are treated in maximizing the likelihood function in the regression setting.</p>
 <p><strong>Maximum Likelihood Estimation for Individual Data</strong></p>
 <p>In the Poisson regression the varying Poisson mean is determined by parameters <span class="math inline">\(\beta_i\)</span>’s, as shown in <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.17)</a>. In this subsection we use the maximum likelihood method to estimate these parameters. Again, we assume that there are <span class="math inline">\(n\)</span> policyholders and the <span class="math inline">\(i\)</span>th policyholder is characterized by <span class="math inline">\(\mathbf{ x}_i=(1, x_{i1}, \ldots, x_{ik})^{\prime}\)</span> with the observed loss count <span class="math inline">\(y_i\)</span>. Then, from <a href="C-RiskClass.html#eq:mean-ft-Pois-6">(8.16)</a> and <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.17)</a>, the log-likelihood function of vector <span class="math inline">\(\beta=(\beta_0, \dots, \beta_k)\)</span> is given by</p>
@@ -1527,7 +1527,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["LossDataAnalytics.pdf", "LossDataAnalytics.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
