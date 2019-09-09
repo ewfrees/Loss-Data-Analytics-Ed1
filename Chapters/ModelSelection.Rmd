@@ -117,7 +117,7 @@ plot(PercentilesxExample, main="",xlab="x")
 
 `r HideRCode('Toy.4f', 'Show R Code')`
 
-```{r, echo=SHOW_PDF, eval=FALSE}
+```{r, echo=ShowCode(), eval=FALSE}
 (xExample <- c(10,rep(15,3),20,rep(23,4),30))
 PercentilesxExample <- ecdf(xExample)
 plot(PercentilesxExample, main="",xlab="x")
@@ -319,7 +319,7 @@ legend("topright", c("b=0.3255 (default)", "b=0.1", "b=1.0"), lty=c(1,3,1), lwd=
 
 `r HideRCode('kpdf',"Show R Code")`
 
-```{r, echo=SHOW_PDF,eval=FALSE}
+```{r, echo=ShowCode(),eval=FALSE}
 #Density Comparison
 hist(log(ClaimData$Claim), main="", ylim=c(0,.35),xlab="Log Expenditures", freq=FALSE, col="lightgray")
 lines(density(log(ClaimData$Claim)), col="blue",lwd=2.5)
@@ -1452,7 +1452,7 @@ plot(KM0, conf.int=FALSE, xlab="x",ylab="Kaplan Meier Survival")
 
 `r HideRCode('KaplanMeier.4f', 'Show R Code')`
 
-```{r, echo=SHOW_PDF, eval=FALSE}
+```{r, echo=ShowCode(), eval=FALSE}
 library(survival)                # for Surv(), survfit()
 ## KM estimate
 KM0 <- survfit(Surv(AmountPaid, UnCensored) ~ 1,  type="kaplan-meier", data=BIData)
