@@ -753,7 +753,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
-<li><a href="https://openacttexts.github.io/Loss-Data-Analytics/" target="blank">Loss Data Analytics on GitHub</a></li>
+<li><a href="https://github.com/OpenActTexts/Loss-Data-Analytics" target="blank">Loss Data Analytics on GitHub</a></li>
 
 </ul>
 
@@ -778,9 +778,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p style="text-align:right;">
-<em>Date: 10 September 2019</em>
-</p>
 <div id="book-description" class="section level4 unnumbered">
 <h4>Book Description</h4>
 <p><strong>Loss Data Analytics</strong> is an interactive, online, freely available text.</p>
@@ -945,14 +942,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We hope that you find this book worthwhile and even enjoyable. For your convenience, at our <a href="https://openacttexts.github.io/">Github Landing site</a> (<a href="https://openacttexts.github.io/" class="uri">https://openacttexts.github.io/</a>), you will find links to the book that you can (freely) download for offline reading, including a pdf version (for Adobe Acrobat) and an EPUB version suitable for mobile devices. <a href="https://github.com/OpenActTexts/Loss-Data-Analytics/tree/master/Data">Data</a> for running our examples are available at the same site.</p>
 <p>In developing this book, we are emphasizing the <a href="https://openacttexts.github.io/Loss-Data-Analytics/index.html">online version</a> that has lots of great features such as a glossary, code and solutions to examples that you can be revealed interactively. For example, you will find that the statistical code is hidden and can only be seen by clicking on terms such as</p>
 <h5 style="text-align: center;">
-<a id="display.T:Frequency.1Intro" href="javascript:togglecode
-('display.T:Frequency.2Intro','display.T:Frequency.1Intro');"><i><strong>R Code for Frequency Table</strong></i></a>
+<a id="displayCode.SeverityFig.1Intro" href="javascript:togglecode('toggleCode.SeverityFig.1Intro','displayCode.SeverityFig.1Intro');"><i><strong>R Code for Frequency Table</strong></i></a>
 </h5>
-<div id="display.T:Frequency.2Intro" style="display: none">
-<pre><code>Insample &lt;- read.csv(&quot;Insample.csv&quot;, header=T,  na.strings=c(&quot;.&quot;), 
-                      stringsAsFactors=FALSE)
-Insample2010 &lt;- subset(Insample, Year==2010)
-table(Insample2010$Freq)</code></pre>
+<div id="toggleCode.SeverityFig.1Intro" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Insample.csv&quot;</span>, <span class="dt">header=</span>T,  <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), 
+                      <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)
+Insample2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample, Year<span class="op">==</span><span class="dv">2010</span>)
+<span class="kw">table</span>(Insample2010<span class="op">$</span>Freq)</code></pre></div>
 </div>
 <p>We hide the code because we don’t want to insist that you use the <code>R</code> statistical software (although we like it). Still, we encourage you to try some statistical code as you read the book – we have opted to make it easy to learn <code>R</code> as you go. We have even set up a separate <a href="https://openacttexts.github.io/LDARcode">R Code for Loss Data Analytics</a> site to explain more of the details of the code.</p>
 <p>Freely available, interactive textbooks represent a new venture in actuarial education and we need your input. Although a lot of effort has gone into the development, we expect hiccoughs. Please let your instructor know about opportunities for improvement, write us through our project site, or contact chapter contributors directly with suggested improvements.</p>
