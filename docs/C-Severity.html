@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Loss Data Analytics</title>
-  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Modeling Loss Severity | Loss Data Analytics</title>
+  <meta name="description" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Loss Data Analytics" />
+  <meta property="og:title" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
+  <meta property="og:description" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Loss Data Analytics" />
+  <meta name="twitter:title" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Chapter 3 Modeling Loss Severity | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community">
+<meta name="author" content="An open text authored by the Actuarial Community" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="C-Frequency-Modeling.html">
 <link rel="next" href="C-ModelSelection.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -2092,12 +2092,6 @@ L\left( \alpha \right) = \frac{\alpha^{8}}{\prod_{i = 1}^{8}x_{i}^{\alpha + 1}}\
 </div>
 <h3>Bibliography</h3>
 <div id="refs" class="references">
-<div id="ref-venter1983transformed">
-<p>Venter, Gary. 1983. “Transformed Beta and Gamma Distributions and Aggregate Losses.” In <em>Proceedings of the Casualty Actuarial Society</em>, 70:289–308. 133 &amp; 134.</p>
-</div>
-<div id="ref-mcdonald1984some">
-<p>McDonald, James B. 1984. “Some Generalized Functions for the Size Distribution of Income.” <em>Econometrica: Journal of the Econometric Society</em>. JSTOR, 647–63.</p>
-</div>
 <div id="ref-cummins1991managing">
 <p>Cummins, J. David, and Richard A. Derrig. 2012. <em>Managing the Insolvency Risk of Insurance Companies: Proceedings of the Second International Conference on Insurance Solvency</em>. Vol. 12. Springer Science &amp; Business Media.</p>
 </div>
@@ -2110,11 +2104,17 @@ L\left( \alpha \right) = \frac{\alpha^{8}}{\prod_{i = 1}^{8}x_{i}^{\alpha + 1}}\
 <div id="ref-kreer2015goodness">
 <p>Kreer, Markus, Ayşe Kizilersü, Anthony W Thomas, and Alfredo D Egídio dos Reis. 2015. “Goodness-of-Fit Tests and Applications for Left-Truncated Weibull Distributions to Non-Life Insurance.” <em>European Actuarial Journal</em> 5 (1). Springer: 139–63.</p>
 </div>
+<div id="ref-mcdonald1984some">
+<p>McDonald, James B. 1984. “Some Generalized Functions for the Size Distribution of Income.” <em>Econometrica: Journal of the Econometric Society</em>. JSTOR, 647–63.</p>
+</div>
 <div id="ref-mcdonald1995generalization">
 <p>McDonald, James B, and Yexiao J Xu. 1995. “A Generalization of the Beta Distribution with Applications.” <em>Journal of Econometrics</em> 66 (1-2). Elsevier: 133–52.</p>
 </div>
 <div id="ref-tevet2016applying">
 <p>Tevet, Dan. 2016. “Applying Generalized Linear Models to Insurance Data.” <em>Predictive Modeling Applications in Actuarial Science: Volume 2, Case Studies in Insurance</em>. Cambridge University Press, 39.</p>
+</div>
+<div id="ref-venter1983transformed">
+<p>Venter, Gary. 1983. “Transformed Beta and Gamma Distributions and Aggregate Losses.” In <em>Proceedings of the Casualty Actuarial Society</em>, 70:289–308. 133 &amp; 134.</p>
 </div>
 </div>
             </section>
@@ -2143,7 +2143,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2153,6 +2153,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -2170,7 +2174,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
