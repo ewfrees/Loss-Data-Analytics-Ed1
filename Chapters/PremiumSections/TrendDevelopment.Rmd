@@ -1,6 +1,7 @@
 <!-- ###  TrendDevelopment.Rmd {#S:TrendDevelopment} -->
 
-Insurers need to report information on their exposures to risk, premium, claims, and payments. They do so on an aggregate basis for financial reports that are created at least annually and oftentimes quarterly. As we have seen in Section \@ref(S:AggRateMaking), they also consider this aggregate information for ratemaking.
+As we have seen in Section \@ref(S:AggRateMaking), insurers consider aggregate information for ratemaking such as exposures to risk, premiums, expenses, claims, and payments. This aggregate information is also useful for managing an insurers' activities; financial reports are commonly created at least annually and oftentimes quarterly. At any given financial reporting date, information about recent policies and claims will be ongoing and necessarily incomplete; this section introduces concepts for  projecting risk information so that it is usful for ratemaking purposes.
+
 Information about the risks, such as exposures, premium, claim counts, losses, and rating factors, is typically organized into three databases:
 
 * *policy database* - contains information about the risk being insured, the policyholder, and the contract provisions
@@ -9,7 +10,6 @@ Information about the risks, such as exposures, premium, claim counts, losses, a
 
 With these detailed databases, it is straightforward (in principle) to sum up policy level detail to aggregate information needed for financial reports. This section describes various summary measures commonly used.
 
-Further, the aggregate level detail is useful in ratemaking because many expenses, such as underwriting, are typically only available at the aggregate level.
 
 ### Exposures and Premiums
 
@@ -210,7 +210,7 @@ The *ultimate loss* is the amount of money required to close and settle all clai
 
 ### Comparing Pure Premium and Loss Ratio Methods {#S:CompareMethods}
 
-Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the *mix of business*. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as **trending**. For example, an *on-level earned premium* is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given the contractual and administrative complexities. We refer the reader to standard references that describe approaches in details such as @werner2016basic and @friedland2013fundamentals.
+Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the *mix of business*. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as **trending**. For example, an *on-level earned premium* is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given contractual and administrative complexities. We refer the reader to standard references that describe approaches in detail such as @werner2016basic and @friedland2013fundamentals.
 
 #### Loss Ratio Method {-}
 

@@ -521,7 +521,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.2.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:PurePremium"><i class="fa fa-check"></i><b>7.2.1</b> Pure Premium Method</a></li>
 <li class="chapter" data-level="7.2.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:LossRatio"><i class="fa fa-check"></i><b>7.2.2</b> Loss Ratio Method</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:PricingPrinciples"><i class="fa fa-check"></i><b>7.3</b> Pricing Principles</a></li>
+<li class="chapter" data-level="7.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:PricingPrinciples"><i class="fa fa-check"></i><b>7.3</b> Pricing Principles</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#premium-principles"><i class="fa fa-check"></i><b>7.3.1</b> Premium Principles</a></li>
+<li class="chapter" data-level="7.3.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#properties-of-premium-principles"><i class="fa fa-check"></i><b>7.3.2</b> Properties of Premium Principles</a></li>
+</ul></li>
 <li class="chapter" data-level="7.4" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:HeterogeneousRisks"><i class="fa fa-check"></i><b>7.4</b> Heterogeneous Risks</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:ExposureToRisk"><i class="fa fa-check"></i><b>7.4.1</b> Exposure to Risk</a></li>
 <li class="chapter" data-level="7.4.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RatingFactors"><i class="fa fa-check"></i><b>7.4.2</b> Rating Factors</a></li>
@@ -1400,20 +1403,20 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 <h3>TS 8.B. Selecting Rating Factors</h3>
 <!-- ###  Rate Factor Selection {#S:LossRatio} -->
 <p>A complete discussion of rating factor selection is beyond the scope of this book. In addition to technical analyses, you have to think carefully about the type of business (personal, commercial) as well as the regulatory landscape. Nonetheless, a broad overview of some key concerns may serve to ground the reader as one thinks about the pricing of insurance contracts.</p>
-<div id="statistical-criteria" class="section level4">
-<h4><span class="header-section-number">8.4.0.1</span> Statistical Criteria</h4>
+<div id="statistical-criteria" class="section level4 unnumbered">
+<h4>Statistical Criteria</h4>
 <p>From an analyst’s perspective, the discussion starts with the statistical significance of a rating factor. If the factor is not statistically significant, then the variable is not even worthy of consideration for inclusion in a rating plan. The statistical significance is judged not only on an in-sample basis but also on how well it fares on an out-of-sample basis, as per our discussion in <strong>Section 4.2.</strong></p>
 <p>It is common in insurance applications to have many rating factors. Handling multivariate aspects can be difficult with traditional univariate methods. Analysts employ techniques such as <em>generalized linear models</em> as described in <em>Section 8.3</em>.</p>
 <p>Rating factors are introduced are use to create cells that contain similar risks. A rating group should be large enough to measure costs with sufficient accuracy. There is an inherent trade-off between theoretical accuracy and homogeneity</p>
 <p>As an example, most insurers charge the same automobile insurance premiums for drivers between the ages of 30 and 50, not varying the premium by age. Presumably costs do not vary much by age, or cost variances are due to other identifiable factors.</p>
 </div>
-<div id="operational-criteria" class="section level4">
-<h4><span class="header-section-number">8.4.0.2</span> Operational Criteria</h4>
+<div id="operational-criteria" class="section level4 unnumbered">
+<h4>Operational Criteria</h4>
 <p>From a business perspective, statistical criteria only provide a starting point for discussions of potential inclusion of rating factors. Inclusion of a rating factor must also induce economically meaningful results. From an insured’s perspective, if differentiation by a factor produces little change in a rate then it is not worth including. From an insurer’s perspective, the inclusion of a factor should help segment the marketplace in a way that helps attract the business that they seek. For example, we introduce the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">The Gini index is twice the area between a Lorenz curve and a 45 degree line.</span></a> in Section <a href="C-PremiumFoundations.html#S:GiniStatistic">7.6</a> as one metric that insurers use to describe the financial impact of a rating variable.</p>
 <p>Rating factors should also be objective, inexpensive to administer, and verifiable. For example, automobile insurance underwriters often talk of “maturity” and “responsibility” as important criteria for youthful drivers. Yet, these are difficult to define objectively and to apply consistently. As another example, in automobile it has long been known that amount of miles (or kilometers) driven is an excellent rating factor. However, insurers have been reluctant to adopt this factor because it is subject to abuse. Historically, driving mileage has not been used because of the difficulty in verifying this variable (it is far too easy to alter the car’s odometer to change reported mileage). Going forward, modern day drivers and cars are equipped with global positioning devices and other equipment that allow insurers to use distance driven as a rating factor because it can be verified.</p>
 </div>
-<div id="rating-factors-from-the-perspective-of-a-consumer" class="section level4">
-<h4><span class="header-section-number">8.4.0.3</span> Rating Factors from the Perspective of a Consumer</h4>
+<div id="rating-factors-from-the-perspective-of-a-consumer" class="section level4 unnumbered">
+<h4>Rating Factors from the Perspective of a Consumer</h4>
 <p>Insurance companies sell insurance products to a variety of consumers; consequently, companies are affected by public perception. On the one hand, free market competition dictates rating factors that insurers use, as is common in commercial insurance. On the other hand, insurance may be required by law. This is common in personal insurance such as third party automobile liability and homeowners. In these instances, the mandatory and de facto mandatory purchase of insurance may mean that free market competition is insufficient to protect policyholders. Here, the following items affect the social acceptability of using a particular risk characteristic as a rating variable:</p>
 <ul>
 <li>Affordability - introduction of some variables may be mitigated by resulting high costs of insurance.</li>
@@ -1423,8 +1426,8 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 </ul>
 <p><strong>Example: Youthful Drivers.</strong> In some cases, a particular risk characteristic may identify a small group of insureds whose risk level is extremely high, and if used as a rating variable, the resulting premium may be unaffordable for that high-risk class. To the extent that this occurs, companies may wish to or be required by regulators to combine classes and introduce subsidies. For example, 16-year-old drivers are generally higher risk than 17-year-old drivers. Some companies have chosen to use the same rates for 16- and 17-year-old drivers to minimize the affordability issues that arise when a family adds a 16-year-old to the auto policy.</p>
 </div>
-<div id="societal-effects-of-rating-factors" class="section level4">
-<h4><span class="header-section-number">8.4.0.4</span> Societal Effects of Rating Factors</h4>
+<div id="societal-effects-of-rating-factors" class="section level4 unnumbered">
+<h4>Societal Effects of Rating Factors</h4>
 <p>With public discussions of rating factors, it is also important to think about the societal effects of classification.</p>
 <p>For example, does a rating variable encourage “good” behavior? As an example, we return to the use of distance driven as a rating factor. Many people advocate for including this variable as a factor. The motivation is that if insurance, like fuel, is priced based on distance driven, this will induce consumers to reduce the amount driven, thereby benefitting society.</p>
 <p>One can consider other aspects of societal effects of classification, see, for example, <span class="citation">Niehaus and Harrington (<a href="#ref-niehaus2003risk">2003</a>)</span>:</p>
@@ -1433,8 +1436,8 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 <li>Classification Costs - Money spent by society, insurers, to classify people appropriately.</li>
 </ul>
 </div>
-<div id="legal-criteria" class="section level4">
-<h4><span class="header-section-number">8.4.0.5</span> Legal Criteria</h4>
+<div id="legal-criteria" class="section level4 unnumbered">
+<h4>Legal Criteria</h4>
 <p>For example, some states have statutes prohibiting the use of gender in rating insurance while others permit it as a rating variable. As a result, an insurer writing in multiple states may include gender as a rating variable in those states where it is permitted, but not include it in a state that prohibits its use for rating.</p>
 <p>If allowed by law, the company may continue to charge the average rate but utilize the characteristic to identify, attract, and select the lower-risk insureds that exist in the insured population; this is called <em>skimming the cream.</em></p>
 
@@ -1448,7 +1451,7 @@ Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. T
 <p>Actuarial Standards Board. 2018. “Actuarial Standards of Practice.” In. American Academy of Actuaries. <a href="http://www.actuarialstandardsboard.org/standards-of-practice/" class="uri">http://www.actuarialstandardsboard.org/standards-of-practice/</a>.</p>
 </div>
 <div id="ref-agresti1996introduction">
-<p>Agresti, Alan. 1996. <em>An Introduction to Categorical Data Analysis</em>. Vol. 135. Wiley New York.</p>
+<p>Agresti, Alan. 1996. <em>An Introduction to Categorical Data Analysis</em>. Wiley New York.</p>
 </div>
 <div id="ref-de2008generalized">
 <p>De Jong, Piet, and Gillian Z. Heller. 2008. <em>Generalized Linear Models for Insurance Data</em>. Cambridge University Press Cambridge.</p>

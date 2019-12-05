@@ -521,7 +521,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.2.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:PurePremium"><i class="fa fa-check"></i><b>7.2.1</b> Pure Premium Method</a></li>
 <li class="chapter" data-level="7.2.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:LossRatio"><i class="fa fa-check"></i><b>7.2.2</b> Loss Ratio Method</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:PricingPrinciples"><i class="fa fa-check"></i><b>7.3</b> Pricing Principles</a></li>
+<li class="chapter" data-level="7.3" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:PricingPrinciples"><i class="fa fa-check"></i><b>7.3</b> Pricing Principles</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#premium-principles"><i class="fa fa-check"></i><b>7.3.1</b> Premium Principles</a></li>
+<li class="chapter" data-level="7.3.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#properties-of-premium-principles"><i class="fa fa-check"></i><b>7.3.2</b> Properties of Premium Principles</a></li>
+</ul></li>
 <li class="chapter" data-level="7.4" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:HeterogeneousRisks"><i class="fa fa-check"></i><b>7.4</b> Heterogeneous Risks</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:ExposureToRisk"><i class="fa fa-check"></i><b>7.4.1</b> Exposure to Risk</a></li>
 <li class="chapter" data-level="7.4.2" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:RatingFactors"><i class="fa fa-check"></i><b>7.4.2</b> Rating Factors</a></li>
@@ -788,19 +791,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- ## Introduction to Ratemaking-->
 <p>This chapter explains how you can think about determining the appropriate price for an insurance product. As described in Section <a href="C-Intro.html#S:PredModApps">1.2</a>, one of the core actuarial functions is ratemaking, where the analyst seeks to determine the right price for a risk.</p>
 <p>As this is a core function, let us first take a step back to define terms. A <a href="#" class="tooltip" style="color:green"><em>price</em><span style="font-size:8pt">A quantity, usually of money, that is exchanged for a good or service</span></a> is a quantity, usually of money, that is exchanged for a good or service. In insurance, we typically use the word <a href="#" class="tooltip" style="color:green"><em>premium</em><span style="font-size:8pt">The amount of money charged for insurance protection against contingent events.</span></a> for the amount of money charged for insurance protection against contingent events. The amount of protection varies by risk being insured. For example, in homeowners insurance the amount of insurance protection depends on the value of the house. In life insurance, the amount of protection depends on a policyholder’s financial status (e.g. income and wealth) as well as a perceived need for financial security. So, it is common to express insurance prices as a unit of the protection being purchased, for example, an amount per thousands (e.g., of dollars or Euros) for coverage of a home or benefit in the event of death. Because they are expressed in standardized units, these prices/premiums are known as <a href="#" class="tooltip" style="color:green"><em>rates</em><span style="font-size:8pt">A rate is the price, or premium, charged per unit of exposure. A rate is a premium expressed in standardized units.</span></a>.</p>
-<p>To determine premiums, it is common in economics to use as a benchmark a perfectly competitive market where the marginal price equals the marginal cost of producing a good or service, resulting in zero (marginal) profits. However, a peculiarity of insurance is that the costs of insurance protection are not known when the contract is entered. If the insured contingent event, such as the loss of a house or life, does not occur, then the contract costs are only administrative and are relatively minor. If the insured event occurs, then the cost includes not only administrative costs to set up the contract but also payment of the amount insured and expenses to settle claims. So, when the contract is written, by design neither the insurer nor the insured knows the costs associated with a contract.</p>
-<p>As a baseline, we use the <em>expected costs</em> to determine rates. There are several ways to motivate this perspective and we expand upon this point in Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a>. For now, we will suppose that the insurer enters into many contracts with risks that are similar except, by pure chance, in some cases the insured event occurs and in others it does not. The insurer is obligated to pay the total amount of claims payments for all contracts. If risks are similar, then all policyholders should be responsible for the same amount which is the average claim payment. So, from this perspective, it makes sense to look at the average claim payment over many insureds. From probability theory, specifically the law of large numbers, we know that the average of <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Identically and independently distributed.</span></a> risks is close to the expected amount, so we use the expectation as a baseline pricing principle.</p>
-<p>To take a step closer to methods used in practice, we next make the contract expenses a bit more explicit. Consider an accounting equation</p>
+<p>To determine premiums, it is common in economics to consider the supply and demand of a product. The demand is sensitive to price as well as the existence of competiting firms and substitute products. The supply is a function of the resources required for production. For the individual firm, the price is set to meet some objective such as profit maximization which is met by choosing the output level that balances costs and revenues at the margins.</p>
+<p>However, a peculiarity of insurance is that the costs of insurance protection are not known at the sale of the contract. If the insured contingent event, such as the loss of a house or life, does not occur, then the contract costs are only administrative (to set up the contract) and are relatively minor. If the insured event occurs, then the cost includes not only administrative costs but also payment of the amount insured and expenses to settle claims. So, the cost is random; when the contract is written, by design neither the insurer nor the insured knows the contract costs. Moreover, costs may not be revealed for months or years. For example, a typical time to settlement in medical malpractice is five years.</p>
+<p>Because costs are unknown at the time of sale, insurance pricing differs from common economic approaches. This chapter squarely addresses the uncertain nature of costs by introducing traditional actuarial approaches that determine prices as a function of insurance costs. As we will see, this pricing approach is sufficient for some insurance markets such as personal automobile or homeowners where the insurer has a portfolio of many independent risks. However, there are other insurance markets where actuarial prices only provide an input to general market prices. To reinforce this distinction, actuarial cost-based premiums are sometimes known as <a href="#" class="tooltip" style="color:green"><em>technical prices</em><span style="font-size:8pt"></span></a>. From the perspective of economists, corporate decisions such as pricing are to be evaluated with reference to their impact on the firm’s market value. This objective is more comprehensive than the static notion of profit maximization. That is, you can think of the value of the firm represents the capitalized value of all future expected profits. Decisions impacting this value in turn affect all groups having claims on the firm, including stockholders, bondholders, policyowners (in the case of mutual companies), and so forth.</p>
+<!-- Given that costs are not incurred or even known at the time of sale, this chapter focuses on the costs of supplying insurance, following the actuarial literature. This is not a complete picture of everything needed to price insurance.  -->
+<p>For cost-based prices, it is helpful to think of a premium as revenue source that provides for claim payments, contract expenses, and an operating margin. We formalize this in an accounting equation</p>
 <span class="math display" id="eq:AccountingEquation">\[\begin{equation}
 \small{
-\text{Premium = Loss + Fixed + Variable + UW Profit} .
+\text{Premium = Loss + Expense + UW Profit} .
 }
 \tag{7.1}
 \end{equation}\]</span>
-<p>Expenses are split between those that vary by premium (<code>Variable</code>, such as commissions) and those that do not (<code>Fixed</code>). Here, <code>UW Profit</code> is for underwriting profit. Equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> summarizes a basic accounting relationship among premiums, losses, expenses, and profits. We will think of this relationship as holding over the sum of many contracts and work with it in <em>aggregate</em>. Then, in Section <a href="C-PremiumFoundations.html#S:AggRateMaking">7.2</a> we use this approach to help us think about setting premiums, for example by setting profit objectives. Specifically, Sections <a href="C-PremiumFoundations.html#S:PurePremium">7.2.1</a> and <a href="C-PremiumFoundations.html#S:LossRatio">7.2.2</a> introduce two prevailing methods used in practice for determining premiums, the <a href="#" class="tooltip" style="color:green"><em>pure premium</em><span style="font-size:8pt">Pure premium is the total severity divided by the number of claims. It does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. Also called loss costs. Some definitions include allocated loss adjustment expenses (ALAE).</span></a> and the <a href="#" class="tooltip" style="color:green"><em>loss ratio</em><span style="font-size:8pt">The sum of losses divided by the premium.</span></a> methods.</p>
-<p>Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a> will describe why the expectation is a useful baseline premium principle. Although a useful baseline, expectations do not account for all aspects of a contract; in particular, expectations do not account for the uncertainty of an insurance contract. To illustrate, using only expectations a deterministic value of 0.5 is treated in the same way as a 50% loss of 1 (with 50% chance of 0 corresponding to no loss). There are important insurance situations where we wish to incorporate uncertainty into our pricing and so Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a> also summarizes alternative premium principles that do so. Note that an emphasis of this text is estimation of the entire distribution of losses so the analyst is not restricted to working only with expectations.</p>
-<p>The aggregate methods derived from the accounting equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> focus on collections of <a href="#" class="tooltip" style="color:green"><em>homogeneous risks</em><span style="font-size:8pt">Risks that have the same distribution, that is, the distributions are identical.</span></a> that are similar except for the occurrence of random losses. In statistical language that we have introduced, this is a discussion about risks that have identical distributions. When adding the assumption of independence, we summarize this by saying that the risks are <em>iid</em>. Naturally, when examining risks that insurers work with, there are many variations in the risks being insured including the features of the contracts and the people being insured. Section <a href="C-PremiumFoundations.html#S:HeterogeneousRisks">7.4</a> extends pricing considerations to <a href="#" class="tooltip" style="color:green"><em>heterogeneous</em><span style="font-size:8pt">Heterogeneous risks have different distributions. Often, we can attribute differences to varying exposures or risk factors.</span></a> collections of risks.</p>
-<p>Section <a href="C-PremiumFoundations.html#S:TrendDevelopment">7.5</a> introduces ideas of development and trending. The goal is to develop rates that are forward looking. At contract initiation the rates are known but the losses that are being insured against have not yet occurred. Just because an insurer has a bad year, this should not be reflected in rates. (However, the idea of <a href="#" class="tooltip" style="color:green"><em>experience rating</em><span style="font-size:8pt"></span></a> suggests that experience reveals hidden information about the insured and so should be incorporated in our forward thinking viewpoint. Chapter <a href="C-Credibility.html#C:Credibility">9</a> discusses this idea in more detail.).</p>
+<p>Expenses can be split into those that vary by premium (such as sales commissions) and those that do not (such as building costs and employee salaries). The term <code>UW Profit</code> is a residual that stands for underwriting profit. It may also include include a cost of capital (for example, an annual dividend to company investors). Because fixed expenses and costs of capital are difficult to interpret for individual contracts, we think of the equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> relationship as holding over the sum of many contracts (a portfolio) and work with it in <em>aggregate</em>. Then, in Section <a href="C-PremiumFoundations.html#S:AggRateMaking">7.2</a> we use this approach to help us think about setting premiums, for example by setting profit objectives. Specifically, Sections <a href="C-PremiumFoundations.html#S:PurePremium">7.2.1</a> and <a href="C-PremiumFoundations.html#S:LossRatio">7.2.2</a> introduce two prevailing methods used in practice for determining premiums, the <a href="#" class="tooltip" style="color:green"><em>pure premium</em><span style="font-size:8pt">Pure premium is the total severity divided by the number of claims. It does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. Also called loss costs. Some definitions include allocated loss adjustment expenses (ALAE).</span></a> and the <a href="#" class="tooltip" style="color:green"><em>loss ratio</em><span style="font-size:8pt">The sum of losses divided by the premium.</span></a> methods.</p>
+<p>The <code>Loss</code> in equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> is random and so, as a baseline, we use the <em>expected costs</em> to determine rates. There are several ways to motivate this perspective that we expand upon in Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a>. For now, we will suppose that the insurer enters into many contracts with risks that are similar except, by pure chance, in some cases the insured event occurs and in others it does not. The insurer is obligated to pay the total amount of claims payments for all contracts. If risks are similar, then all policyholders should be responsible for the same amount which is the average claim payment. So, from this perspective, it makes sense to look at the average claim payment over many insureds. From probability theory, specifically the law of large numbers, we know that the average of <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Identically and independently distributed.</span></a> risks is close to the expected amount, so we use the expectation as a baseline pricing principle.</p>
+<p>Nonetheless, by using expected losses, we essentially assume that the uncertainty is non-existent. If the insurers sells enough independent policies, this may be a reasonable approximation. However, there will be other cases, such as a single contract issued to a large corporation to insure all of its buildings against fire damage, where the use of only an expectation for pricing is not sufficient. So, Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a> also summarizes alternative premium principles that incorporate uncertainty into our pricing. Note that an emphasis of this text is estimation of the entire distribution of losses so the analyst is not restricted to working only with expectations.</p>
+<p>The aggregate methods derived from equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> focus on collections of <a href="#" class="tooltip" style="color:green"><em>homogeneous risks</em><span style="font-size:8pt">Risks that have the same distribution, that is, the distributions are identical.</span></a> that are similar except for the occurrence of random losses. In statistical language that we have introduced, this is a discussion about risks that have identical distributions. Naturally, when examining risks that insurers work with, there are many variations in the risks being insured including the features of the contracts and the people being insured. Section <a href="C-PremiumFoundations.html#S:HeterogeneousRisks">7.4</a> extends pricing considerations to <a href="#" class="tooltip" style="color:green"><em>heterogeneous</em><span style="font-size:8pt">Heterogeneous risks have different distributions. Often, we can attribute differences to varying exposures or risk factors.</span></a> collections of risks.</p>
+<p>Section <a href="C-PremiumFoundations.html#S:TrendDevelopment">7.5</a> introduces ideas of development and trending. When developing rates, we want to use the most recent loss experience because the goal is to develop rates that are forward looking. However, at contract initiation, recent loss experience is often not known; it may be several years until it is fully realized. So, this section introduces concepts needed for incorporating recent loss experience into our premium development. Development and trending of experience is related to but also differs from the idea of <a href="#" class="tooltip" style="color:green"><em>experience rating</em><span style="font-size:8pt"></span></a> that suggests that experience reveals hidden information about the insured and so should be incorporated in our forward thinking viewpoint. Chapter <a href="C-Credibility.html#C:Credibility">9</a> discusses this idea in more detail.</p>
 <p>The final section of this chapter introduces methods for selecting a premium. This is done by comparing a premium rating method to losses from a held-out portfolio and selecting the method that produces the best match with the held-out data. For a typical insurance portfolio, most policies produce zero losses, that is, do not have a claim. Because the distribution of held-out losses is a combination of (a large number of) zeros and continuous amounts, special techniques are useful. Section <a href="C-PremiumFoundations.html#S:GiniStatistic">7.6</a> introduces concepts of <em>concentration curves</em> and corresponding <em>Gini statistics</em> to help in this selection.</p>
 <p>The chapter also includes a technical supplement on government regulation of insurance rates to keep our work grounded in applications.</p>
 </div>
@@ -810,13 +816,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Define a pure premium as a loss cost as well as in terms of frequency and severity</li>
-<li>Calculate an indicated rate use pure premiums, expenses, and profit loadings</li>
+<li>Calculate an indicated rate using pure premiums, expenses, and profit loadings</li>
 <li>Define a loss ratio</li>
 <li>Calculate an indicated rate change using loss ratios</li>
 <li>Compare the pure premium and loss ratio methods for determining premiums</li>
 </ul>
 <hr />
-<p>It is common to consider aggregate portfolios, or groups, of insurance experience. Consistent with earlier notation, consider a collection of <em>n</em> contracts with losses <span class="math inline">\(X_1, \ldots, X_n\)</span>. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Identically and independently distributed.</span></a>. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section <a href="C-PremiumFoundations.html#S:ExposureToRisk">7.4.1</a> we will introduce the idea of an <a href="#" class="tooltip" style="color:green"><em>exposure</em><span style="font-size:8pt">A type of rating variable that is so important that premiums and losses are often quoted on a “per exposure” basis. That is, premiums and losses are commonly standardized by exposure variables.</span></a> variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a 100,000 house and a 200,000 house as coming from the same distribution. For now, we simply assume that <span class="math inline">\(X_1, \ldots, X_n\)</span> are <em>iid</em>.</p>
+<p>It is common to consider an aggregate portfolio of insurance experience. Consistent with earlier notation, consider a collection of <em>n</em> contracts with losses <span class="math inline">\(X_1, \ldots, X_n\)</span>. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Identically and independently distributed.</span></a>. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section <a href="C-PremiumFoundations.html#S:ExposureToRisk">7.4.1</a> we will introduce the idea of an <a href="#" class="tooltip" style="color:green"><em>exposure</em><span style="font-size:8pt">A type of rating variable that is so important that premiums and losses are often quoted on a “per exposure” basis. That is, premiums and losses are commonly standardized by exposure variables.</span></a> variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a 100,000 house and a 200,000 house as coming from the same distribution. For now, we simply assume that <span class="math inline">\(X_1, \ldots, X_n\)</span> are <em>iid</em>.</p>
 <!-- ## Pure Premium Method -->
 <div id="S:PurePremium" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Pure Premium Method</h3>
@@ -831,8 +837,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 }
 \]</span></p>
 <p>So, when premiums are determined using the pure premium method, we either take the average loss (loss cost) or use the frequency severity approach.</p>
-<p>To get a bit closer to applications in practice, we now return to equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> to include expenses. Equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> also refers to <code>UW Profit</code> for underwriting profit. When rescaled by premiums, this is known as the <a href="#" class="tooltip" style="color:green"><em>profit loading</em><span style="font-size:8pt">The required underwriting profit divided by premiums. </span></a>. Because claims are uncertain, the insurer must hold capital to ensure that all claims are paid. Holding this extra capital is a cost of doing business, investors in the company need to be compensated for this, thus the extra loading.</p>
-<p>Thinking of variable expenses and profit as a fraction of premiums, we define</p>
+<p>To get a bit closer to applications in practice, we now return to equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> that includes expenses. Equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> also refers to <code>UW Profit</code> for underwriting profit. When rescaled by premiums, this is known as the <a href="#" class="tooltip" style="color:green"><em>profit loading</em><span style="font-size:8pt">The required underwriting profit divided by premiums. </span></a>. Because claims are uncertain, the insurer must hold capital to ensure that all claims are paid. Holding this extra capital is a cost of doing business, investors in the company need to be compensated for this, thus the extra loading.</p>
+<p>We now decompose <code>Expenses</code> into those that vary by premium, <code>Variable</code>, and those that do not, <code>Fixed</code> so that <code>Expenses = Variable + Fixed</code>. Thinking of variable expenses and profit as a fraction of premiums, we define</p>
 <p><span class="math display">\[
 \small{
 V =  \frac{\text{Variable}}{\text{Premium}} ~~~ \text{and}~~~
@@ -958,18 +964,107 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 </div>
 <div id="S:PricingPrinciples" class="section level2">
 <h2><span class="header-section-number">7.3</span> Pricing Principles</h2>
-<ol style="list-style-type: decimal">
-<li><p>Start with expected utility and competitive marketplace.</p></li>
-<li><p>Actuarial Premium Principles</p></li>
-</ol>
-<p><strong>Section 10.2.1</strong> describes variance and standard deviation principles. Also describes coherent measures.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Actuarial vs Financial Pricing.</li>
-</ol>
-<p>See <span class="citation">Bauer, Phillips, and Zanjani (<a href="#ref-bauer2013financial">2013</a>)</span> chapter in <em>Insurance Economics.</em></p>
 <hr />
-<p><strong>This section is being written and is not yet complete nor edited.</strong></p>
+<p>In this section, you learn how to:</p>
+<ul>
+<li>Describe common actuarial pricing principles</li>
+<li>Describe properties of pricing principles</li>
+<li>Choose a pricing principle based on a desired property</li>
+</ul>
 <hr />
+<!-- ###  Premium Principles {#S:PremPrinciples} -->
+<p>Approaches to pricing vary by the type of contract. For example, personal automobile is common (it is known as part of the retail general insurance market in the United Kingdom). Here, one can expect to do pricing based on a large pool of independent contracts, a situation in which expectations of losses provide an excellent starting point. In contrast, an actuary may wish to price an insurance contract issued to a large employer that covers complex health benefits for thousands of employees. In this example, knowledge of the entire distribution of potential losses, not just the expected value, is critical for starting the pricing negotiations. To cover a range of potential applications, this section describes general premium principles and their properties that one can use to decide whether or not a specific principle is applicable in a given situation.</p>
+<div id="premium-principles" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Premium Principles</h3>
+<p>This chapter introduces traditional actuarial pricing principles that provide a price based only on the insurance loss distribution; the price does not depend on the demand for insurance or other aspects of the costs such as expenses. Assume that the loss <span class="math inline">\(X\)</span> has a distribution function <span class="math inline">\(F(\cdot)\)</span> and that there exists some functional <span class="math inline">\(H\)</span> that takes <span class="math inline">\(F(\cdot)\)</span> into the positive real line, denoted as <span class="math inline">\(P = H(F)\)</span>. For notation purposes, it is often convenient to substitute the random variable <span class="math inline">\(X\)</span> for its distribution function and write <span class="math inline">\(P = H(X)\)</span>. Table <a href="C-PremiumFoundations.html#tab:PremPrinciples">7.1</a> provides several examples.</p>
+<table>
+<caption><span id="tab:PremPrinciples">Table 7.1: </span> Common Premium Principles</caption>
+<thead>
+<tr class="header">
+<th align="left">Description</th>
+<th align="center">Definition (<span class="math inline">\(H(X)\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Net (pure) premium</td>
+<td align="center"><span class="math inline">\(E[X]\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Expected value</td>
+<td align="center"><span class="math inline">\((1+\alpha)E[X]\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Standard deviation</td>
+<td align="center"><span class="math inline">\(E[X]+\alpha ~SD(X)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Variance</td>
+<td align="center"><span class="math inline">\(E[X]+\alpha ~Var(X)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Zero utility</td>
+<td align="center">solution of <span class="math inline">\(u(w) = E ~u(w + P - X)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Exponential</td>
+<td align="center"><span class="math inline">\(\frac{1}{\alpha} \ln E ~e^{\alpha X}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>A premium principle is similar to a <a href="#" class="tooltip" style="color:green"><em>risk measure</em><span style="font-size:8pt">a measure that summarizes the riskiness, or uncertainty, of a distribution</span></a> that is introduced in Section <a href="C-PortMgt.html#S:RiskMeasure">10.3</a>. Mathematically, both are functions that maps the loss <a href="#" class="tooltip" style="color:green"><em>rv</em><span style="font-size:8pt"></span></a> of interest to a numerical value. From a practical viewpoint, a premium principle provides a guide as to how much an insurer will charge for accepting a risk <span class="math inline">\(X\)</span>. In contrast, a risk measure quantifies the level of uncertainty, or riskiness, that an insurer can use to decide on a capital level to be assured of remaining solvent.</p>
+<p>As noted above, the net, or pure, premium essentially assumes no uncertainty. The expected value, standard deviation, and variance principles each add an explicit loading for riskiness through parameter <span class="math inline">\(\alpha \ge 0\)</span>. For the principle of zero utility, we think of an insurer with utility function <span class="math inline">\(u(\cdot)\)</span> and wealth <em>w</em> as being indifferent to accepting and not accepting risk <span class="math inline">\(X\)</span>. In this case, <span class="math inline">\(P\)</span> is known as an indifference price or, in economics, a reservation price. With exponential utilility, the principle of zero utility reduces to the exponential premium principle, that is, assuming <span class="math inline">\(u(x) = (1-e^{-\alpha x})/\alpha\)</span>.</p>
+<p>For small values of risk parameters, the variance principle is approximately equal to exponential premium principle, as illustrated in the following special case.</p>
+<hr />
+<p><strong>Special Case: Gamma Distribution</strong>. Consider a loss that is gamma distributed with parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\theta\)</span>. From the Appendix D in <a href="C-SummaryDistributions.html#C:SummaryDistributions">18</a>, the mean is <span class="math inline">\(\alpha \theta\)</span> and the variance is <span class="math inline">\(\alpha \theta^2\)</span>. Using <span class="math inline">\(\alpha_{Var}\)</span> for the risk parameter, the variance premium is <span class="math inline">\(H_{Var}(X) = \alpha \theta+\alpha_{Var} ~(\alpha \theta^2)\)</span>. From this appendix, it is straightforward to derive the well-known moment generating function, <span class="math inline">\(M(t) = E e^{tX} = (1-t\theta)^{-\alpha}\)</span>. With this and a risk parameter <span class="math inline">\(\alpha_{Exp}\)</span>, we may express the exponential premium as</p>
+<p><span class="math display">\[
+H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right).
+\]</span> To see the relationship between <span class="math inline">\(H_{Var}(X)\)</span> and <span class="math inline">\(H_{Var}(X)\)</span>, we choose <span class="math inline">\(\alpha_{Exp} = 2 \alpha_{Var}\)</span>. With an approximation from calculus (<span class="math inline">\(\ln(1-x) = -x - x^2/2 - x^3/3 - \cdots\)</span>), we write</p>
+<p><span class="math display">\[
+H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right) 
+= \frac{-\alpha}{\alpha_{Exp}} \left\{ -\alpha_{Exp} \theta -(\alpha_{Exp} \theta)^2/2 - \cdots\right\} \\
+\approx \alpha \theta + \frac{\alpha_{Exp}}{2}(\alpha \theta^2 ) 
+= H_{Var}(X). 
+\]</span></p>
+</div>
+<div id="properties-of-premium-principles" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Properties of Premium Principles</h3>
+<p>Properties of premium principles help guide the selection of a premium principle in applications. Table <a href="C-PremiumFoundations.html#tab:Properties">7.2</a> provides examples of properties of premium principles.</p>
+<table>
+<caption><span id="tab:Properties">Table 7.2: </span> Common Properties of Premium Principles</caption>
+<thead>
+<tr class="header">
+<th align="left">Description</th>
+<th align="center">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Nonnegative loading</td>
+<td align="center"><span class="math inline">\(H(X) \ge E[X]\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Additivity</td>
+<td align="center"><span class="math inline">\(H(X_1+X_2) = H(X_1) + H(X_2)\)</span>, for independent <span class="math inline">\(X_1, X_2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Scale invariance</td>
+<td align="center"><span class="math inline">\(H(cX) = c H(X)\)</span>, for <span class="math inline">\(c \ge 0\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Consistency</td>
+<td align="center"><span class="math inline">\(H(c+X) = c + H(X)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">No rip-off</td>
+<td align="center"><span class="math inline">\(H(X) \le max ~range ~\{X\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>This is simply a subset of the many properties quoted in the actuarial literature. For example, the review paper of <span class="citation">Young (<a href="#ref-young2014premium">2014</a>)</span> lists 15 properties. See also the properties described as <em>coherent axioms</em> that we introduce for risk measures in Section <a href="C-PortMgt.html#S:RiskMeasure">10.3</a>.</p>
+<p>Some of the properties listed in Table <a href="C-PremiumFoundations.html#tab:Properties">7.2</a> are mild in the sense that they will nearly always be satisfied. For example, the <em>no rip-off</em> property indicates that the premium charge will be smaller than the maximal value of the loss <span class="math inline">\(X\)</span>. Other properties may not be so mild. For example, for a portfolio of independent risks, the actuary may want the <em>additivity</em> property to hold. It is easy to see that this property holds for the expected value, variance, and exponential premium principles but not for the standard deviation principle. Another example is the <em>consistency</em> property that does not hold for the expected value principle when the risk loading parameter <span class="math inline">\(\alpha\)</span> is positive.</p>
+<p>The <em>scale invariance</em> principle is known as <em>homogeneity of degree one</em> in economics. It allows, for example, us to work in different currencies (e.g., from dollars to Euros) as well as a host of other applications and will be discussed further in the following Section <a href="C-PremiumFoundations.html#S:HeterogeneousRisks">7.4</a>. Although a generally accepted principle, we note that this principle does not hold for a large values of <span class="math inline">\(X\)</span> that may border on a surplus constraint of an insurer; if an insurer has a large probability of becoming insolvent, then that insurer may not wish to use linear pricing. It is easy to check that this principle holds for the expected value and standard deviation principles, although not for the variance and exponential principles.</p>
+</div>
 </div>
 <div id="S:HeterogeneousRisks" class="section level2">
 <h2><span class="header-section-number">7.4</span> Heterogeneous Risks</h2>
@@ -984,13 +1079,13 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 <hr />
 <!-- ###  Heterogeneous Risks {#S:HeterogeneousRisks} -->
 <p>As noted in Section <a href="C-PremiumFoundations.html#S:IntroductionRatemaking">7.1</a>, there are many variations in the risks being insured, the features of the contracts, and the people being insured. As an example, you might have a twin brother or sister who works in the same town and earns a roughly similar amount of money. Still, when it comes to selecting choices in rental insurance to insure contents of your apartment, you can imagine differences in the amount of contents to be insured, choices of deductibles for the amount of risk retained, and perhaps different levels of uncertainty given the relative safety of your neighborhoods. People, and risks that they insure, are different.</p>
-<p>When thinking about a collection of different, or <a href="#" class="tooltip" style="color:green"><em>heterogeneous</em><span style="font-size:8pt">Heterogeneous risks have different distributions. Often, we can attribute differences to varying exposures or risk factors.</span></a>, risks, one option is to price all risks the same. This is common, for example, in government sponsored programs for flood or health insurance. However, as described in Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a>, it is also common to have different prices, where the differences are commensurate with the risk being insured.</p>
+<p>When thinking about a collection of different, or <a href="#" class="tooltip" style="color:green"><em>heterogeneous</em><span style="font-size:8pt">Heterogeneous risks have different distributions. Often, we can attribute differences to varying exposures or risk factors.</span></a>, risks, one option is to price all risks the same. This is common, for example, in government sponsored programs for flood or health insurance. However, it is also common to have different prices where the differences are commensurate with the risk being insured.</p>
 <div id="S:ExposureToRisk" class="section level3">
 <h3><span class="header-section-number">7.4.1</span> Exposure to Risk</h3>
 <p>One easy way to make heterogeneous risks comparable is through the concept of an <a href="#" class="tooltip" style="color:green"><em>exposure</em><span style="font-size:8pt">A type of rating variable that is so important that premiums and losses are often quoted on a “per exposure” basis. That is, premiums and losses are commonly standardized by exposure variables.</span></a>. To explain exposures, let us use <em>scale distributions</em> that we learned about in Chapter <a href="C-Severity.html#C:Severity">3</a>. To recall a <a href="#" class="tooltip" style="color:green"><em>scale distribution</em><span style="font-size:8pt">a distribution with the property that multiplying all values by a constant leads to the same distribution family with only the scale parameter changed</span></a>, suppose that <span class="math inline">\(X\)</span> has a parametric distribution and define a rescaled version <span class="math inline">\(R = X/E\)</span>, <span class="math inline">\(E &gt; 0\)</span>. If <span class="math inline">\(R\)</span> is in the same parametric family as <span class="math inline">\(X\)</span>, then the distribution is said to be a scale distribution. As we have seen, the gamma, exponential, and Pareto distributions are examples of scale distributions.</p>
 <p>Intuitively, the idea behind exposures is to make risks more comparable to one another. For example, it may be that risks <span class="math inline">\(X_1, \ldots, X_n\)</span> come from different distributions and yet, with the choice of the right exposures, the rates <span class="math inline">\(R_1, \ldots, R_n\)</span> come from the same distribution. Here, we interpret the rate <span class="math inline">\(R_i = X_i/E_i\)</span> to be the loss divided by exposure.</p>
-<p><a href="#tab:7.1">Table 7.1</a> provides a few examples. We remark that this table refers to “earned” car and house years, concepts that will be explained in Section <a href="C-PremiumFoundations.html#S:TrendDevelopment">7.5</a>.</p>
-<p><a id=tab:7.1></a></p>
+<p><a href="#tab:7.3">Table 7.3</a> provides a few examples. We remark that this table refers to “earned” car and house years, concepts that will be explained in Section <a href="C-PremiumFoundations.html#S:TrendDevelopment">7.5</a>.</p>
+<p><a id=tab:7.3></a></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1009,7 +1104,7 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 \end{matrix}
 }
 \]</span></p>
-<p><a href="#tab:7.1">Table 7.1</a> : Commonly used Exposures in Different Types of Insurance</p>
+<p><a href="#tab:7.3">Table 7.3</a> : Commonly used Exposures in Different Types of Insurance</p>
 <p>An exposure is a type of <a href="#" class="tooltip" style="color:green"><em>rating factor</em><span style="font-size:8pt">A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.</span></a>, a concept that we define explicitly in the next Section <a href="C-PremiumFoundations.html#S:RatingFactors">7.4.2</a>. It is typically the most important rating factor, so important that both premiums and losses are quoted on a “per exposure” basis.</p>
 <p>For frequency and severity modeling, it is customary to think about the frequency aspect as proportional to exposure and the severity aspect in terms of loss per claim (not dependent upon exposure). However, this does not cover the entire story. For many lines of business, it is convenient for exposures to be proportional to inflation. Inflation is typically viewed as unrelated to frequency but proportional to severity.</p>
 <div id="criteria-for-choosing-an-exposure" class="section level4 unnumbered">
@@ -1024,7 +1119,7 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 </ul>
 <p>To illustrate, consider personal automobile coverage. Instead of the exposure basis “earned car year,” a more accurate measure of the quantitative exposure to loss might be number of miles driven. However, this measure is difficult to determine at the time the policy is issued and subject to potential manipulation by the insured.</p>
 <p>As another example, the exposure measure in commercial business property, e.g. fire insurance, is typically the amount of insurance coverage. As property values grow with inflation, so will the amount of insurance coverage. Thus, rates quoted on a per amount of insurance coverage are less sensitive to inflation than otherwise.</p>
-<!-- **Example: Workers' Compensation.** (*This example is from @werner2010basic . Probably too much institutional detail for this book. Still, a good placeholder.*) Consider the following example presented by Bouska (1989). Think of two construction firms, where one is unionized and the other is not. Assume that these two firms have the same number of employees who perform the same type of work and have similar number and type of loss experience. If the unionized company pays more per employee, then it will have a higher payroll. Assuming that payroll is the exposure basis for workers' compensation coverage, it will pay more for its coverage even though the loss experience is similar between the two firms. On the one hand, this is appropriate if losses are primarily due to indemnification to employees from lost salary due to not working from covered workers' accidents. On the other hand, this is inappropriate if losses are primarily due to medical payments that should be less related to the amount a person earns. -->
+<!-- **Example: Workers' Compensation.** (*This example is from @werner2016basic . Probably too much institutional detail for this book. Still, a good placeholder.*) Consider the following example presented by Bouska (1989). Think of two construction firms, where one is unionized and the other is not. Assume that these two firms have the same number of employees who perform the same type of work and have similar number and type of loss experience. If the unionized company pays more per employee, then it will have a higher payroll. Assuming that payroll is the exposure basis for workers' compensation coverage, it will pay more for its coverage even though the loss experience is similar between the two firms. On the one hand, this is appropriate if losses are primarily due to indemnification to employees from lost salary due to not working from covered workers' accidents. On the other hand, this is inappropriate if losses are primarily due to medical payments that should be less related to the amount a person earns. -->
 <!-- As a practical matter, this inequity was not as important when there were limits on payroll as an exposure base. However, Bouska (1989) cites the changes in the 1980's in the US where there was a movement to unlimited payrolls. Some groups proposed using a combination of hours worked and payroll as an exposure base. In contrast, the national rating bureau (National Council on Compensation Insurance, NCCI) wanted to use unlimited payroll because it is (a) easy to verify and (b) it moves naturally with inflation (thus reducing the need for annual rate revisions). -->
 <!-- *** -->
 </div>
@@ -1032,8 +1127,8 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 <div id="S:RatingFactors" class="section level3">
 <h3><span class="header-section-number">7.4.2</span> Rating Factors</h3>
 <p>A rating factor, or <a href="#" class="tooltip" style="color:green"><em>rating variable</em><span style="font-size:8pt">A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.</span></a>, is simply a characteristic of the policyholder or risk being insured by which rates vary. For example, when you purchase auto insurance, it is likely that the insurer has rates that differ by age, gender, type of car and where it is garaged, accident history, and so forth. These variables are known as rating factors. Although some variables may be continuous, such as age, most are categorical - <a href="#" class="tooltip" style="color:green"><em>factor</em><span style="font-size:8pt">A variable that varies by groups or categories.</span></a> is a label that is used for categorical variables. In fact, even with continuous variables such as age, it is common to categorize them by creating groups such as “young,” “intermediate,” and “old” for rating purposes.</p>
-<p><a href="#tab:7.2">Table 7.2</a> provides just a few examples. In many jurisdictions, the personal insurance market (e.g., auto and homeowners) is very competitive - using 10 or 20 variables for rating purposes is not uncommon.</p>
-<p><a id=tab:7.2></a></p>
+<p><a href="#tab:7.4">Table 7.4</a> provides just a few examples. In many jurisdictions, the personal insurance market (e.g., auto and homeowners) is very competitive - using 10 or 20 variables for rating purposes is not uncommon.</p>
+<p><a id=tab:7.4></a></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1049,10 +1144,10 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 \end{array}
 \end{matrix}
 }
-\]</span> <a href="#tab:7.2">Table 7.2</a> : Commonly used Rating Factors in Different Types of Insurance</p>
+\]</span> <a href="#tab:7.4">Table 7.4</a> : Commonly used Rating Factors in Different Types of Insurance</p>
 <hr />
-<p><strong>Example. Losses and Premium by Amount of Insurance and Territory.</strong> To illustrate, <a href="#tab:7.3">Table 7.3</a> presents a small fictitious data set from Chapter 9 of <span class="citation">Werner and Modlin (<a href="#ref-werner2010basic">2010</a>)</span>. The data consists of loss and loss adjustment expenses (<em>LossLAE</em>), decomposed by three levels of <em>AOI</em>, amount of insurance, and three territories (<em>Terr</em>). For each combination of <em>AOI</em> and <em>Terr</em>, we also have available the number of policies issued, given as the <em>Exposure</em>.</p>
-<p><a id=tab:7.3></a></p>
+<p><strong>Example. Losses and Premium by Amount of Insurance and Territory.</strong> To illustrate, <a href="#tab:7.5">Table 7.5</a> presents a small fictitious data set from <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic">2016</a>)</span>. The data consists of loss and loss adjustment expenses (<em>LossLAE</em>), decomposed by three levels of <em>AOI</em>, amount of insurance, and three territories (<em>Terr</em>). For each combination of <em>AOI</em> and <em>Terr</em>, we also have available the number of policies issued, given as the <em>Exposure</em>.</p>
+<p><a id=tab:7.5></a></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1074,7 +1169,7 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 \end{array}
 \end{matrix}
 }
-\]</span> <a href="#tab:7.3">Table 7.3</a> : Losses and Premium by Amount of Insurance and Territory</p>
+\]</span> <a href="#tab:7.5">Table 7.5</a> : Losses and Premium by Amount of Insurance and Territory</p>
 <p>In this case, the rating factors <em>AOI</em> and <em>Terr</em> produce nine cells. Note that one might combine the cell “territory one with a low amount of insurance”&quot; with another cell because there are only 7 policies in that cell. Doing so is perfectly acceptable - considerations of this sort is one of the main jobs of the analyst. An outline on selecting variables is in Chapter <a href="C-RiskClass.html#C:RiskClass">8</a>, including Technical Supplement TS <strong>8.B</strong>. Alternatively, you can also think about reinforcing information about the cell (<em>Terr</em> 1, Low <em>AOI</em>) by “borrowing” information from neighboring cells (e.g., other territories with the same <em>AOI</em>, or other amounts of <em>AOI</em> within <em>Terr</em> 1). This is the subject of <strong>credibility</strong> that is introduced in Chapter <a href="C-Credibility.html#C:Credibility">9</a>.</p>
 <hr />
 <p>To understand the impact of rating factors, it is common to use relativities. A <a href="#" class="tooltip" style="color:green"><em>relativity</em><span style="font-size:8pt">The difference of the expected risk between a specific level of a rating factor and an accepted baseline value. This difference may be arithmetic or proportional.</span></a> is the difference of the expected risk between a specific level of a rating factor and an accepted baseline value. In this book, we work with relativities defined through ratios; it is also possible to define relativities through arithmetic differences. Thus, our relativity is defined as</p>
@@ -1082,8 +1177,8 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 \text{Relativity}_j = \frac{\text{(Loss/Exposure)}_j}{\text{(Loss/Exposure)}_{Base}} .
 \]</span></p>
 <hr />
-<p><strong>Example. Losses and Premium by Amount of Insurance and Territory - Continued.</strong> Traditional classification methods consider only one classification variable at a time - they are univariate. Thus, if we wanted relativities losses and expenses (<em>LossLAE</em>) by amount of insurance, we might sum over territories to get the information displayed in <a href="#tab:7.4">Table 7.4</a>.</p>
-<p><a id=tab:7.4></a></p>
+<p><strong>Example. Losses and Premium by Amount of Insurance and Territory - Continued.</strong> Traditional classification methods consider only one classification variable at a time - they are univariate. Thus, if we wanted relativities losses and expenses (<em>LossLAE</em>) by amount of insurance, we might sum over territories to get the information displayed in <a href="#tab:7.6">Table 7.6</a>.</p>
+<p><a id=tab:7.6></a></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1099,7 +1194,7 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 \end{matrix}
 }
 \]</span></p>
-<p><a href="#tab:7.4">Table 7.4</a> : Losses and Relativities by Amount of Insurance</p>
+<p><a href="#tab:7.6">Table 7.6</a> : Losses and Relativities by Amount of Insurance</p>
 <p>Thus, for example, losses and expenses per unit of exposure are 23.2% higher for risks with a high amount of insurance compared to those with a medium amount. These relativities do not control for territory.</p>
 <hr />
 <p>The introduction of rating factors allows the analyst to create cells that define small collections of risks – the goal is to choose the right combination of rating factors so that all risks within a cell may be treated the same. In statistical terminology, we want all risks within a cell to have the same distribution (subject to rescaling by an exposure variable). This is the foundation of insurance pricing. All risks within a cell have the same price yet risks from different cells may have different prices.</p>
@@ -1118,14 +1213,14 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 </ul>
 <hr />
 <!-- ###  TrendDevelopment.Rmd {#S:TrendDevelopment} -->
-<p>Insurers need to report information on their exposures to risk, premium, claims, and payments. They do so on an aggregate basis for financial reports that are created at least annually and oftentimes quarterly. As we have seen in Section <a href="C-PremiumFoundations.html#S:AggRateMaking">7.2</a>, they also consider this aggregate information for ratemaking. Information about the risks, such as exposures, premium, claim counts, losses, and rating factors, is typically organized into three databases:</p>
+<p>As we have seen in Section <a href="C-PremiumFoundations.html#S:AggRateMaking">7.2</a>, insurers consider aggregate information for ratemaking such as exposures to risk, premiums, expenses, claims, and payments. This aggregate information is also useful for managing an insurers’ activities; financial reports are commonly created at least annually and oftentimes quarterly. At any given financial reporting date, information about recent policies and claims will be ongoing and necessarily incomplete; this section introduces concepts for projecting risk information so that it is usful for ratemaking purposes.</p>
+<p>Information about the risks, such as exposures, premium, claim counts, losses, and rating factors, is typically organized into three databases:</p>
 <ul>
 <li><em>policy database</em> - contains information about the risk being insured, the policyholder, and the contract provisions</li>
 <li><em>claims database</em> - contains information about each claim; these are linked to the policy database.</li>
 <li><em>payment database</em> - contains information on each claims transaction, typically payments but may also changes to <em>case reserves</em>. These are linked to the claims database.</li>
 </ul>
 <p>With these detailed databases, it is straightforward (in principle) to sum up policy level detail to aggregate information needed for financial reports. This section describes various summary measures commonly used.</p>
-<p>Further, the aggregate level detail is useful in ratemaking because many expenses, such as underwriting, are typically only available at the aggregate level.</p>
 <div id="exposures-and-premiums" class="section level3">
 <h3><span class="header-section-number">7.5.1</span> Exposures and Premiums</h3>
 <p>A financial reporting period is a length of time that is fixed in the calendar; we use January 1 to December 31 for the examples in this book although other reporting periods are also common. The reporting period is fixed but policies may begin at any time during the year. Even if all policies have a common contract length of (say) one year, because of the differing starting time, they can end at any time during the financial reporting. Figure <a href="C-PremiumFoundations.html#fig:Exposures">7.1</a> presents four illustrative policies. Because of these differing starting and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.</p>
@@ -1225,7 +1320,7 @@ Figure 7.2: Timeline of Claim Development.
 </div>
 <div id="S:CompareMethods" class="section level3">
 <h3><span class="header-section-number">7.5.3</span> Comparing Pure Premium and Loss Ratio Methods</h3>
-<p>Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the <em>mix of business</em>. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as <strong>trending</strong>. For example, an <em>on-level earned premium</em> is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given the contractual and administrative complexities. We refer the reader to standard references that describe approaches in details such as <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic">2016</a>)</span> and <span class="citation">Friedland (<a href="#ref-friedland2013fundamentals">2013</a>)</span>.</p>
+<p>Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the <em>mix of business</em>. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as <strong>trending</strong>. For example, an <em>on-level earned premium</em> is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given contractual and administrative complexities. We refer the reader to standard references that describe approaches in detail such as <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic">2016</a>)</span> and <span class="citation">Friedland (<a href="#ref-friedland2013fundamentals">2013</a>)</span>.</p>
 <div id="loss-ratio-method" class="section level4 unnumbered">
 <h4>Loss Ratio Method</h4>
 <p>The expression for the loss ratio method indicated change factor in equation <a href="C-PremiumFoundations.html#eq:IndicatedChangeFactor">(7.3)</a> assumes a certain amount of consistency in the portfolio experience over time. For another approach, we can define the <em>experience loss ratio</em> to be: <span class="math display">\[
@@ -1467,7 +1562,7 @@ Specifically, the Gini statistic can be calculated as follows. Suppose that the 
 </h5>
 <div id="toggleExample.AreaDemo" style="display: none">
 <p>To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points <span class="math inline">\((a_1, b_1)\)</span>, <span class="math inline">\((a_2, b_2)\)</span>, and a 45 degree line. You can use basic geometry to check that the area of the figure is <span class="math inline">\(Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}\)</span>. The definition of the Gini statistic in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is simply twice the sum of the parallelograms. The second equality in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is the result of some straight-forward algebra.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-195-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-196-1.png" width="672" /></p>
 <hr />
 </div>
 <p><strong>Example – Loss Distribution: Continued.</strong> The Gini statistic for the Lorenz curve (left-hand panel of Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a>) is 34.4 percent. In contrast, the Gini statistic for performance curve (right-hand panel) is 1.7 percent.</p>
@@ -1519,7 +1614,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,
 <span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)
 <span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-198-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-199-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
 </div>
@@ -1533,6 +1628,8 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <div id="further-resources-and-contributors" class="section level2">
 <h2><span class="header-section-number">7.7</span> Further Resources and Contributors</h2>
 <p>This chapter serves as a bridge between the technical introduction of this book and an introduction to pricing and ratemaking for practicing actuaries. For readers interested in learn practical aspects of pricing, we recommend introductions by the Society of Actuaries in <span class="citation">Friedland (<a href="#ref-friedland2013fundamentals">2013</a>)</span> and by the Casualty Actuarial Society in <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic">2016</a>)</span>. For a classic risk management introduction to pricing, see <span class="citation">Niehaus and Harrington (<a href="#ref-niehaus2003risk">2003</a>)</span>. See also <span class="citation">Finger (<a href="#ref-finger2006risk">2006</a>)</span> and <span class="citation">Frees (<a href="#ref-frees2014frequency">2014</a>)</span>.</p>
+<p><span class="citation">Bühlmann (<a href="#ref-buhlmann1985premium">1985</a>)</span> was the first in the academic literature to argue that pricing should be done first at the portfolio level (he referred to this as a <em>top down</em> approach) which would be subsequently reconciled with pricing of individual contracts. See also the discussion in <span class="citation">Kaas et al. (<a href="#ref-kaas2008modern">2008</a>)</span>, Chapter 5.</p>
+<p>For more background on pricing principles, a classic treatment is by <span class="citation">Gerber (<a href="#ref-gerber1979introduction">1979</a>)</span> with a more modern approach in <span class="citation">Kaas et al. (<a href="#ref-kaas2008modern">2008</a>)</span>. For more discussion of a pricing from a financial economics viewpoint, see <span class="citation">Bauer, Phillips, and Zanjani (<a href="#ref-bauer2013financial">2013</a>)</span>.</p>
 <ul>
 <li><strong>Edward W. (Jed) Frees</strong>, University of Wisconsin-Madison, and <strong>José Garrido</strong>, Concordia University are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> and/or <a href="mailto:jose.garrido@concordia.ca">jose.garrido@concordia.ca</a> for chapter comments and suggested improvements.</li>
 <li>Chapter reviewers include: Write Jed or José to add you name here.</li>
@@ -1615,6 +1712,9 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <div id="ref-bauer2013financial">
 <p>Bauer, Daniel, Richard D. Phillips, and George H. Zanjani. 2013. “Financial Pricing of Insurance.” In <em>Handbook of Insurance</em>, 627–45. Springer.</p>
 </div>
+<div id="ref-buhlmann1985premium">
+<p>Bühlmann, Hans. 1985. “Premium Calculation from Top down.” <em>ASTIN Bulletin: The Journal of the IAA</em> 15 (2). Cambridge University Press: 89–101.</p>
+</div>
 <div id="ref-denuit2019concentrationGini">
 <p>Denuit, Michel, Dominik Sznajder, and Julien Trufin. 2019. “Model Selection Based on Lorenz and Concentration Curves, Gini Indices and Convex Order.” <em>Insurance: Mathematics and Economics</em>.</p>
 </div>
@@ -1633,17 +1733,23 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <div id="ref-friedland2013fundamentals">
 <p>Friedland, Jacqueline. 2013. <em>Fundamentals of General Insurance Actuarial Analysis</em>. Society of Actuaries.</p>
 </div>
+<div id="ref-gerber1979introduction">
+<p>Gerber, Hans U. 1979. <em>An Introduction to Mathematical Risk Theory, Vol. 8 of Ss Heubner Foundation Monograph Series</em>. University of Pennsylvania Wharton School SS Huebner Foundation for Insurance Education.</p>
+</div>
+<div id="ref-kaas2008modern">
+<p>Kaas, Rob, Marc Goovaerts, Jan Dhaene, and Michel Denuit. 2008. <em>Modern Actuarial Risk Theory: Using R</em>. Vol. 128. Springer Science &amp; Business Media.</p>
+</div>
 <div id="ref-lorenz1905methods">
 <p>Lorenz, Max O. 1905. “Methods of Measuring the Concentration of Wealth.” <em>Publications of the American Statistical Association</em> 9 (70). Taylor &amp; Francis: 209–19.</p>
 </div>
 <div id="ref-niehaus2003risk">
 <p>Niehaus, Gregory, and Scott Harrington. 2003. <em>Risk Management and Insurance</em>. New York: McGraw Hill.</p>
 </div>
-<div id="ref-werner2010basic">
-<p>Werner, Geoff, and Claudine Modlin. 2010. <em>Basic Ratemaking</em>. Casualty Actuarial Society.</p>
-</div>
 <div id="ref-werner2016basic">
 <p>Werner, Geoff, and Claudine Modlin. 2016. <em>Basic Ratemaking, Fifth Edition</em>. Casualty Actuarial Society. <a href="https://www.casact.org/library/studynotes/werner_modlin_ratemaking.pdf" class="uri">https://www.casact.org/library/studynotes/werner_modlin_ratemaking.pdf</a>.</p>
+</div>
+<div id="ref-young2014premium">
+<p>Young, Virginia R. 2014. “Premium Principles.” <em>Wiley StatsRef: Statistics Reference Online</em>. Wiley Online Library.</p>
 </div>
 </div>
             </section>
