@@ -1,5 +1,5 @@
 
-It is common to consider aggregate portfolios, or groups, of insurance experience. Consistent with earlier notation, consider a collection of *n* contracts with losses $X_1, \ldots, X_n$. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are `r Gloss('iid')`. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section \@ref(S:ExposureToRisk) we will introduce the idea of an `r Gloss('exposure')` variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a 100,000 house and a 200,000 house as coming from the same distribution. For now, we simply assume that $X_1, \ldots, X_n$ are *iid*.
+It is common to consider an aggregate portfolio of insurance experience. Consistent with earlier notation, consider a collection of *n* contracts with losses $X_1, \ldots, X_n$. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are `r Gloss('iid')`. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section \@ref(S:ExposureToRisk) we will introduce the idea of an `r Gloss('exposure')` variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a 100,000 house and a 200,000 house as coming from the same distribution. For now, we simply assume that $X_1, \ldots, X_n$ are *iid*.
 
 
 <!-- ## Pure Premium Method -->
@@ -23,9 +23,9 @@ $$
 
 So, when premiums are determined using the pure premium method, we either take the average loss (loss cost) or use the frequency severity approach. 
 
-To get a bit closer to applications in practice, we now return to equation \@ref(eq:AccountingEquation) to include expenses. Equation \@ref(eq:AccountingEquation) also refers to `UW Profit` for underwriting profit. When rescaled by premiums, this is known as the `r Gloss('profit loading')`.  Because claims are uncertain, the insurer must hold capital to ensure that all claims are paid. Holding this extra capital is a cost of doing business, investors in the company need to be compensated for this, thus the extra loading.
+To get a bit closer to applications in practice, we now return to equation \@ref(eq:AccountingEquation) that includes expenses. Equation \@ref(eq:AccountingEquation) also refers to `UW Profit` for underwriting profit. When rescaled by premiums, this is known as the `r Gloss('profit loading')`.  Because claims are uncertain, the insurer must hold capital to ensure that all claims are paid. Holding this extra capital is a cost of doing business, investors in the company need to be compensated for this, thus the extra loading.
 
-Thinking of variable expenses and profit as a fraction of premiums, we define
+We now decompose `Expenses` into those that vary by premium, `Variable`, and those that do not, `Fixed` so that `Expenses = Variable + Fixed`. Thinking of variable expenses and profit as a fraction of premiums, we define
 
 $$
 \small{
