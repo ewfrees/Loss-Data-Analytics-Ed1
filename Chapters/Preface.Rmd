@@ -1,24 +1,5 @@
---- 
-title: "Loss Data Analytics"
-author: "An open text authored by the Actuarial Community"
-site: bookdown::bookdown_site
-output:
-  bookdown::gitbook
-documentclass: book
-bibliography: ["References/LDAReferenceC.bib"]
-biblio-style: econPeriod
-link-citations: yes
-github-repo: https://github.com/openacttexts/Loss-Data-Analytics
-description: "Loss Data Analytics is an interactive, online, freely available text.
--  The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning.
--  A subset of the book will be available in pdf format for low-cost printing.
--  The online text will be available in multiple languages to promote access to a worldwide audience."
----
 
-# Preface {-}
-
-<p style="text-align:right;">
-*Date: `r format(Sys.Date(), "%d %B %Y")`*</p>
+<!-- # Preface {-} -->
 
 ####Book Description {-}
 
@@ -207,11 +188,9 @@ We hope that you find this book worthwhile and even enjoyable. For your convenie
 
 In developing this book, we are emphasizing the [online version](https://openacttexts.github.io/Loss-Data-Analytics/index.html) that has lots of great features such as a glossary, code and solutions to examples that you can be revealed interactively. For example, you will find that the statistical code is hidden and can only be seen by clicking on terms such as 
 
-<h5 style="text-align: center;"><a id="display.T:Frequency.1Intro" href="javascript:togglecode
-('display.T:Frequency.2Intro','display.T:Frequency.1Intro');"><i><strong>R Code for Frequency Table</strong></i></a> </h5>
-<div id="display.T:Frequency.2Intro" style="display: none">
+`r HideRCode('SeverityFig.1Intro',"R Code for Frequency Table")`
 
-```
+```{r, echo=ShowCode(), eval=FALSE}
 Insample <- read.csv("Insample.csv", header=T,  na.strings=c("."), 
                       stringsAsFactors=FALSE)
 Insample2010 <- subset(Insample, Year==2010)

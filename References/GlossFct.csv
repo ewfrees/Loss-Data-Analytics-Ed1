@@ -233,6 +233,7 @@ underwriting profit,"Profit an insurer derives from providing coverage, excludin
 experience rating,A type of rating plan that uses the insured's historical loss experience as part of the premium determination,7.1,
 price,"A quantity, usually of money, that is exchanged for a good or service",7.1,
 rates,"A rate is the price, or premium, charged per unit of exposure. a rate is a premium expressed in standardized units.",7.1,
+technical prices,,7.1,
 loss cost,The sum of losses divided by an exposure; it is also known as the pure premium.,7.2,
 profit loading,A factor or percentage applied to the premium calculation to account for insurer profit in a policy,7.2,
 indicated change factor,"A factor calculated from the loss ratio method that calculates how the rates should change, with factors > 1 indicating an increase and vice versa",7.2,
@@ -288,10 +289,10 @@ log linear form,Linear regression model where the response variable is the natur
 base case,The categorical level chosen as the default with all dummy variable indicators of 0,8.2,
 workers compensation,"A no-fault insurance system prescribed by state law where benefits are provided by an employer to an employee due to a job-related injury, including death, resulting from an accident or occupational disease",8.2,
 exposure bases,The unit of measurement chosen to represent the exposure for a particular risk,8.2,
-offset,Natural log of the exposure amount that is added to a regression model to account for varying exposures,8.2,
+offset,Natural log of the exposure amount that is added to a regression model to account for varying exposures,8.2,-
 tariff,A table or list that contains the rating factors and associated premiums and other risk information,8.3,-
 in-force times,The timeframe during which a policy is active and the insurer is bound by the contractual obligation,8.3,-
-rate parameter,"Parameter in certain distributions, such as the exponential, that indicate how quickly the function decays, and it is the reciprocal of the scale parameter",8.3,-
+rate parameter,"Parameter in certain distributions, such as the exponential, that indicate how quickly the function decays, and it is the reciprocal of the scale parameter",8.3,
 functional forms,The algebraic relationship between a dependent variable and explanatory variables,8.3,
 multiplicative form,Relationship where the dependent variable is a product of the explanatory variables,8.3,
 base tariff cell,The chosen set of rating categories where the rate equals the intercept of the model (the base value),8.3,
@@ -405,8 +406,8 @@ spatial data,Data and information having an implicit or explicit association wit
 high dimensional,"Data set is high dimensional when it has many variables. In many applications, the number of variables may be larger than the sample size.",14.1,
 qualitative,"This is a type of variable in which the measurement denotes membership in a set of groups, or categories",14.1,
 nominal variable,This is a type of qualitative/ categorical variable which has two or more categories without having any kind of natural order.,14.1,
-ordinal variable,This is a type of qualitative/ categorical variable which has two or more ordered categories.,14.1,
-binary variable,Is a special type of categorical variable where there are only two categories.,14.1,-
+ordinal variable,This is a type of qualitative/ categorical variable which has two or more ordered categories.,14.1,-
+binary variable,Is a special type of categorical variable where there are only two categories.,14.1,
 quantitative variable,A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.,14.1,
 continuous variable,A continuous variable is a quantitative variable that can take on any value within a finite interval.,14.1,
 policyholder,Person in actual possession of insurance policy; policy owner.,14.1,
@@ -423,13 +424,13 @@ truncated,Truncation occurs when values beyond a boundary are either excluded wh
 stochastic process,"Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.",14.1,
 deductibles,"A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer's responsibility (subject to policy limits and coninsurance).",14.1,
 rank based measures,Statistical dependence between the rankings of two variables,14.2,
-odds ratio,"A statistic quantifying the strength of the association between two events, a and b, which is defined as the ratio of the odds of a in the presence of b and the odds of a in the absence of b",14.2,
-likelihood ratio test,A statistical test of the goodness-of-fit between two models,14.2,-
+odds ratio,"A statistic quantifying the strength of the association between two events, a and b, which is defined as the ratio of the odds of a in the presence of b and the odds of a in the absence of b",14.2,-
+likelihood ratio test,A statistical test of the goodness-of-fit between two models,14.2,
 Pearson correlation,A measure of the linear correlation between two variables,14.2,
 product-moment (Pearson) correlation,"Pearson correlation, a measure of the linear correlation between two variables",14.2,
 Kendall’s tau,A statistic used to measure the ordinal association between two measured quantities,14.2,
-concordant,"An observation pair (x,y) is said to be concordant if the observation with a larger value of x has also the larger value of y",14.2,
-discordant,"An observation pair (x,y) is said to be discordant if the observation with a larger value of x has the smaller value of y",14.2,-
+concordant,"An observation pair (x,y) is said to be concordant if the observation with a larger value of x has also the larger value of y",14.2,-
+discordant,"An observation pair (x,y) is said to be discordant if the observation with a larger value of x has the smaller value of y",14.2,
 Pearson chi-square statistic,A statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance,14.2,
 tetrachoric correlation,"A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed binary variables",14.2,
 polychoric correlation,"A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed ordinal variables",14.2,
