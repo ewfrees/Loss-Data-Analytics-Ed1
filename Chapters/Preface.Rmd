@@ -190,7 +190,7 @@ In developing this book, we are emphasizing the [online version](https://openact
 
 `r HideRCode('SeverityFig.1Intro',"R Code for Frequency Table")`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 Insample <- read.csv("Insample.csv", header=T,  na.strings=c("."), 
                       stringsAsFactors=FALSE)
 Insample2010 <- subset(Insample, Year==2010)

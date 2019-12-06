@@ -5,7 +5,7 @@ For a portfolio of insurance contracts, insurers collect premiums and pay out lo
 
 ### Classic Lorenz Curve 
 
-In welfare economics, it is common to compare distributions via the `r Gloss('Lorenz curve')`, developed by Max Otto Lorenz [@lorenz1905methods]. A Lorenz curve is a graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis. It is typically used to represent income distributions. When the income distribution is perfectly aligned with the population distribution, the Lorenz curve results in a 45 degree line that is known as the *line of equality*. Because the graph compares two distribution functions, one can also think of a Lorenz curve as a type of $pp$ plot that was introduced in Section \@ref(S:MS:GraphComparison). The area between the Lorenz curve and the line of equality is a measure of the discrepancy between the income and population distributions. Two times this area is known as the `r Gloss('Gini index')`, introduced by Corrado Gini in 1912. 
+In welfare economics, it is common to compare distributions via the `r Gloss('Lorenz curve')`, developed by Max Otto Lorenz [@lorenz1905methods]. A Lorenz curve is a graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis. It is typically used to represent income distributions. When the income distribution is perfectly aligned with the population distribution, the Lorenz curve results in a 45 degree line that is known as the `r Gloss('line of equality')`. Because the graph compares two distribution functions, one can also think of a Lorenz curve as a type of `r Gloss('pp plot')` that was introduced in Section \@ref(S:MS:GraphComparison). The area between the Lorenz curve and the line of equality is a measure of the discrepancy between the income and population distributions. Two times this area is known as the `r Gloss('Gini index', '7.6')`, introduced by Corrado Gini in 1912. 
 
 
 
@@ -312,7 +312,7 @@ Gini2 <- GiniCalc(Claims=Outy,PIx=Predvec,Sx=Flatpred)[[2]];#Gini
 ```
 
 
-```{r, fig.cap='', out.width='90%', fig.align='center', echo=ShowCode()} 
+```{r, fig.cap='', out.width='90%', fig.align='center', echo=SHOW_PDF} 
 y <- Outy 
 P1 <- Flatpred
 P2 <- Predvec

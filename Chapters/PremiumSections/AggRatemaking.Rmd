@@ -1,5 +1,5 @@
 
-It is common to consider an aggregate portfolio of insurance experience. Consistent with earlier notation, consider a collection of *n* contracts with losses $X_1, \ldots, X_n$. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are `r Gloss('iid')`. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section \@ref(S:ExposureToRisk) we will introduce the idea of an `r Gloss('exposure')` variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a 100,000 house and a 200,000 house as coming from the same distribution. For now, we simply assume that $X_1, \ldots, X_n$ are *iid*.
+It is common to consider an aggregate portfolio of insurance experience. Consistent with earlier notation, consider a collection of *n* contracts with losses $X_1, \ldots, X_n$. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are `r Gloss('iid')`. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section \@ref(S:ExposureToRisk) we will introduce the idea of an `r Gloss('exposure', '7.2, 7.4')` variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a 100,000 house and a 200,000 house as coming from the same distribution. For now, we simply assume that $X_1, \ldots, X_n$ are *iid*.
 
 
 <!-- ## Pure Premium Method -->
@@ -21,7 +21,7 @@ $$
 }
 $$
 
-So, when premiums are determined using the pure premium method, we either take the average loss (loss cost) or use the frequency severity approach. 
+So, when premiums are determined using the pure premium method, we either take the average loss (loss cost) or use the frequency severity approach.
 
 To get a bit closer to applications in practice, we now return to equation \@ref(eq:AccountingEquation) that includes expenses. Equation \@ref(eq:AccountingEquation) also refers to `UW Profit` for underwriting profit. When rescaled by premiums, this is known as the `r Gloss('profit loading')`.  Because claims are uncertain, the insurer must hold capital to ensure that all claims are paid. Holding this extra capital is a cost of doing business, investors in the company need to be compensated for this, thus the extra loading.
 
@@ -100,10 +100,10 @@ $$
 
 From the example, note that the rates produced by the pure premium method are commonly known as *indicated rates*.
 
-From our development, note also that the profit is associated with underwriting aspect of the contract and not investments. Premiums are typically paid at the beginning of a contract and insurers receive investment income from holding this money. However, due in part to the short-term nature of the contracts, investment income is typically ignored in pricing. This builds a bit of conservatism into the process that insurers welcome. It is probably most relevant in the very long "tail" lines such as workers' compensation and medical malpractice. In these lines, it can sometimes take 20 years or even longer to settle claims. But, these are also the most volatile lines; claim payments far in the future are less extreme when viewed in discounted sense. 
+From our development, note also that the profit is associated with underwriting aspect of the contract and not investments. Premiums are typically paid at the beginning of a contract and insurers receive investment income from holding this money. However, due in part to the short-term nature of the contracts, investment income is typically ignored in pricing. This builds a bit of conservatism into the process that insurers welcome. It is probably most relevant in the very long "tail" lines such as workers' compensation and medical malpractice. In these lines, it can sometimes take 20 years or even longer to settle claims. But, these are also the most volatile lines; claim payments far in the future are less extreme when viewed in discounted sense.
 
 
-### Loss Ratio Method {#S:LossRatio} 
+### Loss Ratio Method {#S:LossRatio}
 
 The `r Gloss('loss ratio')` is the ratio of the sum of losses to the premium
 
@@ -122,7 +122,7 @@ $$
 \frac{\text{UW Profit}}{\text{Premium}} = 1 - LR = 1 - \frac{\text{Loss}}{\text{Premium}} .
 }
 $$
-Suppose that we have in mind a new "target" profit loading, say $Q_{target}$. Assuming that losses, exposure, and other things about the contract stay the same, then to achieve the new target profit loading we adjust the premium. Use the *ICF* for the "indicated change factor" that is defined through the expression
+Suppose that we have in mind a new "target" profit loading, say $Q_{target}$. Assuming that losses, exposure, and other things about the contract stay the same, then to achieve the new target profit loading we adjust the premium. Use the *ICF* for the `r Gloss('indicated change factor')` that is defined through the expression
 
 $$
 \small{
@@ -183,4 +183,3 @@ This means that overall average rate level should be increased by 10%.
 
 
 We later provide a comparison of the pure premium and loss ratio methods in Section \@ref(S:CompareMethods). As inputs, this section will require  discussions of trended exposures and *on-level* premiums defined in Section \@ref(S:TrendDevelopment).
-

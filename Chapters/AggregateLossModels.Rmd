@@ -13,14 +13,14 @@ Consider an insurance portfolio of $n$ individual contracts, and let $S$ denote 
 $$\begin{aligned}
 S_n=X_1 +X_2 +\cdots+X_n,
 \end{aligned}$$
-where $X_i~(i=1,\ldots,n)$ is interpreted as the loss amount from the $i$th contract. It is worth stressing that $n$ denotes the number of contracts in the portfolio and thus is a fixed number rather than a random variable. For the individual risk model, one usually assumes $X_{i}$'s are independent. Because of different contract features such as `r Gloss('coverage')` and `r Gloss('exposure')`, $X_{i}$'s are not necessarily identically
+where $X_i~(i=1,\ldots,n)$ is interpreted as the loss amount from the $i$th contract. It is worth stressing that $n$ denotes the number of contracts in the portfolio and thus is a fixed number rather than a random variable. For the individual risk model, one usually assumes $X_{i}$'s are independent. Because of different contract features such as `r Gloss('coverage')` and `r Gloss('exposure', '5.1')`, $X_{i}$'s are not necessarily identically
 distributed. A notable feature of the distribution of each $X_i$ is the probability mass at zero corresponding to the event of no claims.
 
-The `r Gloss('collective risk model')` represents the aggregate losses in terms of a `r Gloss('frequency distribution')` and a `r Gloss('severity distribution')`:
+The `r Gloss('collective risk model')` represents the aggregate losses in terms of a frequency distribution and a severity distribution:
 $$\begin{aligned}
 S_N=X_1 +X_2 +\cdots+X_N.
 \end{aligned}$$
-Here, one thinks of a random number of claims $N$ that may represent either the number of losses or the number of payments. In contrast, in the individual risk model, we use a fixed number of contracts $n$. We think of $X_1, X_2, \ldots, X_N$ as representing the amount of each loss. Each loss may or may not correspond to a unique contract. For instance, there may be multiple claims arising from a single contract. It is natural to think about $X_i>0$ because if $X_i=0$ then no claim has occurred. Typically we assume that conditional on $N=n$, $X_{1},X_{2},\ldots ,X_{n}$ are *iid* random variables. The distribution of $N$ is known as the *frequency distribution*, and the common distribution of $X$ is known as the *severity distribution*. We further assume $N$ and $X$ are independent. With the collective risk model, we may decompose the aggregate losses into the frequency ($N$) process and the severity ($X$) model. This flexibility allows the analyst to comment on these two separate components. For example, sales growth due to lower underwriting standards could lead to higher frequency of losses but might not affect severity. Similarly, `r Gloss('inflation')` or other economic forces could have an impact on severity but not on frequency.
+Here, one thinks of a random number of claims $N$ that may represent either the number of losses or the number of payments. In contrast, in the individual risk model, we use a fixed number of contracts $n$. We think of $X_1, X_2, \ldots, X_N$ as representing the amount of each loss. Each loss may or may not correspond to a unique contract. For instance, there may be multiple claims arising from a single contract. It is natural to think about $X_i>0$ because if $X_i=0$ then no claim has occurred. Typically we assume that conditional on $N=n$, $X_{1},X_{2},\ldots ,X_{n}$ are `r Gloss('iid')` random variables. The distribution of $N$ is known as the `r Gloss('frequency distribution')`, and the common distribution of $X$ is known as the `r Gloss('severity distribution')`. We further assume $N$ and $X$ are independent. With the collective risk model, we may decompose the aggregate losses into the frequency ($N$) process and the severity ($X$) model. This flexibility allows the analyst to comment on these two separate components. For example, sales growth due to lower underwriting standards could lead to higher frequency of losses but might not affect severity. Similarly, `r Gloss('inflation')` or other economic forces could have an impact on severity but not on frequency.
 
 
 ```{r child = './Quizzes/Quiz51.html', eval = QUIZ}
@@ -140,7 +140,7 @@ $$\begin{aligned}
 
 *** 
 
-The individual risk model can also be used for claim frequency. If $X_i$ denotes the number of claims from the $i$th contract, then $S_n$ is interpreted as the total number of claims from the portfolio. In this case, the above two-part framework still applies since there is a probability mass at zero for contracts that do not experience any claims. Assume $X_i$ belongs to the $(a,b,0)$ class with *pmf* denoted by $p_{ik} = \Pr(X_i=k)$ for $k=0,1,\ldots$ (see Section \@ref(S:the-a-b-0-class)). Let $X_i^{T}$ denote the associated zero-truncated distribution in the $(a,b,1)$ class with *pmf* $p_{ik}^T=p_{ik}/(1-p_{i0})$ for $k=1,2,\ldots$ (see Section \@ref(S:zero-truncation-or-modification)). Using the relationship between their probability generating functions (see *Technical Supplement `r chapnum`.A.2* for details):
+The individual risk model can also be used for claim frequency. If $X_i$ denotes the number of claims from the $i$th contract, then $S_n$ is interpreted as the total number of claims from the portfolio. In this case, the above two-part framework still applies since there is a probability mass at zero for contracts that do not experience any claims. Assume $X_i$ belongs to the $(a,b,0)$ class with `r Gloss('pmf')` denoted by $p_{ik} = \Pr(X_i=k)$ for $k=0,1,\ldots$ (see Section \@ref(S:the-a-b-0-class)). Let $X_i^{T}$ denote the associated zero-truncated distribution in the $(a,b,1)$ class with *pmf* $p_{ik}^T=p_{ik}/(1-p_{i0})$ for $k=1,2,\ldots$ (see Section \@ref(S:zero-truncation-or-modification)). Using the relationship between their probability generating functions (see *Technical Supplement `r chapnum`.A.2* for details):
 $$\begin{aligned}
 P_{X_i}(z) = p_{i0} +(1-p_{i0}) P_{X_i^{T}}(z),
 \end{aligned}$$
@@ -194,7 +194,7 @@ Note that equivalently, we could have calculated the mean and variance of an ind
 
 *** 
 
-To understand the distribution of the aggregate loss, one could use the `r Gloss('central limit theorem')` to approximate the distribution of $S_n$ for large $n$. Denote $\mu_{S_n}={\rm E}(S_n)$ and $\sigma^2_{S_n}={\rm Var}(S_n)$ and let $Z\sim N(0,1)$, a standard normal random variable with *cdf* $\Phi$. Then the *cdf* of $S_n$ can be approximated as follows:
+To understand the distribution of the aggregate loss, one could use the `r Gloss('central limit theorem', '5.2')` to approximate the distribution of $S_n$ for large $n$. Denote $\mu_{S_n}={\rm E}(S_n)$ and $\sigma^2_{S_n}={\rm Var}(S_n)$ and let $Z\sim N(0,1)$, a standard normal random variable with `r Gloss('cdf')` $\Phi$. Then the *cdf* of $S_n$ can be approximated as follows:
 $$\begin{aligned}
  F_{S_n}(s) &= {\rm Pr}({S_n}\leq s) = \Pr \left( \frac{S_n - \mu_{S_n}}{\sigma_{S_n}} \leq \frac{s-\mu_{S_n}}{\sigma_{S_n}} \right) \\
  &\approx \Pr\left( Z \leq \frac{s-\mu_{S_n}}{\sigma_{S_n}} \right) = \Phi \left(\frac{s-\mu_S}{\sigma_S}\right).
@@ -829,7 +829,7 @@ The distribution function of $S_N$ is:
 \Pr(S_N>s) &=& \Pr(X^*>s) =\frac{\beta}{1+\beta} \exp\left( -\frac{s}{
 \theta (1+\beta)}\right)
 \end{eqnarray*}
-with *pdf*
+with `r Gloss('pdf')`
 \begin{eqnarray*}
 f_{S_N}(s) = \frac{\beta}{\theta (1+\beta)^2}\exp\left( -\frac{s}{
 \theta (1+\beta)}\right).
@@ -871,7 +871,7 @@ f_{S_n}(s)&=\sum_{n=1}^{\infty} p_n f_{S_n}(s)\\
 Thus, the Tweedie distribution can be thought of a mixture of zero and a positive valued distribution, which makes it a convenient tool for modeling insurance claims and for calculating pure premiums. The mean and variance of the Tweedie compound Poisson model are:
 $${\rm E} (S_N)=\lambda\frac{\alpha}{\gamma}~~~~{\rm and}~~~~{\rm Var} (S)=\lambda\frac{\alpha(1+\alpha)}{\gamma^2}.$$
 
-As another important feature, the Tweedie distribution is a special case of `r Gloss('exponential dispersion')` models, a class of models used to describe the random component in`r Gloss('generalized linear models')`. To see this, we consider the following reparameterization:
+As another important feature, the Tweedie distribution is a special case of `r Gloss('exponential dispersion')` models, a class of models used to describe the random component in `r Gloss('generalized linear models')`. To see this, we consider the following reparameterization:
 \begin{equation*}
 \lambda=\frac{\mu^{2-p}}{\phi(2-p)},~~~~\alpha=\frac{2-p}{p-1},~~~~\frac{1}{\gamma}=\phi(p-1)\mu^{p-1}
 \end{equation*}
@@ -1060,7 +1060,7 @@ So $S\sim NB(\beta,nr)$.
 ***
 
 **Example `r chapnum`.5.1.**
-Assume that the number of claims for each vehicle is Poisson with mean $\lambda$. Given the following data on the observed number of claims for each household, calculate the MLE of $\lambda$.  
+Assume that the number of claims for each vehicle is Poisson with mean $\lambda$. Given the following data on the observed number of claims for each household, calculate the `r Gloss('MLE')` of $\lambda$.  
 
 $$
 {\small 
