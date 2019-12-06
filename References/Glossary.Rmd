@@ -12,8 +12,25 @@ Glossfunction <- function(term){
   ifelse(length(temp2) == 0, return(''), return(Gloss_data[temp2[[1]],2]))
 }
 
-Gloss <- function(term){
-  return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
+GlossfunctionBySection <- function(term, section){
+  temp2 <- which(Gloss_data$Term == trimws(tolower(term)) & Gloss_data$Section == section)
+  ifelse(length(temp2) == 0, return(''), return(Gloss_data[temp2,2]))
+}
+
+#Gloss <- function(term){
+#  return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
+#}
+
+Gloss <- function(term, section){
+  if (missing(section)) {
+    section = FALSE
+  }
+  
+  if (section == FALSE) {
+    return(paste(A1,term,A2,Glossfunction(term),A3, sep=""))
+  } else {
+    return(paste(A1,term,A2,GlossfunctionBySection(term, section),A3, sep=""))
+  }
 }
 
 ```

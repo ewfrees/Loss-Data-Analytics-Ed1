@@ -4,13 +4,13 @@
 
 Simulation presented up to now is based on sampling from a *known* distribution. Section \@ref(S:SimulationFundamentals) showed how to use simulation techniques to sample and compute quantities from known distributions.  However, statistical  science is dedicated to providing inferences about distributions that are *unknown*. We gather summary statistics based on this unknown population distribution. But how do we sample from an unknown distribution? 
 
-Naturally, we cannot simulate draws from an unknown distribution but we can draw from a sample of observations. If the sample is a good representation from the population, then our simulated draws from the sample should well approximate the simulated draws from a population. The process of sampling from a sample is called *resampling* or *bootstrapping*. The term *bootstrap* comes from the phrase "pulling oneself up by one's bootstraps" (Efron, 1979). With resampling, the original sample plays the role of the population and estimates from the sample play the role of true population parameters.
+Naturally, we cannot simulate draws from an unknown distribution but we can draw from a sample of observations. If the sample is a good representation from the population, then our simulated draws from the sample should well approximate the simulated draws from a population. The process of sampling from a sample is called *resampling* or *bootstrapping*. The term `r Gloss('bootstrap')` comes from the phrase "pulling oneself up by one's bootstraps" (Efron, 1979). With resampling, the original sample plays the role of the population and estimates from the sample play the role of true population parameters.
 
 The resampling algorithm is that same as introduced in Section \@ref(S:SimulationStatInference) except that now we use simulated draws from a sample. It is common to use $\{X_1, \ldots, X_n\}$ to denote the original sample and let $\{X_1^*, \ldots, X_n^*\}$ denote the simulated draws from this sample. We draw them with replacement so that the simulated draws will be independent from one another, the same assumption as with the original sample. We also use *n* simulated draws, the same number as the original sample size. To distinguish this procedure from the simulation, it is common to use *B* (for bootstrap) to be the number of simulated samples. We could also write $\{X_1^{(b)}, \ldots, X_n^{(b)}\}$, $b=1,\ldots, B$ to clarify this.
 
-There are two basic resampling methods, *model-free* and *model-based*, which are also known, respectively, as *nonparametric* and *parametric*. In the nonparametric approach, no assumption is made about the distribution of the parent population. The simulated draws come from the empirical distribution function $F_n(\cdot)$, so each draw comes from $\{X_1, \ldots, X_n\}$ with probability 1/*n*. 
+There are two basic resampling methods, *model-free* and *model-based*, which are also known, respectively, as *nonparametric* and *parametric*. In the `r Gloss('nonparametric approach')`, no assumption is made about the distribution of the parent population. The simulated draws come from the empirical distribution function $F_n(\cdot)$, so each draw comes from $\{X_1, \ldots, X_n\}$ with probability 1/*n*. 
 
-In contrast, for the parametric approach, we assume that we have knowledge of the distribution family *F*. The original sample $X_1, \ldots, X_n$ is used to estimate parameters of that family, say, $\hat{\theta}$. Then, simulated draws are taken from the $F(\hat{\theta})$. Section \@ref(S:ParametricBootStrap) will discuss this approach in further detail.
+In contrast, for the `r Gloss('parametric approach')`, we assume that we have knowledge of the distribution family *F*. The original sample $X_1, \ldots, X_n$ is used to estimate parameters of that family, say, $\hat{\theta}$. Then, simulated draws are taken from the $F(\hat{\theta})$. Section \@ref(S:ParametricBootStrap) will discuss this approach in further detail.
 
 
 #### Nonparametric Bootstrap {-}
@@ -66,7 +66,7 @@ lines(vx,vy,lty=2,col="red")
 
 So finally, using the inverse method with $F_n$ mean sampling from $\{x_1,\cdots,x_n\}$, with probability $1/n$. And generating a bootstrap sample of size $B$ means sampling from $\{x_1,\cdots,x_n\}$, with probability $1/n$, with replacement,
 
-```{r comment="", echo=ShowCode()}
+```{r comment="", echo=SHOW_PDF}
 set.seed(1)
 n <- 10
 x <- rexp(n, 1/6)
@@ -87,7 +87,7 @@ We summarize the nonparametric bootstrap procedure as follows:
 2. Repeat this $b=1, \ldots, B$ times to get a sample of statistics, $\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*$.
 3. From the sample of statistics in Step 2, $\{\hat{\theta}_1^*, \ldots, \hat{\theta}_B^*\}$, compute a summary measure of interest.
  
-In this section, we focus on three summary measures, the bias, the standard deviation, and the mean square error (*MSE*). [Table 6.2] summarizes these three measures. Here, $\overline{\hat{\theta^*}}$ is the average of $\{\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\}$.
+In this section, we focus on three summary measures, the `r Gloss('bias')`, the standard deviation, and the mean square error (*MSE*). [Table 6.2] summarizes these three measures. Here, $\overline{\hat{\theta^*}}$ is the average of $\{\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\}$.
 
 
 [Table 6.2]:\#tab:62
@@ -119,7 +119,7 @@ $$
 
 **Example `r chapnum`.2.1. Bodily Injury Claims and Loss Elimination Ratios.** To show how the bootstrap can be used to quantify the precision of estimators, we return to the Example 4.1.11 bodily injury claims data where we introduced a nonparametric estimator of the loss elimination ratio.
 
-[Table 6.3] summarizes the results of the bootstrap estimation. For example, at $d=14000$, we saw in Example 4.1.11 that the nonparametric estimate of *LER* is 0.97678. This has an estimated bias of 0.00018 with a standard deviation of 0.00701. For some applications, you may wish to apply the estimated bias to the original estimate to give a *bias-corrected* estimator. This is the focus of the next example. For this illustration, the bias is small and so such a correction is not relevant.
+[Table 6.3] summarizes the results of the bootstrap estimation. For example, at $d=14000$, we saw in Example 4.1.11 that the nonparametric estimate of *LER* is 0.97678. This has an estimated bias of 0.00018 with a standard deviation of 0.00701. For some applications, you may wish to apply the estimated bias to the original estimate to give a `r Gloss('bias-corrected estimator')`. This is the focus of the next example. For this illustration, the bias is small and so such a correction is not relevant.
 
 The bootstrap standard deviation gives a measure of precision. For one application of standard deviations, we can use the normal approximation to create a confidence interval. For example, the `R` function `boot.ci` produces the normal confidence intervals at 95%. These are produced by creating an interval of twice the length of 1.95994 bootstrap standard deviations, centered about the bias-corrected estimator (1.95994 is the 97.5th quantile of the standard normal distribution). For example, the lower normal 95% CI at $d=14000$ is $(0.97678-0.00018)- 1.95994*0.00701 = 0.96286$. We give additional discussion on how to created bootstrap confidence intervals in the next section.
 
@@ -131,7 +131,7 @@ The bootstrap standard deviation gives a measure of precision. For one applicati
 
 ##### Table 6.3. Bootstrap Estimates of LER at Selected Deductibles {-}
 
-```{r comment="", warning=FALSE, echo=ShowCode()}
+```{r comment="", warning=FALSE, echo=SHOW_PDF}
 # Example from Derrig et al
 BIData <- read.csv("../../Data/DerrigResampling.csv", header =T)
 BIData$Censored <- 1*(BIData$AmountPaid >= BIData$PolicyLimit)
@@ -170,15 +170,15 @@ knitr::kable(OutBoot, digits=5)
 ```
 
 **Example. `r chapnum`.2.2. Estimating $\exp(\mu)$.** 
-The bootstrap can be used to quantify the bias of an estimator, for instance. Consider here a sample $\mathbf{x}=\{x_1,\cdots,x_n\}$ *iid* with mean $\mu$.
+The bootstrap can be used to quantify the bias of an estimator, for instance. Consider here a sample $\mathbf{x}=\{x_1,\cdots,x_n\}$ `r Gloss('iid')` with mean $\mu$.
 
-```{r comment="", echo=ShowCode()}
+```{r comment="", echo=SHOW_PDF}
 sample_x <- c(2.46,2.80,3.28,3.86,2.85,3.67,3.37,3.40,5.22,2.55,2.79,4.50,3.37,2.88,1.44,2.56,2.00,2.07,2.19,1.77)
 ```
 
-Suppose that the quantity of interest is $\theta=\exp[\mu]$. A *natural* estimator would be $\widehat{\theta}_1=\exp(\overline{x})$. This estimator is biased (Jensen inequality) but asymptotically unbiased.
+Suppose that the quantity of interest is $\theta=\exp[\mu]$. A `r Gloss('natural estimator')` would be $\widehat{\theta}_1=\exp(\overline{x})$. This estimator is biased (`r Gloss('Jensen inequality')`) but asymptotically unbiased.
 
-```{r comment="", echo=ShowCode()}
+```{r comment="", echo=SHOW_PDF}
 (theta_1 <- exp(mean(sample_x)))
 ```
 
@@ -194,7 +194,7 @@ Hence, one can consider naturally
 $$
 \widehat{\theta}_2=\exp\left(\overline{x}-\frac{\widehat{\sigma}^2}{2n}\right) .
 $$
-```{r comment="", echo=ShowCode()}
+```{r comment="", echo=SHOW_PDF}
 n <- length(sample_x)
 (theta_2 <- exp(mean(sample_x)-var(sample_x)/(2*n)))
 ```
@@ -207,7 +207,7 @@ Finally, an alternative is to use a bootstrap strategy: given a bootstrap sample
 $$
 \widehat{\theta}_3=\frac{1}{B}\sum_{b=1}^B\exp[\overline{x}^{\ast}_{b}] .
 $$
-```{r BootstrapDistn, fig.cap='Distribution of Bootstrap Replicates. The left-hand panel is a histogram of replicates. The right-hand panel is a quantile-quantile plot, comparing the bootstrap distribution to the standard normal distribution.', fig.align='center',  comment="", echo=ShowCode()}
+```{r BootstrapDistn, fig.cap='Distribution of Bootstrap Replicates. The left-hand panel is a histogram of replicates. The right-hand panel is a quantile-quantile plot, comparing the bootstrap distribution to the standard normal distribution.', fig.align='center',  comment="", echo=SHOW_PDF}
 library(boot)
 results <- boot(data=sample_x, 
                 statistic=function(y,indices) exp(mean(y[indices])), 
@@ -217,7 +217,7 @@ print(results)
 ```
 
 
-```{r comment="", echo=ShowCode()}
+```{r comment="", echo=SHOW_PDF}
 param <- function(x){
   n <- length(x)
   theta_1 <- exp(mean(x))
@@ -235,7 +235,7 @@ How does this work with differing sample sizes? We now suppose that the $x_i$'s 
 
 The results of the comparison are summarized in Figure \@ref(fig:BootstrapCompare). This figure shows that the bootstrap estimator is closer to the true parameter value for almost all sample sizes. The bias of  all three estimators decreases as the sample size increases.
 
-```{r BootstrapCompare, fig.cap='Comparision of Estimates. True value of the parameter is given by the solid horizontal line at 5.20.', fig.align='center',  comment="", echo=ShowCode()}
+```{r BootstrapCompare, fig.cap='Comparision of Estimates. True value of the parameter is given by the solid horizontal line at 5.20.', fig.align='center',  comment="", echo=SHOW_PDF}
 set.seed(2074)
 ns<- 200
 est <- function(n){
@@ -272,14 +272,14 @@ $$
 $$
 So, $\left( \hat{\theta}-q_U,  \hat{\theta} -q_L\right)$ is an 95% interval for $\hat{\theta} - \hat{\theta}_b^*$. The bootstrap approximation idea says that this is also a 95% interval for $\theta - \hat{\theta}$. Adding $\hat{\theta}$ to each side gives the 95% interval in equation \@ref(eq:basicBootCI). 
 
-Many alternative bootstrap intervals are available. The easiest to explain is the *percentile* bootstrap interval which is defined as $\left(q_L, q_U\right)$. However, this has the drawback of potentially poor behavior in the tails which can be of concern in some actuarial problems of interest.
+Many alternative bootstrap intervals are available. The easiest to explain is the `r Gloss('percentile bootstrap interval')` which is defined as $\left(q_L, q_U\right)$. However, this has the drawback of potentially poor behavior in the tails which can be of concern in some actuarial problems of interest.
 
 
 **Example `r chapnum`.2.3. Bodily Injury Claims and Risk Measures.** To see how the bootstrap confidence intervals work, we return to the bodily injury auto claims considered in Example 6.2.1. Instead of the loss elimination ratio, we consider the 95th percentile $F^{-1}(0.95)$ and a measure defined as
 $$
 TVaR_{0.95)}[X] = \mathrm{E}[X | X > F^{-1}(0.95)] .
 $$
-This measure is called the *tail value at risk*; it is the expected value of $X$ conditional on $X$ exceeding the 95th percentile. In Section 10.2 we will explain how quantiles and the tail value at risk are the two most important examples of so-called *risk measures*. For now, we will simply think of these as measures that we wish to estimate. For the percentile, we use the nonparametric estimator $F^{-1}_n(0.95)$ defined in Section 4.1.1.3. For the tail value at risk, we use the plug-in principle to define the nonparametric estimator
+This measure is called the `r Gloss('tail value-at-risk')`; it is the expected value of $X$ conditional on $X$ exceeding the 95th percentile. In Section 10.2 we will explain how quantiles and the tail value at risk are the two most important examples of so-called *risk measures*. For now, we will simply think of these as measures that we wish to estimate. For the percentile, we use the nonparametric estimator $F^{-1}_n(0.95)$ defined in Section 4.1.1.3. For the tail value at risk, we use the plug-in principle to define the nonparametric estimator
 
 $$
 TVaR_{n,0.95}[X] = \frac{\sum_{i=1}^n X_i I(X_i > F^{-1}_n(0.95))}{\sum_{i=1}^n I(X_i > F^{-1}_n(0.95))} ~.
@@ -293,7 +293,7 @@ In this expression, the denominator counts the number of observations that excee
 ##### Table 6.4. Bootstrap Estimates of Quantiles at Selected Fractions {-}
 
 
-```{r comment="", warning=FALSE, echo=ShowCode()}
+```{r comment="", warning=FALSE, echo=SHOW_PDF}
 # Example from Derrig et al
 #BIData <- read.csv("./Data/DerrigResampling.csv", header =T)
 BIData$Censored <- 1*(BIData$AmountPaid >= BIData$PolicyLimit)
@@ -344,7 +344,7 @@ and `r 2*quantile(BIDataUncensored$AmountPaid,.5)-quantile(bootreal,.025, type=6
 
 ##### Table 6.5. Bootstrap Estimates of TVaR at Selected Risk Levels {-}
 
-```{r comment="", warning=FALSE, echo=ShowCode()}
+```{r comment="", warning=FALSE, echo=SHOW_PDF}
 
 CTE.boot <- function(data, indices, RiskLevel){
   resample.data <- data[indices,]
@@ -389,21 +389,21 @@ knitr::kable(OutBoot1,digits=2)
 As described in the section on bootstrap, the idea of (nonparametric) bootstrap is to resample, or equivalently, to use the inverse method on the empirical cumulative distribution function $F_n$. With parametric bootstrap, we draw independent variables from $F_{\widehat{\theta}}$ where the underlying distribution is assume to be in a parametric family $\mathcal{F}=\{F_{\theta},\theta\in\Theta\}$. Typically, parameters from this distribution are estimated based on a sample and denoted as $\hat{\theta}$.
 
 **Example `r chapnum`.2.4. Lognormal distribution.** Consider again the dataset  
-```{r, echo=ShowCode()}
+```{r, echo=SHOW_PDF}
 sample_x <- c(2.46,2.80,3.28,3.86,2.85,3.67,3.37,3.40,5.22,2.55,2.79,4.50,3.37,2.88,1.44,2.56,2.00,2.07,2.19,1.77)
 
 ```
 
 The classical (nonparametric) bootstrap was based on samples
 
-```{r, echo=ShowCode()}
+```{r, echo=SHOW_PDF}
 x <- sample(sample_x,replace=TRUE)
 
 ```
 
 while for the parametric bootstrap, we have to assume that the distribution of $x_i$'s is from a specific family, for instance a lognormal distribution
 
-```{r comment="", warning=FALSE, echo=ShowCode()}
+```{r comment="", warning=FALSE, echo=SHOW_PDF}
 library(MASS)
 fit <- fitdistr(sample_x, dlnorm, list(meanlog = 1, sdlog = 1))
 fit
@@ -412,13 +412,13 @@ fit
 
 then we draw from that distribution
 
-```{r,echo=ShowCode()}
+```{r,echo=SHOW_PDF}
 x <- rlnorm(length(sample_x), meanlog=fit$estimate[1], sdlog=fit$estimate[2])
 ```
 
 Figure \@ref(fig:CoefVarCompare) compares the bootstrap distributions of the variation coefficient, one based on the parametric approach and the other based on a parametric approach, assuming a lognormal distribution.
 
-```{r CoefVarCompare, fig.cap='Bootstrap Distributions of the Coeffiecient of Variation.', fig.align='center',  comment="",echo=ShowCode()}
+```{r CoefVarCompare, fig.cap='Bootstrap Distributions of the Coeffiecient of Variation.', fig.align='center',  comment="",echo=SHOW_PDF}
 set.seed(2074)
 CV <- matrix(NA,1e5,2)
 for(s in 1:nrow(CV)){
@@ -446,7 +446,7 @@ xx
 ##### Table 6.6. Bootstrap Kaplan-Meier Estimates of Quantiles at Selected Fractions {-}
 
 
-```{r comment="", warning=FALSE,echo=ShowCode()}
+```{r comment="", warning=FALSE,echo=SHOW_PDF}
 # Example from Derrig et al
 library(survival)                # for Surv(), survfit()
 #BIData <- read.csv("./Data/DerrigResampling.csv", header =T)

@@ -117,7 +117,7 @@ plot(PercentilesxExample, main="",xlab="x")
 
 `r HideRCode('Toy.4f', 'Show R Code')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 (xExample <- c(10,rep(15,3),20,rep(23,4),30))
 PercentilesxExample <- ecdf(xExample)
 plot(PercentilesxExample, main="",xlab="x")
@@ -131,7 +131,7 @@ plot(PercentilesxExample, main="",xlab="x")
 
 #### Quartiles, Percentiles and Quantiles {#S:MS:QuantileEstimator}
 
-We have already seen the `r Gloss('median')`, which is the number such that approximately half of a data set is below (or above) it. The `r Gloss('first quartile')` is the number such that approximately 25\% of the data is below it and the `r Gloss('third quartile')` is the number such that approximately 75\% of the data is below it. A $100p$ `r Gloss('percentile')` is the number such that $100 \times p$ percent of the data is below it.
+We have already seen the `r Gloss('median')`, which is the number such that approximately half of a data set is below (or above) it. The `r Gloss('first quartile')` is the number such that approximately 25\% of the data is below it and the `r Gloss('third quartile')` is the number such that approximately 75\% of the data is below it. A $100p$ `r Gloss('percentile', '4.1')` is the number such that $100 \times p$ percent of the data is below it.
 
 To generalize this concept, consider a distribution function $F(\cdot)$, which may or may not be continuous, and let $q$ be a fraction so that $0<q<1$. We want to define a `r Gloss('quantile')`, say $q_F$, to be a number such that $F(q_F) \approx q$. Notice that when $q = 0.5$, $q_F$ is the median; when $q = 0.25$, $q_F$ is the first quartile, and so on. So, a quantile generalizes the concepts of median, quartiles, and percentiles.
 
@@ -247,7 +247,7 @@ where $n_j$ is the number of observations ($X_i$) that fall into the interval $[
 
 ***
 
-The idea is that the estimator $f_n(x)$ in equation \@ref(eq:KDF) is the average over $n$ `r Gloss('iid')` realizations of a random variable with mean
+The idea is that the estimator $f_n(x)$ in equation \@ref(eq:KDF) is the average over $n$ *iid* realizations of a random variable with mean
 
 $$
 \begin{aligned}
@@ -319,7 +319,7 @@ legend("topright", c("b=0.3255 (default)", "b=0.1", "b=1.0"), lty=c(1,3,1), lwd=
 
 `r HideRCode('kpdf',"Show R Code")`
 
-```{r, echo=ShowCode(),eval=FALSE}
+```{r, echo=SHOW_PDF,eval=FALSE}
 #Density Comparison
 hist(log(ClaimData$Claim), main="", ylim=c(0,.35),xlab="Log Expenditures", freq=FALSE, col="lightgray")
 lines(density(log(ClaimData$Claim)), col="blue",lwd=2.5)
@@ -396,7 +396,7 @@ Then the kernel density estimate is $$f_n(x) = \frac{1}{5(2)}\left( \frac{3}{4} 
 
 #### Plug-in Principle
 
-One way to create a nonparametric estimator is to use the *analog* or *plug-in principle* where one replaces the unknown *cdf* $F$ with a known estimate such as the empirical *cdf* $F_n$. So, if we are trying to estimate $\mathrm{E}~\mathrm{g}(X)=\mathrm{E}_F~\mathrm{g}(X)$ for a generic function *g*, then we define a nonparametric estimator to be $\mathrm{E}_{F_n}~\mathrm{g}(X)=n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)$.
+One way to create a nonparametric estimator is to use the *analog* or `r Gloss('plug-in principle')` where one replaces the unknown `r Gloss('cdf')` $F$ with a known estimate such as the empirical *cdf* $F_n$. So, if we are trying to estimate $\mathrm{E}~\mathrm{g}(X)=\mathrm{E}_F~\mathrm{g}(X)$ for a generic function *g*, then we define a nonparametric estimator to be $\mathrm{E}_{F_n}~\mathrm{g}(X)=n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)$.
 
 To see how this works, as a special case of *g* we consider the *loss elimination ratio* introduced in Section 3.4.1, 
 $$
@@ -878,7 +878,7 @@ One uses the training sample to develop an estimate of $\mathrm{g}$, say, $\hat{
 (\#eq:OutSampleCriter)
 \end{equation}
 
-Here, the sum *i* is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form $\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2$. In actuarial applications, Euclidean distance $\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|$ is often preferred because of the skewed nature of the data (large outlying values of $y$ can have a large effect on the measure). Chapter \@ref(C:PremiumFoundations) describes another measure, the `r Gloss('Gini index')`, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).
+Here, the sum *i* is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form $\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2$. In actuarial applications, Euclidean distance $\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|$ is often preferred because of the skewed nature of the data (large outlying values of $y$ can have a large effect on the measure). Chapter \@ref(C:PremiumFoundations) describes another measure, the `r Gloss('Gini index', '4.2')`, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).
 
 **Selecting a Distribution.** Still, our focus so far has been to select a distribution for a data set that can be used for actuarial modeling without additional inputs $x_1, \ldots, x_k$. Even in this more fundamental problem, the model validation approach is valuable. If we base all inference on only in-sample data, then there is a tendency to select more complicated models then needed. For example, we might select a four parameter GB2, generalized beta of the second kind, distribution when only a two parameter Pareto is needed. Information criteria such as `r Gloss('AIC')` and `r Gloss('BIC')` included penalties for model complexity and so provide some protection but using a test sample is the best guarantee to achieve parsimonious models. From a quote often attributed to Albert Einstein, we want to "use the simplest model as possible but no simpler."
 
@@ -1452,7 +1452,7 @@ plot(KM0, conf.int=FALSE, xlab="x",ylab="Kaplan Meier Survival")
 
 `r HideRCode('KaplanMeier.4f', 'Show R Code')`
 
-```{r, echo=ShowCode(), eval=FALSE}
+```{r, echo=SHOW_PDF, eval=FALSE}
 library(survival)                # for Surv(), survfit()
 ## KM estimate
 KM0 <- survfit(Surv(AmountPaid, UnCensored) ~ 1,  type="kaplan-meier", data=BIData)
@@ -1635,9 +1635,9 @@ the *posterior* distribution.
 summing) the joint distribution of data and parameters over parameter values. 
 
 
-**Why Bayes?** There are several advantages of the Bayesian approach. First, we can describe the entire distribution of parameters conditional on the data. This allows us, for example, to provide probability statements regarding the likelihood of parameters. Second, the Bayesian approach provides a unified approach for estimating parameters. Some non-Bayesian methods, such as `r Gloss('least squares')`, require a separate approach to estimate variance components. In contrast, in Bayesian methods, all parameters can be treated in a similar fashion. This is convenient for explaining results to consumers of the data analysis. Third, this approach allows analysts to blend prior information known from other sources with the data in a coherent manner. This topic is developed in detail in the `r Gloss('credibility')` chapter.  Fourth, Bayesian analysis is particularly useful for forecasting future responses.
+**Why Bayes?** There are several advantages of the Bayesian approach. First, we can describe the entire distribution of parameters conditional on the data. This allows us, for example, to provide probability statements regarding the likelihood of parameters. Second, the Bayesian approach provides a unified approach for estimating parameters. Some non-Bayesian methods, such as `r Gloss('least squares')`, require a separate approach to estimate variance components. In contrast, in Bayesian methods, all parameters can be treated in a similar fashion. This is convenient for explaining results to consumers of the data analysis. Third, this approach allows analysts to blend prior information known from other sources with the data in a coherent manner. This topic is developed in detail in the `r Gloss('credibility', '4.4')` chapter.  Fourth, Bayesian analysis is particularly useful for forecasting future responses.
 
-**Poisson - Gamma Special Case.** To develop intuition, we consider the Poisson-Gamma case that holds a prominent position in actuarial applications. The idea is to consider a set of random variables $X_1, \ldots, X_n$ where each $X_i$ could represent the number of claims for the *i*th policyholder. Assume that $X_i$ has a Poisson distribution with parameter $\lambda$, analogous to the likelihood that we first saw in Chapter \@ref(C:Frequency-Modeling). In a non-Bayesian (or frequentist) context, the parameter $\lambda$ is viewed as an unknown quantity that is not random (it is said to be "fixed"). In the Bayesian context, the unknown parameter $\lambda$ is viewed as uncertain and is modeled as a random variable. In this special case, we use the gamma distribution to reflect this uncertainty, the `r Gloss('prior distribution')`.
+**Poisson - Gamma Special Case.** To develop intuition, we consider the Poisson-Gamma case that holds a prominent position in actuarial applications. The idea is to consider a set of random variables $X_1, \ldots, X_n$ where each $X_i$ could represent the number of claims for the *i*th policyholder. Assume that $X_i$ has a Poisson distribution with parameter $\lambda$, analogous to the likelihood that we first saw in Chapter \@ref(C:Frequency-Modeling). In a non-Bayesian (or frequentist) context, the parameter $\lambda$ is viewed as an unknown quantity that is not random (it is said to be "fixed"). In the Bayesian context, the unknown parameter $\lambda$ is viewed as uncertain and is modeled as a random variable. In this special case, we use the gamma distribution to reflect this uncertainty, the `r Gloss('prior distribution', '4.4')`.
 
 Think of the following two-stage sampling scheme to motivate our probabilistic set-up.
 
@@ -1658,7 +1658,7 @@ Let us demonstrate that the distribution of $X$ is negative binomial. We assume 
 $$
 \Pr(X = x|\lambda) = \frac{\lambda^x}{\Gamma(x+1)} e^{-\lambda} ,
 $$
-using notation $\Gamma(x+1) = x!$ for integer $x$. Assume that $\lambda$ is a draw from a gamma distribution with fixed parameters, say, $\alpha$ and $\theta$, so this has `r Gloss('pdf')`
+using notation $\Gamma(x+1) = x!$ for integer $x$. Assume that $\lambda$ is a draw from a gamma distribution with fixed parameters, say, $\alpha$ and $\theta$, so this has *pdf*
 $$
 f(\lambda) = \frac{\lambda^{\alpha-1}}{\theta^{\alpha}\Gamma(\alpha)}\exp(-\lambda/\theta).
 $$
@@ -1687,11 +1687,11 @@ Here, we used the gamma distribution equality with the substitution $\theta_r = 
 
 </div>
 
-In this chapter, we use small examples that can be done by hand in order to focus on the foundations. For practical implementation, analysts rely heavily on simulation methods using modern computational methods such as `r Gloss('Markov Chain Monte Carlo')` (*MCMC*) simulation. We will get an exposure to simulation techniques in Chapter \@ref(C:Simulation) but more intensive techniques such as *MCMC* requires yet more background. See @hartman2016 for an introduction to computational Bayesian methods from an actuarial perspective.
+In this chapter, we use small examples that can be done by hand in order to focus on the foundations. For practical implementation, analysts rely heavily on simulation methods using modern computational methods such as `r Gloss('Markov Chain Monte Carlo (MCMC) simulation')`. We will get an exposure to simulation techniques in Chapter \@ref(C:Simulation) but more intensive techniques such as *MCMC* requires yet more background. See @hartman2016 for an introduction to computational Bayesian methods from an actuarial perspective.
 
 ### Bayesian Model
 
-With the intuition developed in the preceding Section \@ref(S:IntroBayes), we now restate the Bayesian model with a bit more precision using mathematical notation. For simplicity, this summary assumes both the outcomes and parameters are continuous random variables. In the examples, we sometimes ask the viewer to apply these same principles to discrete versions. Conceptually both the continuous and discrete cases are the same; mechanically, one replaces a `r Gloss('pdf')` by a `r Gloss('pmf')` and an integral by a sum. 
+With the intuition developed in the preceding Section \@ref(S:IntroBayes), we now restate the Bayesian model with a bit more precision using mathematical notation. For simplicity, this summary assumes both the outcomes and parameters are continuous random variables. In the examples, we sometimes ask the viewer to apply these same principles to discrete versions. Conceptually both the continuous and discrete cases are the same; mechanically, one replaces a *pdf* by a *pmf* and an integral by a sum. 
 
 As stated earlier, under the Bayesian perspective, the model parameters and data are both viewed as random. Our uncertainty about the parameters of the underlying data generating process is reflected in the use of probability tools.
 
