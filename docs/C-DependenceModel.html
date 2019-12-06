@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 14 Dependence Modeling | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 14 Dependence Modeling | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 14 Dependence Modeling | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-DataSystems.html">
 <link rel="next" href="C-AppA.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -838,7 +838,7 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <li>Describe binary variable</li>
 </ul>
 <hr />
-<p>A <a href="#" class="tooltip" style="color:green"><em>qualitative</em><span style="font-size:8pt">This is a type of variable in which the measurement denotes membership in a set of groups, or categories</span></a>,or <a href="#" class="tooltip" style="color:green"><em>categorical variable</em><span style="font-size:8pt">Same as Qualitative variable.</span></a> is one for which the measurement denotes membership in a set of groups, or categories. For example, if you were coding which area of the country an insured resides, you might use a 1 for the northern part, 2 for southern, and 3 for everything else. This location variable is an example of a <a href="#" class="tooltip" style="color:green"><em>nominal variable</em><span style="font-size:8pt">This is a type of qualitative/ categorical variable which has two or more categories without having any kind of natural order.</span></a>, one for which the levels have no natural ordering. Any analysis of nominal variables should not depend on the labeling of the categories. For example, instead of using a 1,2,3 for north, south, other, I should arrive at the same set of summary statistics if I used a 2,1,3 coding instead, interchanging north and south.</p>
+<p>A <a href="#" class="tooltip" style="color:green"><em>qualitative</em><span style="font-size:8pt">This is a type of variable in which the measurement denotes membership in a set of groups, or categories</span></a>, or <a href="#" class="tooltip" style="color:green"><em>categorical variable</em><span style="font-size:8pt">A variable whose values are qualitative groups and can have no natural ordering (nominal) or an ordering (ordinal)</span></a> is one for which the measurement denotes membership in a set of groups, or categories. For example, if you were coding which area of the country an insured resides, you might use a 1 for the northern part, 2 for southern, and 3 for everything else. This location variable is an example of a <a href="#" class="tooltip" style="color:green"><em>nominal variable</em><span style="font-size:8pt">This is a type of qualitative/ categorical variable which has two or more categories without having any kind of natural order.</span></a>, one for which the levels have no natural ordering. Any analysis of nominal variables should not depend on the labeling of the categories. For example, instead of using a 1,2,3 for north, south, other, I should arrive at the same set of summary statistics if I used a 2,1,3 coding instead, interchanging north and south.</p>
 <p>In contrast, an <a href="#" class="tooltip" style="color:green"><em>ordinal variable</em><span style="font-size:8pt">This is a type of qualitative/ categorical variable which has two or more ordered categories.</span></a> is a type of categorical variable for which an ordering does exist. For example, with a survey to see how satisfied customers are with our claims servicing department, we might use a five point scale that ranges from 1 meaning dissatisfied to a 5 meaning satisfied. Ordinal variables provide a clear ordering of levels of a variable but the amount of separation between levels is unknown.</p>
 <p>A <a href="#" class="tooltip" style="color:green"><em>binary variable</em><span style="font-size:8pt">Is a special type of categorical variable where there are only two categories.</span></a> is a special type of categorical variable where there are only two categories commonly taken to be a 0 and a 1. For example, we might code a variable in a dataset to be a 1 if an insured is female and a 0 if male.</p>
 </div>
@@ -853,7 +853,7 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 </ul>
 <hr />
 <p>Unlike a qualitative variable, a <a href="#" class="tooltip" style="color:green"><em>quantitative variable</em><span style="font-size:8pt">A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.</span></a> is one in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning. A <a href="#" class="tooltip" style="color:green"><em>continuous variable</em><span style="font-size:8pt">A continuous variable is a quantitative variable that can take on any value within a finite interval.</span></a> is one that can take on any value within a finite interval. For example, it is common to represent a <a href="#" class="tooltip" style="color:green"><em>policyholder</em><span style="font-size:8pt">Person in actual possession of insurance policy; policy owner.</span></a>’s age, weight, or income, as a continuous variable. In contrast, a <a href="#" class="tooltip" style="color:green"><em>discrete variable</em><span style="font-size:8pt">A discrete variable is quantitative variable that takes on only a finite number of values in any finite interval.</span></a> is one that takes on only a finite number of values in any finite interval. For example, when examining a policyholder’s choice of <a href="#" class="tooltip" style="color:green"><em>deductibles</em><span style="font-size:8pt">A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer’s responsibility (subject to policy limits and coninsurance).</span></a>, it may be that values of 0, 250, 500, and 1000 are the only possible outcomes. Like an ordinal variable, these represent distinct categories that are ordered. Unlike an ordinal variable, the numerical difference between levels takes on economic meaning. A special type of discrete variable is a <a href="#" class="tooltip" style="color:green"><em>count variable</em><span style="font-size:8pt">A count variable is a discrete variable with values on nonnegative integers.</span></a>, one with values on the nonnegative integers. For example, we will be particularly interested in the number of claims arising from a policy during a given period.</p>
-<p>Some variables are inherently a <em>combination of discrete and continuous</em> components. For example, when we analyze the insured <a href="#" class="tooltip" style="color:green"><em>loss</em><span style="font-size:8pt">The amount of damages sustained by an individual or corporation, typically as the result of an insurable event.</span></a> of a policyholder, we will encounter a discrete outcome at zero, representing no insured loss, and a continuous amount for positive outcomes, representing the amount of the insured loss. Another interesting variation is an <a href="#" class="tooltip" style="color:green"><em>interval variable</em><span style="font-size:8pt"></span></a>,one that gives a range of possible outcomes.</p>
+<p>Some variables are inherently a <em>combination of discrete and continuous</em> components. For example, when we analyze the insured <a href="#" class="tooltip" style="color:green"><em>loss</em><span style="font-size:8pt">The amount of damages sustained by an individual or corporation, typically as the result of an insurable event.</span></a> of a policyholder, we will encounter a discrete outcome at zero, representing no insured loss, and a continuous amount for positive outcomes, representing the amount of the insured loss. Another interesting variation is an <a href="#" class="tooltip" style="color:green"><em>interval variable</em><span style="font-size:8pt">An ordinal variable with the additional property that the magnitudes of the differences between two values are meaningful</span></a>,one that gives a range of possible outcomes.</p>
 <p><a href="#" class="tooltip" style="color:green"><em>Circular data</em><span style="font-size:8pt">In a circular data, all values around the circle are equally likely. Example, imagine an analog picture of a clock.</span></a> represent an interesting category typically not analyzed by <a href="#" class="tooltip" style="color:green"><em>insurers</em><span style="font-size:8pt">An insurance company authorized to write insurance under the laws of any state.</span></a>. As an example of circular data, suppose that you monitor calls to your customer service center and would like to know when is the peak time of the day for calls to arrive. In this context, one can think about the time of the day as a variable with realizations on a circle, e.g., imagine an analog picture of a clock. For circular data, the distance between observations at 00:15 and 00:45 are just as close as observations 23:45 and 00:15 (here, we use the convention <em>HH:MM</em> means hours and minutes).</p>
 </div>
 <div id="multivariate-variables" class="section level3">
@@ -866,7 +866,7 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 </ul>
 <hr />
 <p>Insurance data typically are <a href="#" class="tooltip" style="color:green"><em>multivariate</em><span style="font-size:8pt">Multivariate variable involves taking many measurements on a single entity.</span></a> in the sense that we can take many measurements on a single entity. For example, when studying losses associated with a firm’s <a href="#" class="tooltip" style="color:green"><em>worker’s compensation</em><span style="font-size:8pt">Insurance that covers an employer’s liability for injuries, disability or death to persons in their employment, without regard to fault, as prescribed by state or federal workers’ compensation laws and other statutes.</span></a> plan, we might want to know the location of its manufacturing plants, the industry in which it operates, the number of employees, and so forth. The usual strategy for analyzing multivariate data is to begin by examining each variable in isolation of the others. This is known as a <a href="#" class="tooltip" style="color:green"><em>univariate</em><span style="font-size:8pt">Univariate analysis is the simplest form of analyzing data. “Uni” means “one”, so in other words your data has only one variable.</span></a> approach.</p>
-<p>In contrast, for some variables, it makes little sense to only look at one dimensional aspects. For example, insurers typically organize <em>spatial</em> data by longitude and latitude to analyze the location of weather related insurance claims due hailstorms. Having only a single number, either longitude or latitude, provides little information in understanding geographical location.</p>
+<p>In contrast, for some variables, it makes little sense to only look at one dimensional aspects. For example, insurers typically organize <a href="#" class="tooltip" style="color:green"><em>spatial data</em><span style="font-size:8pt">Data and information having an implicit or explicit association with a location relative to the earth</span></a> by longitude and latitude to analyze the location of weather related insurance claims due hailstorms. Having only a single number, either longitude or latitude, provides little information in understanding geographical location.</p>
 <p>Another special case of a multivariate variable, less obvious, involves coding for <a href="#" class="tooltip" style="color:green"><em>missing data</em><span style="font-size:8pt">Missing data occur when no data value is stored for a variable in an observation. Missing data can occur because of nonresponse: no information is provided for one or more items or for a whole unit or subject.</span></a>. Historically, some statistical packages used a -99 to report when a variable, such as policyholder’s age, was not available or not reported. This led to many unsuspecting analysts providing strange statistics when summarizing a set of data. When data are missing, it is better to think about the variable as two dimensions, one to indicate whether or not the variable is reported and the second providing the age (if reported). In the same way, insurance data are commonly <a href="#" class="tooltip" style="color:green"><em>censored</em><span style="font-size:8pt">Censored data have unknown values beyond a bound on either end of the number line or both. Here, the data is observed but the values (measurements) are not known completely.</span></a> and <a href="#" class="tooltip" style="color:green"><em>truncated</em><span style="font-size:8pt">Truncation occurs when values beyond a boundary are either excluded when gathered or excluded when analyzed. An object can be detected only if its value is greater than some number.</span></a>. We refer you to Chapter 4 for more on censored and truncated data. <a href="#" class="tooltip" style="color:green"><em>Aggregate claims</em><span style="font-size:8pt">The sum of all claims observed in a period of time</span></a> can also be coded as another special type of multivariate variable. We refer you to Chapter 5 for more Aggregate claims.</p>
 <p>Perhaps the most complicated type of multivariate variable is a realization of a <a href="#" class="tooltip" style="color:green"><em>stochastic process</em><span style="font-size:8pt">Stochastic process is defined as a collection of random variables that is indexed by some mathematical set, meaning that each random variable of the stochastic process is uniquely associated with an element in the set.</span></a>. You will recall that a stochastic process is little more than a collection of random variables. For example, in insurance, we might think about the times that claims arrive to an insurance company in a one year time horizon. This is a high dimensional variable that theoretically is infinite dimensional. Special techniques are required to understand realizations of stochastic processes that will not be addressed here.</p>
 <div id="surveyElement141">
@@ -904,14 +904,14 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <p>For this section, consider a pair of random variables <span class="math inline">\((X,Y)\)</span> having joint distribution function <span class="math inline">\(F(\cdot)\)</span> and a random sample <span class="math inline">\((X_i,Y_i), i=1, \ldots, n\)</span>. For the continuous case, suppose that <span class="math inline">\(F(\cdot)\)</span> is absolutely continuous with absolutely continuous marginals.</p>
 <div id="pearson-correlation" class="section level4">
 <h4><span class="header-section-number">14.2.1.1</span> Pearson Correlation</h4>
-<p>Define the sample covariance function <span class="math inline">\(\widehat{Cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})\)</span>, where <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(\bar{Y}\)</span> are the sample means of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively. Then, the product-moment (Pearson) correlation can be written as</p>
+<p>Define the sample covariance function <span class="math inline">\(\widehat{Cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})\)</span>, where <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(\bar{Y}\)</span> are the sample means of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively. Then, the <a href="#" class="tooltip" style="color:green"><em>product-moment (Pearson) correlation</em><span style="font-size:8pt">Pearson correlation, a measure of the linear correlation between two variables</span></a> can be written as</p>
 <span class="math display">\[\begin{equation*}
 r = \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Cov}(X,X)\widehat{Cov}(Y,Y)}}.
 \end{equation*}\]</span>
 <p>The correlation statistic <span class="math inline">\(r\)</span> is widely used to capture linear association between random variables. It is a (nonparametric) estimator of the correlation parameter <span class="math inline">\(\rho\)</span>, defined to be the covariance divided by the product of standard deviations. In this sense, it captures association for any pair of random variables.</p>
 <p>This statistic has several important features. Unlike regression estimators, it is symmetric between random variables, so the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> equals the correlation between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. It is unchanged by linear transformations of random variables (up to sign changes) so that we can multiply random variables or add constants as is helpful for interpretation. The range of the statistic is <span class="math inline">\([-1,1]\)</span> which does not depend on the distribution of either <span class="math inline">\(X\)</span> or <span class="math inline">\(Y\)</span>.</p>
 <p>Further, in the case of independence, the correlation coefficient <span class="math inline">\(r\)</span> is 0. However, it is well known that zero correlation does not imply independence, except for normally distributed random variables. The correlation statistic <span class="math inline">\(r\)</span> is also a (maximum likelihood) estimator of the association parameter for bivariate normal distribution. So, for normally distributed data, the correlation statistic <span class="math inline">\(r\)</span> can be used to assess independence. For additional interpretations of this well-known statistic, readers will enjoy <span class="citation">(Lee Rodgers and Nicewander <a href="#ref-lee1988thirteen">1998</a>)</span>.</p>
-<p>You can obtain the Pearson correlation statistic <span class="math inline">\(r\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>pearson</code> method. This is demonstrated below by using the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars from the LGPIF data introduced in chapter 1.</p>
+<p>You can obtain the <a href="#" class="tooltip" style="color:green"><em>Pearson correlation</em><span style="font-size:8pt">A measure of the linear correlation between two variables</span></a> statistic <span class="math inline">\(r\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>pearson</code> method. This is demonstrated below by using the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars from the LGPIF data introduced in chapter 1.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.pearson.1" href="javascript:togglecode('toggleCode.pearson.1','displayCode.pearson.1');"><i><strong>R Code for Pearson Correlation Statistic</strong></i></a>
 </h5>
@@ -967,11 +967,11 @@ Output<span class="op">:</span>
 </div>
 <div id="kendalls-tau" class="section level4">
 <h4><span class="header-section-number">14.2.2.2</span> Kendall’s Tau</h4>
-<p>An alternative measure that uses ranks is based on the concept of <em>concordance</em>. An observation pair <span class="math inline">\((X,Y)\)</span> is said to be concordant (discordant) if the observation with a larger value of <span class="math inline">\(X\)</span> has also the larger (smaller) value of <span class="math inline">\(Y\)</span>. Then <span class="math inline">\(\Pr(concordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) &gt;0 ]\)</span> , <span class="math inline">\(\Pr(discordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) &lt;0 ]\)</span>, <span class="math inline">\(\Pr(tie) = \Pr[ (X_1-X_2)(Y_1-Y_2) =0 ]\)</span> and</p>
+<p>An alternative measure that uses ranks is based on the concept of <em>concordance</em>. An observation pair <span class="math inline">\((X,Y)\)</span> is said to be <a href="#" class="tooltip" style="color:green"><em>concordant</em><span style="font-size:8pt">An observation pair (x,y) is said to be concordant if the observation with a larger value of x has also the larger value of y</span></a> (<a href="#" class="tooltip" style="color:green"><em>discordant</em><span style="font-size:8pt">An observation pair (x,y) is said to be discordant if the observation with a larger value of x has the smaller value of y</span></a>) if the observation with a larger value of <span class="math inline">\(X\)</span> has also the larger (smaller) value of <span class="math inline">\(Y\)</span>. Then <span class="math inline">\(\Pr(concordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) &gt;0 ]\)</span> , <span class="math inline">\(\Pr(discordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) &lt;0 ]\)</span>, <span class="math inline">\(\Pr(tie) = \Pr[ (X_1-X_2)(Y_1-Y_2) =0 ]\)</span> and</p>
 <span class="math display">\[\begin{eqnarray*}
 \tau(X,Y)= \Pr(concordance) - \Pr(discordance) = 2\Pr(concordance) - 1 + \Pr(tie).
 \end{eqnarray*}\]</span>
-<p>To estimate this, the pairs <span class="math inline">\((X_i,Y_i)\)</span> and <span class="math inline">\((X_j,Y_j)\)</span> are said to be concordant if the product <span class="math inline">\(sgn(X_j-X_i)sgn(Y_j-Y_i)\)</span> equals 1 and discordant if the product equals -1. Here, <span class="math inline">\(sgn(x)=1,0,-1\)</span> as <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x&lt;0\)</span>, respectively. With this, we can express the association measure of <span class="citation">(Kendall <a href="#ref-kendall1938new">1938</a>)</span>, known as <em>Kendall’s tau</em>, as</p>
+<p>To estimate this, the pairs <span class="math inline">\((X_i,Y_i)\)</span> and <span class="math inline">\((X_j,Y_j)\)</span> are said to be concordant if the product <span class="math inline">\(sgn(X_j-X_i)sgn(Y_j-Y_i)\)</span> equals 1 and discordant if the product equals -1. Here, <span class="math inline">\(sgn(x)=1,0,-1\)</span> as <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x&lt;0\)</span>, respectively. With this, we can express the association measure of <span class="citation">(Kendall <a href="#ref-kendall1938new">1938</a>)</span>, known as <a href="#" class="tooltip" style="color:green"><em>Kendall’s tau</em><span style="font-size:8pt"></span></a>, as</p>
 <span class="math display">\[\begin{equation*}
 \begin{array}{rl}
 \tau &amp;= \frac{2}{n(n-1)} \sum_{i&lt;j}sgn(X_j-X_i)sgn(Y_j-Y_i)\\
@@ -1015,7 +1015,7 @@ Unlike the case for continuous data, it is not possible for this measure to achi
 \end{eqnarray*}\]</span>
 <p>For example, if <span class="math inline">\(\pi=0.8\)</span>, then the smallest that the Pearson correlation could be is -0.25. More generally, there are bounds on <span class="math inline">\(\rho\)</span> that depend on <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> that make it difficult to interpret this measure.</p>
 <p>As noted by <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete">1975</a>)</span> (page 382), squaring this correlation coefficient yields the Pearson chi-square statistic (introduced in chapter 2) . Despite the boundary problems described above, this feature makes the Pearson correlation coefficient a good choice for describing dependence with binary data. The other is the odds ratio, described as follows.</p>
-As an alternative measure for Bernoulli variables, the <em>odds ratio</em> is given by
+As an alternative measure for Bernoulli variables, the <a href="#" class="tooltip" style="color:green"><em>odds ratio</em><span style="font-size:8pt">A statistic quantifying the strength of the association between two events, a and b, which is defined as the ratio of the odds of a in the presence of b and the odds of a in the absence of b</span></a> is given by
 <span class="math display">\[\begin{eqnarray*}
 OR(\pi_{11}) = \frac{\pi_{11} \pi_{00}}{\pi_{01} \pi_{10}} = \frac{\pi_{11} \left( 1+\pi_{11}-\pi_X -\pi_Y\right)}{(\pi_X-\pi_{11})(\pi_Y- \pi_{11})} .
 \end{eqnarray*}\]</span>
@@ -1038,7 +1038,7 @@ and the second in <span class="citation">(Yule <a href="#ref-yule1912methods">19
 \frac{\sqrt{OR}-1}{\sqrt{OR}+1}.
 \end{eqnarray*}\]</span>
 <p>Although these statistics provide the same information as is the original odds ration <span class="math inline">\(OR\)</span>, they have the advantage of taking values in the interval <span class="math inline">\([-1,1]\)</span>, making them easier to interpret.</p>
-<p>In a later section, we will also see that the marginal distributions have no effect on the Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding of the tetrachoric correlation, another measure of association, see also, <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, page 48.</p>
+<p>In a later section, we will also see that the marginal distributions have no effect on the Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding of the <a href="#" class="tooltip" style="color:green"><em>tetrachoric correlation</em><span style="font-size:8pt">A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed binary variables</span></a>, another measure of association, see also, <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, page 48.</p>
 <p><a id=tab:14.2></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1070,11 +1070,11 @@ Output<span class="op">:</span>
 </div>
 <div id="categorical-variables" class="section level4">
 <h4><span class="header-section-number">14.2.3.2</span> Categorical Variables</h4>
-More generally, let <span class="math inline">\((X,Y)\)</span> be a bivariate pair having <span class="math inline">\(ncat_X\)</span> and <span class="math inline">\(ncat_Y\)</span> numbers of categories, respectively. For a two-way table of counts, let <span class="math inline">\(n_{jk}\)</span> be the number in the <span class="math inline">\(j\)</span>th row, <span class="math inline">\(k\)</span> column. Let <span class="math inline">\(n_{j\centerdot}\)</span> be the row margin total, <span class="math inline">\(n_{\centerdot k}\)</span> be the column margin total and <span class="math inline">\(n=\sum_{j,k} n_{j,k}\)</span>. Define Pearson chi-square statistic as
+More generally, let <span class="math inline">\((X,Y)\)</span> be a bivariate pair having <span class="math inline">\(ncat_X\)</span> and <span class="math inline">\(ncat_Y\)</span> numbers of categories, respectively. For a two-way table of counts, let <span class="math inline">\(n_{jk}\)</span> be the number in the <span class="math inline">\(j\)</span>th row, <span class="math inline">\(k\)</span> column. Let <span class="math inline">\(n_{j\centerdot}\)</span> be the row margin total, <span class="math inline">\(n_{\centerdot k}\)</span> be the column margin total and <span class="math inline">\(n=\sum_{j,k} n_{j,k}\)</span>. Define <a href="#" class="tooltip" style="color:green"><em>Pearson chi-square statistic</em><span style="font-size:8pt">A statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance</span></a> as
 <span class="math display">\[\begin{eqnarray*}
 \chi^2 = \sum_{jk} \frac{(n_{jk}- n_{j\centerdot}n_{\centerdot k}/n)^2}{n_{j\centerdot}n_{\centerdot k}/n} .
 \end{eqnarray*}\]</span>
-The likelihood ratio test statistic is
+The <a href="#" class="tooltip" style="color:green"><em>likelihood ratio test</em><span style="font-size:8pt">A statistical test of the goodness-of-fit between two models</span></a> statistic is
 <span class="math display">\[\begin{eqnarray*}
 G^2 = 2 \sum_{jk} n_{jk} \ln\frac{n_{jk}}{n_{j\centerdot}n_{\centerdot k}/n} .
 \end{eqnarray*}\]</span>
@@ -1154,7 +1154,7 @@ Table<span class="op">:</span><span class="st"> </span>Log likelihood <span clas
 <div id="parametric-approach-using-normal-based-correlations" class="section level4">
 <h4><span class="header-section-number">14.2.4.1</span> Parametric Approach Using Normal Based Correlations</h4>
 <p>Refer to page 60, Section 2.12.7 of <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>. Let <span class="math inline">\((y_1,y_2)\)</span> be a bivariate pair with discrete values on <span class="math inline">\(m_1, \ldots, m_2\)</span>. For a two-way table of ordinal counts, let <span class="math inline">\(n_{st}\)</span> be the number in the <span class="math inline">\(s\)</span>th row, <span class="math inline">\(t\)</span> column. Let <span class="math inline">\((n_{m_1\centerdot}, \ldots, n_{m_2\centerdot})\)</span> be the row margin total, <span class="math inline">\((n_{\centerdot m_1}, \ldots, n_{\centerdot m_2})\)</span> be the column margin total and <span class="math inline">\(n=\sum_{s,t} n_{s,t}\)</span>.</p>
-<p>Let <span class="math inline">\(\hat{\xi}_{1s} = \Phi^{-1}((n_{m_1}+\cdots+n_{s\centerdot})/n)\)</span> for <span class="math inline">\(s=m_1, \ldots, m_2\)</span> be a cutpoint and similarly for <span class="math inline">\(\hat{\xi}_{2t}\)</span>. The <em>polychoric</em> correlation, based on a two-step estimation procedure, is</p>
+<p>Let <span class="math inline">\(\hat{\xi}_{1s} = \Phi^{-1}((n_{m_1}+\cdots+n_{s\centerdot})/n)\)</span> for <span class="math inline">\(s=m_1, \ldots, m_2\)</span> be a cutpoint and similarly for <span class="math inline">\(\hat{\xi}_{2t}\)</span>. The <a href="#" class="tooltip" style="color:green"><em>polychoric correlation</em><span style="font-size:8pt">A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed ordinal variables</span></a>, based on a two-step estimation procedure, is</p>
 <span class="math display">\[\begin{eqnarray*}
 \begin{array}{cr}
   \hat{\rho_N} &amp;=\text{argmax}_{\rho}
@@ -1210,7 +1210,7 @@ Output<span class="op">:</span>
 </div>
 <div id="discrete-and-continuous-variables" class="section level3">
 <h3><span class="header-section-number">14.2.6</span> Discrete and Continuous Variables</h3>
-<p>The polyserial correlation is defined similarly, when one variable (<span class="math inline">\(y_1\)</span>) is continuous and the other (<span class="math inline">\(y_2\)</span>) ordinal. Define <span class="math inline">\(z\)</span> to be the normal score of <span class="math inline">\(y_1\)</span>. The polyserial correlation is</p>
+<p>The <a href="#" class="tooltip" style="color:green"><em>polyserial correlation</em><span style="font-size:8pt">The correlation between two continuous variables with a bivariate normal distribution, where one variable is observed directly, and the other is unobserved</span></a> is defined similarly, when one variable (<span class="math inline">\(y_1\)</span>) is continuous and the other (<span class="math inline">\(y_2\)</span>) ordinal. Define <span class="math inline">\(z\)</span> to be the <a href="#" class="tooltip" style="color:green"><em>normal score</em><span style="font-size:8pt">Transformed data which closely resemble a standard normal distribution</span></a> of <span class="math inline">\(y_1\)</span>. The polyserial correlation is</p>
 <span class="math display">\[\begin{eqnarray*}
 \hat{\rho_N} = \text{argmax}_{\rho}
 \sum_{i=1}^n \log\left\{ \phi(z_{i1})\left[
@@ -1221,7 +1221,7 @@ Output<span class="op">:</span>
 \right]
 \right\}
 \end{eqnarray*}\]</span>
-<p>The biserial correlation is defined similarly, when one variable is continuous and the other binary.</p>
+<p>The <a href="#" class="tooltip" style="color:green"><em>biserial correlation</em><span style="font-size:8pt">A correlation coefficient used when one variable is dichotomous</span></a> is defined similarly, when one variable is continuous and the other binary.</p>
 <p><a id=tab:14.5></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1277,7 +1277,7 @@ Output<span class="op">:</span>
 <li>Describe a multivariate distribution function in terms of a copula function.</li>
 </ul>
 <hr />
-<p>A <span class="math inline">\(copula\)</span> is a multivariate distribution function with uniform marginals. Specifically, let <span class="math inline">\(U_1, \ldots, U_p\)</span> be <span class="math inline">\(p\)</span> uniform random variables on <span class="math inline">\((0,1)\)</span>. Their distribution function <span class="math display">\[{C}(u_1, \ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p),\]</span></p>
+<p>A <a href="#" class="tooltip" style="color:green"><em>copula</em><span style="font-size:8pt">A multivariate distribution function with uniform marginals</span></a> is a multivariate distribution function with uniform marginals. Specifically, let <span class="math inline">\(U_1, \ldots, U_p\)</span> be <span class="math inline">\(p\)</span> uniform random variables on <span class="math inline">\((0,1)\)</span>. Their distribution function <span class="math display">\[{C}(u_1, \ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p),\]</span></p>
 <p>is a copula. We seek to use copulas in applications that are based on more than just uniformly distributed data. Thus, consider arbitrary marginal distribution functions <span class="math inline">\({F}_1(y_1)\)</span>,…,<span class="math inline">\({F}_p(y_p)\)</span>. Then, we can define a multivariate distribution function using the copula such that <span class="math display">\[{F}(y_1, \ldots, y_p)= {C}({F}_1(y_1), \ldots,
 {F}_p(y_p)).\]</span></p>
 <p>Here, <span class="math inline">\(F\)</span> is a multivariate distribution function in this equation. Sklar (1959) showed that <span class="math inline">\(any\)</span> multivariate distribution function <span class="math inline">\(F\)</span>, can be written in the form of this equation, that is, using a copula representation.</p>
@@ -1289,7 +1289,7 @@ u_2),\]</span></p>
 <p>To give an example for bivariate copula, we can look at Frank’s (1979) copula. The equation is</p>
 <p><span class="math display">\[{C}(u_1,u_2) = \frac{1}{\theta} \ln \left( 1+ \frac{ (\exp(\theta
 u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
-<p>This is a bivariate distribution function with its domain on the unit square <span class="math inline">\([0,1]^2.\)</span> Here <span class="math inline">\(\theta\)</span> is dependence parameter and the range of dependence is controlled by the parameter <span class="math inline">\(\theta\)</span>. Positive association increases as <span class="math inline">\(\theta\)</span> increases and this positive association can be summarized with Spearman’s rho (<span class="math inline">\(\rho\)</span>) and Kendall’s tau (<span class="math inline">\(\tau\)</span>). Frank’s copula is one of the commonly used copula functions in the copula literature. We will see other copula functions in Section <a href="C-DependenceModel.html#S:CopTyp">14.5</a>.</p>
+<p>This is a bivariate distribution function with its domain on the unit square <span class="math inline">\([0,1]^2.\)</span> Here <span class="math inline">\(\theta\)</span> is dependence parameter and the range of dependence is controlled by the parameter <span class="math inline">\(\theta\)</span>. Positive association increases as <span class="math inline">\(\theta\)</span> increases and this positive association can be summarized with <a href="#" class="tooltip" style="color:green"><em>Spearman’s rho</em><span style="font-size:8pt">A nonparametric measure of rank correlation</span></a> (<span class="math inline">\(\rho\)</span>) and Kendall’s tau (<span class="math inline">\(\tau\)</span>). Frank’s copula is one of the commonly used copula functions in the copula literature. We will see other copula functions in Section <a href="C-DependenceModel.html#S:CopTyp">14.5</a>.</p>
 <div id="surveyElement143">
 
 </div>
@@ -1325,13 +1325,7 @@ u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <li><em>losses </em>: general liability claims from Insurance Services Office, Inc. (ISO)</li>
 <li><em>expenses </em>: ALAE, specifically attributable to the settlement of individual claims (e.g. lawyer’s fees, claims investigation expenses)</li>
 </ul>
-<p>To visualize the relationship between <em>losses </em> and <em>expenses </em> (ALAE), scatterplots in figure <a href="C-DependenceModel.html#fig:Scatter">14.2</a> are created on the real dollar scale and on the log scale.</p>
-<div class="figure"><span id="fig:Scatter"></span>
-<img src="LossDataAnalytics_files/figure-html/Scatter-1.png" alt="Scatter plot of Loss and ALAE" width="672" />
-<p class="caption">
-Figure 14.2: Scatter plot of Loss and ALAE
-</p>
-</div>
+<p>To visualize the relationship between <em>losses </em> and <em>expenses </em> (ALAE), scatterplots in figure <a href="#fig:Scatter"><strong>??</strong></a> are created on the real dollar scale and on the log scale.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.ScaHis.1" href="javascript:togglecode('toggleCode.ScaHis.1','displayCode.ScaHis.1');"><i><strong>R Code for Scatterplots</strong></i></a>
 </h5>
@@ -1349,7 +1343,7 @@ loss &lt;-<span class="st"> </span>Lossdata<span class="op">$</span>loss
 </div>
 <div id="marginal-models" class="section level3">
 <h3><span class="header-section-number">14.4.2</span> Marginal Models</h3>
-<p>We first examine the marginal distributions of <em>losses </em> and <em>expenses </em> before going through the joint modeling. The histograms show that both <em>losses </em> and <em>expenses </em> are right-skewed and fat-tailed.</p>
+<p>We first examine the <a href="#" class="tooltip" style="color:green"><em>marginal distributions</em><span style="font-size:8pt">The probability distribution of the variables contained in the subset of a collection of random variables</span></a> of <em>losses </em> and <em>expenses </em> before going through the joint modeling. The histograms show that both <em>losses </em> and <em>expenses </em> are right-skewed and <a href="#" class="tooltip" style="color:green"><em>fat-tailed</em><span style="font-size:8pt">A fat-tailed distribution is a probability distribution that exhibits a large skewness or kurtosis, relative to that of either a normal distribution or an exponential distribution</span></a>.</p>
 <p>For marginal distributions of losses and expenses, we consider a Pareto-type distribution, namely a Pareto type II with distribution function</p>
 <p><span class="math display">\[ F(y)=1- \left( 1 + \frac{y}{\theta} \right) ^{-\alpha},\]</span> where <span class="math inline">\(\theta\)</span> is the scale parameter and <span class="math inline">\(\alpha\)</span> is the shape parameter.</p>
 <p>The marginal distributions of losses and expenses are fitted with maximum likelihood. Specifically, we use the <span class="math inline">\(vglm\)</span> function from the <code>R VGAM</code> package. Firstly, we fit the marginal distribution of <em>expenses </em>.</p>
@@ -1388,21 +1382,21 @@ Output<span class="op">:</span><span class="st"> </span>
 </div>
 <div id="probability-integral-transformation" class="section level3">
 <h3><span class="header-section-number">14.4.3</span> Probability Integral Transformation</h3>
-<p>The <em>probability integral transformation </em> shows that any continuous variable can be mapped to a <span class="math inline">\(U(0,1)\)</span> random variable via its distribution function.</p>
+<p>The <a href="#" class="tooltip" style="color:green"><em>probability integral transformation</em><span style="font-size:8pt">Any continuous variable can be mapped to a uniform random variable via its distribution function</span></a> shows that any continuous variable can be mapped to a <span class="math inline">\(U(0,1)\)</span> random variable via its distribution function.</p>
 <p>Given the fitted Pareto II distribution, the variable <em>expenses</em> is transformed to the variable <span class="math inline">\(u_1\)</span>, which follows a uniform distribution on <span class="math inline">\([0,1]\)</span>:</p>
 <p><span class="math display">\[u_1 = 1 - \left( 1 + \frac{ALAE}{\hat{\theta}} \right)^{-\hat{\alpha}}.\]</span></p>
-<p>After applying the probability integral transformation to <em>expenses </em> variable, we plot the histogram of <em>Transformed Alae </em> in Figure <a href="C-DependenceModel.html#fig:Hist">14.3</a>.</p>
+<p>After applying the probability integral transformation to <em>expenses </em> variable, we plot the histogram of <em>Transformed Alae </em> in Figure <a href="C-DependenceModel.html#fig:Hist">14.2</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Hist"></span>
 <img src="LossDataAnalytics_files/figure-html/Hist-1.png" alt="Histogram of Transformed Alae" width="384" />
 <p class="caption">
-Figure 14.3: Histogram of Transformed Alae
+Figure 14.2: Histogram of Transformed Alae
 </p>
 </div>
-<p>After fitting process,the variable <em>loss</em> is also transformed to the variable <span class="math inline">\(u_2\)</span>, which follows a uniform distribution on <span class="math inline">\([0,1]\)</span>. We plot the histogram of <em>Transformed Loss </em>. As an alternative, the variable <em>loss</em> is transformed to <span class="math inline">\(normal\)</span> <span class="math inline">\(scores\)</span> with the quantile function of standard normal distribution. As we see in Figure <a href="C-DependenceModel.html#fig:Hist2">14.4</a>, normal scores of the variable <em>loss</em> are approximately marginally standard normal.</p>
+<p>After fitting process,the variable <em>loss</em> is also transformed to the variable <span class="math inline">\(u_2\)</span>, which follows a uniform distribution on <span class="math inline">\([0,1]\)</span>. We plot the histogram of <em>Transformed Loss </em>. As an alternative, the variable <em>loss</em> is transformed to <span class="math inline">\(normal\)</span> <span class="math inline">\(scores\)</span> with the quantile function of standard normal distribution. As we see in Figure <a href="C-DependenceModel.html#fig:Hist2">14.3</a>, normal scores of the variable <em>loss</em> are approximately marginally standard normal.</p>
 <div class="figure"><span id="fig:Hist2"></span>
 <img src="LossDataAnalytics_files/figure-html/Hist2-1.png" alt="Histogram of Transformed Loss. The left-hand panel shows the distribution of probability integral transformed losses. The right-hand panel shows the distribution for the corresponding normal scores." width="672" />
 <p class="caption">
-Figure 14.4: Histogram of Transformed Loss. The left-hand panel shows the distribution of probability integral transformed losses. The right-hand panel shows the distribution for the corresponding normal scores.
+Figure 14.3: Histogram of Transformed Loss. The left-hand panel shows the distribution of probability integral transformed losses. The right-hand panel shows the distribution for the corresponding normal scores.
 </p>
 </div>
 <h5 style="text-align: center;">
@@ -1422,12 +1416,12 @@ u2 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</s
 </div>
 <div id="joint-modeling-with-copula-function" class="section level3">
 <h3><span class="header-section-number">14.4.4</span> Joint Modeling with Copula Function</h3>
-<p>Before jointly modeling losses and expenses, we draw the scatterplot of transformed variables <span class="math inline">\((u_1, u_2)\)</span> and the scatterplot of normal scores in Figure <a href="C-DependenceModel.html#fig:Scatter2">14.5</a>.</p>
+<p>Before jointly modeling losses and expenses, we draw the scatterplot of transformed variables <span class="math inline">\((u_1, u_2)\)</span> and the scatterplot of normal scores in Figure <a href="C-DependenceModel.html#fig:Scatter2">14.4</a>.</p>
 <p>Then we calculate the Spearman’s rho between these two uniform random variables.</p>
 <div class="figure"><span id="fig:Scatter2"></span>
 <img src="LossDataAnalytics_files/figure-html/Scatter2-1.png" alt="Left: Scatter plot for transformed variables.  Right:Scatter plot for normal scores" width="672" />
 <p class="caption">
-Figure 14.5: Left: Scatter plot for transformed variables. Right:Scatter plot for normal scores
+Figure 14.4: Left: Scatter plot for transformed variables. Right:Scatter plot for normal scores
 </p>
 </div>
 <h5 style="text-align: center;">
@@ -1489,11 +1483,11 @@ frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<spa
 Output <span class="op">:</span><span class="st"> </span>
 [<span class="dv">1</span>] <span class="fl">0.4622722</span></code></pre></div>
 </div>
-<p>To visualize the fitted Frank’s copula, the distribution function and density function perspective plots are drawn in Figure <a href="C-DependenceModel.html#fig:FrankCop">14.6</a>.</p>
+<p>To visualize the fitted Frank’s copula, the distribution function and density function perspective plots are drawn in Figure <a href="C-DependenceModel.html#fig:FrankCop">14.5</a>.</p>
 <div class="figure"><span id="fig:FrankCop"></span>
 <img src="LossDataAnalytics_files/figure-html/FrankCop-1.png" alt="Left: Plot for distribution function for Franks Copula. Right:Plot for density function for Franks Copula " width="672" />
 <p class="caption">
-Figure 14.6: Left: Plot for distribution function for Franks Copula. Right:Plot for density function for Franks Copula
+Figure 14.5: Left: Plot for distribution function for Franks Copula. Right:Plot for density function for Franks Copula
 </p>
 </div>
 <h5 style="text-align: center;">
@@ -1526,12 +1520,12 @@ Figure 14.6: Left: Plot for distribution function for Franks Copula. Right:Plot 
 <p>There are several families of copulas have been described in the literature. Two main families of the copula families are the <strong>Archimedian</strong> and <strong>Elliptical</strong> copulas.</p>
 <div id="elliptical-copulas" class="section level3">
 <h3><span class="header-section-number">14.5.1</span> Elliptical Copulas</h3>
-<p>Elliptical copulas are constructed from elliptical distributions. This copula decompose (multivariate) elliptical distributions into their univariate elliptical marginal distributions by Sklar’s theorem <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
+<p><a href="#" class="tooltip" style="color:green"><em>Elliptical copulas</em><span style="font-size:8pt">The copulas of elliptical distributions</span></a> are constructed from <a href="#" class="tooltip" style="color:green"><em>elliptical distributions</em><span style="font-size:8pt">Any member of a broad family of probability distributions that generalize the multivariate normal distribution</span></a>. This copula decompose (multivariate) elliptical distributions into their univariate elliptical marginal distributions by Sklar’s theorem <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
 <p>Properties of elliptical copulas are typically obtained from the properties of corresponding elliptical distributions <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
 <p>For example, the normal distribution is a special type of elliptical distribution. To introduce the elliptical class of copulas, we start with the familiar multivariate normal distribution with probability density function <span class="math display">\[\phi_N (\mathbf{z})= \frac{1}{(2 \pi)^{p/2}\sqrt{\det \boldsymbol \Sigma}}
 \exp\left( -\frac{1}{2} \mathbf{z}^{\prime} \boldsymbol
 \Sigma^{-1}\mathbf{z}\right).\]</span></p>
-<p>Here, <span class="math inline">\(\boldsymbol \Sigma\)</span> is a correlation matrix, with ones on the diagonal. Let <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\phi\)</span> denote the standard normal distribution and density functions. We define the Gaussian (normal) copula density function as</p>
+<p>Here, <span class="math inline">\(\boldsymbol \Sigma\)</span> is a <a href="#" class="tooltip" style="color:green"><em>correlation matrix</em><span style="font-size:8pt">A table showing correlation coefficients between variables</span></a>, with ones on the diagonal. Let <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\phi\)</span> denote the standard normal distribution and density functions. We define the Gaussian (normal) copula density function as</p>
 <p><span class="math display">\[{c}_N(u_1,  \ldots, u_p) = \phi_N \left(\Phi^{-1}(u_1), \ldots, \Phi^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{\phi(\Phi^{-1}(u_j))}.\]</span></p>
 <p>As with other copulas, the domain is the unit cube <span class="math inline">\([0,1]^p\)</span>.</p>
 <p>Specifically, a <span class="math inline">\(p\)</span>-dimensional vector <span class="math inline">\({z}\)</span> has an <span class="math inline">\({elliptical}\)</span> <span class="math inline">\({distribution}\)</span> if the density can be written as <span class="math display">\[h_E (\mathbf{z})= \frac{k_p}{\sqrt{\det \boldsymbol \Sigma}}
@@ -1589,11 +1583,11 @@ H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
 <p>To see the right-hand side of the equation, note that <span class="math display">\[\mathrm{C}(u_1,\ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p) \leq  \Pr(U_j \leq u_j)\]</span>, for <span class="math inline">\(j=1,\ldots,p\)</span>. The bound is achieved when <span class="math inline">\(U_1 = \cdots = U_p\)</span>. To see the left-hand side when <span class="math inline">\(p=2\)</span>, consider <span class="math inline">\(U_2=1-U_1\)</span>. In this case, if <span class="math inline">\(1-u_2 &lt; u_1\)</span> then <span class="math inline">\(\Pr(U_1 \leq u_1, U_2 \leq u_2) = \Pr ( 1-u_2 \leq U_1 &lt; u_1) =u_1+u_2-1.\)</span> <span class="citation">(Nelson <a href="#ref-nelsen1997introduction">1997</a>)</span></p>
 <p>The product copula is <span class="math inline">\(\mathrm{C}(u_1,u_2)=u_1u_2\)</span> is the result of assuming independence between random variables.</p>
 <p>The lower bound is achieved when the two random variables are perfectly negatively related (<span class="math inline">\(U_2=1-U_1\)</span>) and the upper bound is achieved when they are perfectly positively related (<span class="math inline">\(U_2=U_1\)</span>).</p>
-<p>We can see The Frechet-Hoeffding bounds for two random variables in the Figure <a href="C-DependenceModel.html#fig:Bounds">14.7</a>.</p>
+<p>We can see The <a href="#" class="tooltip" style="color:green"><em>Frechet-Hoeffding bounds</em><span style="font-size:8pt">Bounds of multivariate distribution functions</span></a> for two random variables in the Figure <a href="C-DependenceModel.html#fig:Bounds">14.6</a>.</p>
 <div class="figure"><span id="fig:Bounds"></span>
 <img src="LossDataAnalytics_files/figure-html/Bounds-1.png" alt="Perfect Positive and Perfect negative dependence plots" width="672" />
 <p class="caption">
-Figure 14.7: Perfect Positive and Perfect negative dependence plots
+Figure 14.6: Perfect Positive and Perfect negative dependence plots
 </p>
 </div>
 <h5 style="text-align: center;">
@@ -1625,8 +1619,8 @@ U&lt;-<span class="kw">runif</span>(n)
 <p><span class="math display">\[R(z) = \frac{\Pr(U_1 &gt;z, U_2 &gt; z)}{1-z} =\Pr(U_1 &gt; z | U_2 &gt; z) =\frac{1 - 2z + \mathrm{C}(z,z)}{1-z} .\]</span></p>
 <p>From this equation , <span class="math inline">\(R(z)\)</span> will equal to <span class="math inline">\(z\)</span> under independence. Joe (1997) uses the term “upper tail dependence parameter” for <span class="math inline">\(R = \lim_{z \rightarrow 1} R(z)\)</span>. Similarly, the left-tail concentration function is</p>
 <p><span class="math display">\[L(z) = \frac{\Pr(U_1 \leq z, U_2 \leq z)}{z}=\Pr(U_1 \leq z | U_2 \leq z) =\frac{ \mathrm{C}(z,z)}{1-z}.\]</span></p>
-<p>Tail dependency concentration function captures the probability of two random variables both catching up extreme values.</p>
-<p>We calculate the left and right tail concentration functions for four different types of copulas; Normal, Frank,Gumbel and t copula. After getting tail concentration functions for each copula, we show concentration function’s values for these four copulas in <a href="#tab:14.7">Table 14.7</a>. As in <span class="citation">Venter (<a href="#ref-venter2002tails">2002</a>)</span>, we show <span class="math inline">\(L(z)\)</span> for <span class="math inline">\(z\leq 0.5\)</span> and <span class="math inline">\(R(z)\)</span> for <span class="math inline">\(z&gt;0.5\)</span> in the tail dependence plot in Figure <a href="C-DependenceModel.html#fig:DepTails">14.8</a>. We interpret the tail dependence plot, to mean that both the Frank and Normal copula exhibit no tail dependence whereas the <span class="math inline">\(t\)</span> and the Gumbel may do so. The <span class="math inline">\(t\)</span> copula is symmetric in its treatment of upper and lower tails.</p>
+<p><a href="#" class="tooltip" style="color:green"><em>Tail dependency</em><span style="font-size:8pt">A measure of their comovements in the tails of the distributions</span></a> concentration function captures the probability of two random variables both catching up extreme values.</p>
+<p>We calculate the left and right tail concentration functions for four different types of copulas; Normal, Frank,Gumbel and t copula. After getting tail concentration functions for each copula, we show concentration function’s values for these four copulas in <a href="#tab:14.7">Table 14.7</a>. As in <span class="citation">Venter (<a href="#ref-venter2002tails">2002</a>)</span>, we show <span class="math inline">\(L(z)\)</span> for <span class="math inline">\(z\leq 0.5\)</span> and <span class="math inline">\(R(z)\)</span> for <span class="math inline">\(z&gt;0.5\)</span> in the tail dependence plot in Figure <a href="C-DependenceModel.html#fig:DepTails">14.7</a>. We interpret the tail dependence plot, to mean that both the Frank and Normal copula exhibit no tail dependence whereas the <span class="math inline">\(t\)</span> and the Gumbel may do so. The <span class="math inline">\(t\)</span> copula is symmetric in its treatment of upper and lower tails.</p>
 <p><a id=tab:14.7></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1672,7 +1666,7 @@ jointtail4 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Ta
 <div class="figure"><span id="fig:DepTails"></span>
 <img src="LossDataAnalytics_files/figure-html/DepTails-1.png" alt="Tail dependence plots" width="672" />
 <p class="caption">
-Figure 14.8: Tail dependence plots
+Figure 14.7: Tail dependence plots
 </p>
 </div>
 <h5 style="text-align: center;">
@@ -1851,7 +1845,7 @@ quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(
 <h3>TS 14.A. Other Classic Measures of Scalar Associations</h3>
 <div id="ts-14.a.1.-blomqvists-beta" class="section level4 unnumbered">
 <h4>TS 14.A.1. Blomqvist’s Beta</h4>
-<p><span class="citation">Blomqvist (<a href="#ref-blomqvist1950measure">1950</a>)</span> developed a measure of dependence now known as <em>Blomqvist’s beta</em>, also called the <em>median concordance coefficient</em> and the <em>medial correlation coefficient</em>. Using distribution functions, this parameter can be expressed as</p>
+<p><span class="citation">Blomqvist (<a href="#ref-blomqvist1950measure">1950</a>)</span> developed a measure of dependence now known as <a href="#" class="tooltip" style="color:green"><em>Blomqvist’s beta</em><span style="font-size:8pt"></span></a>, also called the <em>median concordance coefficient</em> and the <em>medial correlation coefficient</em>. Using distribution functions, this parameter can be expressed as</p>
 <span class="math display">\[\begin{equation*}
 \beta = 4F\left(F^{-1}_X(1/2),F^{-1}_Y(1/2) \right) - 1.
 \end{equation*}\]</span>
@@ -1955,62 +1949,62 @@ Output<span class="op">:</span>
 </div>
 <h3>Bibliography</h3>
 <div id="refs" class="references">
-<div id="ref-bishop1975discrete">
-<p>Bishop, Yvonne M., Stephen E. Fienberg, and Paul W. Holland. 1975. <em>Discrete Multivariate Analysis: Theory and Practice</em>. Cambridge [etc.]: MIT.</p>
-</div>
-<div id="ref-blomqvist1950measure">
-<p>Blomqvist, Nils. 1950. “On a Measure of Dependence Between Two Random Variables.” <em>The Annals of Mathematical Statistic</em>, 593–600.</p>
-</div>
-<div id="ref-dabrowska1988kaplan">
-<p>Dabrowska, Dorota M. 1988. “Kaplan-Meier Estimate on the Plane.” <em>The Annals of Statistics</em>, 1475–89.</p>
-</div>
-<div id="ref-fechnerkollektivmasslehre">
-<p>Fechner, G. T. 1897. “Kollektivmasslehre.” <em>Wilhelm Englemann, Leipzig</em>.</p>
-</div>
-<div id="ref-frees1998understanding">
-<p>Frees, Edward W., and Emiliano A. Valdez. 1998. “Understanding Relationships Using Copulas.” <em>North American Actuarial Journal</em> 2 (01): 1–25.</p>
-</div>
-<div id="ref-genest1986bivariate">
-<p>Genest, Christian, and Josh Mackay. 1986. “The Joy of Copulas: Bivariate Distributions with Uniform Marginals.” <em>The American Statistician</em> 40: 280–83.</p>
-</div>
-<div id="ref-genest2007methods">
-<p>Genest, Christian, and Johanna Nešlohva. 2007. “A Primer on Copulas for Count Data.” <em>Journal of the Royal Statistical Society</em>, 475–515.</p>
+<div id="ref-lee1988thirteen">
+<p>Lee Rodgers, J, and W. A Nicewander. 1998. “Thirteen Ways to Look at the Correlation Coeffeicient.” <em>The American Statistician</em> 42 (01): 59–66.</p>
 </div>
 <div id="ref-hettmansperger1984statistical">
 <p>Hettmansperger, T. P. 1984. <em>Statistical Inference Based on Ranks</em>. Wiley.</p>
 </div>
-<div id="ref-hofertelements">
-<p>Hofert, Marius, Ivan Kojadinovic, Martin Mächler, and Jun Yan. 2018. <em>Elements of Copula Modeling with R</em>. Springer.</p>
-</div>
-<div id="ref-hougaard2000analysis">
-<p>Hougaard, P. 2000. <em>Analysis of Multivariate Survival Data</em>. Springer New York.</p>
-</div>
-<div id="ref-joe2014dependence">
-<p>Joe, Harry. 2014. <em>Dependence Modeling with Copulas</em>. CRC Press.</p>
-</div>
-<div id="ref-kendall1945">
-<p>Kendall, M. G. 1945. “The Treatment of Ties in Ranking Problems.” <em>Biometrika</em> 33(3): 239–51.</p>
+<div id="ref-spearman1904proof">
+<p>Spearman, C. 1904. “The Proof and Measurement of Association Between Two Things.” <em>The American Journal of Psychology</em> 15 (01): 72–101.</p>
 </div>
 <div id="ref-kendall1938new">
 <p>Kendall, Maurice G. 1938. “A New Measure of Rank Correlation.” <em>Biometrika</em>, 81–93.</p>
 </div>
-<div id="ref-lee1988thirteen">
-<p>Lee Rodgers, J, and W. A Nicewander. 1998. “Thirteen Ways to Look at the Correlation Coeffeicient.” <em>The American Statistician</em> 42 (01): 59–66.</p>
+<div id="ref-hougaard2000analysis">
+<p>Hougaard, P. 2000. <em>Analysis of Multivariate Survival Data</em>. Springer New York.</p>
 </div>
-<div id="ref-nelsen1997introduction">
-<p>Nelson, Roger B. 1997. <em>An Introduction to Copulas</em>. Lecture Notes in Statistics 139.</p>
+<div id="ref-fechnerkollektivmasslehre">
+<p>Fechner, G. T. 1897. “Kollektivmasslehre.” <em>Wilhelm Englemann, Leipzig</em>.</p>
 </div>
-<div id="ref-spearman1904proof">
-<p>Spearman, C. 1904. “The Proof and Measurement of Association Between Two Things.” <em>The American Journal of Psychology</em> 15 (01): 72–101.</p>
+<div id="ref-kendall1945">
+<p>Kendall, M. G. 1945. “The Treatment of Ties in Ranking Problems.” <em>Biometrika</em> 33(3): 239–51.</p>
 </div>
-<div id="ref-venter2002tails">
-<p>Venter, Gary G. 2002. “Tails of Copulas.” In <em>Proceedings of the Casualty Actuarial Society</em>, 89:68–113. 171.</p>
+<div id="ref-bishop1975discrete">
+<p>Bishop, Yvonne M., Stephen E. Fienberg, and Paul W. Holland. 1975. <em>Discrete Multivariate Analysis: Theory and Practice</em>. Cambridge [etc.]: MIT.</p>
 </div>
 <div id="ref-yule1900association">
 <p>Yule, G. Udny. 1900. “On the Association of Attributes in Statistics: With Illustrations from the Material of the Childhood Society.” <em>Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character</em>, 257–319.</p>
 </div>
 <div id="ref-yule1912methods">
 <p>Yule, G. 1912. “On the Methods of Measuring Association Between Two Attributes.” <em>Journal of the Royal Statistical Society</em>, 579–652.</p>
+</div>
+<div id="ref-joe2014dependence">
+<p>Joe, Harry. 2014. <em>Dependence Modeling with Copulas</em>. CRC Press.</p>
+</div>
+<div id="ref-genest2007methods">
+<p>Genest, Christian, and Johanna Nešlohva. 2007. “A Primer on Copulas for Count Data.” <em>Journal of the Royal Statistical Society</em>, 475–515.</p>
+</div>
+<div id="ref-frees1998understanding">
+<p>Frees, Edward W., and Emiliano A. Valdez. 1998. “Understanding Relationships Using Copulas.” <em>North American Actuarial Journal</em> 2 (01): 1–25.</p>
+</div>
+<div id="ref-hofertelements">
+<p>Hofert, Marius, Ivan Kojadinovic, Martin Mächler, and Jun Yan. 2018. <em>Elements of Copula Modeling with R</em>. Springer.</p>
+</div>
+<div id="ref-genest1986bivariate">
+<p>Genest, Christian, and Josh Mackay. 1986. “The Joy of Copulas: Bivariate Distributions with Uniform Marginals.” <em>The American Statistician</em> 40: 280–83.</p>
+</div>
+<div id="ref-nelsen1997introduction">
+<p>Nelson, Roger B. 1997. <em>An Introduction to Copulas</em>. Lecture Notes in Statistics 139.</p>
+</div>
+<div id="ref-venter2002tails">
+<p>Venter, Gary G. 2002. “Tails of Copulas.” In <em>Proceedings of the Casualty Actuarial Society</em>, 89:68–113. 171.</p>
+</div>
+<div id="ref-blomqvist1950measure">
+<p>Blomqvist, Nils. 1950. “On a Measure of Dependence Between Two Random Variables.” <em>The Annals of Mathematical Statistic</em>, 593–600.</p>
+</div>
+<div id="ref-dabrowska1988kaplan">
+<p>Dabrowska, Dorota M. 1988. “Kaplan-Meier Estimate on the Plane.” <em>The Annals of Statistics</em>, 1475–89.</p>
 </div>
 </div>
             </section>
@@ -2039,7 +2033,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2049,10 +2043,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -2070,7 +2060,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 17 Appendix C: Maximum Likelihood Theory | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 17 Appendix C: Maximum Likelihood Theory | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 17 Appendix C: Maximum Likelihood Theory | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 17 Appendix C: Maximum Likelihood Theory | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 Appendix C: Maximum Likelihood Theory | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 17 Appendix C: Maximum Likelihood Theory | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-AppB.html">
 <link rel="next" href="C-SummaryDistributions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -867,7 +867,7 @@ l(\boldsymbol \theta|\mathbf{x})}{\partial \boldsymbol \theta^{\prime}}
 </div>
 <div id="asymptotic-properties-of-mle" class="section level3">
 <h3><span class="header-section-number">17.2.2</span> Asymptotic Properties of MLE</h3>
-<p>From Appendix <a href="C-AppA.html#C:AppA">15</a>, the MLE has some nice large-sample properties, under certain regularity conditions. We presented the results for a single parameter in Appendix <a href="C-AppA.html#C:AppA">15</a>, but results are true for the case when <span class="math inline">\(\boldsymbol{\theta}\)</span> contains multiple parameters. In particular, we have the following results, in a general case when <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\theta_2,\cdots,\theta_p)\)</span>.</p>
+<p>From Appendix <a href="C-AppA.html#C:AppA">15</a>, the <a href="#" class="tooltip" style="color:green"><em>MLE</em><span style="font-size:8pt">Maximum likelihood estimate</span></a> has some nice large-sample properties, under certain regularity conditions. We presented the results for a single parameter in Appendix <a href="C-AppA.html#C:AppA">15</a>, but results are true for the case when <span class="math inline">\(\boldsymbol{\theta}\)</span> contains multiple parameters. In particular, we have the following results, in a general case when <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\theta_2,\cdots,\theta_p)\)</span>.</p>
 <ul>
 <li><p>The MLE of a parameter <span class="math inline">\(\boldsymbol{\theta}\)</span>, <span class="math inline">\(\hat{\boldsymbol{\theta}}_{MLE}\)</span>, is a <strong>consistent</strong> estimator. That is, the MLE <span class="math inline">\(\hat{\boldsymbol{\theta}}_{MLE}\)</span> converges in probability to the true value <span class="math inline">\(\boldsymbol{\theta}\)</span>, as the sample size <span class="math inline">\(n\)</span> goes to infinity.</p></li>
 <li><p>The MLE has the <strong>asymptotic normality</strong> property, meaning that the estimator will converge in distribution to a multivariate normal distribution centered around the true value, when the sample size goes to infinity. Namely, <span class="math display">\[\sqrt{n}(\hat{\boldsymbol{\theta}}_{MLE}-\boldsymbol{\theta})\rightarrow N\left(\mathbf 0,\,\boldsymbol{V}\right),\quad \mbox{as}\quad n\rightarrow \infty,\]</span> where <span class="math inline">\(\boldsymbol{V}\)</span> denotes the asymptotic variance (or covariance matrix) of the estimator. Hence, the MLE <span class="math inline">\(\hat{\boldsymbol{\theta}}_{MLE}\)</span> has an approximate normal distribution with mean <span class="math inline">\(\boldsymbol{\theta}\)</span> and variance (covariance matrix when <span class="math inline">\(p&gt;1\)</span>) <span class="math inline">\(\boldsymbol{V}/n\)</span>, when the sample size is large.</p></li>
@@ -986,7 +986,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -996,10 +996,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -1017,7 +1013,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

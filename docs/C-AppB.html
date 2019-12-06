@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 16 Appendix B: Iterated Expectations | Loss Data Analytics</title>
-  <meta name="description" content="Chapter 16 Appendix B: Iterated Expectations | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Loss Data Analytics</title>
+  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 16 Appendix B: Iterated Expectations | Loss Data Analytics" />
+  <meta property="og:title" content="Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 16 Appendix B: Iterated Expectations | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
+  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 16 Appendix B: Iterated Expectations | Loss Data Analytics" />
+  <meta name="twitter:title" content="Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Chapter 16 Appendix B: Iterated Expectations | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community" />
+<meta name="author" content="An open text authored by the Actuarial Community">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="C-AppA.html">
 <link rel="next" href="C-AppC.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -812,7 +812,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>When the cdf <span class="math inline">\(F(x)\)</span> is continuous on <span class="math inline">\(x\)</span>, then we define <span class="math inline">\(f(x)=\partial F(x)/\partial x\)</span> as the <strong>(marginal) probability density function</strong> (pdf) of <span class="math inline">\(X\)</span>. Similarly, if the joint cdf <span class="math inline">\(F(x,y)\)</span> is continuous on both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we define <span class="math display">\[f(x,y)=\frac{\partial^2 F(x,y)}{\partial x\partial y}\]</span> as the <strong>joint probability density function</strong> of (<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>), in which case we refer to the random variables as <strong>jointly continuous</strong>.</p>
 <p>When <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <em>independent</em>, we have <span class="math display">\[f(x,y)=f(x)f(y).\]</span></p>
 <p>Given the joint density function, we may obtain the marginal density function of <span class="math inline">\(Y\)</span> as <span class="math display">\[f(y)=\int_x f(x,y)\,dx,\]</span> where the integral is over all possible values of <span class="math inline">\(x\)</span>, and the marginal probability function of <span class="math inline">\(X\)</span> can be obtained in a similar manner.</p>
-<p>Based on the joint pdf and the marginal pdf, we define the <strong>conditional probability density function</strong> of <span class="math inline">\((Y|X)\)</span> as</p>
+<p>Based on the joint <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">Probability density function</span></a> and the marginal pdf, we define the <strong>conditional probability density function</strong> of <span class="math inline">\((Y|X)\)</span> as</p>
 <p><span class="math display">\[f(y|x) = \frac{f(x,y)}{f(x)},\]</span> where we may obtain the conditional probability function of <span class="math inline">\((X|Y)\)</span> in a similar manner. Here, the conditional density function is the density function of <span class="math inline">\(y\)</span> given <span class="math inline">\(X=x\)</span>. Hence, even in cases where <span class="math inline">\(\Pr[X=x]=0\)</span> or when <span class="math inline">\(f(x)\)</span> is not defined, the function may be given in a particular form in real applications.</p>
 </div>
 </div>
@@ -852,7 +852,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Consider two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, and <span class="math inline">\(h(X,Y)\)</span>, a random variable depending on the function <span class="math inline">\(h\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
 <p>Assuming all the expectations exist and are finite, the <strong>Law of Iterated Expectations</strong> states that <span class="math display">\[\mathrm{E}[h(X,Y)]= \mathrm{E} \left\{ \mathrm{E} \left[ h(X,Y) | X \right] \right \},\]</span> where the first (inside) expectation is taken with respect to the random variable <span class="math inline">\(Y\)</span> and the second (outside) expectation is taken with respect to <span class="math inline">\(X\)</span>.</p>
 <p>For the Law of Iterated Expectations, the random variables may be discrete, continuous, or a hybrid combination of the two. We use the example of discrete variables of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> to illustrate the calculation of the unconditional expectation using the Law of Iterated Expectations. For continuous random variables, we only need to replace the summation with the integral, as illustrated earlier in the appendix.</p>
-<p>Given <span class="math inline">\(p(y|x)\)</span> the joint pmf of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the conditional expectation of <span class="math inline">\(h(X,Y)\)</span> given the event <span class="math inline">\(X=x\)</span> is defined as <span class="math display">\[\mathrm{E} \left[ h(X,Y) | X=x \right] = \sum_y h(x,y) p(y|x),\]</span> and the conditional expectation of <span class="math inline">\(h(X,Y)\)</span> given <span class="math inline">\(X\)</span> being a <em>random variable</em> can be written as <span class="math display">\[\mathrm{E} \left[ h(X,Y) | X \right] = \sum_y h(X,y) p(y|X).\]</span></p>
+<p>Given <span class="math inline">\(p(y|x)\)</span> the joint <a href="#" class="tooltip" style="color:green"><em>pmf</em><span style="font-size:8pt">Probability mass function</span></a> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the conditional expectation of <span class="math inline">\(h(X,Y)\)</span> given the event <span class="math inline">\(X=x\)</span> is defined as <span class="math display">\[\mathrm{E} \left[ h(X,Y) | X=x \right] = \sum_y h(x,y) p(y|x),\]</span> and the conditional expectation of <span class="math inline">\(h(X,Y)\)</span> given <span class="math inline">\(X\)</span> being a <em>random variable</em> can be written as <span class="math display">\[\mathrm{E} \left[ h(X,Y) | X \right] = \sum_y h(X,y) p(y|X).\]</span></p>
 <p>The unconditional expectation of <span class="math inline">\(h(X,Y)\)</span> can then be obtained by taking the expectation of <span class="math inline">\(\mathrm{E} \left[ h(X,Y) | X \right]\)</span> with respect to the random variable <span class="math inline">\(X\)</span>. That is, we can obtain <span class="math inline">\(\mathrm{E}[ h(X,Y)]\)</span> as <span class="math display">\[\begin{aligned}
      \mathrm{E} \left\{ \mathrm{E} \left[ h(X,Y) | X \right] \right \}
     &amp;= \sum_x  \left\{\sum_y h(x,y) p(y|x) \right \} p(x) \\
@@ -1040,7 +1040,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -1050,10 +1050,6 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
-},
-"history": {
 "link": null,
 "text": null
 },
@@ -1071,7 +1067,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
