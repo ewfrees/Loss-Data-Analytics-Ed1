@@ -4,6 +4,17 @@ chapnum = 6
 
 ```
 
+```{r echo = FALSE}
+QUIZ = TRUE
+ANIMATION = TRUE
+SHOW_PDF = TRUE
+# Switches that control the number of animations in Chapter 6
+# Use these for html output
+numAnimation =  5#10#30     # Section 6.4 Importance Sampling
+numAnimation2 = 2#23    # Section 6.5.1 Hastings Metropolis 
+numAnimation3 = 2#100   # Section 6.5.2 Gibbs
+
+```
 
 
 #Simulation and Resampling {#C:Simulation}
@@ -13,12 +24,6 @@ chapnum = 6
 We can also use simulation to draw from an empirical distribution - this process is known as resampling. Resampling allows us to assess the uncertainty of estimates in complex models. Section \@ref(S:Bootstrap) introduces resampling in the context of bootstrapping to determine the precision of estimators.
 
 Subsequent sections introduce other topics in resampling. Section \@ref(S:CrossValidation) on cross-validation shows how to use it for model selection and validation. Section \@ref(S:ImportanceSampling) on importance sampling describes resampling in specific regions of interest, such as long-tailed actuarial applications. Section \@ref(S:MCMC) on Monte Carlo Markov Chain (MCMC) introduces the simulation and resampling engine underpinning much of modern Bayesian analysis.
-
-***
-
-**This chapter is being written and is not yet complete nor edited. It is here to give you a flavor of what will be in the final version.**
-
-***
 
 
 ## Simulation Fundamentals {#S:SimulationFundamentals}
@@ -73,12 +78,20 @@ In this section, you learn how to:
 
 ## Monte Carlo Markov Chain (MCMC)  {#S:MCMC}
 
+
+***
+
+**This section is being written and is not yet complete nor edited. It is here to give you a flavor of what will be in the final version.**
+
+***
+
+
 ```{r eval = TRUE, child = './Chapters/SimulationSections/MCMC.Rmd'}
 ```
 
 ## Further Resources and Contributors {#Simulation:further-reading-and-resources}
 
--  Include historical references for jackkife (Quenouille, Tukey, Efron)
+-  Include historical references for jackknife (Quenouille, Tukey, Efron)
 -  Here are some links to learn more about [reproducibility and randomness](https://freakonometrics.hypotheses.org/6470) and how to go
 [from a random generator to a sample function](https://freakonometrics.hypotheses.org/6638).
 
@@ -90,7 +103,13 @@ In this section, you learn how to:
 
 
 
-## TS `r chapnum`.A. Applications of Bootstrap in Predictive Modeling
+### TS `r chapnum`.A. Bootstrap Applications in Predictive Modeling
+
+***
+
+**This section is being written.**
+
+***
 
 
 ```{r eval =  FALSE, child = 'SimulationSections/BootstrapPredictModels.Rmd'}

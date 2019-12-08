@@ -64,7 +64,7 @@ mean a total lack of functional patterns). Not surprisingly, advanced
 techniques have been developed that address some of this method's
 drawbacks.
 
-### Inverse Transform Method
+### Inverse Transform Method {#S:InverseTransform}
 
 With the sequence of uniform random numbers, we next transform them to a distribution of interest, say $F$. A prominent technique is the `r Gloss('inverse transform method')`, defined as
 
@@ -393,6 +393,8 @@ To be specific, we use $M=$ `r M` as well as $R=$ `r nSim` simulations.
 
 **a.** With the settings, we wish to determine the expected claim amount and the associated standard deviation of (i) that retained, (ii) that accepted by the insurer, and (iii) the total overall amount.
 
+`r HideRCode('PortMgt1.8.1', 'Show R Code to Define the Risks')`
+
 ```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
 
 # Simulate the risks
@@ -407,7 +409,11 @@ Yretained <- pmin(X, M)
 Yinsurer  <- X - Yretained
 ```
 
+</div>
+
 Here is the code for the expected claim amounts.
+
+`r HideRCode('PortMgt1.8.2', 'Show R Code To Compute Amounts')`
 
 ```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
 # Expected Claim Amounts
@@ -419,12 +425,21 @@ row.names(outMat) <- c("Mean","Standard Deviation")
 round(outMat,digits=2)
 ```
 
+</div>
+
+The results of these calculations are:
+
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
+round(outMat,digits=2)
+```
+
+
 **b.** For insured claims, the standard error of the simulation approximation is $s_{h,R}/\sqrt{1000000} =$ `r 
-round(sd(Yinsurer),digits=2)` $/\sqrt{1000000} =$  `r round(sd(Yinsurer)/sqrt(1000000), digits=3)`. For this example, simulation is quick and so a large value such as 1000000 is an easy choice. However, for more complex problems, the simulation size may be an issue. Figure \@ref(fig:PortfolioDF)
-allows us to visualize the development of the approximation as the number of simulations increases.
+round(sd(Yinsurer),digits=2)` $/\sqrt{1000000} =$  `r round(sd(Yinsurer)/sqrt(1000000), digits=3)`. For this example, simulation is quick and so a large value such as 1000000 is an easy choice. However, for more complex problems, the simulation size may be an issue. 
 
+`r HideRCode('PortMgt1.8.3', 'Show R Code To Set up the Visualization')`
 
-```{r PortfolioDF, warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", fig.cap = 'Estimated Expected Insurer Claims versus Number of Simulations.', echo=SHOW_PDF}
+```{r warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", echo=SHOW_PDF}
 Yinsurefct <- function(numSim){
 X1 <- rgamma(numSim,alpha1,scale = theta1)  
 X2 <- rgamma(numSim,alpha2,scale = theta2)  
@@ -433,12 +448,18 @@ X         <- X1 + X2
 Yinsurer <- X - pmin(X, M)
 return(Yinsurer)
 }
-
 R <- 1e3
 nPath <- 20
 set.seed(2017)
 simU <- matrix(Yinsurefct(R*nPath),R,nPath)
 sumP2 <- apply(simU, 2, cumsum)/(1:R)
+```
+
+</div>
+
+Figure \@ref(fig:PortfolioDF) allows us to visualize the development of the approximation as the number of simulations increases.
+
+```{r PortfolioDF, warning=FALSE, message=FALSE, fig.width=8, fig.height=4, fig.align='center', comment="", fig.cap = 'Estimated Expected Insurer Claims versus Number of Simulations.', echo=SHOW_PDF}
 matplot(1:R,sumP2[,1:20],type="l",col=rgb(1,0,0,.2), ylim=c(100, 400),
         xlab=expression(paste("Number of Simulations (", italic('R'), ")")), ylab="Expected Insurer Claims")
 abline(h=mean(Yinsurer),lty=2)
@@ -496,6 +517,8 @@ $$
 p_1 = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(F^{-1}(U_i)>2) = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(\tan \left( \pi(U_i-0.5) \right)>2) .
 $$
 
+`r HideRCode('Approximationchoices.1.9.1', 'Show the R Code')`
+
 ```{r comment = "", echo=SHOW_PDF}
 Q <- function(u) tan(pi*(u-.5))
 R <- 1e6
@@ -507,6 +530,7 @@ p1
 se.p1
 ```
 
+</div>
 
 With one million simulations, we obtain an estimate of `r round(p1,digits=5)` with standard error `r round(se.p1*1000,digits=3)` (divided by 1000). One can prove that the variance of $p_1$ is of order $0.127/R$.
 
@@ -662,24 +686,35 @@ Simulations not only help us approximate expected values but are also useful in 
 **Example. `r chapnum`.1.10. Kolmogorov-Smirnov Test of Distribution.** 
 Suppose that we have available $n=100$ observations $\{x_1,\cdots,x_n\}$ that, unknown to the analyst, was generated from a gamma distribution with parameters $\alpha = 6$ and $\theta=2$. The analyst believes that the data come from a lognormal distribution with parameters 1 and 0.4 and would like to test this assumption.
 
-The first step is to visualize the data. Figure \@ref(fig:KSTestData) provides a graph of a histogram and empirical distribution. For reference, superimposed are red dashed lines from the lognormal distribution. 
+The first step is to visualize the data. 
 
+`r HideRCode('KSTest.1.10.1','Show R Code To Set up The Visualization')`
 
-```{r KSTestData, fig.align='center', comment="", fig.cap = 'Histogram and Empirical Distribution Function of Data used in Kolmogorov-Smirnov Test. The red dashed lines are fits based on (incorrectly) hypothesized lognormal distribution.', echo=SHOW_PDF}
+```{r fig.align='center', comment="", echo=SHOW_PDF}
 set.seed(1)
 n <- 100
 x <- rgamma(n, 6, 2)
-par(mfrow=c(1,2))
-hist(x,probability = TRUE,main="Histogram", col="light blue",border="white",xlim=c(0,7),ylim=c(0,.4))
+
 u=seq(0,7,by=.01)
-lines(u,dlnorm(u,1,.4),col="red",lty=2)
 vx = c(0,sort(x))
 vy = (0:n)/n
+```
+
+</div>
+
+With this set-up, Figure \@ref(fig:KSTestData) provides a graph of a histogram and empirical distribution. For reference, superimposed are red dashed lines from the lognormal distribution. 
+
+```{r KSTestData, fig.align='center', comment="", fig.cap = 'Histogram and Empirical Distribution Function of Data used in Kolmogorov-Smirnov Test. The red dashed lines are fits based on (incorrectly) hypothesized lognormal distribution.', echo=SHOW_PDF}
+par(mfrow=c(1,2))
+hist(x,probability = TRUE,main="Histogram", col="light blue",border="white",xlim=c(0,7),ylim=c(0,.4))
+lines(u,dlnorm(u,1,.4),col="red",lty=2)
 plot(vx,vy,type="l",xlab="x",ylab="Cumulative Distribution",main="Empirical cdf")
 lines(u,plnorm(u,1,.4),col="red",lty=2)
 ```
 
 Recall that the Kolmogorov-Smirnov statistic equals the largest discrepancy between the empirical and the hypothesized distribution. This is $\max_x |F_n(x)-F_0(x)|$, where $F_0$ is the hypothesized lognormal distribution. We can calculate this directly as:
+
+`r HideRCode('KSTest.1.10.2','Show R Code for a Direct Calculation of the KS Statistic')`
 
 ```{r comment="", echo=SHOW_PDF}
 # test statistic
@@ -694,6 +729,8 @@ D <- function(data, F0){
 D(x,function(x) plnorm(x,1,.4))
 ```
 
+</div>
+
 Fortunately, for the lognormal distribution, `R` has built-in tests that allow us to determine this without complex programming:
 
 ```{r comment="", echo=SHOW_PDF}
@@ -703,16 +740,26 @@ ks.test(x, plnorm, mean=1, sd=0.4)
 
 However, for many distributions of actuarial interest, pre-built programs are not available. We can use simulation to test the relevance of the test statistic. Specifically, to compute the $p$-value, let us generate thousands of random samples from a $LN(1,0.4)$ distribution (with the same size), and compute empirically the distribution of the statistic,
 
-```{r KSSimulatedDistribution, fig.align='center', comment="", fig.cap = 'Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The vertical red dashed line marks the test statistic for the sample of 100.', echo=SHOW_PDF}
+`r HideRCode('KSTest.1.10.3','Show R Code for the Simulation Distribution of the KS Statistic')`
+
+```{r fig.align='center', comment="", cho=SHOW_PDF}
 ns <- 1e4
 d_KS <- rep(NA,ns)
 # compute the test statistics for a large (ns) number of simulated samples
 for(s in 1:ns) d_KS[s] <- D(rlnorm(n,1,.4),function(x) plnorm(x,1,.4))
+
+mean(d_KS>D(x,function(x) plnorm(x,1,.4)))
+```
+
+</div>
+
+```{r KSSimulatedDistribution, fig.align='center', comment="", fig.cap = 'Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The vertical red dashed line marks the test statistic for the sample of 100.', echo=SHOW_PDF}
 hist(d_KS,probability = TRUE,col="light blue",border="white",xlab="Test Statistic",main="")
 lines(density(d_KS),col="red")
 abline(v=D(x,function(x) plnorm(x,1,.4)),lty=2,col="red")
-mean(d_KS>D(x,function(x) plnorm(x,1,.4)))
+
 ```
+
 
 The simulated distribution based on 10,000 random samples is summarized in Figure \@ref(fig:KSSimulatedDistribution). Here, the statistic exceeded the empirical value (`r format(D(x,function(x) plnorm(x,1,.4)),digits=4)`) in `r 100*mean(d_KS>D(x,function(x) plnorm(x,1,.4)))`% of the scenarios, while the *theoretical* $p$-value is `r round(ks.test(x,plnorm,mean=1,sd=.4)$p.value, digits=4)`. For both the simulation and the theoretical $p$-values, the conclusions are the same; the data do not provide sufficient evidence to reject the hypothesis of a lognormal distribution.
 
