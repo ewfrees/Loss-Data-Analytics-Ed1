@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Loss Data Analytics</title>
-  <meta name="description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Simulation and Resampling | Loss Data Analytics</title>
+  <meta name="description" content="Chapter 6 Simulation and Resampling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Loss Data Analytics" />
+  <meta property="og:title" content="Chapter 6 Simulation and Resampling | Loss Data Analytics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="github-repo" content="<a href="https://github.com/openacttexts/Loss-Data-Analytics" class="uri">https://github.com/openacttexts/Loss-Data-Analytics</a>" />
+  <meta property="og:description" content="Chapter 6 Simulation and Resampling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/openacttexts/Loss-Data-Analytics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Loss Data Analytics" />
+  <meta name="twitter:title" content="Chapter 6 Simulation and Resampling | Loss Data Analytics" />
   
-  <meta name="twitter:description" content="Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="Chapter 6 Simulation and Resampling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
-<meta name="author" content="An open text authored by the Actuarial Community">
+<meta name="author" content="An open text authored by the Actuarial Community" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="C-AggLossModels.html">
 <link rel="next" href="C-PremiumFoundations.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -492,7 +492,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6" data-path="C-Simulation.html"><a href="C-Simulation.html"><i class="fa fa-check"></i><b>6</b> Simulation and Resampling</a><ul>
 <li class="chapter" data-level="6.1" data-path="C-Simulation.html"><a href="C-Simulation.html#S:SimulationFundamentals"><i class="fa fa-check"></i><b>6.1</b> Simulation Fundamentals</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="C-Simulation.html"><a href="C-Simulation.html#generating-independent-uniform-observations"><i class="fa fa-check"></i><b>6.1.1</b> Generating Independent Uniform Observations</a></li>
-<li class="chapter" data-level="6.1.2" data-path="C-Simulation.html"><a href="C-Simulation.html#inverse-transform-method"><i class="fa fa-check"></i><b>6.1.2</b> Inverse Transform Method</a></li>
+<li class="chapter" data-level="6.1.2" data-path="C-Simulation.html"><a href="C-Simulation.html#S:InverseTransform"><i class="fa fa-check"></i><b>6.1.2</b> Inverse Transform Method</a></li>
 <li class="chapter" data-level="6.1.3" data-path="C-Simulation.html"><a href="C-Simulation.html#simulation-precision"><i class="fa fa-check"></i><b>6.1.3</b> Simulation Precision</a></li>
 <li class="chapter" data-level="6.1.4" data-path="C-Simulation.html"><a href="C-Simulation.html#S:SimulationStatInference"><i class="fa fa-check"></i><b>6.1.4</b> Simulation and Statistical Inference</a></li>
 </ul></li>
@@ -512,8 +512,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.5.1" data-path="C-Simulation.html"><a href="C-Simulation.html#hastings-metropolis"><i class="fa fa-check"></i><b>6.5.1</b> Hastings Metropolis</a></li>
 <li class="chapter" data-level="6.5.2" data-path="C-Simulation.html"><a href="C-Simulation.html#gibbs-sampler"><i class="fa fa-check"></i><b>6.5.2</b> Gibbs sampler</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="C-Simulation.html"><a href="C-Simulation.html#Simulation:further-reading-and-resources"><i class="fa fa-check"></i><b>6.6</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="6.7" data-path="C-Simulation.html"><a href="C-Simulation.html#ts-6.a.-applications-of-bootstrap-in-predictive-modeling"><i class="fa fa-check"></i><b>6.7</b> TS 6.A. Applications of Bootstrap in Predictive Modeling</a></li>
+<li class="chapter" data-level="6.6" data-path="C-Simulation.html"><a href="C-Simulation.html#Simulation:further-reading-and-resources"><i class="fa fa-check"></i><b>6.6</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="C-Simulation.html"><a href="C-Simulation.html#ts-6.a.-bootstrap-applications-in-predictive-modeling"><i class="fa fa-check"></i><b>6.6.1</b> TS 6.A. Bootstrap Applications in Predictive Modeling</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html"><i class="fa fa-check"></i><b>7</b> Premium Foundations</a><ul>
 <li class="chapter" data-level="7.1" data-path="C-PremiumFoundations.html"><a href="C-PremiumFoundations.html#S:IntroductionRatemaking"><i class="fa fa-check"></i><b>7.1</b> Introduction to Ratemaking</a></li>
@@ -780,9 +781,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><em>Chapter Preview.</em> Simulation is a computationally intensive method used to solve difficult problems. Instead of creating physical processes and experimenting with them in order to understand their operational characteristics, a simulation study is based on a computer representation - it considers various hypothetical conditions as inputs and summarizes the results. Through simulation, a vast number of hypothetical conditions can be quickly and inexpensively examined. Section <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> introduces simulation, a wonderful computational tool that is especially useful in complex, multivariate settings.</p>
 <p>We can also use simulation to draw from an empirical distribution - this process is known as resampling. Resampling allows us to assess the uncertainty of estimates in complex models. Section <a href="C-Simulation.html#S:Bootstrap">6.2</a> introduces resampling in the context of bootstrapping to determine the precision of estimators.</p>
 <p>Subsequent sections introduce other topics in resampling. Section <a href="C-Simulation.html#S:CrossValidation">6.3</a> on cross-validation shows how to use it for model selection and validation. Section <a href="C-Simulation.html#S:ImportanceSampling">6.4</a> on importance sampling describes resampling in specific regions of interest, such as long-tailed actuarial applications. Section <a href="C-Simulation.html#S:MCMC">6.5</a> on Monte Carlo Markov Chain (MCMC) introduces the simulation and resampling engine underpinning much of modern Bayesian analysis.</p>
-<hr />
-<p><strong>This chapter is being written and is not yet complete nor edited. It is here to give you a flavor of what will be in the final version.</strong></p>
-<hr />
 <div id="S:SimulationFundamentals" class="section level2">
 <h2><span class="header-section-number">6.1</span> Simulation Fundamentals</h2>
 <hr />
@@ -867,7 +865,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(U, <span class="dt"
 <p>The linear congruential generator is just one method of producing pseudo-random outcomes. It is easy to understand and is (still) widely used. The linear congruential generator does have limitations, including the fact that it is possible to detect long-run patterns over time in the sequences generated (recall that we can interpret <em>independence</em> to mean a total lack of functional patterns). Not surprisingly, advanced techniques have been developed that address some of this method’s drawbacks.</p>
 </div>
 </div>
-<div id="inverse-transform-method" class="section level3">
+<div id="S:InverseTransform" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Inverse Transform Method</h3>
 <p>With the sequence of uniform random numbers, we next transform them to a distribution of interest, say <span class="math inline">\(F\)</span>. A prominent technique is the <a href="#" class="tooltip" style="color:green"><em>inverse transform method</em><span style="font-size:8pt">Samples a uniform number between 0 and 1 to represent the randomly selected percentile, then uses the inverse of the cumulative density function of the desired distribution to simulate from in order to find the simulated value from the desired distribution</span></a>, defined as</p>
 <p><span class="math display">\[
@@ -1140,6 +1138,10 @@ s_{h,R}^2 = \frac{1}{R-1} \sum_{i=1}^{R}\left( h(X_i) -\overline{h}_R
 <p>To manage the risk, you seek some insurance protection. You wish to manage internally small building and motor vehicles amounts, up to <span class="math inline">\(M\)</span>, say. Your retained risk is <span class="math inline">\(Y_{retained}=\)</span> <span class="math inline">\(\min(X_1 + X_2,M)\)</span>. The insurer’s portion is <span class="math inline">\(Y_{insurer} = X- Y_{retained}\)</span>.</p>
 <p>To be specific, we use <span class="math inline">\(M=\)</span> 400 as well as <span class="math inline">\(R=\)</span> 1000000 simulations.</p>
 <p><strong>a.</strong> With the settings, we wish to determine the expected claim amount and the associated standard deviation of (i) that retained, (ii) that accepted by the insurer, and (iii) the total overall amount.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.PortMgt1.8.1" href="javascript:togglecode('toggleCode.PortMgt1.8.1','displayCode.PortMgt1.8.1');"><i><strong>Show R Code to Define the Risks</strong></i></a>
+</h5>
+<div id="toggleCode.PortMgt1.8.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulate the risks</span>
 nSim &lt;-<span class="st"> </span><span class="fl">1e6</span>  <span class="co">#number of simulations</span>
 <span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span>
@@ -1150,7 +1152,12 @@ X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<spa
 X         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 
 Yretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X, M)
 Yinsurer  &lt;-<span class="st"> </span>X <span class="op">-</span><span class="st"> </span>Yretained</code></pre></div>
+</div>
 <p>Here is the code for the expected claim amounts.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.PortMgt1.8.2" href="javascript:togglecode('toggleCode.PortMgt1.8.2','displayCode.PortMgt1.8.2');"><i><strong>Show R Code To Compute Amounts</strong></i></a>
+</h5>
+<div id="toggleCode.PortMgt1.8.2" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Expected Claim Amounts</span>
 ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Yretained),<span class="kw">mean</span>(Yinsurer),<span class="kw">mean</span>(X))))
 sdVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">sd</span>(Yretained),<span class="kw">sd</span>(Yinsurer),<span class="kw">sd</span>(X))))
@@ -1161,7 +1168,17 @@ outMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(ExpVec, sdVec
 <pre><code>                   Retained Insurer  Total
 Mean                 365.17  235.01 600.18
 Standard Deviation    69.51  280.86 316.36</code></pre>
-<p><strong>b.</strong> For insured claims, the standard error of the simulation approximation is <span class="math inline">\(s_{h,R}/\sqrt{1000000} =\)</span> 280.86 <span class="math inline">\(/\sqrt{1000000} =\)</span> 0.281. For this example, simulation is quick and so a large value such as 1000000 is an easy choice. However, for more complex problems, the simulation size may be an issue. Figure <a href="C-Simulation.html#fig:PortfolioDF">6.4</a> allows us to visualize the development of the approximation as the number of simulations increases.</p>
+</div>
+<p>The results of these calculations are:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(outMat,<span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+<pre><code>                   Retained Insurer  Total
+Mean                 365.17  235.01 600.18
+Standard Deviation    69.51  280.86 316.36</code></pre>
+<p><strong>b.</strong> For insured claims, the standard error of the simulation approximation is <span class="math inline">\(s_{h,R}/\sqrt{1000000} =\)</span> 280.86 <span class="math inline">\(/\sqrt{1000000} =\)</span> 0.281. For this example, simulation is quick and so a large value such as 1000000 is an easy choice. However, for more complex problems, the simulation size may be an issue.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.PortMgt1.8.3" href="javascript:togglecode('toggleCode.PortMgt1.8.3','displayCode.PortMgt1.8.3');"><i><strong>Show R Code To Set up the Visualization</strong></i></a>
+</h5>
+<div id="toggleCode.PortMgt1.8.3" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Yinsurefct &lt;-<span class="st"> </span><span class="cf">function</span>(numSim){
 X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(numSim,alpha1,<span class="dt">scale =</span> theta1)  
 X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(numSim,alpha2,<span class="dt">scale =</span> theta2)  
@@ -1170,13 +1187,14 @@ X         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class=
 Yinsurer &lt;-<span class="st"> </span>X <span class="op">-</span><span class="st"> </span><span class="kw">pmin</span>(X, M)
 <span class="kw">return</span>(Yinsurer)
 }
-
 R &lt;-<span class="st"> </span><span class="fl">1e3</span>
 nPath &lt;-<span class="st"> </span><span class="dv">20</span>
 <span class="kw">set.seed</span>(<span class="dv">2017</span>)
 simU &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">Yinsurefct</span>(R<span class="op">*</span>nPath),R,nPath)
-sumP2 &lt;-<span class="st"> </span><span class="kw">apply</span>(simU, <span class="dv">2</span>, cumsum)<span class="op">/</span>(<span class="dv">1</span><span class="op">:</span>R)
-<span class="kw">matplot</span>(<span class="dv">1</span><span class="op">:</span>R,sumP2[,<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>],<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="kw">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">2</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">400</span>),
+sumP2 &lt;-<span class="st"> </span><span class="kw">apply</span>(simU, <span class="dv">2</span>, cumsum)<span class="op">/</span>(<span class="dv">1</span><span class="op">:</span>R)</code></pre></div>
+</div>
+<p>Figure <a href="C-Simulation.html#fig:PortfolioDF">6.4</a> allows us to visualize the development of the approximation as the number of simulations increases.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matplot</span>(<span class="dv">1</span><span class="op">:</span>R,sumP2[,<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>],<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="kw">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">2</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">400</span>),
         <span class="dt">xlab=</span><span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;Number of Simulations (&quot;</span>, <span class="kw">italic</span>(<span class="st">&#39;R&#39;</span>), <span class="st">&quot;)&quot;</span>)), <span class="dt">ylab=</span><span class="st">&quot;Expected Insurer Claims&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">mean</span>(Yinsurer),<span class="dt">lty=</span><span class="dv">2</span>)
 bonds &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="fl">1.96</span><span class="op">*</span><span class="kw">sd</span>(Yinsurer)<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">:</span>R)),<span class="op">-</span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sd</span>(Yinsurer)<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">:</span>R)))
@@ -1213,6 +1231,10 @@ R \geq 38,416\frac{s_{h,R}^2}{\overline{h}_R^2}.
 <p><span class="math display">\[
 p_1 = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(F^{-1}(U_i)&gt;2) = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(\tan \left( \pi(U_i-0.5) \right)&gt;2) .
 \]</span></p>
+<h5 style="text-align: center;">
+<a id="displayCode.Approximationchoices.1.9.1" href="javascript:togglecode('toggleCode.Approximationchoices.1.9.1','displayCode.Approximationchoices.1.9.1');"><i><strong>Show the R Code</strong></i></a>
+</h5>
+<div id="toggleCode.Approximationchoices.1.9.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Q &lt;-<span class="st"> </span><span class="cf">function</span>(u) <span class="kw">tan</span>(pi<span class="op">*</span>(u<span class="op">-</span>.<span class="dv">5</span>))
 R &lt;-<span class="st"> </span><span class="fl">1e6</span>
 <span class="kw">set.seed</span>(<span class="dv">1</span>)
@@ -1223,6 +1245,7 @@ p1</code></pre></div>
 <pre><code>[1] 0.147439</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">se.p1</code></pre></div>
 <pre><code>[1] 0.0003545432</code></pre>
+</div>
 <p>With one million simulations, we obtain an estimate of 0.14744 with standard error 0.355 (divided by 1000). One can prove that the variance of <span class="math inline">\(p_1\)</span> is of order <span class="math inline">\(0.127/R\)</span>.</p>
 <!--It can be visualized below -->
 <p>With other choices of <span class="math inline">\(h(\cdot)\)</span> and <span class="math inline">\(F(\cdot)\)</span>, it is actually possible to reduce uncertainty even using the same number of simulations <code>R</code>. To begin, one can use the symmetry of the Cauchy distribution to write <span class="math inline">\(\Pr[X&gt;2]=0.5\cdot\Pr[|X|&gt;2]\)</span>. With this, can construct a new estimator</p>
@@ -1350,16 +1373,23 @@ Standard Error
 <h3><span class="header-section-number">6.1.4</span> Simulation and Statistical Inference</h3>
 <p>Simulations not only help us approximate expected values but are also useful in calculating other aspects of distribution functions. In particular, they are very useful when distributions of test statistics are too complicated to derive; in this case, one can use simulations to approximate the reference distribution. We now illustrate this with the <a href="#" class="tooltip" style="color:green"><em>Kolmogorov-Smirnov test</em><span style="font-size:8pt">A nonparametric statistical test used to determine if a data sample could come from a hypothesized continuous probability distribution</span></a> that we learned about in Section 4.1.2.2.</p>
 <p><strong>Example. 6.1.10. Kolmogorov-Smirnov Test of Distribution.</strong> Suppose that we have available <span class="math inline">\(n=100\)</span> observations <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span> that, unknown to the analyst, was generated from a gamma distribution with parameters <span class="math inline">\(\alpha = 6\)</span> and <span class="math inline">\(\theta=2\)</span>. The analyst believes that the data come from a lognormal distribution with parameters 1 and 0.4 and would like to test this assumption.</p>
-<p>The first step is to visualize the data. Figure <a href="C-Simulation.html#fig:KSTestData">6.5</a> provides a graph of a histogram and empirical distribution. For reference, superimposed are red dashed lines from the lognormal distribution.</p>
+<p>The first step is to visualize the data.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.KSTest.1.10.1" href="javascript:togglecode('toggleCode.KSTest.1.10.1','displayCode.KSTest.1.10.1');"><i><strong>Show R Code To Set up The Visualization</strong></i></a>
+</h5>
+<div id="toggleCode.KSTest.1.10.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1</span>)
 n &lt;-<span class="st"> </span><span class="dv">100</span>
 x &lt;-<span class="st"> </span><span class="kw">rgamma</span>(n, <span class="dv">6</span>, <span class="dv">2</span>)
-<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
-<span class="kw">hist</span>(x,<span class="dt">probability =</span> <span class="ot">TRUE</span>,<span class="dt">main=</span><span class="st">&quot;Histogram&quot;</span>, <span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>,<span class="dt">border=</span><span class="st">&quot;white&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">7</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">4</span>))
+
 u=<span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">7</span>,<span class="dt">by=</span>.<span class="dv">01</span>)
-<span class="kw">lines</span>(u,<span class="kw">dlnorm</span>(u,<span class="dv">1</span>,.<span class="dv">4</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lty=</span><span class="dv">2</span>)
 vx =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">sort</span>(x))
-vy =<span class="st"> </span>(<span class="dv">0</span><span class="op">:</span>n)<span class="op">/</span>n
+vy =<span class="st"> </span>(<span class="dv">0</span><span class="op">:</span>n)<span class="op">/</span>n</code></pre></div>
+</div>
+<p>With this set-up, Figure <a href="C-Simulation.html#fig:KSTestData">6.5</a> provides a graph of a histogram and empirical distribution. For reference, superimposed are red dashed lines from the lognormal distribution.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+<span class="kw">hist</span>(x,<span class="dt">probability =</span> <span class="ot">TRUE</span>,<span class="dt">main=</span><span class="st">&quot;Histogram&quot;</span>, <span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>,<span class="dt">border=</span><span class="st">&quot;white&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">7</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">4</span>))
+<span class="kw">lines</span>(u,<span class="kw">dlnorm</span>(u,<span class="dv">1</span>,.<span class="dv">4</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lty=</span><span class="dv">2</span>)
 <span class="kw">plot</span>(vx,vy,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Cumulative Distribution&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Empirical cdf&quot;</span>)
 <span class="kw">lines</span>(u,<span class="kw">plnorm</span>(u,<span class="dv">1</span>,.<span class="dv">4</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:KSTestData"></span>
@@ -1369,6 +1399,10 @@ Figure 6.5: Histogram and Empirical Distribution Function of Data used in Kolmog
 </p>
 </div>
 <p>Recall that the Kolmogorov-Smirnov statistic equals the largest discrepancy between the empirical and the hypothesized distribution. This is <span class="math inline">\(\max_x |F_n(x)-F_0(x)|\)</span>, where <span class="math inline">\(F_0\)</span> is the hypothesized lognormal distribution. We can calculate this directly as:</p>
+<h5 style="text-align: center;">
+<a id="displayCode.KSTest.1.10.2" href="javascript:togglecode('toggleCode.KSTest.1.10.2','displayCode.KSTest.1.10.2');"><i><strong>Show R Code for a Direct Calculation of the KS Statistic</strong></i></a>
+</h5>
+<div id="toggleCode.KSTest.1.10.2" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># test statistic</span>
 D &lt;-<span class="st"> </span><span class="cf">function</span>(data, F0){
    F &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(<span class="cf">function</span>(x) <span class="kw">mean</span>((data<span class="op">&lt;=</span>x)))
@@ -1380,6 +1414,7 @@ D &lt;-<span class="st"> </span><span class="cf">function</span>(data, F0){
 }
 <span class="kw">D</span>(x,<span class="cf">function</span>(x) <span class="kw">plnorm</span>(x,<span class="dv">1</span>,.<span class="dv">4</span>))</code></pre></div>
 <pre><code>[1] 0.09703627</code></pre>
+</div>
 <p>Fortunately, for the lognormal distribution, <code>R</code> has built-in tests that allow us to determine this without complex programming:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ks.test</span>(x, plnorm, <span class="dt">mean=</span><span class="dv">1</span>, <span class="dt">sd=</span><span class="fl">0.4</span>)</code></pre></div>
 <pre><code>
@@ -1389,11 +1424,19 @@ data:  x
 D = 0.097037, p-value = 0.3031
 alternative hypothesis: two-sided</code></pre>
 <p>However, for many distributions of actuarial interest, pre-built programs are not available. We can use simulation to test the relevance of the test statistic. Specifically, to compute the <span class="math inline">\(p\)</span>-value, let us generate thousands of random samples from a <span class="math inline">\(LN(1,0.4)\)</span> distribution (with the same size), and compute empirically the distribution of the statistic,</p>
+<h5 style="text-align: center;">
+<a id="displayCode.KSTest.1.10.3" href="javascript:togglecode('toggleCode.KSTest.1.10.3','displayCode.KSTest.1.10.3');"><i><strong>Show R Code for the Simulation Distribution of the KS Statistic</strong></i></a>
+</h5>
+<div id="toggleCode.KSTest.1.10.3" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ns &lt;-<span class="st"> </span><span class="fl">1e4</span>
 d_KS &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>,ns)
 <span class="co"># compute the test statistics for a large (ns) number of simulated samples</span>
 <span class="cf">for</span>(s <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>ns) d_KS[s] &lt;-<span class="st"> </span><span class="kw">D</span>(<span class="kw">rlnorm</span>(n,<span class="dv">1</span>,.<span class="dv">4</span>),<span class="cf">function</span>(x) <span class="kw">plnorm</span>(x,<span class="dv">1</span>,.<span class="dv">4</span>))
-<span class="kw">hist</span>(d_KS,<span class="dt">probability =</span> <span class="ot">TRUE</span>,<span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>,<span class="dt">border=</span><span class="st">&quot;white&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Test Statistic&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)
+
+<span class="kw">mean</span>(d_KS<span class="op">&gt;</span><span class="kw">D</span>(x,<span class="cf">function</span>(x) <span class="kw">plnorm</span>(x,<span class="dv">1</span>,.<span class="dv">4</span>)))</code></pre></div>
+<pre><code>[1] 0.2843</code></pre>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(d_KS,<span class="dt">probability =</span> <span class="ot">TRUE</span>,<span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>,<span class="dt">border=</span><span class="st">&quot;white&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Test Statistic&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)
 <span class="kw">lines</span>(<span class="kw">density</span>(d_KS),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">D</span>(x,<span class="cf">function</span>(x) <span class="kw">plnorm</span>(x,<span class="dv">1</span>,.<span class="dv">4</span>)),<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:KSSimulatedDistribution"></span>
@@ -1402,8 +1445,6 @@ d_KS &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">
 Figure 6.6: Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The vertical red dashed line marks the test statistic for the sample of 100.
 </p>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(d_KS<span class="op">&gt;</span><span class="kw">D</span>(x,<span class="cf">function</span>(x) <span class="kw">plnorm</span>(x,<span class="dv">1</span>,.<span class="dv">4</span>)))</code></pre></div>
-<pre><code>[1] 0.2843</code></pre>
 <p>The simulated distribution based on 10,000 random samples is summarized in Figure <a href="C-Simulation.html#fig:KSSimulatedDistribution">6.6</a>. Here, the statistic exceeded the empirical value (0.09704) in 28.43% of the scenarios, while the <em>theoretical</em> <span class="math inline">\(p\)</span>-value is 0.3031. For both the simulation and the theoretical <span class="math inline">\(p\)</span>-values, the conclusions are the same; the data do not provide sufficient evidence to reject the hypothesis of a lognormal distribution.</p>
 <p>Although only an approximation, the simulation approach works in a variety of distributions and test statistics without needing to develop the nuances of the underpinning theory for each situation. We summarize the procedure for developing simulated distributions and <em>p</em>-values as follows:</p>
 <ol style="list-style-type: decimal">
@@ -1426,11 +1467,11 @@ Figure 6.6: Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The
 <!--  Bootstrap -->
 <div id="bootstrap-foundations" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Bootstrap Foundations</h3>
-<p>Simulation presented up to now is based on sampling from a <em>known</em> distribution. Section <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> showed how to use simulation techniques to sample and compute quantities from known distributions. However, statistical science is dedicated to providing inferences about distributions that are <em>unknown</em>. We gather summary statistics based on this unknown population distribution. But how do we sample from an unknown distribution?</p>
+<p>Simulation presented up to now is based on sampling from a <strong>known</strong> distribution. Section <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> showed how to use simulation techniques to sample and compute quantities from known distributions. However, statistical science is dedicated to providing inferences about distributions that are <em>unknown</em>. We gather summary statistics based on this unknown population distribution. But how do we sample from an unknown distribution?</p>
 <p>Naturally, we cannot simulate draws from an unknown distribution but we can draw from a sample of observations. If the sample is a good representation from the population, then our simulated draws from the sample should well approximate the simulated draws from a population. The process of sampling from a sample is called <em>resampling</em> or <em>bootstrapping</em>. The term <a href="#" class="tooltip" style="color:green"><em>bootstrap</em><span style="font-size:8pt">A method of sampling with replacement from the original dataset to create additional simulated datasets of the same size as the original</span></a> comes from the phrase “pulling oneself up by one’s bootstraps” (Efron, 1979). With resampling, the original sample plays the role of the population and estimates from the sample play the role of true population parameters.</p>
-<p>The resampling algorithm is that same as introduced in Section <a href="C-Simulation.html#S:SimulationStatInference">6.1.4</a> except that now we use simulated draws from a sample. It is common to use <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> to denote the original sample and let <span class="math inline">\(\{X_1^*, \ldots, X_n^*\}\)</span> denote the simulated draws from this sample. We draw them with replacement so that the simulated draws will be independent from one another, the same assumption as with the original sample. We also use <em>n</em> simulated draws, the same number as the original sample size. To distinguish this procedure from the simulation, it is common to use <em>B</em> (for bootstrap) to be the number of simulated samples. We could also write <span class="math inline">\(\{X_1^{(b)}, \ldots, X_n^{(b)}\}\)</span>, <span class="math inline">\(b=1,\ldots, B\)</span> to clarify this.</p>
-<p>There are two basic resampling methods, <em>model-free</em> and <em>model-based</em>, which are also known, respectively, as <em>nonparametric</em> and <em>parametric</em>. In the <a href="#" class="tooltip" style="color:green"><em>nonparametric approach</em><span style="font-size:8pt">A statistical method where no assumption is made about the distribution of the population</span></a>, no assumption is made about the distribution of the parent population. The simulated draws come from the empirical distribution function <span class="math inline">\(F_n(\cdot)\)</span>, so each draw comes from <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> with probability 1/<em>n</em>.</p>
-<p>In contrast, for the <a href="#" class="tooltip" style="color:green"><em>parametric approach</em><span style="font-size:8pt">A statistical method where a prior assumption is made about the distribution or model form</span></a>, we assume that we have knowledge of the distribution family <em>F</em>. The original sample <span class="math inline">\(X_1, \ldots, X_n\)</span> is used to estimate parameters of that family, say, <span class="math inline">\(\hat{\theta}\)</span>. Then, simulated draws are taken from the <span class="math inline">\(F(\hat{\theta})\)</span>. Section <a href="C-Simulation.html#S:ParametricBootStrap">6.2.4</a> will discuss this approach in further detail.</p>
+<p>The resampling algorithm is the same as introduced in Section <a href="C-Simulation.html#S:SimulationStatInference">6.1.4</a> except that now we use simulated draws from a sample. It is common to use <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> to denote the original sample and let <span class="math inline">\(\{X_1^*, \ldots, X_n^*\}\)</span> denote the simulated draws. We draw them with replacement so that the simulated draws will be independent from one another, the same assumption as with the original sample. For each sample, we also use <em>n</em> simulated draws, the same number as the original sample size. To distinguish this procedure from the simulation, it is common to use <em>B</em> (for bootstrap) to be the number of simulated samples. We could also write <span class="math inline">\(\{X_1^{(b)}, \ldots, X_n^{(b)}\}\)</span>, <span class="math inline">\(b=1,\ldots, B\)</span> to clarify this.</p>
+<p>There are two basic resampling methods, <em>model-free</em> and <em>model-based</em>, which are, respectively, as <em>nonparametric</em> and <em>parametric</em>. In the <a href="#" class="tooltip" style="color:green"><em>nonparametric approach</em><span style="font-size:8pt">A statistical method where no assumption is made about the distribution of the population</span></a>, no assumption is made about the distribution of the parent population. The simulated draws come from the empirical distribution function <span class="math inline">\(F_n(\cdot)\)</span>, so each draw comes from <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> with probability 1/<em>n</em>.</p>
+<p>In contrast, for the <a href="#" class="tooltip" style="color:green"><em>parametric approach</em><span style="font-size:8pt">A statistical method where a prior assumption is made about the distribution or model form</span></a>, we assume that we have knowledge of the distribution family <em>F</em>. The original sample <span class="math inline">\(X_1, \ldots, X_n\)</span> is used to estimate parameters of that family, say, <span class="math inline">\(\hat{\theta}\)</span>. Then, simulated draws are taken from the <span class="math inline">\(F(\hat{\theta})\)</span>. Section <a href="C-Simulation.html#S:ParametricBootStrap">6.2.4</a> discusses this approach in further detail.</p>
 <div id="nonparametric-bootstrap" class="section level4 unnumbered">
 <h4>Nonparametric Bootstrap</h4>
 <p>The idea of the nonparametric bootstrap is to use the inverse method on <span class="math inline">\(F_n\)</span>, the empirical cumulative distribution function, depicted in Figure <a href="C-Simulation.html#fig:InverseDFboot">6.7</a>.</p>
@@ -1440,12 +1481,12 @@ Figure 6.6: Simulated Distribution of the Kolmogorov-Smirnov Test Statistic. The
 Figure 6.7: Inverse of an Empirical Distribution Function
 </p>
 </div>
-<p>Because <span class="math inline">\(F_n\)</span> is a step-function, <span class="math inline">\(F_n^{-1}\)</span> will take values in <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span>. More precisely, as illustrated in Figure <a href="C-Simulation.html#fig:InverseDFboot2">6.8</a>.</p>
+<p>Because <span class="math inline">\(F_n\)</span> is a step-function, <span class="math inline">\(F_n^{-1}\)</span> takes values in <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span>. More precisely, as illustrated in Figure <a href="C-Simulation.html#fig:InverseDFboot2">6.8</a>.</p>
 <ul>
-<li>if <span class="math inline">\(y\in(0,1/n)\)</span> (with probability <span class="math inline">\(1/n\)</span>) we will draw the smallest value (<span class="math inline">\(\min\{x_i\}\)</span>)</li>
-<li>if <span class="math inline">\(y\in(1/n,2/n)\)</span> (with probability <span class="math inline">\(1/n\)</span>) we will draw the second smallest value,</li>
+<li>if <span class="math inline">\(y\in(0,1/n)\)</span> (with probability <span class="math inline">\(1/n\)</span>) we draw the smallest value (<span class="math inline">\(\min\{x_i\}\)</span>)</li>
+<li>if <span class="math inline">\(y\in(1/n,2/n)\)</span> (with probability <span class="math inline">\(1/n\)</span>) we draw the second smallest value,</li>
 <li>…</li>
-<li>if <span class="math inline">\(y\in((n-1)/n,1)\)</span> (with probability <span class="math inline">\(1/n\)</span>) we will draw the largest value (<span class="math inline">\(\max\{x_i\}\)</span>)</li>
+<li>if <span class="math inline">\(y\in((n-1)/n,1)\)</span> (with probability <span class="math inline">\(1/n\)</span>) we draw the largest value (<span class="math inline">\(\max\{x_i\}\)</span>).</li>
 </ul>
 <div class="figure" style="text-align: center"><span id="fig:InverseDFboot2"></span>
 <img src="LossDataAnalytics_files/figure-html/InverseDFboot2-1.png" alt="Inverse of an Empirical Distribution Function" width="60%" />
@@ -1453,14 +1494,19 @@ Figure 6.7: Inverse of an Empirical Distribution Function
 Figure 6.8: Inverse of an Empirical Distribution Function
 </p>
 </div>
-<p>So finally, using the inverse method with <span class="math inline">\(F_n\)</span> mean sampling from <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span>, with probability <span class="math inline">\(1/n\)</span>. And generating a bootstrap sample of size <span class="math inline">\(B\)</span> means sampling from <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span>, with probability <span class="math inline">\(1/n\)</span>, with replacement,</p>
+<p>Using the inverse method with <span class="math inline">\(F_n\)</span> means sampling from <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span>, with probability <span class="math inline">\(1/n\)</span>. Generating a bootstrap sample of size <span class="math inline">\(B\)</span> means sampling from <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span>, with probability <span class="math inline">\(1/n\)</span>, with replacement. See the following illustrative <code>R</code> code.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.BootStrap.A" href="javascript:togglecode('toggleCode.BootStrap.A','displayCode.BootStrap.A');"><i><strong>Show R Code For Creating a Bootstrap Sample</strong></i></a>
+</h5>
+<div id="toggleCode.BootStrap.A" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1</span>)
 n &lt;-<span class="st"> </span><span class="dv">10</span>
 x &lt;-<span class="st"> </span><span class="kw">rexp</span>(n, <span class="dv">1</span><span class="op">/</span><span class="dv">6</span>)
 m &lt;-<span class="st"> </span><span class="dv">8</span>
-<span class="kw">round</span>(<span class="kw">sample</span>(x, <span class="dt">size=</span>m, <span class="dt">replace=</span><span class="ot">TRUE</span>),<span class="dt">digits=</span><span class="dv">4</span>)</code></pre></div>
+bootvalues &lt;-<span class="st"> </span><span class="kw">sample</span>(x, <span class="dt">size=</span>m, <span class="dt">replace=</span><span class="ot">TRUE</span>)</code></pre></div>
+</div>
 <pre><code>[1] 7.0899 0.8742 0.8388 4.5311 0.8388 5.7394 0.8388 2.6164</code></pre>
-<p>Observe that value 0.8388 was obtained three times here.</p>
+<p>Observe that value 0.8388 was obtained three times.</p>
 </div>
 </div>
 <div id="bootstrap-precision-bias-standard-deviation-and-mse" class="section level3">
@@ -1479,7 +1525,7 @@ m &lt;-<span class="st"> </span><span class="dv">8</span>
 \text{Table 6.2. Bootstrap Summary Measures}\\
 \begin{array}{l|c|c|c}
 \hline
-\text{Population Measure}&amp; \text{Population Definition}&amp;\text{Bootstrap Definition}&amp;\text{Bootstrap Symbol}\\
+\text{Population Measure}&amp; \text{Population Definition}&amp;\text{Bootstrap Approximation}&amp;\text{Bootstrap Symbol}\\
 \hline
 \text{Bias} &amp; \mathrm{E}(\hat{\theta})-\theta&amp;\overline{\hat{\theta^*}}-\hat{\theta}&amp; Bias_{boot}(\hat{\theta})  \\\hline
 \text{Standard Deviation} &amp;   \sqrt{\mathrm{Var}(\hat{\theta})}
@@ -1493,10 +1539,10 @@ m &lt;-<span class="st"> </span><span class="dv">8</span>
 <hr />
 <p><strong>Example 6.2.1. Bodily Injury Claims and Loss Elimination Ratios.</strong> To show how the bootstrap can be used to quantify the precision of estimators, we return to the Example 4.1.11 bodily injury claims data where we introduced a nonparametric estimator of the loss elimination ratio.</p>
 <p><a href="#tab:63">Table 6.3</a> summarizes the results of the bootstrap estimation. For example, at <span class="math inline">\(d=14000\)</span>, we saw in Example 4.1.11 that the nonparametric estimate of <em>LER</em> is 0.97678. This has an estimated bias of 0.00018 with a standard deviation of 0.00701. For some applications, you may wish to apply the estimated bias to the original estimate to give a <a href="#" class="tooltip" style="color:green"><em>bias-corrected estimator</em><span style="font-size:8pt">If an estimator is known to be consistently biased in a manner, it can be corrected using a factor to be come less biased or unbiased</span></a>. This is the focus of the next example. For this illustration, the bias is small and so such a correction is not relevant.</p>
-<p>The bootstrap standard deviation gives a measure of precision. For one application of standard deviations, we can use the normal approximation to create a confidence interval. For example, the <code>R</code> function <code>boot.ci</code> produces the normal confidence intervals at 95%. These are produced by creating an interval of twice the length of 1.95994 bootstrap standard deviations, centered about the bias-corrected estimator (1.95994 is the 97.5th quantile of the standard normal distribution). For example, the lower normal 95% CI at <span class="math inline">\(d=14000\)</span> is <span class="math inline">\((0.97678-0.00018)- 1.95994*0.00701 = 0.96286\)</span>. We give additional discussion on how to created bootstrap confidence intervals in the next section.</p>
-<p><a id=tab:63></a></p>
-<div id="table-6.3.-bootstrap-estimates-of-ler-at-selected-deductibles" class="section level5 unnumbered">
-<h5>Table 6.3. Bootstrap Estimates of LER at Selected Deductibles</h5>
+<h5 style="text-align: center;">
+<a id="displayCode.LER6.2.1" href="javascript:togglecode('toggleCode.LER6.2.1','displayCode.LER6.2.1');"><i><strong>Show R Code For Bootstrap Estimates of LER</strong></i></a>
+</h5>
+<div id="toggleCode.LER6.2.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Example from Derrig et al</span>
 BIData &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../../Data/DerrigResampling.csv&quot;</span>, <span class="dt">header =</span>T)
 BIData<span class="op">$</span>Censored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&gt;=</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)
@@ -1508,18 +1554,13 @@ LER.boot &lt;-<span class="st"> </span><span class="cf">function</span>(ded, dat
   LER &lt;-<span class="st">   </span>sumClaims_d<span class="op">/</span>sumClaims
   <span class="kw">return</span>(LER)  
 }
-<span class="co">#indices &lt;- 1:nrow(BIDataUncensored)</span>
-<span class="co">#LER.boot(data=BIDataUncensored, indices)</span>
-<span class="co">#results &lt;- boot(data=BIDataUncensored, statistic=LER.boot, R=1000, ded=4000)</span>
-<span class="co">#plot(results)</span>
-<span class="co">#results$t0</span>
-<span class="co">#boot.ci(results, type=&quot;bca&quot;)</span>
 
 ##Derrig et al
 <span class="kw">set.seed</span>(<span class="dv">2019</span>)
 dVec2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4000</span>, <span class="dv">5000</span>, <span class="dv">10500</span>, <span class="dv">11500</span>, <span class="dv">14000</span>, <span class="dv">18500</span>)
 OutBoot &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="kw">length</span>(dVec2),<span class="dv">6</span>)
-<span class="kw">colnames</span>(OutBoot) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>,<span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal 95% CI&quot;</span>)
+<span class="kw">colnames</span>(OutBoot) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>,<span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, 
+                           <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal 95% CI&quot;</span>)
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(dVec2)) {
 OutBoot[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>dVec2[i]
 results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>LER.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">ded=</span>dVec2[i])
@@ -1529,8 +1570,11 @@ sdboot &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span cla
 temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results)
 OutBoot[i,<span class="dv">5</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">2</span>]
 OutBoot[i,<span class="dv">6</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">3</span>]
-}
-knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot, <span class="dt">digits=</span><span class="dv">5</span>)</code></pre></div>
+}</code></pre></div>
+</div>
+<p><a id=tab:63></a></p>
+<div id="table-6.3.-bootstrap-estimates-of-ler-at-selected-deductibles" class="section level5 unnumbered">
+<h5>Table 6.3. Bootstrap Estimates of LER at Selected Deductibles</h5>
 <table>
 <thead>
 <tr class="header">
@@ -1593,38 +1637,46 @@ knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot, <span clas
 </tr>
 </tbody>
 </table>
-<p><strong>Example. 6.2.2. Estimating <span class="math inline">\(\exp(\mu)\)</span>.</strong> The bootstrap can be used to quantify the bias of an estimator, for instance. Consider here a sample <span class="math inline">\(\mathbf{x}=\{x_1,\cdots,x_n\}\)</span> <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Independent and identically distributed</span></a> with mean <span class="math inline">\(\mu\)</span>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sample_x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">2.46</span>,<span class="fl">2.80</span>,<span class="fl">3.28</span>,<span class="fl">3.86</span>,<span class="fl">2.85</span>,<span class="fl">3.67</span>,<span class="fl">3.37</span>,<span class="fl">3.40</span>,<span class="fl">5.22</span>,<span class="fl">2.55</span>,<span class="fl">2.79</span>,<span class="fl">4.50</span>,<span class="fl">3.37</span>,<span class="fl">2.88</span>,<span class="fl">1.44</span>,<span class="fl">2.56</span>,<span class="fl">2.00</span>,<span class="fl">2.07</span>,<span class="fl">2.19</span>,<span class="fl">1.77</span>)</code></pre></div>
-<p>Suppose that the quantity of interest is <span class="math inline">\(\theta=\exp[\mu]\)</span>. A <a href="#" class="tooltip" style="color:green"><em>natural estimator</em><span style="font-size:8pt">An estimator that uses the sample moments as the estimators for the population</span></a> would be <span class="math inline">\(\widehat{\theta}_1=\exp(\overline{x})\)</span>. This estimator is biased (<a href="#" class="tooltip" style="color:green"><em>Jensen inequality</em><span style="font-size:8pt">For a convex function f(x), f(expected value of x) &lt;= expected value of f(x)</span></a>) but asymptotically unbiased.</p>
+<p>The bootstrap standard deviation gives a measure of precision. For one application of standard deviations, we can use the normal approximation to create a confidence interval. For example, the <code>R</code> function <code>boot.ci</code> produces the normal confidence intervals at 95%. These are produced by creating an interval of twice the length of 1.95994 bootstrap standard deviations, centered about the bias-corrected estimator (1.95994 is the 97.5th quantile of the standard normal distribution). For example, the lower normal 95% CI at <span class="math inline">\(d=14000\)</span> is <span class="math inline">\((0.97678-0.00018)- 1.95994*0.00701\)</span> <span class="math inline">\(= 0.96286\)</span>. We further discuss bootstrap confidence intervals in the next section.</p>
+<hr />
+<p><strong>Example 6.2.2. Estimating <span class="math inline">\(\exp(\mu)\)</span>.</strong> The bootstrap can be used to quantify the bias of an estimator, for instance. Consider here a sample <span class="math inline">\(\mathbf{x}=\{x_1,\cdots,x_n\}\)</span> that is <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Independent and identically distributed</span></a> with mean <span class="math inline">\(\mu\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sample_x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">2.46</span>,<span class="fl">2.80</span>,<span class="fl">3.28</span>,<span class="fl">3.86</span>,<span class="fl">2.85</span>,<span class="fl">3.67</span>,<span class="fl">3.37</span>,<span class="fl">3.40</span>,<span class="fl">5.22</span>,<span class="fl">2.55</span>,
+              <span class="fl">2.79</span>,<span class="fl">4.50</span>,<span class="fl">3.37</span>,<span class="fl">2.88</span>,<span class="fl">1.44</span>,<span class="fl">2.56</span>,<span class="fl">2.00</span>,<span class="fl">2.07</span>,<span class="fl">2.19</span>,<span class="fl">1.77</span>)</code></pre></div>
+<p>Suppose that the quantity of interest is <span class="math inline">\(\theta=\exp(\mu)\)</span>. A natural estimator would be <span class="math inline">\(\widehat{\theta}_1=\exp(\overline{x})\)</span>. This estimator is biased (due to the <a href="#" class="tooltip" style="color:green"><em>Jensen inequality</em><span style="font-size:8pt">For a convex function f(x), f(expected value of x) &lt;= expected value of f(x)</span></a>) but is asymptotically unbiased. For our sample, the estimate is as follows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(theta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">mean</span>(sample_x)))</code></pre></div>
 <pre><code>[1] 19.13463</code></pre>
-<p>One can use the Central Limit Theorem to get a correction since <span class="math display">\[
+<p>One can use the central limit theorem to get a correction using <span class="math display">\[
 \overline{X}\approx\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)\text{ where }\sigma^2=\text{Var}[X_i] ,
 \]</span> so that, with the normal moment generating function, we have <span class="math display">\[
 \mathrm{E}~\exp[\overline{X}] \approx \exp\left(\mu+\frac{\sigma^2}{2n}\right) .
 \]</span> Hence, one can consider naturally <span class="math display">\[
 \widehat{\theta}_2=\exp\left(\overline{x}-\frac{\widehat{\sigma}^2}{2n}\right) .
-\]</span></p>
+\]</span> For our data, this turns out to be as follows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">length</span>(sample_x)
 (theta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">mean</span>(sample_x)<span class="op">-</span><span class="kw">var</span>(sample_x)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>n)))</code></pre></div>
 <pre><code>[1] 18.73334</code></pre>
-<p>Note that one can also use Taylor’s approximation to get a more accurate estimator (as in the delta method), <span class="math display">\[
-g(\overline{x})=g(\mu)+[\overline{x}-\mu]g&#39;(\mu)+[\overline{x}-\mu]^2\frac{g&#39;&#39;(\mu)}{2}+\cdots
-\]</span> Finally, an alternative is to use a bootstrap strategy: given a bootstrap sample, <span class="math inline">\(\mathbf{x}^{\ast}_{b}\)</span>, let <span class="math inline">\(\overline{x}^{\ast}_{b}\)</span> denotes its mean, and set <span class="math display">\[
-\widehat{\theta}_3=\frac{1}{B}\sum_{b=1}^B\exp[\overline{x}^{\ast}_{b}] .
-\]</span></p>
+<p>As another strategy (that we do not pursue here), one can also use Taylor’s approximation to get a more accurate estimator (as in the delta method), <span class="math display">\[
+g(\overline{x})=g(\mu)+(\overline{x}-\mu)g&#39;(\mu)+(\overline{x}-\mu)^2\frac{g&#39;&#39;(\mu)}{2}+\cdots
+\]</span> The alternative we do explore is to use a bootstrap strategy: given a bootstrap sample, <span class="math inline">\(\mathbf{x}^{\ast}_{b}\)</span>, let <span class="math inline">\(\overline{x}^{\ast}_{b}\)</span> denotes its mean, and set <span class="math display">\[
+\widehat{\theta}_3=\frac{1}{B}\sum_{b=1}^B\exp(\overline{x}^{\ast}_{b}) .
+\]</span> To implement this, we have the following code.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.bootstrapdisn.1" href="javascript:togglecode('toggleCode.bootstrapdisn.1','displayCode.bootstrapdisn.1');"><i><strong>Show R Code for Creating Bootstrap Samples</strong></i></a>
+</h5>
+<div id="toggleCode.bootstrapdisn.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)
 results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>sample_x, 
                 <span class="dt">statistic=</span><span class="cf">function</span>(y,indices) <span class="kw">exp</span>(<span class="kw">mean</span>(y[indices])), 
                 <span class="dt">R=</span><span class="dv">1000</span>)
-<span class="kw">plot</span>(results)</code></pre></div>
+theta_<span class="dv">3</span> &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)</code></pre></div>
+</div>
+<p>Then, you can <code>plot(results)</code> and <code>print(results)</code> to see the following.</p>
 <div class="figure" style="text-align: center"><span id="fig:BootstrapDistn"></span>
 <img src="LossDataAnalytics_files/figure-html/BootstrapDistn-1.png" alt="Distribution of Bootstrap Replicates. The left-hand panel is a histogram of replicates. The right-hand panel is a quantile-quantile plot, comparing the bootstrap distribution to the standard normal distribution." width="672" />
 <p class="caption">
 Figure 6.9: Distribution of Bootstrap Replicates. The left-hand panel is a histogram of replicates. The right-hand panel is a quantile-quantile plot, comparing the bootstrap distribution to the standard normal distribution.
 </p>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(results)</code></pre></div>
 <pre><code>
 ORDINARY NONPARAMETRIC BOOTSTRAP
 
@@ -1637,6 +1689,12 @@ boot(data = sample_x, statistic = function(y, indices) exp(mean(y[indices])),
 Bootstrap Statistics :
     original    bias    std. error
 t1* 19.13463 0.5589631    4.021793</code></pre>
+<p>This results in three estimators, the raw estimator <span class="math inline">\(\widehat{\theta}_1=\)</span> 19.135, the second-order correction <span class="math inline">\(\widehat{\theta}_2=\)</span> 18.733, and the bootstrap estimator <span class="math inline">\(\widehat{\theta}_3=\)</span> 19.694.</p>
+<p>How does this work with differing sample sizes? We now suppose that the <span class="math inline">\(x_i\)</span>’s are generated from a lognormal distribution <span class="math inline">\(LN(0,1)\)</span>, so that <span class="math inline">\(\mu = \exp(0 + 1/2) = 1.648721\)</span> and <span class="math inline">\(\theta = \exp(1.648721)\)</span> <span class="math inline">\(= 5.200326\)</span>. We use simulation to draw the sample sizes but then act as if they were a realized set of observations. See the following illustrative code.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.bootstrapdisn.2" href="javascript:togglecode('toggleCode.bootstrapdisn.2','displayCode.bootstrapdisn.2');"><i><strong>Show R Code for Creating Bootstrap Samples</strong></i></a>
+</h5>
+<div id="toggleCode.bootstrapdisn.2" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">param &lt;-<span class="st"> </span><span class="cf">function</span>(x){
   n &lt;-<span class="st"> </span><span class="kw">length</span>(x)
   theta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">mean</span>(x))
@@ -1647,11 +1705,7 @@ t1* 19.13463 0.5589631    4.021793</code></pre>
   theta_<span class="dv">3</span> &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)
   <span class="kw">return</span>(<span class="kw">c</span>(theta_<span class="dv">1</span>,theta_<span class="dv">2</span>,theta_<span class="dv">3</span>))
 }
-<span class="kw">param</span>(sample_x)</code></pre></div>
-<pre><code>[1] 19.13463 18.73334 19.63824</code></pre>
-<p>How does this work with differing sample sizes? We now suppose that the <span class="math inline">\(x_i\)</span>’s are generated from a log normal distribution <span class="math inline">\(LN(0,1)\)</span>, so that <span class="math inline">\(\mu = \exp(0 + 1/2) = 1.648721\)</span> and <span class="math inline">\(\theta = \exp(1.648721) = 5.200326\)</span>. We use simulation to draw the sample sizes but then act as if they were a realized set of observations.</p>
-<p>The results of the comparison are summarized in Figure <a href="C-Simulation.html#fig:BootstrapCompare">6.10</a>. This figure shows that the bootstrap estimator is closer to the true parameter value for almost all sample sizes. The bias of all three estimators decreases as the sample size increases.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2074</span>)
+<span class="kw">set.seed</span>(<span class="dv">2074</span>)
 ns&lt;-<span class="st"> </span><span class="dv">200</span>
 est &lt;-<span class="st"> </span><span class="cf">function</span>(n){
 call_param &lt;-<span class="st"> </span><span class="cf">function</span>(i) <span class="kw">param</span>(<span class="kw">rlnorm</span>(n,<span class="dv">0</span>,<span class="dv">1</span>))
@@ -1659,8 +1713,10 @@ V &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(call_param)(<s
 <span class="kw">apply</span>(V,<span class="dv">1</span>,median)
 }
 VN=<span class="kw">seq</span>(<span class="dv">15</span>,<span class="dv">100</span>,<span class="dt">by=</span><span class="dv">5</span>)
-Est &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(est)(VN)
-<span class="kw">matplot</span>(VN,<span class="kw">t</span>(Est),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">col=</span><span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">lty=</span><span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">ylim=</span><span class="kw">exp</span>(<span class="kw">exp</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>))<span class="op">+</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),
+Est &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(est)(VN)</code></pre></div>
+</div>
+<p>The results of the comparison are summarized in Figure <a href="C-Simulation.html#fig:BootstrapCompare">6.10</a>. This figure shows that the bootstrap estimator is closer to the true parameter value for almost all sample sizes. The bias of all three estimators decreases as the sample size increases.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matplot</span>(VN,<span class="kw">t</span>(Est),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">col=</span><span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">lty=</span><span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">ylim=</span><span class="kw">exp</span>(<span class="kw">exp</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>))<span class="op">+</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),
         <span class="dt">xlab=</span><span class="st">&quot;sample size (n)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;estimator&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">exp</span>(<span class="kw">exp</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)),<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col=</span><span class="dv">1</span>)
 <span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;raw estimator&quot;</span>, <span class="st">&quot;second order correction&quot;</span>, <span class="st">&quot;bootstrap&quot;</span>),
@@ -1682,38 +1738,34 @@ Figure 6.10: Comparision of Estimates. True value of the parameter is given by t
   \tag{6.2}
 \end{equation}\]</span>
 <p>where <span class="math inline">\(q_L\)</span> and <span class="math inline">\(q_U\)</span> are lower and upper 2.5% quantiles from the bootstrap sample <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>.</p>
-<p>To see where this comes from, start with the idea that <span class="math inline">\(q_L, q_U\)</span> is a 95% interval for <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>. So, for a random <span class="math inline">\(\hat{\theta}_b^*\)</span>, there is a 95% chance that <span class="math inline">\(q_L \le \hat{\theta}_b^* \le q_U\)</span>. Reversing the inequalities and adding <span class="math inline">\(\hat{\theta}\)</span> to each side gives a 95% interval</p>
+<p>To see where this comes from, start with the idea that <span class="math inline">\((q_L, q_U)\)</span> provides a 95% interval for <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>. So, for a random <span class="math inline">\(\hat{\theta}_b^*\)</span>, there is a 95% chance that <span class="math inline">\(q_L \le \hat{\theta}_b^* \le q_U\)</span>. Reversing the inequalities and adding <span class="math inline">\(\hat{\theta}\)</span> to each side gives a 95% interval</p>
 <p><span class="math display">\[
 \hat{\theta} -q_U \le \hat{\theta} - \hat{\theta}_b^* \le  \hat{\theta} -q_L .
 \]</span> So, <span class="math inline">\(\left( \hat{\theta}-q_U, \hat{\theta} -q_L\right)\)</span> is an 95% interval for <span class="math inline">\(\hat{\theta} - \hat{\theta}_b^*\)</span>. The bootstrap approximation idea says that this is also a 95% interval for <span class="math inline">\(\theta - \hat{\theta}\)</span>. Adding <span class="math inline">\(\hat{\theta}\)</span> to each side gives the 95% interval in equation <a href="C-Simulation.html#eq:basicBootCI">(6.2)</a>.</p>
 <p>Many alternative bootstrap intervals are available. The easiest to explain is the <a href="#" class="tooltip" style="color:green"><em>percentile bootstrap interval</em><span style="font-size:8pt">Confidence interval for the parameter estimates determined using the actual percentile results from the bootstrap sampling approach, as every bootstrap sample has an associated parameter estimate(s) that can be ranked against the others</span></a> which is defined as <span class="math inline">\(\left(q_L, q_U\right)\)</span>. However, this has the drawback of potentially poor behavior in the tails which can be of concern in some actuarial problems of interest.</p>
-<p><strong>Example 6.2.3. Bodily Injury Claims and Risk Measures.</strong> To see how the bootstrap confidence intervals work, we return to the bodily injury auto claims considered in Example 6.2.1. Instead of the loss elimination ratio, we consider the 95th percentile <span class="math inline">\(F^{-1}(0.95)\)</span> and a measure defined as <span class="math display">\[
+<p><strong>Example 6.2.3. Bodily Injury Claims and Risk Measures.</strong> To see how the bootstrap confidence intervals work, we return to the bodily injury auto claims considered in Example 6.2.1. Instead of the loss elimination ratio, suppose we wish to estimate the 95th percentile <span class="math inline">\(F^{-1}(0.95)\)</span> and a measure defined as <span class="math display">\[
 TVaR_{0.95)}[X] = \mathrm{E}[X | X &gt; F^{-1}(0.95)] .
-\]</span> This measure is called the <a href="#" class="tooltip" style="color:green"><em>tail value-at-risk</em><span style="font-size:8pt">The expected value of a risk given that the risk exceeds a value-at-risk</span></a>; it is the expected value of <span class="math inline">\(X\)</span> conditional on <span class="math inline">\(X\)</span> exceeding the 95th percentile. In Section 10.2 we will explain how quantiles and the tail value at risk are the two most important examples of so-called <em>risk measures</em>. For now, we will simply think of these as measures that we wish to estimate. For the percentile, we use the nonparametric estimator <span class="math inline">\(F^{-1}_n(0.95)\)</span> defined in Section 4.1.1.3. For the tail value at risk, we use the plug-in principle to define the nonparametric estimator</p>
+\]</span> This measure is called the <a href="#" class="tooltip" style="color:green"><em>tail value-at-risk</em><span style="font-size:8pt">The expected value of a risk given that the risk exceeds a value-at-risk</span></a>; it is the expected value of <span class="math inline">\(X\)</span> conditional on <span class="math inline">\(X\)</span> exceeding the 95th percentile. Section 10.2 explains how quantiles and the tail value-at-risk are the two most important examples of so-called <em>risk measures</em>. For now, we will simply think of these as measures that we wish to estimate. For the percentile, we use the nonparametric estimator <span class="math inline">\(F^{-1}_n(0.95)\)</span> defined in Section 4.1.1.3. For the tail value-at-risk, we use the plug-in principle to define the nonparametric estimator</p>
 <p><span class="math display">\[
 TVaR_{n,0.95}[X] = \frac{\sum_{i=1}^n X_i I(X_i &gt; F^{-1}_n(0.95))}{\sum_{i=1}^n I(X_i &gt; F^{-1}_n(0.95))} ~.
 \]</span> In this expression, the denominator counts the number of observations that exceed the 95th percentile <span class="math inline">\(F^{-1}_n(0.95)\)</span>. The numerator adds up losses for those observations that exceed <span class="math inline">\(F^{-1}_n(0.95)\)</span>. <a href="#tab:64">Table 6.4</a> summarizes the estimator for selected fractions.</p>
-<p><a id=tab:64></a></p>
-<div id="table-6.4.-bootstrap-estimates-of-quantiles-at-selected-fractions" class="section level5 unnumbered">
-<h5>Table 6.4. Bootstrap Estimates of Quantiles at Selected Fractions</h5>
+<h5 style="text-align: center;">
+<a id="displayCode.bootstrapquantiles.1" href="javascript:togglecode('toggleCode.bootstrapquantiles.1','displayCode.bootstrapquantiles.1');"><i><strong>Show R Code for Creating Quantile Bootstrap Samples</strong></i></a>
+</h5>
+<div id="toggleCode.bootstrapquantiles.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Example from Derrig et al</span>
 <span class="co">#BIData &lt;- read.csv(&quot;./Data/DerrigResampling.csv&quot;, header =T)</span>
 BIData<span class="op">$</span>Censored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&gt;=</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)
 BIDataUncensored &lt;-<span class="st"> </span><span class="kw">subset</span>(BIData, Censored <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)
-<span class="co">#quantile(BIDataUncensored$AmountPaid, 0.8)</span>
-<span class="co">#set.seed(2017)</span>
-<span class="co">#results &lt;- boot(data=BIDataUncensored$AmountPaid, </span>
-<span class="co">#           statistic=function(X,indices) quantile(X[indices],0.80), </span>
-<span class="co">#                R=100)</span>
-<span class="co">#results </span>
 
 <span class="kw">set.seed</span>(<span class="dv">2017</span>)
 PercentVec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.50</span>, <span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.98</span>)
 OutBoot1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>)
-<span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal  95% CI&quot;</span>,
-       <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>,
-       <span class="st">&quot;Lower Percentile 95% CI&quot;</span>, <span class="st">&quot;Upper  Percentile 95% CI&quot;</span>)
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {
+<span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, 
+                        <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal  95% CI&quot;</span>,
+                        <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>,
+                        <span class="st">&quot;Lower Percentile 95% CI&quot;</span>, <span class="st">&quot;Upper  Percentile 95% CI&quot;</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {
 OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]
 results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored<span class="op">$</span>AmountPaid,
                 <span class="dt">statistic=</span><span class="cf">function</span>(X,indices)
@@ -1730,8 +1782,11 @@ OutBoot1[i,<span class="dv">7</span>] &lt;-<span class="st"> </span>temp<span cl
 OutBoot1[i,<span class="dv">8</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">5</span>]
 OutBoot1[i,<span class="dv">9</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">4</span>]
 OutBoot1[i,<span class="dv">10</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">5</span>]
-}
-knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+}</code></pre></div>
+</div>
+<p><a id=tab:64></a></p>
+<div id="table-6.4.-bootstrap-estimates-of-quantiles-at-selected-fractions" class="section level5 unnumbered">
+<h5>Table 6.4. Bootstrap Estimates of Quantiles at Selected Fractions</h5>
 <table>
 <thead>
 <tr class="header">
@@ -1811,11 +1866,11 @@ knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span clas
 </tbody>
 </table>
 <p>For example, when the fraction is 0.50, we see that lower and upper 2.5th quantiles of the bootstrap simulations are <span class="math inline">\(q_L=\)</span> 6000 and <span class="math inline">\(q_u=\)</span> 6703, respectively. These form the percentile bootstrap confidence interval. With the nonparametric estimator 6500, these yield the lower and upper bounds of the basic confidence interval 6297 and 7000, respectively. <a href="#tab:64">Table 6.4</a> also shows bootstrap estimates of the bias, standard deviation, and a normal confidence interval, concepts introduced in the prior section.</p>
-<p><a href="#tab:65">Table 6.5</a> shows similar calculations for the tail value at risk. In each case, we see that the bootstrap standard deviation increases as the fraction increases. This is a reflection of the fewer observations available to estimate quantiles as the fraction increases, hence greater imprecision. Width of confidence intervals also increase. Interestingly, there does not seem to be the same pattern in the estimates of the bias.</p>
-<p><a id=tab:65></a></p>
-</div>
-<div id="table-6.5.-bootstrap-estimates-of-tvar-at-selected-risk-levels" class="section level5 unnumbered">
-<h5>Table 6.5. Bootstrap Estimates of TVaR at Selected Risk Levels</h5>
+<p><a href="#tab:65">Table 6.5</a> shows similar calculations for the tail value-at-risk. In each case, we see that the bootstrap standard deviation increases as the fraction increases. This is a reflection of the fewer observations available to estimate quantiles as the fraction increases, hence greater imprecision. Width of confidence intervals also increase. Interestingly, there does not seem to be the same pattern in the estimates of the bias.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.bootstrapquantiles.2" href="javascript:togglecode('toggleCode.bootstrapquantiles.2','displayCode.bootstrapquantiles.2');"><i><strong>Show R Code for Creating TVar Bootstrap Samples</strong></i></a>
+</h5>
+<div id="toggleCode.bootstrapquantiles.2" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">CTE.boot &lt;-<span class="st"> </span><span class="cf">function</span>(data, indices, RiskLevel){
   resample.data &lt;-<span class="st"> </span>data[indices,]
   X &lt;-<span class="st"> </span>resample.data<span class="op">$</span>AmountPaid
@@ -1823,12 +1878,12 @@ knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span clas
   CTE &lt;-<span class="st"> </span><span class="kw">sum</span>(X<span class="op">*</span>(X <span class="op">&gt;</span><span class="st"> </span>cutoff))<span class="op">/</span><span class="kw">sum</span>(X <span class="op">&gt;</span><span class="st"> </span>cutoff)
   <span class="kw">return</span>(CTE) 
 }
-<span class="co">#indices &lt;- 1:nrow(BIDataUncensored)</span>
-<span class="co">#CTE.boot(BIDataUncensored, indices, RiskLevel = 0.8)</span>
+
 <span class="kw">set.seed</span>(<span class="dv">2017</span>)  
 PercentVec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.50</span>, <span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.98</span>)
 OutBoot1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>)
-<span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal  95% CI&quot;</span>,
+<span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>, 
+       <span class="st">&quot;Bootstrap SD&quot;</span>, <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal  95% CI&quot;</span>,
        <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>,
        <span class="st">&quot;Lower Percentile 95% CI&quot;</span>, <span class="st">&quot;Upper  Percentile 95% CI&quot;</span>)
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {
@@ -1844,13 +1899,12 @@ OutBoot1[i,<span class="dv">7</span>] &lt;-<span class="st"> </span>temp<span cl
 OutBoot1[i,<span class="dv">8</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">5</span>]
 OutBoot1[i,<span class="dv">9</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">4</span>]
 OutBoot1[i,<span class="dv">10</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">5</span>]
-  }
-<span class="co">#quantile(results$t,.975, type=6)</span>
-<span class="co">#sd(results$t)</span>
-<span class="co">#temp</span>
-<span class="co">#2*results$t0-quantile(results$t,.025, type=6)</span>
-<span class="co">#2*results$t0-quantile(results$t,.975, type=6)</span>
-knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+  }</code></pre></div>
+</div>
+<p><a id=tab:65></a></p>
+</div>
+<div id="table-6.5.-bootstrap-estimates-of-tvar-at-selected-risk-levels" class="section level5 unnumbered">
+<h5>Table 6.5. Bootstrap Estimates of TVaR at Selected Risk Levels</h5>
 <table>
 <thead>
 <tr class="header">
@@ -1933,62 +1987,64 @@ knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span clas
 </div>
 <div id="S:ParametricBootStrap" class="section level3">
 <h3><span class="header-section-number">6.2.4</span> Parametric Bootstrap</h3>
-<p>As described in the section on bootstrap, the idea of (nonparametric) bootstrap is to resample, or equivalently, to use the inverse method on the empirical cumulative distribution function <span class="math inline">\(F_n\)</span>. With parametric bootstrap, we draw independent variables from <span class="math inline">\(F_{\widehat{\theta}}\)</span> where the underlying distribution is assume to be in a parametric family <span class="math inline">\(\mathcal{F}=\{F_{\theta},\theta\in\Theta\}\)</span>. Typically, parameters from this distribution are estimated based on a sample and denoted as <span class="math inline">\(\hat{\theta}\)</span>.</p>
+<p>The idea of the nonparametric bootstrap is to resample by drawing independent variables from the empirical cumulative distribution function <span class="math inline">\(F_n\)</span>. In contrast, with parametric bootstrap, we draw independent variables from <span class="math inline">\(F_{\widehat{\theta}}\)</span> where the underlying distribution is assume to be in a parametric family <span class="math inline">\(\mathcal{F}=\{F_{\theta},\theta\in\Theta\}\)</span>. Typically, parameters from this distribution are estimated based on a sample and denoted as <span class="math inline">\(\hat{\theta}\)</span>.</p>
 <p><strong>Example 6.2.4. Lognormal distribution.</strong> Consider again the dataset</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sample_x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">2.46</span>,<span class="fl">2.80</span>,<span class="fl">3.28</span>,<span class="fl">3.86</span>,<span class="fl">2.85</span>,<span class="fl">3.67</span>,<span class="fl">3.37</span>,<span class="fl">3.40</span>,<span class="fl">5.22</span>,<span class="fl">2.55</span>,<span class="fl">2.79</span>,<span class="fl">4.50</span>,<span class="fl">3.37</span>,<span class="fl">2.88</span>,<span class="fl">1.44</span>,<span class="fl">2.56</span>,<span class="fl">2.00</span>,<span class="fl">2.07</span>,<span class="fl">2.19</span>,<span class="fl">1.77</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sample_x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">2.46</span>,<span class="fl">2.80</span>,<span class="fl">3.28</span>,<span class="fl">3.86</span>,<span class="fl">2.85</span>,<span class="fl">3.67</span>,<span class="fl">3.37</span>,<span class="fl">3.40</span>,
+              <span class="fl">5.22</span>,<span class="fl">2.55</span>,<span class="fl">2.79</span>,<span class="fl">4.50</span>,<span class="fl">3.37</span>,<span class="fl">2.88</span>,<span class="fl">1.44</span>,<span class="fl">2.56</span>,<span class="fl">2.00</span>,<span class="fl">2.07</span>,<span class="fl">2.19</span>,<span class="fl">1.77</span>)</code></pre></div>
 <p>The classical (nonparametric) bootstrap was based on samples</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">sample</span>(sample_x,<span class="dt">replace=</span><span class="ot">TRUE</span>)</code></pre></div>
-<p>while for the parametric bootstrap, we have to assume that the distribution of <span class="math inline">\(x_i\)</span>’s is from a specific family, for instance a lognormal distribution</p>
+<p>while for the parametric bootstrap, we have to assume that the distribution of <span class="math inline">\(x_i\)</span>’s is from a specific family, for instance a lognormal distribution.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
 fit &lt;-<span class="st"> </span><span class="kw">fitdistr</span>(sample_x, dlnorm, <span class="kw">list</span>(<span class="dt">meanlog =</span> <span class="dv">1</span>, <span class="dt">sdlog =</span> <span class="dv">1</span>))
 fit</code></pre></div>
 <pre><code>    meanlog       sdlog   
   1.03630697   0.30593440 
  (0.06840901) (0.04837027)</code></pre>
-<p>then we draw from that distribution</p>
+<p>Then we draw from that distribution.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="kw">length</span>(sample_x), <span class="dt">meanlog=</span>fit<span class="op">$</span>estimate[<span class="dv">1</span>], <span class="dt">sdlog=</span>fit<span class="op">$</span>estimate[<span class="dv">2</span>])</code></pre></div>
-<p>Figure <a href="C-Simulation.html#fig:CoefVarCompare">6.11</a> compares the bootstrap distributions of the variation coefficient, one based on the parametric approach and the other based on a parametric approach, assuming a lognormal distribution.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.BootTVar.1" href="javascript:togglecode('toggleCode.BootTVar.1','displayCode.BootTVar.1');"><i><strong>Show R Code for Parametric Bootstrap Samples</strong></i></a>
+</h5>
+<div id="toggleCode.BootTVar.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2074</span>)
 CV &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>,<span class="fl">1e5</span>,<span class="dv">2</span>)
 <span class="cf">for</span>(s <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(CV)){
 x1 &lt;-<span class="st"> </span><span class="kw">sample</span>(sample_x,<span class="dt">replace=</span><span class="ot">TRUE</span>)
 x2 &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="kw">length</span>(sample_x), <span class="dt">meanlog=</span>fit<span class="op">$</span>estimate[<span class="dv">1</span>], <span class="dt">sdlog=</span>fit<span class="op">$</span>estimate[<span class="dv">2</span>])
 CV[s,] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">sd</span>(x1)<span class="op">/</span><span class="kw">mean</span>(x1),<span class="kw">sd</span>(x2)<span class="op">/</span><span class="kw">mean</span>(x2))
-}
-<span class="kw">plot</span>(<span class="kw">density</span>(CV[,<span class="dv">1</span>]),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Coefficient of Variation&quot;</span>, ,<span class="dt">lty=</span><span class="dv">1</span>)
+}</code></pre></div>
+</div>
+<p>Figure <a href="C-Simulation.html#fig:CoefVarCompare">6.11</a> compares the bootstrap distributions for the coefficient of variation, one based on the nonparametric approach and the other based on a parametric approach, assuming a lognormal distribution.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(CV[,<span class="dv">1</span>]),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;Coefficient of Variation&quot;</span>, <span class="dt">lty=</span><span class="dv">1</span>)
 <span class="kw">lines</span>(<span class="kw">density</span>(CV[,<span class="dv">2</span>]),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lty=</span><span class="dv">2</span>)
 <span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">sd</span>(sample_x)<span class="op">/</span><span class="kw">mean</span>(sample_x),<span class="dt">lty=</span><span class="dv">3</span>)
-<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;nonparametric&quot;</span>,<span class="st">&quot;parametric (LN)&quot;</span>),<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>),<span class="dt">lty=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</code></pre></div>
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;nonparametric&quot;</span>,<span class="st">&quot;parametric(LN)&quot;</span>),
+       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>),<span class="dt">lty=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:CoefVarCompare"></span>
-<img src="LossDataAnalytics_files/figure-html/CoefVarCompare-1.png" alt="Bootstrap Distributions of the Coeffiecient of Variation." width="672" />
+<img src="LossDataAnalytics_files/figure-html/CoefVarCompare-1.png" alt="Comparision of Nonparametric and Parametric Bootstrap Distributions for the Coefficient of Variation" width="672" />
 <p class="caption">
-Figure 6.11: Bootstrap Distributions of the Coeffiecient of Variation.
+Figure 6.11: Comparision of Nonparametric and Parametric Bootstrap Distributions for the Coefficient of Variation
 </p>
 </div>
 <hr />
 <p><strong>Example 6.2.5. Bootstrapping Censored Observations.</strong> The parametric bootstrap draws simulated realizations from a parametric estimate of the distribution function. In the same way, we can draw simulated realizations from estimates of a distribution function. As one example, we might draw from smoothed estimates of a distribution function introduced in Section 4.1.1.4. Another special case, considered here, is to draw an estimate from the Kaplan-Meier estimator introduced in Section 4.3.2.2. In this way, we can handle observations that are censored.</p>
-<p>Specifically, return to the bodily injury data in Examples 6.2.1 and 6.2.3 but now we include the 17 claims that were censored by policy limits. In Example 4.3.6, we used this full dataset to estimate the Kaplan-Meier estimator of the survival function introduced in Section 4.3.2.2. <a href="#tab:66">Table 6.6</a> present bootstrap estimates of the quantiles from the Kaplan-Meier survival function estimator. These include the bootstrap precision estimates, bias and standard deviation, as well as the basic 95% confidence interval. xx</p>
-<p><a id=tab:66></a></p>
-<div id="table-6.6.-bootstrap-kaplan-meier-estimates-of-quantiles-at-selected-fractions" class="section level5 unnumbered">
-<h5>Table 6.6. Bootstrap Kaplan-Meier Estimates of Quantiles at Selected Fractions</h5>
+<p>Specifically, return to the bodily injury data in Examples 6.2.1 and 6.2.3 but now we include the 17 claims that were censored by policy limits. In Example 4.3.6, we used this full dataset to estimate the Kaplan-Meier estimator of the survival function introduced in Section 4.3.2.2. <a href="#tab:66">Table 6.6</a> present bootstrap estimates of the quantiles from the Kaplan-Meier survival function estimator. These include the bootstrap precision estimates, bias and standard deviation, as well as the basic 95% confidence interval.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.KMCode.1" href="javascript:togglecode('toggleCode.KMCode.1','displayCode.KMCode.1');"><i><strong>Show R Code For Bootstrap Kaplan-Meier Estimates</strong></i></a>
+</h5>
+<div id="toggleCode.KMCode.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Example from Derrig et al</span>
 <span class="kw">library</span>(survival)                <span class="co"># for Surv(), survfit()</span>
-<span class="co">#BIData &lt;- read.csv(&quot;./Data/DerrigResampling.csv&quot;, header =T)</span>
-<span class="co">#BIData$Censored &lt;- 1*(BIData$AmountPaid &gt;= BIData$PolicyLimit)</span>
 BIData<span class="op">$</span>UnCensored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&lt;</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)
 ## KM estimate
-KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)
-
-
-<span class="co"># #summary(KM0)</span>
-<span class="co"># plot(KM0, conf.int=FALSE, xlab=&quot;x&quot;,ylab=&quot;Kaplan Meier Survival&quot;)</span>
-<span class="co"># quantile(KM0, 0.80)$quantile</span>
+KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  
+               <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)
 
 <span class="kw">set.seed</span>(<span class="dv">2019</span>)
 PercentVec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.50</span>, <span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.98</span>)
 OutBoot1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>,<span class="dv">5</span>,<span class="dv">6</span>)
-<span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;KM NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, 
-       <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>)
+<span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;KM NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>,
+                        <span class="st">&quot;Bootstrap SD&quot;</span>,  <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>)
 KM.survobj &lt;-<span class="st"> </span><span class="kw">Surv</span>(BIData<span class="op">$</span>AmountPaid, BIData<span class="op">$</span>UnCensored) 
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {
 OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]
@@ -2000,8 +2056,11 @@ OutBoot1[i,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class=
 <span class="co"># temp &lt;- boot.ci(results, type = c(&quot;norm&quot;,  &quot;basic&quot;,&quot;perc&quot;))</span>
 OutBoot1[i,<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>OutBoot1[i,<span class="dv">2</span>]<span class="op">-</span><span class="kw">quantile</span>(results,.<span class="dv">975</span>, <span class="dt">type=</span><span class="dv">6</span>)
 OutBoot1[i,<span class="dv">6</span>] &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>OutBoot1[i,<span class="dv">2</span>]<span class="op">-</span><span class="kw">quantile</span>(results,.<span class="dv">025</span>, <span class="dt">type=</span><span class="dv">6</span>)
-}
-knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+}</code></pre></div>
+</div>
+<p><a id=tab:66></a></p>
+<div id="table-6.6.-bootstrap-kaplan-meier-estimates-of-quantiles-at-selected-fractions" class="section level5 unnumbered">
+<h5>Table 6.6. Bootstrap Kaplan-Meier Estimates of Quantiles at Selected Fractions</h5>
 <table>
 <thead>
 <tr class="header">
@@ -2076,18 +2135,21 @@ knitr<span class="op">::</span><span class="kw">kable</span>(OutBoot1,<span clas
 <li>Bootstrap, and other resampling methods introduced in Section <a href="C-Simulation.html#S:Bootstrap">6.2</a>, provide estimators of the precision, or variability, of statistics.</li>
 <li>Cross-validation is important when assessing how accurately a predictive model will perform in practice.</li>
 </ul>
-<p>Overlap exists but nonetheless it is helpful to think about these broad goals as associated with each statistical method.</p>
-<p>To discuss cross-validation, let us recall from Section 4.2 some of the key ideas of model validation. When assessing, or validating, a model, we look to performance measured on <em>new</em> data, or at least not those that were used to fit the model. A classical approach, described in Section 4.2.3, is to split the sample in two: a subpart (the <em>training</em> dataset) is used to fit the model and another one (the <em>testing</em> dataset) is used to validate. However, a limitation of this approach is that results depend on the split; even though the overall sample is fixed, the split between training and test sub samples varies randomly. A different training sample means that model estimated parameters will differ. Different model parameters and a different test sample means that validation statistics will differ. Two analysts may use the same data and same models yet reach different conclusions about the viability of a model (based on different random splits), a frustrating situation.</p>
+<p>Overlap exists but nonetheless it is helpful to think about the broad goals as associated with each statistical method.</p>
+<p>To discuss cross-validation, let us recall from Section 4.2 some of the key ideas of model validation. When assessing, or validating, a model, we look to performance measured on <em>new</em> data, or at least not those that were used to fit the model. A classical approach, described in Section 4.2.3, is to split the sample in two: a subpart (the <em>training</em> dataset) is used to fit the model and another one (the <em>testing</em> dataset) is used to validate. However, a limitation of this approach is that results depend on the split; even though the overall sample is fixed, the split between training and test subsamples varies randomly. A different training sample means that model estimated parameters will differ. Different model parameters and a different test sample means that validation statistics will differ. Two analysts may use the same data and same models yet reach different conclusions about the viability of a model (based on different random splits), a frustrating situation.</p>
 <!-- 
-Cross-validation techniques are used to avoid the basic two part split. Note that two techniques will be mentioned here : an exhaustive aprroach, where all observations will be used (once, and only once) as a testing observation and a non-exhaustive one, based on bootstrap techniques. See [Arlot & Celisse (2010)](https://projecteuclid.org/euclid.ssu/1268143839) for a survey.
+Cross-validation techniques are used to avoid the basic two part split. Note that two techniques will be mentioned here : an exhaustive approach, where all observations will be used (once, and only once) as a testing observation and a non-exhaustive one, based on bootstrap techniques. See [Arlot & Celisse (2010)](https://projecteuclid.org/euclid.ssu/1268143839) for a survey.
  -->
 <div id="k-fold-cross-validation" class="section level3">
 <h3><span class="header-section-number">6.3.1</span> k-Fold Cross-Validation</h3>
-<p>To mitigate this difficulty, it is common to use a cross-validation approach as introduced in Section 4.2.4. The key idea is to replicate the basic test/training approach to model validation but to repeat it many times by averaging over different splits of the data. A key advantage is that the validation statistic is not tied to a specific parametric (or nonparametric) model - one can use a nonparametric statistic or a statistic that has economic interpretations - and so this can be used to compare models that are not nested (unlike likelihood ratio procedures).</p>
+<p>To mitigate this difficulty, it is common to use a cross-validation approach as introduced in Section 4.2.4. The key idea is to emulate the basic test/training approach to model validation by repeating it many times through averaging over different splits of the data. A key advantage is that the validation statistic is not tied to a specific parametric (or nonparametric) model - one can use a nonparametric statistic or a statistic that has economic interpretations - and so this can be used to compare models that are not nested (unlike likelihood ratio procedures).</p>
 <p><strong>Example 6.3.1. Wisconsin Property Fund.</strong> For the 2010 property fund data introduced in Section 1.3, we fit gamma and Pareto distributions to the 1,377 claims data. For details of the related goodness of fit, see Appendix Section 15.4.4. We now consider the Kolmogorov-Smirnov statistic introduced in Section 4.1.2.2. When the entire dataset was fit, the Kolmogorov-Smirnov goodness of fit statistic for the gamma distribution turns out to be 0.0478 and for the Pareto distribution is 0.2639. The lower value for the Pareto distribution indicates that this distribution is a better fit than the gamma.</p>
-<p>To see how <a href="#" class="tooltip" style="color:green"><em>k-fold cross-validation</em><span style="font-size:8pt">A type of validation method where the data is randomly split into k groups, and each of the k groups is held out as a test dataset in turn, while the other k-1 gropus are used for distribution or model fitting, with the process repeated k times in total</span></a> works, we randomly split the data into <span class="math inline">\(k=8\)</span> groups, or folds, each having about <span class="math inline">\(1377/8 \approx 172\)</span> observations. Then, we fit gamma and Pareto models to a data set with the first seven folds (about <span class="math inline">\(172*7 = 1204\)</span> observations), determined estimated parameters, and then used these fitted models with the held-out data to determine the Kolmogorov-Smirnov statistic. The results appear in Figure <a href="C-Simulation.html#fig:KScvFig">6.12</a> where horizontal axis is Fold=1. This process was repeated for the other seven folds. The results summarized in Figure <a href="C-Simulation.html#fig:KScvFig">6.12</a> show that the Pareto is a consistently provides a more reliable predictive distribution than the gamma.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Cross - Validation
-<span class="co"># Randomly re-order the data - &quot;shuffle it&quot;</span>
+<p>To see how <a href="#" class="tooltip" style="color:green"><em>k-fold cross-validation</em><span style="font-size:8pt">A type of validation method where the data is randomly split into k groups, and each of the k groups is held out as a test dataset in turn, while the other k-1 gropus are used for distribution or model fitting, with the process repeated k times in total</span></a> works, we randomly split the data into <span class="math inline">\(k=8\)</span> groups, or folds, each having about <span class="math inline">\(1377/8 \approx 172\)</span> observations. Then, we fit gamma and Pareto models to a data set with the first seven folds (about <span class="math inline">\(172*7 = 1204\)</span> observations), determine estimated parameters, and then used these fitted models with the held-out data to determine the Kolmogorov-Smirnov statistic.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.KFoldCV.1" href="javascript:togglecode('toggleCode.KFoldCV.1','displayCode.KFoldCV.1');"><i><strong>Show R Code for Kolmogorov-Smirnov Cross-Validation</strong></i></a>
+</h5>
+<div id="toggleCode.KFoldCV.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Randomly re-order the data - &quot;shuffle it&quot;</span>
 n &lt;-<span class="st"> </span><span class="kw">nrow</span>(claim_data)
 <span class="kw">set.seed</span>(<span class="dv">12347</span>)
 cvdata &lt;-<span class="st"> </span>claim_data[<span class="kw">sample</span>(n), ]
@@ -2108,8 +2170,12 @@ cvalvec &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class
   ksResultGamma &lt;-<span class="st"> </span><span class="kw">ks.test</span>(cvdata[indices,]<span class="op">$</span>Claim, <span class="st">&quot;pgamma&quot;</span>, <span class="dt">shape =</span> alpha, <span class="dt">scale =</span> gamma_theta)
   cvalvec[<span class="dv">2</span>,i] &lt;-<span class="st"> </span>ksResultGamma<span class="op">$</span>statistic
 }
-<span class="co"># Plot the statistics</span>
-<span class="kw">matplot</span>(<span class="dv">1</span><span class="op">:</span>k,<span class="kw">t</span>(cvalvec),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">lty=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>), <span class="dt">pch =</span> <span class="dv">0</span>, <span class="dt">xlab=</span><span class="st">&quot;Fold&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;KS Statistic&quot;</span>)
+KScv &lt;-<span class="st"> </span><span class="kw">rowSums</span>(cvalvec)<span class="op">/</span>k</code></pre></div>
+</div>
+<p>The results appear in Figure <a href="C-Simulation.html#fig:KScvFig">6.12</a> where horizontal axis is Fold=1. This process was repeated for the other seven folds. The results summarized in Figure <a href="C-Simulation.html#fig:KScvFig">6.12</a> show that the Pareto consistently provides a more reliable predictive distribution than the gamma.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot the statistics</span>
+<span class="kw">matplot</span>(<span class="dv">1</span><span class="op">:</span>k,<span class="kw">t</span>(cvalvec),<span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">lty=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, 
+        <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>), <span class="dt">pch =</span> <span class="dv">0</span>, <span class="dt">xlab=</span><span class="st">&quot;Fold&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;KS Statistic&quot;</span>)
 <span class="kw">legend</span>(<span class="st">&quot;left&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;Pareto&quot;</span>, <span class="st">&quot;Gamma&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),<span class="dt">lty=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:KScvFig"></span>
 <img src="LossDataAnalytics_files/figure-html/KScvFig-1.png" alt="Cross Validated Kolmogorov-Smirnov (KS) Statistics for the Property Fund Claims Data. The solid black line is for the Pareto distribution, the green dashed line is for the gamma distribution. The KS statistic measures the largest deviation between the fitted distribution and the empirical distribution for each of 8 groups, or folds, of randomly selected data." width="672" />
@@ -2117,25 +2183,25 @@ cvalvec &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class
 Figure 6.12: Cross Validated Kolmogorov-Smirnov (KS) Statistics for the Property Fund Claims Data. The solid black line is for the Pareto distribution, the green dashed line is for the gamma distribution. The KS statistic measures the largest deviation between the fitted distribution and the empirical distribution for each of 8 groups, or folds, of randomly selected data.
 </p>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">KScv &lt;-<span class="st"> </span><span class="kw">rowSums</span>(cvalvec)<span class="op">/</span>k</code></pre></div>
 </div>
 <div id="leave-one-out-cross-validation" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> Leave-One-Out Cross-Validation</h3>
 <p>A special case where <span class="math inline">\(k=n\)</span> is known as <a href="#" class="tooltip" style="color:green"><em>leave-one-out cross validation</em><span style="font-size:8pt">A special case of k-fold cross validation, where each single data point gets a turn in being the lone hold-out test data point, and n separate models in total are built and tested</span></a>. This case is historically prominent and is closely related to <a href="#" class="tooltip" style="color:green"><em>jackknife statistics</em><span style="font-size:8pt">To calculate an estimator, leave out each observation in turn, calculate the sample estimator statistic each time, and average over the n separate estimates</span></a>, a precursor of the bootstrap technique.</p>
-<p>Even though we present it as a special case of cross-validation, it is helpful to given an explicit definition. Consider a generic statistic <span class="math inline">\(\widehat{\theta}=t(\boldsymbol{x})\)</span> that is an estimator for a parameter of interest <span class="math inline">\(\theta\)</span>. The idea of jackknife is to compute <span class="math inline">\(n\)</span> values <span class="math inline">\(\widehat{\theta}_{-i}=t(\boldsymbol{x}_{-i})\)</span>, where <span class="math inline">\(\boldsymbol{x}_{-i}\)</span> is the subsample of <span class="math inline">\(\boldsymbol{x}\)</span> with the <span class="math inline">\(i\)</span>-th value removed. The average of these values is denoted a <span class="math display">\[
+<p>Even though we present it as a special case of cross-validation, it is helpful to given an explicit definition. Consider a generic statistic <span class="math inline">\(\widehat{\theta}=t(\boldsymbol{x})\)</span> that is an estimator for a parameter of interest <span class="math inline">\(\theta\)</span>. The idea of the jackknife is to compute <span class="math inline">\(n\)</span> values <span class="math inline">\(\widehat{\theta}_{-i}=t(\boldsymbol{x}_{-i})\)</span>, where <span class="math inline">\(\boldsymbol{x}_{-i}\)</span> is the subsample of <span class="math inline">\(\boldsymbol{x}\)</span> with the <span class="math inline">\(i\)</span>-th value removed. The average of these values is denoted as <span class="math display">\[
 \overline{\widehat{\theta}}_{(\cdot)}=\frac{1}{n}\sum_{i=1}^n \widehat{\theta}_{-i} .
 \]</span> These values can be used to create estimates of the bias of the statistic <span class="math inline">\(\widehat{\theta}\)</span></p>
 <span class="math display" id="eq:Biasjack">\[\begin{equation}
 Bias_{jack} = (n-1) \left(\overline{\widehat{\theta}}_{(\cdot)} - \widehat{\theta}\right)
 \tag{6.3}
 \end{equation}\]</span>
-<p>as well as a standard deviation</p>
+<p>as well as a standard deviation estimate</p>
 <span class="math display" id="eq:sdjack">\[\begin{equation}
 s_{jack} =\sqrt{\frac{n-1}{n}\sum_{i=1}^n \left(\widehat{\theta}_{-i} -\overline{\widehat{\theta}}_{(\cdot)}\right)^2} ~.
 \tag{6.4}
 \end{equation}\]</span>
 <p><strong>Example 6.3.2. Coefficient of Variation.</strong> To illustrate, consider a small fictitious sample <span class="math inline">\(\boldsymbol{x}=\{x_1,\ldots,x_n\}\)</span> with realizations</p>
-<pre><code>sample_x &lt;- c(2.46,2.80,3.28,3.86,2.85,3.67,3.37,3.40,5.22,2.55,2.79,4.50,3.37,2.88,1.44,2.56,2.00,2.07,2.19,1.77)</code></pre>
+<pre><code>sample_x &lt;- c(2.46,2.80,3.28,3.86,2.85,3.67,3.37,3.40,
+              5.22,2.55,2.79,4.50,3.37,2.88,1.44,2.56,2.00,2.07,2.19,1.77)</code></pre>
 <p>Suppose that we are interested in the <a href="#" class="tooltip" style="color:green"><em>coefficient of variation</em><span style="font-size:8pt">Standard deviation divided by the mean of a distribution, to measure variability in terms of units of the mean</span></a> <span class="math inline">\(\theta = CV = \sqrt{\mathrm{Var~}X}/\mathrm{E~}X\)</span>.</p>
 <p>With this dataset, the estimator of the coefficient of variation turns out to be 0.31196. But how reliable is it? To answer this question, we can compute the jackknife estimates of bias and its standard deviation. The following code shows that the jackknife estimator of the bias is <span class="math inline">\(Bias_{jack} =\)</span> -0.00627 and the jackknife standard deviation is <span class="math inline">\(s_{jack} =\)</span> 0.01293.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">CVar &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">sqrt</span>(<span class="kw">var</span>(x))<span class="op">/</span><span class="kw">mean</span>(x)
@@ -2146,9 +2212,51 @@ BiasJack &lt;-<span class="st"> </span>(<span class="kw">length</span>(sample_x)
 <hr />
 <p><strong>Example 6.3.3. Bodily Injury Claims and Loss Elimination Ratios.</strong> In Example 6.2.1, we showed how to compute bootstrap estimates of the bias and standard deviation for the loss elimination ratio using the Example 4.1.11 bodily injury claims data. We follow up now by providing comparable quantities using jackknife statistics.</p>
 <p><a href="#tab:67">Table 6.7</a> summarizes the results of the jackknife estimation. It shows that jackknife estimates of the bias and standard deviation of the loss elimination ratio <span class="math inline">\(\mathrm{E}~\min(X,d)/\mathrm{E}~X\)</span> are largely consistent with the bootstrap methodology. Moreover, one can use the standard deviations to construct normal based confidence intervals, centered around a bias-corrected estimator. For example, at <span class="math inline">\(d=14000\)</span>, we saw in Example 4.1.11 that the nonparametric estimate of <em>LER</em> is 0.97678. This has an estimated bias of 0.00010, resulting in the (jackknife) <em>bias-corrected</em> estimator 0.97688. The 95% confidence intervals are produced by creating an interval of twice the length of 1.96 jackknife standard deviations, centered about the bias-corrected estimator (1.96 is the approximate 97.5th quantile of the standard normal distribution).</p>
+<h5 style="text-align: center;">
+<a id="displayCode.Jackknife.1" href="javascript:togglecode('toggleCode.Jackknife.1','displayCode.Jackknife.1');"><i><strong>Show the R Code</strong></i></a>
+</h5>
+<div id="toggleCode.Jackknife.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Example from Derrig et al</span>
+BIData &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../../Data/DerrigResampling.csv&quot;</span>, <span class="dt">header =</span>T)
+BIData<span class="op">$</span>Censored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&gt;=</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)
+BIDataUncensored &lt;-<span class="st"> </span><span class="kw">subset</span>(BIData, Censored <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)
+LER.boot &lt;-<span class="st"> </span><span class="cf">function</span>(ded, data, indices){
+  resample.data &lt;-<span class="st"> </span>data[indices,]
+  sumClaims &lt;-<span class="st"> </span><span class="kw">sum</span>(resample.data<span class="op">$</span>AmountPaid)
+  sumClaims_d &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">pmin</span>(resample.data<span class="op">$</span>AmountPaid,ded))
+  LER &lt;-<span class="st">   </span>sumClaims_d<span class="op">/</span>sumClaims
+  <span class="kw">return</span>(LER)  
+}
+
+x &lt;-<span class="st"> </span>BIDataUncensored<span class="op">$</span>AmountPaid
+LER.jack&lt;-<span class="st"> </span><span class="cf">function</span>(ded,i){
+  LER &lt;-<span class="st">   </span><span class="kw">sum</span>(<span class="kw">pmin</span>(x[<span class="op">-</span>i],ded))<span class="op">/</span><span class="kw">sum</span>(x[<span class="op">-</span>i])
+  <span class="kw">return</span>(LER)  
+}
+LER &lt;-<span class="st"> </span><span class="cf">function</span>(ded) <span class="kw">sum</span>(<span class="kw">pmin</span>(x,ded))<span class="op">/</span><span class="kw">sum</span>(x)
+##Derrig et al
+<span class="kw">set.seed</span>(<span class="dv">2019</span>)
+dVec2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4000</span>, <span class="dv">5000</span>, <span class="dv">10500</span>, <span class="dv">11500</span>, <span class="dv">14000</span>, <span class="dv">18500</span>)
+OutJack &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="kw">length</span>(dVec2),<span class="dv">8</span>)
+<span class="kw">colnames</span>(OutJack) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>,<span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, <span class="st">&quot;Jackknife Bias&quot;</span>, <span class="st">&quot;Jackknife SD&quot;</span>,<span class="st">&quot;Lower Jackknife 95% CI&quot;</span>, <span class="st">&quot;Upper Jackknife 95% CI&quot;</span>)
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(dVec2)) {
+OutJack[j,<span class="dv">1</span>] &lt;-<span class="st"> </span>dVec2[j]
+results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>LER.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">ded=</span>dVec2[j])
+OutJack[j,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0
+biasboot &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 -&gt;<span class="st"> </span>OutJack[j,<span class="dv">3</span>]
+sdboot &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) -&gt;<span class="st"> </span>OutJack[j,<span class="dv">4</span>]
+temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results)
+
+LER.jack.ded&lt;-<span class="st"> </span><span class="cf">function</span>(i) <span class="kw">LER.jack</span>(<span class="dt">ded=</span>dVec2[j],i)
+JackTheta.ded &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(LER.jack.ded)(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x))
+OutJack[j,<span class="dv">5</span>] &lt;-<span class="st"> </span>BiasJack.ded &lt;-<span class="st"> </span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">mean</span>(JackTheta.ded) <span class="op">-</span><span class="st"> </span><span class="kw">LER</span>(<span class="dt">ded=</span>dVec2[j]))
+OutJack[j,<span class="dv">6</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(JackTheta.ded)
+OutJack[j,<span class="dv">7</span><span class="op">:</span><span class="dv">8</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(JackTheta.ded)<span class="op">+</span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>),<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>OutJack[j,<span class="dv">6</span>]
+}</code></pre></div>
+</div>
 <p><a id=tab:67></a></p>
-<div id="table-6.7.-jackkife-estimates-of-ler-at-selected-deductibles" class="section level5 unnumbered">
-<h5>Table 6.7. Jackkife Estimates of LER at Selected Deductibles</h5>
+<div id="table-6.7.-jackknife-estimates-of-ler-at-selected-deductibles" class="section level5 unnumbered">
+<h5>Table 6.7. Jackknife Estimates of LER at Selected Deductibles</h5>
 <table>
 <thead>
 <tr class="header">
@@ -2232,80 +2340,138 @@ BiasJack &lt;-<span class="st"> </span>(<span class="kw">length</span>(sample_x)
 </div>
 <div id="cross-validation-and-bootstrap" class="section level3">
 <h3><span class="header-section-number">6.3.3</span> Cross-Validation and Bootstrap</h3>
-<p><strong>Arthur</strong>. <em>I’m not sure about the point of this section. Is it supposed to point out connections, as per Efron (1982) Chapter 7?</em></p>
-<p>One can mix the idea of cross-validation and bootstrap :</p>
+<p>The bootstrap is useful in providing estimators of the precision, or variability, of statistics. It can also be useful for model validation. The bootstrap approach to model validation is similar to the leave-one-out and <em>k</em>-fold validation procedures:</p>
 <ul>
-<li>create a bootstrap sample with re-sampling (with replacement) <span class="math inline">\(n\)</span> indices in <span class="math inline">\(\{1,\cdots,n\}\)</span> : let <span class="math inline">\(\mathcal{I}_b\)</span> denote that set of indices. That will be our <em>training sample</em></li>
-<li>the validation sample will observations that were not</li>
+<li>Create a bootstrap sample by re-sampling (with replacement) <span class="math inline">\(n\)</span> indices in <span class="math inline">\(\{1,\cdots,n\}\)</span>. That will be our <em>training sample</em>. Estimate the model under consideration based on this sample.</li>
+<li>The <em>test</em>, or <em>validation sample</em>, consists of those observations not selected for training. Evaluate the fitted model (based on the training data) using the test data.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">indices &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">nrow</span>(cars))
-List_indices =<span class="st"> </span>List_indices_C =<span class="st"> </span><span class="kw">list</span>()
-<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>){
-  List_indices[[i]] &lt;-<span class="st"> </span><span class="kw">sample</span>(indices, <span class="dt">size=</span><span class="kw">length</span>(indices), <span class="dt">replace=</span> <span class="ot">TRUE</span>)
-  List_indices_C[[i]] &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(cars))[<span class="op">-</span><span class="kw">sort</span>(<span class="kw">unique</span>(List_indices[[i]]))]}
-List_indices[[<span class="dv">1</span>]]</code></pre></div>
-<pre><code>FALSE  [1] 47 47 21 43 38  3 36 29 50 10  1 32 49 10 45 48 16 32 21 18 21 40  9
-FALSE [24] 36 32 33 18 29 12 40 22  9 10 43  6 40 34 19  2 39  4 23 43  7 27 24
-FALSE [47] 25 28 33 32</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">List_indices_C[[<span class="dv">1</span>]]</code></pre></div>
-<pre><code>FALSE  [1]  5  8 11 13 14 15 17 20 26 30 31 35 37 41 42 44 46</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">epsilon &lt;-<span class="st"> </span><span class="kw">list</span>()
-mean_RSS &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>,<span class="dv">100</span>)
-<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(List_indices)){
-  model &lt;-<span class="st"> </span><span class="kw">lm</span>(dist<span class="op">~</span>speed,<span class="dt">data=</span>cars[List_indices[[i]],])
-  epsilon[[i]] &lt;-<span class="st"> </span>cars[List_indices_C[[i]],<span class="st">&quot;dist&quot;</span>]<span class="op">-</span><span class="kw">predict</span>(model, <span class="dt">newdata=</span>cars[List_indices_C[[i]],])
-  mean_RSS[i] &lt;-<span class="st"> </span><span class="kw">mean</span>( (epsilon[[i]])<span class="op">^</span><span class="dv">2</span> )
+<p>Repeat this process many (say <span class="math inline">\(B\)</span>) times. Take an average over the results and choose the model based on the average evaluation statistic.</p>
+<p><strong>Example 6.3.4. Wisconsin Property Fund.</strong> Return to Example 6.3.1 where we investigate the fit of the gamma and Pareto distributions on the property fund data. We again compare the predictive performance using the Kolmogorov-Smirnov statistic but this time using the bootstrap procedure to split the data between training and testing samples. The following provides illustrative code.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.BootstrapValidation.1" href="javascript:togglecode('toggleCode.BootstrapValidation.1','displayCode.BootstrapValidation.1');"><i><strong>Show R Code for Bootstrapping Validation Procedures</strong></i></a>
+</h5>
+<div id="toggleCode.BootstrapValidation.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># library(MASS)</span>
+<span class="co"># library(VGAM)</span>
+<span class="co"># library(goftest)</span>
+<span class="co"># claim_lev &lt;- read.csv(&quot;../../Data/CLAIMLEVEL.csv&quot;, header = TRUE) </span>
+<span class="co"># # 2010 subset </span>
+<span class="co"># claim_data &lt;- subset(claim_lev, Year == 2010); </span>
+n &lt;-<span class="st"> </span><span class="kw">nrow</span>(claim_data)
+<span class="kw">set.seed</span>(<span class="dv">12347</span>)
+indices &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>n
+<span class="co"># Number of Bootstrap Samples</span>
+B &lt;-<span class="st"> </span><span class="dv">100</span>
+cvalvec &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="dv">2</span>,B)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>B) {
+  bootindex &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">sample</span>(indices, <span class="dt">size=</span>n, <span class="dt">replace=</span> <span class="ot">TRUE</span>))
+  traindata &lt;-<span class="st"> </span>claim_data[bootindex,]
+  testdata  &lt;-<span class="st"> </span>claim_data[<span class="op">-</span>bootindex,]
+<span class="co"># Pareto</span>
+  fit.pareto &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">loc =</span> <span class="dv">0</span>, <span class="dt">data =</span> traindata)
+  ksResultPareto &lt;-<span class="st"> </span><span class="kw">ks.test</span>(testdata<span class="op">$</span>Claim, <span class="st">&quot;pparetoII&quot;</span>, <span class="dt">loc =</span> <span class="dv">0</span>, <span class="dt">shape =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">2</span>]), 
+        <span class="dt">scale =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">1</span>]))
+  cvalvec[<span class="dv">1</span>,i] &lt;-<span class="st"> </span>ksResultPareto<span class="op">$</span>statistic
+<span class="co"># Gamma</span>
+  fit.gamma &lt;-<span class="st"> </span><span class="kw">glm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> traindata, <span class="dt">family =</span> <span class="kw">Gamma</span>(<span class="dt">link =</span> log)) 
+  gamma_theta &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)) <span class="op">*</span><span class="st"> </span><span class="kw">gamma.dispersion</span>(fit.gamma)  
+  alpha &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">gamma.dispersion</span>(fit.gamma)
+  ksResultGamma &lt;-<span class="st"> </span><span class="kw">ks.test</span>(testdata<span class="op">$</span>Claim, <span class="st">&quot;pgamma&quot;</span>, <span class="dt">shape =</span> alpha, <span class="dt">scale =</span> gamma_theta)
+  cvalvec[<span class="dv">2</span>,i] &lt;-<span class="st"> </span>ksResultGamma<span class="op">$</span>statistic
 }
-<span class="kw">nrow</span>(cars)<span class="op">*</span><span class="kw">mean</span>(mean_RSS)</code></pre></div>
-<pre><code>FALSE [1] 12083.28</code></pre>
+KSBoot &lt;-<span class="st"> </span><span class="kw">rowSums</span>(cvalvec)<span class="op">/</span>B</code></pre></div>
+</div>
+<p>We did the sampling using <span class="math inline">\(B=\)</span> 100 replications. The average <em>KS</em> statistic for the Pareto distribution was 0.058 compared to the average for the gamma distribution, 0.261. This is consistent with earlier results and provides another piece of evidence that the Pareto is a better model for these data than the gamma.</p>
 </div>
 </div>
 <div id="S:ImportanceSampling" class="section level2">
 <h2><span class="header-section-number">6.4</span> Importance Sampling</h2>
 <!-- ## Importance Sampling -->
-<p>We have introduced Monte Carlo techniques using the inversion technique : to generate a random variable <span class="math inline">\(X\)</span> with distribution <span class="math inline">\(F\)</span>, apply <span class="math inline">\(F^{-1}\)</span> to calls of a random generator (uniform on the unit interval). What if we what to draw according to <span class="math inline">\(X\)</span>, conditional on <span class="math inline">\(X\in[a,b]\)</span> ?</p>
+<p>Section <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> introduced Monte Carlo techniques using the inversion technique : to generate a random variable <span class="math inline">\(X\)</span> with distribution <span class="math inline">\(F\)</span>, apply <span class="math inline">\(F^{-1}\)</span> to calls of a random generator (uniform on the unit interval). What if we what to draw according to <span class="math inline">\(X\)</span>, conditional on <span class="math inline">\(X\in[a,b]\)</span> ?</p>
 <p>One can use an <a href="#" class="tooltip" style="color:green"><em>accept-reject mechanism</em><span style="font-size:8pt">A sampling method that is used where the random sample is discarded if not within a certain pre-specified range [a, b] and is commonly used when the traditional inverse transform method cannot be easily used</span></a> : draw <span class="math inline">\(x\)</span> from distribution <span class="math inline">\(F\)</span></p>
 <ul>
 <li>if <span class="math inline">\(x\in[a,b]\)</span> : keep it (“<em>accept</em>”)</li>
 <li>if <span class="math inline">\(x\notin[a,b]\)</span> : draw another one (“<em>reject</em>”)</li>
 </ul>
 <p>Observe that from <span class="math inline">\(n\)</span> values initially generated, we keep here only <span class="math inline">\([F(b)-F(a)]\cdot n\)</span> draws, on average.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&#39;gifski&#39;)</span>
-<span class="co">#if (packageVersion(&#39;knitr&#39;) &lt; &#39;1.20.14&#39;) {</span>
-<span class="co">#  remotes::install_github(&#39;yihui/knitr&#39;)</span>
-<span class="co">#}</span>
+<p><strong>Example 6.4.1. Draws from a Normal Distribution.</strong> Suppose that we draw from a normal distribution with mean 2.5 and variance 1, <span class="math inline">\(N(2.5,1)\)</span>, but are only interested in draws greater that <span class="math inline">\(a \ge 2\)</span> and less than <span class="math inline">\(b \le 4\)</span>. That is, we can only use <span class="math inline">\(F(4)-F(2) = \Phi(4-2.5)-\Phi(2-2.5)\)</span> = 0.9332 - 0.3085 = 0.6247 proportion of the draws. Figure <a href="C-Simulation.html#fig:sampleani1">6.13</a> demonstrates that some draws lie with the interval <span class="math inline">\((2,4)\)</span> and some are outside.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.ImportanceSampling.1" href="javascript:togglecode('toggleCode.ImportanceSampling.1','displayCode.ImportanceSampling.1');"><i><strong>Show R Code for Accept-Reject Mechanism</strong></i></a>
+</h5>
+<div id="toggleCode.ImportanceSampling.1" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu =<span class="st"> </span><span class="fl">2.5</span>
+sigma =<span class="st"> </span><span class="dv">1</span>
+a =<span class="st"> </span><span class="dv">2</span>
+b =<span class="st"> </span><span class="dv">4</span>
+Fa =<span class="st"> </span><span class="kw">pnorm</span>(a,mu,sigma)
+Fb =<span class="st"> </span><span class="kw">pnorm</span>(b,mu,sigma)
 pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   u=<span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dt">by=</span>.<span class="dv">01</span>)
-  <span class="kw">plot</span>(u,<span class="kw">pnorm</span>(u,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>)
+  <span class="kw">plot</span>(u,<span class="kw">pnorm</span>(u,mu,sigma),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>)
   <span class="kw">rect</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dt">col=</span><span class="kw">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">2</span>),<span class="dt">border=</span><span class="ot">NA</span>)
-  <span class="kw">rect</span>(<span class="dv">2</span>,<span class="kw">pnorm</span>(<span class="dv">2</span>,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">4</span>,<span class="kw">pnorm</span>(<span class="dv">4</span>,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">border=</span><span class="ot">NA</span>)
-  <span class="kw">lines</span>(u,<span class="kw">pnorm</span>(u,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">lwd=</span><span class="dv">2</span>)
-  <span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>),<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+  <span class="kw">rect</span>(a,Fa,b,Fb,<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">border=</span><span class="ot">NA</span>)
+  <span class="kw">lines</span>(u,<span class="kw">pnorm</span>(u,mu,sigma),<span class="dt">lwd=</span><span class="dv">2</span>)
+  <span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(a,b),<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
   ru &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>)
   clr &lt;-<span class="st"> &quot;red&quot;</span>
-  <span class="cf">if</span>((<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>)<span class="op">&gt;=</span><span class="dv">2</span>)<span class="op">&amp;</span>(<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>)<span class="op">&lt;=</span><span class="dv">4</span>)) clr &lt;-<span class="st"> &quot;blue&quot;</span>
-  <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,ru,<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),ru,<span class="dt">col=</span>clr,<span class="dt">lwd=</span><span class="dv">2</span>)
-  <span class="kw">arrows</span>(<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),ru,<span class="kw">qnorm</span>(ru,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">0</span>,<span class="dt">col=</span>clr,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
-}
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani1-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani1-30.png" width="672" /></p>
-<p>An alternative is draw according to the conditional distribution <span class="math inline">\(F^{\star}\)</span> defined as <span class="math display">\[
-dF^\star(x) = \frac{dF(x)}{F(b)-F(a)}\boldsymbol{1}(x\in[a,b])
-\]</span> This can be related to the <a href="#" class="tooltip" style="color:green"><em>importance sampling mechanism</em><span style="font-size:8pt">Type of sampling method where values in the region of interest can be over-sampled or values outside the region of interest can be under-sampled</span></a> : we draw more frequently in regions where we expect to have quantities that have some interest. So we consider a change of measure.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&#39;gifski&#39;)</span>
-<span class="co">#if (packageVersion(&#39;knitr&#39;) &lt; &#39;1.20.14&#39;) {</span>
-<span class="co">#  remotes::install_github(&#39;yihui/knitr&#39;)</span>
-<span class="co">#}</span>
-pic_ani =<span class="st"> </span><span class="cf">function</span>(){
+  <span class="cf">if</span>((<span class="kw">qnorm</span>(ru,mu,sigma)<span class="op">&gt;=</span>a)<span class="op">&amp;</span>(<span class="kw">qnorm</span>(ru,mu,sigma)<span class="op">&lt;=</span>b)) clr &lt;-<span class="st"> &quot;blue&quot;</span>
+  <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,ru,<span class="kw">qnorm</span>(ru,mu,sigma),ru,<span class="dt">col=</span>clr,<span class="dt">lwd=</span><span class="dv">2</span>)
+  <span class="kw">arrows</span>(<span class="kw">qnorm</span>(ru,mu,sigma),ru,<span class="kw">qnorm</span>(ru,mu,sigma),<span class="dv">0</span>,<span class="dt">col=</span>clr,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
+}</code></pre></div>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:sampleani1"></span>
+<img src="LossDataAnalytics_files/figure-html/sampleani1-.gif" alt="Animated Demonstration of Draws In and Outside of (2,4)" width="50%" />
+<p class="caption">
+Figure 6.13: Animated Demonstration of Draws In and Outside of (2,4)
+</p>
+</div>
+<hr />
+<p>Instead, one can draw according to the conditional distribution <span class="math inline">\(F^{\star}\)</span> defined as <span class="math display">\[
+F^{\star}(x) = \Pr(X \le x | a \lt X \le b) =\frac{F(x)-F(a)}{F(b)-F(a)}, \ \  \ \text{for } a \lt x \le b .
+\]</span></p>
+<p>Using the inverse transform method in Section <a href="C-Simulation.html#S:InverseTransform">6.1.2</a>, we have that the draw</p>
+<p><span class="math display">\[
+X^\star=F^{\star-1}\left( U \right) = F^{-1}\left(F(a)+U\cdot[F(b)-F(a)]\right)
+\]</span></p>
+<p>has distribution <span class="math inline">\(F^{\star}\)</span>. Expressed another way, define <span class="math display">\[
+\tilde{U} = (1-U)\cdot F(a)+U\cdot F(b)
+\]</span> and then use <span class="math inline">\(F^{-1}(\tilde{U})\)</span>. With this approach, each draw counts.</p>
+<p>This can be related to the <a href="#" class="tooltip" style="color:green"><em>importance sampling mechanism</em><span style="font-size:8pt">Type of sampling method where values in the region of interest can be over-sampled or values outside the region of interest can be under-sampled</span></a> : we draw more frequently in regions where we expect to have quantities that have some interest. This transform can be considered as a “a change of measure.”</p>
+<h5 style="text-align: center;">
+<a id="displayCode.ImportanceSampling.2" href="javascript:togglecode('toggleCode.ImportanceSampling.2','displayCode.ImportanceSampling.2');"><i><strong>Show R Code for Importance Sampling by the Inverse Transform Method</strong></i></a>
+</h5>
+<div id="toggleCode.ImportanceSampling.2" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   u=<span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dt">by=</span>.<span class="dv">01</span>)
-  <span class="kw">plot</span>(u,<span class="kw">pnorm</span>(u,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>)
+  <span class="kw">plot</span>(u,<span class="kw">pnorm</span>(u,mu,sigma),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>)
+  <span class="kw">rect</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dt">col=</span><span class="kw">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">2</span>),<span class="dt">border=</span><span class="ot">NA</span>)
+  <span class="kw">rect</span>(a,Fa,b,Fb,<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">border=</span><span class="ot">NA</span>)
+  <span class="kw">lines</span>(u,<span class="kw">pnorm</span>(u,mu,sigma),<span class="dt">lwd=</span><span class="dv">2</span>)
+  <span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">pnorm</span>(<span class="kw">c</span>(a,b),mu,sigma),<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+  ru &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>)
+  rutilde &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>ru)<span class="op">*</span>Fa<span class="op">+</span>ru<span class="op">*</span>Fb
+  <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,rutilde,<span class="kw">qnorm</span>(rutilde,mu,sigma),rutilde,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)
+  <span class="kw">arrows</span>(<span class="kw">qnorm</span>(rutilde,mu,sigma),rutilde,<span class="kw">qnorm</span>(rutilde,mu,sigma),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
+}</code></pre></div>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-.gif" width="50%" style="display: block; margin: auto;" /></p>
+<p>In Example 6.4.1., the inverse of the normal distribution is readily availble (in <code>R</code>, the function is <code>qnorm</code>). However, for other applications, this is not the case. Then, one simply uses numerical methods to determine <span class="math inline">\(X^\star\)</span> as the solution of the equation <span class="math inline">\(F(X^\star) =\tilde{U}\)</span> where <span class="math inline">\(\tilde{U}=(1-U)\cdot F(a)+U\cdot F(b)\)</span>. See the following illustrative code.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.ImportanceSampling.3" href="javascript:togglecode('toggleCode.ImportanceSampling.3','displayCode.ImportanceSampling.3');"><i><strong>Show R Code for Importance Sampling via Numerical Solutions</strong></i></a>
+</h5>
+<div id="toggleCode.ImportanceSampling.3" style="display: none">
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pic_ani =<span class="st"> </span><span class="cf">function</span>(){
+  u=<span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dt">by=</span>.<span class="dv">01</span>)
+  <span class="kw">plot</span>(u,<span class="kw">pnorm</span>(u,mu,sigma),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>)
   <span class="kw">rect</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dt">col=</span><span class="kw">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">2</span>),<span class="dt">border=</span><span class="ot">NA</span>)
   <span class="kw">rect</span>(<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">border=</span><span class="ot">NA</span>)
-  <span class="kw">lines</span>(u,<span class="kw">pnorm</span>(u,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">lty=</span><span class="dv">2</span>)
+  <span class="kw">lines</span>(u,<span class="kw">pnorm</span>(u,mu,sigma),<span class="dt">lty=</span><span class="dv">2</span>)
   pnormstar &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(<span class="cf">function</span>(x){
-    y=(<span class="kw">pnorm</span>(x,<span class="fl">2.5</span>,<span class="dv">1</span>)<span class="op">-</span><span class="kw">pnorm</span>(<span class="dv">2</span>,<span class="fl">2.5</span>,<span class="dv">1</span>))<span class="op">/</span>(<span class="kw">pnorm</span>(<span class="dv">4</span>,<span class="fl">2.5</span>,<span class="dv">1</span>)<span class="op">-</span><span class="kw">pnorm</span>(<span class="dv">2</span>,<span class="fl">2.5</span>,<span class="dv">1</span>))
-    <span class="cf">if</span>(x<span class="op">&lt;=</span><span class="dv">2</span>) y &lt;-<span class="st"> </span><span class="dv">0</span>
-    <span class="cf">if</span>(x<span class="op">&gt;=</span><span class="dv">4</span>) y &lt;-<span class="st"> </span><span class="dv">1</span>
+    y=(<span class="kw">pnorm</span>(x,mu,sigma)<span class="op">-</span>Fa)<span class="op">/</span>(Fb<span class="op">-</span>Fa)
+    <span class="cf">if</span>(x<span class="op">&lt;=</span>a) y &lt;-<span class="st"> </span><span class="dv">0</span>
+    <span class="cf">if</span>(x<span class="op">&gt;=</span>b) y &lt;-<span class="st"> </span><span class="dv">1</span>
     <span class="kw">return</span>(y)
     })
   qnormstar &lt;-<span class="st"> </span><span class="cf">function</span>(u) <span class="kw">as.numeric</span>(<span class="kw">uniroot</span>((<span class="cf">function</span> (x) <span class="kw">pnormstar</span>(x) <span class="op">-</span><span class="st"> </span>u), <span class="dt">lower =</span> <span class="dv">2</span>, <span class="dt">upper =</span> <span class="dv">4</span>)[<span class="dv">1</span>])
@@ -2314,29 +2480,16 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
   ru &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>)
   <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,ru,<span class="kw">qnormstar</span>(ru),ru,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)
   <span class="kw">arrows</span>(<span class="kw">qnormstar</span>(ru),ru,<span class="kw">qnormstar</span>(ru),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
-}
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-30.png" width="672" /></p>
-<p>But one can use an alternative representation, where we constraint on the <span class="math inline">\(y\)</span>-axis, to have only values between <span class="math inline">\(F^{-1}(a)\)</span> and <span class="math inline">\(F^{-1}(b)\)</span>. Thus, from <span class="math inline">\(u\)</span> (drawn from a uniform distribution on the unit interval), consider <span class="math display">\[
-\tilde{u}=(1-u)\cdot F(a)+u\cdot F(b)
-\]</span> and then use <span class="math inline">\(F^{-1}(\tilde{u})\)</span>,</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pic_ani =<span class="st"> </span><span class="cf">function</span>(){
-  u=<span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dt">by=</span>.<span class="dv">01</span>)
-  <span class="kw">plot</span>(u,<span class="kw">pnorm</span>(u,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>)
-  <span class="kw">rect</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dt">col=</span><span class="kw">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">2</span>),<span class="dt">border=</span><span class="ot">NA</span>)
-  <span class="kw">rect</span>(<span class="dv">2</span>,<span class="kw">pnorm</span>(<span class="dv">2</span>,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">4</span>,<span class="kw">pnorm</span>(<span class="dv">4</span>,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;white&quot;</span>,<span class="dt">border=</span><span class="ot">NA</span>)
-  <span class="kw">lines</span>(u,<span class="kw">pnorm</span>(u,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">lwd=</span><span class="dv">2</span>)
-  <span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">pnorm</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>),<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
-  ru &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>)
-  rutilde &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>ru)<span class="op">*</span><span class="kw">pnorm</span>(<span class="dv">2</span>,<span class="fl">2.5</span>,<span class="dv">1</span>)<span class="op">+</span>ru<span class="op">*</span><span class="kw">pnorm</span>(<span class="dv">4</span>,<span class="fl">2.5</span>,<span class="dv">1</span>)
-  <span class="kw">segments</span>(<span class="op">-</span><span class="dv">1</span>,rutilde,<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),rutilde,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)
-  <span class="kw">arrows</span>(<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),rutilde,<span class="kw">qnorm</span>(rutilde,<span class="fl">2.5</span>,<span class="dv">1</span>),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">length =</span> .<span class="dv">1</span>)
-}
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_IS_2-30.png" width="672" /></p>
+}</code></pre></div>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numAnimation) {<span class="kw">pic_ani</span>()}</code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_IS_1-.gif" width="50%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="S:MCMC" class="section level2">
 <h2><span class="header-section-number">6.5</span> Monte Carlo Markov Chain (MCMC)</h2>
+<hr />
+<p><strong>This section is being written and is not yet complete nor edited. It is here to give you a flavor of what will be in the final version.</strong></p>
+<hr />
 <!-- ## MCMC -->
 <p>The idea of Monte Carlo techniques rely on the law of large number (that insures the convengence of the average towards the integral) and the central limit theorem (that is used to quantify uncertainty in the computations). Recall that if <span class="math inline">\((X_i)\)</span> is an i.id. sequence of random variables with distribution <span class="math inline">\(F\)</span>, then <span class="math display">\[
 \frac{1}{\sqrt{n}}\left(\sum_{i=1}^n h(X_i)-\int h(x)dF(x)\right)\overset{\mathcal{L}}{\rightarrow }\mathcal{N}(0,\sigma^2),\text{ as }n\rightarrow\infty.
@@ -2349,7 +2502,7 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(){
 <h3><span class="header-section-number">6.5.1</span> Hastings Metropolis</h3>
 <p>The algorithm is rather simple to generate from <span class="math inline">\(f\)</span> : we start with a feasible value <span class="math inline">\(x_1\)</span>. Then, at step <span class="math inline">\(t\)</span>, we need to specify a transition kernel : given <span class="math inline">\(x_t\)</span>, we need a conditional distribution for <span class="math inline">\(X_{t+1}\)</span> given <span class="math inline">\(x_t\)</span>. The algorithm will work well if that conditional distribution can easily be simulated. Let <span class="math inline">\(\pi(\cdot|x_t)\)</span> denote that probability.</p>
 <p>Draw a potential value <span class="math inline">\(x_{t+1}^\star\)</span>, and <span class="math inline">\(u\)</span>, from a uniform distribution. Compute <span class="math display">\[
-R=  \frac{f(x&#39;⋆t+1)}{f(xt)}
+R=  \frac{f(x_{t+1}^\star)}{f(x_t)}
 \]</span> and</p>
 <ul>
 <li>if <span class="math inline">\(u &lt; r\)</span>, then set <span class="math inline">\(x_{t+1}=x_t^\star\)</span></li>
@@ -2357,6 +2510,10 @@ R=  \frac{f(x&#39;⋆t+1)}{f(xt)}
 </ul>
 <p>Here <span class="math inline">\(r\)</span> is called the <em>acceptance</em>-ratio: we accept the new value with probability <span class="math inline">\(r\)</span> (or actually the smallest between <span class="math inline">\(1\)</span> and <span class="math inline">\(r\)</span> since <span class="math inline">\(r\)</span> can exceed <span class="math inline">\(1\)</span>).</p>
 <p>For instance, assume that <span class="math inline">\(f(\cdot|x_t)\)</span> is uniform on <span class="math inline">\([x_t-\varepsilon,x_t+\varepsilon]\)</span> for some <span class="math inline">\(\varepsilon&gt;0\)</span>, and where <span class="math inline">\(f\)</span> (our target distribution) is the <span class="math inline">\(\mathcal{N}(0,1)\)</span>. We will never <em>draw</em> from <span class="math inline">\(f\)</span>, but we will use it to compute our acceptance ratio at each step.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.MCMC.1" href="javascript:togglecode('toggleCode.MCMC.1','displayCode.MCMC.1');"><i><strong>Show R Code</strong></i></a>
+</h5>
+<div id="toggleCode.MCMC.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">metrop1 &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">n=</span><span class="dv">1000</span>,<span class="dt">eps=</span><span class="fl">0.5</span>){
  vec &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>, n, <span class="dv">3</span>)
  x=<span class="dv">0</span>
@@ -2370,7 +2527,12 @@ R=  \frac{f(x&#39;⋆t+1)}{f(xt)}
  vec[i,] &lt;-<span class="st"> </span><span class="kw">c</span>(x,mov,R)
  }
 <span class="kw">return</span>(vec)}</code></pre></div>
+</div>
 <p>In the code above, <code>vec</code> contains values of <span class="math inline">\(\boldsymbol{x}=(x_1,x_2,\cdots)\)</span>, <code>innov</code> is the innovation.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.MCMC.2" href="javascript:togglecode('toggleCode.MCMC.2','displayCode.MCMC.2');"><i><strong>Show R Code</strong></i></a>
+</h5>
+<div id="toggleCode.MCMC.2" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&#39;gifski&#39;)</span>
 <span class="co">#if (packageVersion(&#39;knitr&#39;) &lt; &#39;1.20.14&#39;) {</span>
 <span class="co">#  remotes::install_github(&#39;yihui/knitr&#39;)</span>
@@ -2388,9 +2550,10 @@ pic_ani =<span class="st"> </span><span class="cf">function</span>(k){
   <span class="kw">segments</span>(k,vec[k,<span class="dv">1</span>],k<span class="op">+</span><span class="kw">dnorm</span>(vec[k,<span class="dv">1</span>])<span class="op">*</span><span class="dv">10</span>,vec[k,<span class="dv">1</span>])
   <span class="kw">segments</span>(k,vec[k<span class="op">+</span><span class="dv">1</span>,<span class="dv">2</span>],k<span class="op">+</span><span class="kw">dnorm</span>(vec[k<span class="op">+</span><span class="dv">1</span>,<span class="dv">2</span>])<span class="op">*</span><span class="dv">10</span>,vec[k<span class="op">+</span><span class="dv">1</span>,<span class="dv">2</span>])
   <span class="kw">text</span>(k,<span class="dv">2</span>,<span class="kw">round</span>(vec[k<span class="op">+</span><span class="dv">1</span>,<span class="dv">3</span>],<span class="dt">digits=</span><span class="dv">3</span>))
-}
-<span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">23</span>) {<span class="kw">pic_ani</span>(k)}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-22.png" width="672" /></p>
+}</code></pre></div>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">23</span>) {<span class="kw">pic_ani</span>(k)}</code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM_1-.gif" width="672" /></p>
 <p>Now, if we use more simulations, we get</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vec &lt;-<span class="st"> </span><span class="kw">metrop1</span>(<span class="dv">10000</span>)
 simx &lt;-<span class="st"> </span>vec[<span class="dv">1000</span><span class="op">:</span><span class="dv">10000</span>,<span class="dv">1</span>]
@@ -2400,7 +2563,7 @@ simx &lt;-<span class="st"> </span>vec[<span class="dv">1000</span><span class="
 <span class="kw">lines</span>(u,<span class="kw">dnorm</span>(u),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 <span class="kw">qqnorm</span>(simx)
 <span class="kw">acf</span>(simx,<span class="dt">lag=</span><span class="dv">100</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-209-1.png" width="672" /></p>
 </div>
 <div id="gibbs-sampler" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> Gibbs sampler</h3>
@@ -2411,6 +2574,10 @@ simx &lt;-<span class="st"> </span>vec[<span class="dv">1000</span><span class="
 <li><span class="math inline">\(X_i\)</span> given <span class="math inline">\(X_i &gt; s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1}\)</span> has an Exponential distribution <span class="math inline">\(\mathcal{E}(\lambda_i)\)</span></li>
 <li>draw <span class="math inline">\(Y\sim \mathcal{E}(\lambda_i)\)</span> and set <span class="math inline">\(x_i=y +(s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1})_+\)</span> until <span class="math inline">\(\boldsymbol{x}_{(-i)}^T\boldsymbol{1}+x_i&gt;s\)</span></li>
 </ul>
+<h5 style="text-align: center;">
+<a id="displayCode.Gibbs.1" href="javascript:togglecode('toggleCode.Gibbs.1','displayCode.Gibbs.1');"><i><strong>Show R Code</strong></i></a>
+</h5>
+<div id="toggleCode.Gibbs.1" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sim &lt;-<span class="st"> </span><span class="ot">NULL</span>
  lambda &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)
  X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>)
@@ -2420,12 +2587,17 @@ simx &lt;-<span class="st"> </span>vec[<span class="dv">1000</span><span class="
  X[i] &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">1</span>,lambda[i])<span class="op">+</span><span class="kw">max</span>(<span class="dv">0</span>,s<span class="op">-</span><span class="kw">sum</span>(X[<span class="op">-</span>i]))
  <span class="cf">while</span>(<span class="kw">sum</span>(X)<span class="op">&lt;</span>s){
  X[i] &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">1</span>,lambda[i])<span class="op">+</span><span class="kw">max</span>(<span class="dv">0</span>,s<span class="op">-</span><span class="kw">sum</span>(X[<span class="op">-</span>i])) }
- sim &lt;-<span class="st"> </span><span class="kw">rbind</span>(sim,X) }
-<span class="kw">plot</span>(sim,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">11</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">4.3</span>))
+ sim &lt;-<span class="st"> </span><span class="kw">rbind</span>(sim,X) }</code></pre></div>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sim,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">11</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">4.3</span>))
 <span class="kw">polygon</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">density=</span><span class="dv">15</span>,<span class="dt">border=</span><span class="ot">NA</span>)
 <span class="kw">abline</span>(<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-211-1.png" width="672" /></p>
 <p>The construction of the sequence (<a href="#" class="tooltip" style="color:green"><em>MCMC</em><span style="font-size:8pt">Markov Chain Monte Carlo</span></a> algorithms are iterative) can be visualized below</p>
+<h5 style="text-align: center;">
+<a id="displayCode.Gibbs.2" href="javascript:togglecode('toggleCode.Gibbs.2','displayCode.Gibbs.2');"><i><strong>Show R Code</strong></i></a>
+</h5>
+<div id="toggleCode.Gibbs.2" style="display: none">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lambda &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)
 X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>)
 sim &lt;-<span class="st"> </span>X
@@ -2447,14 +2619,15 @@ i=<span class="kw">which</span>(<span class="kw">apply</span>(sim[(n<span class=
 <span class="kw">polygon</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">density=</span><span class="dv">15</span>,<span class="dt">border=</span><span class="ot">NA</span>)
 <span class="kw">abline</span>(<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 }</code></pre></div>
+</div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">100</span>) {<span class="kw">pic_ani</span>(i)}</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM-1.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-2.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-3.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-4.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-5.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-6.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-7.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-8.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-9.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-10.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-11.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-12.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-13.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-14.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-15.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-16.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-17.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-18.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-19.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-20.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-21.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-22.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-23.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-24.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-25.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-26.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-27.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-28.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-29.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-30.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-31.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-32.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-33.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-34.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-35.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-36.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-37.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-38.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-39.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-40.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-41.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-42.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-43.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-44.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-45.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-46.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-47.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-48.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-49.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-50.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-51.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-52.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-53.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-54.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-55.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-56.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-57.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-58.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-59.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-60.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-61.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-62.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-63.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-64.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-65.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-66.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-67.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-68.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-69.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-70.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-71.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-72.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-73.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-74.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-75.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-76.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-77.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-78.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-79.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-80.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-81.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-82.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-83.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-84.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-85.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-86.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-87.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-88.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-89.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-90.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-91.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-92.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-93.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-94.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-95.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-96.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-97.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-98.png" width="672" /><img src="LossDataAnalytics_files/figure-html/sampleani_HM-99.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/sampleani_HM-.gif" width="672" /></p>
 </div>
 </div>
 <div id="Simulation:further-reading-and-resources" class="section level2">
 <h2><span class="header-section-number">6.6</span> Further Resources and Contributors</h2>
 <ul>
-<li>Include historical references for jackkife (Quenouille, Tukey, Efron)</li>
+<li>Include historical references for jackknife (Quenouille, Tukey, Efron)</li>
 <li>Here are some links to learn more about <a href="https://freakonometrics.hypotheses.org/6470">reproducibility and randomness</a> and how to go <a href="https://freakonometrics.hypotheses.org/6638">from a random generator to a sample function</a>.</li>
 </ul>
 <div id="contributors-5" class="section level4 unnumbered">
@@ -2464,10 +2637,13 @@ i=<span class="kw">which</span>(<span class="kw">apply</span>(sim[(n<span class=
 <li>Chapter reviewers include: Write Jed or Arthur; to add you name here.</li>
 </ul>
 </div>
-</div>
-<div id="ts-6.a.-applications-of-bootstrap-in-predictive-modeling" class="section level2">
-<h2><span class="header-section-number">6.7</span> TS 6.A. Applications of Bootstrap in Predictive Modeling</h2>
+<div id="ts-6.a.-bootstrap-applications-in-predictive-modeling" class="section level3">
+<h3><span class="header-section-number">6.6.1</span> TS 6.A. Bootstrap Applications in Predictive Modeling</h3>
+<hr />
+<p><strong>This section is being written.</strong></p>
+<hr />
 
+</div>
 </div>
 </div>
             </section>
@@ -2496,7 +2672,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -2506,6 +2682,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -2523,7 +2703,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
