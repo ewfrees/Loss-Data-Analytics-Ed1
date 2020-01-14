@@ -606,7 +606,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="C-PortMgt.html"><a href="C-PortMgt.html#further-resources-and-contributors-1"><i class="fa fa-check"></i><b>10.5</b> Further Resources and Contributors</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="C-LossReserves.html"><a href="C-LossReserves.html"><i class="fa fa-check"></i><b>11</b> Loss Reserving</a></li>
+<li class="chapter" data-level="11" data-path="C-LossReserves.html"><a href="C-LossReserves.html"><i class="fa fa-check"></i><b>11</b> Loss Reserving</a><ul>
+<li class="chapter" data-level="11.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:motivation"><i class="fa fa-check"></i><b>11.1</b> Motivation</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:claim-types"><i class="fa fa-check"></i><b>11.1.1</b> Closed, IBNR, and RBNS Claims</a></li>
+<li class="chapter" data-level="11.1.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#why-reserving"><i class="fa fa-check"></i><b>11.1.2</b> Why Reserving?</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Data"><i class="fa fa-check"></i><b>11.2</b> Loss Reserve Data</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#from-micro-to-macro"><i class="fa fa-check"></i><b>11.2.1</b> From Micro to Macro</a></li>
+<li class="chapter" data-level="11.2.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#run-off-triangles"><i class="fa fa-check"></i><b>11.2.2</b> Run-off Triangles</a></li>
+<li class="chapter" data-level="11.2.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#loss-reserve-notation"><i class="fa fa-check"></i><b>11.2.3</b> Loss Reserve Notation</a></li>
+<li class="chapter" data-level="11.2.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Rcode"><i class="fa fa-check"></i><b>11.2.4</b> R Code to Summarize Loss Reserve Data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
+<li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
+<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code"><i class="fa fa-check"></i><b>11.3.3</b> R code</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:GLMs"><i class="fa fa-check"></i><b>11.4</b> GLMs and Bootstrap for Loss Reserves</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#model-specification"><i class="fa fa-check"></i><b>11.4.1</b> Model Specification</a></li>
+<li class="chapter" data-level="11.4.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#model-estimation-and-prediction"><i class="fa fa-check"></i><b>11.4.2</b> Model Estimation and Prediction</a></li>
+<li class="chapter" data-level="11.4.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#bootstrap"><i class="fa fa-check"></i><b>11.4.3</b> Bootstrap</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="C-LossReserves.html"><a href="C-LossReserves.html#LossRe:further-reading-and-resources"><i class="fa fa-check"></i><b>11.5</b> Further Resources and Contributors</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html"><i class="fa fa-check"></i><b>12</b> Experience Rating using Bonus-Malus</a><ul>
 <li class="chapter" data-level="12.1" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html#S:ERBM:Intro"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
 <li class="chapter" data-level="12.2" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html#S:ERBM:NCD"><i class="fa fa-check"></i><b>12.2</b> NCD System in Several Countries</a><ul>
@@ -1836,7 +1858,7 @@ quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(
 </div>
 <div id="Dep:further-reading-and-resources" class="section level2">
 <h2><span class="header-section-number">14.7</span> Further Resources and Contributors</h2>
-<div id="contributors-7" class="section level4 unnumbered">
+<div id="contributors-8" class="section level4 unnumbered">
 <h4>Contributors</h4>
 <ul>
 <li><strong>Edward W. (Jed) Frees</strong> and <strong>Nii-Armah Okine</strong>, University of Wisconsin-Madison, and <strong>Emine Selin Sarıdaş</strong>, Mimar Sinan University, are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> for chapter comments and suggested improvements.</li>

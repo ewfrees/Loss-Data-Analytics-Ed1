@@ -606,7 +606,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="C-PortMgt.html"><a href="C-PortMgt.html#further-resources-and-contributors-1"><i class="fa fa-check"></i><b>10.5</b> Further Resources and Contributors</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="C-LossReserves.html"><a href="C-LossReserves.html"><i class="fa fa-check"></i><b>11</b> Loss Reserving</a></li>
+<li class="chapter" data-level="11" data-path="C-LossReserves.html"><a href="C-LossReserves.html"><i class="fa fa-check"></i><b>11</b> Loss Reserving</a><ul>
+<li class="chapter" data-level="11.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:motivation"><i class="fa fa-check"></i><b>11.1</b> Motivation</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:claim-types"><i class="fa fa-check"></i><b>11.1.1</b> Closed, IBNR, and RBNS Claims</a></li>
+<li class="chapter" data-level="11.1.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#why-reserving"><i class="fa fa-check"></i><b>11.1.2</b> Why Reserving?</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Data"><i class="fa fa-check"></i><b>11.2</b> Loss Reserve Data</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#from-micro-to-macro"><i class="fa fa-check"></i><b>11.2.1</b> From Micro to Macro</a></li>
+<li class="chapter" data-level="11.2.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#run-off-triangles"><i class="fa fa-check"></i><b>11.2.2</b> Run-off Triangles</a></li>
+<li class="chapter" data-level="11.2.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#loss-reserve-notation"><i class="fa fa-check"></i><b>11.2.3</b> Loss Reserve Notation</a></li>
+<li class="chapter" data-level="11.2.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Rcode"><i class="fa fa-check"></i><b>11.2.4</b> R Code to Summarize Loss Reserve Data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
+<li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
+<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code"><i class="fa fa-check"></i><b>11.3.3</b> R code</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:GLMs"><i class="fa fa-check"></i><b>11.4</b> GLMs and Bootstrap for Loss Reserves</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#model-specification"><i class="fa fa-check"></i><b>11.4.1</b> Model Specification</a></li>
+<li class="chapter" data-level="11.4.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#model-estimation-and-prediction"><i class="fa fa-check"></i><b>11.4.2</b> Model Estimation and Prediction</a></li>
+<li class="chapter" data-level="11.4.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#bootstrap"><i class="fa fa-check"></i><b>11.4.3</b> Bootstrap</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="C-LossReserves.html"><a href="C-LossReserves.html#LossRe:further-reading-and-resources"><i class="fa fa-check"></i><b>11.5</b> Further Resources and Contributors</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html"><i class="fa fa-check"></i><b>12</b> Experience Rating using Bonus-Malus</a><ul>
 <li class="chapter" data-level="12.1" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html#S:ERBM:Intro"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
 <li class="chapter" data-level="12.2" data-path="C-BonusMalus.html"><a href="C-BonusMalus.html#S:ERBM:NCD"><i class="fa fa-check"></i><b>12.2</b> NCD System in Several Countries</a><ul>
@@ -951,7 +973,7 @@ l(\boldsymbol \theta|\mathbf{x})}{\partial \boldsymbol \theta^{\prime}}
 <p>Suppose that we have a (large) model under which we derive the maximum likelihood estimator, <span class="math inline">\(\hat{\boldsymbol{\theta}}_{MLE}\)</span>. Now assume that some of the <span class="math inline">\(p\)</span> elements in <span class="math inline">\(\boldsymbol \theta\)</span> are equal to zero and determine the maximum likelihood estimator over the remaining set, with the resulting estimator denoted <span class="math inline">\(\hat{\boldsymbol{\theta}}_{Reduced}\)</span>.</p>
 <p>Based on the definition in Appendix <a href="C-AppA.html#C:AppA">15</a>, the statistic, <span class="math inline">\(LRT= 2 \left( l(\hat{\boldsymbol{\theta}}_{MLE}) - l(\hat{\boldsymbol{\theta}}_{Reduced}) \right)\)</span>, is called the likelihood ratio statistic. Under the null hypothesis that the reduced model is correct, the likelihood ratio has a Chi-square distribution with degrees of freedom equal to <span class="math inline">\(d\)</span>, the number of variables set to zero.</p>
 <p>Such a test allows us to judge which of the two models is more likely to be correct, given the observed data. If the statistic <span class="math inline">\(LRT\)</span> is large relative to the critical value from the chi-square distribution, then we reject the reduced model in favor of the larger one. Details regarding the critical value and alternative methods based on information criteria are given in Appendix <a href="C-AppA.html#C:AppA">15</a>.</p>
-<div id="contributors-10" class="section level4 unnumbered">
+<div id="contributors-11" class="section level4 unnumbered">
 <h4>Contributors</h4>
 <ul>
 <li><strong>Lei (Larry) Hua</strong>, Northern Illinois University, and <strong>Edward W. (Jed) Frees</strong>, University of Wisconsin-Madison, are the principal authors of the initial version of this chapter. Email: <a href="mailto:lhua@niu.edu">lhua@niu.edu</a> or <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> for chapter comments and suggested improvements.</li>
