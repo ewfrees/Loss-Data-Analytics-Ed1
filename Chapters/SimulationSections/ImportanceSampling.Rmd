@@ -15,7 +15,7 @@ Observe that from $n$ values initially generated, we keep here only $[F(b)-F(a)]
 
 `r HideRCode('ImportanceSampling.1','Show R Code for Accept-Reject Mechanism')`
 
-```{r animation.hook='gifski', eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF}
+```{r eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 mu = 2.5
 sigma = 1
 a = 2
@@ -40,15 +40,16 @@ pic_ani = function(){
 
 </div>
 
-```{r sampleani1, animation.hook='gifski', fig.cap='Animated Demonstration of Draws In and Outside of (2,4)', eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF}
+```{r sampleani1, animation.hook=ANIMATIONHOOK, fig.cap='Animated Demonstration of Draws In and Outside of (2,4)', eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF}
 for (i in 1:numAnimation) {pic_ani()}
 ```
 
 ***
 
 Instead, one can draw according to the conditional distribution $F^{\star}$ defined as
+
 $$
-F^{\star}(x) = \Pr(X \le x | a \lt X \le b) =\frac{F(x)-F(a)}{F(b)-F(a)}, \ \  \ \text{for } a \lt x \le b .
+F^{\star}(x) = \Pr(X \le x | a < X \le b) =\frac{F(x)-F(a)}{F(b)-F(a)}, \ \  \ \text{for } a < x \le b .
 $$
 
 Using the inverse transform method in Section \@ref(S:InverseTransform), we have that the draw
@@ -67,7 +68,7 @@ This can be related to the `r Gloss('importance sampling mechanism')` : we draw 
 
 `r HideRCode('ImportanceSampling.2','Show R Code for Importance Sampling by the Inverse Transform Method')`
 
-```{r animation.hook='gifski', eval = ANIMATION, echo=SHOW_PDF}
+```{r eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 pic_ani = function(){
   u=seq(0,5,by=.01)
   plot(u,pnorm(u,mu,sigma),col="white",ylab="",xlab="")
@@ -85,16 +86,16 @@ pic_ani = function(){
 
 </div>
 
-```{r sampleani_IS_2, animation.hook='gifski', eval = ANIMATION, fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF}
+```{r sampleani_IS_2, eval = ANIMATION, fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 for (i in 1:numAnimation) {pic_ani()}
 ```
 
-In Example `r chapnum`.4.1., the inverse of the normal distribution is readily availble (in `R`, the function is `qnorm`). However, for other applications, this is not the case. Then, one simply uses numerical methods to determine $X^\star$ as the solution of the equation $F(X^\star) =\tilde{U}$ where $\tilde{U}=(1-U)\cdot F(a)+U\cdot F(b)$. See the following illustrative code.
+In Example `r chapnum`.4.1., the inverse of the normal distribution is readily available (in `R`, the function is `qnorm`). However, for other applications, this is not the case. Then, one simply uses numerical methods to determine $X^\star$ as the solution of the equation $F(X^\star) =\tilde{U}$ where $\tilde{U}=(1-U)\cdot F(a)+U\cdot F(b)$. See the following illustrative code.
 
 
 `r HideRCode('ImportanceSampling.3','Show R Code for Importance Sampling via Numerical Solutions')`
 
-```{r animation.hook='gifski', eval = ANIMATION, comment = "", echo=SHOW_PDF}
+```{r eval = ANIMATION, comment = "", echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 pic_ani = function(){
   u=seq(0,5,by=.01)
   plot(u,pnorm(u,mu,sigma),col="white",ylab="",xlab="")
@@ -119,7 +120,7 @@ pic_ani = function(){
 
 </div>
 
-```{r sampleani_IS_1, animation.hook='gifski', eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF}
+```{r sampleani_IS_1, eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 for (i in 1:numAnimation) {pic_ani()}
 ```
 

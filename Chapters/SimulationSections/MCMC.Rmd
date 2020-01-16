@@ -57,7 +57,7 @@ In the code above, `vec` contains values of $\boldsymbol{x}=(x_1,x_2,\cdots)$, `
 
 `r HideRCode('MCMC.2','Show R Code')`
 
-```{r animation.hook='gifski', eval = ANIMATION, echo=SHOW_PDF}
+```{r eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 #install.packages('gifski')
 #if (packageVersion('knitr') < '1.20.14') {
 #  remotes::install_github('yihui/knitr')
@@ -81,7 +81,7 @@ pic_ani = function(k){
 
 </div>
 
-```{r sampleani_HM_1, animation.hook='gifski', eval = ANIMATION, echo=SHOW_PDF}
+```{r sampleani_HM_1, eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 for (k in 2:23) {pic_ani(k)}
 ```
 
@@ -165,6 +165,6 @@ abline(5,-1,col="red")
 
 </div>
 
-```{r sampleani_HM, animation.hook='gifski', eval = ANIMATION, echo=SHOW_PDF}
+```{r sampleani_HM, eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
 for (i in 2:100) {pic_ani(i)}
 ```
