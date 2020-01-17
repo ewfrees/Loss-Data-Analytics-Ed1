@@ -620,7 +620,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
 <li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
-<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code"><i class="fa fa-check"></i><b>11.3.3</b> R code</a></li>
+<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code-for-chain-ladder-predictions"><i class="fa fa-check"></i><b>11.3.3</b> R code for Chain-Ladder Predictions</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:GLMs"><i class="fa fa-check"></i><b>11.4</b> GLMs and Bootstrap for Loss Reserves</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#model-specification"><i class="fa fa-check"></i><b>11.4.1</b> Model Specification</a></li>
@@ -971,7 +971,7 @@ origin    0    1     2     3     4     5     6     7     8     9
 </div>
 </div>
 <div id="triangular-format-data" class="section level4 unnumbered">
-<h4>Triangular Format data</h4>
+<h4>Triangular Format Data</h4>
 <p>Alternatively, the triangle may be stored in a <a href="#" class="tooltip" style="color:green"><em>.csv</em><span style="font-size:8pt">Comma separated value file</span></a> file with the occurrence years in the rows and the development years in the column cells. We import this .csv file and transform the resulting <code>my_triangle_csv</code> to a matrix.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.TriangleCSV.1" href="javascript:togglecode('toggleCode.TriangleCSV.1','displayCode.TriangleCSV.1');"><i><strong>R Code for Importing Triangular Data</strong></i></a>
@@ -1049,7 +1049,7 @@ Figure 11.9: Claim Development by Occurrence Year
 </div>
 <div id="S:Chain-ladder" class="section level2">
 <h2><span class="header-section-number">11.3</span> The Chain-Ladder</h2>
-<p>The most widely used method to estimate outstanding loss reserves is the so-called <strong>chain-ladder method</strong>. We will start with exploring the chain-ladder method in its deterministic or algorithmic version, hence without making any stochastic assumptions. Then we will describe Mack’s distribution-free chain-ladder model.</p>
+<p>The most widely used method to estimate outstanding loss reserves is the so-called <a href="#" class="tooltip" style="color:green"><em>chain-ladder method</em><span style="font-size:8pt">An algorithm for predicting incomplete losses to their ultimate cumulative value. The name refers to the chaining of a sequence of (year-to-year development) factors into a ladder of factors.</span></a>. The origins of this method are obscure but was firmly entrenched in practical applications by the early 1970’s, <span class="citation">Taylor (<a href="#ref-taylor1986claims">1986</a>)</span>. As will be seen, the name refers to the chaining of a sequence of (year-to-year development) factors into a ladder of factors; immature losses climb toward maturity when multiplied by this concatenation of ratios, hence the apt description <em>chain-ladder method.</em> We will start with exploring the chain-ladder method in its deterministic or algorithmic version, hence without making any stochastic assumptions. Then we will describe Mack’s distribution-free chain-ladder model.</p>
 <div id="S:DeterministicCL" class="section level3">
 <h3><span class="header-section-number">11.3.1</span> The Deterministic Chain-Ladder</h3>
 <p>The deterministic chain-ladder method focuses on the run-off triangle in cumulative form. Recall that a cell <span class="math inline">\((i,j)\)</span> in this triangle displays the cumulative amount paid up until development period <span class="math inline">\(j\)</span> for claims that occurred in year <span class="math inline">\(i\)</span>. The chain-ladder method assumes that <strong>development factors</strong> <span class="math inline">\(f_j\)</span> (also called age-to-age factors, link ratios or chain-ladder factors) exist such that</p>
@@ -1127,7 +1127,7 @@ Figure 11.14: A run-off triangle with cumulative payment data including predicti
 <p>The numbers in the last column show the estimates for the ultimate claim amounts. The estimate for the outstanding claim amount <span class="math inline">\(\hat{\mathcal{R}}_i^{CL}\)</span> for a particular occurrence period <span class="math inline">\(i=I-J+1,\ldots, I\)</span> is then given by the difference between the ultimate claim amount and the cumulative amount as observed on the most recent diagonal:</p>
 <p><span class="math display">\[
 \hat{\mathcal{R}}_i^{CL} =\hat{C}_{iJ}^{CL}-C_{i,I-i}.
-\]</span> This is the chain-ladder estimate for the reserve necessary to fulfill future liabilities with respect to claims that occurred in this particular occurrence period. These reserves per occurrence period and for the total summed over all occurrence periods are summarized in Figure <a href="#fig:tikz-table-cl5"><strong>??</strong></a>.</p>
+\]</span> This is the chain-ladder estimate for the reserve necessary to fulfill future liabilities with respect to claims that occurred in this particular occurrence period. These reserves per occurrence period and for the total summed over all occurrence periods are summarized in Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl5">11.15</a>.</p>
 <a id="tikz-table-cl5"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle-cl5"></span>
 <img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl5-1.png" alt="Reserves per occurence period and for total" width="960" />
@@ -1173,10 +1173,10 @@ f_{i,j} = \frac{C_{i,j+1}}{C_{ij}}.
 <p><span class="math display">\[
 \text{Var}[C_{i,j+1}/C_{ij}|C_{i0},\ldots,C_{ij}] ~ \propto ~ \frac{1}{C_{ij}}.
 \]</span></p>
-<p>This reminds us of a typical <strong>Weighted Least Squares</strong> (WLS) setting where the weights are the inverse of the variability of a response. Therefore, a more volatile or imprecise response variable will get less weight. The <span class="math inline">\(C_{i,j}\)</span> play the role of the weights. Using the unknown variance parameter <span class="math inline">\(\sigma^2_j\)</span> this variance assumption can be written as:</p>
+<p>This reminds us of a typical <em>weighted least squares</em> setting where the weights are the inverse of the variability of a response. Therefore, a more volatile or imprecise response variable will get less weight. The <span class="math inline">\(C_{i,j}\)</span> play the role of the weights. Using the unknown variance parameter <span class="math inline">\(\sigma^2_j\)</span> this variance assumption can be written as:</p>
 <p><span class="math display">\[
 \text{Var}[C_{i,j+1}|C_{i0},\ldots,C_{ij}] = \sigma^2_j \cdot C_{ij},
-\]</span> The connection with WLS then directly leads to an unbiased estimate for the unknown variance parameter <span class="math inline">\(\sigma^2_j\)</span> in the form of a weighted residual sum of squares:</p>
+\]</span> The connection with weighted least squares then directly leads to an unbiased estimate for the unknown variance parameter <span class="math inline">\(\sigma^2_j\)</span> in the form of a weighted residual sum of squares:</p>
 <p><span class="math display">\[
 \hat{\sigma}^2_j = \frac{1}{I-j-2}\sum_{i=1}^{I-j-1} C_{ij}\left(\frac{C_{i,j+1}}{C_{ij}}-\hat{f}_j^{CL}\right)^2.
 \]</span> The weights are again equal to <span class="math inline">\(C_{i,j}\)</span> and the residuals are the differences between the ratios <span class="math inline">\(C_{i,j+1}/C_{i,j}\)</span> and the individual development factors.</p>
@@ -1230,8 +1230,8 @@ E(X-a)^2 = \text{Var}(X)+\left[EX-a\right]^2.
 \end{array}
 \]</span> The result is the sum of the <em>MSEP</em>s per occurrence period plus a covariance term. This covariance term is added because the MSEPs for different occurrence periods <span class="math inline">\(i\)</span> use the same parameter estimates <span class="math inline">\(\hat{f}_j^{CL}\)</span> of <span class="math inline">\(f_j\)</span> for different accident years <span class="math inline">\(i\)</span>.</p>
 </div>
-<div id="r-code" class="section level3">
-<h3><span class="header-section-number">11.3.3</span> R code</h3>
+<div id="r-code-for-chain-ladder-predictions" class="section level3">
+<h3><span class="header-section-number">11.3.3</span> R code for Chain-Ladder Predictions</h3>
 <p>We use the object <code>my_triangle</code> of type <code>triangle</code> that was created in Section <a href="C-LossReserves.html#S:Rcode">11.2.4</a>. The distribution-free chain-ladder model of <span class="citation">Mack (<a href="#ref-Mack1993">1993</a>)</span> is implemented in the <code>ChainLadder</code> package <span class="citation">(Gesmann et al. <a href="#ref-R-chainladder">2019</a>)</span> (as a special form of weighted least squares) and can be applied on the data <code>my_triangle</code> to predict outstanding claim amounts and to estimate the standard error around those forecasts.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.MackModel.1" href="javascript:togglecode('toggleCode.MackModel.1','displayCode.MackModel.1');"><i><strong>R Code for Mack Model Forecasts</strong></i></a>
@@ -1318,26 +1318,28 @@ origin        7        8        9
 </div>
 <div id="S:GLMs" class="section level2">
 <h2><span class="header-section-number">11.4</span> GLMs and Bootstrap for Loss Reserves</h2>
-<p>This section covers regression models to analyze run-off triangles. When analyzing the data in a run-off triangle with a regression model, the standard toolbox for model building, estimation and prediction becomes available. Using these tools we are able to go beyond the point estimate and standard error as derived in Section <a href="C-LossReserves.html#S:Chain-ladder">11.3</a>. More specifically, we build a generalized linear model (GLM) for the incremental payments <span class="math inline">\(X_{ij}\)</span> in Figure <a href="C-LossReserves.html#fig:tikz-triangle">11.6</a>. Whereas the chain-ladder method works with cumulative data, typical GLMs assume the response variables to be independent and therefore work with incremental run-off triangles.</p>
+<hr />
+<p><strong>This section is being written and is not yet complete nor edited. It is here to give you a flavor of what will be in the final version.</strong></p>
+<hr />
+<p>This section covers regression models to analyze run-off triangles. When analyzing the data in a run-off triangle with a regression model, the standard toolbox for model building, estimation and prediction becomes available. Using these tools we are able to go beyond the point estimate and standard error as derived in Section <a href="C-LossReserves.html#S:Chain-ladder">11.3</a>. More specifically, we build a generalized linear model (<a href="#" class="tooltip" style="color:green"><em>GLM</em><span style="font-size:8pt">Generalized linear model</span></a>) for the incremental payments <span class="math inline">\(X_{ij}\)</span> in Figure <a href="C-LossReserves.html#fig:tikz-triangle">11.6</a>. Whereas the chain-ladder method works with cumulative data, typical GLMs assume the response variables to be independent and therefore work with incremental run-off triangles.</p>
 <div id="model-specification" class="section level3">
 <h3><span class="header-section-number">11.4.1</span> Model Specification</h3>
-<p>Let <span class="math inline">\(X_{ij}\)</span> denote the incremental payment in cell <span class="math inline">\((i,j)\)</span> of the run-off triangle. We assume the <span class="math inline">\(X_{ij}\)</span>s to be independent with a density <span class="math inline">\(f(x_{ij};\theta_{ij},\phi)\)</span> from the exponential family (see <span class="citation">(P. McCullagh and Nelder <a href="#ref-McCullagh1989">1989</a>)</span> and <span class="citation">(Wüthrich and Merz <a href="#ref-WuthrichMerz2008">2008</a>)</span>). We identify</p>
+<p>Let <span class="math inline">\(X_{ij}\)</span> denote the incremental payment in cell <span class="math inline">\((i,j)\)</span> of the run-off triangle. We assume the <span class="math inline">\(X_{ij}\)</span>s to be independent with a density <span class="math inline">\(f(x_{ij};\theta_{ij},\phi)\)</span> from the exponential family of distributions. We identify</p>
 <ul>
 <li><span class="math inline">\(\mu_{ij}=E[X_{ij}]\)</span> the expected value of cell <span class="math inline">\(X_{ij}\)</span></li>
 <li><span class="math inline">\(\phi\)</span> the dispersion parameter and <span class="math inline">\(\text{Var}[X_{ij}]=\phi \cdot V(\mu_{ij})\)</span>, where <span class="math inline">\(V(.)\)</span> is the variance function</li>
 <li><span class="math inline">\(\eta_{ij}\)</span> the linear predictor such that <span class="math inline">\(\eta_{ij}=g(\mu_{ij})\)</span> with <span class="math inline">\(g\)</span> the link function.</li>
 </ul>
 <p>Distributions from the exponential family and their default link functions are listed on <a href="http://stat.ethz.ch/R-manual/R-patched/library/stats/html/family.html" class="uri">http://stat.ethz.ch/R-manual/R-patched/library/stats/html/family.html</a>. We now discuss three specific GLMs widely used for loss reserving.</p>
-<p>In a <strong>Poisson</strong> regression model for the <span class="math inline">\(X_{ij}\)</span> we assume</p>
+<p>First, the Poisson regression model was introduced in Section <a href="C-RiskClass.html#S:RC:PoissonRegression">8.2</a>. In this model, we assume that <span class="math inline">\(X_{ij}\)</span> has a Poisson distribution with parameter</p>
 <p><span class="math display">\[
-X_{ij} \sim \text{POI}(\mu_{ij}) \\
 \mu_{ij} = \pi_i \cdot \gamma_j,
 \]</span></p>
-<p>a cross-classified structure that captures a multiplicative effect of the occurrence year <span class="math inline">\(i\)</span> and the development period <span class="math inline">\(j\)</span>. The proposed model structure is not identifiable without an additional constraint on the parameters, e.g. <span class="math inline">\(\sum_{j=0}^J \gamma_j=1\)</span>. This constraint gives an explicit interpretation to <span class="math inline">\(\pi_i\)</span> (with <span class="math inline">\(i=1,\ldots,I\)</span>) as the exposure or volume measure for occurrence year <span class="math inline">\(i\)</span> and <span class="math inline">\(\gamma_j\)</span> as the fraction of the total volume paid out with delay <span class="math inline">\(j\)</span>. However, when calibrating GLMs in <code>R</code> alternative constraints such as <span class="math inline">\(\pi_1=1\)</span> or <span class="math inline">\(\gamma_1=1\)</span>, or a reparametrization where <span class="math inline">\(\mu_{ij} = \exp{(\mu+\alpha_i+\beta_j)}\)</span> are easier to implement. We continue with the latter specification, including <span class="math inline">\(\alpha_1 = \beta_0 = 0\)</span>, the so-called corner constraints. This GLM treats the occurrence year and the payment delay as factor variables and fits a parameter per level, next to an intercept <span class="math inline">\(\mu\)</span>. The corner constraints put the effect of the first level of a factor variable equal to zero. The Poisson assumption is particularly useful for a run-off triangle with numbers of reported claims, often used in the estimation of the number of IBNR claims (see Section <a href="C-LossReserves.html#S:Data">11.2</a>).</p>
-<p>An interesting modification of the basic Poisson regression model is the <strong>over-dispersed Poisson</strong> regression model where</p>
+<p>a cross-classified structure that captures a multiplicative effect of the occurrence year <span class="math inline">\(i\)</span> and the development period <span class="math inline">\(j\)</span>. The proposed model structure is not identifiable without an additional constraint on the parameters, e.g. <span class="math inline">\(\sum_{j=0}^J \gamma_j=1\)</span>. This constraint gives an explicit interpretation to <span class="math inline">\(\pi_i\)</span> (with <span class="math inline">\(i=1,\ldots,I\)</span>) as the exposure or volume measure for occurrence year <span class="math inline">\(i\)</span> and <span class="math inline">\(\gamma_j\)</span> as the fraction of the total volume paid out with delay <span class="math inline">\(j\)</span>. However, when calibrating GLMs in <code>R</code> alternative constraints such as <span class="math inline">\(\pi_1=1\)</span> or <span class="math inline">\(\gamma_1=1\)</span>, or a reparametrization where <span class="math inline">\(\mu_{ij} = \exp{(\mu+\alpha_i+\beta_j)}\)</span> are easier to implement. We continue with the latter specification, including <span class="math inline">\(\alpha_1 = \beta_0 = 0\)</span>, the so-called corner constraints. This GLM treats the occurrence year and the payment delay as factor variables and fits a parameter per level, next to an intercept <span class="math inline">\(\mu\)</span>. The corner constraints put the effect of the first level of a factor variable equal to zero. The Poisson assumption is particularly useful for a run-off triangle with numbers of reported claims, often used in the estimation of the number of <a href="#" class="tooltip" style="color:green"><em>IBNR</em><span style="font-size:8pt"> Incurred in the past But is Not yet Reported. For such a claim the insured event took place, but the insurance company is not yet aware of the associated claim.</span></a> claims (see Section <a href="C-LossReserves.html#S:Data">11.2</a>).</p>
+<p>Second, an interesting modification of the basic Poisson regression model is the <strong>over-dispersed Poisson</strong> regression model where <span class="math inline">\(Z_{ij}\)</span> has a Poisson distribution with parameter <span class="math inline">\(\mu_{ij}/\phi\)</span> and</p>
 <p><span class="math display">\[
 \begin{array}{rl}
-X_{ij} &amp;\sim  \phi \cdot Z_{ij} \ \ \ \text{with}\ \ \ \ Z_{ij}  \sim \text{POI}\left(\frac{\mu_{ij}}{\phi}\right) \\
+X_{ij} &amp;\sim  \phi \cdot Z_{ij}  \\
 \mu_{ij} &amp;= \exp{(\mu + \alpha_i + \beta_j)}.
 \end{array}
 \]</span></p>
@@ -1346,19 +1348,14 @@ X_{ij} &amp;\sim  \phi \cdot Z_{ij} \ \ \ \text{with}\ \ \ \ Z_{ij}  \sim \text{
 \text{Var}[X_{ij}] = \phi^2 \cdot \text{Var}[Z_{ij}] = \phi \cdot \exp{(\mu + \alpha_i + \beta_j)}.
 \]</span></p>
 <p>This construction allows for under (when <span class="math inline">\(\phi &lt;1\)</span>) and over-dispersion (with <span class="math inline">\(\phi&gt;1\)</span>). Because <span class="math inline">\(X_{ij}\)</span> no longer follows a well-known distribution, this approach is referred to as quasi-likelihood. It is particularly useful to model a run-off triangle with incremental payments, as these typically reveal over-dispersion.</p>
-<p>The <strong>gamma</strong> regression model is relevant to model a run-off triangle with claim payments and assumes</p>
+<p>Third, the <strong>gamma</strong> regression model is relevant to model a run-off triangle with claim payments. Recall from Section <a href="C-Severity.html#S:Loss:Gamma">3.2.1</a> (see also the Appendix Chapter <a href="C-SummaryDistributions.html#C:SummaryDistributions">18</a>) with parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\theta\)</span>. From these, we reparameterize and define a new parameter <span class="math inline">\(\mu = \alpha \cdot \theta\)</span> while retaining the scale parameter <span class="math inline">\(\theta\)</span>. Further, assume that <span class="math inline">\(X_{ij}\)</span> has a gamma distribution and allow <span class="math inline">\(\mu\)</span> to vary by <span class="math inline">\(ij\)</span> such that</p>
 <p><span class="math display">\[
-\begin{array}{rl}
-X_{ij} &amp;\sim  \Gamma(\mu_{ij},\nu) \\
-\mu_{ij} &amp;=  \exp{(\mu + \alpha_i + \beta_j)},
-\end{array}
+\mu_{ij} =  \exp{(\mu + \alpha_i + \beta_j)}.
 \]</span></p>
-<p>where <span class="math inline">\(\Gamma(\mu,\nu)\)</span> refers to the gamma density with mean <span class="math inline">\(\mu\)</span> and dispersion parameter <span class="math inline">\(\phi = \frac{1}{\nu}\)</span>, i.e. <span class="math inline">\(f_X(x) = \frac{1}{\Gamma(\nu)}\left(\frac{\nu \cdot x}{\mu}\right)^{\nu} e^{-\frac{\nu}{\mu}x}\frac{1}{x}\)</span>.</p>
-<p>We refer to <span class="citation">(Kremer <a href="#ref-Kremer1982">1982</a>)</span>, <span class="citation">(Renshaw and Verrall <a href="#ref-RenshawVerrall1998">1998</a>)</span> and <span class="citation">(England and Verrall <a href="#ref-EnglandVerrall2002">2002</a>)</span>, and the overviews in <span class="citation">(Taylor <a href="#ref-Taylor2000">2000</a>)</span>, <span class="citation">(Wüthrich and Merz <a href="#ref-WuthrichMerz2008">2008</a>)</span> and <span class="citation">(Wüthrich and Merz <a href="#ref-WuthrichMerz2015">2015</a>)</span> for more details on the discussed GLMs. XXX presents alternative distributional assumptions and specifications of the linear predictor.</p>
 </div>
 <div id="model-estimation-and-prediction" class="section level3">
 <h3><span class="header-section-number">11.4.2</span> Model Estimation and Prediction</h3>
-<p>We now estimate the regression parameters <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\alpha_i\)</span> and <span class="math inline">\(\beta_j\)</span> in the proposed GLMs. In <code>R</code> the <code>glm</code> function is readily available to estimate these parameters via maximum likelihood estimation (MLE) or quasi-likelihood estimation (in the case of the over-dispersed Poisson). Having the parameter estimates <span class="math inline">\(\hat{\mu}\)</span>, <span class="math inline">\(\hat{\alpha}_i\)</span> and <span class="math inline">\(\hat{\beta}_j\)</span> available, a point estimate for each cell in the upper triangle follows</p>
+<p>We now estimate the regression parameters <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\alpha_i\)</span> and <span class="math inline">\(\beta_j\)</span> in the proposed GLMs. In <code>R</code> the <code>glm</code> function is readily available to estimate these parameters via maximum likelihood estimation (<a href="#" class="tooltip" style="color:green"><em>mle</em><span style="font-size:8pt">Maximum likelihood estimate</span></a>) or quasi-likelihood estimation (in the case of the over-dispersed Poisson). Having the parameter estimates <span class="math inline">\(\hat{\mu}\)</span>, <span class="math inline">\(\hat{\alpha}_i\)</span> and <span class="math inline">\(\hat{\beta}_j\)</span> available, a point estimate for each cell in the upper triangle follows</p>
 <p><span class="math display">\[
 \hat{X}_{ij} =\hat{E[X_{ij}]} = \exp{(\hat{\mu}+\hat{\alpha}_i+\hat{\beta}_j)},\ \text{with}\ i+j\leq I.
 \]</span> Similarly, a cell in the lower triangle will be predicted as</p>
@@ -1369,9 +1366,6 @@ X_{ij} &amp;\sim  \Gamma(\mu_{ij},\nu) \\
 </div>
 <div id="bootstrap" class="section level3">
 <h3><span class="header-section-number">11.4.3</span> Bootstrap</h3>
-<hr />
-<p><strong>This section is being written and is not yet complete nor edited. It is here to give you a flavor of what will be in the final version.</strong></p>
-<hr />
 </div>
 </div>
 <div id="LossRe:further-reading-and-resources" class="section level2">
@@ -1394,6 +1388,7 @@ X_{ij} &amp;\sim  \Gamma(\mu_{ij},\nu) \\
 <li><span class="citation">Gisler (<a href="#ref-Gisler2006">2006</a>)</span>; <span class="citation">Gisler and Wüthrich (<a href="#ref-GislerWuthrich2008">2008</a>)</span>; <span class="citation">Bühlmann et al. (<a href="#ref-Buhlmann2009">2009</a>)</span>: Bayesian chain-ladder model.</li>
 </ul>
 <p>The various stochastic models proposed in actuarial literature rely on different assumptions and have different model properties, but have in common that they provide exactly the chain-ladder reserve estimates. For more information we also refer to <span class="citation">Mack and Venter (<a href="#ref-MackVenter2000">2000</a>)</span> and to the lively discussion that was published in <em>ASTIN Bulletin: Journal of the International Actuarial Association</em> in 2006 <span class="citation">(Venter <a href="#ref-Venter2006">2006</a>)</span>.</p>
+<p>To read more about exponential families and generalized linear models, see, for example, <span class="citation">P. McCullagh and Nelder (<a href="#ref-McCullagh1989">1989</a>)</span> and <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008">2008</a>)</span>. We refer to <span class="citation">(Kremer <a href="#ref-Kremer1982">1982</a>)</span>, <span class="citation">(Renshaw and Verrall <a href="#ref-RenshawVerrall1998">1998</a>)</span> and <span class="citation">(England and Verrall <a href="#ref-EnglandVerrall2002">2002</a>)</span>, and the overviews in <span class="citation">(Taylor <a href="#ref-Taylor2000">2000</a>)</span>, <span class="citation">(Wüthrich and Merz <a href="#ref-WuthrichMerz2008">2008</a>)</span> and <span class="citation">(Wüthrich and Merz <a href="#ref-WuthrichMerz2015">2015</a>)</span> for more details on the discussed GLMs. XXX presents alternative distributional assumptions and specifications of the linear predictor.</p>
 
 </div>
 </div>
@@ -1444,6 +1439,9 @@ X_{ij} &amp;\sim  \Gamma(\mu_{ij},\nu) \\
 </div>
 <div id="ref-Taylor2000">
 <p>Taylor, G. 2000. <em>Loss Reserving: An Actuarial Perspective</em>. Kluwer Academic Publishers.</p>
+</div>
+<div id="ref-taylor1986claims">
+<p>Taylor, Gregory Clive. 1986. <em>Claims Reserving in Non-Life Insurance</em>. North Holland.</p>
 </div>
 <div id="ref-Venter2006">
 <p>Venter, Gary G. 2006. “Discussion of the Mean Square Error of Prediction in the Chain Ladder Reserving Method.” <em>ASTIN Bulletin: The Journal of the IAA</em> 36 (2). Cambridge University Press: 566–71.</p>
@@ -1498,7 +1496,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

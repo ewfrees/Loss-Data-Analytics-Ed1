@@ -620,7 +620,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
 <li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
-<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code"><i class="fa fa-check"></i><b>11.3.3</b> R code</a></li>
+<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code-for-chain-ladder-predictions"><i class="fa fa-check"></i><b>11.3.3</b> R code for Chain-Ladder Predictions</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:GLMs"><i class="fa fa-check"></i><b>11.4</b> GLMs and Bootstrap for Loss Reserves</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#model-specification"><i class="fa fa-check"></i><b>11.4.1</b> Model Specification</a></li>
@@ -1584,7 +1584,7 @@ Specifically, the Gini statistic can be calculated as follows. Suppose that the 
 </h5>
 <div id="toggleExample.AreaDemo" style="display: none">
 <p>To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points <span class="math inline">\((a_1, b_1)\)</span>, <span class="math inline">\((a_2, b_2)\)</span>, and a 45 degree line. You can use basic geometry to check that the area of the figure is <span class="math inline">\(Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}\)</span>. The definition of the Gini statistic in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is simply twice the sum of the parallelograms. The second equality in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is the result of some straight-forward algebra.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-215-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
 <hr />
 </div>
 <p><strong>Example – Loss Distribution: Continued.</strong> The Gini statistic for the Lorenz curve (left-hand panel of Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a>) is 34.4 percent. In contrast, the Gini statistic for performance curve (right-hand panel) is 1.7 percent.</p>
@@ -1636,7 +1636,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,
 <span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)
 <span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-218-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-217-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
 </div>
@@ -1817,7 +1817,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }

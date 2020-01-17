@@ -620,7 +620,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
 <li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
-<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code"><i class="fa fa-check"></i><b>11.3.3</b> R code</a></li>
+<li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code-for-chain-ladder-predictions"><i class="fa fa-check"></i><b>11.3.3</b> R code for Chain-Ladder Predictions</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:GLMs"><i class="fa fa-check"></i><b>11.4</b> GLMs and Bootstrap for Loss Reserves</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#model-specification"><i class="fa fa-check"></i><b>11.4.1</b> Model Specification</a></li>
@@ -1390,7 +1390,7 @@ TVaR_q[X]\geq VaR_q[X].
 Y_{insurer} = c X \ \ \text{and} \ \ \ Y_{reinsurer} = (1-c) X,
 \]</span> where <span class="math inline">\(c\in (0,1)\)</span> denotes the proportion retained by the insurer. Note that <span class="math inline">\(Y_{insurer}+Y_{reinsurer}=X\)</span>.</p>
 <p><strong>Example 10.4.1. Distribution of losses under quota share.</strong> To develop an intuition for the effect of quota-share agreement on the distribution of losses, the following is a short <code>R</code> demonstration using simulation. Note the relative shapes of the distributions of total losses, the retained portion (of the insurer), and the reinsurer’s portion.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-82-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-81-1.png" width="960" style="display: block; margin: auto;" /></p>
 <h5 style="text-align: center;">
 <a id="displayCode.QuotaShare" href="javascript:togglecode('toggleCode.QuotaShare','displayCode.QuotaShare');"><i><strong>Show the R Code</strong></i></a>
 </h5>
@@ -1494,7 +1494,7 @@ c1Vec &lt;-<span class="st"> </span>c2Vec &lt;-<span class="st"> </span>c3Vec &l
 <span class="kw">text</span>(<span class="dv">1200</span>,<span class="fl">0.80</span>, <span class="kw">expression</span>(c[<span class="dv">1</span>]))
 <span class="kw">text</span>(<span class="dv">2000</span>,<span class="fl">0.75</span>, <span class="kw">expression</span>(c[<span class="dv">2</span>]))
 <span class="kw">text</span>(<span class="dv">1500</span>,<span class="fl">0.30</span>, <span class="kw">expression</span>(c[<span class="dv">3</span>]))</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-84-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-83-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -1646,7 +1646,7 @@ Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span cla
 <span class="kw">plot</span>(<span class="kw">density</span>(YTotal),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Total Loss&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yinsur),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer&quot;</span>,    <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yreinsur), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer&quot;</span>,  <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-87-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-86-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <hr />
 </div>
@@ -1799,7 +1799,7 @@ Total    6351.35 7675.04 9464.20 15159.02</code></pre>
 <span class="kw">plot</span>(<span class="kw">density</span>(Yretained), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">500</span>), <span class="dt">main=</span><span class="st">&quot;Retained Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss (Note the different horizontal scale)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Density (Note different vertical scale)&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(Yinsurer), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)
 <span class="kw">plot</span>(<span class="kw">density</span>(X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Total Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-93-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-92-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -1878,7 +1878,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["LossDataAnalytics.epub"],
 "toc": {
 "collapse": "subsection"
 }
