@@ -161,7 +161,7 @@ We now consider some discrete examples.
 **Example `r chapnum`.1.5. Generating Bernoulli random numbers.**
 Suppose that we wish to simulate random variables from a Bernoulli distribution with parameter $p=0.85$.
 
-```{r BinaryDF, fig.cap='Distribution Function of a Binary Random Variable', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE}
+```{r BinaryDF, fig.cap='Distribution Function of a Binary Random Variable', out.width='50%', fig.asp=.75, fig.align='center', echo=FALSE, cache = TRUE}
 time = seq(-1,2,0.01)
 Ftime = c(rep(0,100),rep(.85,100),rep(1,101))
 

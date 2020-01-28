@@ -75,7 +75,7 @@ KScv <- rowSums(cvalvec)/k
 
 The results appear in Figure \@ref(fig:KScvFig) where horizontal axis is Fold=1. This process was repeated for the other seven folds. The results summarized in Figure \@ref(fig:KScvFig) show that the Pareto consistently provides a more reliable predictive distribution than the gamma.
 
-```{r KScvFig, warning = FALSE, message = FALSE, comment = "", fig.align='center', fig.cap='Cross Validated Kolmogorov-Smirnov (KS) Statistics for the Property Fund Claims Data. The solid black line is for the Pareto distribution, the green dashed line is for the gamma distribution. The KS statistic measures the largest deviation between the fitted distribution and the empirical distribution for each of 8 groups, or folds, of randomly selected data.', echo=SHOW_PDF}
+```{r KScvFig, warning = FALSE, message = FALSE, comment = "", fig.align='center', fig.cap='Cross Validated Kolmogorov-Smirnov (KS) Statistics for the Property Fund Claims Data. The solid black line is for the Pareto distribution, the green dashed line is for the gamma distribution. The KS statistic measures the largest deviation between the fitted distribution and the empirical distribution for each of 8 groups, or folds, of randomly selected data.', echo=SHOW_PDF, cache = TRUE}
 # Plot the statistics
 matplot(1:k,t(cvalvec),type="b", col=c(1,3), lty=1:2, 
         ylim=c(0,0.4), pch = 0, xlab="Fold", ylab="KS Statistic")

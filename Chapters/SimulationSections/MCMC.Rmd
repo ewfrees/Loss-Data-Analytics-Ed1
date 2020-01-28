@@ -57,7 +57,7 @@ In the code above, `vec` contains values of $\boldsymbol{x}=(x_1,x_2,\cdots)$, `
 
 `r HideRCode('MCMC.2','Show R Code')`
 
-```{r eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
+```{r eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK, cache = TRUE}
 #install.packages('gifski')
 #if (packageVersion('knitr') < '1.20.14') {
 #  remotes::install_github('yihui/knitr')
@@ -90,7 +90,7 @@ for (k in 2:23) {pic_ani(k)}
 Now, if we use more simulations, we get
 
 
-```{r  eval = ANIMATION, echo=SHOW_PDF}
+```{r  eval = ANIMATION, echo=SHOW_PDF, cache = TRUE}
 vec <- metrop1(10000)
 simx <- vec[1000:10000,1]
 par(mfrow=c(1,4))
@@ -139,7 +139,7 @@ The construction of the sequence (`r Gloss('MCMC')` algorithms are iterative) ca
 
 `r HideRCode('Gibbs.2','Show R Code')`
 
-```{r, echo=SHOW_PDF}
+```{r, echo=SHOW_PDF, cache = TRUE}
 lambda <- c(1,2)
 X <- c(3,3)
 sim <- X
@@ -165,6 +165,6 @@ abline(5,-1,col="red")
 
 </div>
 
-```{r sampleani_HM, eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK}
+```{r sampleani_HM, eval = ANIMATION, echo=SHOW_PDF, animation.hook=ANIMATIONHOOK, cache = TRUE}
 for (i in 2:100) {pic_ani(i)}
 ```

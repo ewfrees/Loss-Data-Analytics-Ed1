@@ -97,7 +97,7 @@ Based on the status of the claim's run-off we distinguish three types of claims 
 An `r Gloss('RBNS')` claim is one that has been **R**eported, **B**ut is **N**ot fully **S**ettled at the present moment or the moment of evaluation, that is, the moment when the reserves should be calculated and booked by the insurer. Occurrence, reporting and possibly some loss payments take place before the present moment, but the closing of the claim happens in the future, beyond the present moment. 
 
 <a id="tikz-RBNS"></a>
-```{tikz, tikz-RBNS, fig.cap = "Lifetime of an RBNS claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE}
+```{tikz, tikz-RBNS, fig.cap = "Lifetime of an RBNS claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE, cache=TRUE}
 \usetikzlibrary{snakes}
 \usetikzlibrary{shapes.arrows}
 \definecolor{shadecolor}{HTML}{f67e8e}  %licht rood
@@ -213,7 +213,7 @@ The triangular display used in loss reserving is called a **run-off or developme
 A first example of a `r Gloss('run-off triangle')` with incremental payments is displayed in Figure \@ref(fig:tikz-triangle) (taken from @WuthrichMerz2008, Table 2.2, also used in @WuthrichMerz2015, Table 1.4). Accident years (or years of occurrence) are shown on the vertical axis and run from 2004 up to 2013. These refer to the year during which the insured event occurred. The horizontal axis indicates the payment delay in years since occurrence of the insured event. *0 delay* is used for payments made in the year of occurrence of the accident or insured event. *One year* of delay is used for payments made in the year after occurrence of the accident. 
 
 <a id="tikz-triangle"></a>
-```{tikz, tikz-triangle, fig.cap = "A run-off triangle with incremental payment data. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
+```{tikz, tikz-triangle, fig.cap = "A run-off triangle with incremental payment data. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -423,7 +423,7 @@ plot(my_triangle, lattice = TRUE)
 ```
 
 Instead of plotting the cumulative triangle stored in `my_triangle`, we can plot the incremental run-off triangle.
-```{r plot_triangle_incr, fig.align = 'center', out.width = '80%'}
+```{r plot_triangle_incr, fig.align = 'center', out.width = '80%', cache=TRUE}
 plot(my_triangle_incr)
 plot(my_triangle_incr, lattice = TRUE)
 ```
