@@ -11,7 +11,7 @@
 Our starting point is the lifetime of a P&C insurance claim. Figure \@ref(fig:tikz-run-off) pictures the development of such a claim over time and identifies the events of interest: 
 
 <a id="tikz-run-off"></a>
-```{tikz, tikz-run-off, fig.cap = "Lifetime or run-off of a claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE, cache=TRUE}
+```{tikz, tikz-run-off, fig.cap = "Lifetime or run-off of a claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE}
 \usetikzlibrary{snakes}
 \begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
 %draw horizontal line
@@ -64,7 +64,7 @@ Often claims will not settle immediately due to the presence of delay in the rep
 Based on the status of the claim's run-off we distinguish three types of claims in the books of an insurance company. A first type of claim is a closed claim. For these claims the complete development has been observed. With the red line in  Figure \@ref(fig:tikz-closed) indicating the present moment, all events from the claim's development take place before the present moment. Hence, these events are observed at the present moment. For convenience, we will assume that a closed claim can not reopen. 
 
 <a id="tikz-closed"></a>
-```{tikz, tikz-closed, fig.cap = "Lifetime of a closed claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE, cache=TRUE}
+```{tikz, tikz-closed, fig.cap = "Lifetime of a closed claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE}
 \usetikzlibrary{snakes}
 \begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
 %draw horizontal line
@@ -97,7 +97,7 @@ Based on the status of the claim's run-off we distinguish three types of claims 
 An `r Gloss('RBNS')` claim is one that has been **R**eported, **B**ut is **N**ot fully **S**ettled at the present moment or the moment of evaluation, that is, the moment when the reserves should be calculated and booked by the insurer. Occurrence, reporting and possibly some loss payments take place before the present moment, but the closing of the claim happens in the future, beyond the present moment. 
 
 <a id="tikz-RBNS"></a>
-```{tikz, tikz-RBNS, fig.cap = "Lifetime of an RBNS claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE, cache=TRUE}
+```{tikz, tikz-RBNS, fig.cap = "Lifetime of an RBNS claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE}
 \usetikzlibrary{snakes}
 \usetikzlibrary{shapes.arrows}
 \definecolor{shadecolor}{HTML}{f67e8e}  %licht rood
@@ -130,7 +130,7 @@ An `r Gloss('RBNS')` claim is one that has been **R**eported, **B**ut is **N**ot
 An `r Gloss('IBNR')` claim is one that has **I**ncurred in the past **B**ut is **N**ot yet **R**eported. For such a claim the insured event took place, but the insurance company is not yet aware of the associated claim. This claim will be reported in the future and its complete development (from reporting to settlement) takes place in the future.
 
 <a id="tikz-IBNR"></a>
-```{tikz, tikz-IBNR, fig.cap = "Lifetime of an IBNR claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE, cache=TRUE}
+```{tikz, tikz-IBNR, fig.cap = "Lifetime of an IBNR claim", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE}
 \usetikzlibrary{snakes}
 \usetikzlibrary{shapes.arrows}
 \definecolor{shadecolor}{HTML}{f67e8e}  %licht rood
@@ -163,7 +163,7 @@ The inverted production cycle of the insurance market and the claim dynamics pic
 We now shed light on the data available to estimate the outstanding reserve for a portfolio of P&C contracts. Insurance companies typically register data on the development of an individual claim as sketched in the timeline on the left hand side of  Figure \@ref(fig:tikz-micro-macro). We refer to data registered at this level as **granular or micro-level** data. Typically, an actuary aggregates the information registered on the individual development of claims across all claims in a portfolio. This aggregation leads to data structured in a triangular format as shown on the right hand side of  Figure \@ref(fig:tikz-micro-macro). Such data are called **aggregate or macro-level** data because each cell in the triangle displays information obtained by aggregating the development of multiple claims. 
 
 <a id="tikz-micro-macro"></a>
-```{tikz, tikz-micro-macro, fig.cap = "From granular data to run-off triangle", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE, cache=TRUE}
+```{tikz, tikz-micro-macro, fig.cap = "From granular data to run-off triangle", fig.align = 'center', fig.ext = 'png', fig.width=5, echo = FALSE}
 \tikzset{
 triangle/.style={
   draw,shape border uses incircle,
@@ -213,7 +213,7 @@ The triangular display used in loss reserving is called a **run-off or developme
 A first example of a `r Gloss('run-off triangle')` with incremental payments is displayed in Figure \@ref(fig:tikz-triangle) (taken from @WuthrichMerz2008, Table 2.2, also used in @WuthrichMerz2015, Table 1.4). Accident years (or years of occurrence) are shown on the vertical axis and run from 2004 up to 2013. These refer to the year during which the insured event occurred. The horizontal axis indicates the payment delay in years since occurrence of the insured event. *0 delay* is used for payments made in the year of occurrence of the accident or insured event. *One year* of delay is used for payments made in the year after occurrence of the accident. 
 
 <a id="tikz-triangle"></a>
-```{tikz, tikz-triangle, fig.cap = "A run-off triangle with incremental payment data. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-triangle, fig.cap = "A run-off triangle with incremental payment data. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -241,7 +241,7 @@ A first example of a `r Gloss('run-off triangle')` with incremental payments is 
 For example, cell $(2004, 0)$ in the above triangle displays the number $5,947$, the total amount paid in the year 2004 for all claims occurring in year 2004. Thus, it is the total amount paid with 0 years of delay on all claims that occurred in the year 2004. Similarly, the number in cell $(2012,1)$ displays the total $2,357.9$ paid in the year 2013 for all claims that occurred in year 2012. 
 
 <a id="tikz-cum-triangle"></a>
-```{tikz, tikz-cum-triangle, fig.cap = "A run-off triangle with cumulative payment data. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-cum-triangle, fig.cap = "A run-off triangle with cumulative payment data. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -291,7 +291,7 @@ Other sources of information are potentially available, e.g. covariates (like th
 To formalize the displays shown in Figures \@ref(fig:tikz-triangle) and \@ref(fig:tikz-cum-triangle), we let $i$ refer to the occurrence or accident year, the year in which the insured event happened. In our notation the first accident year considered in the portfolio is denoted with 1 and the latest, most recent accident year is denoted with $I$. Then, $j$ refers to the payment delay or development year, where a delay equal to 0 corresponds to the accident year itself.  Figure \@ref(fig:tikz-math-triangle) shows a triangle where the same number of years is considered in both the vertical as well as the horizontal direction, hence $j$ runs from 0 up to $J = I-1$.
 
 <a id="tikz-math-triangle"></a>
-```{tikz, tikz-math-triangle, fig.cap = "Mathematical notation for a run-off triangle. Source: @WuthrichMerz2008", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-math-triangle, fig.cap = "Mathematical notation for a run-off triangle. Source: @WuthrichMerz2008", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{scriptsize}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -423,7 +423,7 @@ plot(my_triangle, lattice = TRUE)
 ```
 
 Instead of plotting the cumulative triangle stored in `my_triangle`, we can plot the incremental run-off triangle.
-```{r plot_triangle_incr, fig.align = 'center', out.width = '80%', cache=TRUE}
+```{r plot_triangle_incr, fig.align = 'center', out.width = '80%'}
 plot(my_triangle_incr)
 plot(my_triangle_incr, lattice = TRUE)
 ```
@@ -444,7 +444,7 @@ Thus, the development factor tells you how the cumulative amount in development 
 
 
 <a id="tikz-cum-triangle-cl1"></a>
-```{tikz, tikz-cum-triangle-cl1, fig.cap = "A run-off triangle with cumulative payment data highlighting the cumulative amount in period 0 in blue and the cumulative amount in period 1 in red. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-cum-triangle-cl1, fig.cap = "A run-off triangle with cumulative payment data highlighting the cumulative amount in period 0 in blue and the cumulative amount in period 1 in red. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -483,7 +483,7 @@ $$
 Going forward with this reasoning, the next development factor $f_1$ can be estimated. Since $f_1$ captures the development from period 1 to period 2, it can be estimated as the ratio of the numbers in red and the numbers in blue as highlighted in Figure \@ref(fig:tikz-cum-triangle-cl2).
 
 <a id="tikz-cum-triangle-cl2"></a>
-```{tikz, tikz-cum-triangle-cl2, fig.cap = "A run-off triangle with cumulative payment data highlighting the cumulative amount in period 1 in blue and the cumulative amount in period 2 in red. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-cum-triangle-cl2, fig.cap = "A run-off triangle with cumulative payment data highlighting the cumulative amount in period 1 in blue and the cumulative amount in period 2 in red. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -526,7 +526,7 @@ Note that for $\hat{C}_{10,2}$ you actually use the estimate $\hat{C}_{10,1}$ an
 We continue analogously and obtain following predictions, printed in italics in the  Figure \@ref(fig:tikz-cum-triangle-cl3):
 
 <a id="tikz-cum-triangle-cl3"></a>
-```{tikz, tikz-cum-triangle-cl3, fig.cap = "A run-off triangle with cumulative payment data including predictions in italic. Source: [@WuthrichMerz2008], Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-cum-triangle-cl3, fig.cap = "A run-off triangle with cumulative payment data including predictions in italic. Source: [@WuthrichMerz2008], Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -556,7 +556,7 @@ $\hat{f}^{CL}$ &  1.493 & 1.078 & 1.023 & 1.015 & 1.007 & 1.005 & 1.001 & 1.001 
 Eventually we need to estimate the values in the final column. The last development factor $f_8$ measures the growth from development period 8 to development period 9 in the triangle. Since only the first row in the triangle has both cells observed, this last factor is estimated as the ratio of the value in red and the value in blue in Figure \@ref(fig:tikz-cum-triangle-cl3b). 
 
 <a id="tikz-cum-triangle-cl3b"></a>
-```{tikz, tikz-cum-triangle-cl3b, fig.cap = "A run-off triangle with cumulative payment data highlighting the cumulative amount in period 8 in blue and the cumulative amount in period 9 in red. Source: [@WuthrichMerz2008], Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-cum-triangle-cl3b, fig.cap = "A run-off triangle with cumulative payment data highlighting the cumulative amount in period 8 in blue and the cumulative amount in period 9 in red. Source: [@WuthrichMerz2008], Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -605,7 +605,7 @@ where $C_{i,I-i}$ is on the last observed diagonal. It is clear that an importan
 This yields the following  Figure \@ref(fig:tikz-cum-triangle-cl4):
 
 <a id="tikz-cum-triangle-cl4"></a>
-```{tikz, tikz-cum-triangle-cl4, fig.cap = "A run-off triangle with cumulative payment data including predictions in italic. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-cum-triangle-cl4, fig.cap = "A run-off triangle with cumulative payment data including predictions in italic. Source: @WuthrichMerz2008, Table 2.2.", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|c||r r r r r r r r r r|}
@@ -640,7 +640,7 @@ $$
 This is the chain-ladder estimate for the reserve necessary to fulfill future liabilities with respect to claims that occurred in this particular occurrence period. These reserves per occurrence period and for the total summed over all occurrence periods are summarized in Figure \@ref(fig:tikz-cum-triangle-cl5). 
 
 <a id="tikz-table-cl5"></a>
-```{tikz, tikz-cum-triangle-cl5, fig.cap = "Reserves per occurence period and for total", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE, cache=TRUE}
+```{tikz, tikz-cum-triangle-cl5, fig.cap = "Reserves per occurence period and for total", fig.align = 'center', fig.ext = 'png', fig.width=10, echo = FALSE}
 \begin{tiny}
 \begin{center}
 \begin{tabular}{|r| r| r| r| r|}
