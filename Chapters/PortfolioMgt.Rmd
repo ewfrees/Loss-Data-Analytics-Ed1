@@ -1,4 +1,4 @@
-#Insurance Portfolio Management including Reinsurance {#C:PortMgt}
+# Insurance Portfolio Management including Reinsurance {#C:PortMgt}
 
 `r chapnum = 10`
 
@@ -24,7 +24,7 @@ Conceptually, one can think about an insurance company as nothing more than a co
 ```{r child = './Quizzes/Quiz101.html', eval = QUIZ}
 ```
 
-##Tails of Distributions {#S:Tails}
+## Tails of Distributions {#S:Tails}
 
 ***
 In this section, you learn how to:
@@ -718,7 +718,7 @@ Third and perhaps foremost, *TVaR* is a coherent risk measure and thus is able t
 ```{r child = './Quizzes/Quiz103.html', eval = QUIZ}
 ```
 
-##Reinsurance {#S:Reinsurance}
+## Reinsurance {#S:Reinsurance}
 
 
 ***
@@ -906,7 +906,7 @@ text(1500,0.30, expression(c[3]))
 
 ### Non-Proportional Reinsurance {#S:NonProportionalRe}
 
-####The Optimality of Stop-Loss Insurance
+#### The Optimality of Stop-Loss Insurance
 
 Under a `r Gloss('stop-loss')` arrangement, the insurer sets a retention level $M (>0)$ and pays in full total claims for which $X  \le M$. Further, for claims for which $X > M$, the direct insurer pays $M$ and the reinsurer pays the remaining amount $X-M$. Thus, the insurer retains an amount $M$ of the risk. Summarizing, the amounts paid by the direct insurer and the reinsurer are
     
@@ -982,7 +982,7 @@ Y_{i,insurer} = X_i \wedge M_i \ \ \ \ Y_{insurer} = \sum_{i=1}^n Y_{i,insurer}
 $$
 and the reinsurer is responsible for the excess, $Y_{reinsurer}=X - Y_{insurer}$. The retention limits may vary by risk or may be the same for all risks, $M_i =M$, for all $i$.
 
-####Optimal Choice for Excess of Loss Retention Limits
+#### Optimal Choice for Excess of Loss Retention Limits
 
 What is the best choice of the excess of loss retention limits $M_i$? To formalize this question, we seek to find those values of $M_i$ that minimize $Var(Y_{insurer})$ subject to the constraint that $E(Y_{insurer}) = K.$ Subject to this revenue constraint, the insurer wishes to minimize the uncertainty of the retained risks (as measured by the variance).
 
@@ -1160,7 +1160,7 @@ With the expression $Y_j = \min(X,M_j) - \min(X,M_{j-1})$, we see that the $j$th
 For additional reading, see the [Wisconsin Property Fund site](https://sites.google.com/a/wisc.edu/local-government-property-insurance-fund/home/reinsurance) for an example on layers of reinsurance.
     
 
-####Portfolio Management Example
+#### Portfolio Management Example
 
 Many other variations of the foundational contracts are possible. For one more illustration, consider the following.
 
