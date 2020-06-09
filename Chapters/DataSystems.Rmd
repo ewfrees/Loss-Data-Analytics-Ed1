@@ -42,7 +42,8 @@ While it might be difficult to obtain data to address a specific research proble
 
 As mentioned in the previous subsection, there are structured data as well as unstructured data. Structured data are highly organized data and usually have the following tabular format:
 
-$$\begin{matrix}
+$$
+\begin{matrix}
 \begin{array}{lllll} \hline
  & V_1 & V_2 & \cdots & V_d \  
 \\\hline
@@ -120,7 +121,10 @@ Data analysis involves inspecting, cleansing, transforming, and modeling data to
 
 Recently, Judd and coauthors defined data analysis as the following equation[@judd2017]:
 
-$$\hbox{Data} = \hbox{Model} + \hbox{Error},$$
+$$
+\hbox{Data} = \hbox{Model} + \hbox{Error},
+$$
+
 where Data represents a set of basic scores or observations to be analyzed, Model is a compact representation of the data, and Error is simply the amount the model fails to represent accurately. Using the above equation for data analysis, an analyst must resolve the following two conflicting goals:
 
 * to add more parameters to the model so that the model represents the data better.
@@ -153,12 +157,13 @@ knitr::include_graphics("Figures/Figure2.png")
 ```
 
 ### Exploratory versus Confirmatory
-There are two phases of data analysis [@good1983data]: `r Gloss('exploratory data analysis')` (EDA) and `r Gloss('confirmatory data analysis')` (CDA). [Table 13.1] summarizes some differences between EDA and CDA. EDA is usually applied to observational data with the goal of looking for patterns and formulating hypotheses. In contrast, CDA 
-is often applied to experimental data (i.e., data obtained by means of a formal design of experiments) with the goal of quantifying the extent to which discrepancies between the model and the data could be expected to occur by chance [@gelman2004eda]. 
+
+There are two phases of data analysis [@good1983data]: `r Gloss('exploratory data analysis')` (EDA) and `r Gloss('confirmatory data analysis')` (CDA). [Table 13.1] summarizes some differences between EDA and CDA. EDA is usually applied to observational data with the goal of looking for patterns and formulating hypotheses. In contrast, CDA is often applied to experimental data (i.e., data obtained by means of a formal design of experiments) with the goal of quantifying the extent to which discrepancies between the model and the data could be expected to occur by chance [@gelman2004eda]. 
 
 <a id=tab:13.1></a>
 
-$$\begin{matrix}
+$$
+\begin{matrix}
 \begin{array}{lll} \hline
  & \textbf{EDA} & \textbf{CDA} \\\hline
 \text{Data} & \text{Observational data} & \text{Experimental data}\\[3mm]
@@ -190,7 +195,8 @@ where $Y$ is a target variable and $X_1$, $X_2$, $\ldots$, $X_p$ are explanatory
 <a id=tab:13.2></a>
 
 
-$$\begin{matrix}
+$$
+\begin{matrix}
 \begin{array}{ll}
 \hline
 \textbf{Target Variable}  &  \textbf{Explanatory Variable}\\\hline
@@ -312,7 +318,8 @@ Techniques for data analysis are drawn from different but overlapping fields suc
 
 <a id=tab:13.3></a>
 
-$$\begin{matrix}
+$$
+\begin{matrix}
 \begin{array}{rll} \hline
 & \textbf{Supervised} & \textbf{Unsupervised} \\\hline
 \textbf{Discrete Label} & \text{Classification} & \text{Clustering} \\
@@ -339,7 +346,8 @@ In the mass noun sense, descriptive statistics is an area of statistics that con
 
 <a id=tab:13.4></a>
 
-$$\begin{matrix}
+$$
+\begin{matrix}
 \begin{array}{ll} \hline
 & \textbf{Descriptive Statistics} \\\hline
 \text{Measures of central tendency} & \text{Mean, median, mode, midrange}\\
@@ -364,10 +372,15 @@ In addition to these quantitative descriptive statistics, we can also qualitativ
 
 The principal components of the variables are related to the eigenvectors and eigenvectors of the covariance matrix of the variables. For $i=1,2,\ldots,d$, let $(\lambda_i, \textbf{e}_i)$ be the $i$th eigenvalue-eigenvector pair of the covariance matrix ${\Sigma}$ of $d$ variables $X_1,X_2,\ldots,X_d$  such that $\lambda_1\ge \lambda_2\ge \ldots\ge \lambda_d\ge 0$ and the eigenvectors are normalized. Then the $i$th principal component is given by
 
-$$Z_{i} = \textbf{e}_i' \textbf{X} =\sum_{j=1}^d e_{ij} X_j,$$
+$$
+Z_{i} = \textbf{e}_i' \textbf{X} =\sum_{j=1}^d e_{ij} X_j,
+$$
+
 where $\textbf{X}=(X_1,X_2,\ldots,X_d)'$. It can be shown that $\mathrm{Var~}{(Z_i)} = \lambda_i$. As a result, the proportion of variance explained by the $i$th principal component is calculated as
 
-$$\dfrac{\mathrm{Var~}{(Z_i)}}{ \sum_{j=1}^{d} \mathrm{Var~}{(Z_j)}} = \dfrac{\lambda_i}{\lambda_1+\lambda_2+\cdots+\lambda_d}.$$
+$$
+\dfrac{\mathrm{Var~}{(Z_i)}}{ \sum_{j=1}^{d} \mathrm{Var~}{(Z_j)}} = \dfrac{\lambda_i}{\lambda_1+\lambda_2+\cdots+\lambda_d}.
+$$
 
 For more information about PCA, readers are referred to @mirkin2011.
 
@@ -377,11 +390,19 @@ For more information about PCA, readers are referred to @mirkin2011.
 
 During the past several decades, many clustering algorithms have been proposed. Among these clustering algorithms, the $k$-means algorithm is perhaps the most well-known algorithm due to its simplicity. To describe the `r Gloss('k-means algorithm')`, let $X=\{\textbf{x}_1,\textbf{x}_2,\ldots,\textbf{x}_n\}$ be a dataset containing $n$ points, each of which is described by $d$ numerical features. Given a desired number of clusters $k$, the $k$-means algorithm aims at minimizing the following objective function:
 
-$$P(U,Z) = \sum_{l=1}^k\sum_{i=1}^n u_{il} \Vert \textbf{x}_i-\textbf{z}_l\Vert^2,$$
+$$
+P(U,Z) = \sum_{l=1}^k\sum_{i=1}^n u_{il} \Vert \textbf{x}_i-\textbf{z}_l\Vert^2,
+$$
+
 where $U=(u_{il})_{n\times k}$ is an $n\times k$ partition matrix, $Z=\{\textbf{z}_1,\textbf{z}_2,\ldots,\textbf{z}_k\}$ is a set of cluster centers, and $\Vert\cdot\Vert$ is the $L^2$ norm or Euclidean distance. The partition matrix $U$ satisfies the following conditions:
 
-$$u_{il}\in \{0,1\},\quad i=1,2,\ldots,n,\:l=1,2,\ldots,k,$$
-$$\sum_{l=1}^k u_{il}=1,\quad i=1,2,\ldots,n.$$
+$$
+u_{il}\in \{0,1\},\quad i=1,2,\ldots,n,\:l=1,2,\ldots,k,
+$$
+
+$$
+\sum_{l=1}^k u_{il}=1,\quad i=1,2,\ldots,n.
+$$
 
 The $k$-means algorithm employs an iterative procedure to minimize the objective function. It repeatedly updates the partition matrix $U$ and the cluster centers $Z$ alternately until some stop criterion is met. For more information about $k$-means, readers are referred to @gan2007 and @mirkin2011.
 
@@ -395,12 +416,18 @@ Linear models, also called `r Gloss('linear regression models')`, aim at using a
 
 Let $X$ and $Y$ denote the independent and the dependent variables, respectively. For $i=1,2,\ldots,n$, let $(x_i, y_i)$ be the observed values of $(X,Y)$ in the $i$th case.  Then the simple linear regression model is specified as follows [@frees2009]:
 
-$$y_i  = \beta_0 + \beta_1 x_i + \epsilon_i,\quad i=1,2,\ldots,n,$$
+$$
+y_i  = \beta_0 + \beta_1 x_i + \epsilon_i,\quad i=1,2,\ldots,n,
+$$
+
 where $\beta_0$ and $\beta_1$ are parameters and $\epsilon_i$ is a random variable representing the error for the $i$th case. 
 
 When there are multiple independent variables, the following multiple linear regression model is used:
 
-$$y_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ik} + \epsilon_i,$$
+$$
+y_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ik} + \epsilon_i,
+$$
+
 where $\beta_0$, $\beta_1$, $\ldots$, $\beta_k$ are unknown parameters to be estimated. 
 
 Linear regression models usually make the following assumptions:
@@ -420,8 +447,14 @@ For the purpose of obtaining tests and confidence statements with small samples,
 
 The `r Gloss('generalized linear model')` (GLM) is a wide family of regression models that include linear regression models as special cases. In a GLM, the mean of the response (i.e., the dependent variable) is assumed to be a function of linear combinations of the explanatory variables, i.e., 
 
-$$\mu_i = E[y_i],$$
-$$\eta_i = \textbf{x}_i'\boldsymbol{\beta} = g(\mu_i),$$
+$$
+\mu_i = E[y_i],
+$$
+
+$$
+\eta_i = \textbf{x}_i'\boldsymbol{\beta} = g(\mu_i),
+$$
+
 where $\textbf{x}_i=(1,x_{i1}, x_{i2}, \ldots, x_{ik})'$ is a vector of regressor values, $\mu_i$ is the mean response for the $i$th case, and $\eta_i$ is a `r Gloss('systematic component')` of the `r Gloss('GLM')`. The function $g(\cdot)$ is known and is called the `r Gloss('link function')`. The mean response can vary by observations by allowing some parameters to change. However, the regression parameters $\boldsymbol{\beta}$ are assumed to be the same among different observations.
 
 GLMs make the following assumptions:
@@ -434,7 +467,10 @@ GLMs make the following assumptions:
 
 (d) The variance of the dependent variable is not assumed to be constant but is a function of the mean, i.e.,
 
-$$\mathrm{Var~}{(y_i)} = \phi \nu(\mu_i),$$
+$$
+\mathrm{Var~}{(y_i)} = \phi \nu(\mu_i),
+$$
+
 where $\phi$ denotes the dispersion parameter and $\nu(\cdot)$ is a function.
 
 As we can see from the above specification, the GLM provides a unifying framework to handle different types of dependent variables, including discrete and continuous variables. For more information about GLMs, readers are referred to @dejong2008 and @frees2009. 
@@ -445,7 +481,10 @@ As we can see from the above specification, the GLM provides a unifying framewor
 
 The process of building classification trees is similar to that of building regression trees. Here we only briefly describe how to build a regression tree. To do that, the predictor space is divided into non-overlapping regions such that the following objective function 
 
-$$f(R_1,R_2,\ldots,R_J) = \sum_{j=1}^J \sum_{i=1}^n I_{R_j}(\textbf{x}_i)(y_i - \mu_j)^2$$
+$$
+f(R_1,R_2,\ldots,R_J) = \sum_{j=1}^J \sum_{i=1}^n I_{R_j}(\textbf{x}_i)(y_i - \mu_j)^2
+$$
+
 is minimized, where $I$ is an indicator function, $R_j$ denotes the set of indices of the observations that belong to the $j$th box, $\mu_j$ is the mean response of the observations in the $j$th box, $\textbf{x}_i$ is the vector of predictor values for the $i$th observation, and $y_i$ is the response value for the $i$th observation. 
 
 In terms of predictive accuracy, decision trees generally do not perform to the level of other regression and classification models. However, tree-based models may outperform linear models when the relationship between the response and the predictors is nonlinear. For more information about decision trees, readers are referred to @breiman1984 and @mitchell1997. 
@@ -461,11 +500,12 @@ In terms of predictive accuracy, decision trees generally do not perform to the 
 
 <!-- % 7.2.4 - 7.2.7 fit distribution, linear model, survival analysis, glm -->
 <!-- % 7.3.4 nn, trees -->
-R is an open-source software for statistical computing and graphics. The R software can be downloaded from the R project website at \url{https://www.r-project.org/}. In this section, we give some R function for data analysis, especially the data analysis tasks mentioned in previous sections. 
+`R` is an open-source software for statistical computing and graphics. The `R` software can be downloaded from the `R` project website at \url{https://www.r-project.org/}. In this section, we give some `R` function for data analysis, especially the data analysis tasks mentioned in previous sections. 
 
 <a id=tab:13.5></a>
 
-$$\begin{matrix}
+$$
+\begin{matrix}
 \begin{array}{lll} \hline
 \text{Data Analysis Task} & \text{R package} & \text{R Function} \\\hline
 \text{Descriptive Statistics} & \texttt{base} & \texttt{summary}\\
@@ -480,12 +520,12 @@ $$\begin{matrix}
 \end{array}
 \end{matrix}
 $$
-[Table 13.5]: Some R functions for data analysis.
+[Table 13.5]: Some `R` functions for data analysis.
 
 [Table 13.5]:\#tab:13.5
 
 
-[Table 13.5] lists a few R functions for different data analysis tasks. Readers can read the R documentation for examples of using these functions. There are also other R functions from other packages to do similar things. However, the functions listed in this table provide good start points for readers to conduct data analysis in R. For analyzing large datasets in R in an efficient way, readers are referred to @daroczi2015. 
+[Table 13.5] lists a few `R` functions for different data analysis tasks. Readers can read the R documentation for examples of using these functions. There are also other `R` functions from other packages to do similar things. However, the functions listed in this table provide good start points for readers to conduct data analysis in `R`. For analyzing large datasets in R in an efficient way, readers are referred to @daroczi2015. 
 
 
 ## Summary
@@ -497,7 +537,7 @@ In this chapter, we gave a high-level overview of data analysis by introducing d
 ## Further Resources and Contributors {#DS:further-reading-and-resources}
 
 
-####Contributor {-}
+#### Contributor {-}
 
 - **Guojun Gan**, University of Connecticut, is the principal author of the initial version of this chapter. Email: guojun.gan@uconn.edu for chapter comments and suggested improvements.
 - Chapter reviewers include: Min Ji, Toby White.

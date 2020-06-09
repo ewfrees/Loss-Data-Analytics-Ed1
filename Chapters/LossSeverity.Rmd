@@ -1,14 +1,14 @@
 
 `r chapnum = 3`
 
-#Modeling Loss Severity {#C:Severity}
+# Modeling Loss Severity {#C:Severity}
 
 
 *Chapter Preview.* The traditional loss distribution approach to modeling `r Gloss('aggregate losses')` starts by separately fitting a frequency distribution to the number of losses and a severity distribution to the size of losses. The estimated aggregate loss distribution combines the loss frequency distribution and the loss severity distribution by convolution. Discrete distributions often referred to as counting or frequency distributions were used in Chapter \@ref(C:Frequency-Modeling) to describe the number of events such as number of accidents to the driver or number of claims to the insurer. Lifetimes, asset values, losses and claim sizes are usually modeled as continuous random variables and as such are modeled using continuous distributions, often referred to as loss or severity distributions. A `r Gloss('mixture distribution', '3')` is a weighted combination of simpler distributions that is used to model phenomenon investigated in a heterogeneous population, such as modelling more than one type of claims in `r Gloss('liability insurance')` (small frequent claims and large relatively rare claims). In this chapter we explore the use of continuous as well as mixture distributions to model the random size of loss. We present key attributes that characterize continuous models and means of creating new distributions from existing ones. We also explore the effect of coverage modifications, which change the conditions that trigger a payment, such as applying deductibles, limits, or adjusting for inflation, on the distribution of individual loss amounts. The frequency distributions from Chapter \@ref(C:Frequency-Modeling) will be combined with the ideas from this chapter to describe the aggregate losses over the whole portfolio in Chapter \@ref(C:AggLossModels).
 
 
 
-##Basic Distributional Quantities {#S:BasicQuantities}
+## Basic Distributional Quantities {#S:BasicQuantities}
 
 ***
 In this section, you learn how to define some basic distributional quantities:
@@ -20,7 +20,7 @@ In this section, you learn how to define some basic distributional quantities:
 ***
 
 
-###Moments {#S:Chap3Moments}
+### Moments {#S:Chap3Moments}
 
 Let $X$ be a `r Gloss('continuous random variable')` with probability density function $f_{X}\left( x \right)$. The *k*-th `r Gloss ('raw moment')` of $X$, denoted by $\mu_{k}^{\prime}$, is the `r Gloss('expected value')` of the *k*-th power of $X$, provided it exists. The first raw moment $\mu_{1}^{\prime}$ is the mean of $X$ usually denoted by $\mu$. The formula for $\mu_{k}^{\prime}$ is given as
 $$
@@ -69,7 +69,7 @@ Hence, $\alpha = 4$. Since, $\mathrm{E}\left( X \right) = \alpha\theta = 8$, the
 
 *** 
 
-###Quantiles
+### Quantiles
 
 Quantiles can also be used to describe the characteristics of the distribution of $X$. When the distribution of $X$ is continuous, for a given fraction $0 \leq p \leq 1$ the corresponding quantile is the solution of the equation
 $$
@@ -92,7 +92,7 @@ The distribution function is $F_{X}\left( x \right) = 1 - e^{- \theta x}$. So, $
 
 Section \@ref(S:MS:QuantileEstimator) will extend the definition of quantiles to include distributions that are discrete, continuous, or a hybrid combination.
 
-###Moment Generating Function
+### Moment Generating Function
 
 The moment generating function, denoted by $M_{X}(t)$ uniquely characterizes the distribution of $X$. While it is possible for two different distributions to have the same moments and yet still differ, this is not the case with the moment generating function. That is, if two random variables have the same moment generating function, then they have the same distribution. The moment generating function is given by
 $$
@@ -174,7 +174,7 @@ As introduced in Section \@ref(S:generating-functions), the probability generati
 ```{r child = './Quizzes/Quiz31.html', eval = QUIZ}
 ```
 
-##Continuous Distributions for Modeling Loss Severity {#S:ContinuousDistn}
+## Continuous Distributions for Modeling Loss Severity {#S:ContinuousDistn}
 
 ***
 In this section, you learn how to define and apply four fundamental severity distributions:
@@ -188,7 +188,7 @@ In this section, you learn how to define and apply four fundamental severity dis
 
 
 
-###Gamma Distribution {#S:Loss:Gamma}
+### Gamma Distribution {#S:Loss:Gamma}
 
 Recall that the traditional approach in modelling losses is to fit separate models for claim frequency and claim severity. When frequency and severity are modeled separately it is common for actuaries to use the Poisson distribution (introduced in Section \@ref(S:poisson-distribution)) for claim count and the gamma distribution to model severity. An alternative approach for modelling losses that has recently gained popularity is to create a single model for pure premium (average claim cost) that will be described in Chapter \@ref(C:ModelSelection).
 
@@ -272,7 +272,7 @@ The mean and variance are given by $\mathrm{E}\left( X \right) = \alpha\theta$ a
 Since all moments exist for any positive $k$, the gamma distribution is considered a `r Gloss('light tailed distribution')`, which may not be suitable for
 modeling risky assets as it will not provide a realistic assessment of the likelihood of severe losses. 
 
-###Pareto Distribution
+### Pareto Distribution
 
 The `r Gloss('Pareto distribution')`, named after the Italian economist Vilfredo Pareto (1843-1923), has many economic and financial applications. It is a positively skewed and heavy-tailed distribution which makes it suitable for modeling income, high-risk insurance claims and severity of large casualty losses. The survival function of the Pareto distribution which decays slowly to zero was first used to describe the distribution of income where a small percentage of the population holds a large proportion of the total wealth. For extreme insurance claims, the tail of the severity distribution (losses in excess of a threshold) can be modeled using a Generalized Pareto distribution.
 
@@ -377,7 +377,7 @@ Thus, $\pi_{0.95} = 122.96$.
 
 *** 
 
-###Weibull Distribution {#S:LS:Weibull}
+### Weibull Distribution {#S:LS:Weibull}
 
 The `r Gloss('Weibull distribution')`, named after the Swedish physicist Waloddi Weibull (1887-1979) is widely used in reliability, life data analysis, weather forecasts and general insurance claims. Truncated data arise frequently in insurance studies. The Weibull distribution has been used to model excess of loss treaty over automobile insurance as well as earthquake inter-arrival times.
 
@@ -481,7 +481,7 @@ Solving for $\pi_{0.99}$, we get $\pi_{0.99} = 118.99$.
 
 *** 
 
-###The Generalized Beta Distribution of the Second Kind
+### The Generalized Beta Distribution of the Second Kind
 
 The `r Gloss('Generalized Beta Distribution of the Second Kind')` (*GB2*) was introduced by @venter1983transformed in the context of insurance loss modeling and by @mcdonald1984some as an income and wealth distribution. It is a four-parameter very flexible distribution that can model positively as well as negatively skewed distributions.
 
@@ -510,7 +510,7 @@ Earlier applications of the *GB2* were on income data and more recently have bee
 ```{r child = './Quizzes/Quiz32.html', eval = QUIZ}
 ```
 
-##Methods of Creating New Distributions {#MethodsCreation}
+## Methods of Creating New Distributions {#MethodsCreation}
 
 ***
 In this section, you learn how to:
@@ -522,11 +522,11 @@ In this section, you learn how to:
 ***
 
 
-###Functions of Random Variables and their Distributions
+### Functions of Random Variables and their Distributions
 
 In Section \@ref(S:ContinuousDistn) we discussed some elementary known distributions. In this section we discuss means of creating new parametric probability distributions from existing ones. Specifically, let $X$ be a continuous random variable with a known probability density function $f_{X}(x)$ and distribution function $F_{X}(x)$. We are interested in the distribution of $Y = g\left( X \right)$, where $g(X)$ is a one-to-one `r Gloss('transformation')` defining a new random variable $Y$. In this section we apply the following techniques for creating new families of distributions: (a) multiplication by a constant (b) raising to a power, (c) exponentiation and (d) mixing.
 
-###Multiplication by a Constant
+### Multiplication by a Constant
 
 If claim data show change over time then such transformation can be useful to adjust for inflation. If the level of inflation is positive then claim costs are rising, and if it is negative then costs are falling. To adjust for inflation we multiply the cost $X$ by 1+ inflation rate (negative inflation is deflation). To account for currency impact on claim costs we also use a transformation to apply currency conversion from a base to a counter currency.
 
@@ -592,7 +592,7 @@ Using the same approach you can demonstrate that other distributions introduced 
 
 *** 
 
-###Raising to a Power
+### Raising to a Power
 
 In Section \@ref(S:LS:Weibull) we talked about the flexibility of the Weibull distribution in fitting `r Gloss('reliability data')`. Looking to the origins of the Weibull distribution, we recognize that the Weibull is a `r Gloss('power transformation')` of the exponential distribution. This is an application of another type of transformation which involves raising the random variable to a power.
 
@@ -640,7 +640,7 @@ where $\alpha = \frac{1}{\tau}$ and $\beta = \theta^{\tau}$. Then, $Y$ follows t
 
 *** 
 
-###Exponentiation
+### Exponentiation
 
 The normal distribution is a very popular model for a wide number of applications and when the sample size is large, it can serve as an approximate distribution for other models. If the random variable $X$ has a normal distribution with mean $\mu$ and variance $\sigma^{2}$, then $Y = e^{X}$ has `r Gloss('lognormal distribution')` with parameters $\mu$ and $\sigma^{2}$. The lognormal random variable has a lower bound of zero, is positively skewed and has a long right tail. A lognormal distribution is commonly used to describe distributions of financial assets such as stock prices. It is also used in fitting claim amounts for automobile as well as health insurance. This is an example of another type of transformation which involves exponentiation.
 
@@ -680,12 +680,12 @@ Since $0 < x < c$, then $1 < y  <  e^{c}$.
 
 *** 
 
-###Finite Mixtures
+### Finite Mixtures
 
 Mixture distributions represent a useful way of modelling data that are drawn from a `r Gloss('heterogeneous population')`. This parent population can be
 thought to be divided into multiple subpopulations with distinct distributions.
 
-####Two-point Mixture
+#### Two-point Mixture
 
 If the underlying phenomenon is diverse and can actually be described as two phenomena representing two subpopulations with different modes, we can construct the two point mixture random variable $X$. Given random variables $X_{1}$ and $X_{2}$, with probability density functions $f_{X_{1}}\left( x \right)$ and $f_{X_{2}}\left( x \right)$ respectively, the probability density function of $X$ is the weighted average of the component probability density function $f_{X_{1}}\left( x \right)$ and $f_{X_{2}}\left( x \right)$. The probability density function and distribution function of $X$ are given by
 $$f_{X}\left( x \right) = af_{X_{1}}\left( x \right) + \left( 1 - a \right)f_{X_{2}}\left( x \right),$$
@@ -713,7 +713,7 @@ $$\mathrm{E}\left(X\right)=0.25\mathrm{E}\left(X_1\right)+0.75\mathrm{E}\left(X_
 
 *** 
 
-####*k*-point Mixture
+#### *k*-point Mixture
 
 In case of finite mixture distributions, the random variable of interest $X$ has a probability $p_{i}$ of being drawn from homogeneous subpopulation $i$, where $i = 1,2,\ldots,k$ and $k$ is the initially specified number of subpopulations in our mixture. The mixing parameter $p_{i}$ represents the proportion of observations from subpopulation $i$. Consider the random variable $X$ generated from $k$ distinct subpopulations, where subpopulation $i$ is modeled by the continuous distribution $f_{X_{i}}\left( x \right)$. The probability distribution of $X$ is given by
 $$f_{X}\left( x \right) = \sum_{i = 1}^{k}{p_{i}f_{X_{i}}\left( x \right)},$$
@@ -752,7 +752,7 @@ Then, $Z$ is a mixture of $X_{1}$, $X_{2}$, $X_{3}$ and $X_{4}$, with mixing wei
 
 *** 
 
-###Continuous Mixtures 
+### Continuous Mixtures 
 
 A mixture with a very large number of subpopulations ($k$ goes to infinity) is often referred to as a `r Gloss('continuous mixture')`. In a continuous mixture, subpopulations are not distinguished by a discrete mixing parameter but by a continuous variable $\Theta$, where $\Theta$ plays the role of $p_{i}$ in the finite mixture. Consider the random variable $X$ with a distribution depending on a parameter $\Theta$, where $\Theta$ itself is a continuous random variable. This description yields the following model for $X$
 $$
@@ -859,11 +859,11 @@ $$
 ```{r child = './Quizzes/Quiz33.html', eval = QUIZ}
 ```
 
-##Coverage Modifications {#S:CoverageModifications}
+## Coverage Modifications {#S:CoverageModifications}
 
 In this section we evaluate the impacts of coverage modifications: a) deductibles, b) policy limit, c) coinsurance and inflation on insurer's costs.
 
-###Policy Deductibles {#S:PolicyDeduct}
+### Policy Deductibles {#S:PolicyDeduct}
 
 Under an ordinary deductible policy, the insured (policyholder) agrees to cover a fixed amount of an insurance claim before the insurer starts to pay. This fixed expense paid out of pocket is called the deductible and often denoted by $d$. If the loss exceeds $d$ then the insurer is responsible for covering the loss X less the deductible $d$. Depending on the agreement, the deductible may apply to each covered loss or to the total losses during a defined benefit period (month, year, etc.)
 
@@ -1029,7 +1029,7 @@ The *LER* for the coming year is
 
 *** 
 
-###Policy Limits {#S:PolicyLimits}
+### Policy Limits {#S:PolicyLimits}
 
 Under a limited policy, the insurer is responsible for covering the actual loss $X$ up to the limit of its coverage. This fixed `r Gloss('limit of coverage')` is called the policy limit and often denoted by $u$. If the loss exceeds the policy limit, the difference $X - u$ has to be paid by the policyholder. While a higher policy limit means a higher payout to the insured, it is associated with a higher premium.
 
@@ -1101,7 +1101,7 @@ $\mathrm{E}\left( Y \right) = \mathrm{E}\left( X \land 1 \right) = \int_{0}^{1}\
 
 *** 
 
-###Coinsurance and Inflation
+### Coinsurance and Inflation
 
 As we have seen in Section \@ref(S:PolicyDeduct), the amount of loss retained by the policyholder can be losses up to the deductible $d$. The retained loss can also be a percentage of the claim. The percentage $\alpha$, often referred to as the coinsurance factor, is the percentage of claim the insurance company is required to cover. If the policy is subject to an ordinary deductible and policy limit, coinsurance refers to the percentage of claim the insurer is required to cover, after imposing the ordinary deductible and policy limit. The payment per loss variable, $Y^{L}$, is defined as
 $$
@@ -1182,7 +1182,7 @@ Because $\frac{E\left( Y_{2007}^{P} \right)}{E\left( Y_{2006}^{P} \right)} -1 = 
 *** 
 
 
-###Reinsurance {#S:Chap3Reinsurance}
+### Reinsurance {#S:Chap3Reinsurance}
 
 In Section \@ref(S:PolicyDeduct) we introduced the policy deductible, which is a contractual arrangement under which an insured transfers part of the risk by securing coverage from an insurer in return for an insurance premium. Under that policy, the insured must pay all losses up to the deductible, and the insurer only pays the amount (if any) above the deductible. We now introduce `r Gloss('reinsurance', '3.4')`, a mechanism of insurance for insurance companies. Reinsurance is a contractual arrangement under which an insurer transfers part of the underlying insured risk by securing coverage from another insurer (referred to as a reinsurer) in return for a reinsurance premium. Although reinsurance involves a relationship between three parties: the original insured, the insurer (often referred to as `r Gloss('cedent')` or cedant) and the reinsurer, the parties of the reinsurance agreement are only the primary insurer and the reinsurer. There is no contractual agreement between the original insured and the reinsurer. Though many different types of reinsurance contracts exist, a common form is `r Gloss('excess of loss coverage')`. In such contracts, the primary insurer must make all required payments to the insured until the primary insurer's total payments reach a fixed reinsurance deducible. The reinsurer is then only responsible for paying losses above the reinsurance deductible. The maximum amount retained by the primary insurer in the reinsurance agreement (the reinsurance deductible) is called `r Gloss('retention')`.  
 
@@ -1259,7 +1259,7 @@ Further discussions of reinsurance will be provided in Section \@ref(S:Reinsuran
 ```{r child = './Quizzes/Quiz34.html', eval = QUIZ}
 ```
 
-##Maximum Likelihood Estimation {#S:MaxLikeEstimation}
+## Maximum Likelihood Estimation {#S:MaxLikeEstimation}
 
 
 ***
@@ -1273,7 +1273,7 @@ In this section, you learn how to:
 ***
 
 
-###Maximum Likelihood Estimators for Complete Data
+### Maximum Likelihood Estimators for Complete Data
 
 
 Up to this point, the chapter has focused on parametric distributions that are commonly used in insurance applications. However, to be useful in applied work, these distributions must use "realistic" values for the parameters and for this we turn to data. At a foundational level, we assume that the analyst has available a random sample $X_1, \ldots, X_n$ from a distribution with distribution function $F_X$ (for brevity, we sometimes drop the subscript $X$). As is common, we use the vector $\boldsymbol \theta$ to denote the set of parameters for $F$.This basic sample scheme is reviewed in Appendix Section \@ref(S:AppA:BASIC). Although basic, this sampling scheme provides the foundations for understanding more complex schemes that are regularly used in practice, and so it is important to master the basics.
@@ -1703,11 +1703,11 @@ Results from the fitting exercise are summarized in Figure \@ref(fig:MLECompare)
 
 
 
-###Maximum Likelihood Estimators using Modified Data {#S:Loss:MLEModified}
+### Maximum Likelihood Estimators using Modified Data {#S:Loss:MLEModified}
 
 In many applications, actuaries and other analysts wish to estimate model parameters based on individual data that are not limited. However, there are also important applications when only limited, or *modified*, data are available. This section introduces maximum likelihood estimation for grouped, censored, and truncated data. Later, we will follow up with additional details in Section \@ref(S:MS:ModifiedData).
 
-####Maximum Likelihood Estimators for Grouped Data {#MLEGrouped}
+#### Maximum Likelihood Estimators for Grouped Data {#MLEGrouped}
 
 In the previous section we considered the maximum likelihood estimation of continuous models from complete (individual) data. Each individual observation is recorded, and its contribution to the likelihood function is the density at that value. In this section we consider the problem of obtaining maximum likelihood estimates of parameters from `r Gloss('grouped data')`. The observations are only available in grouped form, and the contribution of each observation to the likelihood function is the probability of falling in a specific group (interval). Let $n_{j}$ represent the number of observations in the interval $\left( \left. \ c_{j - 1},c_{j} \right\rbrack \right.\ $ The grouped data likelihood function is thus given by
 $$
@@ -1763,7 +1763,7 @@ and $\hat{\theta} = 5.5$.
 *** 
 
 
-####Maximum Likelihood Estimators for Censored Data
+#### Maximum Likelihood Estimators for Censored Data
 
 Another possible distinguishing feature of a data gathering mechanism is censoring. While for some events of interest (losses, claims, lifetimes, etc.) the `r Gloss('complete data')` maybe available, for others only partial information is available; all that may be known is that the observation exceeds a specific value. The limited policy introduced in Section \@ref(S:PolicyLimits) is an example of right censoring. Any loss greater than or equal to the policy limit is recorded at the limit. The contribution of the censored observation to the likelihood function is the probability of the random variable exceeding this specific limit. Note that contributions of both complete and censored data share the survivor function, for a complete point this survivor function is multiplied by the hazard function, but for a censored observation it is not.
 The likelihood function for censored data is then given by
@@ -1822,7 +1822,7 @@ which yields ${\hat{\theta}}^{2} = 32$ and $\hat{\theta} = 5.7$.
 
 *** 
 
-####Maximum Likelihood Estimators for Truncated Data
+#### Maximum Likelihood Estimators for Truncated Data
 
 This section is concerned with the maximum likelihood estimation of the continuous distribution of the random variable $X$ when the data is incomplete due to truncation. If the values of $X$ are truncated at $d$, then it should be noted that we would not have been aware of the existence of these values had they not exceeded $d$. The policy deductible introduced in Section \@ref(S:PolicyDeduct) is an example of left truncation. Any loss less than or equal to the deductible is not recorded. The contribution to the likelihood function of an observation $x$ truncated at $d$ will be a conditional probability and the $f_{X}\left( x \right)$ will be replaced by $\frac{f_{X}\left( x \right)}{S_{X}\left( d \right)}$. The likelihood function for truncated data is then given by
 
@@ -1888,14 +1888,14 @@ The mean of the Pareto only exists for $\alpha > 1$. Since $\hat{\alpha} = 0.785
 ```
 
 ## Further Resources and Contributors {#LM-further-reading-and-resources}
-####Contributors {-}
+#### Contributors {-}
 
 - **Zeinab Amin**, The American University in Cairo, is the principal author of this chapter. Email: zeinabha@aucegypt.edu for chapter comments and suggested improvements.
 -  Many helpful comments have been provided by Hirokazu (Iwahiro) Iwasawa,  <iwahiro@bb.mbn.or.jp> .
 -  Other chapter reviewers include: Rob Erhardt, Jorge Yslas, Tatjana Miljkovic, and Samuel Kolins.
 
 
-####Exercises {-}
+#### Exercises {-}
 
 Here are a set of exercises that guide the viewer through some of the theoretical foundations of **Loss Data Analytics**. Each tutorial is based on one or more questions from the professional actuarial examinations – typically the Society of Actuaries Exam C.
 
@@ -1903,6 +1903,6 @@ Here are a set of exercises that guide the viewer through some of the theoretica
 [Severity Distribution Guided Tutorials](http://www.ssc.wisc.edu/~jfrees/loss-data-analytics/chapter-3-modeling-loss-severity/loss-data-analytics-severity-problems/)
 </p>
 
-####Further Readings and References {-}
+#### Further Readings and References {-}
 
 Notable contributions include: @cummins1991managing, @frees2008hierarchical, @klugman2012, @kreer2015goodness, @mcdonald1984some, @mcdonald1995generalization, @tevet2016applying, and @venter1983transformed.
