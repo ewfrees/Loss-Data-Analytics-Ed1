@@ -36,7 +36,7 @@ damages to people is known as `r Gloss('casualty insurance')`. In the rest of th
 Both life and non-life insurances are important components of the world economy. The
 @III2016 estimates that direct insurance premiums in the world for
 2014 was 2,654,549 for life and 2,123,699 for non-life; these figures are
-in *millions of U.S. dollars*. As noted earlier, the total represents 6.2%
+in *millions of U.S. dollars*. The total represents 6.2%
 of the world GDP. Put another way, life accounts for 55.5% of insurance
 premiums and 3.4% of world GDP whereas non-life accounts for 44.5% of insurance
 premiums and 2.8% of world GDP. Both life and non-life represent
@@ -44,7 +44,7 @@ important economic activities.
 
 
 Insurance may not
-be as entertaining as the sports industry (another industry that depends heavily on data) but it does affect the financial livelihoods of many. By almost any measure, insurance is a major economic activity. On a
+be as entertaining as the sports industry (another industry that depends heavily on data) but it does affect the financial livelihoods of many. By almost any measure, insurance is a major economic activity. As noted earlier, on a
 global level, insurance premiums comprised about 6.2% of the world gross
 domestic product (GDP) in 2014, [@III2016]. As examples, premiums
 accounted for 18.9% of GDP in Taiwan (the highest in the study) and
@@ -60,7 +60,7 @@ role in the economies of nations and the lives of individuals.
 ### What is Analytics?
 
 Insurance is a data-driven industry. Like all major corporations and organizations, insurers use data when trying to decide how much to pay employees, how many employees to retain, how to market their services and products, how to forecast
-financial trends, and so on. These represent general areas of activities that are not specific to the insurance industry. Although  each industry has  its own data nuances and needs,  the collection, analysis and use of data is an activity shared by all, from the internet giants to the small business, by public and governmental organizations, and is not  specific to the  insurance  industry. You will find that the  data collection and analysis  methods  and  tools introduced in this text are relevant for all.
+financial trends, and so on. These represent general areas of activities that are not specific to the insurance industry. Although  each industry has  its own data nuances and needs,  the collection, analysis and use of data is an activity shared by all, from the internet giants to a small business, by public and governmental organizations, and is not  specific to the  insurance  industry. You will find that the  data collection and analysis  methods  and  tools introduced in this text are relevant for all.
 
 In any data-driven industry, analytics is a key to deriving and extracting 
 information from data. But what is analytics? Making data-driven
@@ -74,11 +74,11 @@ science* can encompass broader data related applications in many scientific doma
 For our purposes, we use the term `r Gloss('analytics')` to refer to the process of using data to make decisions. This process involves gathering data, understanding concepts and models of uncertainty, making general inferences, and communicating results.
 
 
-When introducing data methods in this text, we will focus on losses that arise from,  or related to, obligations in insurance contracts. This could be the amount of damage to one's apartment under a renter's insurance agreement, the amount needed to compensate someone that you hurt in a driving accident, and the like. We  call these obligations `r Gloss('insurance claim')`. With this focus, we will be able to introduce  and directly use  generally applicable statistical tools and techniques.
+When introducing data methods in this text, we focus on losses that arise from,  or related to, obligations in insurance contracts. This could be the amount of damage to one's apartment under a renter's insurance agreement, the amount needed to compensate someone that you hurt in a driving accident, and the like. We  call these obligations `r Gloss('insurance claim')`. With this focus, we are able to introduce  and directly use  generally applicable statistical tools and techniques.
 
 ### Insurance Processes {#S:InsProcesses}
 
-Yet another way to think about the nature of insurance is by the duration of an insurance contract, known as the `r Gloss('term')`. This text will focus on short-term insurance contracts. By short-term, we mean contracts where the insurance coverage is typically provided for a year or six months. Most commercial and personal contracts are for a year so that will be our default duration. An important exception is U.S. auto policies that are often six months in length.
+Yet another way to think about the nature of insurance is by the duration of an insurance contract, known as the `r Gloss('term')`. This text will focus on short-term insurance contracts. By short-term, we mean contracts where the insurance coverage is typically provided for a year or six months. Most commercial and personal contracts are for a year so that is our default duration. An important exception is U.S. auto policies that are often six months in length.
 
 In contrast, we typically think of life insurance  as a long-term
 contract where the default is to have a multi-year contract. For example, if
@@ -99,7 +99,7 @@ important. For many life insurance contracts, the insured event (such as
 death) happens only once. In contrast, for non-life insurances such as
 automobile, it is common for individuals (especially young male drivers)
 to get into more than one accident during a year. So, our models need to
-reflect this observation; we will introduce different frequency models
+reflect this observation; we introduce different frequency models
 that you may also see when studying life insurance.
 
 For short-term insurance, the framework of the probabilistic model is
@@ -197,7 +197,7 @@ In this section, you learn how to:
 ***
 
 Armed with insurance data, the end goal is to use data to make decisions. We will learn more about methods of analyzing and extrapolating data in future chapters. To begin, let us think about why we want to do the analysis.
-We will take the insurance company's viewpoint (not the insured person) and introduce ways of bringing money in, paying it out, managing costs, and making sure that we have enough money to meet obligations. The emphasis is on  insurance-specific operations rather than on general business activities such as advertising, marketing, and human resources management.
+We take the insurance company's viewpoint (not the insured person) and introduce ways of bringing money in, paying it out, managing costs, and making sure that we have enough money to meet obligations. The emphasis is on  insurance-specific operations rather than on general business activities such as advertising, marketing, and human resources management.
 
 Specifically, in many insurance companies, it is customary to aggregate
 detailed insurance processes into larger operational units; many
@@ -232,7 +232,7 @@ and areas of responsibilities. Actuaries, other financial analysts, and insuranc
     amount of capital and on ways of allocating capital among alternative
     investments are also important
     analytics activities. Companies must understand how much capital is
-    needed so that they will have sufficient flow of cash available to
+    needed so that they have sufficient flow of cash available to
     meet their obligations at the times they are expected to materialize (solvency).   This is an important question that concerns
     not only company managers but also customers, company shareholders,
     regulatory authorities, as well as the public at large. Related to
@@ -245,7 +245,7 @@ and areas of responsibilities. Actuaries, other financial analysts, and insuranc
 
 Although data represent a critical component of solvency and capital
 allocation, other components including the local and global  economic framework, the financial investments environment, and quite specific requirements according to the regulatory environment of the day, are also important. Because of the
-background needed to address these components, we will not address
+background needed to address these components, we do not address
 solvency, capital allocation, and regulation issues in this text.
 
 Nonetheless, for all operating functions, we emphasize that analytics in
@@ -264,7 +264,7 @@ place to start for a price. (If you have studied finance, then you will recall t
 expenses incurred in servicing the product, and an allowance for profit/surplus of the company.
 
 Use of expected costs as a foundation for pricing is prevalent in some lines of the insurance business. These include automobile and homeowners insurance. For these lines, analytics has served to sharpen the market by making the
-calculation of the product's expected cost more precise. The increasing availability of the internet to consumers has also promoted transparency in pricing; in today's marketplace, consumers have ready access to competing quotes from a host of insurers. Insurers seek to increase their market share by refining their `r Gloss('risk classification')` systems, thus achieving a better approximation of the products’ prices and enabling cream-skimming underwriting strategies ("cream-skimming" is a phrase used when the insurer underwrites only the best risks). Recent surveys (e.g., @survey2013) indicate that pricing is the most common use of analytics among insurers.
+calculation of the product's expected cost more precise. The increasing availability of the internet to consumers has also promoted transparency in pricing; in today's marketplace, consumers have ready access to competing quotes from a host of insurers. Insurers seek to increase their market share by refining their `r Gloss('risk classification')` systems, thus achieving a better approximation of the products’ prices and enabling cream-skimming underwriting strategies ("cream-skimming" is a phrase used when the insurer underwrites only the best risks). Surveys (e.g., @survey2013) indicate that pricing is the most common use of analytics among insurers.
 
 *Underwriting*, the process of classifying risks into homogeneous
 categories and assigning policyholders to these categories, lies at the
@@ -286,7 +286,7 @@ problem.
 Insurance is a type of financial service and, like many service
 contracts, insurance coverage is often agreed upon for a limited time
 period at which time coverage commitments are
-complete. Particularly for general insurance, the need for coverage continues and so efforts are made to issue a new contract providing similar coverage, when the existing contract comes to the end of its term. This is called policy renewal. Renewal issues can also arise in life insurance, e.g.,
+complete. Particularly for general insurance, the need for coverage continues and so efforts are made to issue a new contract providing similar coverage when the existing contract comes to the end of its term. This is called *policy renewal*. Renewal issues can also arise in life insurance, e.g.,
 term (temporary) life insurance. At the same time other contracts, such as life
 annuities, terminate upon the insured's death and so issues of
 renewability are irrelevant.
@@ -295,14 +295,13 @@ In the absence of legal restrictions, at renewal the insurer has the
 opportunity to:
 
 -   accept or decline to underwrite the risk; and
-
 -   determine a new premium, possibly in conjunction with a new
     classification of the risk.
 
 Risk classification and rating at renewal is based on two types of
 information. First, at the initial stage, the insurer has available
 many rating variables upon which decisions can be made. Many variables
-will not change, e.g., sex, whereas others are likely to have changed,
+are not likely to change, e.g., sex, whereas others are likely to change,
 e.g., age, and still others may or may not change, e.g., credit score.
 Second, unlike the initial stage, at renewal the insurer has available a
 history of policyholder's loss experience, and this history can provide
@@ -357,16 +356,10 @@ Fraud detection is only one aspect of managing claims. More broadly, one can thi
     these cases could give insurers more control over the handling of
     the claim, the medical treatment, and the overall costs with an
     earlier return-to-work.
-
 -   **Claims processing**. The goal is to use analytics to identify routine situations that are anticipated to have small payouts. More complex situations may require more experienced adjusters and legal assistance to appropriately handle claims with high potential  payouts.
-    
--   **Adjustment decisions**. Once a complex claim has been identified and assigned to an 
-    `r Gloss('adjuster')`, analytic driven routines can be established to aid subsequent decision-making   
-    processes. Such processes can also be helpful for adjusters in developing case
-    reserves, an estimate of the insurer's future liability. This is an important 
-    input to the insurer's loss reserves, described in Section \@ref(S:Reserving).
+-   **Adjustment decisions**. Once a complex claim has been identified and assigned to an `r Gloss('adjuster')`, analytic driven routines can be established to aid subsequent decision-making processes. Such processes can also be helpful for adjusters in developing case reserves, an estimate of the insurer's future liability. This is an important input to the insurer's loss reserves, described in Section \@ref(S:Reserving).
 
-In addition to the insured's reimbursement for losses, the insurer also needs to be concerned with another source of revenue outflow, expenses. `r Gloss('loss adjustment expenses')` are part of an insurer's cost of managing claims. Analytics can be used to reduce expenses
+In addition to the insured's reimbursement for losses, the insurer also needs to be concerned with another source of revenue outflow, expenses. `r Gloss('Loss adjustment expenses')` are part of an insurer's cost of managing claims. Analytics can be used to reduce expenses
 directly related to claims handling (`r Gloss('allocated')`) as well as general staff time for overseeing the claims processes (`r Gloss('unallocated')`). The insurance industry has high operating costs relative to other portions of the financial services sectors.
 
 In addition to claims payments, there are many other ways in which
@@ -405,13 +398,10 @@ Claims that arise prior to valuation dates have typically been paid, are in the 
     Under-reserving may result in a failure to meet claim liabilities.
     Conversely, an insurer with excessive reserves may present a weaker
     financial position than it truly has.
-
 2.  Reserves provide an estimate for the unpaid cost of insurance that
     can be used for pricing contracts.
-
 3.  Loss reserving is required by laws and regulations. The public has a
     strong interest in the financial strength and solvency of insurers.
-
 4.  In addition to insurance company management and regulators,
     other stakeholders such as investors and customers make decisions
     that depend on company loss reserves.
@@ -450,7 +440,7 @@ Office of the Insurance Commissioner. The LGPIF was established to
 provide property insurance for local government entities that include
 counties, cities, towns, villages, school districts, and library boards.
 The fund insures local government property such as government buildings,
-schools, libraries, and motor vehicles. The fund covers all property
+schools, libraries, and motor vehicles. It covers all property
 losses except those resulting from flood, earthquake, wear and tear,
 extremes in temperature, mold, war, nuclear reactions, and embezzlement
 or theft by an employee.
@@ -571,7 +561,7 @@ they do so in the context of external variables. In general
 statistical terminology, one might call these explanatory or predictor
 variables; there are many other names in statistics, economics,
 psychology, and other disciplines. Because of our insurance focus, we
-call them `r Gloss('rating variables')` as they will be useful in setting insurance rates and premiums.
+call them `r Gloss('rating variables')` as they are useful in setting insurance rates and premiums.
 
 We earlier considered observations from a sample of 1,110 policyholders which may seem like
 a lot. However, as we will see in our forthcoming applications, because
@@ -634,7 +624,7 @@ coverage is steadily increasing. The coverage variable is the amount of
 coverage of the property and contents. Roughly, you can think of it as
 the maximum possible payout of the insurer. For our immediate purposes,
 the coverage is our first rating variable. Other things being equal, we would
-expect that policyholders with larger coverage will have larger claims.
+expect that policyholders with larger coverage have larger claims.
 We will make this vague idea much more precise as we proceed, and also justify this expectation with data.
 
 For a different look at the 2006-2010 data, Table \@ref(tab:DeductCov)
@@ -922,13 +912,11 @@ Table4d <- ByVarCredit(4)    #Claims Summary by Entity Type and Alarm Credit==15
 
 ### Fund Operations
 
-We have now seen the Fund’s two outcome variables: a count variable for the number of claims, and a continuous variable for the claims amount. We have also introduced a continuous rating variable (coverage); a discrete quantitative variable (logarithmic deductibles); two binary rating variables (no claims credit and fire class); and two categorical rating variables (entity type and alarm credit). Subsequent chapters will
+We have now seen distributions of the Fund’s two outcome variables: a count variable for the number of claims, and a continuous variable for the claims amount. We have also introduced a continuous rating variable (coverage); a discrete quantitative variable (logarithmic deductibles); two binary rating variables (no claims credit and fire class); and two categorical rating variables (entity type and alarm credit). Subsequent chapters will
 explain how to analyze and model the distribution of these variables and
 their relationships. Before getting into these technical details, let us
 first think about where we want to go. General insurance company
-functional areas are described in Section \@ref(S:PredModApps); let us now
-think about how these areas might apply in the context of the property
-fund.
+functional areas are described in Section \@ref(S:PredModApps); we now consider how these areas might apply in the context of the property fund.
 
 #### Initiating Insurance {-}
 
@@ -956,7 +944,7 @@ used this strategy, entities with a 15% alarm credit (for good behavior,
 having top alarm systems) would actually wind up paying more.
 
 So, we have the data for thinking about the appropriate rates to charge
-but will need to dig deeper into the analysis. We will explore this
+but need to dig deeper into the analysis. We will explore this
 topic further in Chapter \@ref(C:PremiumFoundations) on *premium calculation fundamentals*.
 Selecting appropriate risks is introduced in Chapter \@ref(C:RiskClass) on *risk
 classification*.
@@ -978,13 +966,13 @@ will explore this topic further in Chapter \@ref(C:Credibility) on *experience r
 #### Claims Management {-}
 
 Of course, the main story line of the 2010 experience was the large claim of
-over 12 million USD, nearly half the claims for that year. Are there
+over 12 million USD, nearly half the amount of claims for that year. Are there
 ways that this could have been prevented or mitigated? Are their ways
 for the fund to purchase protection against such large unusual events?
 Another unusual feature of the 2010 experience noted earlier was the
 very large frequency of claims (239) for one policyholder. Given that
 there were only 1,377 claims that year, this means that a single
-policyholder had 17.4 % of the claims. This also suggests
+policyholder had 17.4 % of the claims. These extreme features of the data suggests
 opportunities for managing claims, the subject of Chapter \@ref(C:PortMgt).
 
 #### Loss Reserving {-}
@@ -1008,7 +996,7 @@ much longer to develop. Chapter \@ref(C:LossReserves) introduces this concern an
 - **Edward W. (Jed) Frees**, University of Wisconsin-Madison, is the principal author of the initial version of this chapter. Email: jfrees@bus.wisc.edu for chapter comments and suggested improvements.
 - Chapter reviewers include: Yair Babad, Chunsheng Ban, Aaron Bruhn, Gordon Enderle, Hirokazu (Iwahiro) Iwasawa, Bell Ouelega.
 
-This book introduces loss data analytic tools that are most relevant to actuaries and other financial risk analysts. We have also introduced you to many new insurance terms; more terms can be found at the @NAICGlossary. Here are a few reference cited in the chapter.
+This book introduces loss data analytic tools that are most relevant to actuaries and other financial risk analysts. We have also introduced you to many new insurance terms; more terms can be found at the @NAICGlossary. Here are a few references cited in the chapter.
 
 
 
