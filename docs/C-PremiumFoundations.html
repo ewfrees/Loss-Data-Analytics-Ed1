@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Premium Foundations | Loss Data Analytics</title>
   <meta name="description" content="Chapter 7 Premium Foundations | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Premium Foundations | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="C-Simulation.html">
-<link rel="next" href="C-RiskClass.html">
+<link rel="prev" href="C-Simulation.html"/>
+<link rel="next" href="C-RiskClass.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -307,41 +310,66 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -483,11 +511,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:MS:DedImpactClmFreq"><i class="fa fa-check"></i><b>5.5.2</b> Impact of Deductibles on Claim Frequency</a></li>
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
-</ul></li>
+<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="C-Simulation.html"><a href="C-Simulation.html"><i class="fa fa-check"></i><b>6</b> Simulation and Resampling</a><ul>
 <li class="chapter" data-level="6.1" data-path="C-Simulation.html"><a href="C-Simulation.html#S:SimulationFundamentals"><i class="fa fa-check"></i><b>6.1</b> Simulation Fundamentals</a><ul>
@@ -571,19 +595,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.2.3" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-for-severity"><i class="fa fa-check"></i><b>9.2.3</b> Full Credibility for Severity</a></li>
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
-<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-buhlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
+<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.5.1" data-path="C-Credibility.html"><a href="C-Credibility.html#gamma-poisson-model"><i class="fa fa-check"></i><b>9.5.1</b> Gamma-Poisson Model</a></li>
 <li class="chapter" data-level="9.5.2" data-path="C-Credibility.html"><a href="C-Credibility.html#beta-binomial-model"><i class="fa fa-check"></i><b>9.5.2</b> Beta-Binomial Model</a></li>
 <li class="chapter" data-level="9.5.3" data-path="C-Credibility.html"><a href="C-Credibility.html#exact-credibility"><i class="fa fa-check"></i><b>9.5.3</b> Exact Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="C-Credibility.html"><a href="C-Credibility.html#estimating-credibility-parameters"><i class="fa fa-check"></i><b>9.6</b> Estimating Credibility Parameters</a><ul>
 <li class="chapter" data-level="9.6.1" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-standard-for-limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.6.1</b> Full Credibility Standard for Limited Fluctuation Credibility</a></li>
-<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
-<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
 <li class="chapter" data-level="9.6.4" data-path="C-Credibility.html"><a href="C-Credibility.html#balancing-credibility-estimators"><i class="fa fa-check"></i><b>9.6.4</b> Balancing Credibility Estimators</a></li>
 </ul></li>
 <li class="chapter" data-level="9.7" data-path="C-Credibility.html"><a href="C-Credibility.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
@@ -816,15 +840,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>As this is a core function, let us first take a step back to define terms. A <a href="#" class="tooltip" style="color:green"><em>price</em><span style="font-size:8pt">A quantity, usually of money, that is exchanged for a good or service</span></a> is a quantity, usually of money, that is exchanged for a good or service. In insurance, we typically use the word <a href="#" class="tooltip" style="color:green"><em>premium</em><span style="font-size:8pt">Amount of money an insurer charges to provide the coverage described in the policy</span></a> for the amount of money charged for insurance protection against contingent events. The amount of protection varies by risk being insured. For example, in homeowners insurance the amount of insurance protection depends on the value of the house. In life insurance, the amount of protection depends on a policyholder’s financial status (e.g. income and wealth) as well as a perceived need for financial security. So, it is common to express insurance prices as a unit of the protection being purchased, for example, an amount per thousands (e.g., of dollars or Euros) for coverage of a home or benefit in the event of death. Because they are expressed in standardized units, these prices/premiums are known as <a href="#" class="tooltip" style="color:green"><em>rates</em><span style="font-size:8pt">A rate is the price, or premium, charged per unit of exposure. a rate is a premium expressed in standardized units.</span></a>.</p>
 <p>To determine premiums, it is common in economics to consider the supply and demand of a product. The demand is sensitive to price as well as the existence of competiting firms and substitute products. The supply is a function of the resources required for production. For the individual firm, the price is set to meet some objective such as profit maximization which is met by choosing the output level that balances costs and revenues at the margins.</p>
 <p>However, a peculiarity of insurance is that the costs of insurance protection are not known at the sale of the contract. If the <a href="#" class="tooltip" style="color:green"><em>insured contingent event</em><span style="font-size:8pt">A condition that results in an insurance claim</span></a>, such as the loss of a house or life, does not occur, then the contract costs are only administrative (to set up the contract) and are relatively minor. If the insured event occurs, then the cost includes not only administrative costs but also payment of the amount insured and expenses to settle claims. So, the cost is random; when the contract is written, by design neither the insurer nor the insured knows the contract costs. Moreover, costs may not be revealed for months or years. For example, a typical time to settlement in medical malpractice is five years.</p>
-<p>Because costs are unknown at the time of sale, insurance pricing differs from common economic approaches. This chapter squarely addresses the uncertain nature of costs by introducing traditional actuarial approaches that determine prices as a function of insurance costs. As we will see, this pricing approach is sufficient for some insurance markets such as personal automobile or homeowners where the insurer has a portfolio of many independent risks. However, there are other insurance markets where actuarial prices only provide an input to general market prices. To reinforce this distinction, actuarial cost-based premiums are sometimes known as <a href="#" class="tooltip" style="color:green"><em>technical prices</em><span style="font-size:8pt"></span></a>. From the perspective of economists, corporate decisions such as pricing are to be evaluated with reference to their impact on the firm’s market value. This objective is more comprehensive than the static notion of profit maximization. That is, you can think of the value of the firm represents the capitalized value of all future expected profits. Decisions impacting this value in turn affect all groups having claims on the firm, including stockholders, bondholders, policyowners (in the case of mutual companies), and so forth.</p>
+<p>Because costs are unknown at the time of sale, insurance pricing differs from common economic approaches.
+This chapter squarely addresses the uncertain nature of costs by introducing traditional actuarial approaches that determine prices as a function of insurance costs. As we will see, this pricing approach is sufficient for some insurance markets such as personal automobile or homeowners where the insurer has a portfolio of many independent risks. However, there are other insurance markets where actuarial prices only provide an input to general market prices. To reinforce this distinction, actuarial cost-based premiums are sometimes known as <a href="#" class="tooltip" style="color:green"><em>technical prices</em><span style="font-size:8pt"></span></a>. From the perspective of economists, corporate decisions such as pricing are to be evaluated with reference to their impact on the firm’s market value. This objective is more comprehensive than the static notion of profit maximization. That is, you can think of the value of the firm represents the capitalized value of all future expected profits. Decisions impacting this value in turn affect all groups having claims on the firm, including stockholders, bondholders, policyowners (in the case of mutual companies), and so forth.</p>
 <!-- Given that costs are not incurred or even known at the time of sale, this chapter focuses on the costs of supplying insurance, following the actuarial literature. This is not a complete picture of everything needed to price insurance.  -->
 <p>For cost-based prices, it is helpful to think of a premium as revenue source that provides for claim payments, contract expenses, and an operating margin. We formalize this in an accounting equation</p>
-<span class="math display" id="eq:AccountingEquation">\[\begin{equation}
+<p><span class="math display" id="eq:AccountingEquation">\[\begin{equation}
 \small{
 \text{Premium = Loss + Expense + UW Profit} .
 }
 \tag{7.1}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Expenses can be split into those that vary by premium (such as sales commissions) and those that do not (such as building costs and employee salaries). The term <code>UW Profit</code> is a residual that stands for <a href="#" class="tooltip" style="color:green"><em>underwriting profit</em><span style="font-size:8pt">Profit an insurer derives from providing coverage, excluding investment income</span></a>. It may also include include a cost of capital (for example, an annual dividend to company investors). Because fixed expenses and costs of capital are difficult to interpret for individual contracts, we think of the equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> relationship as holding over the sum of many contracts (a portfolio) and work with it in <em>aggregate</em>. Then, in Section <a href="C-PremiumFoundations.html#S:AggRateMaking">7.2</a> we use this approach to help us think about setting premiums, for example by setting profit objectives. Specifically, Sections <a href="C-PremiumFoundations.html#S:PurePremium">7.2.1</a> and <a href="C-PremiumFoundations.html#S:LossRatio">7.2.2</a> introduce two prevailing methods used in practice for determining premiums, the <a href="#" class="tooltip" style="color:green"><em>pure premium</em><span style="font-size:8pt">Pure premium is the total severity divided by the number of claims. it does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. also called loss costs. some definitions include allocated loss adjustment expenses (alae).</span></a> and the <a href="#" class="tooltip" style="color:green"><em>loss ratio</em><span style="font-size:8pt">The sum of losses divided by the premium.</span></a> methods.</p>
 <p>The <code>Loss</code> in equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a> is random and so, as a baseline, we use the <em>expected costs</em> to determine rates. There are several ways to motivate this perspective that we expand upon in Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a>. For now, we will suppose that the insurer enters into many contracts with risks that are similar except, by pure chance, in some cases the insured event occurs and in others it does not. The insurer is obligated to pay the total amount of claims payments for all contracts. If risks are similar, then all policyholders should be responsible for the same amount which is the average claim payment. So, from this perspective, it makes sense to look at the average claim payment over many insureds. From probability theory, specifically the law of large numbers, we know that the average of <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Independent and identically distributed</span></a> risks is close to the expected amount, so we use the expectation as a baseline pricing principle.</p>
 <p>Nonetheless, by using expected losses, we essentially assume that the uncertainty is non-existent. If the insurers sells enough independent policies, this may be a reasonable approximation. However, there will be other cases, such as a single contract issued to a large corporation to insure all of its buildings against fire damage, where the use of only an expectation for pricing is not sufficient. So, Section <a href="C-PremiumFoundations.html#S:PricingPrinciples">7.3</a> also summarizes alternative premium principles that incorporate uncertainty into our pricing. Note that an emphasis of this text is estimation of the entire distribution of losses so the analyst is not restricted to working only with expectations.</p>
@@ -849,12 +874,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- ## Pure Premium Method -->
 <div id="S:PurePremium" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Pure Premium Method</h3>
-<p>If the number in the group, <em>n</em>, is large, then the average provides a good approximation of the expected loss <span class="math display">\[
+<p>If the number in the group, <em>n</em>, is large, then the average provides a good approximation of the expected loss
+<span class="math display">\[
 \small{
 \mathrm{E}(X) \approx \frac{\sum_{i=1}^n X_i}{n} = \frac{\text{Loss}}{\text{Exposure}} = \text{Pure Premium}.
 }
-\]</span> With this as motivation, we define the <a href="#" class="tooltip" style="color:green"><em>pure premium</em><span style="font-size:8pt">Pure premium is the total severity divided by the number of claims. it does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. also called loss costs. some definitions include allocated loss adjustment expenses (alae).</span></a> to be the sum of losses divided by the exposure; it is also known as a <a href="#" class="tooltip" style="color:green"><em>loss cost</em><span style="font-size:8pt">The sum of losses divided by an exposure; it is also known as the pure premium.</span></a>. In the case of <a href="#" class="tooltip" style="color:green"><em>homogeneous risks</em><span style="font-size:8pt">Risks that have the same distribution, that is, the distributions are identical.</span></a>, all policies are treated the same and we can use the number of policies <em>n</em> for the exposure. In Section <a href="C-PremiumFoundations.html#S:ExposureToRisk">7.4.1</a> we extend the concept of exposure when policies are not the same.</p>
-<p>We can multiply and divide by the number of claims, <code>claim count</code>, to get <span class="math display">\[
+\]</span>
+With this as motivation, we define the <a href="#" class="tooltip" style="color:green"><em>pure premium</em><span style="font-size:8pt">Pure premium is the total severity divided by the number of claims. it does not include insurance company expenses, premium taxes, contingencies, nor an allowance for profits. also called loss costs. some definitions include allocated loss adjustment expenses (alae).</span></a> to be the sum of losses divided by the exposure; it is also known as a <a href="#" class="tooltip" style="color:green"><em>loss cost</em><span style="font-size:8pt">The sum of losses divided by an exposure; it is also known as the pure premium.</span></a>. In the case of <a href="#" class="tooltip" style="color:green"><em>homogeneous risks</em><span style="font-size:8pt">Risks that have the same distribution, that is, the distributions are identical.</span></a>, all policies are treated the same and we can use the number of policies <em>n</em> for the exposure. In Section <a href="C-PremiumFoundations.html#S:ExposureToRisk">7.4.1</a> we extend the concept of exposure when policies are not the same.</p>
+<p>We can multiply and divide by the number of claims, <code>claim count</code>, to get
+<span class="math display">\[
 \small{
 \text{Pure Premium} = \frac{\text{claim count}}{\text{Exposure}} \times \frac{\text{Loss}}{\text{claim count}} = \text{frequency} \times \text{severity} .
 }
@@ -868,7 +896,8 @@ V =  \frac{\text{Variable}}{\text{Premium}} ~~~ \text{and}~~~
 Q = \frac{\text{UW Profit}}{\text{Premium}} ~.
 }
 \]</span></p>
-<p>With these definitions and equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a>, we may write <span class="math display">\[
+<p>With these definitions and equation <a href="C-PremiumFoundations.html#eq:AccountingEquation">(7.1)</a>, we may write
+<span class="math display">\[
 \small{
 \begin{matrix}
 \begin{array}{ll}
@@ -877,13 +906,14 @@ Q = \frac{\text{UW Profit}}{\text{Premium}} ~.
 \end{array}
 \end{matrix}
 }
-\]</span> Solving for premiums yields</p>
-<span class="math display" id="eq:PremiumEquation">\[\begin{equation}
+\]</span>
+Solving for premiums yields</p>
+<p><span class="math display" id="eq:PremiumEquation">\[\begin{equation}
 \small{
 \text{Premium} = \frac{\text{Losses + Fixed}}{1-V-Q} .
 }
 \tag{7.2}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Dividing by exposure, the rate can be calculated as</p>
 <p><span class="math display">\[
 \begin{matrix}
@@ -939,12 +969,14 @@ Q = \frac{\text{UW Profit}}{\text{Premium}} ~.
 \small{
 \frac{\text{UW Profit}}{\text{Premium}} = 1 - LR = 1 - \frac{\text{Loss}}{\text{Premium}} .
 }
-\]</span> Suppose that we have in mind a new “target” profit loading, say <span class="math inline">\(Q_{target}\)</span>. Assuming that losses, exposure, and other things about the contract stay the same, then to achieve the new target profit loading we adjust the premium. Use the <em>ICF</em> for the <a href="#" class="tooltip" style="color:green"><em>indicated change factor</em><span style="font-size:8pt">A factor calculated from the loss ratio method that calculates how the rates should change, with factors &gt; 1 indicating an increase and vice versa</span></a> that is defined through the expression</p>
+\]</span>
+Suppose that we have in mind a new “target” profit loading, say <span class="math inline">\(Q_{target}\)</span>. Assuming that losses, exposure, and other things about the contract stay the same, then to achieve the new target profit loading we adjust the premium. Use the <em>ICF</em> for the <a href="#" class="tooltip" style="color:green"><em>indicated change factor</em><span style="font-size:8pt">A factor calculated from the loss ratio method that calculates how the rates should change, with factors &gt; 1 indicating an increase and vice versa</span></a> that is defined through the expression</p>
 <p><span class="math display">\[
 \small{
 \frac{\text{new UW Profit}}{\text{Premium}} = Q_{target} =  1 - \frac{\text{Loss}}{ICF \times \text{Premium}}.
 }
-\]</span> Solving for <em>ICF</em>, we get</p>
+\]</span>
+Solving for <em>ICF</em>, we get</p>
 <p><span class="math display">\[
 \small{
 ICF =  \frac{\text{Loss}}{\text{Premium} \times (1-Q_{target})} = \frac{LR}{1-Q_{target}}.
@@ -956,18 +988,21 @@ ICF =  \frac{\text{Loss}}{\text{Premium} \times (1-Q_{target})} = \frac{LR}{1-Q_
 \small{
 Q = 1 - \frac{\text{Loss+Fixed}}{\text{Premium}} - V .
 }
-\]</span> We interpret the quantity <code>Fixed /Premium + V</code> as the “operating expense ratio.” Now, fix the profit percentage <em>Q</em> at a target and adjust premiums through the “indicated change factor” <span class="math inline">\(ICF\)</span> <span class="math display">\[
+\]</span>
+We interpret the quantity <code>Fixed /Premium + V</code> as the “operating expense ratio.” Now, fix the profit percentage <em>Q</em> at a target and adjust premiums through the “indicated change factor” <span class="math inline">\(ICF\)</span>
+<span class="math display">\[
 \small{
 Q_{target} = 1
 -\frac{\text{Loss + Fixed}}{\text{Premium}\times ICF} - V .
 }
-\]</span> Solving for <span class="math inline">\(ICF\)</span> yields</p>
-<span class="math display" id="eq:IndicatedChangeFactor">\[\begin{equation}
+\]</span>
+Solving for <span class="math inline">\(ICF\)</span> yields</p>
+<p><span class="math display" id="eq:IndicatedChangeFactor">\[\begin{equation}
 \small{
 ICF = \frac{\text{Loss + Fixed}}{\text{Premium} \times (1 - V - Q_{target})} .
 }
 \tag{7.3}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p><strong>Example. Loss Ratio Indicated Change Factor.</strong> Assume the following information:</p>
 <ul>
 <li>Projected ultimate loss and LAE ratio = 65%</li>
@@ -975,7 +1010,8 @@ ICF = \frac{\text{Loss + Fixed}}{\text{Premium} \times (1 - V - Q_{target})} .
 <li>Variable expense = 25%</li>
 <li>Target UW profit = 10%</li>
 </ul>
-<p>With these assumptions, with equation <a href="C-PremiumFoundations.html#eq:IndicatedChangeFactor">(7.3)</a>, the indicated change factor can be calculated as <span class="math display">\[
+<p>With these assumptions, with equation <a href="C-PremiumFoundations.html#eq:IndicatedChangeFactor">(7.3)</a>, the indicated change factor can be calculated as
+<span class="math display">\[
 \small{
 ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac{0.65 + 0.065}{1- 0.25 - 0.10} = 1.10 .
 }
@@ -1042,7 +1078,8 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 <p><strong>Special Case: Gamma Distribution</strong>. Consider a loss that is gamma distributed with parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\theta\)</span>. From the Appendix D in <a href="C-SummaryDistributions.html#C:SummaryDistributions">18</a>, the mean is <span class="math inline">\(\alpha \theta\)</span> and the variance is <span class="math inline">\(\alpha \theta^2\)</span>. Using <span class="math inline">\(\alpha_{Var}\)</span> for the risk parameter, the variance premium is <span class="math inline">\(H_{Var}(X) = \alpha \theta+\alpha_{Var} ~(\alpha \theta^2)\)</span>. From this appendix, it is straightforward to derive the well-known moment generating function, <span class="math inline">\(M(t) = E e^{tX} = (1-t\theta)^{-\alpha}\)</span>. With this and a risk parameter <span class="math inline">\(\alpha_{Exp}\)</span>, we may express the exponential premium as</p>
 <p><span class="math display">\[
 H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right).
-\]</span> To see the relationship between <span class="math inline">\(H_{Var}(X)\)</span> and <span class="math inline">\(H_{Var}(X)\)</span>, we choose <span class="math inline">\(\alpha_{Exp} = 2 \alpha_{Var}\)</span>. With an approximation from calculus (<span class="math inline">\(\ln(1-x) = -x - x^2/2 - x^3/3 - \cdots\)</span>), we write</p>
+\]</span>
+To see the relationship between <span class="math inline">\(H_{Var}(X)\)</span> and <span class="math inline">\(H_{Var}(X)\)</span>, we choose <span class="math inline">\(\alpha_{Exp} = 2 \alpha_{Var}\)</span>. With an approximation from calculus (<span class="math inline">\(\ln(1-x) = -x - x^2/2 - x^3/3 - \cdots\)</span>), we write</p>
 <p><span class="math display">\[
 H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right) 
 = \frac{-\alpha}{\alpha_{Exp}} \left\{ -\alpha_{Exp} \theta -(\alpha_{Exp} \theta)^2/2 - \cdots\right\} \\
@@ -1084,7 +1121,7 @@ H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right)
 </tr>
 </tbody>
 </table>
-<p>This is simply a subset of the many properties quoted in the actuarial literature. For example, the review paper of <span class="citation">Young (<a href="#ref-young2014premium">2014</a>)</span> lists 15 properties. See also the properties described as <em>coherent axioms</em> that we introduce for risk measures in Section <a href="C-PortMgt.html#S:RiskMeasure">10.3</a>.</p>
+<p>This is simply a subset of the many properties quoted in the actuarial literature. For example, the review paper of <span class="citation">Young (<a href="#ref-young2014premium" role="doc-biblioref">2014</a>)</span> lists 15 properties. See also the properties described as <em>coherent axioms</em> that we introduce for risk measures in Section <a href="C-PortMgt.html#S:RiskMeasure">10.3</a>.</p>
 <p>Some of the properties listed in Table <a href="C-PremiumFoundations.html#tab:Properties">7.2</a> are mild in the sense that they will nearly always be satisfied. For example, the <em>no rip-off</em> property indicates that the premium charge will be smaller than the maximal value of the loss <span class="math inline">\(X\)</span>. Other properties may not be so mild. For example, for a portfolio of independent risks, the actuary may want the <em>additivity</em> property to hold. It is easy to see that this property holds for the expected value, variance, and exponential premium principles but not for the standard deviation principle. Another example is the <em>consistency</em> property that does not hold for the expected value principle when the risk loading parameter <span class="math inline">\(\alpha\)</span> is positive.</p>
 <p>The <em>scale invariance</em> principle is known as <em>homogeneity of degree one</em> in economics. It allows, for example, us to work in different currencies (e.g., from dollars to Euros) as well as a host of other applications and will be discussed further in the following Section <a href="C-PremiumFoundations.html#S:HeterogeneousRisks">7.4</a>. Although a generally accepted principle, we note that this principle does not hold for a large values of <span class="math inline">\(X\)</span> that may border on a surplus constraint of an insurer; if an insurer has a large probability of becoming insolvent, then that insurer may not wish to use linear pricing. It is easy to check that this principle holds for the expected value and standard deviation principles, although not for the variance and exponential principles.</p>
 </div>
@@ -1167,9 +1204,10 @@ H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right)
 \end{array}
 \end{matrix}
 }
-\]</span> <a href="#tab:7.4">Table 7.4</a> : Commonly used Rating Factors in Different Types of Insurance</p>
+\]</span>
+<a href="#tab:7.4">Table 7.4</a> : Commonly used Rating Factors in Different Types of Insurance</p>
 <hr />
-<p><strong>Example. Losses and Premium by Amount of Insurance and Territory.</strong> To illustrate, <a href="#tab:7.5">Table 7.5</a> presents a small fictitious data set from <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic">2016</a>)</span>. The data consists of loss and loss adjustment expenses (<em>LossLAE</em>), decomposed by three levels of <em>AOI</em>, amount of insurance, and three territories (<em>Terr</em>). For each combination of <em>AOI</em> and <em>Terr</em>, we also have available the number of policies issued, given as the <em>Exposure</em>.</p>
+<p><strong>Example. Losses and Premium by Amount of Insurance and Territory.</strong> To illustrate, <a href="#tab:7.5">Table 7.5</a> presents a small fictitious data set from <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic" role="doc-biblioref">2016</a>)</span>. The data consists of loss and loss adjustment expenses (<em>LossLAE</em>), decomposed by three levels of <em>AOI</em>, amount of insurance, and three territories (<em>Terr</em>). For each combination of <em>AOI</em> and <em>Terr</em>, we also have available the number of policies issued, given as the <em>Exposure</em>.</p>
 <p><a id=tab:7.5></a></p>
 <p><span class="math display">\[
 \small{
@@ -1192,8 +1230,9 @@ H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right)
 \end{array}
 \end{matrix}
 }
-\]</span> <a href="#tab:7.5">Table 7.5</a> : Losses and Premium by Amount of Insurance and Territory</p>
-<p>In this case, the rating factors <em>AOI</em> and <em>Terr</em> produce nine cells. Note that one might combine the cell “territory one with a low amount of insurance”&quot; with another cell because there are only 7 policies in that cell. Doing so is perfectly acceptable - considerations of this sort is one of the main jobs of the analyst. An outline on selecting variables is in Chapter <a href="C-RiskClass.html#C:RiskClass">8</a>, including Technical Supplement TS <strong>8.B</strong>. Alternatively, you can also think about reinforcing information about the cell (<em>Terr</em> 1, Low <em>AOI</em>) by “borrowing” information from neighboring cells (e.g., other territories with the same <em>AOI</em>, or other amounts of <em>AOI</em> within <em>Terr</em> 1). This is the subject of <a href="#" class="tooltip" style="color:green"><em>credibility</em><span style="font-size:8pt">Weight assigned to observed data vs. that assigned to an external or broader-based set of data</span></a> that is introduced in Chapter <a href="C-Credibility.html#C:Credibility">9</a>.</p>
+\]</span>
+<a href="#tab:7.5">Table 7.5</a> : Losses and Premium by Amount of Insurance and Territory</p>
+<p>In this case, the rating factors <em>AOI</em> and <em>Terr</em> produce nine cells. Note that one might combine the cell “territory one with a low amount of insurance”" with another cell because there are only 7 policies in that cell. Doing so is perfectly acceptable - considerations of this sort is one of the main jobs of the analyst. An outline on selecting variables is in Chapter <a href="C-RiskClass.html#C:RiskClass">8</a>, including Technical Supplement TS <strong>8.B</strong>. Alternatively, you can also think about reinforcing information about the cell (<em>Terr</em> 1, Low <em>AOI</em>) by “borrowing” information from neighboring cells (e.g., other territories with the same <em>AOI</em>, or other amounts of <em>AOI</em> within <em>Terr</em> 1). This is the subject of <a href="#" class="tooltip" style="color:green"><em>credibility</em><span style="font-size:8pt">Weight assigned to observed data vs. that assigned to an external or broader-based set of data</span></a> that is introduced in Chapter <a href="C-Credibility.html#C:Credibility">9</a>.</p>
 <hr />
 <p>To understand the impact of rating factors, it is common to use relativities. A <a href="#" class="tooltip" style="color:green"><em>relativity</em><span style="font-size:8pt">The difference of the expected risk between a specific level of a rating factor and an accepted baseline value. this difference may be arithmetic or proportional.</span></a> is the difference of the expected risk between a specific level of a rating factor and an accepted baseline value. In this book, we work with relativities defined through ratios; it is also possible to define relativities through arithmetic differences. Thus, our relativity is defined as</p>
 <p><span class="math display">\[
@@ -1236,7 +1275,8 @@ H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right)
 </ul>
 <hr />
 <!-- ###  TrendDevelopment.Rmd {#S:TrendDevelopment} -->
-<p>As we have seen in Section <a href="C-PremiumFoundations.html#S:AggRateMaking">7.2</a>, insurers consider aggregate information for ratemaking such as exposures to risk, premiums, expenses, claims, and payments. This aggregate information is also useful for managing an insurers’ activities; financial reports are commonly created at least annually and oftentimes quarterly. At any given financial reporting date, information about recent policies and claims will be ongoing and necessarily incomplete; this section introduces concepts for projecting risk information so that it is usful for ratemaking purposes. Information about the risks, such as exposures, premium, claim counts, losses, and rating factors, is typically organized into three databases:</p>
+<p>As we have seen in Section <a href="C-PremiumFoundations.html#S:AggRateMaking">7.2</a>, insurers consider aggregate information for ratemaking such as exposures to risk, premiums, expenses, claims, and payments. This aggregate information is also useful for managing an insurers’ activities; financial reports are commonly created at least annually and oftentimes quarterly. At any given financial reporting date, information about recent policies and claims will be ongoing and necessarily incomplete; this section introduces concepts for projecting risk information so that it is usful for ratemaking purposes.
+Information about the risks, such as exposures, premium, claim counts, losses, and rating factors, is typically organized into three databases:</p>
 <ul>
 <li><em>policy database</em> - contains information about the risk being insured, the policyholder, and the contract provisions</li>
 <li><em>claims database</em> - contains information about each claim; these are linked to the policy database.</li>
@@ -1245,7 +1285,8 @@ H_{Exp}(X) = \frac{-\alpha}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} \theta\right)
 <p>With these detailed databases, it is straightforward (in principle) to sum up policy level detail to aggregate information needed for financial reports. This section describes various summary measures commonly used.</p>
 <div id="exposures-and-premiums" class="section level3">
 <h3><span class="header-section-number">7.5.1</span> Exposures and Premiums</h3>
-<p>A financial reporting period is a length of time that is fixed in the calendar; we use January 1 to December 31 for the examples in this book although other reporting periods are also common. The reporting period is fixed but policies may begin at any time during the year. Even if all policies have a common contract length of (say) one year, because of the differing starting time, they can end at any time during the financial reporting. Figure <a href="C-PremiumFoundations.html#fig:Exposures">7.1</a> presents four illustrative policies. Because of these differing starting and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.</p>
+<p>A financial reporting period is a length of time that is fixed in the calendar; we use January 1 to December 31 for the examples in this book although other reporting periods are also common. The reporting period is fixed but policies may begin at any time during the year. Even if all policies have a common contract length of (say) one year, because of the differing starting time, they can end at any time during the financial reporting. Figure
+<a href="C-PremiumFoundations.html#fig:Exposures">7.1</a> presents four illustrative policies. Because of these differing starting and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:Exposures"></span>
 <img src="LossDataAnalytics_files/figure-html/Exposures-1.png" alt="Timeline of Exposures for Four 12-Month Policies." width="50%" />
@@ -1280,7 +1321,8 @@ Figure 7.1: Timeline of Exposures for Four 12-Month Policies.
 \end{array}
 \end{matrix}
 }
-\]</span> <a href="#tab:7.12">Table 7.12</a>: Exposures for Four 12-Month Policies</p>
+\]</span>
+<a href="#tab:7.12">Table 7.12</a>: Exposures for Four 12-Month Policies</p>
 <p>This summarization is sometimes known as the <a href="#" class="tooltip" style="color:green"><em>calendar year method</em><span style="font-size:8pt">Experience for rating is aggregated based on calendar year, as opposed to other methods such as when a policy term began</span></a> of aggregation to serve as a contrast to the <a href="#" class="tooltip" style="color:green"><em>policy year</em><span style="font-size:8pt">This is the period between a policy’s anniversary dates.</span></a> method. In the latter method, all policies start at the beginning of the year. This method is useful for ratemaking methods based on individual contracts and we do not pursue this further here.</p>
 <p>In the same way as exposures, one can summarizes premiums. Premiums, like exposures, can be either <em>written</em>, <em>earned</em>, <em>unearned</em>, or <em>in force</em>. Consider the following example.</p>
 <p><strong>Example. 7.5.1. CAS Exam 5, 2003, Number 10.</strong> A 12-month policy is written on March 1, 2002 for a premium of $900. As of December 31, 2002, which of the following is true?</p>
@@ -1318,8 +1360,13 @@ E. &amp; 900 &amp; 750 &amp; 900 \\\hline
 <li>In economic usages, a <em>claim</em> is a demand for payment by an insured or by an injured third-party under the terms and conditions of insurance contract and the <em>loss</em> is the amount paid by the insurer.</li>
 </ul>
 <p>This text will follow the second bullet. However, when reading other sources, you will need to take care when thinking about definitions for the terms loss and claim.</p>
-<p>To establish additional terminology, it is helpful to follow the timeline of a claim as it develops. In Figure <a href="C-PremiumFoundations.html#fig:ClaimDevelopment">7.2</a>, the claim occurs at time <span class="math inline">\(t_1\)</span> and the insuring company is notified at time <span class="math inline">\(t_3\)</span>. There can be a long gap between occurrence and notification such that the end of a company financial reporting period, known as a <a href="#" class="tooltip" style="color:green"><em>valuation date</em><span style="font-size:8pt">A valuation date is the date at which a company summarizes its financial position, typically quarterly or annually.</span></a>, occurs (<span class="math inline">\(t_2\)</span>). In this case, the claim is said to be <a href="#" class="tooltip" style="color:green"><em>incurred but not reported</em><span style="font-size:8pt">A claim is said to be incurred but not reported if the insured event occurs prior to a valuation date (and hence the insurer is liable for payment) but the event has not been reported to the insurer.</span></a> at this valuation date.</p>
-<p>After claim notification, there may one or more loss payments. Not all of the payments may be made by the next valuation date (<span class="math inline">\(t_4\)</span>). As the claim develops, eventually the company deems its financial obligations on the claim to be resolved and declares the claim <a href="#" class="tooltip" style="color:green"><em>closed</em><span style="font-size:8pt">A claim is said to be closed when the company deems its financial obligations on the claim to be resolved.</span></a>. However, it is possible that new facts arise and the claim must be re-opened, giving rise to additional loss payments prior to being closed again.</p>
+<p>To establish additional terminology, it is helpful to follow the timeline of a claim as it develops. In Figure <a href="C-PremiumFoundations.html#fig:ClaimDevelopment">7.2</a>, the claim occurs at time <span class="math inline">\(t_1\)</span> and the insuring company is notified at time <span class="math inline">\(t_3\)</span>. There can be a long gap between occurrence and notification such that the
+end of a company financial reporting period, known as a <a href="#" class="tooltip" style="color:green"><em>valuation date</em><span style="font-size:8pt">A valuation date is the date at which a company summarizes its financial position, typically quarterly or annually.</span></a>, occurs (<span class="math inline">\(t_2\)</span>). In this case, the claim is said to be
+<a href="#" class="tooltip" style="color:green"><em>incurred but not reported</em><span style="font-size:8pt">A claim is said to be incurred but not reported if the insured event occurs prior to a valuation date (and hence the insurer is liable for payment) but the event has not been reported to the insurer.</span></a> at this valuation date.</p>
+<p>After claim notification, there may one or more loss payments. Not all of the payments may be made by the next valuation date (<span class="math inline">\(t_4\)</span>).
+As the claim develops, eventually the company deems its financial obligations on the claim to be resolved and declares the claim
+<a href="#" class="tooltip" style="color:green"><em>closed</em><span style="font-size:8pt">A claim is said to be closed when the company deems its financial obligations on the claim to be resolved.</span></a>. However, it is possible that new facts arise and the claim must be re-opened, giving rise to additional loss payments
+prior to being closed again.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:ClaimDevelopment"></span>
 <img src="LossDataAnalytics_files/figure-html/ClaimDevelopment-1.png" alt="Timeline of Claim Development." width="75%" />
@@ -1342,20 +1389,24 @@ Figure 7.2: Timeline of Claim Development.
 </div>
 <div id="S:CompareMethods" class="section level3">
 <h3><span class="header-section-number">7.5.3</span> Comparing Pure Premium and Loss Ratio Methods</h3>
-<p>Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the <a href="#" class="tooltip" style="color:green"><em>mix of business</em><span style="font-size:8pt">Different types of policies in an insurer’s portfolio</span></a>. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as <strong>trending</strong>. For example, an <a href="#" class="tooltip" style="color:green"><em>on-level earned premium</em><span style="font-size:8pt">Earned premium of historical policies using the current rate structure</span></a> is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given contractual and administrative complexities. We refer the reader to standard references that describe approaches in detail such as <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic">2016</a>)</span> and <span class="citation">Friedland (<a href="#ref-friedland2013fundamentals">2013</a>)</span>.</p>
+<p>Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the <a href="#" class="tooltip" style="color:green"><em>mix of business</em><span style="font-size:8pt">Different types of policies in an insurer’s portfolio</span></a>. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as <strong>trending</strong>. For example, an <a href="#" class="tooltip" style="color:green"><em>on-level earned premium</em><span style="font-size:8pt">Earned premium of historical policies using the current rate structure</span></a> is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given contractual and administrative complexities. We refer the reader to standard references that describe approaches in detail such as <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic" role="doc-biblioref">2016</a>)</span> and <span class="citation">Friedland (<a href="#ref-friedland2013fundamentals" role="doc-biblioref">2013</a>)</span>.</p>
 <div id="loss-ratio-method" class="section level4 unnumbered">
 <h4>Loss Ratio Method</h4>
-<p>The expression for the loss ratio method indicated change factor in equation <a href="C-PremiumFoundations.html#eq:IndicatedChangeFactor">(7.3)</a> assumes a certain amount of consistency in the portfolio experience over time. For another approach, we can define the <a href="#" class="tooltip" style="color:green"><em>experience loss ratio</em><span style="font-size:8pt">Ratio of experience loss to on-level earned premium in the experience period</span></a> to be: <span class="math display">\[
+<p>The expression for the loss ratio method indicated change factor in equation <a href="C-PremiumFoundations.html#eq:IndicatedChangeFactor">(7.3)</a> assumes a certain amount of consistency in the portfolio experience over time. For another approach, we can define the <a href="#" class="tooltip" style="color:green"><em>experience loss ratio</em><span style="font-size:8pt">Ratio of experience loss to on-level earned premium in the experience period</span></a> to be:
+<span class="math display">\[
 \small{
 LR_{experience} = \frac{\text{experience losses}}{\text{experience period earned exposure}\times \text{current rate}}  .
 }
 \]</span></p>
 <p>Here, we think of the experience period earned exposure <span class="math inline">\(\times\)</span> current rate as the experience premium.</p>
-<p>Using equation <a href="C-PremiumFoundations.html#eq:PremiumEquation">(7.2)</a>, we can write a loss ratio as <span class="math display">\[
+<p>Using equation <a href="C-PremiumFoundations.html#eq:PremiumEquation">(7.2)</a>, we can write a loss ratio as
+<span class="math display">\[
 \small{
 LR = \frac{\text{Losses}}{\text{Premium}}=\frac{1-V-Q}{\text{(Losses + Fixed)}/\text{Losses}}=\frac{1-V-Q}{1+G} ~,
 }
-\]</span> where <span class="math inline">\(G = \text{Fixed} / \text{Losses}\)</span>, the ratio of fixed expenses to premiums. With this expression, we define the <em>target loss ratio</em> <span class="math display">\[
+\]</span>
+where <span class="math inline">\(G = \text{Fixed} / \text{Losses}\)</span>, the ratio of fixed expenses to premiums. With this expression, we define the <em>target loss ratio</em>
+<span class="math display">\[
 \small{
 LR_{target} =
 \frac{1-V-Q}{1+G} = \frac{1-\text{premium related expense factor - profit and contingencies factor}}
@@ -1363,12 +1414,12 @@ LR_{target} =
 }
 \]</span></p>
 <p>With these, the indicated change factor is</p>
-<span class="math display" id="eq:RevisedIndicatedChangeFactor">\[\begin{equation}
+<p><span class="math display" id="eq:RevisedIndicatedChangeFactor">\[\begin{equation}
 \small{
 ICF =\frac{LR_{experience}}{LR_{target}}.
 }
 \tag{7.4}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Comparing equation <a href="C-PremiumFoundations.html#eq:IndicatedChangeFactor">(7.3)</a> to <a href="C-PremiumFoundations.html#eq:RevisedIndicatedChangeFactor">(7.4)</a>, we see that the latter offers more flexibility to explicitly incorporate trended experience. As the loss ratio method is based on rate changes, this flexibility is certainly warranted.</p>
 </div>
 <div id="comparison-of-methods" class="section level4 unnumbered">
@@ -1412,11 +1463,13 @@ ICF =\frac{LR_{experience}}{LR_{target}}.
 </h5>
 <div id="toggleExample.7.5.2" style="display: none">
 <ol style="list-style-type: lower-alpha">
-<li>We will calculate the experience and target loss ratios, then take the ratio to get the indicated rate change. The experience loss ratio is <span class="math display">\[
+<li>We will calculate the experience and target loss ratios, then take the ratio to get the indicated rate change. The experience loss ratio is
+<span class="math display">\[
 \small{
 LR_{experience} =  \frac{\text{experience losses}}{\text{experience period premium}} =\frac{300000}{500000} = 0.60.
 }
-\]</span> The target loss ratio is:</li>
+\]</span>
+The target loss ratio is:</li>
 </ol>
 <p><span class="math display">\[
 \small{
@@ -1436,7 +1489,8 @@ LR_{target}
 \small{
 ICF =\frac{LR_{experience}}{LR_{target}} -1  = \frac{0.60}{0.673} -1 = -10.8\%.
 }
-\]</span> (b) Using the pure premium method, the indicated change factor, <span class="math inline">\(ICF\)</span>, is</p>
+\]</span>
+(b) Using the pure premium method, the indicated change factor, <span class="math inline">\(ICF\)</span>, is</p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1473,7 +1527,7 @@ ICF
 <p>For a portfolio of insurance contracts, insurers collect premiums and pay out losses. After making adjustments for expenses and profit considerations, tools for comparing distributions of premiums and losses can be helpful when selecting a premium calculation principle.</p>
 <div id="classic-lorenz-curve" class="section level3">
 <h3><span class="header-section-number">7.6.1</span> Classic Lorenz Curve</h3>
-<p>In welfare economics, it is common to compare distributions via the <a href="#" class="tooltip" style="color:green"><em>Lorenz curve</em><span style="font-size:8pt">A graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis.</span></a>, developed by Max Otto Lorenz <span class="citation">(Lorenz <a href="#ref-lorenz1905methods">1905</a>)</span>. A Lorenz curve is a graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis. It is typically used to represent income distributions. When the income distribution is perfectly aligned with the population distribution, the Lorenz curve results in a 45 degree line that is known as the <a href="#" class="tooltip" style="color:green"><em>line of equality</em><span style="font-size:8pt">45 degree line equating x and y, that represents a perfect alignment in the sample and population distribution</span></a>. Because the graph compares two distribution functions, one can also think of a Lorenz curve as a type of <a href="#" class="tooltip" style="color:green"><em>pp plot</em><span style="font-size:8pt">Statistical plot used to assess how close a data sample matches a theorized distribution</span></a> that was introduced in Section <a href="C-ModelSelection.html#S:MS:GraphComparison">4.1.2.1</a>. The area between the Lorenz curve and the line of equality is a measure of the discrepancy between the income and population distributions. Two times this area is known as the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">The gini index is twice the area between a lorenz curve and a 45 degree line.</span></a>, introduced by Corrado Gini in 1912.</p>
+<p>In welfare economics, it is common to compare distributions via the <a href="#" class="tooltip" style="color:green"><em>Lorenz curve</em><span style="font-size:8pt">A graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis.</span></a>, developed by Max Otto Lorenz <span class="citation">(Lorenz <a href="#ref-lorenz1905methods" role="doc-biblioref">1905</a>)</span>. A Lorenz curve is a graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis. It is typically used to represent income distributions. When the income distribution is perfectly aligned with the population distribution, the Lorenz curve results in a 45 degree line that is known as the <a href="#" class="tooltip" style="color:green"><em>line of equality</em><span style="font-size:8pt">45 degree line equating x and y, that represents a perfect alignment in the sample and population distribution</span></a>. Because the graph compares two distribution functions, one can also think of a Lorenz curve as a type of <a href="#" class="tooltip" style="color:green"><em>pp plot</em><span style="font-size:8pt">Statistical plot used to assess how close a data sample matches a theorized distribution</span></a> that was introduced in Section <a href="C-ModelSelection.html#S:MS:GraphComparison">4.1.2.1</a>. The area between the Lorenz curve and the line of equality is a measure of the discrepancy between the income and population distributions. Two times this area is known as the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">The gini index is twice the area between a lorenz curve and a 45 degree line.</span></a>, introduced by Corrado Gini in 1912.</p>
 <p><strong>Example – Classic Lorenz Curve.</strong> For an insurance example, Figure <a href="C-PremiumFoundations.html#fig:ClassicLorenz">7.3</a> shows a distribution of insurance losses. This figure is based on a random sample of 2000 losses. The left-hand panel shows a right-skewed histogram of losses. The right-hand panel provides the corresponding Lorenz curve, showing again a skewed distribution. For example, the arrow marks the point where 60 percent of the policyholders have 30 percent of losses. The 45 degree line is the line of equality; if each policyholder has the same loss, then the loss distribution would be at this line. The Gini index, twice the area between the Lorenz curve and the 45 degree line, is 37.6 percent for this data set.</p>
 <div class="figure" style="text-align: center"><span id="fig:ClassicLorenz"></span>
 <img src="LossDataAnalytics_files/figure-html/ClassicLorenz-1.png" alt="Distribution of Insurance Losses. The left-hand panel is a density plot of losses. The right-hand panel presents the same data using a Lorenz curve." width="90%" />
@@ -1493,16 +1547,16 @@ Figure 7.3: Distribution of Insurance Losses. The left-hand panel is a density p
 <p>The set of information used to calculate the performance curve for the <span class="math inline">\(i\)</span>th policy is <span class="math inline">\((y_i, P_i)\)</span>.</p>
 <div id="performance-curve" class="section level4 unnumbered">
 <h4>Performance Curve</h4>
-It is convenient to first sort the set of policies based on premiums (from smallest to largest) and then compute the premium and loss distributions. The premium distribution is
+<p>It is convenient to first sort the set of policies based on premiums (from smallest to largest) and then compute the premium and loss distributions. The premium distribution is
 <span class="math display" id="eq:EmpPremDF">\[\begin{equation}
 \hat{F}_P(s) =  \frac{ \sum_{i=1}^n P_i ~\mathrm{I}(P_i \leq s) }{\sum_{i=1}^n P_i}   ,
 \tag{7.5}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>and the loss distribution is</p>
-<span class="math display" id="eq:EmpLossDF">\[\begin{equation}
+<p><span class="math display" id="eq:EmpLossDF">\[\begin{equation}
 \hat{F}_{L}(s) =  \frac{ \sum_{i=1}^n y_i ~\mathrm{I}(P_i \leq s) }{\sum_{i=1}^n y_i} ,
 \tag{7.6}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathrm{I}(\cdot)\)</span> is the indicator function, returning a 1 if the event is true and zero otherwise. For a given value <span class="math inline">\(s\)</span>, <span class="math inline">\(\hat{F}_P(s)\)</span> gives the proportion of premiums less than or equal to <span class="math inline">\(s\)</span>, and <span class="math inline">\(\hat{F}_{L}(s)\)</span> gives the proportion of losses for those policyholders with premiums less than or equal to <span class="math inline">\(s\)</span>. The graph <span class="math inline">\(\left(\hat{F}_P(s),\hat{F}_{L}(s) \right)\)</span> is known as a <strong>performance curve</strong>.</p>
 <p><strong>Example – Loss Distribution.</strong> Suppose we have <span class="math inline">\(n=5\)</span> policyholders with experience as follows. The data have been ordered by premiums.</p>
 <table>
@@ -1571,20 +1625,20 @@ Figure 7.4: Lorenz versus Performance Curve
 <div id="gini-statistic" class="section level4 unnumbered">
 <h4>Gini Statistic</h4>
 <p>The classic Lorenz curve shows the proportion of policyholders on the horizontal axis and the loss distribution function on the vertical axis. The performance curve extends the classical Lorenz curve in two ways, (1) through the ordering of risks and prices by prices and (2) by allowing prices to vary by observation. We summarize the performance curve in the same way as the classic Lorenz curve using a Gini statistic, defined as twice the area between the curve and a 45 degree line. The analyst seeks ordered performance curves that approach passing through the 45 degree line; these have least separation between the loss and premium distributions and therefore small Gini statistics.</p>
-Specifically, the Gini statistic can be calculated as follows. Suppose that the empirical performance curve is given by <span class="math inline">\(\{ (a_0=0, b_0=0), (a_1, b_1), \ldots,\)</span> <span class="math inline">\((a_n=1, b_n=1) \}\)</span> for a sample of <span class="math inline">\(n\)</span> observations. Here, we use <span class="math inline">\(a_j = \hat{F}_P(P_j)\)</span> and <span class="math inline">\(b_j = \hat{F}_{L}(P_j)\)</span>. Then, the empirical Gini statistic is
+<p>Specifically, the Gini statistic can be calculated as follows. Suppose that the empirical performance curve is given by <span class="math inline">\(\{ (a_0=0, b_0=0), (a_1, b_1), \ldots,\)</span> <span class="math inline">\((a_n=1, b_n=1) \}\)</span> for a sample of <span class="math inline">\(n\)</span> observations. Here, we use <span class="math inline">\(a_j = \hat{F}_P(P_j)\)</span> and <span class="math inline">\(b_j = \hat{F}_{L}(P_j)\)</span>. Then, the empirical Gini statistic is
 <span class="math display" id="eq:GiniDefn">\[\begin{eqnarray}
 \widehat{Gini} 
 &amp;=&amp;  2\sum_{j=0}^{n-1} (a_{j+1} - a_j) \left \{
 \frac{a_{j+1}+a_j}{2} - \frac{b_{j+1}+b_j}{2} \right\} \nonumber \\
 &amp;=&amp; 1 - \sum_{j=0}^{n-1} (a_{j+1} - a_j) (b_{j+1}+b_j) .
 \tag{7.7}
-\end{eqnarray}\]</span>
+\end{eqnarray}\]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.AreaDemo" href="javascript:toggleEX('toggleExample.AreaDemo','displayExample.AreaDemo');"><i><strong>Show Gini Formula Details</strong></i></a>
 </h5>
 <div id="toggleExample.AreaDemo" style="display: none">
 <p>To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points <span class="math inline">\((a_1, b_1)\)</span>, <span class="math inline">\((a_2, b_2)\)</span>, and a 45 degree line. You can use basic geometry to check that the area of the figure is <span class="math inline">\(Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}\)</span>. The definition of the Gini statistic in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is simply twice the sum of the parallelograms. The second equality in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is the result of some straight-forward algebra.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-215-1.png" width="672" /></p>
 <hr />
 </div>
 <p><strong>Example – Loss Distribution: Continued.</strong> The Gini statistic for the Lorenz curve (left-hand panel of Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a>) is 34.4 percent. In contrast, the Gini statistic for performance curve (right-hand panel) is 1.7 percent.</p>
@@ -1614,46 +1668,48 @@ Specifically, the Gini statistic can be calculated as follows. Suppose that the 
 <p>For our base premium, we assume a common distribution among all states. For these simulated data, the average in-sample loss is <span class="math inline">\(P_1\)</span>=221.36.</p>
 <p>As an alternative, we use averages that are state-specific; these averages form our premiums <span class="math inline">\(P_2\)</span>. Because this illustration uses means that vary by states, we anticipate this alternative rating procedure to be preferred to the community rating procedure.</p>
 <p>Out of sample claims were generated from the same gamma distribution as the in-sample model, with 100 observations for each state. The following <code>R</code> code shows how to calculate the performance curves.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y &lt;-<span class="st"> </span>Outy 
-P1 &lt;-<span class="st"> </span>Flatpred
-P2 &lt;-<span class="st"> </span>Predvec
-n1 =<span class="st"> </span><span class="kw">length</span>(y)
-XYmat =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(y,P1,P2))
-XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P1),]  <span class="co">#  Sort by premiums P1</span>
-DFy1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))
-DFx1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P1)<span class="op">/</span><span class="kw">sum</span>(P1))
-XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P2),]  <span class="co">#  Sort by premiums P2</span>
-DFy2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))
-DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P2)<span class="op">/</span><span class="kw">sum</span>(P2))
-
-<span class="co">#  FIGURE 3</span>
-<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="co">#  Lorenz Curve</span>
-<span class="kw">plot</span>(DFx1,DFy1,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,
-<span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Flat&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)
-<span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)
-<span class="co">#  Performance Curve</span>
-<span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,
-<span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)
-<span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-217-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1">y &lt;-<span class="st"> </span>Outy </a>
+<a class="sourceLine" id="cb95-2" title="2">P1 &lt;-<span class="st"> </span>Flatpred</a>
+<a class="sourceLine" id="cb95-3" title="3">P2 &lt;-<span class="st"> </span>Predvec</a>
+<a class="sourceLine" id="cb95-4" title="4">n1 =<span class="st"> </span><span class="kw">length</span>(y)</a>
+<a class="sourceLine" id="cb95-5" title="5">XYmat =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(y,P1,P2))</a>
+<a class="sourceLine" id="cb95-6" title="6">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P1),]  <span class="co">#  Sort by premiums P1</span></a>
+<a class="sourceLine" id="cb95-7" title="7">DFy1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
+<a class="sourceLine" id="cb95-8" title="8">DFx1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P1)<span class="op">/</span><span class="kw">sum</span>(P1))</a>
+<a class="sourceLine" id="cb95-9" title="9">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P2),]  <span class="co">#  Sort by premiums P2</span></a>
+<a class="sourceLine" id="cb95-10" title="10">DFy2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
+<a class="sourceLine" id="cb95-11" title="11">DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P2)<span class="op">/</span><span class="kw">sum</span>(P2))</a>
+<a class="sourceLine" id="cb95-12" title="12"></a>
+<a class="sourceLine" id="cb95-13" title="13"><span class="co">#  FIGURE 3</span></a>
+<a class="sourceLine" id="cb95-14" title="14"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb95-15" title="15"><span class="co">#  Lorenz Curve</span></a>
+<a class="sourceLine" id="cb95-16" title="16"><span class="kw">plot</span>(DFx1,DFy1,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
+<a class="sourceLine" id="cb95-17" title="17"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Flat&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb95-18" title="18"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a>
+<a class="sourceLine" id="cb95-19" title="19"><span class="co">#  Performance Curve</span></a>
+<a class="sourceLine" id="cb95-20" title="20"><span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
+<a class="sourceLine" id="cb95-21" title="21"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb95-22" title="22"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-218-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
 </div>
 <div id="discussion" class="section level4 unnumbered">
 <h4>Discussion</h4>
-<p>In insurance claims modeling, standard out-of-sample validation measures are not the most informative due to the high proportions of zeros (corresponding to no claim) and the skewed fat-tailed distribution of the positive values. In contrast, the Gini statistic works well with many zeros (see the demonstration in <span class="citation">(Frees, Meyers, and Cummings <a href="#ref-frees2014insurance">2014</a>)</span>).</p>
-<p>The value of the performance curves and Gini statistics have been recently advanced in the paper of <span class="citation">Denuit, Sznajder, and Trufin (<a href="#ref-denuit2019concentrationGini">2019</a>)</span>. Properties of an extended version, dealing with relatives for new premiums, were developed by <span class="citation">Frees, Meyers, and Cummings (<a href="#ref-frees2011summarizing">2011</a>)</span> and <span class="citation">Frees, Meyers, and Cummings (<a href="#ref-frees2014insurance">2014</a>)</span>. In these articles you can find formulas for the standard errors and additional background information.</p>
+<p>In insurance claims modeling, standard out-of-sample validation measures are not the most informative due to the high proportions of zeros (corresponding to no claim) and the skewed fat-tailed distribution of the positive values. In contrast, the Gini statistic works well with many zeros (see the demonstration in <span class="citation">(Edward W. Frees, Meyers, and Cummings <a href="#ref-frees2014insurance" role="doc-biblioref">2014</a>)</span>).</p>
+<p>The value of the performance curves and Gini statistics have been recently advanced in the paper of <span class="citation">Denuit, Sznajder, and Trufin (<a href="#ref-denuit2019concentrationGini" role="doc-biblioref">2019</a>)</span>.
+Properties of an extended version, dealing with relatives for new premiums, were developed by <span class="citation">Frees, Meyers, and Cummings (<a href="#ref-frees2011summarizing" role="doc-biblioref">2011</a>)</span> and <span class="citation">Edward W. Frees, Meyers, and Cummings (<a href="#ref-frees2014insurance" role="doc-biblioref">2014</a>)</span>. In these articles you can find formulas for the standard errors and additional background information.</p>
 </div>
 </div>
 </div>
 <div id="further-resources-and-contributors" class="section level2">
 <h2><span class="header-section-number">7.7</span> Further Resources and Contributors</h2>
-<p>This chapter serves as a bridge between the technical introduction of this book and an introduction to pricing and ratemaking for practicing actuaries. For readers interested in learn practical aspects of pricing, we recommend introductions by the Society of Actuaries in <span class="citation">Friedland (<a href="#ref-friedland2013fundamentals">2013</a>)</span> and by the Casualty Actuarial Society in <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic">2016</a>)</span>. For a classic risk management introduction to pricing, see <span class="citation">Niehaus and Harrington (<a href="#ref-niehaus2003risk">2003</a>)</span>. See also <span class="citation">Finger (<a href="#ref-finger2006risk">2006</a>)</span> and <span class="citation">Frees (<a href="#ref-frees2014frequency">2014</a>)</span>.</p>
-<p><span class="citation">Bühlmann (<a href="#ref-buhlmann1985premium">1985</a>)</span> was the first in the academic literature to argue that pricing should be done first at the portfolio level (he referred to this as a <em>top down</em> approach) which would be subsequently reconciled with pricing of individual contracts. See also the discussion in <span class="citation">Kaas et al. (<a href="#ref-kaas2008modern">2008</a>)</span>, Chapter 5.</p>
-<p>For more background on pricing principles, a classic treatment is by <span class="citation">Gerber (<a href="#ref-gerber1979introduction">1979</a>)</span> with a more modern approach in <span class="citation">Kaas et al. (<a href="#ref-kaas2008modern">2008</a>)</span>. For more discussion of a pricing from a financial economics viewpoint, see <span class="citation">Bauer, Phillips, and Zanjani (<a href="#ref-bauer2013financial">2013</a>)</span>.</p>
+<p>This chapter serves as a bridge between the technical introduction of this book and an introduction to pricing and ratemaking for practicing actuaries. For readers interested in learn practical aspects of pricing, we recommend introductions by the Society of Actuaries in <span class="citation">Friedland (<a href="#ref-friedland2013fundamentals" role="doc-biblioref">2013</a>)</span> and by the Casualty Actuarial Society in <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic" role="doc-biblioref">2016</a>)</span>. For a classic risk management introduction to pricing, see <span class="citation">Niehaus and Harrington (<a href="#ref-niehaus2003risk" role="doc-biblioref">2003</a>)</span>. See also <span class="citation">Finger (<a href="#ref-finger2006risk" role="doc-biblioref">2006</a>)</span> and <span class="citation">Edward W Frees (<a href="#ref-frees2014frequency" role="doc-biblioref">2014</a>)</span>.</p>
+<p><span class="citation">Bühlmann (<a href="#ref-buhlmann1985premium" role="doc-biblioref">1985</a>)</span> was the first in the academic literature to argue that pricing should be done first at the portfolio level (he referred to this as a <em>top down</em> approach) which would be subsequently reconciled with pricing of individual contracts. See also the discussion in <span class="citation">Kaas et al. (<a href="#ref-kaas2008modern" role="doc-biblioref">2008</a>)</span>, Chapter 5.</p>
+<p>For more background on pricing principles, a classic treatment is by <span class="citation">Gerber (<a href="#ref-gerber1979introduction" role="doc-biblioref">1979</a>)</span> with a more modern approach in
+<span class="citation">Kaas et al. (<a href="#ref-kaas2008modern" role="doc-biblioref">2008</a>)</span>. For more discussion of a pricing from a financial economics viewpoint, see <span class="citation">Bauer, Phillips, and Zanjani (<a href="#ref-bauer2013financial" role="doc-biblioref">2013</a>)</span>.</p>
 <ul>
-<li><strong>Edward W. (Jed) Frees</strong>, University of Wisconsin-Madison, and <strong>José Garrido</strong>, Concordia University are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> and/or <a href="mailto:jose.garrido@concordia.ca">jose.garrido@concordia.ca</a> for chapter comments and suggested improvements.</li>
+<li><strong>Edward W. (Jed) Frees</strong>, University of Wisconsin-Madison, and <strong>José Garrido</strong>, Concordia University are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu" class="email">jfrees@bus.wisc.edu</a> and/or <a href="mailto:jose.garrido@concordia.ca" class="email">jose.garrido@concordia.ca</a> for chapter comments and suggested improvements.</li>
 <li>Chapter reviewers include: Write Jed or José to add you name here.</li>
 </ul>
 <div id="ts-7.a.-rate-regulation" class="section level3 unnumbered">
@@ -1704,7 +1760,8 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <li>religion.</li>
 </ul>
 <p>It is not a matter of whether data can be used to establish statistical significance among the levels of any of these variables. Rather, it is a societal decision as to what constitutes notions of “fairness.”</p>
-<p>Different jurisdictions have taken different stances on what constitutes a fair rating variable. For example, in some juridictions for some insurance products, gender is no longer a permissible variable. As an illustration, the European Union now prohibits the use of gender for automobile rating. As another example, in the U.S., many discussions have revolved around the use of credit ratings to be used in automobile insurance pricing. Credit ratings are designed to measure consumer financial reponsibility. Yet, some argue that credit rates are good proxies for ethnicity and hence should be prohibited.</p>
+<p>Different jurisdictions have taken different stances on what constitutes a fair rating variable. For example, in some juridictions for some insurance products, gender is no longer a permissible variable. As an illustration, the European Union now prohibits the use of gender for automobile rating. As another example, in the U.S., many discussions have revolved around the use of credit ratings to be used in automobile insurance pricing.
+Credit ratings are designed to measure consumer financial reponsibility. Yet, some argue that credit rates are good proxies for ethnicity and hence should be prohibited.</p>
 <p>In an age where more data is being used in imaginative ways, discussions of what constitutes a fair rating variable will only become more important going forward and much of that discussion is beyond the scope of this text. However, it is relevant to the discussion to remark that actuaries and other data analysts can contribute to societal discussions on what constitutes a “fair” rating variable in unique ways by establishing the magnitude of price differences when using variables under discussion.</p>
 <!-- Should we collect these variables? -->
 <!-- - Sometimes no. Just the act of collecting them means that we may become biased in subtle ways, a type of moral hazard. -->
@@ -1735,7 +1792,7 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <p>Bauer, Daniel, Richard D. Phillips, and George H. Zanjani. 2013. “Financial Pricing of Insurance.” In <em>Handbook of Insurance</em>, 627–45. Springer.</p>
 </div>
 <div id="ref-buhlmann1985premium">
-<p>Bühlmann, Hans. 1985. “Premium Calculation from Top down.” <em>ASTIN Bulletin: The Journal of the IAA</em> 15 (2). Cambridge University Press: 89–101.</p>
+<p>Bühlmann, Hans. 1985. “Premium Calculation from Top down.” <em>ASTIN Bulletin: The Journal of the IAA</em> 15 (2): 89–101.</p>
 </div>
 <div id="ref-denuit2019concentrationGini">
 <p>Denuit, Michel, Dominik Sznajder, and Julien Trufin. 2019. “Model Selection Based on Lorenz and Concentration Curves, Gini Indices and Convex Order.” <em>Insurance: Mathematics and Economics</em>.</p>
@@ -1747,10 +1804,10 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <p>Frees, Edward W. 2014. “Frequency and Severity Models.” In <em>Predictive Modeling Applications in Actuarial Science</em>, edited by Edward W Frees, Glenn Meyers, and Richard Derrig, 1:138–64. Cambridge University Press Cambridge.</p>
 </div>
 <div id="ref-frees2011summarizing">
-<p>Frees, Edward W., Glenn Meyers, and A. David Cummings. 2011. “Summarizing Insurance Scores Using a Gini Index.” <em>Journal of the American Statistical Association</em> 106 (495). Taylor &amp; Francis: 1085–98.</p>
+<p>Frees, Edward W., Glenn Meyers, and A. David Cummings. 2011. “Summarizing Insurance Scores Using a Gini Index.” <em>Journal of the American Statistical Association</em> 106 (495): 1085–98.</p>
 </div>
 <div id="ref-frees2014insurance">
-<p>Frees, Edward W., Glenn Meyers, and A. David Cummings. 2011. “Summarizing Insurance Scores Using a Gini Index.” <em>Journal of the American Statistical Association</em> 106 (495). Taylor &amp; Francis: 1085–98.</p> 2014. “Insurance Ratemaking and a Gini Index.” <em>Journal of Risk and Insurance</em> 81 (2). Wiley Online Library: 335–66.</p>
+<p>Frees, Edward W., Glenn Meyers, and A. David Cummings. 2011. “Summarizing Insurance Scores Using a Gini Index.” <em>Journal of the American Statistical Association</em> 106 (495): 1085–98.</p> 2014. “Insurance Ratemaking and a Gini Index.” <em>Journal of Risk and Insurance</em> 81 (2): 335–66.</p>
 </div>
 <div id="ref-friedland2013fundamentals">
 <p>Friedland, Jacqueline. 2013. <em>Fundamentals of General Insurance Actuarial Analysis</em>. Society of Actuaries.</p>
@@ -1762,16 +1819,16 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
 <p>Kaas, Rob, Marc Goovaerts, Jan Dhaene, and Michel Denuit. 2008. <em>Modern Actuarial Risk Theory: Using R</em>. Vol. 128. Springer Science &amp; Business Media.</p>
 </div>
 <div id="ref-lorenz1905methods">
-<p>Lorenz, Max O. 1905. “Methods of Measuring the Concentration of Wealth.” <em>Publications of the American Statistical Association</em> 9 (70). Taylor &amp; Francis: 209–19.</p>
+<p>Lorenz, Max O. 1905. “Methods of Measuring the Concentration of Wealth.” <em>Publications of the American Statistical Association</em> 9 (70): 209–19.</p>
 </div>
 <div id="ref-niehaus2003risk">
 <p>Niehaus, Gregory, and Scott Harrington. 2003. <em>Risk Management and Insurance</em>. New York: McGraw Hill.</p>
 </div>
 <div id="ref-werner2016basic">
-<p>Werner, Geoff, and Claudine Modlin. 2016. <em>Basic Ratemaking, Fifth Edition</em>. Casualty Actuarial Society. <a href="https://www.casact.org/library/studynotes/werner_modlin_ratemaking.pdf" class="uri">https://www.casact.org/library/studynotes/werner_modlin_ratemaking.pdf</a>.</p>
+<p>Werner, Geoff, and Claudine Modlin. 2016. <em>Basic Ratemaking, Fifth Edition</em>. Casualty Actuarial Society. <a href="https://www.casact.org/library/studynotes/werner_modlin_ratemaking.pdf">https://www.casact.org/library/studynotes/werner_modlin_ratemaking.pdf</a>.</p>
 </div>
 <div id="ref-young2014premium">
-<p>Young, Virginia R. 2014. “Premium Principles.” <em>Wiley StatsRef: Statistics Reference Online</em>. Wiley Online Library.</p>
+<p>Young, Virginia R. 2014. “Premium Principles.” <em>Wiley StatsRef: Statistics Reference Online</em>.</p>
 </div>
 </div>
             </section>
@@ -1785,11 +1842,13 @@ DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</spa
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1797,12 +1856,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -1814,6 +1872,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -1830,10 +1892,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

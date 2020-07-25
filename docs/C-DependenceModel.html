@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 14 Dependence Modeling | Loss Data Analytics</title>
   <meta name="description" content="Chapter 14 Dependence Modeling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 14 Dependence Modeling | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="C-DataSystems.html">
-<link rel="next" href="C-AppA.html">
+<link rel="prev" href="C-DataSystems.html"/>
+<link rel="next" href="C-AppA.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -307,41 +310,66 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -483,11 +511,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:MS:DedImpactClmFreq"><i class="fa fa-check"></i><b>5.5.2</b> Impact of Deductibles on Claim Frequency</a></li>
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
-</ul></li>
+<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="C-Simulation.html"><a href="C-Simulation.html"><i class="fa fa-check"></i><b>6</b> Simulation and Resampling</a><ul>
 <li class="chapter" data-level="6.1" data-path="C-Simulation.html"><a href="C-Simulation.html#S:SimulationFundamentals"><i class="fa fa-check"></i><b>6.1</b> Simulation Fundamentals</a><ul>
@@ -571,19 +595,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.2.3" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-for-severity"><i class="fa fa-check"></i><b>9.2.3</b> Full Credibility for Severity</a></li>
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
-<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-buhlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
+<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.5.1" data-path="C-Credibility.html"><a href="C-Credibility.html#gamma-poisson-model"><i class="fa fa-check"></i><b>9.5.1</b> Gamma-Poisson Model</a></li>
 <li class="chapter" data-level="9.5.2" data-path="C-Credibility.html"><a href="C-Credibility.html#beta-binomial-model"><i class="fa fa-check"></i><b>9.5.2</b> Beta-Binomial Model</a></li>
 <li class="chapter" data-level="9.5.3" data-path="C-Credibility.html"><a href="C-Credibility.html#exact-credibility"><i class="fa fa-check"></i><b>9.5.3</b> Exact Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="C-Credibility.html"><a href="C-Credibility.html#estimating-credibility-parameters"><i class="fa fa-check"></i><b>9.6</b> Estimating Credibility Parameters</a><ul>
 <li class="chapter" data-level="9.6.1" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-standard-for-limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.6.1</b> Full Credibility Standard for Limited Fluctuation Credibility</a></li>
-<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
-<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
 <li class="chapter" data-level="9.6.4" data-path="C-Credibility.html"><a href="C-Credibility.html#balancing-credibility-estimators"><i class="fa fa-check"></i><b>9.6.4</b> Balancing Credibility Estimators</a></li>
 </ul></li>
 <li class="chapter" data-level="9.7" data-path="C-Credibility.html"><a href="C-Credibility.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
@@ -875,7 +899,8 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <li>Describe circular data</li>
 </ul>
 <hr />
-<p>Unlike a qualitative variable, a <a href="#" class="tooltip" style="color:green"><em>quantitative variable</em><span style="font-size:8pt">A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.</span></a> is one in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning. A <a href="#" class="tooltip" style="color:green"><em>continuous variable</em><span style="font-size:8pt">A continuous variable is a quantitative variable that can take on any value within a finite interval.</span></a> is one that can take on any value within a finite interval. For example, it is common to represent a <a href="#" class="tooltip" style="color:green"><em>policyholder</em><span style="font-size:8pt">Person in actual possession of insurance policy; policy owner.</span></a>’s age, weight, or income, as a continuous variable. In contrast, a <a href="#" class="tooltip" style="color:green"><em>discrete variable</em><span style="font-size:8pt">A discrete variable is quantitative variable that takes on only a finite number of values in any finite interval.</span></a> is one that takes on only a finite number of values in any finite interval. For example, when examining a policyholder’s choice of <a href="#" class="tooltip" style="color:green"><em>deductibles</em><span style="font-size:8pt">A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer’s responsibility (subject to policy limits and coninsurance).</span></a>, it may be that values of 0, 250, 500, and 1000 are the only possible outcomes. Like an ordinal variable, these represent distinct categories that are ordered. Unlike an ordinal variable, the numerical difference between levels takes on economic meaning. A special type of discrete variable is a <a href="#" class="tooltip" style="color:green"><em>count variable</em><span style="font-size:8pt">A count variable is a discrete variable with values on nonnegative integers.</span></a>, one with values on the nonnegative integers. For example, we will be particularly interested in the number of claims arising from a policy during a given period.</p>
+<p>Unlike a qualitative variable, a <a href="#" class="tooltip" style="color:green"><em>quantitative variable</em><span style="font-size:8pt">A quantitative variable is a type of variable in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning.</span></a> is one in which numerical level is a realization from some scale so that the distance between any two levels of the scale takes on meaning. A <a href="#" class="tooltip" style="color:green"><em>continuous variable</em><span style="font-size:8pt">A continuous variable is a quantitative variable that can take on any value within a finite interval.</span></a> is one that can take on any value within a finite interval. For example, it is common to represent a <a href="#" class="tooltip" style="color:green"><em>policyholder</em><span style="font-size:8pt">Person in actual possession of insurance policy; policy owner.</span></a>’s age, weight, or income, as a continuous variable. In contrast, a
+<a href="#" class="tooltip" style="color:green"><em>discrete variable</em><span style="font-size:8pt">A discrete variable is quantitative variable that takes on only a finite number of values in any finite interval.</span></a> is one that takes on only a finite number of values in any finite interval. For example, when examining a policyholder’s choice of <a href="#" class="tooltip" style="color:green"><em>deductibles</em><span style="font-size:8pt">A deductible is a parameter specified in the contract. Typically, losses below the deductible are paid by the policyholder whereas losses in excess of the deductible are the insurer’s responsibility (subject to policy limits and coninsurance).</span></a>, it may be that values of 0, 250, 500, and 1000 are the only possible outcomes. Like an ordinal variable, these represent distinct categories that are ordered. Unlike an ordinal variable, the numerical difference between levels takes on economic meaning. A special type of discrete variable is a <a href="#" class="tooltip" style="color:green"><em>count variable</em><span style="font-size:8pt">A count variable is a discrete variable with values on nonnegative integers.</span></a>, one with values on the nonnegative integers. For example, we will be particularly interested in the number of claims arising from a policy during a given period.</p>
 <p>Some variables are inherently a <em>combination of discrete and continuous</em> components. For example, when we analyze the insured <a href="#" class="tooltip" style="color:green"><em>loss</em><span style="font-size:8pt">The amount of damages sustained by an individual or corporation, typically as the result of an insurable event.</span></a> of a policyholder, we will encounter a discrete outcome at zero, representing no insured loss, and a continuous amount for positive outcomes, representing the amount of the insured loss. Another interesting variation is an <a href="#" class="tooltip" style="color:green"><em>interval variable</em><span style="font-size:8pt">An ordinal variable with the additional property that the magnitudes of the differences between two values are meaningful</span></a>,one that gives a range of possible outcomes.</p>
 <p><a href="#" class="tooltip" style="color:green"><em>Circular data</em><span style="font-size:8pt">In a circular data, all values around the circle are equally likely. Example, imagine an analog picture of a clock.</span></a> represent an interesting category typically not analyzed by <a href="#" class="tooltip" style="color:green"><em>insurers</em><span style="font-size:8pt">An insurance company authorized to write insurance under the laws of any state.</span></a>. As an example of circular data, suppose that you monitor calls to your customer service center and would like to know when is the peak time of the day for calls to arrive. In this context, one can think about the time of the day as a variable with realizations on a circle, e.g., imagine an analog picture of a clock. For circular data, the distance between observations at 00:15 and 00:45 are just as close as observations 23:45 and 00:15 (here, we use the convention <em>HH:MM</em> means hours and minutes).</p>
 </div>
@@ -928,30 +953,30 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <div id="pearson-correlation" class="section level4">
 <h4><span class="header-section-number">14.2.1.1</span> Pearson Correlation</h4>
 <p>Define the sample covariance function <span class="math inline">\(\widehat{Cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})\)</span>, where <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(\bar{Y}\)</span> are the sample means of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively. Then, the <a href="#" class="tooltip" style="color:green"><em>product-moment (Pearson) correlation</em><span style="font-size:8pt">Pearson correlation, a measure of the linear correlation between two variables</span></a> can be written as</p>
-<span class="math display">\[\begin{equation*}
+<p><span class="math display">\[\begin{equation*}
 r = \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Cov}(X,X)\widehat{Cov}(Y,Y)}}.
-\end{equation*}\]</span>
+\end{equation*}\]</span></p>
 <p>The correlation statistic <span class="math inline">\(r\)</span> is widely used to capture linear association between random variables. It is a (nonparametric) estimator of the correlation parameter <span class="math inline">\(\rho\)</span>, defined to be the covariance divided by the product of standard deviations. In this sense, it captures association for any pair of random variables.</p>
 <p>This statistic has several important features. Unlike regression estimators, it is symmetric between random variables, so the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> equals the correlation between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. It is unchanged by linear transformations of random variables (up to sign changes) so that we can multiply random variables or add constants as is helpful for interpretation. The range of the statistic is <span class="math inline">\([-1,1]\)</span> which does not depend on the distribution of either <span class="math inline">\(X\)</span> or <span class="math inline">\(Y\)</span>.</p>
-<p>Further, in the case of independence, the correlation coefficient <span class="math inline">\(r\)</span> is 0. However, it is well known that zero correlation does not imply independence, except for normally distributed random variables. The correlation statistic <span class="math inline">\(r\)</span> is also a (maximum likelihood) estimator of the association parameter for bivariate normal distribution. So, for normally distributed data, the correlation statistic <span class="math inline">\(r\)</span> can be used to assess independence. For additional interpretations of this well-known statistic, readers will enjoy <span class="citation">(Lee Rodgers and Nicewander <a href="#ref-lee1988thirteen">1998</a>)</span>.</p>
+<p>Further, in the case of independence, the correlation coefficient <span class="math inline">\(r\)</span> is 0. However, it is well known that zero correlation does not imply independence, except for normally distributed random variables. The correlation statistic <span class="math inline">\(r\)</span> is also a (maximum likelihood) estimator of the association parameter for bivariate normal distribution. So, for normally distributed data, the correlation statistic <span class="math inline">\(r\)</span> can be used to assess independence. For additional interpretations of this well-known statistic, readers will enjoy <span class="citation">(Lee Rodgers and Nicewander <a href="#ref-lee1988thirteen" role="doc-biblioref">1998</a>)</span>.</p>
 <p>You can obtain the <a href="#" class="tooltip" style="color:green"><em>Pearson correlation</em><span style="font-size:8pt">A measure of the linear correlation between two variables</span></a> statistic <span class="math inline">\(r\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>pearson</code> method. This is demonstrated below by using the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars from the LGPIF data introduced in chapter 1.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.pearson.1" href="javascript:togglecode('toggleCode.pearson.1','displayCode.pearson.1');"><i><strong>R Code for Pearson Correlation Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.pearson.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Pearson correlation between Claim and Coverage
-r&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))
-<span class="kw">round</span>(r,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="fl">0.31</span>
-
-### Pearson correlation between Claim and log(Coverage)
-r&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))
-<span class="kw">round</span>(r,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="fl">0.1</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" title="1"><span class="co">### Pearson correlation between Claim and Coverage</span></a>
+<a class="sourceLine" id="cb164-2" title="2">r&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))</a>
+<a class="sourceLine" id="cb164-3" title="3"><span class="kw">round</span>(r,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb164-4" title="4"></a>
+<a class="sourceLine" id="cb164-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb164-6" title="6">[<span class="dv">1</span>] <span class="fl">0.31</span></a>
+<a class="sourceLine" id="cb164-7" title="7"></a>
+<a class="sourceLine" id="cb164-8" title="8"><span class="co">### Pearson correlation between Claim and log(Coverage)</span></a>
+<a class="sourceLine" id="cb164-9" title="9">r&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))</a>
+<a class="sourceLine" id="cb164-10" title="10"><span class="kw">round</span>(r,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb164-11" title="11"></a>
+<a class="sourceLine" id="cb164-12" title="12">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb164-13" title="13">[<span class="dv">1</span>] <span class="fl">0.1</span></a></code></pre></div>
 </div>
 <p>From <code>R</code> output above, <span class="math inline">\(r=0.31\)</span> , which indicates a positive association between <em>Claim</em> and <em>Coverage</em>. This means that as the coverage amount of a policy increases we expect claim to increase.</p>
 </div>
@@ -961,65 +986,65 @@ Output<span class="op">:</span>
 <div id="spearmans-rho" class="section level4">
 <h4><span class="header-section-number">14.2.2.1</span> Spearman’s Rho</h4>
 <p>The Pearson correlation coefficient does have the drawback that it is not invariant to nonlinear transforms of the data. For example, the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(\ln Y\)</span> can be quite different from the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. As we see from the <code>R</code> code for Pearson correlation statistic above, the correlation statistic <span class="math inline">\(r\)</span> between <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amounts variable in dollars is <span class="math inline">\(0.1\)</span> as compared to <span class="math inline">\(0.31\)</span> when we calculate the correlation between <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amounts variable in dollars. This limitation is one reason for considering alternative statistics.</p>
-<p>Alternative measures of correlation are based on ranks of the data. Let <span class="math inline">\(R(X_j)\)</span> denote the rank of <span class="math inline">\(X_j\)</span> from the sample <span class="math inline">\(X_1, \ldots, X_n\)</span> and similarly for <span class="math inline">\(R(Y_j)\)</span>. Let <span class="math inline">\(R(X) = \left(R(X_1), \ldots, R(X_n)\right)&#39;\)</span> denote the vector of ranks, and similarly for <span class="math inline">\(R(Y)\)</span>. For example, if <span class="math inline">\(n=3\)</span> and <span class="math inline">\(X=(24, 13, 109)\)</span>, then <span class="math inline">\(R(X)=(2,1,3)\)</span>. A comprehensive introduction of rank statistics can be found in, for example, <span class="citation">(Hettmansperger <a href="#ref-hettmansperger1984statistical">1984</a>)</span>. Also, ranks can be used to obtain the empirical distribution function, refer to section 4.1.1 for more on the empirical distribution function.</p>
-With this, the correlation measure of <span class="citation">(Spearman <a href="#ref-spearman1904proof">1904</a>)</span> is simply the product-moment correlation computed on the ranks:
+<p>Alternative measures of correlation are based on ranks of the data. Let <span class="math inline">\(R(X_j)\)</span> denote the rank of <span class="math inline">\(X_j\)</span> from the sample <span class="math inline">\(X_1, \ldots, X_n\)</span> and similarly for <span class="math inline">\(R(Y_j)\)</span>. Let <span class="math inline">\(R(X) = \left(R(X_1), \ldots, R(X_n)\right)&#39;\)</span> denote the vector of ranks, and similarly for <span class="math inline">\(R(Y)\)</span>. For example, if <span class="math inline">\(n=3\)</span> and <span class="math inline">\(X=(24, 13, 109)\)</span>, then <span class="math inline">\(R(X)=(2,1,3)\)</span>. A comprehensive introduction of rank statistics can be found in, for example, <span class="citation">(Hettmansperger <a href="#ref-hettmansperger1984statistical" role="doc-biblioref">1984</a>)</span>. Also, ranks can be used to obtain the empirical distribution function, refer to section 4.1.1 for more on the empirical distribution function.</p>
+<p>With this, the correlation measure of <span class="citation">(Spearman <a href="#ref-spearman1904proof" role="doc-biblioref">1904</a>)</span> is simply the product-moment correlation computed on the ranks:
 <span class="math display">\[\begin{equation*}
 r_S = \frac{\widehat{Cov}(R(X),R(Y))}{\sqrt{\widehat{Cov}(R(X),R(X))\widehat{Cov}(R(Y),R(Y))}}
 = \frac{\widehat{Cov}(R(X),R(Y))}{(n^2-1)/12} .
-\end{equation*}\]</span>
+\end{equation*}\]</span></p>
 <p>You can obtain the Spearman correlation statistic <span class="math inline">\(r_S\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>spearman</code> method. From below, the Spearman correlation between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars is <span class="math inline">\(0.41\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.spearman.1" href="javascript:togglecode('toggleCode.spearman.1','displayCode.spearman.1');"><i><strong>R Code for Spearman Correlation Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.spearman.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Spearman correlation between Claim and Coverage <span class="al">###</span>
-rs&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))
-<span class="kw">round</span>(rs,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="fl">0.41</span>
-
-### Spearman correlation between Claim and log(Coverage) <span class="al">###</span>
-rs&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))
-<span class="kw">round</span>(rs,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="fl">0.41</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" title="1"><span class="co">### Spearman correlation between Claim and Coverage </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb165-2" title="2">rs&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</a>
+<a class="sourceLine" id="cb165-3" title="3"><span class="kw">round</span>(rs,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb165-4" title="4"></a>
+<a class="sourceLine" id="cb165-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb165-6" title="6">[<span class="dv">1</span>] <span class="fl">0.41</span></a>
+<a class="sourceLine" id="cb165-7" title="7"></a>
+<a class="sourceLine" id="cb165-8" title="8"><span class="co">### Spearman correlation between Claim and log(Coverage) </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb165-9" title="9">rs&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</a>
+<a class="sourceLine" id="cb165-10" title="10"><span class="kw">round</span>(rs,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb165-11" title="11"></a>
+<a class="sourceLine" id="cb165-12" title="12">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb165-13" title="13">[<span class="dv">1</span>] <span class="fl">0.41</span></a></code></pre></div>
 </div>
 <p>We can show that the Spearman correlation statistic is invariant under strictly increasing transformations. From the <code>R</code> Code for Spearman correlation statistic above, <span class="math inline">\(r_S=0.41\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
 <div id="kendalls-tau" class="section level4">
 <h4><span class="header-section-number">14.2.2.2</span> Kendall’s Tau</h4>
 <p>An alternative measure that uses ranks is based on the concept of <em>concordance</em>. An observation pair <span class="math inline">\((X,Y)\)</span> is said to be <a href="#" class="tooltip" style="color:green"><em>concordant</em><span style="font-size:8pt">An observation pair (x,y) is said to be concordant if the observation with a larger value of x has also the larger value of y</span></a> (<a href="#" class="tooltip" style="color:green"><em>discordant</em><span style="font-size:8pt">An observation pair (x,y) is said to be discordant if the observation with a larger value of x has the smaller value of y</span></a>) if the observation with a larger value of <span class="math inline">\(X\)</span> has also the larger (smaller) value of <span class="math inline">\(Y\)</span>. Then <span class="math inline">\(\Pr(concordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) &gt;0 ]\)</span> , <span class="math inline">\(\Pr(discordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) &lt;0 ]\)</span>, <span class="math inline">\(\Pr(tie) = \Pr[ (X_1-X_2)(Y_1-Y_2) =0 ]\)</span> and</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \tau(X,Y)= \Pr(concordance) - \Pr(discordance) = 2\Pr(concordance) - 1 + \Pr(tie).
-\end{eqnarray*}\]</span>
-<p>To estimate this, the pairs <span class="math inline">\((X_i,Y_i)\)</span> and <span class="math inline">\((X_j,Y_j)\)</span> are said to be concordant if the product <span class="math inline">\(sgn(X_j-X_i)sgn(Y_j-Y_i)\)</span> equals 1 and discordant if the product equals -1. Here, <span class="math inline">\(sgn(x)=1,0,-1\)</span> as <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x&lt;0\)</span>, respectively. With this, we can express the association measure of <span class="citation">(Kendall <a href="#ref-kendall1938new">1938</a>)</span>, known as <a href="#" class="tooltip" style="color:green"><em>Kendall’s tau</em><span style="font-size:8pt"></span></a>, as</p>
-<span class="math display">\[\begin{equation*}
+\end{eqnarray*}\]</span></p>
+<p>To estimate this, the pairs <span class="math inline">\((X_i,Y_i)\)</span> and <span class="math inline">\((X_j,Y_j)\)</span> are said to be concordant if the product <span class="math inline">\(sgn(X_j-X_i)sgn(Y_j-Y_i)\)</span> equals 1 and discordant if the product equals -1. Here, <span class="math inline">\(sgn(x)=1,0,-1\)</span> as <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x&lt;0\)</span>, respectively. With this, we can express the association measure of <span class="citation">(Kendall <a href="#ref-kendall1938new" role="doc-biblioref">1938</a>)</span>, known as <a href="#" class="tooltip" style="color:green"><em>Kendall’s tau</em><span style="font-size:8pt">A statistic used to measure the ordinal association between two measured quantities</span></a>, as</p>
+<p><span class="math display">\[\begin{equation*}
 \begin{array}{rl}
 \tau &amp;= \frac{2}{n(n-1)} \sum_{i&lt;j}sgn(X_j-X_i)sgn(Y_j-Y_i)\\
 &amp;= \frac{2}{n(n-1)} \sum_{i&lt;j}sgn(R(X_j)-R(X_i))sgn(R(Y_j)-R(Y_i)) 
 \end{array}.
-\end{equation*}\]</span>
-<p>Interestingly, <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, page 137, attributes the original discovery of this statistic to <span class="citation">(Fechner <a href="#ref-fechnerkollektivmasslehre">1897</a>)</span>, noting that Kendall’s discovery was independent and more complete than the original work.</p>
-<p>You can obtain the Kendall’s tau, using the <code>cor()</code> function in <code>R</code> and selecting the <code>kendall</code> method. From below, <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars. When there are ties in the data, the <code>cor()</code> function computes <em>Kendall’s tau_b</em>, as proposed by <span class="citation">(Kendall <a href="#ref-kendall1945">1945</a>)</span>.</p>
+\end{equation*}\]</span></p>
+<p>Interestingly, <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis" role="doc-biblioref">2000</a>)</span>, page 137, attributes the original discovery of this statistic to <span class="citation">(Fechner <a href="#ref-fechnerkollektivmasslehre" role="doc-biblioref">1897</a>)</span>, noting that Kendall’s discovery was independent and more complete than the original work.</p>
+<p>You can obtain the Kendall’s tau, using the <code>cor()</code> function in <code>R</code> and selecting the <code>kendall</code> method. From below, <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars. When there are ties in the data, the <code>cor()</code> function computes <em>Kendall’s tau_b</em>, as proposed by <span class="citation">(Kendall <a href="#ref-kendall1945" role="doc-biblioref">1945</a>)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.kendall.1" href="javascript:togglecode('toggleCode.kendall.1','displayCode.kendall.1');"><i><strong>R Code for Kendall’s Tau</strong></i></a>
 </h5>
 <div id="toggleCode.kendall.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Kendall&#39;s tau correlation between Claim and Coverage <span class="al">###</span>
-tau&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))
-<span class="kw">round</span>(tau,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>]  <span class="fl">0.32</span>
-
-### Kendall&#39;s tau correlation between Claim and log(Coverage) <span class="al">###</span>
-tau&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))
-<span class="kw">round</span>(tau,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="fl">0.32</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" title="1"><span class="co">### Kendall&#39;s tau correlation between Claim and Coverage </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb166-2" title="2">tau&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))</a>
+<a class="sourceLine" id="cb166-3" title="3"><span class="kw">round</span>(tau,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb166-4" title="4"></a>
+<a class="sourceLine" id="cb166-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb166-6" title="6">[<span class="dv">1</span>]  <span class="fl">0.32</span></a>
+<a class="sourceLine" id="cb166-7" title="7"></a>
+<a class="sourceLine" id="cb166-8" title="8"><span class="co">### Kendall&#39;s tau correlation between Claim and log(Coverage) </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb166-9" title="9">tau&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))</a>
+<a class="sourceLine" id="cb166-10" title="10"><span class="kw">round</span>(tau,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb166-11" title="11"></a>
+<a class="sourceLine" id="cb166-12" title="12">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb166-13" title="13">[<span class="dv">1</span>] <span class="fl">0.32</span></a></code></pre></div>
 </div>
 <p>Also,to show that the Kendall’s tau is invariate under strictly increasing transformations , <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
@@ -1028,7 +1053,7 @@ Output<span class="op">:</span>
 <h3><span class="header-section-number">14.2.3</span> Nominal Variables</h3>
 <div id="bernoulli-variables" class="section level4">
 <h4><span class="header-section-number">14.2.3.1</span> Bernoulli Variables</h4>
-To see why dependence measures for continuous variables may not be the best for discrete variables, let us focus on the case of Bernoulli variables that take on simple binary outcomes, 0 and 1. For notation, let <span class="math inline">\(\pi_{jk} = \Pr(X=j, Y=k)\)</span> for <span class="math inline">\(j,k=0,1\)</span> and let <span class="math inline">\(\pi_X=\Pr(X=1)\)</span> and similarly for <span class="math inline">\(\pi_Y\)</span>. Then, the population version of the product-moment (Pearson) correlation can be easily seen to be
+<p>To see why dependence measures for continuous variables may not be the best for discrete variables, let us focus on the case of Bernoulli variables that take on simple binary outcomes, 0 and 1. For notation, let <span class="math inline">\(\pi_{jk} = \Pr(X=j, Y=k)\)</span> for <span class="math inline">\(j,k=0,1\)</span> and let <span class="math inline">\(\pi_X=\Pr(X=1)\)</span> and similarly for <span class="math inline">\(\pi_Y\)</span>. Then, the population version of the product-moment (Pearson) correlation can be easily seen to be
 <span class="math display">\[\begin{eqnarray*}
 \rho = \frac{\pi_{11} - \pi_X \pi_Y}{\sqrt{\pi_X(1-\pi_X)\pi_Y(1-\pi_Y)}} .
 \end{eqnarray*}\]</span>
@@ -1036,32 +1061,32 @@ Unlike the case for continuous data, it is not possible for this measure to achi
 <span class="math display">\[\begin{eqnarray*}
 \frac{2\pi - 1 - \pi^2}{\pi(1-\pi)} = -\frac{1-\pi}{\pi} .
 \end{eqnarray*}\]</span>
-<p>For example, if <span class="math inline">\(\pi=0.8\)</span>, then the smallest that the Pearson correlation could be is -0.25. More generally, there are bounds on <span class="math inline">\(\rho\)</span> that depend on <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> that make it difficult to interpret this measure.</p>
-<p>As noted by <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete">1975</a>)</span> (page 382), squaring this correlation coefficient yields the Pearson chi-square statistic (introduced in chapter 2) . Despite the boundary problems described above, this feature makes the Pearson correlation coefficient a good choice for describing dependence with binary data. The other is the odds ratio, described as follows.</p>
-As an alternative measure for Bernoulli variables, the <a href="#" class="tooltip" style="color:green"><em>odds ratio</em><span style="font-size:8pt">A statistic quantifying the strength of the association between two events, a and b, which is defined as the ratio of the odds of a in the presence of b and the odds of a in the absence of b</span></a> is given by
+For example, if <span class="math inline">\(\pi=0.8\)</span>, then the smallest that the Pearson correlation could be is -0.25. More generally, there are bounds on <span class="math inline">\(\rho\)</span> that depend on <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> that make it difficult to interpret this measure.</p>
+<p>As noted by <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete" role="doc-biblioref">1975</a>)</span> (page 382), squaring this correlation coefficient yields the Pearson chi-square statistic (introduced in chapter 2) . Despite the boundary problems described above, this feature makes the Pearson correlation coefficient a good choice for describing dependence with binary data. The other is the odds ratio, described as follows.</p>
+<p>As an alternative measure for Bernoulli variables, the <a href="#" class="tooltip" style="color:green"><em>odds ratio</em><span style="font-size:8pt">A statistic quantifying the strength of the association between two events, a and b, which is defined as the ratio of the odds of a in the presence of b and the odds of a in the absence of b</span></a> is given by
 <span class="math display">\[\begin{eqnarray*}
 OR(\pi_{11}) = \frac{\pi_{11} \pi_{00}}{\pi_{01} \pi_{10}} = \frac{\pi_{11} \left( 1+\pi_{11}-\pi_X -\pi_Y\right)}{(\pi_X-\pi_{11})(\pi_Y- \pi_{11})} .
 \end{eqnarray*}\]</span>
-<p>Pleasant calculations show that <span class="math inline">\(OR(z)\)</span> is <span class="math inline">\(0\)</span> at the lower Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding bound <span class="math inline">\(z= \max\{0, \pi_X+\pi_Y-1\}\)</span> and is <span class="math inline">\(\infty\)</span> at the upper bound <span class="math inline">\(z=\min\{\pi_X,\pi_Y\}\)</span>. Thus, the bounds on this measure do not depend on the marginal probabilities <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span>, making it easier to interpret this measure.</p>
-<p>As noted by <span class="citation">(Yule <a href="#ref-yule1900association">1900</a>)</span>, odds ratios are invariant to the labeling of 0 and 1. Further, they are invariant to the marginals in the sense that one can rescale <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> by positive constants and the odds ratio remains unchanged. Specifically, suppose that <span class="math inline">\(a_i\)</span>, <span class="math inline">\(b_j\)</span> are sets of positive constants and that</p>
-<span class="math display">\[\begin{eqnarray*}
+Pleasant calculations show that <span class="math inline">\(OR(z)\)</span> is <span class="math inline">\(0\)</span> at the lower Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding bound <span class="math inline">\(z= \max\{0, \pi_X+\pi_Y-1\}\)</span> and is <span class="math inline">\(\infty\)</span> at the upper bound <span class="math inline">\(z=\min\{\pi_X,\pi_Y\}\)</span>. Thus, the bounds on this measure do not depend on the marginal probabilities <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span>, making it easier to interpret this measure.</p>
+<p>As noted by <span class="citation">(Yule <a href="#ref-yule1900association" role="doc-biblioref">1900</a>)</span>, odds ratios are invariant to the labeling of 0 and 1. Further, they are invariant to the marginals in the sense that one can rescale <span class="math inline">\(\pi_X\)</span> and <span class="math inline">\(\pi_Y\)</span> by positive constants and the odds ratio remains unchanged. Specifically, suppose that <span class="math inline">\(a_i\)</span>, <span class="math inline">\(b_j\)</span> are sets of positive constants and that</p>
+<p><span class="math display">\[\begin{eqnarray*}
 \pi_{ij}^{new} &amp;=&amp; a_i b_j \pi_{ij}
 \end{eqnarray*}\]</span>
 and <span class="math inline">\(\sum_{ij} \pi_{ij}^{new}=1.\)</span> Then,
 <span class="math display">\[\begin{eqnarray*}
 OR^{new} = \frac{(a_1 b_1 \pi_{11})( a_0 b_0 \pi_{00})}{(a_0 b_1 \pi_{01})( a_1 b_0\pi_{10})}
 = \frac{\pi_{11} \pi_{00}}{\pi_{01} \pi_{10}} =OR^{old} .
-\end{eqnarray*}\]</span>
-For additional help with interpretation, Yule proposed two transforms for the odds ratio, the first in <span class="citation">(Yule <a href="#ref-yule1900association">1900</a>)</span>,
+\end{eqnarray*}\]</span></p>
+<p>For additional help with interpretation, Yule proposed two transforms for the odds ratio, the first in <span class="citation">(Yule <a href="#ref-yule1900association" role="doc-biblioref">1900</a>)</span>,
 <span class="math display">\[\begin{eqnarray*}
 \frac{OR-1}{OR+1},
 \end{eqnarray*}\]</span>
-and the second in <span class="citation">(Yule <a href="#ref-yule1912methods">1912</a>)</span>,
+and the second in <span class="citation">(Yule <a href="#ref-yule1912methods" role="doc-biblioref">1912</a>)</span>,
 <span class="math display">\[\begin{eqnarray*}
 \frac{\sqrt{OR}-1}{\sqrt{OR}+1}.
 \end{eqnarray*}\]</span>
-<p>Although these statistics provide the same information as is the original odds ration <span class="math inline">\(OR\)</span>, they have the advantage of taking values in the interval <span class="math inline">\([-1,1]\)</span>, making them easier to interpret.</p>
-<p>In a later section, we will also see that the marginal distributions have no effect on the Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding of the <a href="#" class="tooltip" style="color:green"><em>tetrachoric correlation</em><span style="font-size:8pt">A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed binary variables</span></a>, another measure of association, see also, <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, page 48.</p>
+Although these statistics provide the same information as is the original odds ration <span class="math inline">\(OR\)</span>, they have the advantage of taking values in the interval <span class="math inline">\([-1,1]\)</span>, making them easier to interpret.</p>
+<p>In a later section, we will also see that the marginal distributions have no effect on the Fr<span class="math inline">\(\acute{e}\)</span>chet-H<span class="math inline">\(\ddot{o}\)</span>effding of the <a href="#" class="tooltip" style="color:green"><em>tetrachoric correlation</em><span style="font-size:8pt">A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed binary variables</span></a>, another measure of association, see also, <span class="citation">(Joe <a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>, page 48.</p>
 <p><a id=tab:14.2></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1084,16 +1109,16 @@ and the second in <span class="citation">(Yule <a href="#ref-yule1912methods">19
 <a id="displayCode.wald.1" href="javascript:togglecode('toggleCode.wald.1','displayCode.wald.1');"><i><strong>R Code for Odds Ratios</strong></i></a>
 </h5>
 <div id="toggleCode.wald.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(epitools)
-<span class="kw">oddsratio</span>(NoClaimCredit, Fire5,<span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;wald&quot;</span>))<span class="op">$</span>measure
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>]  <span class="fl">0.79</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" title="1"><span class="kw">library</span>(epitools)</a>
+<a class="sourceLine" id="cb167-2" title="2"><span class="kw">oddsratio</span>(NoClaimCredit, Fire5,<span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;wald&quot;</span>))<span class="op">$</span>measure</a>
+<a class="sourceLine" id="cb167-3" title="3"></a>
+<a class="sourceLine" id="cb167-4" title="4">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb167-5" title="5">[<span class="dv">1</span>]  <span class="fl">0.79</span></a></code></pre></div>
 </div>
 </div>
 <div id="categorical-variables" class="section level4">
 <h4><span class="header-section-number">14.2.3.2</span> Categorical Variables</h4>
-More generally, let <span class="math inline">\((X,Y)\)</span> be a bivariate pair having <span class="math inline">\(ncat_X\)</span> and <span class="math inline">\(ncat_Y\)</span> numbers of categories, respectively. For a two-way table of counts, let <span class="math inline">\(n_{jk}\)</span> be the number in the <span class="math inline">\(j\)</span>th row, <span class="math inline">\(k\)</span> column. Let <span class="math inline">\(n_{j\centerdot}\)</span> be the row margin total, <span class="math inline">\(n_{\centerdot k}\)</span> be the column margin total and <span class="math inline">\(n=\sum_{j,k} n_{j,k}\)</span>. Define <a href="#" class="tooltip" style="color:green"><em>Pearson chi-square statistic</em><span style="font-size:8pt">A statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance</span></a> as
+<p>More generally, let <span class="math inline">\((X,Y)\)</span> be a bivariate pair having <span class="math inline">\(ncat_X\)</span> and <span class="math inline">\(ncat_Y\)</span> numbers of categories, respectively. For a two-way table of counts, let <span class="math inline">\(n_{jk}\)</span> be the number in the <span class="math inline">\(j\)</span>th row, <span class="math inline">\(k\)</span> column. Let <span class="math inline">\(n_{j\centerdot}\)</span> be the row margin total, <span class="math inline">\(n_{\centerdot k}\)</span> be the column margin total and <span class="math inline">\(n=\sum_{j,k} n_{j,k}\)</span>. Define <a href="#" class="tooltip" style="color:green"><em>Pearson chi-square statistic</em><span style="font-size:8pt">A statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance</span></a> as
 <span class="math display">\[\begin{eqnarray*}
 \chi^2 = \sum_{jk} \frac{(n_{jk}- n_{j\centerdot}n_{\centerdot k}/n)^2}{n_{j\centerdot}n_{\centerdot k}/n} .
 \end{eqnarray*}\]</span>
@@ -1101,8 +1126,8 @@ The <a href="#" class="tooltip" style="color:green"><em>likelihood ratio test</e
 <span class="math display">\[\begin{eqnarray*}
 G^2 = 2 \sum_{jk} n_{jk} \ln\frac{n_{jk}}{n_{j\centerdot}n_{\centerdot k}/n} .
 \end{eqnarray*}\]</span>
-<p>Under the assumption of independence, both <span class="math inline">\(\chi^2\)</span> and <span class="math inline">\(G^2\)</span> have an asymptotic chi-square distribution with <span class="math inline">\((ncat_X-1)(ncat_Y-1)\)</span> degrees of freedom.</p>
-To help see what these statistics are estimating, let <span class="math inline">\(\pi_{jk} = \Pr(X=j, Y=k)\)</span> and let <span class="math inline">\(\pi_{X,j}=\Pr(X=j)\)</span> and similarly for <span class="math inline">\(\pi_{Y,k}\)</span>. Assuming that <span class="math inline">\(n_{jk}/n \approx \pi_{jk}\)</span> for large <span class="math inline">\(n\)</span> and similarly for the marginal probabilities, we have
+Under the assumption of independence, both <span class="math inline">\(\chi^2\)</span> and <span class="math inline">\(G^2\)</span> have an asymptotic chi-square distribution with <span class="math inline">\((ncat_X-1)(ncat_Y-1)\)</span> degrees of freedom.</p>
+<p>To help see what these statistics are estimating, let <span class="math inline">\(\pi_{jk} = \Pr(X=j, Y=k)\)</span> and let <span class="math inline">\(\pi_{X,j}=\Pr(X=j)\)</span> and similarly for <span class="math inline">\(\pi_{Y,k}\)</span>. Assuming that <span class="math inline">\(n_{jk}/n \approx \pi_{jk}\)</span> for large <span class="math inline">\(n\)</span> and similarly for the marginal probabilities, we have
 <span class="math display">\[\begin{eqnarray*}
 \frac{\chi^2}{n} \approx \sum_{jk} \frac{(\pi_{jk}- \pi_{X,j}\pi_{Y,k})^2}{\pi_{X,j}\pi_{Y,k}}
 \end{eqnarray*}\]</span>
@@ -1110,8 +1135,8 @@ and
 <span class="math display">\[\begin{eqnarray*}
 \frac{G^2}{n} \approx 2 \sum_{jk} \pi_{jk} \ln\frac{\pi_{jk}}{\pi_{X,j}\pi_{Y,k}} .
 \end{eqnarray*}\]</span>
-<p>Under the null hypothesis of independence, we have <span class="math inline">\(\pi_{jk} =\pi_{X,j}\pi_{Y,k}\)</span> and it is clear from these approximations that we anticipate that these statistics will be small under this hypothesis.</p>
-<p>Classical approaches, as described in <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete">1975</a>)</span> (page 374), distinguish between tests of independence and measures of associations. The former are designed to detect whether a relationship exists whereas the latter are meant to assess the type and extent of a relationship. We acknowledge these differing purposes but also less concerned with this distinction for actuarial applications.</p>
+Under the null hypothesis of independence, we have <span class="math inline">\(\pi_{jk} =\pi_{X,j}\pi_{Y,k}\)</span> and it is clear from these approximations that we anticipate that these statistics will be small under this hypothesis.</p>
+<p>Classical approaches, as described in <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete" role="doc-biblioref">1975</a>)</span> (page 374), distinguish between tests of independence and measures of associations. The former are designed to detect whether a relationship exists whereas the latter are meant to assess the type and extent of a relationship. We acknowledge these differing purposes but also less concerned with this distinction for actuarial applications.</p>
 <p><a id=tab:14.3></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1136,19 +1161,19 @@ and
 <a id="displayCode.chi.1" href="javascript:togglecode('toggleCode.chi.1','displayCode.chi.1');"><i><strong>R Code for Pearson Chi-square Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.chi.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
-table =<span class="st"> </span><span class="kw">table</span>(EntityType, NoClaimCredit)
-<span class="kw">chisq.test</span>(table)
-
-
-Output<span class="op">:</span>
-<span class="op">------------------------------------</span>
-<span class="st"> </span>Test statistic   df     P value    
-<span class="op">----------------</span><span class="st"> </span><span class="op">----</span><span class="st"> </span><span class="op">--------------</span>
-<span class="st">     </span><span class="fl">344.2</span>        <span class="dv">5</span>   <span class="fl">3.15e-72</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span>
-<span class="op">------------------------------------</span>
-
-Table<span class="op">:</span><span class="st"> </span>Pearson<span class="st">&#39;s Chi-squared test</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" title="1"><span class="kw">library</span>(MASS)</a>
+<a class="sourceLine" id="cb168-2" title="2">table =<span class="st"> </span><span class="kw">table</span>(EntityType, NoClaimCredit)</a>
+<a class="sourceLine" id="cb168-3" title="3"><span class="kw">chisq.test</span>(table)</a>
+<a class="sourceLine" id="cb168-4" title="4"></a>
+<a class="sourceLine" id="cb168-5" title="5"></a>
+<a class="sourceLine" id="cb168-6" title="6">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb168-7" title="7"><span class="op">------------------------------------</span></a>
+<a class="sourceLine" id="cb168-8" title="8"><span class="st"> </span>Test statistic   df     P value    </a>
+<a class="sourceLine" id="cb168-9" title="9"><span class="op">----------------</span><span class="st"> </span><span class="op">----</span><span class="st"> </span><span class="op">--------------</span></a>
+<a class="sourceLine" id="cb168-10" title="10"><span class="st">     </span><span class="fl">344.2</span>        <span class="dv">5</span>   <span class="fl">3.15e-72</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span></a>
+<a class="sourceLine" id="cb168-11" title="11"><span class="op">------------------------------------</span></a>
+<a class="sourceLine" id="cb168-12" title="12"></a>
+<a class="sourceLine" id="cb168-13" title="13">Table<span class="op">:</span><span class="st"> </span>Pearson<span class="st">&#39;s Chi-squared test</span></a></code></pre></div>
 </div>
 <p>As the p-value is less than the .05 significance level, we reject the null hypothesis that the <em>EntityType</em> is independent of <em>NoClaimCredit</em>.</p>
 <p>Furthermore, you can obtain the likelihood ratio test statistic , using the <code>likelihood.test()</code> function from the <code>Deducer</code> library in <code>R</code>. From below, we test whether the <em>EntityType</em> variable is independent of <em>NoClaimCredit</em> variable from the LGPIF data. Same conclusion is drawn as the Pearson chi-square test.</p>
@@ -1156,29 +1181,29 @@ Table<span class="op">:</span><span class="st"> </span>Pearson<span class="st">&
 <a id="displayCode.lik.1" href="javascript:togglecode('toggleCode.lik.1','displayCode.lik.1');"><i><strong>R Code for Likelihood Ratio Test Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.lik.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(Deducer)
-<span class="kw">likelihood.test</span>(EntityType, NoClaimCredit)
-
-Output<span class="op">:</span>
-<span class="op">-----------------------------------------</span>
-<span class="st"> </span>Test statistic   X<span class="op">-</span>squared df   P value 
-<span class="op">----------------</span><span class="st"> </span><span class="op">--------------</span><span class="st"> </span><span class="op">---------</span>
-<span class="st">     </span><span class="fl">378.7</span>             <span class="dv">5</span>         <span class="dv">0</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span>
-<span class="op">-----------------------------------------</span>
-
-Table<span class="op">:</span><span class="st"> </span>Log likelihood <span class="kw">ratio</span> (G<span class="op">-</span>test) test of independence without correction</code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" title="1"><span class="kw">library</span>(Deducer)</a>
+<a class="sourceLine" id="cb169-2" title="2"><span class="kw">likelihood.test</span>(EntityType, NoClaimCredit)</a>
+<a class="sourceLine" id="cb169-3" title="3"></a>
+<a class="sourceLine" id="cb169-4" title="4">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb169-5" title="5"><span class="op">-----------------------------------------</span></a>
+<a class="sourceLine" id="cb169-6" title="6"><span class="st"> </span>Test statistic   X<span class="op">-</span>squared df   P value </a>
+<a class="sourceLine" id="cb169-7" title="7"><span class="op">----------------</span><span class="st"> </span><span class="op">--------------</span><span class="st"> </span><span class="op">---------</span></a>
+<a class="sourceLine" id="cb169-8" title="8"><span class="st">     </span><span class="fl">378.7</span>             <span class="dv">5</span>         <span class="dv">0</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb169-9" title="9"><span class="op">-----------------------------------------</span></a>
+<a class="sourceLine" id="cb169-10" title="10"></a>
+<a class="sourceLine" id="cb169-11" title="11">Table<span class="op">:</span><span class="st"> </span>Log likelihood <span class="kw">ratio</span> (G<span class="op">-</span>test) test of independence without correction</a></code></pre></div>
 </div>
 </div>
 </div>
 <div id="ordinal-variables" class="section level3">
 <h3><span class="header-section-number">14.2.4</span> Ordinal Variables</h3>
-<p>As the analyst moves from the continuous to the nominal scale, there are two main sources of loss of information <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete">1975</a>)</span> (page 343). The first is breaking the precise continuous measurements into groups. The second is losing the ordering of the groups. So, it is sensible to describe what we can do with variables that in discrete groups but where the ordering is known.</p>
+<p>As the analyst moves from the continuous to the nominal scale, there are two main sources of loss of information <span class="citation">(Bishop, Fienberg, and Holland <a href="#ref-bishop1975discrete" role="doc-biblioref">1975</a>)</span> (page 343). The first is breaking the precise continuous measurements into groups. The second is losing the ordering of the groups. So, it is sensible to describe what we can do with variables that in discrete groups but where the ordering is known.</p>
 <p>As described in Section <a href="C-DependenceModel.html#S:QuaVar">14.1.1</a>, ordinal variables provide a clear ordering of levels of a variable but distances between levels are unknown. Associations have traditionally been quantified parametrically using normal-based correlations and nonparametrically using Spearman correlations with tied ranks.</p>
 <div id="parametric-approach-using-normal-based-correlations" class="section level4">
 <h4><span class="header-section-number">14.2.4.1</span> Parametric Approach Using Normal Based Correlations</h4>
-<p>Refer to page 60, Section 2.12.7 of <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>. Let <span class="math inline">\((y_1,y_2)\)</span> be a bivariate pair with discrete values on <span class="math inline">\(m_1, \ldots, m_2\)</span>. For a two-way table of ordinal counts, let <span class="math inline">\(n_{st}\)</span> be the number in the <span class="math inline">\(s\)</span>th row, <span class="math inline">\(t\)</span> column. Let <span class="math inline">\((n_{m_1\centerdot}, \ldots, n_{m_2\centerdot})\)</span> be the row margin total, <span class="math inline">\((n_{\centerdot m_1}, \ldots, n_{\centerdot m_2})\)</span> be the column margin total and <span class="math inline">\(n=\sum_{s,t} n_{s,t}\)</span>.</p>
+<p>Refer to page 60, Section 2.12.7 of <span class="citation">(Joe <a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>. Let <span class="math inline">\((y_1,y_2)\)</span> be a bivariate pair with discrete values on <span class="math inline">\(m_1, \ldots, m_2\)</span>. For a two-way table of ordinal counts, let <span class="math inline">\(n_{st}\)</span> be the number in the <span class="math inline">\(s\)</span>th row, <span class="math inline">\(t\)</span> column. Let <span class="math inline">\((n_{m_1\centerdot}, \ldots, n_{m_2\centerdot})\)</span> be the row margin total, <span class="math inline">\((n_{\centerdot m_1}, \ldots, n_{\centerdot m_2})\)</span> be the column margin total and <span class="math inline">\(n=\sum_{s,t} n_{s,t}\)</span>.</p>
 <p>Let <span class="math inline">\(\hat{\xi}_{1s} = \Phi^{-1}((n_{m_1}+\cdots+n_{s\centerdot})/n)\)</span> for <span class="math inline">\(s=m_1, \ldots, m_2\)</span> be a cutpoint and similarly for <span class="math inline">\(\hat{\xi}_{2t}\)</span>. The <a href="#" class="tooltip" style="color:green"><em>polychoric correlation</em><span style="font-size:8pt">A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed ordinal variables</span></a>, based on a two-step estimation procedure, is</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \begin{array}{cr}
   \hat{\rho_N} &amp;=\text{argmax}_{\rho}
   \sum_{s=m_1}^{m_2} \sum_{t=m_1}^{m_2} n_{st} \log\left\{
@@ -1188,7 +1213,7 @@ Table<span class="op">:</span><span class="st"> </span>Log likelihood <span clas
     +\Phi_2(\hat{\xi}_{1,s-1}, \hat{\xi}_{2,t-1};\rho)
     \right\}
 \end{array}
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>It is called a tetrachoric correlation for binary variables.</p>
 <p><a id=tab:14.4></a></p>
 <p><span class="math display">\[
@@ -1212,17 +1237,17 @@ Table<span class="op">:</span><span class="st"> </span>Log likelihood <span clas
 <a id="displayCode.poly.1" href="javascript:togglecode('toggleCode.poly.1','displayCode.poly.1');"><i><strong>R Code for Polychoric Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.poly.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(psych)
-AlarmCredit&lt;-<span class="kw">as.numeric</span>(<span class="kw">ifelse</span>(Insample<span class="op">$</span>AC00<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;1&quot;</span>,
-                   <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC05<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;2&quot;</span>,
-                          <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC10<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;3&quot;</span>,
-                                 <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC15<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;4&quot;</span>,<span class="dv">0</span>)))))
-x &lt;-<span class="st"> </span><span class="kw">table</span>(AlarmCredit,NoClaimCredit)
-rhoN&lt;-<span class="kw">polychoric</span>(x,<span class="dt">correct=</span><span class="ot">FALSE</span>)<span class="op">$</span>rho
-<span class="kw">round</span>(rhoN,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="op">-</span><span class="fl">0.14</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" title="1"><span class="kw">library</span>(psych)</a>
+<a class="sourceLine" id="cb170-2" title="2">AlarmCredit&lt;-<span class="kw">as.numeric</span>(<span class="kw">ifelse</span>(Insample<span class="op">$</span>AC00<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;1&quot;</span>,</a>
+<a class="sourceLine" id="cb170-3" title="3">                   <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC05<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;2&quot;</span>,</a>
+<a class="sourceLine" id="cb170-4" title="4">                          <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC10<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;3&quot;</span>,</a>
+<a class="sourceLine" id="cb170-5" title="5">                                 <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC15<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;4&quot;</span>,<span class="dv">0</span>)))))</a>
+<a class="sourceLine" id="cb170-6" title="6">x &lt;-<span class="st"> </span><span class="kw">table</span>(AlarmCredit,NoClaimCredit)</a>
+<a class="sourceLine" id="cb170-7" title="7">rhoN&lt;-<span class="kw">polychoric</span>(x,<span class="dt">correct=</span><span class="ot">FALSE</span>)<span class="op">$</span>rho</a>
+<a class="sourceLine" id="cb170-8" title="8"><span class="kw">round</span>(rhoN,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb170-9" title="9"></a>
+<a class="sourceLine" id="cb170-10" title="10">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb170-11" title="11">[<span class="dv">1</span>] <span class="fl">-0.14</span></a></code></pre></div>
 </div>
 </div>
 </div>
@@ -1234,7 +1259,7 @@ Output<span class="op">:</span>
 <div id="discrete-and-continuous-variables" class="section level3">
 <h3><span class="header-section-number">14.2.6</span> Discrete and Continuous Variables</h3>
 <p>The <a href="#" class="tooltip" style="color:green"><em>polyserial correlation</em><span style="font-size:8pt">The correlation between two continuous variables with a bivariate normal distribution, where one variable is observed directly, and the other is unobserved</span></a> is defined similarly, when one variable (<span class="math inline">\(y_1\)</span>) is continuous and the other (<span class="math inline">\(y_2\)</span>) ordinal. Define <span class="math inline">\(z\)</span> to be the <a href="#" class="tooltip" style="color:green"><em>normal score</em><span style="font-size:8pt">Transformed data which closely resemble a standard normal distribution</span></a> of <span class="math inline">\(y_1\)</span>. The polyserial correlation is</p>
-<span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \hat{\rho_N} = \text{argmax}_{\rho}
 \sum_{i=1}^n \log\left\{ \phi(z_{i1})\left[
 \Phi(\frac{\hat{\xi}_{2,y_{i2}} - \rho z_{i1}}
@@ -1243,7 +1268,7 @@ Output<span class="op">:</span>
 {(1-\rho^2)^{1/2}})
 \right]
 \right\}
-\end{eqnarray*}\]</span>
+\end{eqnarray*}\]</span></p>
 <p>The <a href="#" class="tooltip" style="color:green"><em>biserial correlation</em><span style="font-size:8pt">A correlation coefficient used when one variable is dichotomous</span></a> is defined similarly, when one variable is continuous and the other binary.</p>
 <p><a id=tab:14.5></a></p>
 <p><span class="math display">\[
@@ -1265,12 +1290,12 @@ Output<span class="op">:</span>
 <a id="displayCode.bis.1" href="javascript:togglecode('toggleCode.bis.1','displayCode.bis.1');"><i><strong>R Code for Biserial Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.bis.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(psych)
-rhoN&lt;-<span class="kw">biserial</span>(Claim,NoClaimCredit)
-<span class="kw">round</span>(rhoN,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="op">-</span><span class="fl">0.04</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" title="1"><span class="kw">library</span>(psych)</a>
+<a class="sourceLine" id="cb171-2" title="2">rhoN&lt;-<span class="kw">biserial</span>(Claim,NoClaimCredit)</a>
+<a class="sourceLine" id="cb171-3" title="3"><span class="kw">round</span>(rhoN,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb171-4" title="4"></a>
+<a class="sourceLine" id="cb171-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb171-6" title="6">[<span class="dv">1</span>] <span class="fl">-0.04</span></a></code></pre></div>
 </div>
 <div id="surveyElement142">
 
@@ -1304,8 +1329,9 @@ Output<span class="op">:</span>
 <p>is a copula. We seek to use copulas in applications that are based on more than just uniformly distributed data. Thus, consider arbitrary marginal distribution functions <span class="math inline">\({F}_1(y_1)\)</span>,…,<span class="math inline">\({F}_p(y_p)\)</span>. Then, we can define a multivariate distribution function using the copula such that <span class="math display">\[{F}(y_1, \ldots, y_p)= {C}({F}_1(y_1), \ldots,
 {F}_p(y_p)).\]</span></p>
 <p>Here, <span class="math inline">\(F\)</span> is a multivariate distribution function in this equation. Sklar (1959) showed that <span class="math inline">\(any\)</span> multivariate distribution function <span class="math inline">\(F\)</span>, can be written in the form of this equation, that is, using a copula representation.</p>
-<p>Sklar also showed that, if the marginal distributions are continuous, then there is a unique copula representation. In this chapter we focus on copula modeling with continuous variables. For discrete case, readers can see <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span> and <span class="citation">(Genest and Nešlohva <a href="#ref-genest2007methods">2007</a>)</span>.</p>
-<p>For bivariate case, <span class="math inline">\(p=2\)</span> , the distribution function of two random variables can be written by the bivariate copula function: <span class="math display">\[{C}(u_1, \, u_2) = \Pr(U_1 \leq u_1, \, U_2 \leq
+<p>Sklar also showed that, if the marginal distributions are continuous, then there is a unique copula representation. In this chapter we focus on copula modeling with continuous variables. For discrete case, readers can see <span class="citation">(Joe <a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span> and <span class="citation">(Genest and Nešlohva <a href="#ref-genest2007methods" role="doc-biblioref">2007</a>)</span>.</p>
+<p>For bivariate case, <span class="math inline">\(p=2\)</span> , the distribution function of two random variables can be written by the bivariate copula function:
+<span class="math display">\[{C}(u_1, \, u_2) = \Pr(U_1 \leq u_1, \, U_2 \leq
 u_2),\]</span></p>
 <p><span class="math display">\[{F}(y_1, \, y_2)= {C}({F}_1(y_1), \,
 {F}_p(y_2)).\]</span></p>
@@ -1340,12 +1366,12 @@ u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <li>Model the dependence with a copula function</li>
 </ul>
 <hr />
-<p>This section analyzes the insurance <em>losses </em> and <em>expenses </em> data with the statistical programming <code>R</code>. This data set was introduced in <span class="citation">(Frees and Valdez <a href="#ref-frees1998understanding">1998</a>)</span> and is now readily available in the <code>copula</code> package. The model fitting process is started by marginal modeling of two variables (<span class="math inline">\(loss\)</span> and <span class="math inline">\(expense\)</span>). Then we model the joint distribution of these marginal outcomes.</p>
+<p>This section analyzes the insurance <em>losses </em> and <em>expenses </em> data with the statistical programming <code>R</code>. This data set was introduced in <span class="citation">(Frees and Valdez <a href="#ref-frees1998understanding" role="doc-biblioref">1998</a>)</span> and is now readily available in the <code>copula</code> package. The model fitting process is started by marginal modeling of two variables (<span class="math inline">\(loss\)</span> and <span class="math inline">\(expense\)</span>). Then we model the joint distribution of these marginal outcomes.</p>
 <div id="data-description" class="section level3">
 <h3><span class="header-section-number">14.4.1</span> Data Description</h3>
 <p>We start with getting a sample (<span class="math inline">\(n = 1500\)</span>) from the whole data. We consider first two variables of the data; <em>losses</em> and <em>expenses</em>.</p>
 <ul>
-<li><em>losses </em>: general liability claims from Insurance Services Office, Inc. (ISO)</li>
+<li><em>losses </em>: general liability claims from Insurance Services Office, Inc. (ISO)</li>
 <li><em>expenses </em>: ALAE, specifically attributable to the settlement of individual claims (e.g. lawyer’s fees, claims investigation expenses)</li>
 </ul>
 <p>To visualize the relationship between <em>losses </em> and <em>expenses </em> (ALAE), scatterplots in figure <a href="#fig:Scatter"><strong>??</strong></a> are created on the real dollar scale and on the log scale.</p>
@@ -1353,53 +1379,54 @@ u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <a id="displayCode.ScaHis.1" href="javascript:togglecode('toggleCode.ScaHis.1','displayCode.ScaHis.1');"><i><strong>R Code for Scatterplots</strong></i></a>
 </h5>
 <div id="toggleCode.ScaHis.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(copula)
-<span class="kw">data</span>(loss) <span class="co"># loss data</span>
-Lossdata &lt;-<span class="st"> </span>loss 
-<span class="kw">attach</span>(Lossdata) 
-loss &lt;-<span class="st"> </span>Lossdata<span class="op">$</span>loss
-<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="kw">plot</span>(loss,alae, <span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># real dollar scale</span>
-<span class="kw">plot</span>(<span class="kw">log</span>(loss),<span class="kw">log</span>(alae),<span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># log scale</span>
-<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" title="1"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb172-2" title="2"><span class="kw">data</span>(loss) <span class="co"># loss data</span></a>
+<a class="sourceLine" id="cb172-3" title="3">Lossdata &lt;-<span class="st"> </span>loss </a>
+<a class="sourceLine" id="cb172-4" title="4"><span class="kw">attach</span>(Lossdata) </a>
+<a class="sourceLine" id="cb172-5" title="5">loss &lt;-<span class="st"> </span>Lossdata<span class="op">$</span>loss</a>
+<a class="sourceLine" id="cb172-6" title="6"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb172-7" title="7"><span class="kw">plot</span>(loss,alae, <span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># real dollar scale</span></a>
+<a class="sourceLine" id="cb172-8" title="8"><span class="kw">plot</span>(<span class="kw">log</span>(loss),<span class="kw">log</span>(alae),<span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># log scale</span></a>
+<a class="sourceLine" id="cb172-9" title="9"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a></code></pre></div>
 </div>
 </div>
 <div id="marginal-models" class="section level3">
 <h3><span class="header-section-number">14.4.2</span> Marginal Models</h3>
 <p>We first examine the <a href="#" class="tooltip" style="color:green"><em>marginal distributions</em><span style="font-size:8pt">The probability distribution of the variables contained in the subset of a collection of random variables</span></a> of <em>losses </em> and <em>expenses </em> before going through the joint modeling. The histograms show that both <em>losses </em> and <em>expenses </em> are right-skewed and <a href="#" class="tooltip" style="color:green"><em>fat-tailed</em><span style="font-size:8pt">A fat-tailed distribution is a probability distribution that exhibits a large skewness or kurtosis, relative to that of either a normal distribution or an exponential distribution</span></a>.</p>
 <p>For marginal distributions of losses and expenses, we consider a Pareto-type distribution, namely a Pareto type II with distribution function</p>
-<p><span class="math display">\[ F(y)=1- \left( 1 + \frac{y}{\theta} \right) ^{-\alpha},\]</span> where <span class="math inline">\(\theta\)</span> is the scale parameter and <span class="math inline">\(\alpha\)</span> is the shape parameter.</p>
+<p><span class="math display">\[ F(y)=1- \left( 1 + \frac{y}{\theta} \right) ^{-\alpha},\]</span>
+where <span class="math inline">\(\theta\)</span> is the scale parameter and <span class="math inline">\(\alpha\)</span> is the shape parameter.</p>
 <p>The marginal distributions of losses and expenses are fitted with maximum likelihood. Specifically, we use the <span class="math inline">\(vglm\)</span> function from the <code>R VGAM</code> package. Firstly, we fit the marginal distribution of <em>expenses </em>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.Reg.1" href="javascript:togglecode('toggleCode.Reg.1','displayCode.Reg.1');"><i><strong>R Code for Pareto Fitting</strong></i></a>
 </h5>
 <div id="toggleCode.Reg.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(VGAM)
-
-fit =<span class="st"> </span><span class="kw">vglm</span>(alae <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="kw">paretoII</span>(<span class="dt">location=</span><span class="dv">0</span>, <span class="dt">lscale=</span><span class="st">&quot;loge&quot;</span>, <span class="dt">lshape=</span><span class="st">&quot;loge&quot;</span>)) <span class="co"># fit the model by vlgm function</span>
-<span class="kw">coef</span>(fit, <span class="dt">matrix=</span><span class="ot">TRUE</span>) <span class="co"># extract fitted model coefficients, matrix=TRUE gives logarithm of estimated parameters instead of default normal scale estimates</span>
-<span class="kw">Coef</span>(fit)
-
-Output<span class="op">:</span><span class="st"> </span>
-<span class="st">               </span><span class="kw">loge</span>(scale) <span class="kw">loge</span>(shape)
- (Intercept)     <span class="fl">9.624673</span>   <span class="fl">0.7988753</span>
- 
-                  scale        shape 
- (Intercept)  <span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" title="1"><span class="kw">library</span>(VGAM)</a>
+<a class="sourceLine" id="cb173-2" title="2"></a>
+<a class="sourceLine" id="cb173-3" title="3">fit =<span class="st"> </span><span class="kw">vglm</span>(alae <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="kw">paretoII</span>(<span class="dt">location=</span><span class="dv">0</span>, <span class="dt">lscale=</span><span class="st">&quot;loge&quot;</span>, <span class="dt">lshape=</span><span class="st">&quot;loge&quot;</span>)) <span class="co"># fit the model by vlgm function</span></a>
+<a class="sourceLine" id="cb173-4" title="4"><span class="kw">coef</span>(fit, <span class="dt">matrix=</span><span class="ot">TRUE</span>) <span class="co"># extract fitted model coefficients, matrix=TRUE gives logarithm of estimated parameters instead of default normal scale estimates</span></a>
+<a class="sourceLine" id="cb173-5" title="5"><span class="kw">Coef</span>(fit)</a>
+<a class="sourceLine" id="cb173-6" title="6"></a>
+<a class="sourceLine" id="cb173-7" title="7">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb173-8" title="8"><span class="st">               </span><span class="kw">loge</span>(scale) <span class="kw">loge</span>(shape)</a>
+<a class="sourceLine" id="cb173-9" title="9"> (Intercept)     <span class="fl">9.624673</span>   <span class="fl">0.7988753</span></a>
+<a class="sourceLine" id="cb173-10" title="10"> </a>
+<a class="sourceLine" id="cb173-11" title="11">                  scale        shape </a>
+<a class="sourceLine" id="cb173-12" title="12"> (Intercept)  <span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </a></code></pre></div>
 </div>
 <p>We repeat this procedure to fit the marginal distribution of the <em>loss</em> variable. Because the loss data also seems right-skewed and heavy-tail data, we also model the marginal distribution with Pareto II distribution.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.ParFit.1" href="javascript:togglecode('toggleCode.ParFit.1','displayCode.ParFit.1');"><i><strong>R Code for Pareto Fitting</strong></i></a>
 </h5>
 <div id="toggleCode.ParFit.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fitloss =<span class="st"> </span><span class="kw">vglm</span>(loss <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">trace=</span><span class="ot">TRUE</span>)
-<span class="kw">Coef</span>(fit)
-<span class="kw">summary</span>(fit)
-
-
-Output<span class="op">:</span><span class="st"> </span>
-<span class="st">       </span>scale        shape 
-<span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1">fitloss =<span class="st"> </span><span class="kw">vglm</span>(loss <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">trace=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb174-2" title="2"><span class="kw">Coef</span>(fit)</a>
+<a class="sourceLine" id="cb174-3" title="3"><span class="kw">summary</span>(fit)</a>
+<a class="sourceLine" id="cb174-4" title="4"></a>
+<a class="sourceLine" id="cb174-5" title="5"></a>
+<a class="sourceLine" id="cb174-6" title="6">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb174-7" title="7"><span class="st">       </span>scale        shape </a>
+<a class="sourceLine" id="cb174-8" title="8"><span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </a></code></pre></div>
 </div>
 <p>To visualize the fitted distribution of <em>expenses </em> and <em>loss</em> variables, we use the estimated parameters and plot the corresponding distribution function and density function. For more details on marginal model selection, see Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
 </div>
@@ -1426,15 +1453,15 @@ Figure 14.3: Histogram of Transformed Loss. The left-hand panel shows the distri
 <a id="displayCode.transalae.1" href="javascript:togglecode('toggleCode.transalae.1','displayCode.transalae.1');"><i><strong>R Code for Histograms of Transformed Variables</strong></i></a>
 </h5>
 <div id="toggleCode.transalae.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">u1 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(alae<span class="op">/</span>b))<span class="op">^</span>(<span class="op">-</span>s) <span class="co"># or u1 &lt;- pparetoII(alae, location=0, scale=b, shape=s)</span>
-<span class="kw">hist</span>(u1, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed alae&quot;</span>)
-
-scaleloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">1</span>]
-shapeloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">2</span>]
-u2 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(loss<span class="op">/</span>scaleloss))<span class="op">^</span>(<span class="op">-</span>shapeloss)
-<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="kw">hist</span>(u2, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed Loss&quot;</span>)
-<span class="kw">hist</span>(<span class="kw">qnorm</span>(u2), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of qnorm(Loss)&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1">u1 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(alae<span class="op">/</span>b))<span class="op">^</span>(<span class="op">-</span>s) <span class="co"># or u1 &lt;- pparetoII(alae, location=0, scale=b, shape=s)</span></a>
+<a class="sourceLine" id="cb175-2" title="2"><span class="kw">hist</span>(u1, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed alae&quot;</span>)</a>
+<a class="sourceLine" id="cb175-3" title="3"></a>
+<a class="sourceLine" id="cb175-4" title="4">scaleloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb175-5" title="5">shapeloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb175-6" title="6">u2 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(loss<span class="op">/</span>scaleloss))<span class="op">^</span>(<span class="op">-</span>shapeloss)</a>
+<a class="sourceLine" id="cb175-7" title="7"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb175-8" title="8"><span class="kw">hist</span>(u2, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed Loss&quot;</span>)</a>
+<a class="sourceLine" id="cb175-9" title="9"><span class="kw">hist</span>(<span class="kw">qnorm</span>(u2), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of qnorm(Loss)&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="joint-modeling-with-copula-function" class="section level3">
@@ -1451,47 +1478,47 @@ Figure 14.4: Left: Scatter plot for transformed variables. Right:Scatter plot fo
 <a id="displayCode.Cor.1" href="javascript:togglecode('toggleCode.Cor.1','displayCode.Cor.1');"><i><strong>R Code for Scatter Plots and Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.Cor.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="kw">plot</span>(u1, u2, <span class="dt">cex =</span> <span class="fl">0.5</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>),
-     <span class="dt">xlab =</span> <span class="st">&quot;Transformed Alae&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Transformed Loss&quot;</span>)
-<span class="kw">plot</span>(<span class="kw">qnorm</span>(u1), <span class="kw">qnorm</span>(u2))
-<span class="kw">cor</span>(u1, u2, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)
-
-Output<span class="op">:</span><span class="st"> </span>
-
-[<span class="dv">1</span>] <span class="fl">0.451872</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb176-2" title="2"><span class="kw">plot</span>(u1, u2, <span class="dt">cex =</span> <span class="fl">0.5</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>),</a>
+<a class="sourceLine" id="cb176-3" title="3">     <span class="dt">xlab =</span> <span class="st">&quot;Transformed Alae&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Transformed Loss&quot;</span>)</a>
+<a class="sourceLine" id="cb176-4" title="4"><span class="kw">plot</span>(<span class="kw">qnorm</span>(u1), <span class="kw">qnorm</span>(u2))</a>
+<a class="sourceLine" id="cb176-5" title="5"><span class="kw">cor</span>(u1, u2, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</a>
+<a class="sourceLine" id="cb176-6" title="6"></a>
+<a class="sourceLine" id="cb176-7" title="7">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb176-8" title="8"></a>
+<a class="sourceLine" id="cb176-9" title="9">[<span class="dv">1</span>] <span class="fl">0.451872</span></a></code></pre></div>
 </div>
-<p>Scatter plots and Spearman’s rho correlation value (0.451) shows us there is a positive dependency between these two uniform random variables. It is more clear to see the relationship with normal scores in the second graph. To learn more details about normal scores and their applications in copula modeling, see <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>.</p>
+<p>Scatter plots and Spearman’s rho correlation value (0.451) shows us there is a positive dependency between these two uniform random variables. It is more clear to see the relationship with normal scores in the second graph. To learn more details about normal scores and their applications in copula modeling, see <span class="citation">(Joe <a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>.</p>
 <p><span class="math inline">\((U_1, U_2)\)</span>, (<span class="math inline">\(U_1 = F_1(ALAE)\)</span> and <span class="math inline">\(U_2=F_2(LOSS)\)</span>), is fit to Frank’s copula with maximum likelihood method.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.FrankCopula.1" href="javascript:togglecode('toggleCode.FrankCopula.1','displayCode.FrankCopula.1');"><i><strong>R Code for Modeling with Frank Copula</strong></i></a>
 </h5>
 <div id="toggleCode.FrankCopula.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">uu =<span class="st"> </span><span class="kw">cbind</span>(u1,u2) 
-frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="dv">5</span>), <span class="dt">dim =</span> <span class="dv">2</span>)
-fit.ml &lt;-<span class="st"> </span><span class="kw">fitCopula</span>(frank.cop, uu, <span class="dt">method=</span><span class="st">&quot;ml&quot;</span>, <span class="dt">start=</span><span class="kw">c</span>(<span class="fl">0.4</span>))
-<span class="kw">summary</span>(fit.ml)
-
-
-Output<span class="op">:</span><span class="st"> </span>
-
-Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)
-Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.
-Copula<span class="op">:</span><span class="st"> </span>frankCopula 
-param 
-<span class="fl">3.114</span> 
-The maximized loglikelihood is <span class="fl">172.6</span> 
-Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.
-Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)
-Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.
-Frank copula, dim. d =<span class="st"> </span><span class="dv">2</span> 
-      Estimate Std. Error
-param    <span class="fl">3.114</span>         <span class="ot">NA</span>
-The maximized loglikelihood is <span class="fl">172.6</span> 
-Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.
-Number of loglikelihood evaluations<span class="op">:</span>
-<span class="cf">function</span> gradient 
-      <span class="dv">45</span>       <span class="dv">45</span> </code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1">uu =<span class="st"> </span><span class="kw">cbind</span>(u1,u2) </a>
+<a class="sourceLine" id="cb177-2" title="2">frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="dv">5</span>), <span class="dt">dim =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb177-3" title="3">fit.ml &lt;-<span class="st"> </span><span class="kw">fitCopula</span>(frank.cop, uu, <span class="dt">method=</span><span class="st">&quot;ml&quot;</span>, <span class="dt">start=</span><span class="kw">c</span>(<span class="fl">0.4</span>))</a>
+<a class="sourceLine" id="cb177-4" title="4"><span class="kw">summary</span>(fit.ml)</a>
+<a class="sourceLine" id="cb177-5" title="5"></a>
+<a class="sourceLine" id="cb177-6" title="6"></a>
+<a class="sourceLine" id="cb177-7" title="7">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-8" title="8"></a>
+<a class="sourceLine" id="cb177-9" title="9">Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb177-10" title="10">Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.</a>
+<a class="sourceLine" id="cb177-11" title="11">Copula<span class="op">:</span><span class="st"> </span>frankCopula </a>
+<a class="sourceLine" id="cb177-12" title="12">param </a>
+<a class="sourceLine" id="cb177-13" title="13"><span class="fl">3.114</span> </a>
+<a class="sourceLine" id="cb177-14" title="14">The maximized loglikelihood is <span class="fl">172.6</span> </a>
+<a class="sourceLine" id="cb177-15" title="15">Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.</a>
+<a class="sourceLine" id="cb177-16" title="16">Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb177-17" title="17">Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.</a>
+<a class="sourceLine" id="cb177-18" title="18">Frank copula, dim. d =<span class="st"> </span><span class="dv">2</span> </a>
+<a class="sourceLine" id="cb177-19" title="19">      Estimate Std. Error</a>
+<a class="sourceLine" id="cb177-20" title="20">param    <span class="fl">3.114</span>         <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb177-21" title="21">The maximized loglikelihood is <span class="fl">172.6</span> </a>
+<a class="sourceLine" id="cb177-22" title="22">Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.</a>
+<a class="sourceLine" id="cb177-23" title="23">Number of loglikelihood evaluations<span class="op">:</span></a>
+<a class="sourceLine" id="cb177-24" title="24"><span class="cf">function</span> gradient </a>
+<a class="sourceLine" id="cb177-25" title="25">      <span class="dv">45</span>       <span class="dv">45</span> </a></code></pre></div>
 </div>
 <p>The fitted model implies that losses and expenses are positively dependent and their dependence is significant.</p>
 <p>We use the fitted parameter to update the Frank’s copula. The Spearman’s correlation corresponding to the fitted copula parameter(3.114) is calculated with the <code>rho</code> function. In this case, the Spearman’s correlation coefficient is 0.462, which is very close to the sample Spearman’s correlation coefficient; 0.452.</p>
@@ -1499,12 +1526,12 @@ Number of loglikelihood evaluations<span class="op">:</span>
 <a id="displayCode.fittedCop.1" href="javascript:togglecode('toggleCode.fittedCop.1','displayCode.fittedCop.1');"><i><strong>R Code for Spearman’s Correlation Using Frank’s Copula</strong></i></a>
 </h5>
 <div id="toggleCode.fittedCop.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">param =</span> fit.ml<span class="op">@</span>estimate)
-frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> param, <span class="dt">dim =</span> <span class="dv">2</span>)
-<span class="kw">rho</span>(frank.cop) 
-
-Output <span class="op">:</span><span class="st"> </span>
-[<span class="dv">1</span>] <span class="fl">0.4622722</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1">(<span class="dt">param =</span> fit.ml<span class="op">@</span>estimate)</a>
+<a class="sourceLine" id="cb178-2" title="2">frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> param, <span class="dt">dim =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb178-3" title="3"><span class="kw">rho</span>(frank.cop) </a>
+<a class="sourceLine" id="cb178-4" title="4"></a>
+<a class="sourceLine" id="cb178-5" title="5">Output <span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb178-6" title="6">[<span class="dv">1</span>] <span class="fl">0.4622722</span></a></code></pre></div>
 </div>
 <p>To visualize the fitted Frank’s copula, the distribution function and density function perspective plots are drawn in Figure <a href="C-DependenceModel.html#fig:FrankCop">14.5</a>.</p>
 <div class="figure"><span id="fig:FrankCop"></span>
@@ -1517,11 +1544,11 @@ Figure 14.5: Left: Plot for distribution function for Franks Copula. Right:Plot 
 <a id="displayCode.DistriPlot.1" href="javascript:togglecode('toggleCode.DistriPlot.1','displayCode.DistriPlot.1');"><i><strong>R Code for Frank’s Copula Plots</strong></i></a>
 </h5>
 <div id="toggleCode.DistriPlot.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="fl">3.2</span>,<span class="dv">3</span>,.<span class="dv">2</span>,.<span class="dv">2</span>),<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
-<span class="kw">persp</span>(frank.cop, pCopula, <span class="dt">theta=</span><span class="dv">50</span>, <span class="dt">zlab=</span><span class="st">&quot;C(u,v)&quot;</span>,
-        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)
-<span class="kw">persp</span>(frank.cop, dCopula, <span class="dt">theta=</span><span class="dv">0</span>, <span class="dt">zlab=</span><span class="st">&quot;c(u,v)&quot;</span>,
-        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" title="1"><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="fl">3.2</span>,<span class="dv">3</span>,.<span class="dv">2</span>,.<span class="dv">2</span>),<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb179-2" title="2"><span class="kw">persp</span>(frank.cop, pCopula, <span class="dt">theta=</span><span class="dv">50</span>, <span class="dt">zlab=</span><span class="st">&quot;C(u,v)&quot;</span>,</a>
+<a class="sourceLine" id="cb179-3" title="3">        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</a>
+<a class="sourceLine" id="cb179-4" title="4"><span class="kw">persp</span>(frank.cop, dCopula, <span class="dt">theta=</span><span class="dv">0</span>, <span class="dt">zlab=</span><span class="st">&quot;c(u,v)&quot;</span>,</a>
+<a class="sourceLine" id="cb179-5" title="5">        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</a></code></pre></div>
 </div>
 <p>Frank’s copula models positive dependence for this data set, with <span class="math inline">\(\theta=3.114\)</span>. For Frank’s copula, the dependence is related to values of <span class="math inline">\(\theta\)</span>. That is:</p>
 <ul>
@@ -1543,18 +1570,24 @@ Figure 14.5: Left: Plot for distribution function for Franks Copula. Right:Plot 
 <p>There are several families of copulas have been described in the literature. Two main families of the copula families are the <strong>Archimedian</strong> and <strong>Elliptical</strong> copulas.</p>
 <div id="elliptical-copulas" class="section level3">
 <h3><span class="header-section-number">14.5.1</span> Elliptical Copulas</h3>
-<p><a href="#" class="tooltip" style="color:green"><em>Elliptical copulas</em><span style="font-size:8pt">The copulas of elliptical distributions</span></a> are constructed from <a href="#" class="tooltip" style="color:green"><em>elliptical distributions</em><span style="font-size:8pt">Any member of a broad family of probability distributions that generalize the multivariate normal distribution</span></a>. This copula decompose (multivariate) elliptical distributions into their univariate elliptical marginal distributions by Sklar’s theorem <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
-<p>Properties of elliptical copulas are typically obtained from the properties of corresponding elliptical distributions <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
-<p>For example, the normal distribution is a special type of elliptical distribution. To introduce the elliptical class of copulas, we start with the familiar multivariate normal distribution with probability density function <span class="math display">\[\phi_N (\mathbf{z})= \frac{1}{(2 \pi)^{p/2}\sqrt{\det \boldsymbol \Sigma}}
+<p><a href="#" class="tooltip" style="color:green"><em>Elliptical copulas</em><span style="font-size:8pt">The copulas of elliptical distributions</span></a> are constructed from <a href="#" class="tooltip" style="color:green"><em>elliptical distributions</em><span style="font-size:8pt">Any member of a broad family of probability distributions that generalize the multivariate normal distribution</span></a>. This copula decompose (multivariate) elliptical distributions into their univariate elliptical marginal distributions by Sklar’s theorem <span class="citation">(Hofert et al. <a href="#ref-hofertelements" role="doc-biblioref">2018</a>)</span>.</p>
+<p>Properties of elliptical copulas are typically obtained from the properties of corresponding elliptical distributions <span class="citation">(Hofert et al. <a href="#ref-hofertelements" role="doc-biblioref">2018</a>)</span>.</p>
+<p>For example, the normal distribution is a special type of elliptical distribution. To introduce the elliptical class of copulas, we start with the familiar multivariate normal distribution with probability density function
+<span class="math display">\[\phi_N (\mathbf{z})= \frac{1}{(2 \pi)^{p/2}\sqrt{\det \boldsymbol \Sigma}}
 \exp\left( -\frac{1}{2} \mathbf{z}^{\prime} \boldsymbol
 \Sigma^{-1}\mathbf{z}\right).\]</span></p>
-<p>Here, <span class="math inline">\(\boldsymbol \Sigma\)</span> is a <a href="#" class="tooltip" style="color:green"><em>correlation matrix</em><span style="font-size:8pt">A table showing correlation coefficients between variables</span></a>, with ones on the diagonal. Let <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\phi\)</span> denote the standard normal distribution and density functions. We define the Gaussian (normal) copula density function as</p>
+<p>Here, <span class="math inline">\(\boldsymbol \Sigma\)</span> is a <a href="#" class="tooltip" style="color:green"><em>correlation matrix</em><span style="font-size:8pt">A table showing correlation coefficients between variables</span></a>, with ones on the diagonal. Let <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\phi\)</span> denote the standard normal distribution and density functions.
+We define the Gaussian (normal) copula density function as</p>
 <p><span class="math display">\[{c}_N(u_1,  \ldots, u_p) = \phi_N \left(\Phi^{-1}(u_1), \ldots, \Phi^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{\phi(\Phi^{-1}(u_j))}.\]</span></p>
 <p>As with other copulas, the domain is the unit cube <span class="math inline">\([0,1]^p\)</span>.</p>
-<p>Specifically, a <span class="math inline">\(p\)</span>-dimensional vector <span class="math inline">\({z}\)</span> has an <span class="math inline">\({elliptical}\)</span> <span class="math inline">\({distribution}\)</span> if the density can be written as <span class="math display">\[h_E (\mathbf{z})= \frac{k_p}{\sqrt{\det \boldsymbol \Sigma}}
+<p>Specifically, a <span class="math inline">\(p\)</span>-dimensional vector <span class="math inline">\({z}\)</span> has an
+<span class="math inline">\({elliptical}\)</span> <span class="math inline">\({distribution}\)</span> if the density can be written as
+<span class="math display">\[h_E (\mathbf{z})= \frac{k_p}{\sqrt{\det \boldsymbol \Sigma}}
 g_p \left( \frac{1}{2} (\mathbf{z}- \boldsymbol \mu)^{\prime}
 \boldsymbol \Sigma^{-1}(\mathbf{z}- \boldsymbol \mu) \right).\]</span></p>
-<p>We will use elliptical distributions to generate copulas. Because copulas are concerned primarily with relationships, we may restrict our considerations to the case where <span class="math inline">\(\mu = \mathbf{0}\)</span> and <span class="math inline">\(\boldsymbol \Sigma\)</span> is a correlation matrix. With these restrictions, the marginal distributions of the multivariate elliptical copula are identical; we use <span class="math inline">\(H\)</span> to refer to this marginal distribution function and <span class="math inline">\(h\)</span> is the corresponding density. This marginal density is <span class="math inline">\(h(z) = k_1 g_1(z^2/2).\)</span></p>
+<p>We will use elliptical distributions to generate
+copulas. Because copulas are concerned primarily with relationships,
+we may restrict our considerations to the case where <span class="math inline">\(\mu = \mathbf{0}\)</span> and <span class="math inline">\(\boldsymbol \Sigma\)</span> is a correlation matrix. With these restrictions, the marginal distributions of the multivariate elliptical copula are identical; we use <span class="math inline">\(H\)</span> to refer to this marginal distribution function and <span class="math inline">\(h\)</span> is the corresponding density. This marginal density is <span class="math inline">\(h(z) = k_1 g_1(z^2/2).\)</span></p>
 <p>We are now ready to define the <span class="math inline">\(elliptical\)</span> <span class="math inline">\(copula\)</span>, a function defined on the unit cube <span class="math inline">\([0,1]^p\)</span> as</p>
 <p><span class="math display">\[{c}_E(u_1,  \ldots, u_p) = h_E \left(H^{-1}(u_1), \ldots,
 H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
@@ -1575,7 +1608,7 @@ H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
 \]</span></p>
 <p><a href="#tab:14.6">Table 14.6</a> : Distribution and Generator Functions (<span class="math inline">\(\mathrm{g}_p(x)\)</span>) for Selected Elliptical Copulas</p>
 <p>Most empirical work focuses on the normal copula and <span class="math inline">\(t\)</span>-copula. That is, <span class="math inline">\(t\)</span>-copulas are useful for modeling the dependency in the tails of bivariate distributions, especially in financial risk analysis applications.</p>
-<p>The <span class="math inline">\(t\)</span>-copulas with same association parameter in varying the degrees of freedom parameter show us different tail dependency structures. For more information on about <span class="math inline">\(t\)</span>-copulas readers can see <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, <span class="citation">(Hofert et al. <a href="#ref-hofertelements">2018</a>)</span>.</p>
+<p>The <span class="math inline">\(t\)</span>-copulas with same association parameter in varying the degrees of freedom parameter show us different tail dependency structures. For more information on about <span class="math inline">\(t\)</span>-copulas readers can see <span class="citation">(Joe <a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>, <span class="citation">(Hofert et al. <a href="#ref-hofertelements" role="doc-biblioref">2018</a>)</span>.</p>
 </div>
 <div id="archimedian-copulas" class="section level3">
 <h3><span class="header-section-number">14.5.2</span> Archimedian Copulas</h3>
@@ -1588,13 +1621,15 @@ H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
 <p>We can remember that we mentioned about Frank’s copula with details in Section <a href="C-DependenceModel.html#S:Copula">14.3</a> and in Section <a href="C-DependenceModel.html#S:CopAppl">14.4</a>. Here we will continue to express the equations for Clayton copula and Gumbel/Hougaard copula.</p>
 <div id="clayton-copula" class="section level4">
 <h4><span class="header-section-number">14.5.2.1</span> Clayton Copula</h4>
-<p>For <span class="math inline">\(p=2\)</span>, the Clayton copula is parameterized by <span class="math inline">\(\theta \in [-1,\infty)\)</span> is defined by <span class="math display">\[C_{\theta}^C(u)=\max\{u_1^{-\theta}+u_2^{-\theta}-1,0\}^{1/\theta}, \quad u\in[0,1]^2.\]</span></p>
+<p>For <span class="math inline">\(p=2\)</span>, the Clayton copula is parameterized by <span class="math inline">\(\theta \in [-1,\infty)\)</span> is defined by
+<span class="math display">\[C_{\theta}^C(u)=\max\{u_1^{-\theta}+u_2^{-\theta}-1,0\}^{1/\theta}, \quad u\in[0,1]^2.\]</span></p>
 <p>This is a bivariate distribution function of Clayton copula defined in unit square <span class="math inline">\([0,1]^2.\)</span> The range of dependence is controlled by the parameter <span class="math inline">\(\theta\)</span> as the same as Frank copula.</p>
 </div>
 <div id="gumbel-hougaard-copula" class="section level4">
 <h4><span class="header-section-number">14.5.2.2</span> Gumbel-Hougaard copula</h4>
-<p>The Gumbel-Hougaarg copula is parametrized by <span class="math inline">\(\theta \in [1,\infty)\)</span> and defined by <span class="math display">\[C_{\theta}^{GH}(u)=\exp\left(-\left(\sum_{i=1}^2 (-\log u_i)^{\theta}\right)^{1/\theta}\right), \quad u\in[0,1]^2.\]</span></p>
-<p>Readers seeking deeper background on Archimedean copulas can see <span class="citation">Joe (<a href="#ref-joe2014dependence">2014</a>)</span>, <span class="citation">Frees and Valdez (<a href="#ref-frees1998understanding">1998</a>)</span>, and <span class="citation">Genest and Mackay (<a href="#ref-genest1986bivariate">1986</a>)</span>.</p>
+<p>The Gumbel-Hougaarg copula is parametrized by <span class="math inline">\(\theta \in [1,\infty)\)</span> and defined by
+<span class="math display">\[C_{\theta}^{GH}(u)=\exp\left(-\left(\sum_{i=1}^2 (-\log u_i)^{\theta}\right)^{1/\theta}\right), \quad u\in[0,1]^2.\]</span></p>
+<p>Readers seeking deeper background on Archimedean copulas can see <span class="citation">Joe (<a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>, <span class="citation">Frees and Valdez (<a href="#ref-frees1998understanding" role="doc-biblioref">1998</a>)</span>, and <span class="citation">Genest and Mackay (<a href="#ref-genest1986bivariate" role="doc-biblioref">1986</a>)</span>.</p>
 </div>
 </div>
 <div id="properties-of-copulas" class="section level3">
@@ -1603,9 +1638,11 @@ H^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{h(H^{-1}(u_j))}.\]</span></p>
 <h4><span class="header-section-number">14.5.3.1</span> Bounds on Association</h4>
 <p>Like all multivariate distribution functions, copulas are bounded. The Fr<span class="math inline">\(&#39;{e}\)</span>chet-Hoeffding bounds are</p>
 <p><span class="math display">\[\max( u_1 +\cdots+ u_p + p -1, 0) \leq  \mathrm{C}(u_1,  \ldots, u_p) \leq \min (u_1,  \ldots,u_p).\]</span></p>
-<p>To see the right-hand side of the equation, note that <span class="math display">\[\mathrm{C}(u_1,\ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p) \leq  \Pr(U_j \leq u_j)\]</span>, for <span class="math inline">\(j=1,\ldots,p\)</span>. The bound is achieved when <span class="math inline">\(U_1 = \cdots = U_p\)</span>. To see the left-hand side when <span class="math inline">\(p=2\)</span>, consider <span class="math inline">\(U_2=1-U_1\)</span>. In this case, if <span class="math inline">\(1-u_2 &lt; u_1\)</span> then <span class="math inline">\(\Pr(U_1 \leq u_1, U_2 \leq u_2) = \Pr ( 1-u_2 \leq U_1 &lt; u_1) =u_1+u_2-1.\)</span> <span class="citation">(Nelson <a href="#ref-nelsen1997introduction">1997</a>)</span></p>
+<p>To see the right-hand side of the equation, note that
+<span class="math display">\[\mathrm{C}(u_1,\ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p) \leq  \Pr(U_j \leq u_j)\]</span>, for <span class="math inline">\(j=1,\ldots,p\)</span>. The bound is achieved when <span class="math inline">\(U_1 = \cdots = U_p\)</span>. To see the left-hand side when <span class="math inline">\(p=2\)</span>, consider <span class="math inline">\(U_2=1-U_1\)</span>. In this case, if <span class="math inline">\(1-u_2 &lt; u_1\)</span> then <span class="math inline">\(\Pr(U_1 \leq u_1, U_2 \leq u_2) = \Pr ( 1-u_2 \leq U_1 &lt; u_1) =u_1+u_2-1.\)</span> <span class="citation">(Nelson <a href="#ref-nelsen1997introduction" role="doc-biblioref">1997</a>)</span></p>
 <p>The product copula is <span class="math inline">\(\mathrm{C}(u_1,u_2)=u_1u_2\)</span> is the result of assuming independence between random variables.</p>
-<p>The lower bound is achieved when the two random variables are perfectly negatively related (<span class="math inline">\(U_2=1-U_1\)</span>) and the upper bound is achieved when they are perfectly positively related (<span class="math inline">\(U_2=U_1\)</span>).</p>
+<p>The lower bound is achieved when the two random variables are perfectly negatively related (<span class="math inline">\(U_2=1-U_1\)</span>) and the upper bound is achieved when they are
+perfectly positively related (<span class="math inline">\(U_2=U_1\)</span>).</p>
 <p>We can see The <a href="#" class="tooltip" style="color:green"><em>Frechet-Hoeffding bounds</em><span style="font-size:8pt">Bounds of multivariate distribution functions</span></a> for two random variables in the Figure <a href="C-DependenceModel.html#fig:Bounds">14.6</a>.</p>
 <div class="figure"><span id="fig:Bounds"></span>
 <img src="LossDataAnalytics_files/figure-html/Bounds-1.png" alt="Perfect Positive and Perfect negative dependence plots" width="672" />
@@ -1617,13 +1654,13 @@ Figure 14.6: Perfect Positive and Perfect negative dependence plots
 <a id="displayCode.plot.1" href="javascript:togglecode('toggleCode.plot.1','displayCode.plot.1');"><i><strong>R Code for Frechet-Hoeffding Bounds for Two Random Variables</strong></i></a>
 </h5>
 <div id="toggleCode.plot.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(copula)
-n&lt;-<span class="dv">100</span>
-<span class="kw">set.seed</span>(<span class="dv">1980</span>)
-U&lt;-<span class="kw">runif</span>(n)
-<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="kw">plot</span>(<span class="kw">cbind</span>(U,<span class="dv">1</span><span class="op">-</span>U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]), <span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Negative Dependency&quot;</span>) <span class="co"># W for p=2</span>
-<span class="kw">plot</span> (<span class="kw">cbind</span>(U,U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]),<span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Positive Dependency&quot;</span>)  <span class="co">#M for p=2</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb180-2" title="2">n&lt;-<span class="dv">100</span></a>
+<a class="sourceLine" id="cb180-3" title="3"><span class="kw">set.seed</span>(<span class="dv">1980</span>)</a>
+<a class="sourceLine" id="cb180-4" title="4">U&lt;-<span class="kw">runif</span>(n)</a>
+<a class="sourceLine" id="cb180-5" title="5"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb180-6" title="6"><span class="kw">plot</span>(<span class="kw">cbind</span>(U,<span class="dv">1</span><span class="op">-</span>U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]), <span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Negative Dependency&quot;</span>) <span class="co"># W for p=2</span></a>
+<a class="sourceLine" id="cb180-7" title="7"><span class="kw">plot</span> (<span class="kw">cbind</span>(U,U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]),<span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Positive Dependency&quot;</span>)  <span class="co">#M for p=2</span></a></code></pre></div>
 </div>
 </div>
 <div id="measures-of-association" class="section level4">
@@ -1633,7 +1670,8 @@ U&lt;-<span class="kw">runif</span>(n)
 <p><span class="math display">\[= 12 \int \int \left\{\mathrm{C}(u,v) - uv \right\} du dv.\]</span></p>
 <p>Kendall’s tau is given by</p>
 <p><span class="math display">\[= 4 \int \int \mathrm{C}(u,v)d\mathrm{C}(u,v) - 1 .\]</span></p>
-<p>For these expressions, we assume that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> have a jointly continuous distribution function. Further, the definition of Kendall’s tau uses an independent copy of (<span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span>), labeled (<span class="math inline">\(Y_1^{\ast}\)</span>, <span class="math inline">\(Y_2^{\ast}\)</span>), to define the measure of “concordance.” the widely used Pearson correlation depends on the margins as well as the copula. Because it is affected by non-linear changes of scale.</p>
+<p>For these expressions, we assume that <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> have a jointly continuous distribution function. Further, the definition of
+Kendall’s tau uses an independent copy of (<span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span>), labeled (<span class="math inline">\(Y_1^{\ast}\)</span>, <span class="math inline">\(Y_2^{\ast}\)</span>), to define the measure of “concordance.” the widely used Pearson correlation depends on the margins as well as the copula. Because it is affected by non-linear changes of scale.</p>
 </div>
 <div id="tail-dependency" class="section level4">
 <h4><span class="header-section-number">14.5.3.3</span> Tail Dependency</h4>
@@ -1643,7 +1681,7 @@ U&lt;-<span class="kw">runif</span>(n)
 <p>From this equation , <span class="math inline">\(R(z)\)</span> will equal to <span class="math inline">\(z\)</span> under independence. Joe (1997) uses the term “upper tail dependence parameter” for <span class="math inline">\(R = \lim_{z \rightarrow 1} R(z)\)</span>. Similarly, the left-tail concentration function is</p>
 <p><span class="math display">\[L(z) = \frac{\Pr(U_1 \leq z, U_2 \leq z)}{z}=\Pr(U_1 \leq z | U_2 \leq z) =\frac{ \mathrm{C}(z,z)}{1-z}.\]</span></p>
 <p><a href="#" class="tooltip" style="color:green"><em>Tail dependency</em><span style="font-size:8pt">A measure of their comovements in the tails of the distributions</span></a> concentration function captures the probability of two random variables both catching up extreme values.</p>
-<p>We calculate the left and right tail concentration functions for four different types of copulas; Normal, Frank,Gumbel and t copula. After getting tail concentration functions for each copula, we show concentration function’s values for these four copulas in <a href="#tab:14.7">Table 14.7</a>. As in <span class="citation">Venter (<a href="#ref-venter2002tails">2002</a>)</span>, we show <span class="math inline">\(L(z)\)</span> for <span class="math inline">\(z\leq 0.5\)</span> and <span class="math inline">\(R(z)\)</span> for <span class="math inline">\(z&gt;0.5\)</span> in the tail dependence plot in Figure <a href="C-DependenceModel.html#fig:DepTails">14.7</a>. We interpret the tail dependence plot, to mean that both the Frank and Normal copula exhibit no tail dependence whereas the <span class="math inline">\(t\)</span> and the Gumbel may do so. The <span class="math inline">\(t\)</span> copula is symmetric in its treatment of upper and lower tails.</p>
+<p>We calculate the left and right tail concentration functions for four different types of copulas; Normal, Frank,Gumbel and t copula. After getting tail concentration functions for each copula, we show concentration function’s values for these four copulas in <a href="#tab:14.7">Table 14.7</a>. As in <span class="citation">Venter (<a href="#ref-venter2002tails" role="doc-biblioref">2002</a>)</span>, we show <span class="math inline">\(L(z)\)</span> for <span class="math inline">\(z\leq 0.5\)</span> and <span class="math inline">\(R(z)\)</span> for <span class="math inline">\(z&gt;0.5\)</span> in the tail dependence plot in Figure <a href="C-DependenceModel.html#fig:DepTails">14.7</a>. We interpret the tail dependence plot, to mean that both the Frank and Normal copula exhibit no tail dependence whereas the <span class="math inline">\(t\)</span> and the Gumbel may do so. The <span class="math inline">\(t\)</span> copula is symmetric in its treatment of upper and lower tails.</p>
 <p><a id=tab:14.7></a></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
@@ -1664,27 +1702,27 @@ U&lt;-<span class="kw">runif</span>(n)
 <a id="displayCode.Tail.1" href="javascript:togglecode('toggleCode.Tail.1','displayCode.Tail.1');"><i><strong>R Code for Tail Copula Functions for Different Copulas</strong></i></a>
 </h5>
 <div id="toggleCode.Tail.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(copula)
-U1 =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="fl">0.5</span>, <span class="dt">by=</span><span class="fl">0.002</span>)
-U2 =<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.5</span>,<span class="dv">1</span>, <span class="dt">by=</span><span class="fl">0.002</span>)
-U =<span class="st"> </span><span class="kw">rbind</span>(U1, U2)
-TailFunction &lt;-<span class="st"> </span><span class="cf">function</span>(Tailcop) {
-  lowertail &lt;-<span class="st"> </span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U1,U1), Tailcop)<span class="op">/</span>U1
-  uppertail &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>U2 <span class="op">+</span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U2,U2), Tailcop))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>U2)
-  jointtail &lt;-<span class="st"> </span><span class="kw">rbind</span>(lowertail,uppertail)
-}
-Tailcop1 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="fl">0.05</span>), <span class="dt">dim =</span> <span class="dv">2</span>)
-Tailcop2 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;gumbel&quot;</span>,<span class="dt">param =</span> <span class="dv">3</span>)
-Tailcop3 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;normal&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)
-Tailcop4 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;t&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>, <span class="dt">df=</span><span class="dv">5</span>)
-jointtail1 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop1)
-jointtail2 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop2)
-jointtail3 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop3)
-jointtail4 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop4)
-<span class="kw">tailIndex</span>(Tailcop1)
-<span class="kw">tailIndex</span>(Tailcop2)
-<span class="kw">tailIndex</span>(Tailcop3)
-<span class="kw">tailIndex</span>(Tailcop4)</code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb181-2" title="2">U1 =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="fl">0.5</span>, <span class="dt">by=</span><span class="fl">0.002</span>)</a>
+<a class="sourceLine" id="cb181-3" title="3">U2 =<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.5</span>,<span class="dv">1</span>, <span class="dt">by=</span><span class="fl">0.002</span>)</a>
+<a class="sourceLine" id="cb181-4" title="4">U =<span class="st"> </span><span class="kw">rbind</span>(U1, U2)</a>
+<a class="sourceLine" id="cb181-5" title="5">TailFunction &lt;-<span class="st"> </span><span class="cf">function</span>(Tailcop) {</a>
+<a class="sourceLine" id="cb181-6" title="6">  lowertail &lt;-<span class="st"> </span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U1,U1), Tailcop)<span class="op">/</span>U1</a>
+<a class="sourceLine" id="cb181-7" title="7">  uppertail &lt;-<span class="st"> </span>(<span class="dv">1-2</span><span class="op">*</span>U2 <span class="op">+</span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U2,U2), Tailcop))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>U2)</a>
+<a class="sourceLine" id="cb181-8" title="8">  jointtail &lt;-<span class="st"> </span><span class="kw">rbind</span>(lowertail,uppertail)</a>
+<a class="sourceLine" id="cb181-9" title="9">}</a>
+<a class="sourceLine" id="cb181-10" title="10">Tailcop1 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="fl">0.05</span>), <span class="dt">dim =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb181-11" title="11">Tailcop2 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;gumbel&quot;</span>,<span class="dt">param =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb181-12" title="12">Tailcop3 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;normal&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)</a>
+<a class="sourceLine" id="cb181-13" title="13">Tailcop4 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;t&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>, <span class="dt">df=</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb181-14" title="14">jointtail1 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop1)</a>
+<a class="sourceLine" id="cb181-15" title="15">jointtail2 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop2)</a>
+<a class="sourceLine" id="cb181-16" title="16">jointtail3 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop3)</a>
+<a class="sourceLine" id="cb181-17" title="17">jointtail4 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop4)</a>
+<a class="sourceLine" id="cb181-18" title="18"><span class="kw">tailIndex</span>(Tailcop1)</a>
+<a class="sourceLine" id="cb181-19" title="19"><span class="kw">tailIndex</span>(Tailcop2)</a>
+<a class="sourceLine" id="cb181-20" title="20"><span class="kw">tailIndex</span>(Tailcop3)</a>
+<a class="sourceLine" id="cb181-21" title="21"><span class="kw">tailIndex</span>(Tailcop4)</a></code></pre></div>
 </div>
 <div class="figure"><span id="fig:DepTails"></span>
 <img src="LossDataAnalytics_files/figure-html/DepTails-1.png" alt="Tail dependence plots" width="672" />
@@ -1696,15 +1734,15 @@ Figure 14.7: Tail dependence plots
 <a id="displayCode.Tailplot.1" href="javascript:togglecode('toggleCode.Tailplot.1','displayCode.Tailplot.1');"><i><strong>R Code for Tail Dependence Plots for Different Copulas</strong></i></a>
 </h5>
 <div id="toggleCode.Tailplot.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(U,jointtail1, <span class="dt">cex=</span>.<span class="dv">2</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylab=</span><span class="st">&quot;Tail Dependence&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))
-<span class="kw">lines</span>(U,jointtail2, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)
-<span class="kw">lines</span>(U,jointtail3, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)
-<span class="kw">lines</span>(U,jointtail4, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)
-<span class="kw">text</span>(<span class="fl">0.75</span>, <span class="fl">0.1</span>, <span class="st">&quot;Frank&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#1</span>
-<span class="kw">text</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>, <span class="st">&quot;Gumbel&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#2</span>
-<span class="kw">text</span>(<span class="fl">0.25</span>, <span class="fl">0.1</span>, <span class="st">&quot;normal&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)       <span class="co">#3</span>
-<span class="kw">arrows</span>(.<span class="dv">17</span>, <span class="fl">0.1</span>, .<span class="dv">07</span>, <span class="fl">0.12</span>,<span class="dt">code=</span><span class="dv">2</span>, <span class="dt">angle=</span><span class="dv">20</span>, <span class="dt">length=</span><span class="fl">0.1</span>)
-<span class="kw">text</span>(<span class="fl">0.9</span>, <span class="fl">0.4</span>, <span class="st">&quot;t with 5 df&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)   <span class="co">#4</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" title="1"><span class="kw">plot</span>(U,jointtail1, <span class="dt">cex=</span>.<span class="dv">2</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylab=</span><span class="st">&quot;Tail Dependence&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb182-2" title="2"><span class="kw">lines</span>(U,jointtail2, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb182-3" title="3"><span class="kw">lines</span>(U,jointtail3, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb182-4" title="4"><span class="kw">lines</span>(U,jointtail4, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb182-5" title="5"><span class="kw">text</span>(<span class="fl">0.75</span>, <span class="fl">0.1</span>, <span class="st">&quot;Frank&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#1</span></a>
+<a class="sourceLine" id="cb182-6" title="6"><span class="kw">text</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>, <span class="st">&quot;Gumbel&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#2</span></a>
+<a class="sourceLine" id="cb182-7" title="7"><span class="kw">text</span>(<span class="fl">0.25</span>, <span class="fl">0.1</span>, <span class="st">&quot;normal&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)       <span class="co">#3</span></a>
+<a class="sourceLine" id="cb182-8" title="8"><span class="kw">arrows</span>(.<span class="dv">17</span>, <span class="fl">0.1</span>, <span class="fl">.07</span>, <span class="fl">0.12</span>,<span class="dt">code=</span><span class="dv">2</span>, <span class="dt">angle=</span><span class="dv">20</span>, <span class="dt">length=</span><span class="fl">0.1</span>)</a>
+<a class="sourceLine" id="cb182-9" title="9"><span class="kw">text</span>(<span class="fl">0.9</span>, <span class="fl">0.4</span>, <span class="st">&quot;t with 5 df&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)   <span class="co">#4</span></a></code></pre></div>
 </div>
 <div id="surveyElement145">
 
@@ -1757,86 +1795,86 @@ Figure 14.7: Tail dependence plots
 <a id="displayCode.SimG.1" href="javascript:togglecode('toggleCode.SimG.1','displayCode.SimG.1');"><i><strong>R Code for Simulation Using Gaussian Copula</strong></i></a>
 </h5>
 <div id="toggleCode.SimG.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># For the gamma distributions, use</span>
-alpha1 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta1 &lt;-<span class="st"> </span><span class="dv">100</span>
-alpha2 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta2 &lt;-<span class="st"> </span><span class="dv">200</span>
-<span class="co"># For the Pareto distributions, use</span>
-alpha3 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta3 &lt;-<span class="st"> </span><span class="dv">1000</span>
-alpha4 &lt;-<span class="st"> </span><span class="dv">3</span>;      theta4 &lt;-<span class="st"> </span><span class="dv">2000</span>
-<span class="co"># Deductibles</span>
-d1     &lt;-<span class="st"> </span><span class="dv">100</span>
-d2     &lt;-<span class="st"> </span><span class="dv">200</span>
-
-
-<span class="co"># Simulate the risks</span>
-nSim &lt;-<span class="st"> </span><span class="dv">10000</span>  <span class="co">#number of simulations</span>
-<span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span>
-X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha1,<span class="dt">scale =</span> theta1)  
-X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<span class="dt">scale =</span> theta2)  
-<span class="co"># For the Pareto Distribution, use</span>
-<span class="kw">library</span>(VGAM)
-X3 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta3,<span class="dt">shape=</span>alpha3)
-X4 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta4,<span class="dt">shape=</span>alpha4)
-<span class="co"># Portfolio Risks</span>
-S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4
-Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)
-Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained
-
-<span class="co"># Expected Claim Amounts</span>
-ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))
-<span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
-<span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)
-
-<span class="co"># Quantiles</span>
-quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(
-  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
-  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
-  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))
-<span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
-<span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)
-
-<span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)
-
-### Normal Copula ##
-<span class="kw">library</span>(VGAM)
-<span class="kw">library</span>(copula)
-<span class="kw">library</span>(GB2)
-<span class="kw">library</span>(statmod)
-<span class="kw">library</span>(numDeriv)
-<span class="kw">set.seed</span>(<span class="dv">2017</span>)
-parm&lt;-<span class="kw">c</span>(<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>)
-nc &lt;-<span class="st"> </span><span class="kw">normalCopula</span>(parm, <span class="dt">dim =</span> <span class="dv">4</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)
-mcc &lt;-<span class="st"> </span><span class="kw">mvdc</span>(nc, <span class="dt">margins =</span> <span class="kw">c</span>(<span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;gamma&quot;</span>,<span class="st">&quot;paretoII&quot;</span>,<span class="st">&quot;paretoII&quot;</span>), 
-            <span class="dt">paramMargins =</span> <span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">scale =</span> theta1, <span class="dt">shape=</span>alpha1),
-                                <span class="kw">list</span>(<span class="dt">scale =</span> theta2, <span class="dt">shape=</span>alpha2),
-                                <span class="kw">list</span>(<span class="dt">scale =</span> theta3, <span class="dt">shape=</span>alpha3),
-                                <span class="kw">list</span>(<span class="dt">scale =</span> theta4, <span class="dt">shape=</span>alpha4)))
-X &lt;-<span class="st"> </span><span class="kw">rMvdc</span>(nSim, <span class="dt">mvdc =</span> mcc)
-
-X1&lt;-X[,<span class="dv">1</span>]
-X2&lt;-X[,<span class="dv">2</span>]
-X3&lt;-X[,<span class="dv">3</span>]
-X4&lt;-X[,<span class="dv">4</span>]
-
-<span class="co"># Portfolio Risks</span>
-S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4
-Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)
-Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained
-
-<span class="co"># Expected Claim Amounts</span>
-ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))
-<span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
-<span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)
-
-<span class="co"># Quantiles</span>
-quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(
-  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
-  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),
-  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))
-<span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)
-<span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)
-
-<span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1"><span class="co"># For the gamma distributions, use</span></a>
+<a class="sourceLine" id="cb183-2" title="2">alpha1 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta1 &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb183-3" title="3">alpha2 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta2 &lt;-<span class="st"> </span><span class="dv">200</span></a>
+<a class="sourceLine" id="cb183-4" title="4"><span class="co"># For the Pareto distributions, use</span></a>
+<a class="sourceLine" id="cb183-5" title="5">alpha3 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta3 &lt;-<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb183-6" title="6">alpha4 &lt;-<span class="st"> </span><span class="dv">3</span>;      theta4 &lt;-<span class="st"> </span><span class="dv">2000</span></a>
+<a class="sourceLine" id="cb183-7" title="7"><span class="co"># Deductibles</span></a>
+<a class="sourceLine" id="cb183-8" title="8">d1     &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb183-9" title="9">d2     &lt;-<span class="st"> </span><span class="dv">200</span></a>
+<a class="sourceLine" id="cb183-10" title="10"></a>
+<a class="sourceLine" id="cb183-11" title="11"></a>
+<a class="sourceLine" id="cb183-12" title="12"><span class="co"># Simulate the risks</span></a>
+<a class="sourceLine" id="cb183-13" title="13">nSim &lt;-<span class="st"> </span><span class="dv">10000</span>  <span class="co">#number of simulations</span></a>
+<a class="sourceLine" id="cb183-14" title="14"><span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span></a>
+<a class="sourceLine" id="cb183-15" title="15">X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha1,<span class="dt">scale =</span> theta1)  </a>
+<a class="sourceLine" id="cb183-16" title="16">X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<span class="dt">scale =</span> theta2)  </a>
+<a class="sourceLine" id="cb183-17" title="17"><span class="co"># For the Pareto Distribution, use</span></a>
+<a class="sourceLine" id="cb183-18" title="18"><span class="kw">library</span>(VGAM)</a>
+<a class="sourceLine" id="cb183-19" title="19">X3 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta3,<span class="dt">shape=</span>alpha3)</a>
+<a class="sourceLine" id="cb183-20" title="20">X4 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta4,<span class="dt">shape=</span>alpha4)</a>
+<a class="sourceLine" id="cb183-21" title="21"><span class="co"># Portfolio Risks</span></a>
+<a class="sourceLine" id="cb183-22" title="22">S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</a>
+<a class="sourceLine" id="cb183-23" title="23">Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)</a>
+<a class="sourceLine" id="cb183-24" title="24">Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained</a>
+<a class="sourceLine" id="cb183-25" title="25"></a>
+<a class="sourceLine" id="cb183-26" title="26"><span class="co"># Expected Claim Amounts</span></a>
+<a class="sourceLine" id="cb183-27" title="27">ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))</a>
+<a class="sourceLine" id="cb183-28" title="28"><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-29" title="29"><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-30" title="30"></a>
+<a class="sourceLine" id="cb183-31" title="31"><span class="co"># Quantiles</span></a>
+<a class="sourceLine" id="cb183-32" title="32">quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</a>
+<a class="sourceLine" id="cb183-33" title="33">  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-34" title="34">  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-35" title="35">  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</a>
+<a class="sourceLine" id="cb183-36" title="36"><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-37" title="37"><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-38" title="38"></a>
+<a class="sourceLine" id="cb183-39" title="39"><span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</a>
+<a class="sourceLine" id="cb183-40" title="40"></a>
+<a class="sourceLine" id="cb183-41" title="41"><span class="co">### Normal Copula ##</span></a>
+<a class="sourceLine" id="cb183-42" title="42"><span class="kw">library</span>(VGAM)</a>
+<a class="sourceLine" id="cb183-43" title="43"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb183-44" title="44"><span class="kw">library</span>(GB2)</a>
+<a class="sourceLine" id="cb183-45" title="45"><span class="kw">library</span>(statmod)</a>
+<a class="sourceLine" id="cb183-46" title="46"><span class="kw">library</span>(numDeriv)</a>
+<a class="sourceLine" id="cb183-47" title="47"><span class="kw">set.seed</span>(<span class="dv">2017</span>)</a>
+<a class="sourceLine" id="cb183-48" title="48">parm&lt;-<span class="kw">c</span>(<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb183-49" title="49">nc &lt;-<span class="st"> </span><span class="kw">normalCopula</span>(parm, <span class="dt">dim =</span> <span class="dv">4</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)</a>
+<a class="sourceLine" id="cb183-50" title="50">mcc &lt;-<span class="st"> </span><span class="kw">mvdc</span>(nc, <span class="dt">margins =</span> <span class="kw">c</span>(<span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;gamma&quot;</span>,<span class="st">&quot;paretoII&quot;</span>,<span class="st">&quot;paretoII&quot;</span>), </a>
+<a class="sourceLine" id="cb183-51" title="51">            <span class="dt">paramMargins =</span> <span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">scale =</span> theta1, <span class="dt">shape=</span>alpha1),</a>
+<a class="sourceLine" id="cb183-52" title="52">                                <span class="kw">list</span>(<span class="dt">scale =</span> theta2, <span class="dt">shape=</span>alpha2),</a>
+<a class="sourceLine" id="cb183-53" title="53">                                <span class="kw">list</span>(<span class="dt">scale =</span> theta3, <span class="dt">shape=</span>alpha3),</a>
+<a class="sourceLine" id="cb183-54" title="54">                                <span class="kw">list</span>(<span class="dt">scale =</span> theta4, <span class="dt">shape=</span>alpha4)))</a>
+<a class="sourceLine" id="cb183-55" title="55">X &lt;-<span class="st"> </span><span class="kw">rMvdc</span>(nSim, <span class="dt">mvdc =</span> mcc)</a>
+<a class="sourceLine" id="cb183-56" title="56"></a>
+<a class="sourceLine" id="cb183-57" title="57">X1&lt;-X[,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb183-58" title="58">X2&lt;-X[,<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb183-59" title="59">X3&lt;-X[,<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb183-60" title="60">X4&lt;-X[,<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb183-61" title="61"></a>
+<a class="sourceLine" id="cb183-62" title="62"><span class="co"># Portfolio Risks</span></a>
+<a class="sourceLine" id="cb183-63" title="63">S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</a>
+<a class="sourceLine" id="cb183-64" title="64">Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)</a>
+<a class="sourceLine" id="cb183-65" title="65">Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained</a>
+<a class="sourceLine" id="cb183-66" title="66"></a>
+<a class="sourceLine" id="cb183-67" title="67"><span class="co"># Expected Claim Amounts</span></a>
+<a class="sourceLine" id="cb183-68" title="68">ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))</a>
+<a class="sourceLine" id="cb183-69" title="69"><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-70" title="70"><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-71" title="71"></a>
+<a class="sourceLine" id="cb183-72" title="72"><span class="co"># Quantiles</span></a>
+<a class="sourceLine" id="cb183-73" title="73">quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</a>
+<a class="sourceLine" id="cb183-74" title="74">  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-75" title="75">  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-76" title="76">  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</a>
+<a class="sourceLine" id="cb183-77" title="77"><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-78" title="78"><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-79" title="79"></a>
+<a class="sourceLine" id="cb183-80" title="80"><span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</a></code></pre></div>
 </div>
 <div id="surveyElement146">
 
@@ -1861,54 +1899,54 @@ quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(
 <div id="contributors-8" class="section level4 unnumbered">
 <h4>Contributors</h4>
 <ul>
-<li><strong>Edward W. (Jed) Frees</strong> and <strong>Nii-Armah Okine</strong>, University of Wisconsin-Madison, and <strong>Emine Selin Sarıdaş</strong>, Mimar Sinan University, are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu">jfrees@bus.wisc.edu</a> for chapter comments and suggested improvements.</li>
+<li><strong>Edward W. (Jed) Frees</strong> and <strong>Nii-Armah Okine</strong>, University of Wisconsin-Madison, and <strong>Emine Selin Sarıdaş</strong>, Mimar Sinan University, are the principal authors of the initial version of this chapter. Email: <a href="mailto:jfrees@bus.wisc.edu" class="email">jfrees@bus.wisc.edu</a> for chapter comments and suggested improvements.</li>
 </ul>
 </div>
 <div id="ts-14.a.-other-classic-measures-of-scalar-associations" class="section level3 unnumbered">
 <h3>TS 14.A. Other Classic Measures of Scalar Associations</h3>
 <div id="ts-14.a.1.-blomqvists-beta" class="section level4 unnumbered">
 <h4>TS 14.A.1. Blomqvist’s Beta</h4>
-<p><span class="citation">Blomqvist (<a href="#ref-blomqvist1950measure">1950</a>)</span> developed a measure of dependence now known as <a href="#" class="tooltip" style="color:green"><em>Blomqvist’s beta</em><span style="font-size:8pt"></span></a>, also called the <em>median concordance coefficient</em> and the <em>medial correlation coefficient</em>. Using distribution functions, this parameter can be expressed as</p>
-<span class="math display">\[\begin{equation*}
+<p><span class="citation">Blomqvist (<a href="#ref-blomqvist1950measure" role="doc-biblioref">1950</a>)</span> developed a measure of dependence now known as <a href="#" class="tooltip" style="color:green"><em>Blomqvist’s beta</em><span style="font-size:8pt">A dependence measure based on the center of the distribution</span></a>, also called the <em>median concordance coefficient</em> and the <em>medial correlation coefficient</em>. Using distribution functions, this parameter can be expressed as</p>
+<p><span class="math display">\[\begin{equation*}
 \beta = 4F\left(F^{-1}_X(1/2),F^{-1}_Y(1/2) \right) - 1.
-\end{equation*}\]</span>
+\end{equation*}\]</span></p>
 <p>That is, first evaluate each marginal at its median (<span class="math inline">\(F^{-1}_X(1/2)\)</span> and <span class="math inline">\(F^{-1}_Y(1/2)\)</span>, respectively). Then, evaluate the bivariate distribution function at the two medians. After rescaling (multiplying by 4 and subtracting 1), the coefficient turns out to have a range of <span class="math inline">\([-1,1]\)</span>, where 0 occurs under independence.</p>
-Like Spearman’s rho and Kendall’s tau, an estimator based on ranks is easy to provide. First write <span class="math inline">\(\beta = 4C(1/2,1/2)-1 = 2\Pr((U_1-1/2)(U_2-1/2))-1\)</span> where <span class="math inline">\(U_1, U_2\)</span> are uniform random variables. Then, define
+<p>Like Spearman’s rho and Kendall’s tau, an estimator based on ranks is easy to provide. First write <span class="math inline">\(\beta = 4C(1/2,1/2)-1 = 2\Pr((U_1-1/2)(U_2-1/2))-1\)</span> where <span class="math inline">\(U_1, U_2\)</span> are uniform random variables. Then, define
 <span class="math display">\[\begin{equation*}
 \hat{\beta} = \frac{2}{n} \sum_{i=1}^n I\left( (R(X_{i})-\frac{n+1}{2})(R(Y_{i})-\frac{n+1}{2}) \ge 0 \right)-1 .
 \end{equation*}\]</span>
-<p>See, for example, <span class="citation">(Joe <a href="#ref-joe2014dependence">2014</a>)</span>, page 57 or <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, page 135, for more details.</p>
-<p>Because Blomqvist’s parameter is based on the center of the distribution, it is particularly useful when data are censored; in this case, information in extreme parts of the distribution are not always reliable. How does this affect a choice of association measures? First, recall that association measures are based on a bivariate distribution function. So, if one has knowledge of a good approximation of the distribution function, then calculation of an association measure is straightforward in principle. Second, for censored data, bivariate extensions of the univariate Kaplan-Meier distribution function estimator are available. For example, the version introduced in <span class="citation">(Dabrowska <a href="#ref-dabrowska1988kaplan">1988</a>)</span> is appealing. However, because of instances when large masses of data appear at the upper range of the data, this and other estimators of the bivariate distribution function are unreliable. This means that, summary measures of the estimated distribution function based on Spearman’s rho or Kendall’s tau can be unreliable. For this situation, Blomqvist’s beta appears to be a better choice as it focuses on the center of the distribution. <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis">2000</a>)</span>, Chapter 14, provides additional discussion.</p>
+See, for example, <span class="citation">(Joe <a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>, page 57 or <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis" role="doc-biblioref">2000</a>)</span>, page 135, for more details.</p>
+<p>Because Blomqvist’s parameter is based on the center of the distribution, it is particularly useful when data are censored; in this case, information in extreme parts of the distribution are not always reliable. How does this affect a choice of association measures? First, recall that association measures are based on a bivariate distribution function. So, if one has knowledge of a good approximation of the distribution function, then calculation of an association measure is straightforward in principle. Second, for censored data, bivariate extensions of the univariate Kaplan-Meier distribution function estimator are available. For example, the version introduced in <span class="citation">(Dabrowska <a href="#ref-dabrowska1988kaplan" role="doc-biblioref">1988</a>)</span> is appealing. However, because of instances when large masses of data appear at the upper range of the data, this and other estimators of the bivariate distribution function are unreliable. This means that, summary measures of the estimated distribution function based on Spearman’s rho or Kendall’s tau can be unreliable. For this situation, Blomqvist’s beta appears to be a better choice as it focuses on the center of the distribution. <span class="citation">(Hougaard <a href="#ref-hougaard2000analysis" role="doc-biblioref">2000</a>)</span>, Chapter 14, provides additional discussion.</p>
 <p>You can obtain the Blomqvist’s beta, using the <code>betan()</code> function from the <code>copula</code> library in <code>R</code>. From below, <span class="math inline">\(\beta=0.3\)</span> between the <em>Coverage</em> rating variable in millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.beta.1" href="javascript:togglecode('toggleCode.beta.1','displayCode.beta.1');"><i><strong>R Code for Blomqvist’s Beta</strong></i></a>
 </h5>
 <div id="toggleCode.beta.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Blomqvist&#39;s beta correlation between Claim and Coverage <span class="al">###</span>
-<span class="kw">library</span>(copula)
-n&lt;-<span class="kw">length</span>(Claim)
-U&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Coverage)))
-beta&lt;-<span class="kw">betan</span>(U, <span class="dt">scaling=</span><span class="ot">FALSE</span>)
-<span class="kw">round</span>(beta,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>]  <span class="fl">0.3</span>
-
-### Blomqvist&#39;s beta correlation between Claim and log(Coverage) <span class="al">###</span>
-n&lt;-<span class="kw">length</span>(Claim)
-Fx&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(<span class="kw">log</span>(Coverage))))
-beta&lt;-<span class="kw">betan</span>(Fx, <span class="dt">scaling=</span><span class="ot">FALSE</span>)
-<span class="kw">round</span>(beta,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>]  <span class="fl">0.3</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1"><span class="co">### Blomqvist&#39;s beta correlation between Claim and Coverage </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb184-2" title="2"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb184-3" title="3">n&lt;-<span class="kw">length</span>(Claim)</a>
+<a class="sourceLine" id="cb184-4" title="4">U&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Coverage)))</a>
+<a class="sourceLine" id="cb184-5" title="5">beta&lt;-<span class="kw">betan</span>(U, <span class="dt">scaling=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb184-6" title="6"><span class="kw">round</span>(beta,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb184-7" title="7"></a>
+<a class="sourceLine" id="cb184-8" title="8">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb184-9" title="9">[<span class="dv">1</span>]  <span class="fl">0.3</span></a>
+<a class="sourceLine" id="cb184-10" title="10"></a>
+<a class="sourceLine" id="cb184-11" title="11"><span class="co">### Blomqvist&#39;s beta correlation between Claim and log(Coverage) </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb184-12" title="12">n&lt;-<span class="kw">length</span>(Claim)</a>
+<a class="sourceLine" id="cb184-13" title="13">Fx&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(<span class="kw">log</span>(Coverage))))</a>
+<a class="sourceLine" id="cb184-14" title="14">beta&lt;-<span class="kw">betan</span>(Fx, <span class="dt">scaling=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb184-15" title="15"><span class="kw">round</span>(beta,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb184-16" title="16"></a>
+<a class="sourceLine" id="cb184-17" title="17">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb184-18" title="18">[<span class="dv">1</span>]  <span class="fl">0.3</span></a></code></pre></div>
 </div>
 <p>In addition,to show that the Blomqvist’s beta is invariate under strictly increasing transformations , <span class="math inline">\(\beta=0.3\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
 <div id="ts-14.a.2.-nonparametric-approach-using-spearman-correlation-with-tied-ranks" class="section level4 unnumbered">
 <h4>TS 14.A.2. Nonparametric Approach Using Spearman Correlation with Tied Ranks</h4>
 <p>For the first variable, the average rank of observations in the <span class="math inline">\(s\)</span>th row is</p>
-<span class="math display">\[\begin{equation*}
+<p><span class="math display">\[\begin{equation*}
 r_{1s} = n_{m_1\centerdot}+ \cdots+ n_{s-1,\centerdot}+ \frac{1}{2} \left(1+ n_{s\centerdot}\right)
 \end{equation*}\]</span>
 and similarly <span class="math inline">\(r_{2t} = \frac{1}{2} \left[(n_{\centerdot m_1}+ \cdots+ n_{\centerdot,s-1}+1)+ (n_{\centerdot m_1}+ \cdots+ n_{\centerdot s})\right]\)</span>. With this, we have Spearman’s rho with tied rank is
@@ -1916,13 +1954,14 @@ and similarly <span class="math inline">\(r_{2t} = \frac{1}{2} \left[(n_{\center
 \hat{\rho}_S = \frac{\sum_{s=m_1}^{m_2} \sum_{t=m_1}^{m_2} n_{st}(r_{1s} - \bar{r})(r_{2t} - \bar{r})}
 {\left[\sum_{s=m_1}^{m_2}n_{s \centerdot}(r_{1s} - \bar{r})^2 \sum_{t=m_1}^{m_2} n_{\centerdot t}(r_{2t} - \bar{r})^2
 \right]^2}
-\end{equation*}\]</span>
+\end{equation*}\]</span></p>
 <p>where the average rank is <span class="math inline">\(\bar{r} = (n+1)/2\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.Thry.1" href="javascript:togglecode('toggleCode.Thry.1','displayCode.Thry.1');"><i><strong>Click to Show Proof for Special Case: Binary Data.</strong></i></a>
 </h5>
 <div id="toggleCode.Thry.1" style="display: none">
-Special Case: Binary Data. Here, <span class="math inline">\(m_1=0\)</span> and <span class="math inline">\(m_2=1\)</span>. For the first variable ranks, we have <span class="math inline">\(r_{10} = (1+n_{0\centerdot})/2\)</span> and <span class="math inline">\(r_{11} = (n_{0\centerdot}+1+n)/2\)</span>. Thus, <span class="math inline">\(r_{10} -\bar{r}= (n_{0\centerdot}-n)/2\)</span> and <span class="math inline">\(r_{11}-\bar{r} = n_{0\centerdot}/2\)</span>. This means that we have <span class="math inline">\(\sum_{s=0}^{1}n_{s\centerdot}(r_{1s} - \bar{r})^2 = n (n-n_{0\centerdot})n_{0\centerdot}/4\)</span> and similarly for the second variable. For the numerator, we have
+<p>Special Case: Binary Data. Here, <span class="math inline">\(m_1=0\)</span> and <span class="math inline">\(m_2=1\)</span>. For the first variable ranks, we have <span class="math inline">\(r_{10} = (1+n_{0\centerdot})/2\)</span> and <span class="math inline">\(r_{11} = (n_{0\centerdot}+1+n)/2\)</span>. Thus, <span class="math inline">\(r_{10} -\bar{r}= (n_{0\centerdot}-n)/2\)</span> and <span class="math inline">\(r_{11}-\bar{r} = n_{0\centerdot}/2\)</span>.
+This means that we have <span class="math inline">\(\sum_{s=0}^{1}n_{s\centerdot}(r_{1s} - \bar{r})^2 = n (n-n_{0\centerdot})n_{0\centerdot}/4\)</span> and similarly for the second variable. For the numerator, we have
 <span class="math display">\[\begin{eqnarray*}
 \sum_{s=0}^{1}  \sum_{t=0}^{1} &amp;&amp; n_{st}(r_{1s} - \bar{r})(r_{2t} - \bar{r})\\
 &amp;=&amp; n_{00} \frac{n_{0\centerdot}-n}{2} \frac{n_{\centerdot 0}-n}{2}
@@ -1941,8 +1980,8 @@ Special Case: Binary Data. Here, <span class="math inline">\(m_1=0\)</span> and 
 - n_{0\centerdot}n_{\centerdot 0} (n_{0\centerdot}-n +n_{\centerdot 0}-n
 +n-n_{\centerdot 0}-n_{0\centerdot}) \\
 &amp;=&amp; \frac{n}{4}(n n_{00} - n_{0\centerdot}n_{\centerdot 0}) .
-\end{eqnarray*}\]</span>
-This yields
+\end{eqnarray*}\]</span></p>
+<p>This yields
 <span class="math display">\[\begin{eqnarray*}
 \hat{\rho}_S &amp;=&amp; \frac{n(n n_{00} - n_{0\centerdot}n_{\centerdot 0})}
 {4\sqrt{(n (n-n_{0\centerdot})n_{0\centerdot}/4)(n (n-n_{\centerdot 0})n_{\centerdot 0}/4)}} \\
@@ -1951,7 +1990,7 @@ This yields
 &amp;=&amp; \frac{n_{00} - n (1-\hat{\pi}_X)(1- \hat{\pi}_Y)}
 {\sqrt{\hat{\pi}_X(1-\hat{\pi}_X)\hat{\pi}_Y(1-\hat{\pi}_Y) }}
 \end{eqnarray*}\]</span>
-<p>where <span class="math inline">\(\hat{\pi}_X = (n-n_{0\centerdot})/n\)</span> and similarly for <span class="math inline">\(\hat{\pi}_Y\)</span>. Note that this is same form as the Pearson measure. From this, we see that the joint count <span class="math inline">\(n_{00}\)</span> drives this association measure.</p>
+where <span class="math inline">\(\hat{\pi}_X = (n-n_{0\centerdot})/n\)</span> and similarly for <span class="math inline">\(\hat{\pi}_Y\)</span>. Note that this is same form as the Pearson measure. From this, we see that the joint count <span class="math inline">\(n_{00}\)</span> drives this association measure.</p>
 </div>
 
 <p>You can obtain the ties-corrected Spearman correlation statistic <span class="math inline">\(r_S\)</span> using the <code>cor()</code> function in <code>R</code> and selecting the <code>spearman</code> method. From below <span class="math inline">\(\hat{\rho}_S=-0.09\)</span>.</p>
@@ -1959,11 +1998,11 @@ This yields
 <a id="displayCode.spearT.1" href="javascript:togglecode('toggleCode.spearT.1','displayCode.spearT.1');"><i><strong>R Code for Ties-corrected Spearman Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.spearT.1" style="display: none">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rs_ties&lt;-<span class="kw">cor</span>(AlarmCredit,NoClaimCredit, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))
-<span class="kw">round</span>(rs_ties,<span class="dv">2</span>)
-
-Output<span class="op">:</span>
-[<span class="dv">1</span>] <span class="op">-</span><span class="fl">0.09</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" title="1">rs_ties&lt;-<span class="kw">cor</span>(AlarmCredit,NoClaimCredit, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</a>
+<a class="sourceLine" id="cb185-2" title="2"><span class="kw">round</span>(rs_ties,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb185-3" title="3"></a>
+<a class="sourceLine" id="cb185-4" title="4">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb185-5" title="5">[<span class="dv">1</span>] <span class="fl">-0.09</span></a></code></pre></div>
 </div>
 
 </div>
@@ -2005,11 +2044,11 @@ Output<span class="op">:</span>
 <div id="ref-joe2014dependence">
 <p>Joe, Harry. 2014. <em>Dependence Modeling with Copulas</em>. CRC Press.</p>
 </div>
-<div id="ref-kendall1945">
-<p>Kendall, M. G. 1945. “The Treatment of Ties in Ranking Problems.” <em>Biometrika</em> 33(3): 239–51.</p>
-</div>
 <div id="ref-kendall1938new">
 <p>Kendall, Maurice G. 1938. “A New Measure of Rank Correlation.” <em>Biometrika</em>, 81–93.</p>
+</div>
+<div id="ref-kendall1945">
+<p>Kendall, M. G. 1945. “The Treatment of Ties in Ranking Problems.” <em>Biometrika</em> 33(3): 239–51.</p>
 </div>
 <div id="ref-lee1988thirteen">
 <p>Lee Rodgers, J, and W. A Nicewander. 1998. “Thirteen Ways to Look at the Correlation Coeffeicient.” <em>The American Statistician</em> 42 (01): 59–66.</p>
@@ -2041,11 +2080,13 @@ Output<span class="op">:</span>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -2053,12 +2094,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -2070,6 +2110,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -2086,10 +2130,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

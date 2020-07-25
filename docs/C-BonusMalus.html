@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Experience Rating using Bonus-Malus | Loss Data Analytics</title>
   <meta name="description" content="Chapter 12 Experience Rating using Bonus-Malus | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Experience Rating using Bonus-Malus | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="C-LossReserves.html">
-<link rel="next" href="C-DataSystems.html">
+<link rel="prev" href="C-LossReserves.html"/>
+<link rel="next" href="C-DataSystems.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -307,41 +310,66 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -483,11 +511,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:MS:DedImpactClmFreq"><i class="fa fa-check"></i><b>5.5.2</b> Impact of Deductibles on Claim Frequency</a></li>
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
-</ul></li>
+<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="C-Simulation.html"><a href="C-Simulation.html"><i class="fa fa-check"></i><b>6</b> Simulation and Resampling</a><ul>
 <li class="chapter" data-level="6.1" data-path="C-Simulation.html"><a href="C-Simulation.html#S:SimulationFundamentals"><i class="fa fa-check"></i><b>6.1</b> Simulation Fundamentals</a><ul>
@@ -571,19 +595,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.2.3" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-for-severity"><i class="fa fa-check"></i><b>9.2.3</b> Full Credibility for Severity</a></li>
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
-<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-buhlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
+<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.5.1" data-path="C-Credibility.html"><a href="C-Credibility.html#gamma-poisson-model"><i class="fa fa-check"></i><b>9.5.1</b> Gamma-Poisson Model</a></li>
 <li class="chapter" data-level="9.5.2" data-path="C-Credibility.html"><a href="C-Credibility.html#beta-binomial-model"><i class="fa fa-check"></i><b>9.5.2</b> Beta-Binomial Model</a></li>
 <li class="chapter" data-level="9.5.3" data-path="C-Credibility.html"><a href="C-Credibility.html#exact-credibility"><i class="fa fa-check"></i><b>9.5.3</b> Exact Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="C-Credibility.html"><a href="C-Credibility.html#estimating-credibility-parameters"><i class="fa fa-check"></i><b>9.6</b> Estimating Credibility Parameters</a><ul>
 <li class="chapter" data-level="9.6.1" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-standard-for-limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.6.1</b> Full Credibility Standard for Limited Fluctuation Credibility</a></li>
-<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
-<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
 <li class="chapter" data-level="9.6.4" data-path="C-Credibility.html"><a href="C-Credibility.html#balancing-credibility-estimators"><i class="fa fa-check"></i><b>9.6.4</b> Balancing Credibility Estimators</a></li>
 </ul></li>
 <li class="chapter" data-level="9.7" data-path="C-Credibility.html"><a href="C-Credibility.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
@@ -805,17 +829,77 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <hr />
 <div id="S:ERBM:Intro" class="section level2">
 <h2><span class="header-section-number">12.1</span> Introduction</h2>
-<p><a href="#" class="tooltip" style="color:green"><em>Bonus-malus system</em><span style="font-size:8pt">A type of rating mechanism where insured premiums are adjusted based on their individual loss experience history</span></a>, which is used interchangeably as “no-fault discount”, “merit rating”, “experience rating” or “no-claim discount” in different countries, is based on penalizing insureds who are responsible for one or more claims by a premium surcharge, and awarding insureds with a premium discount if they do not have any claims. Insurers use bonus-malus systems for two main purposes; to encourage drivers to drive more carefully in a year without any claims, and to ensure insureds to pay premiums proportional to their risks based on their claims experience.</p>
-<p><a href="#" class="tooltip" style="color:green"><em>No Claim Discount (NCD) system</em><span style="font-size:8pt">A type of experience rating where insureds obtain discounts on future years’ premiums based on claims-free experience</span></a> is an experience rating system commonly used in motor insurance. It represents an attempt to categorize insureds into homogeneous groups who pay premiums based on their claims experience. Depending on the rules in the scheme, new policyholders may be required to pay full premium initially, and obtain discounts in the future years as a results of claim-free years. An NCD system rewards policyholders for not making any claims during a year, or in other words, it grants a bonus to a careful driver. This bonus principle may affect policy holders’ decisions whether to claim or not to claim, especially when involving accidents with slight damages, which is known as ‘<a href="#" class="tooltip" style="color:green"><em>hunger for bonus</em><span style="font-size:8pt">Phenomenon where insureds under an experience rating system are dissuaded from filing minor claims in order to keep their no-claims discount</span></a>’ phenomenon. The option of ‘hunger for bonus’ under an NCD system may reduce insurers’ claim costs, and may be able to offset the expected decrease in premium income.</p>
+<p><a href="#" class="tooltip" style="color:green"><em>Bonus-malus system</em><span style="font-size:8pt">A type of rating mechanism where insured premiums are adjusted based on their individual loss experience history</span></a>, which is used interchangeably as “no-fault
+discount”, “merit rating”, “experience rating” or “no-claim discount” in
+different countries, is based on penalizing insureds who are responsible
+for one or more claims by a premium surcharge, and awarding insureds
+with a premium discount if they do not have any claims. Insurers use
+bonus-malus systems for two main purposes; to encourage drivers to drive
+more carefully in a year without any claims, and to ensure insureds to
+pay premiums proportional to their risks based on their claims
+experience.</p>
+<p><a href="#" class="tooltip" style="color:green"><em>No Claim Discount (NCD) system</em><span style="font-size:8pt">A type of experience rating where insureds obtain discounts on future years’ premiums based on claims-free experience</span></a> is an experience rating system commonly
+used in motor insurance. It represents an attempt to categorize insureds
+into homogeneous groups who pay premiums based on their claims
+experience. Depending on the rules in the scheme, new policyholders may
+be required to pay full premium initially, and obtain discounts in the
+future years as a results of claim-free years. An NCD system rewards
+policyholders for not making any claims during a year, or in other
+words, it grants a bonus to a careful driver. This bonus principle may
+affect policy holders’ decisions whether to claim or not to claim,
+especially when involving accidents with slight damages, which is known
+as ‘<a href="#" class="tooltip" style="color:green"><em>hunger for bonus</em><span style="font-size:8pt">Phenomenon where insureds under an experience rating system are dissuaded from filing minor claims in order to keep their no-claims discount</span></a>’ phenomenon. The option of ‘hunger for bonus’ under
+an NCD system may reduce insurers’ claim costs, and may be able to
+offset the expected decrease in premium income.</p>
 </div>
 <div id="S:ERBM:NCD" class="section level2">
 <h2><span class="header-section-number">12.2</span> NCD System in Several Countries</h2>
 <div id="ncd-system-in-malaysia" class="section level3">
 <h3><span class="header-section-number">12.2.1</span> NCD System in Malaysia</h3>
-<p>Before the liberalization of Motor Tariff on 1st July 2017, the rating of motor insurance in Malaysia was governed by Motor Tariff. Under the tariff, the rate charged should not be lower than the rates specified under the classes of risks, to ensure that the price competition among insurers will not go below the country’s economic level. The basic rating factors considered were scope of insurance, cubic capacity of vehicle and estimated value of vehicle (or sum insured, whichever is lower). Under the Motor Tariff, the final premium to be paid is adjusted by the policyholder’s claim experience, or equivalently, his NCD entitlement.</p>
-<p>Effective on 1st July 2017, the premium rates for motor insurance are liberalized, or de-tariffed. The pricing of premium is now determined by individual insurers and <a href="#" class="tooltip" style="color:green"><em>takaful</em><span style="font-size:8pt">Co-operative system of reimbursement or repayment in case of loss as an insurance alternative</span></a> operators, and the consumers are able to enjoy a wider choice of motor insurance products at competitive prices. Since tariff liberalization encourages innovation and competition among insurers and takaful operators, the premiums are based on broader risk factors other than the two rating factors specified in the Motor Tariff, i.e. sum insured and cubic capacity of vehicle. Other rating factors may be defined in the risk profile of an insured, such as age of vehicle, age of driver, safety and security features of vehicle, geographical location of vehicle and traffic offences of driver. As different insurers and takaful operators have different ways of defining the risk profile of an insured, the price of a policy may differ from one insurer to another. However, the NCD structure from the Motor Tariff remains ‘unchanged’ and continue to exist, and is ‘transferable’ from one insurer, or from one takaful operator, to another.</p>
-<p>The discounts in the Malaysian NCD system are divided into six classes, starting from the initial class of 0% discount, followed by classes of 25%, 30%, 38.3%, 45% and 55% discounts. Table 1 provides the classes of NCD system in Malaysia. A claim-free year indicates that a policyholder is entitled to move one-step forward to the next discount class, such as from a 0% discount to a 25% discount in the renewal year. If a policyholder is already at the highest class, which is at a 55% discount, a claim-free year indicates that the policyholder remains in the same class. On the other hand, if one or more claims are made within the year, the NCD will be forfeited and the policyholder has to start at 0% discount in the renewal year. In other words, the policyholder has to pay a full premium for the next year’s renewal premium, regardless of his current class of NCD.</p>
-<p>For an illustration purpose, Figure <a href="C-BonusMalus.html#fig:TransitionMsia">12.1</a> shows the transition diagram for the NCD classes under the Malaysian Motor Tariff. The transition starts at class 0, and increase one by one if an insured has a no-claim year. If an insured has one or more claims within the year, the current class automatically returns to class 0.</p>
+<p>Before the liberalization of Motor Tariff on 1st July 2017, the rating
+of motor insurance in Malaysia was governed by Motor Tariff. Under the
+tariff, the rate charged should not be lower than the rates specified
+under the classes of risks, to ensure that the price competition among
+insurers will not go below the country’s economic level. The basic
+rating factors considered were scope of insurance, cubic capacity of
+vehicle and estimated value of vehicle (or sum insured, whichever is
+lower). Under the Motor Tariff, the final premium to be paid is adjusted
+by the policyholder’s claim experience, or equivalently, his NCD
+entitlement.</p>
+<p>Effective on 1st July 2017, the premium rates for motor insurance are
+liberalized, or de-tariffed. The pricing of premium is now determined by
+individual insurers and <a href="#" class="tooltip" style="color:green"><em>takaful</em><span style="font-size:8pt">Co-operative system of reimbursement or repayment in case of loss as an insurance alternative</span></a> operators, and the consumers are able to
+enjoy a wider choice of motor insurance products at competitive prices.
+Since tariff liberalization encourages innovation and competition among
+insurers and takaful operators, the premiums are based on broader risk
+factors other than the two rating factors specified in the Motor Tariff,
+i.e. sum insured and cubic capacity of vehicle. Other rating factors may
+be defined in the risk profile of an insured, such as age of vehicle,
+age of driver, safety and security features of vehicle, geographical
+location of vehicle and traffic offences of driver. As different
+insurers and takaful operators have different ways of defining the risk
+profile of an insured, the price of a policy may differ from one insurer
+to another. However, the NCD structure from the Motor Tariff remains
+‘unchanged’ and continue to exist, and is ‘transferable’ from one
+insurer, or from one takaful operator, to another.</p>
+<p>The discounts in the Malaysian NCD system are divided into six classes,
+starting from the initial class of 0% discount, followed by classes of
+25%, 30%, 38.3%, 45% and 55% discounts. Table 1 provides the classes of
+NCD system in Malaysia. A claim-free year indicates that a policyholder
+is entitled to move one-step forward to the next discount class, such as
+from a 0% discount to a 25% discount in the renewal year. If a
+policyholder is already at the highest class, which is at a 55%
+discount, a claim-free year indicates that the policyholder remains in
+the same class. On the other hand, if one or more claims are made within
+the year, the NCD will be forfeited and the policyholder has to start at
+0% discount in the renewal year. In other words, the policyholder has to
+pay a full premium for the next year’s renewal premium, regardless of
+his current class of NCD.</p>
+<p>For an illustration purpose, Figure <a href="C-BonusMalus.html#fig:TransitionMsia">12.1</a> shows the transition diagram for
+the NCD classes under the Malaysian Motor Tariff. The transition starts
+at class 0, and increase one by one if an insured has a no-claim year.
+If an insured has one or more claims within the year, the current class
+automatically returns to class 0.</p>
 <p><span class="math display">\[
 \begin{matrix}
 \text{Table 1: Classes of NCD (Malaysia)}\\
@@ -842,7 +926,16 @@ Figure 12.1: Transition diagram for NCD classes (Malaysia)
 </div>
 <div id="ncd-system-in-other-countries" class="section level3">
 <h3><span class="header-section-number">12.2.2</span> NCD System in Other Countries</h3>
-<p>The NCD system in Brazil are subdivided into seven classes, with the following premium levels (Lemaire 1998): 100, 90, 85, 80, 75, 70, and 65. These premium levels are also equivalent to the following discount classes: 0%, 10%, 15%, 20%, 25%, 30% and 45%. New policyholders have to start at 0% discount, or at level 100, and a claim-free year indicates that a policyholder can move forward at a one-class discount. If one or more claims incurred within the year, the policyholder has to move backward, also at a one-class discount. Table 2 and Figure <a href="C-BonusMalus.html#fig:TransitionBrazil">12.2</a> respectively show the classes and the transition diagram for the NCD system in Brazil.</p>
+<p>The NCD system in Brazil are subdivided into seven classes, with the
+following premium levels (Lemaire 1998): 100, 90, 85, 80, 75, 70, and
+65. These premium levels are also equivalent to the following discount
+classes: 0%, 10%, 15%, 20%, 25%, 30% and 45%. New policyholders have to
+start at 0% discount, or at level 100, and a claim-free year indicates
+that a policyholder can move forward at a one-class discount. If one or
+more claims incurred within the year, the policyholder has to move
+backward, also at a one-class discount. Table 2 and Figure <a href="C-BonusMalus.html#fig:TransitionBrazil">12.2</a>
+respectively show the classes and the transition diagram for the NCD
+system in Brazil.</p>
 <p><span class="math display">\[
 \begin{matrix}
 \text{Table 2: Classes of NCD (Brazil)}\\
@@ -867,7 +960,18 @@ Figure 12.1: Transition diagram for NCD classes (Malaysia)
 Figure 12.2: Transition diagram for NCD classes (Brazil)
 </p>
 </div>
-<p>The NCD system in Switzerland, which is implemented in 1990, are subdivided into twenty-two classes, with the following premium levels: 270, 250, 230, 215, 200, 185, 170, 155, 140, 130, 120, 110, 100, 90, 80, 75, 70, 65, 60, 55, 50 and 45 (Lemaire and Zi 1994). These levels are also equivalent to the following loadings: 170%, 150%, 130%, 115%, 100%, 85%, 70%, 55%, 40%, 30%, 20%, and 10%, and the following discounts: 0%, 10%, 20%, 25%, 30%, 35%, 40%, 45%, 50% and 55%. New policyholders have to start at 170% loading, or at 270 premium level, and a claim-free year indicates that a policyholder can move one-class forward. If one or more claims incurred within the year, the policyholder has to move four-classes backwards. Table 3 and Figure <a href="C-BonusMalus.html#fig:TransitionSwitz">12.3</a> respectively show the classes and the transition diagram for the NCD system in Switzerland.</p>
+<p>The NCD system in Switzerland, which is implemented in 1990, are
+subdivided into twenty-two classes, with the following premium levels:
+270, 250, 230, 215, 200, 185, 170, 155, 140, 130, 120, 110, 100, 90, 80,
+75, 70, 65, 60, 55, 50 and 45 (Lemaire and Zi 1994). These levels are
+also equivalent to the following loadings: 170%, 150%, 130%, 115%, 100%,
+85%, 70%, 55%, 40%, 30%, 20%, and 10%, and the following discounts: 0%,
+10%, 20%, 25%, 30%, 35%, 40%, 45%, 50% and 55%. New policyholders have
+to start at 170% loading, or at 270 premium level, and a claim-free year
+indicates that a policyholder can move one-class forward. If one or more
+claims incurred within the year, the policyholder has to move
+four-classes backwards. Table 3 and Figure <a href="C-BonusMalus.html#fig:TransitionSwitz">12.3</a> respectively show the
+classes and the transition diagram for the NCD system in Switzerland.</p>
 <p><span class="math display">\[
 \begin{matrix}
 \text{Table 3: Classes of NCD (Switzerland)}\\
@@ -902,14 +1006,34 @@ Figure 12.3: Transition diagram for NCD classes (Switzerland)
 </div>
 <div id="S:ERBM:BMS" class="section level2">
 <h2><span class="header-section-number">12.3</span> BMS and Markov Chain Model</h2>
-<p>A BMS, or an NCD system, can be represented by a discrete time parameter <a href="#" class="tooltip" style="color:green"><em>Markov chain</em><span style="font-size:8pt">A stochastic model (time dependent) where the probability of each event depends only on the current state and not the historical path</span></a>. Under this model, the state space consists of classes of bonus-malus, and the state (or class) is assumed to shift randomly from year to year. Therefore, it is important to know a brief description on two elements; a stochastic process that has a Markov property, and a discrete time Markov chain.</p>
-<p><strong>Definition:</strong> A <strong><em>stochastic process</em></strong> has a Markov property if the <a href="https://en.wikipedia.org/wiki/Conditional_probability_distribution">probability distribution</a> of future states, conditional on both past and present states, depends only upon the present state and not on the sequence of events that preceded it.</p>
-<p><strong>Definition:</strong> A <strong><em>discrete time Markov chain</em></strong> is a stochastic process that can be parameterized by empirically estimating the transition probabilities between discrete states.</p>
+<p>A BMS, or an NCD system, can be represented by a discrete time parameter
+<a href="#" class="tooltip" style="color:green"><em>Markov chain</em><span style="font-size:8pt">A stochastic model (time dependent) where the probability of each event depends only on the current state and not the historical path</span></a>. Under this model, the state space consists of classes of
+bonus-malus, and the state (or class) is assumed to shift randomly from
+year to year. Therefore, it is important to know a brief description on
+two elements; a stochastic process that has a Markov property, and a
+discrete time Markov chain.</p>
+<p><strong>Definition:</strong> A <strong><em>stochastic process</em></strong> has a Markov property if the
+<a href="https://en.wikipedia.org/wiki/Conditional_probability_distribution">probability
+distribution</a>
+of future states, conditional on both past and present states, depends
+only upon the present state and not on the sequence of events that
+preceded it.</p>
+<p><strong>Definition:</strong> A <strong><em>discrete time Markov chain</em></strong> is a stochastic
+process that can be parameterized by empirically estimating the
+transition probabilities between discrete states.</p>
 <div id="transition-probability" class="section level3">
 <h3><span class="header-section-number">12.3.1</span> Transition Probability</h3>
-<p>The randomness of the transition of the NCD classes is governed by the transition probability in a given year. The definition of a transition probability is provided here to understand the use of the probability for representing the transition of the NCD classes.</p>
-<p><strong>Definition:</strong> The <strong><em>transition probability</em></strong> from state <span class="math inline">\(i\)</span> (at time <span class="math inline">\(n\)</span>) to state <span class="math inline">\(j\)</span> (at time <span class="math inline">\(n + 1\)</span>) is called a one-step transition probability, and is denoted by <span class="math inline">\(p_{ij} = Pr (X_{n + 1} = j|X_n = i)\)</span>, <span class="math inline">\(i = 1,2,...,k\)</span>, <span class="math inline">\(j = 1,2,...,k\)</span>.</p>
-<p>The transition probabilities can be represented by a <span class="math inline">\(k \times k\)</span> matrix. Assuming a homogeneous Markov process, a <em>k</em>-state Markov chain can be represented by a <strong><em>matrix of transition probabilities</em></strong> <span class="math inline">\({\bf P}\)</span>:</p>
+<p>The randomness of the transition of the NCD classes is governed by the
+transition probability in a given year. The definition of a transition
+probability is provided here to understand the use of the probability
+for representing the transition of the NCD classes.</p>
+<p><strong>Definition:</strong> The <strong><em>transition probability</em></strong> from state <span class="math inline">\(i\)</span>
+(at time <span class="math inline">\(n\)</span>) to state <span class="math inline">\(j\)</span> (at time <span class="math inline">\(n + 1\)</span>) is
+called a one-step transition probability, and is denoted by
+<span class="math inline">\(p_{ij} = Pr (X_{n + 1} = j|X_n = i)\)</span>, <span class="math inline">\(i = 1,2,...,k\)</span>, <span class="math inline">\(j = 1,2,...,k\)</span>.</p>
+<p>The transition probabilities can be represented by a <span class="math inline">\(k \times k\)</span> matrix. Assuming a homogeneous Markov process, a <em>k</em>-state Markov
+chain can be represented by a <strong><em>matrix of transition probabilities</em></strong>
+<span class="math inline">\({\bf P}\)</span>:</p>
 <p><span class="math display">\[
 {\bf P} = 
 \left[ {\begin{array}{*{20}c}
@@ -921,9 +1045,26 @@ p_{21} &amp; p_{22} &amp; \ldots &amp; &amp; &amp; p_{2k} \\
 p_{k1} &amp; p_{k2} &amp; \cdots &amp; &amp; &amp; p_{kk}   
 \end{array} } \right].
 \]</span></p>
-<p>Each row of the <a href="#" class="tooltip" style="color:green"><em>transition matrix</em><span style="font-size:8pt">Matrix that represents all probabilities for transition from one state to another (could be same state) for a markov chain</span></a> represents the transition of flowing out of state, whereas each column represents the transition of flowing into the state. The cumulative transitions of flowing out of state must equal 1, or each row of the matrix must sum to 1, i.e. <span class="math inline">\(\sum\limits_j p_{ij} = 1\)</span>. All probabilities must also be non-negative (since they are probabilities), i.e. <span class="math inline">\(p_{ij} \ge 0\)</span>.</p>
-<p>Consider the Malaysian NCD system. Under this system, let the random variable <span class="math inline">\(X_t\)</span> denotes the class of NCD at time <span class="math inline">\(t\)</span> and takes the values in a state space <span class="math inline">\(\bf{S}\)</span>, where <span class="math inline">\({\bf S} = \{0,1,...,5\}\)</span>. Therefore, the probability of a no-claim year is equal to the probability of transition from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span>, which is <span class="math inline">\(p_{ij}\)</span>, <span class="math inline">\(i = 0,1,2,...,5\)</span>, <span class="math inline">\(j = 0,1,2,...,5\)</span>. If an insured has one or more claims within the year, the probability of transitioning back to state 0 is represented by <span class="math inline">\(p_{i0}\)</span>, which is also equivalent to <span class="math inline">\(1 - {p_{ij}}.\)</span> Therefore, there are only two transition probabilities in each row; the probability of advancing to the next state, <span class="math inline">\(p_{ij},\)</span> and the probability of returning back to state zero, <span class="math inline">\(p_{i0} = 1 - p_{ij}\)</span>.</p>
-<p>In terms of transition probabilities, the Malaysian NCD system can be represented by the following <span class="math inline">\((6 \times 6)\)</span> transition matrix:</p>
+<p>Each row of the <a href="#" class="tooltip" style="color:green"><em>transition matrix</em><span style="font-size:8pt">Matrix that represents all probabilities for transition from one state to another (could be same state) for a markov chain</span></a> represents the transition of flowing
+out of state, whereas each column represents the transition of flowing
+into the state. The cumulative transitions of flowing out of state must
+equal 1, or each row of the matrix must sum to 1, i.e.
+<span class="math inline">\(\sum\limits_j p_{ij} = 1\)</span>. All probabilities must also
+be non-negative (since they are probabilities), i.e. <span class="math inline">\(p_{ij} \ge 0\)</span>.</p>
+<p>Consider the Malaysian NCD system. Under this system, let the random
+variable <span class="math inline">\(X_t\)</span> denotes the class of NCD at time <span class="math inline">\(t\)</span>
+and takes the values in a state space <span class="math inline">\(\bf{S}\)</span>, where
+<span class="math inline">\({\bf S} = \{0,1,...,5\}\)</span>. Therefore, the probability of
+a no-claim year is equal to the probability of transition from state
+<span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span>, which is <span class="math inline">\(p_{ij}\)</span>, <span class="math inline">\(i = 0,1,2,...,5\)</span>, <span class="math inline">\(j = 0,1,2,...,5\)</span>. If an insured has one or
+more claims within the year, the probability of transitioning back to
+state 0 is represented by <span class="math inline">\(p_{i0}\)</span>, which is also equivalent
+to <span class="math inline">\(1 - {p_{ij}}.\)</span> Therefore, there are only two transition
+probabilities in each row; the probability of advancing to the next
+state, <span class="math inline">\(p_{ij},\)</span> and the probability of returning back to
+state zero, <span class="math inline">\(p_{i0} = 1 - p_{ij}\)</span>.</p>
+<p>In terms of transition probabilities, the Malaysian NCD system can be
+represented by the following <span class="math inline">\((6 \times 6)\)</span> transition matrix:</p>
 <p><span class="math display">\[
 {\bf P} = 
 \left[ {\begin{array}{*{20}c}
@@ -946,7 +1087,14 @@ p_{50}&amp;0&amp;0&amp;0&amp;0&amp;p_{55}
 <p><strong><em>Example 1</em></strong></p>
 <p><em>Provide the transition matrix for the NCD system in Brazil.</em></p>
 <p><strong><em>Solution</em></strong></p>
-<p><em>Based on the NCD classes and the transition diagram shown respectively in Table 2 and Figure <a href="C-BonusMalus.html#fig:TransitionBrazil">12.2</a>, the probability of a no-claim year is equal to the probability of moving one-class forward, whereas the probability of having one or more claims within the year is equal to the probability of moving one-class backward. Therefore, each row can contain two or more transition probabilities; one probability for advancing to the next state, and one or more probabilities for moving one-class backwards. The transition matrix is:</em></p>
+<p><em>Based on the NCD classes and the transition diagram shown respectively
+in Table 2 and Figure <a href="C-BonusMalus.html#fig:TransitionBrazil">12.2</a>, the probability of a no-claim year is equal to
+the probability of moving one-class forward, whereas the probability of
+having one or more claims within the year is equal to the probability of
+moving one-class backward. Therefore, each row can contain two or more
+transition probabilities; one probability for advancing to the next
+state, and one or more probabilities for moving one-class backwards. The
+transition matrix is:</em></p>
 <p><span class="math display">\[
 {\bf P} = 
 \left[ {\begin{array}{*{20}{c}}
@@ -988,23 +1136,59 @@ p_{50}&amp;0&amp;0&amp;0&amp;0&amp;p_{55}
 <h2><span class="header-section-number">12.4</span> BMS and Stationary Distribution</h2>
 <div id="stationary-distribution" class="section level3">
 <h3><span class="header-section-number">12.4.1</span> Stationary Distribution</h3>
-<p>It is important to note that the transition matrix represents the transition probabilities of the NCD classes in one year. If we are interested in the distribution of the transition in the long run (which may take several years), the stationary probability can be used.</p>
-<p>Several definitions and properties are provided here to understand the use of a Markov chain model for representing the stationary distribution of the NCD transitions. However, students are encouraged to refer to textbooks on Markov Chain and stochastic processes available in the literature for a more comprehensive knowledge on the related subjects.</p>
-<p><strong>Definition:</strong> A Markov chain is said to be <strong><em>irreducible</em></strong> if it is possible to move to any state from any other state.</p>
-<p><strong>Definition:</strong> A state <span class="math inline">\(i\)</span> has <strong>period</strong> <span class="math inline">\(k\)</span> if any return to state <span class="math inline">\(i\)</span> must occur in multiples of <span class="math inline">\(k\)</span> time steps. If <span class="math inline">\(k = 1\)</span>, then the state is said to be <strong><em>aperiodic</em></strong>.</p>
-<p><strong>Definition:</strong> A state <span class="math inline">\(i\)</span> is said to be <strong>transient</strong> if, given that we start in state <span class="math inline">\(i\)</span>, there is a non-zero probability that we will never return to <span class="math inline">\(i\)</span>. State <span class="math inline">\(i\)</span> is recurrent (or persistent) if it is not transient. A state <span class="math inline">\(i\)</span> is <strong><em>positive recurrent</em></strong> if the <strong>mean recurrent time</strong> (or expected return time) is <strong><em>finite</em></strong>.</p>
-<p><strong>Definition:</strong> A state <span class="math inline">\(i\)</span> is said to be <em><a href="https://en.wikipedia.org/wiki/Ergodic_theory"><strong>ergodic</strong></a></em> if it is aperiodic and positive recurrent. In other words, a state <span class="math inline">\(i\)</span> is ergodic if it is recurrent, has a period of one (aperiodic), and has finite mean recurrence time. If all states in an irreducible Markov chain are ergodic, then the chain is said to be ergodic.</p>
-<p><strong>Definition:</strong> Let <span class="math inline">\(p_{ij}^{(n)} = \Pr ({X_n} = j\|{X_0} = i)\)</span> be the probability of transition from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span> in <span class="math inline">\(n\)</span> time steps. The <em>n</em>-step transition probabilities for a <strong><em>stationary Markov chain</em></strong> satisfy the <em><a href="https://en.wikipedia.org/wiki/Chapman%E2%80%93Kolmogorov_equation"><strong>Chapman–Kolmogorov equation</strong></a>:</em></p>
+<p>It is important to note that the transition matrix represents the
+transition probabilities of the NCD classes in one year. If we are
+interested in the distribution of the transition in the long run (which
+may take several years), the stationary probability can be used.</p>
+<p>Several definitions and properties are provided here to understand the
+use of a Markov chain model for representing the stationary distribution of the NCD transitions. However, students are encouraged to refer to
+textbooks on Markov Chain and stochastic processes available in the
+literature for a more comprehensive knowledge on the related subjects.</p>
+<p><strong>Definition:</strong> A Markov chain is said to be <strong><em>irreducible</em></strong> if it is
+possible to move to any state from any other state.</p>
+<p><strong>Definition:</strong> A state <span class="math inline">\(i\)</span> has <strong>period</strong> <span class="math inline">\(k\)</span> if
+any return to state <span class="math inline">\(i\)</span> must occur in multiples of
+<span class="math inline">\(k\)</span> time steps. If <span class="math inline">\(k = 1\)</span>, then the state is said to
+be <strong><em>aperiodic</em></strong>.</p>
+<p><strong>Definition:</strong> A state <span class="math inline">\(i\)</span> is said to be <strong>transient</strong> if,
+given that we start in state <span class="math inline">\(i\)</span>, there is a non-zero
+probability that we will never return to <span class="math inline">\(i\)</span>.
+State <span class="math inline">\(i\)</span> is recurrent (or persistent) if it is not
+transient. A state <span class="math inline">\(i\)</span> is <strong><em>positive recurrent</em></strong> if the
+<strong>mean recurrent time</strong> (or expected return time) is <strong><em>finite</em></strong>.</p>
+<p><strong>Definition:</strong> A state <span class="math inline">\(i\)</span> is said to
+be <em><a href="https://en.wikipedia.org/wiki/Ergodic_theory"><strong>ergodic</strong></a></em> if it
+is aperiodic and positive recurrent. In other words, a state <span class="math inline">\(i\)</span>
+is ergodic if it is recurrent, has a period of one (aperiodic), and has
+finite mean recurrence time. If all states in an irreducible Markov
+chain are ergodic, then the chain is said to be ergodic.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(p_{ij}^{(n)} = \Pr ({X_n} = j\|{X_0} = i)\)</span> be the probability of transition from state <span class="math inline">\(i\)</span> to
+state <span class="math inline">\(j\)</span> in <span class="math inline">\(n\)</span> time steps. The <em>n</em>-step transition
+probabilities for a <strong><em>stationary Markov chain</em></strong> satisfy
+the <em><a href="https://en.wikipedia.org/wiki/Chapman%E2%80%93Kolmogorov_equation"><strong>Chapman–Kolmogorov equation</strong></a>:</em></p>
 <p><span class="math display">\[p_{ij}^{(n)} = \sum\limits_r {p_{ir}^{(k)}p_{rj}^{(n - k)}}\]</span></p>
 <p>for any <span class="math inline">\(k\)</span>, where <span class="math inline">\(0 &lt; k &lt; n\)</span>.</p>
-<p><strong>Definition:</strong> If a Markov chain is <em><a href="https://en.wikipedia.org/w/index.php?title=Time-homogeneous_Markov_chain&amp;action=edit&amp;redlink=1">stationary</a></em>, then the vector <span class="math inline">\({\bf{\pi }}\)</span> is called a <a href="#" class="tooltip" style="color:green"><em>stationary distribution</em><span style="font-size:8pt">Probability distribution remains unchanged in the markov chain as time progresses</span></a> (or <em><a href="https://en.wikipedia.org/wiki/Invariant_measure">invariant measure</a></em>) if it satisfies:</p>
+<p><strong>Definition:</strong> If a Markov chain is
+<em><a href="https://en.wikipedia.org/w/index.php?title=Time-homogeneous_Markov_chain&amp;action=edit&amp;redlink=1">stationary</a></em>, then the vector <span class="math inline">\({\bf{\pi }}\)</span> is called a <a href="#" class="tooltip" style="color:green"><em>stationary distribution</em><span style="font-size:8pt">Probability distribution remains unchanged in the markov chain as time progresses</span></a>
+(or <em><a href="https://en.wikipedia.org/wiki/Invariant_measure">invariant measure</a></em>)
+if it satisfies:</p>
 <p><span class="math display">\[0 \le {\pi _j} \le 1\]</span></p>
 <p><span class="math display">\[\sum\limits_j {{\pi _j}} = 1,\]</span></p>
 <p><span class="math display">\[{\pi_j} = \sum\limits_i {\pi_i}p_{ij}\]</span>.</p>
-<p>In terms of vectors and matrices, a stationary distribution <span class="math inline">\({\bf{\pi }}\)</span> is a row vector, whose entries are non-negative and sum to one, that is unchanged by the operation:</p>
+<p>In terms of vectors and matrices, a stationary
+distribution <span class="math inline">\({\bf{\pi }}\)</span> is a row vector, whose entries
+are non-negative and sum to one, that is unchanged by the operation:</p>
 <p><span class="math inline">\({\bf{\pi P}} = {\bf{\pi }}\)</span>.</p>
-<p>If a Markov chain is stationary, then the transition matrix <span class="math inline">\({\bf{P}}\)</span> is the same after each step, so that the <span class="math inline">\(k\)</span>-step transition probability can be computed as the <span class="math inline">\(k\)</span>-th power of the transition matrix, <span class="math inline">\({{\bf{P}}^k}.\)</span></p>
-<p>From the definitions and properties above, a BMS forms a regular Markov chain if all of its states (NCD classes) are <a href="#" class="tooltip" style="color:green"><em>ergodic</em><span style="font-size:8pt">Irreducible markov chain where it is eventually possible to move from any state to any other state, with positive probability</span></a>, and the chain is not cyclic (or <a href="#" class="tooltip" style="color:green"><em>irreversible</em><span style="font-size:8pt">A markov chain where there does not exist a probability distribution that allows for the chain to be walked backwards in time</span></a>). The row vector, <span class="math inline">\({\bf{\pi }}\)</span>, which is also the <strong><em>left</em></strong> <a href="#" class="tooltip" style="color:green"><em>eigenvector</em><span style="font-size:8pt">A non-zero vector that changes by only a scalar factor when that linear transformation is applied</span></a> of the transition matrix, is a <strong><em>stationary distribution</em></strong> defined by <span class="math inline">\(0 \le {\pi _j} \le 1\)</span> and <span class="math inline">\(\sum\limits_j {{\pi_j}} = 1\)</span>.</p>
+<p>If a Markov chain is stationary, then the transition
+matrix <span class="math inline">\({\bf{P}}\)</span> is the same after each step, so that
+the <span class="math inline">\(k\)</span>-step transition probability can be computed as the <span class="math inline">\(k\)</span>-th power
+of the transition matrix, <span class="math inline">\({{\bf{P}}^k}.\)</span></p>
+<p>From the definitions and properties above, a BMS forms a regular Markov
+chain if all of its states (NCD classes) are <a href="#" class="tooltip" style="color:green"><em>ergodic</em><span style="font-size:8pt">Irreducible markov chain where it is eventually possible to move from any state to any other state, with positive probability</span></a>, and the
+chain is not cyclic (or <a href="#" class="tooltip" style="color:green"><em>irreversible</em><span style="font-size:8pt">A markov chain where there does not exist a probability distribution that allows for the chain to be walked backwards in time</span></a>). The row vector,
+<span class="math inline">\({\bf{\pi }}\)</span>, which is also the <strong><em>left</em></strong> <a href="#" class="tooltip" style="color:green"><em>eigenvector</em><span style="font-size:8pt">A non-zero vector that changes by only a scalar factor when that linear transformation is applied</span></a> of
+the transition matrix, is a <strong><em>stationary distribution</em></strong> defined by
+<span class="math inline">\(0 \le {\pi _j} \le 1\)</span> and <span class="math inline">\(\sum\limits_j {{\pi_j}} = 1\)</span>.</p>
 <p><strong><em>Example 3</em></strong></p>
 <p><em>Find the stationary distribution for the NCD system in Malaysia assuming that the probability of a no-claim year for all NCD classes are <span class="math inline">\({p_0}\)</span>.</em></p>
 <p><strong><em>Solution</em></strong></p>
@@ -1021,7 +1205,11 @@ p_{50}&amp;0&amp;0&amp;0&amp;0&amp;p_{55}
 \therefore {\pi _5} = \frac{(1 - {p_0}){p_0}^5}{{(1 - {p_0})}} = {p_0}^5
 \end{array}
 \]</span></p>
-<p>The stationary distribution (or steady state condition) shown in Example 3 represents the asymptotic distribution of the NCD system, or the distribution in the long run. As an example, assuming that the probability of a no-claim year is <span class="math inline">\(p_0 = 0.90,\)</span> the <strong><em>stationary probabilities</em></strong> are:</p>
+<p>The stationary distribution (or steady state condition) shown in Example
+3 represents the asymptotic distribution of the NCD system, or the
+distribution in the long run. As an example, assuming that the
+probability of a no-claim year is <span class="math inline">\(p_0 = 0.90,\)</span> the
+<strong><em>stationary probabilities</em></strong> are:</p>
 <p><span class="math display">\[
 \begin{array}{l}
 {\pi _0} = 1 - {p_0} = 0.1000\\\\
@@ -1032,20 +1220,28 @@ p_{50}&amp;0&amp;0&amp;0&amp;0&amp;p_{55}
 {\pi _5} = {p_0}^5 = 0.5905
 \end{array}
 \]</span></p>
-<p>In other words, <span class="math inline">\({\pi_0} = 0.10\)</span> indicates that 10% of insureds will eventually belong to class 0 (or zero claim-free years), <span class="math inline">\({\pi _1} = 0.09\)</span> indicates that 9% of insureds will eventually belong to class 1 (or one claim-free year), and so forth, until <span class="math inline">\({\pi _5} = 0.59\)</span>, which indicates that 59% of insureds will eventually belong to class 5 (or five successive claim-free years).</p>
+<p>In other words, <span class="math inline">\({\pi_0} = 0.10\)</span> indicates that 10% of
+insureds will eventually belong to class 0 (or zero claim-free years),
+<span class="math inline">\({\pi _1} = 0.09\)</span> indicates that 9% of insureds will
+eventually belong to class 1 (or one claim-free year), and so forth,
+until <span class="math inline">\({\pi _5} = 0.59\)</span>, which indicates that 59% of
+insureds will eventually belong to class 5 (or five successive
+claim-free years).</p>
 </div>
 <div id="r-program-for-stationary-distribution" class="section level3">
 <h3><span class="header-section-number">12.4.2</span> R Program for Stationary Distribution</h3>
-<p>We can use the left eigenvector of a transition matrix to calculate the stationary distribution. The following R program can be used to calculate the left eigenvector:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create transition matrix</span>
-entries=<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>)
-TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)
-TP</code></pre></div>
+<p>We can use the left eigenvector of a transition matrix to calculate the
+stationary distribution. The following R program can be used to
+calculate the left eigenvector:</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1"><span class="co">#create transition matrix</span></a>
+<a class="sourceLine" id="cb142-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,</a>
+<a class="sourceLine" id="cb142-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>)</a>
+<a class="sourceLine" id="cb142-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb142-9" title="9">TP</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]  0.1  0.9  0.0  0.0  0.0  0.0
 ## [2,]  0.1  0.0  0.9  0.0  0.0  0.0
@@ -1053,9 +1249,9 @@ TP</code></pre></div>
 ## [4,]  0.1  0.0  0.0  0.0  0.9  0.0
 ## [5,]  0.1  0.0  0.0  0.0  0.0  0.9
 ## [6,]  0.1  0.0  0.0  0.0  0.0  0.9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#calculate left eigenvector</span>
-<span class="co">#hint -- left eigenvector is the same as right eigenvector of transpose of transition matrix</span>
-<span class="kw">eigen</span>(<span class="kw">t</span>(TP))</code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="co">#calculate left eigenvector</span></a>
+<a class="sourceLine" id="cb144-2" title="2"><span class="co">#hint -- left eigenvector is the same as right eigenvector of transpose of transition matrix</span></a>
+<a class="sourceLine" id="cb144-3" title="3"><span class="kw">eigen</span>(<span class="kw">t</span>(TP))</a></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1]  1.0000000000+0.0000000000i -0.0004880382+0.0003546725i
@@ -1084,28 +1280,22 @@ TP</code></pre></div>
 ## [4,] -0.0001468014877601952-0.0004505247500856750i
 ## [5,] -0.7070333538878578183+0.0004507115465249567i
 ## [6,]  0.7071798984882565753+0.0000000000000000000i
-##                                               [,5]
-## [1,] -0.0000000000000440003-0.0000000000001357099i
-## [2,]  0.0000000001723292683-0.0000000001248792837i
-## [3,]  0.0000002567150759536+0.0000001869214542640i
-## [4,] -0.0001468014877601952+0.0004505247500856750i
-## [5,] -0.7070333538878578183-0.0004507115465249567i
-## [6,]  0.7071798984882565753+0.0000000000000000000i
-##                           [,6]
-## [1,]  0.0000000000001426323+0i
-## [2,]  0.0000000002126778891+0i
-## [3,]  0.0000003173909504803+0i
-## [4,]  0.0004736602551468477+0i
-## [5,]  0.7068696732221422252+0i
-## [6,] -0.7073436510810596767+0i</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#divide entry of first column by sum of elements, so that entries sum to 1</span>
-<span class="co">#provide answers in 4 decimal places</span>
-<span class="kw">round</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]),<span class="dv">4</span>)</code></pre></div>
+##                                               [,5]                      [,6]
+## [1,] -0.0000000000000440003-0.0000000000001357099i  0.0000000000001426323+0i
+## [2,]  0.0000000001723292683-0.0000000001248792837i  0.0000000002126778891+0i
+## [3,]  0.0000002567150759536+0.0000001869214542640i  0.0000003173909504803+0i
+## [4,] -0.0001468014877601952+0.0004505247500856750i  0.0004736602551468477+0i
+## [5,] -0.7070333538878578183-0.0004507115465249567i  0.7068696732221422252+0i
+## [6,]  0.7071798984882565753+0.0000000000000000000i -0.7073436510810596767+0i</code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1"><span class="co">#divide entry of first column by sum of elements, so that entries sum to 1</span></a>
+<a class="sourceLine" id="cb146-2" title="2"><span class="co">#provide answers in 4 decimal places</span></a>
+<a class="sourceLine" id="cb146-3" title="3"><span class="kw">round</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]),<span class="dv">4</span>)</a></code></pre></div>
 <pre><code>## [1] 0.1000+0i 0.0900+0i 0.0810+0i 0.0729+0i 0.0656+0i 0.5905+0i</code></pre>
 <p><strong><em>Example 4</em></strong></p>
 <p><em>Find the stationary distribution for the NCD system in Brazil assuming that the number of successive years of claims is Poisson distributed with parameter</em> <span class="math inline">\(\lambda = 0.10\)</span>.</p>
 <p><strong><em>Solution</em></strong></p>
-<p><em>Under the Poisson distribution, the probability of</em> <span class="math inline">\(k\)</span> <em>successive years of claims is</em> <span class="math inline">\(p_k = \frac{e^{ - 0.1}{(0.1)}^k}{{k!}},{\rm{ }}k = 0,1,2,.....\)</span></p>
+<p><em>Under the Poisson distribution, the probability of</em> <span class="math inline">\(k\)</span>
+<em>successive years of claims is</em> <span class="math inline">\(p_k = \frac{e^{ - 0.1}{(0.1)}^k}{{k!}},{\rm{ }}k = 0,1,2,.....\)</span></p>
 <p><em>The transition matrix is:</em></p>
 <p><span class="math display">\[
 {\small {\bf{P}} = \left[ {\begin{array}{*{20}{c}}
@@ -1148,11 +1338,19 @@ TP</code></pre></div>
 {0.8894}
 \end{array}} \right]
 \]</span></p>
-<p><em>The probabilities indicate that 89% of insureds will eventually belong to class 6 (six successive claim-free years), 9% of insureds will eventually belong to class 5 (five successive claim-free years), and 1.5% of insureds will eventually belong to class 4 (four successive claim-free years). Other classes, after combined, have less than 1% of insureds.</em></p>
+<p><em>The probabilities indicate that 89% of insureds will eventually belong
+to class 6 (six successive claim-free years), 9% of insureds will
+eventually belong to class 5 (five successive claim-free years), and
+1.5% of insureds will eventually belong to class 4 (four successive
+claim-free years). Other classes, after combined, have less than 1% of
+insureds.</em></p>
 <p><strong><em>Example 5</em></strong></p>
-<p><em>Using the results from Example 4, find the final premium under the steady state condition assuming that the premium prior to implementing the NCD is</em> <span class="math inline">\(m.\)</span></p>
+<p><em>Using the results from Example 4, find the final premium under the
+steady state condition assuming that the premium prior to implementing
+the NCD is</em> <span class="math inline">\(m.\)</span></p>
 <p><strong><em>Solution</em></strong></p>
-<p><em>Using the stationary probabilities from Example 4, the stationary final premium is:</em></p>
+<p><em>Using the stationary probabilities from Example 4, the stationary final
+premium is:</em></p>
 <p><span class="math display">\[
 \begin{array}{l} = 
 \sum\limits_j \text{(premium)} \times 
@@ -1162,12 +1360,24 @@ TP</code></pre></div>
 = 0.6565m
 \end{array}
 \]</span></p>
-<p><em>The results indicate that the final premium reduce from m to 0.6565m in the long run (under steady state condition or stationary condition) if the NCD is considered.</em></p>
+<p><em>The results indicate that the final premium reduce from m to 0.6565m in
+the long run (under steady state condition or stationary condition) if
+the NCD is considered.</em></p>
 </div>
 <div id="premium-evolution" class="section level3">
 <h3><span class="header-section-number">12.4.3</span> Premium Evolution</h3>
-<p>Sometimes we are interested to observe the evolution of the mean premium after <span class="math inline">\(n\)</span> years (or <span class="math inline">\(n\)</span> steps). Under the NCD system, the <a href="#" class="tooltip" style="color:green"><em>n-step transition probability</em><span style="font-size:8pt">Probability of ending in a state j after n periods, starting in state i, where i and j can be the same state</span></a>, <span class="math inline">\(p_{ij}^{(n)}\)</span>, can be used to observe the evolution of the mean premium. A definition on <em>n</em>-step transition probabaility <span class="math inline">\(p_{ij}^{(n)}\)</span> is provided here to understand the use of the probability for observing the evolution of the mean premium.</p>
-<p><strong>Definition:</strong> Let <span class="math inline">\(p_{ij} = \Pr ({X_{n + 1}} = j|{X_n} = i)\)</span> be a <strong><em>one-step transition probability</em></strong> from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span>, and <span class="math inline">\(p_{ij}^{(n)} = \Pr ({X_n} = j|{X_0} = i)\)</span>, <span class="math inline">\(n = 1,2,...\)</span>, be an n-step transition probability from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span>. The probability <span class="math inline">\(p_{ij}^{(n)}\)</span> can be obtained using the <span class="math inline">\(n\)</span>th power of transition matrix <span class="math inline">\({\bf{P}}\)</span>, which is <span class="math inline">\({\bf{P}^n}.\)</span></p>
+<p>Sometimes we are interested to observe the evolution of the mean premium
+after <span class="math inline">\(n\)</span> years (or <span class="math inline">\(n\)</span> steps). Under the NCD system,
+the <a href="#" class="tooltip" style="color:green"><em>n-step transition probability</em><span style="font-size:8pt">Probability of ending in a state j after n periods, starting in state i, where i and j can be the same state</span></a>, <span class="math inline">\(p_{ij}^{(n)}\)</span>, can be
+used to observe the evolution of the mean premium. A definition on
+<em>n</em>-step transition probabaility <span class="math inline">\(p_{ij}^{(n)}\)</span> is provided
+here to understand the use of the probability for observing the
+evolution of the mean premium.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(p_{ij} = \Pr ({X_{n + 1}} = j|{X_n} = i)\)</span> be a <strong><em>one-step transition probability</em></strong> from state
+<span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span>, and <span class="math inline">\(p_{ij}^{(n)} = \Pr ({X_n} = j|{X_0} = i)\)</span>, <span class="math inline">\(n = 1,2,...\)</span>, be an n-step transition probability from state <span class="math inline">\(i\)</span> to state
+<span class="math inline">\(j\)</span>. The probability <span class="math inline">\(p_{ij}^{(n)}\)</span> can be obtained
+using the <span class="math inline">\(n\)</span>th power of transition matrix
+<span class="math inline">\({\bf{P}}\)</span>, which is <span class="math inline">\({\bf{P}^n}.\)</span></p>
 <p><strong><em>Example 6</em></strong></p>
 <p><em>Observe the premiums in 20 years under the NCD system in Malaysia, assuming that the probability of claims is Poisson distributed with parameter</em> <span class="math inline">\(\lambda = 0.10\)</span> <em>and the premium prior to implementing the NCD is</em> <span class="math inline">\(m = 100\)</span><em>.</em></p>
 <p><strong><em>Solution</em></strong></p>
@@ -1196,22 +1406,25 @@ TP</code></pre></div>
 &amp;= 62.55.
 \end{aligned}
 \]</span></p>
-<p><em>Using similar steps, the premium in the</em> <span class="math inline">\(n\)</span><em>-th year for</em> <span class="math inline">\(n = 1,2,...,20\)</span> <em>can be observed. From R program, the premiums in 20 years are:</em></p>
+<p><em>Using similar steps, the premium in the</em> <span class="math inline">\(n\)</span><em>-th year for</em>
+<span class="math inline">\(n = 1,2,...,20\)</span> <em>can be observed. From R program, the premiums in 20 years are:</em></p>
 <p><em>62.55, 59.87, 58.06, 57.06, 56.58, 56.58, 56.58, 56.58, 56.58, 56.58,</em></p>
 <p><em>56.58, 56.58, 56.58, 56.58, 56.58, 56.58, 56.58, 56.58, 56.58, 56.58.</em></p>
 </div>
 <div id="r-program-for-premium-evolution" class="section level3">
 <h3><span class="header-section-number">12.4.4</span> R Program for Premium Evolution</h3>
-<p>The following R program can be used to find the premium in the <em>n-</em>th year and the premiums in 20 years under the NCD system in Malaysia (to find the solution in Example 6).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create transition matrix</span>
-entries=<span class="kw">c</span>(<span class="fl">0.0952</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,
-<span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>)
-TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)
-TP</code></pre></div>
+<p>The following R program can be used to find the premium in the <em>n-</em>th
+year and the premiums in 20 years under the NCD system in Malaysia (to
+find the solution in Example 6).</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1"><span class="co">#create transition matrix</span></a>
+<a class="sourceLine" id="cb148-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.0952</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,</a>
+<a class="sourceLine" id="cb148-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>)</a>
+<a class="sourceLine" id="cb148-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb148-9" title="9">TP</a></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,] 0.0952 0.9048 0.0000 0.0000 0.0000 0.0000
 ## [2,] 0.0952 0.0000 0.9048 0.0000 0.0000 0.0000
@@ -1219,14 +1432,14 @@ TP</code></pre></div>
 ## [4,] 0.0952 0.0000 0.0000 0.0000 0.9048 0.0000
 ## [5,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048
 ## [6,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create function for nth power of square matrix</span>
-powA =<span class="st"> </span><span class="cf">function</span>(n) { 
-  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">1</span>) <span class="kw">return</span> (TP)
-  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">2</span>) <span class="kw">return</span> (TP<span class="op">%*%</span>TP)
-  <span class="cf">if</span> (n<span class="op">&gt;</span><span class="dv">2</span>) <span class="kw">return</span> ( TP<span class="op">%*%</span><span class="kw">powA</span>(n<span class="op">-</span><span class="dv">1</span>)) }
-
-<span class="co">#example for n=3</span>
-<span class="kw">powA</span>(<span class="dv">3</span>)</code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1"><span class="co">#create function for nth power of square matrix</span></a>
+<a class="sourceLine" id="cb150-2" title="2">powA =<span class="st"> </span><span class="cf">function</span>(n) { </a>
+<a class="sourceLine" id="cb150-3" title="3">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">1</span>) <span class="kw">return</span> (TP)</a>
+<a class="sourceLine" id="cb150-4" title="4">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">2</span>) <span class="kw">return</span> (TP<span class="op">%*%</span>TP)</a>
+<a class="sourceLine" id="cb150-5" title="5">  <span class="cf">if</span> (n<span class="op">&gt;</span><span class="dv">2</span>) <span class="kw">return</span> ( TP<span class="op">%*%</span><span class="kw">powA</span>(n<span class="dv">-1</span>)) }</a>
+<a class="sourceLine" id="cb150-6" title="6"></a>
+<a class="sourceLine" id="cb150-7" title="7"><span class="co">#example for n=3</span></a>
+<a class="sourceLine" id="cb150-8" title="8"><span class="kw">powA</span>(<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##        [,1]       [,2]       [,3]      [,4]      [,5]      [,6]
 ## [1,] 0.0952 0.08613696 0.07793672 0.7407263 0.0000000 0.0000000
 ## [2,] 0.0952 0.08613696 0.07793672 0.0000000 0.7407263 0.0000000
@@ -1234,26 +1447,26 @@ powA =<span class="st"> </span><span class="cf">function</span>(n) {
 ## [4,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263
 ## [5,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263
 ## [6,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#define NCD percentage</span>
-NCD=<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">75</span>,.<span class="dv">7</span>,.<span class="dv">6167</span>,.<span class="dv">55</span>,.<span class="dv">45</span>)
-
-<span class="co">#create function for premium in nth year</span>
-p=<span class="kw">numeric</span>(<span class="dv">0</span>)
-prem=<span class="cf">function</span>(n){
-  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(NCD))
-  p[j]=<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])
-  <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">sum</span>(p<span class="op">*</span>NCD)}
-
-<span class="co">#example for n=3</span>
-<span class="kw">prem</span>(<span class="dv">3</span>)</code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" title="1"><span class="co">#define NCD percentage</span></a>
+<a class="sourceLine" id="cb152-2" title="2">NCD=<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">75</span>,.<span class="dv">7</span>,.<span class="dv">6167</span>,.<span class="dv">55</span>,.<span class="dv">45</span>)</a>
+<a class="sourceLine" id="cb152-3" title="3"></a>
+<a class="sourceLine" id="cb152-4" title="4"><span class="co">#create function for premium in nth year</span></a>
+<a class="sourceLine" id="cb152-5" title="5">p=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb152-6" title="6">prem=<span class="cf">function</span>(n){</a>
+<a class="sourceLine" id="cb152-7" title="7">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(NCD))</a>
+<a class="sourceLine" id="cb152-8" title="8">  p[j]=<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])</a>
+<a class="sourceLine" id="cb152-9" title="9">  <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">sum</span>(p<span class="op">*</span>NCD)}</a>
+<a class="sourceLine" id="cb152-10" title="10"></a>
+<a class="sourceLine" id="cb152-11" title="11"><span class="co">#example for n=3</span></a>
+<a class="sourceLine" id="cb152-12" title="12"><span class="kw">prem</span>(<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## [1] 58.06106</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#provide premiums for 20 years</span>
-premium=<span class="kw">numeric</span>(<span class="dv">0</span>)
-<span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)
-premium[n]=<span class="kw">prem</span>(n)
-<span class="kw">round</span>(premium,<span class="dv">2</span>)</code></pre></div>
-<pre><code>##  [1] 62.55 59.87 58.06 57.06 56.58 56.58 56.58 56.58 56.58 56.58 56.58
-## [12] 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" title="1"><span class="co">#provide premiums for 20 years</span></a>
+<a class="sourceLine" id="cb154-2" title="2">premium=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb154-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb154-4" title="4">premium[n]=<span class="kw">prem</span>(n)</a>
+<a class="sourceLine" id="cb154-5" title="5"><span class="kw">round</span>(premium,<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>##  [1] 62.55 59.87 58.06 57.06 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58
+## [13] 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58</code></pre>
 <p><strong><em>Example 7</em></strong></p>
 <p><em>Observe the premiums in 20 years under the NCD system in Brazil, assuming that the probability of</em> <span class="math inline">\(k\)</span> <em>successive years of claims is</em> <span class="math inline">\(p_k = \frac{e^{ - 0.1}{(0.1)}^k}{{k!}},{\rm{ }}k = 0,1,2,.....\)</span>, <em>and</em> <em>the premium prior to implementing the NCD is</em> <span class="math inline">\(m = 100\)</span><em>.</em></p>
 <p><strong><em>Solution</em></strong></p>
@@ -1273,7 +1486,12 @@ premium[n]=<span class="kw">prem</span>(n)
 <p><em>Using R program the premiums in 20 years are:</em></p>
 <p><em>76.69, 73.76, 71.31, 69.38, 67.92, 66.93, 66.40, 66.05, 65.88, 65.78,</em></p>
 <p><em>65.72, 65.69, 65.67, 65.66, 65.66, 65.66, 65.66, 65.65, 65.65, 65.65.</em></p>
-<p>The results in Examples 6-7 allow us to observe the evolution of premium for the NCD systems in Malaysia and Brazil assuming that the number of successive years of claims is Poisson distributed with parameter <span class="math inline">\(\lambda = 0.10\)</span>, and the premium prior to implementing the NCD is <span class="math inline">\(m = 100\)</span>. The evolutions of premiums for both countries are provided in Table 4, and are shown graphically in Figure <a href="C-BonusMalus.html#fig:PremEvolution">12.4</a>.</p>
+<p>The results in Examples 6-7 allow us to observe the evolution of premium
+for the NCD systems in Malaysia and Brazil assuming that the number of
+successive years of claims is Poisson distributed with parameter
+<span class="math inline">\(\lambda = 0.10\)</span>, and the premium prior to implementing the
+NCD is <span class="math inline">\(m = 100\)</span>. The evolutions of premiums for both countries
+are provided in Table 4, and are shown graphically in Figure <a href="C-BonusMalus.html#fig:PremEvolution">12.4</a>.</p>
 <p><span class="math display">\[
 \begin{matrix}
 \text{Table 4: Evolution of premium (Malaysia and Brazil)}\\
@@ -1305,11 +1523,17 @@ Figure 12.4: Evolution of premium (Malaysia and Brazil)
 </div>
 <div id="convergence-rate" class="section level3">
 <h3><span class="header-section-number">12.4.5</span> Convergence Rate</h3>
-<p>Sometimes we are interested to know the variation between the probability in the <em>n</em>-th year, <span class="math inline">\(p_{ij}^{(n)}\)</span>, and the stationary probability, <span class="math inline">\(\pi _j\)</span>. The variation between the probabilities can be measured using:</p>
+<p>Sometimes we are interested to know the variation between the
+probability in the <em>n</em>-th year, <span class="math inline">\(p_{ij}^{(n)}\)</span>, and the
+stationary probability, <span class="math inline">\(\pi _j\)</span>. The variation between the
+probabilities can be measured using:</p>
 <p><span class="math display">\[\left| {average(p_{ij}^{(n)}) - {\pi _j}} \right|\]</span>.</p>
-<p>Therefore, the total variation can be measured by the sum of variation in all classes:</p>
+<p>Therefore, the total variation can be measured by the sum of variation
+in all classes:</p>
 <p><span class="math display">\[\sum\limits_j {\left| {average(p_{ij}^{(n)}) - {\pi _j}} \right|}\]</span>.</p>
-<p>The total variation is also called the <a href="#" class="tooltip" style="color:green"><em>convergence rate</em><span style="font-size:8pt">After n transitions, the sum of variation between the probability in each state vs. the stationary probability</span></a> because it measures the convergence rate after <span class="math inline">\(n\)</span> years (or <span class="math inline">\(n\)</span> transitions).</p>
+<p>The total variation is also called the <a href="#" class="tooltip" style="color:green"><em>convergence rate</em><span style="font-size:8pt">After n transitions, the sum of variation between the probability in each state vs. the stationary probability</span></a> because it
+measures the convergence rate after <span class="math inline">\(n\)</span> years (or <span class="math inline">\(n\)</span>
+transitions).</p>
 <p><strong><em>Example 8</em></strong></p>
 <p><em>Provide the total variations (convergence rate) in 20 years under the NCD system in Malaysia, assuming that the probability of claims is Poisson distributed with parameter</em> <span class="math inline">\(\lambda = 0.10\)</span><em>.</em></p>
 <p><strong><em>Solution</em></strong></p>
@@ -1348,15 +1572,18 @@ Figure 12.4: Evolution of premium (Malaysia and Brazil)
 .3048
 \end{array}
 \]</span></p>
-<p><em>Therefore, the total variation in the first year is</em> <span class="math inline">\(\sum\limits_j {\left| {\sum\limits_i {\frac{p_{ij}}{6} - {\pi _j}} } \right|} = 0.6096\)</span><em>.</em></p>
+<p><em>Therefore, the total variation in the first year is</em>
+<span class="math inline">\(\sum\limits_j {\left| {\sum\limits_i {\frac{p_{ij}}{6} - {\pi _j}} } \right|} = 0.6096\)</span><em>.</em></p>
 <p><em>Using R program, the total variations (or convergence rate) in 20 years are:</em></p>
 <p><em>0.6096, 0.3941, 0.2252, 0.0958, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.</em></p>
 </div>
 <div id="r-program-for-convergence-rate" class="section level3">
 <h3><span class="header-section-number">12.4.6</span> R Program for Convergence Rate</h3>
-<p>The following R program can be used to calculate the total variation in the <span class="math inline">\(n\)</span>th year, and the total variations (convergence rates) in 20 years under the NCD system in Malaysia (the solution in Example 8).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#transition matrix</span>
-TP</code></pre></div>
+<p>The following R program can be used to calculate the total variation in
+the <span class="math inline">\(n\)</span>th year, and the total variations (convergence rates) in
+20 years under the NCD system in Malaysia (the solution in Example 8).</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" title="1"><span class="co">#transition matrix</span></a>
+<a class="sourceLine" id="cb156-2" title="2">TP</a></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,] 0.0952 0.9048 0.0000 0.0000 0.0000 0.0000
 ## [2,] 0.0952 0.0000 0.9048 0.0000 0.0000 0.0000
@@ -1364,53 +1591,85 @@ TP</code></pre></div>
 ## [4,] 0.0952 0.0000 0.0000 0.0000 0.9048 0.0000
 ## [5,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048
 ## [6,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># stationary probability</span>
-SP=<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>])
-SP</code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" title="1"><span class="co"># stationary probability</span></a>
+<a class="sourceLine" id="cb158-2" title="2">SP=<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb158-3" title="3">SP</a></code></pre></div>
 <pre><code>## [1] 0.09520000+0i 0.08613696+0i 0.07793672+0i 0.07051715+0i 0.06380391+0i
 ## [6] 0.60640526+0i</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create function for total variation in nth year</span>
-TV=<span class="cf">function</span>(n)
-{dif=<span class="kw">numeric</span>(<span class="dv">0</span>)
-<span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(SP))
-dif[j]=<span class="kw">abs</span>(<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])<span class="op">-</span>SP[j])
-<span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(dif)}
-
-<span class="co">#example for n=1</span>
-<span class="kw">TV</span>(<span class="dv">1</span>)</code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" title="1"><span class="co">#create function for total variation in nth year</span></a>
+<a class="sourceLine" id="cb160-2" title="2">TV=<span class="cf">function</span>(n)</a>
+<a class="sourceLine" id="cb160-3" title="3">{dif=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb160-4" title="4"><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(SP))</a>
+<a class="sourceLine" id="cb160-5" title="5">dif[j]=<span class="kw">abs</span>(<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])<span class="op">-</span>SP[j])</a>
+<a class="sourceLine" id="cb160-6" title="6"><span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(dif)}</a>
+<a class="sourceLine" id="cb160-7" title="7"></a>
+<a class="sourceLine" id="cb160-8" title="8"><span class="co">#example for n=1</span></a>
+<a class="sourceLine" id="cb160-9" title="9"><span class="kw">TV</span>(<span class="dv">1</span>)</a></code></pre></div>
 <pre><code>## [1] 0.6096105</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#provide total variations (convergence rate) in 20 years</span>
-tot.var=<span class="kw">numeric</span>(<span class="dv">0</span>)
-<span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)
-tot.var[n]=<span class="kw">TV</span>(n)
-<span class="kw">round</span>(tot.var,<span class="dv">4</span>)</code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" title="1"><span class="co">#provide total variations (convergence rate) in 20 years</span></a>
+<a class="sourceLine" id="cb162-2" title="2">tot.var=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb162-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb162-4" title="4">tot.var[n]=<span class="kw">TV</span>(n)</a>
+<a class="sourceLine" id="cb162-5" title="5"><span class="kw">round</span>(tot.var,<span class="dv">4</span>)</a></code></pre></div>
 <pre><code>##  [1] 0.6096 0.3941 0.2252 0.0958 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
 ## [11] 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</code></pre>
 <p><strong><em>Example 9</em></strong></p>
-<p><em>Provide the total variations (or convergence rate) in 20 years under the NCD system in Brazil, assuming that the number of successive years of claims is distributed as Poisson with parameter</em> <span class="math inline">\(\lambda = 0.10\)</span></p>
+<p><em>Provide the total variations (or convergence rate) in 20 years under
+the NCD system in Brazil, assuming that the number of successive years
+of claims is distributed as Poisson with parameter</em> <span class="math inline">\(\lambda = 0.10\)</span></p>
 <p><strong><em>Solution</em></strong></p>
 <p><em>Using R program, the total variations (or convergence rates) in 20 years for the NCD system in Brazil are:</em></p>
 <p><em>1.2617, 1.0536, 0.8465, 0.6412, 0.4362, 0.2316, 0.1531, 0.0747, 0.0480, 0.0232,</em></p>
 <p><em>0.0145, 0.0071, 0.0043, 0.0021, 0.0013, 0.0006, 0.0004, 0.0002, 0.0001, 0.0001.</em></p>
-<p>Examples 8-9 provide the degree of convergence for two different BMS (two different countries). The Malaysian BMS reaches full stationary only after four years, while the BMS in Brazil takes a longer period. As mentioned in Lemaire (1998), a more sophisticated BMS would converge more slowly, and is considered as a drawback as it takes a longer period to stabilize. The main objective of a BMS is to separate the good drivers from the bad drivers, and thus, it is desirable to have a classification process that can be finalized (or stabilized) as soon as possible.</p>
+<p>Examples 8-9 provide the degree of convergence for two different BMS
+(two different countries). The Malaysian BMS reaches full stationary
+only after four years, while the BMS in Brazil takes a longer period. As
+mentioned in Lemaire (1998), a more sophisticated BMS would converge
+more slowly, and is considered as a drawback as it takes a longer period
+to stabilize. The main objective of a BMS is to separate the good
+drivers from the bad drivers, and thus, it is desirable to have a
+classification process that can be finalized (or stabilized) as soon as
+possible.</p>
 </div>
 </div>
 <div id="S:PremRtg" class="section level2">
 <h2><span class="header-section-number">12.5</span> BMS and Premium Rating</h2>
 <div id="premium-rating" class="section level3">
 <h3><span class="header-section-number">12.5.1</span> Premium Rating</h3>
-<p>Premium rating is the process of establishing premium rates in an insurance system, or other risk transfer mechanisms. The process involves a number of considerations such as statistical methods, marketing goals, competition and legal restrictions. Premium rating should fulfill four basic objectives generally agreed among the actuaries; producing ‘fair’ premium rates whereby high risks insureds pay higher premium and vice versa, providing sufficient funds for paying incurred losses and expenses, providing adequate margin for adverse deviation, and producing reasonable returns to insurers.</p>
-<p>Before we discuss the application of BMS in premium rating, a brief discussion of the Poisson and negative binomial regression models are provided here. The Poisson regression has been widely used for fitting count (or frequency) data in insurance area. The negative binomial regression model can be used for fitting count (or frequency) data with <a href="#" class="tooltip" style="color:green"><em>overdispersion</em><span style="font-size:8pt">Phenomenon where the variance of data is larger than what is modeled</span></a>, which is a situation when the variance is larger than the mean. However, students are encouraged to refer to textbooks on <a href="#" class="tooltip" style="color:green"><em>GLM</em><span style="font-size:8pt">Generalized linear model</span></a>s or regression models available in the literature for a more comprehensive knowledge on the related subjects.</p>
+<p>Premium rating is the process of establishing premium rates in an
+insurance system, or other risk transfer mechanisms. The process
+involves a number of considerations such as statistical methods,
+marketing goals, competition and legal restrictions. Premium rating
+should fulfill four basic objectives generally agreed among the
+actuaries; producing ‘fair’ premium rates whereby high risks insureds
+pay higher premium and vice versa, providing sufficient funds for paying
+incurred losses and expenses, providing adequate margin for adverse
+deviation, and producing reasonable returns to insurers.</p>
+<p>Before we discuss the application of BMS in premium rating, a brief
+discussion of the Poisson and negative binomial regression models are
+provided here. The Poisson regression has been widely used for fitting
+count (or frequency) data in insurance area. The negative binomial
+regression model can be used for fitting count (or frequency) data with
+<a href="#" class="tooltip" style="color:green"><em>overdispersion</em><span style="font-size:8pt">Phenomenon where the variance of data is larger than what is modeled</span></a>, which is a situation when the variance is larger than
+the mean. However, students are encouraged to refer to textbooks on <a href="#" class="tooltip" style="color:green"><em>GLM</em><span style="font-size:8pt">Generalized linear model</span></a>s or regression models available in the literature for a more comprehensive knowledge on the related subjects.</p>
 </div>
 <div id="frequency-model-poisson-and-negative-binomial-regressions" class="section level3">
 <h3><span class="header-section-number">12.5.2</span> Frequency Model – Poisson and Negative Binomial Regressions</h3>
-<p>Let <span class="math inline">\({({Y_1},{Y_2},...,{Y_n})^T}\)</span> be the vector of count random variables and <span class="math inline">\(n\)</span> be the sample size. The probability mass function (p.m.f.) for <a href="#" class="tooltip" style="color:green"><em>Poisson regression model</em><span style="font-size:8pt">Type of regression model used for fitting data with an integral (count) response variable with mean equal to the variance</span></a> is,</p>
+<p>Let <span class="math inline">\({({Y_1},{Y_2},...,{Y_n})^T}\)</span> be the vector of count
+random variables and <span class="math inline">\(n\)</span> be the sample size. The probability
+mass function (p.m.f.) for <a href="#" class="tooltip" style="color:green"><em>Poisson regression model</em><span style="font-size:8pt">Type of regression model used for fitting data with an integral (count) response variable with mean equal to the variance</span></a> is,</p>
 <p><span class="math display">\[\Pr ({Y_i} = {y_i})
 \begin{array}{*{20}{c}}
 = \frac{{{\exp(- {\mu _i})}{\mu _i}^{y_i}}}{y_i{!}}&amp;{y_i = 0,1,...}
 \end{array}
 \]</span></p>
-<p>with mean and variance <span class="math inline">\(E({Y_i}) = Var({Y_i}) = {\mu _i}\)</span>. To take into account non-negative values, the mean, or the fitted value, is assumed to follow a log link, <span class="math inline">\(E({Y_i}) = {\mu _i} = \exp ({\bf x}_{\bf i}{\bf &#39;\beta })\)</span>, where <span class="math inline">\({\bf{x}}_{\bf i}\)</span> denotes the vector of explanatory variables and <span class="math inline">\({\bf \beta}\)</span> is the vector of regression parameters. The maximum likelihood estimates can be obtained by maximizing the log likelihood.</p>
+<p>with mean and variance <span class="math inline">\(E({Y_i}) = Var({Y_i}) = {\mu _i}\)</span>.
+To take into account non-negative values, the mean, or the fitted value,
+is assumed to follow a log link, <span class="math inline">\(E({Y_i}) = {\mu _i} = \exp ({\bf x}_{\bf i}{\bf &#39;\beta })\)</span>, where
+<span class="math inline">\({\bf{x}}_{\bf i}\)</span> denotes the vector of explanatory
+variables and <span class="math inline">\({\bf \beta}\)</span> is the vector of regression
+parameters. The maximum likelihood estimates can be obtained by
+maximizing the log likelihood.</p>
 <p>The p.m.f. for <a href="#" class="tooltip" style="color:green"><em>negative binomial regression model</em><span style="font-size:8pt">Type of regression model used for fitting data with an integral (count) response variable and can account for variance greater than the mean</span></a> is,</p>
 <p><span class="math display">\[
 \Pr ({Y_i} = {y_i}) = \frac{{\Gamma ({y_i} +
@@ -1420,17 +1679,37 @@ v)}}{y_i{!}\Gamma (v)}
 \left( \frac{\mu _i}{v + {\mu _i}}
 \right)^{y_i},{y_i} = 0,1,2,...,
 \]</span></p>
-<p>where the mean is <span class="math inline">\(E({Y_i}) = {\mu _i}\)</span>, the variance is <span class="math inline">\(Var({Y_i}) = {\mu _i}(1 + {v^{ - 1}}{\mu _i}) = {\mu _i}(1 + a{\mu _i})\)</span>, and <span class="math inline">\({v^{ - 1}} = a\)</span> denotes the dispersion parameter. The NB regression model reduce to the Poisson regression model in the limit as <span class="math inline">\(a \to 0\)</span>, and display overdispersion when <span class="math inline">\(a &gt; 0\)</span>. The mean can also be assumed to follow the log link, <span class="math inline">\(E({Y_i}) = {\mu _i} = \exp ({{\bf x}_{\bf i}{\bf{&#39;\beta }}})\)</span>, and the maximum likelihood estimates can be obtained by maximizing the log likelihood.</p>
+<p>where the mean is <span class="math inline">\(E({Y_i}) = {\mu _i}\)</span>, the variance is
+<span class="math inline">\(Var({Y_i}) = {\mu _i}(1 + {v^{ - 1}}{\mu _i}) = {\mu _i}(1 + a{\mu _i})\)</span>, and <span class="math inline">\({v^{ - 1}} = a\)</span> denotes the
+dispersion parameter. The NB regression model reduce to the Poisson
+regression model in the limit as <span class="math inline">\(a \to 0\)</span>, and display
+overdispersion when <span class="math inline">\(a &gt; 0\)</span>. The mean can also be assumed to
+follow the log link, <span class="math inline">\(E({Y_i}) = {\mu _i} = \exp ({{\bf x}_{\bf i}{\bf{&#39;\beta }}})\)</span>, and the maximum
+likelihood estimates can be obtained by maximizing the log likelihood.</p>
 </div>
 <div id="premium-rating-with-bonus-malus-data" class="section level3">
 <h3><span class="header-section-number">12.5.3</span> Premium Rating with Bonus-Malus Data</h3>
-<p>Under this section, we will consider the statistical approach of obtaining premium rates using count data (frequency data) that provides bonus-malus information on the risk profiles of the insureds.</p>
+<p>Under this section, we will consider the statistical approach of
+obtaining premium rates using count data (frequency data) that provides
+bonus-malus information on the risk profiles of the insureds.</p>
 <p><strong>Example 10</strong></p>
-<p>Consider the Canadian private automobile liability insurance data from Bailey and Simon (1960). The data provides information on the number of claims incurred and exposures (expressed in terms of number of earned car years). The data is classified into two rating factors; merit rating and class rating. Altogether, there are twenty <span class="math inline">\((4 \times 5)\)</span> <a href="#" class="tooltip" style="color:green"><em>cross-classified rating classes</em><span style="font-size:8pt">Table that combines the effects of multiple rating classifications</span></a> of claim frequencies (20 count data). Table 5 provides the description of the two rating factors. It can be seen that merit rating provides information on the number of accident-free years, and thus, the information can be used as bonus-malus information. Using the Canadian automobile insurance data:</p>
+<p>Consider the Canadian private automobile liability insurance data from
+Bailey and Simon (1960). The data provides information on the number of
+claims incurred and exposures (expressed in terms of number of earned
+car years). The data is classified into two rating factors; merit rating
+and class rating. Altogether, there are twenty <span class="math inline">\((4 \times 5)\)</span>
+<a href="#" class="tooltip" style="color:green"><em>cross-classified rating classes</em><span style="font-size:8pt">Table that combines the effects of multiple rating classifications</span></a> of claim frequencies (20 count data).
+Table 5 provides the description of the two rating factors. It can be
+seen that merit rating provides information on the number of
+accident-free years, and thus, the information can be used as
+bonus-malus information. Using the Canadian automobile insurance data:</p>
 <ol style="list-style-type: lower-roman">
 <li><p>Fit the count data using Poisson regression model.</p></li>
-<li><p>Calculate the premium assuming that the claim severity is 1000 for all rating classes.</p></li>
-<li><p>Build a simple premium table, and suggest the percentage of discounts (or loadings) for the premiums if the BMS is to be considered.</p></li>
+<li><p>Calculate the premium assuming that the claim severity is 1000 for
+all rating classes.</p></li>
+<li><p>Build a simple premium table, and suggest the percentage of
+discounts (or loadings) for the premiums if the BMS is to be
+considered.</p></li>
 </ol>
 <p><span class="math display">\[
 \begin{matrix}
@@ -1450,9 +1729,21 @@ v)}}{y_i{!}\Gamma (v)}
 \]</span></p>
 <p><strong>Solution</strong></p>
 <ol style="list-style-type: lower-roman">
-<li><p>Table 6 provides the parameter estimates (and standard errors) for the Poisson regression model which is fitted to the count data.</p></li>
-<li><p>The premiums are calculated by multiplying the fitted frequencies with the claim severities. The fitted frequency is obtained by dividing the fitted count with the exposure. The fitted count, <span class="math inline">\(E({Y_i}) = {\mu _i} = {\hat y_i}\)</span>, is the fitted value obtained from the Poisson regression model. The premiums for all rating classes, are shown in Table 7.</p></li>
-<li><p>Let the premium classified under merit B be the base premium. The premium relativities and the percentage of discounts for each rating class can be calculated, and the values are shown in Table 8. A simple premium table, which provides the percentage of discounts based on the number of accident-free years, can be constructed and is shown in Table 9. The discounts can be suggested for implementing the BMS.</p></li>
+<li><p>Table 6 provides the parameter estimates (and standard errors) for
+the Poisson regression model which is fitted to the count data.</p></li>
+<li><p>The premiums are calculated by multiplying the fitted frequencies
+with the claim severities. The fitted frequency is obtained by
+dividing the fitted count with the exposure. The fitted count,
+<span class="math inline">\(E({Y_i}) = {\mu _i} = {\hat y_i}\)</span>, is the fitted
+value obtained from the Poisson regression model. The premiums for
+all rating classes, are shown in Table 7.</p></li>
+<li><p>Let the premium classified under merit B be the base premium. The
+premium relativities and the percentage of discounts for each rating
+class can be calculated, and the values are shown in Table 8. A
+simple premium table, which provides the percentage of discounts
+based on the number of accident-free years, can be constructed and
+is shown in Table 9. The discounts can be suggested for implementing
+the BMS.</p></li>
 </ol>
 <p><span class="math display">\[
 \begin{matrix}
@@ -1571,12 +1862,28 @@ v)}}{y_i{!}\Gamma (v)}
 </div>
 <div id="premium-rating-without-bonus-malus-data" class="section level3">
 <h3><span class="header-section-number">12.5.4</span> Premium Rating without Bonus-Malus Data</h3>
-<p>Under this section, we will consider the statistical approach of obtaining premium rates using count data that does not provide bonus-malus information on the risk profiles of the insureds.</p>
+<p>Under this section, we will consider the statistical approach of
+obtaining premium rates using count data that does not provide
+bonus-malus information on the risk profiles of the insureds.</p>
 <p><strong>Example 11</strong></p>
-<p>The dataset for private car Own Damage (OD) claim count in Malaysia (Zamani and Ismail 2012, Ismail and Zamani 2013) is considered here. The data is based on 1.01 million private car policies for a three-year period of 2001-2003. The exposures are expressed in car-year units. Table 10 shows the rating factors for the claim count data. Altogether, there are <span class="math inline">\(5 \times 5 \times 5 \times 5 = 625\)</span> cross-classified rating classes of claim frequencies (625 count data). However, the number of rating classes (sample size) reduces to 547 after excluding count data with zero exposure. It can be seen from the description in Table 10 that the data does not provide information on the number of claim-free years (bonus-malus information). Using the Malaysian private car insurance data:</p>
+<p>The dataset for private car Own Damage (OD) claim count in Malaysia
+(Zamani and Ismail 2012, Ismail and Zamani 2013) is considered here. The
+data is based on 1.01 million private car policies for a three-year
+period of 2001-2003. The exposures are expressed in car-year units.
+Table 10 shows the rating factors for the claim count data. Altogether,
+there are <span class="math inline">\(5 \times 5 \times 5 \times 5 = 625\)</span>
+cross-classified rating classes of claim frequencies (625 count data).
+However, the number of rating classes (sample size) reduces to 547 after
+excluding count data with zero exposure. It can be seen from the
+description in Table 10 that the data does not provide information on
+the number of claim-free years (bonus-malus information). Using the
+Malaysian private car insurance data:</p>
 <ol style="list-style-type: lower-roman">
-<li><p>Fit the count data using Poisson and negative binomial regression models. Compare both models and suggest a preferred model for the data.</p></li>
-<li><p>Calculate the premium assuming that the claim severity is MYR 1000 (Ringgit Malaysia) for all rating classes.</p></li>
+<li><p>Fit the count data using Poisson and negative binomial regression
+models. Compare both models and suggest a preferred model for the
+data.</p></li>
+<li><p>Calculate the premium assuming that the claim severity is MYR 1000
+(Ringgit Malaysia) for all rating classes.</p></li>
 <li><p>Build a premium table, assuming that the NCD is to be implemented.</p></li>
 </ol>
 <p><span class="math display">\[
@@ -1612,16 +1919,41 @@ v)}}{y_i{!}\Gamma (v)}
 \]</span></p>
 <p><strong>Solution</strong></p>
 <ol style="list-style-type: lower-roman">
-<li><p>Table 11 shows the parameter estimates (and standard errors) for the fitted Poisson and negative binomial regression models. The results indicate that the regression parameters of all models have similar estimates. The likelihood ratio for testing overdispersion between the Poisson and the NB models is 2844.14, indicating that the data is overdispersed and the NB is a better model. The <a href="#" class="tooltip" style="color:green"><em>AIC</em><span style="font-size:8pt">Akaike’s information criterion</span></a> and <a href="#" class="tooltip" style="color:green"><em>BIC</em><span style="font-size:8pt">Bayesian information criterion</span></a> also indicate that the NB is a better model. Table 12 shows the parameter estimates (and standard errors) for the fitted negative binomial regression model with significant covariates (covariates with <span class="math inline">\(p\)</span>-values larger than 0.10 are excluded). The NB model in Table 12 is suggested as the preferred model for the data.</p></li>
-<li><p>The premiums are calculated by multiplying the fitted frequencies with the claim severities. The premiums for the first 25 rating classes (vehicle age: 0-1 year and vehicle make: local-type 1) are shown in Table 13.</p></li>
-<li><p>The Malaysian NCD system have six discount classes (0%, 25%, 30%, 38.3%, 45% and 55%) for 0, 1, 2, 3, 4 and 5+ claim-free years. The final premium rates should be ‘inflated’ accordingly to take into account the NCD (discount entitlement) of each insured. We can use the stationary distribution to approximate the proportion of insureds in each NCD class (in the long run). Assume that the probability of a no-claim year for all NCD classes is 0.90. The stationary probabilities are (from Example 3):</p></li>
+<li><p>Table 11 shows the parameter estimates (and standard errors) for the
+fitted Poisson and negative binomial regression models. The results
+indicate that the regression parameters of all models have similar
+estimates. The likelihood ratio for testing overdispersion between
+the Poisson and the NB models is 2844.14, indicating that the data
+is overdispersed and the NB is a better model. The <a href="#" class="tooltip" style="color:green"><em>AIC</em><span style="font-size:8pt">Akaike’s information criterion</span></a> and <a href="#" class="tooltip" style="color:green"><em>BIC</em><span style="font-size:8pt">Bayesian information criterion</span></a> also
+indicate that the NB is a better model. Table 12 shows the parameter
+estimates (and standard errors) for the fitted negative binomial
+regression model with significant covariates (covariates with
+<span class="math inline">\(p\)</span>-values larger than 0.10 are excluded). The NB model in Table 12
+is suggested as the preferred model for the data.</p></li>
+<li><p>The premiums are calculated by multiplying the fitted frequencies
+with the claim severities. The premiums for the first 25 rating
+classes (vehicle age: 0-1 year and vehicle make: local-type 1) are
+shown in Table 13.</p></li>
+<li><p>The Malaysian NCD system have six discount classes (0%, 25%, 30%,
+38.3%, 45% and 55%) for 0, 1, 2, 3, 4 and 5+ claim-free years. The
+final premium rates should be ‘inflated’ accordingly to take into
+account the NCD (discount entitlement) of each insured. We can use
+the stationary distribution to approximate the proportion of
+insureds in each NCD class (in the long run). Assume that the
+probability of a no-claim year for all NCD classes is 0.90. The
+stationary probabilities are (from Example 3):</p></li>
 </ol>
 <p><span class="math display">\[
 {\pi_0} = 0.1000,\rm{ }{\pi _1} = 0.0900,\rm{ }{\pi
 _2} = 0.0810,\rm{ }{\pi _3} = 0.0729,\rm{ }{\pi _4} =
 0.0656,\rm{ }{\pi _5} = 0.5905
 \]</span></p>
-<p>which indicates that 10% of insureds eventually belong to class 0 (zero claim-free years), 9% of insureds eventually belong to class 1 (one claim-free year), and so forth, until 59% of insureds eventually belong to class 5 (or five successive claim-free years). After implementing the NCD, the premium (in the long run) will be reduced (on average) by the following factor:</p>
+<p>which indicates that 10% of insureds eventually belong to class 0
+(zero claim-free years), 9% of insureds eventually belong to class 1
+(one claim-free year), and so forth, until 59% of insureds eventually
+belong to class 5 (or five successive claim-free years). After
+implementing the NCD, the premium (in the long run) will be reduced
+(on average) by the following factor:</p>
 <p><span class="math display">\[
 \begin{array}{l} 
 = \sum\limits_j \text{(proportion of insureds in class }j)\text{(1 - NCD
@@ -1630,7 +1962,11 @@ in class }j) \\\\
 = {0}{.570962}
 \end{array}
 \]</span></p>
-<p>Therefore, the final premiums (after adjusting for the NCD) should be inflated by <span class="math inline">\(1 \div 0.57 = 1.75\)</span>. A premium table can be constructed based on the factor (1.75). The final premiums for the first 5 rating classes are shown in Table 14, and can be suggested for implementing the NCD.</p>
+<p>Therefore, the final premiums (after adjusting for the NCD) should be
+inflated by <span class="math inline">\(1 \div 0.57 = 1.75\)</span>. A premium table can be
+constructed based on the factor (1.75). The final premiums for the
+first 5 rating classes are shown in Table 14, and can be suggested for
+implementing the NCD.</p>
 <p><span class="math display">\[
 \begin{matrix}
 \text{Table 11: Poisson and negative binomial regression models (Malaysian data)}\\
@@ -1781,49 +2117,108 @@ in class }j) \\\\
 \end{matrix}
 \]</span></p>
 <p><strong>FURTHER READING AND REFERENCES:</strong></p>
-<p>Aitkin, M., Anderson, D., Francis, B., Hinde, J. 1990. <em>Statistical Modelling in GLIM</em>. New York: Oxford University Press.</p>
-<p>Ajne, B. 1975. A note on the multiplicative ratemaking model. <em>ASTIN Bulletin</em> 8(2): 144-153.</p>
-<p>Anderson, D., Feldblum, S., Modlin, C., Schirmacher, D., Schirmacher, E., Thandi, N. 2004. A practitioner's guide to Generalized Linear Models. <em>Casualty Actuarial Society Discussion Paper Program</em> 1-115.</p>
-<p>Bailey, R.A. 1963. Insurance rates with minimum bias. <em>Proceedings of the Casualty Actuarial Society</em> 50(93): 4-14.</p>
-<p>Bailey, R.A., Simon, L.J. 1960. Two studies in automobile insurance ratemaking. <em>ASTIN Bulletin</em> 49(1): 192-217.</p>
-<p>Bichsel, F. 1964. Erfahrungs-Tarifierung in der Motorfahrzeug-halfplichtversicherung. <em>Milleilungen der Vereinigung Schweizerischer Versicherungsmathematiker</em> 119-129.</p>
-<p>Boucher, J.P., Denuit, M., Guillen, M. 2007. Risk classification for claim count: a comparative analysis of various zero-inflated mixed Poisson and hurdle models. <em>North American Actuarial Journal</em> 11(4): 110-131.</p>
-<p>Brockmann, M.J., Wright, T.S. 1992. Statistical motor rating: making effective use of your data<em>. Journal of the Institute of Actuaries</em> 119(3): 457-543.</p>
-<p>Brown, R.L. 1988. Minimum bias with generalized linear models. <em>Proceedings of the Casualty Actuarial Society</em> 75(143): 187-217.</p>
-<p>Bühlmann, H. 1964. Optimale Prämienstufen systeme. <em>Milleilungen der Vereinigung Schweizerischer Versicherungsmathematiker</em> 193-213.</p>
-<p>Cameron, A.C., Trivedi, P.K. 1986. Econometric models based on count data: comparisons and applications of some estimators and tests. <em>Journal of Applied Econometrics</em> 1: 29-53.</p>
-<p>Cameron, A.C., Trivedi, P.K. 1998. <em>Regression Analysis of Count Data</em>. New York: Cambridge University Press.</p>
-<p>Chamberlain, C. 1980. Relativity pricing through analysis of variance. <em>Casualty Actuarial Society Discussion Paper Program</em> 4-24.</p>
-<p>Corlier, F., Lemaire, J., &amp; Muhokolo, D. (1979). Simulation of an automobile portfolio. <em>The Geneva Papers on Risk and Insurance Theory 4</em>:40-46.</p>
-<p>Coutts, S.M. 1984. Motor insurance rating, an actuarial approach. <em>Journal of the Institute of Actuaries</em> 111: 87-148.</p>
-<p>Delaporte, P. 1965. Tarification du risque individuel d’accidents par la prime modelil ée sur le risqué. <em>ASTIN Bulletin</em> 3: 251-271.</p>
-<p>Denuit, M., Marechal, X., Pitrebois, S., Walhin, J.F. 2007. <em>Actuarial Modeling of Claim Counts: Risk Classification, Credibility and Bonus-Malus Systems</em>. John Wiley and Sons: England.</p>
-<p>Dionne, G., &amp; Vanasse, C. (1989). A generalization of automobile insurance rating models: the negative binomial distribution with a regression component. <em>ASTIN Bullettin 19</em>(2): 199-212.</p>
-<p>Frangos, N. E., Vrontos, S. D. 2001. Design of optimal bonus-malus systems with a frequency and severity component on an individual basis in automobile insurance. <em>ASTIN Bulletin 31</em>(1): 1-22.</p>
-<p>Harrington, S.E. 1986. Estimation and testing for functional form in pure premium regression models. <em>ASTIN Bulletin</em> 16: 31-43.</p>
-<p>Hastings, N.A.J. 1976. Optimal claiming on vehicle insurance. <em>Operational Research Quarterly</em> 27: 805-813.</p>
-<p>Hilbe, J. 2007. <em>Negative Binomial Regression</em>. Cambridge, UK: Cambridge University Press.</p>
-<p>Ismail, N., Jemain, A.A. 2005. Bridging minimum bias and maximum likelihood methods through weighted equation. <em>Casualty Actuarial Society Forum</em> Spring: 367-394.</p>
-<p>Ismail, N., Jemain, A.A. 2007. Handling overdispersion with negative binomial and generalized Poisson regression models. <em>Casualty Actuarial Society Forum</em> Winter: 103-158.</p>
-<p>Ismail, N., Zamani, H. 2013. <strong>Estimation of claim count data using negative binomial, generalized Poisson, zero-inflated negative binomial and zero-inflated generalized Poisson regression models.</strong> <em>Casualty Actuarial Society E-Forum</em> Spring: 1-29.</p>
-<p>Jung, J. 1968. On automobile insurance ratemaking. <em>ASTIN Bulletin</em> 5(1): 41-48.</p>
-<p>Kolderman, J., Volgenant, A. 1985. Optimal claiming in an automobile insurance system with bonus-malus structure. <em>Journal of the Operational Research Society</em> 36: 239-247.</p>
-<p>Lawless, J.F. 1987. Negative binomial and mixed Poisson regression. <em>Canadian Journal of Statistics</em> 15(3): 209-225.</p>
-<p>Lemaire, J. 1976. Driver versus company, optimal behaviour of the policy holder. <em>Scandinavian Actuarial Journal</em> 59: 209-219<em>.</em></p>
+<p>Aitkin, M., Anderson, D., Francis, B., Hinde, J. 1990. <em>Statistical
+Modelling in GLIM</em>. New York: Oxford University Press.</p>
+<p>Ajne, B. 1975. A note on the multiplicative ratemaking model. <em>ASTIN
+Bulletin</em> 8(2): 144-153.</p>
+<p>Anderson, D., Feldblum, S., Modlin, C., Schirmacher, D., Schirmacher,
+E., Thandi, N. 2004. A practitioner's guide to Generalized Linear
+Models. <em>Casualty Actuarial Society Discussion Paper Program</em> 1-115.</p>
+<p>Bailey, R.A. 1963. Insurance rates with minimum bias. <em>Proceedings of
+the Casualty Actuarial Society</em> 50(93): 4-14.</p>
+<p>Bailey, R.A., Simon, L.J. 1960. Two studies in automobile insurance
+ratemaking. <em>ASTIN Bulletin</em> 49(1): 192-217.</p>
+<p>Bichsel, F. 1964. Erfahrungs-Tarifierung in der
+Motorfahrzeug-halfplichtversicherung. <em>Milleilungen der Vereinigung
+Schweizerischer Versicherungsmathematiker</em> 119-129.</p>
+<p>Boucher, J.P., Denuit, M., Guillen, M. 2007. Risk classification for
+claim count: a comparative analysis of various zero-inflated mixed
+Poisson and hurdle models. <em>North American Actuarial Journal</em> 11(4):
+110-131.</p>
+<p>Brockmann, M.J., Wright, T.S. 1992. Statistical motor rating: making
+effective use of your data<em>. Journal of the Institute of Actuaries</em>
+119(3): 457-543.</p>
+<p>Brown, R.L. 1988. Minimum bias with generalized linear models.
+<em>Proceedings of the Casualty Actuarial Society</em> 75(143): 187-217.</p>
+<p>Bühlmann, H. 1964. Optimale Prämienstufen systeme. <em>Milleilungen der
+Vereinigung Schweizerischer Versicherungsmathematiker</em> 193-213.</p>
+<p>Cameron, A.C., Trivedi, P.K. 1986. Econometric models based on count
+data: comparisons and applications of some estimators and tests.
+<em>Journal of Applied Econometrics</em> 1: 29-53.</p>
+<p>Cameron, A.C., Trivedi, P.K. 1998. <em>Regression Analysis of Count Data</em>.
+New York: Cambridge University Press.</p>
+<p>Chamberlain, C. 1980. Relativity pricing through analysis of variance.
+<em>Casualty Actuarial Society Discussion Paper Program</em> 4-24.</p>
+<p>Corlier, F., Lemaire, J., &amp; Muhokolo, D. (1979). Simulation of an
+automobile portfolio. <em>The Geneva Papers on Risk and Insurance Theory
+4</em>:40-46.</p>
+<p>Coutts, S.M. 1984. Motor insurance rating, an actuarial approach.
+<em>Journal of the Institute of Actuaries</em> 111: 87-148.</p>
+<p>Delaporte, P. 1965. Tarification du risque individuel d’accidents par la
+prime modelil ée sur le risqué. <em>ASTIN Bulletin</em> 3: 251-271.</p>
+<p>Denuit, M., Marechal, X., Pitrebois, S., Walhin, J.F. 2007. <em>Actuarial
+Modeling of Claim Counts: Risk Classification, Credibility and
+Bonus-Malus Systems</em>. John Wiley and Sons: England.</p>
+<p>Dionne, G., &amp; Vanasse, C. (1989). A generalization of automobile
+insurance rating models: the negative binomial distribution with a
+regression component. <em>ASTIN Bullettin 19</em>(2): 199-212.</p>
+<p>Frangos, N. E., Vrontos, S. D. 2001. Design of optimal bonus-malus
+systems with a frequency and severity component on an individual basis
+in automobile insurance. <em>ASTIN Bulletin 31</em>(1): 1-22.</p>
+<p>Harrington, S.E. 1986. Estimation and testing for functional form in
+pure premium regression models. <em>ASTIN Bulletin</em> 16: 31-43.</p>
+<p>Hastings, N.A.J. 1976. Optimal claiming on vehicle insurance.
+<em>Operational Research Quarterly</em> 27: 805-813.</p>
+<p>Hilbe, J. 2007. <em>Negative Binomial Regression</em>. Cambridge, UK: Cambridge
+University Press.</p>
+<p>Ismail, N., Jemain, A.A. 2005. Bridging minimum bias and maximum
+likelihood methods through weighted equation. <em>Casualty Actuarial
+Society Forum</em> Spring: 367-394.</p>
+<p>Ismail, N., Jemain, A.A. 2007. Handling overdispersion with negative
+binomial and generalized Poisson regression models. <em>Casualty Actuarial
+Society Forum</em> Winter: 103-158.</p>
+<p>Ismail, N., Zamani, H. 2013. <strong>Estimation of claim count data using
+negative binomial, generalized Poisson, zero-inflated negative binomial
+and zero-inflated generalized Poisson regression models.</strong> <em>Casualty
+Actuarial Society E-Forum</em> Spring: 1-29.</p>
+<p>Jung, J. 1968. On automobile insurance ratemaking. <em>ASTIN Bulletin</em>
+5(1): 41-48.</p>
+<p>Kolderman, J., Volgenant, A. 1985. Optimal claiming in an automobile
+insurance system with bonus-malus structure. <em>Journal of the Operational
+Research Society</em> 36: 239-247.</p>
+<p>Lawless, J.F. 1987. Negative binomial and mixed Poisson regression.
+<em>Canadian Journal of Statistics</em> 15(3): 209-225.</p>
+<p>Lemaire, J. 1976. Driver versus company, optimal behaviour of the policy
+holder. <em>Scandinavian Actuarial Journal</em> 59: 209-219<em>.</em></p>
 <p>Lemaire, J. 1977. La soif du bonus. <em>ASTIN Bulletin</em> 9: 181-190.</p>
-<p>Lemaire, J. 1979. How to define a Bonus-Malus system with an exponential utility function. <em>ASTIN Bulletin</em> 10: 274-282.</p>
-<p>Lemaire, J., Zi, H.M. 1994. A comparative analysis of 30 Bonus-Malus systems. <em>ASTIN Bulletin</em> 24: 287-309.</p>
-<p>Lemaire, J. 1998. Bonus-Malus systems: The European and Asian approach to merit-rating. <em>North American Actuarial Journal 2</em>(1): 26-38.</p>
-<p>Loimaranta, K. 1972. Some asymptotic properties of bonus systems. <em>ASTIN Bulletin</em> 6: 233-245.</p>
-<p>McCullagh, P., Nelder, J.A. 1989. <em>Generalized Linear Models (2nd Edition).</em> Chapman and Hall: London.</p>
-<p>Morillo, I., Bermúdez, L. 2003. Bonus–malus system using an exponential loss function with an inverse Gaussian distribution. <em>Insurance: Mathematics and Economics 33</em>: 49-57.</p>
-<p>Pitrebois, S., Denuit, M., Walhin, J.F. 2003. Fitting the Belgian Bonus-Malus system. <em>Belgian Actuarial Bulletin</em> 3(1): 58-62.</p>
-<p>Renshaw, A.E., 1994. Modelling the claims process in the presence of covariates. <em>ASTIN Bulletin</em> 24(2): 265-285.</p>
-<p>Tremblay, L. 1992. Using the Poisson inverse Gaussian in Bonus-Malus systems. <em>ASTIN Bulletin 22</em>(1): 97-106.</p>
-<p>Vepsäläinen, S. 1972. Applications to a theory of bonus systems. <em>ASTIN Bulletin</em> 6: 212-221.</p>
-<p>Walhin, J. F., Paris, J. 1999. Using mixed Poisson processes in connection with Bonus-Malus systems. <em>ASTIN Bulletin 29</em>(1): 81-99.</p>
-<p>Winkelmann, R. 2008. <em>Econometric Analysis of Count Data</em>. Heidelberg: Springer Verlag.</p>
-<p>Zamani, H., Ismail, N. 2012. Functional form for the generalized Poisson regression model. <em>Communications in Statistics (Theory and Methods)</em> 41(20): 3666–3675.</p>
+<p>Lemaire, J. 1979. How to define a Bonus-Malus system with an exponential
+utility function. <em>ASTIN Bulletin</em> 10: 274-282.</p>
+<p>Lemaire, J., Zi, H.M. 1994. A comparative analysis of 30 Bonus-Malus
+systems. <em>ASTIN Bulletin</em> 24: 287-309.</p>
+<p>Lemaire, J. 1998. Bonus-Malus systems: The European and Asian approach
+to merit-rating. <em>North American Actuarial Journal 2</em>(1): 26-38.</p>
+<p>Loimaranta, K. 1972. Some asymptotic properties of bonus systems. <em>ASTIN
+Bulletin</em> 6: 233-245.</p>
+<p>McCullagh, P., Nelder, J.A. 1989. <em>Generalized Linear Models (2nd
+Edition).</em> Chapman and Hall: London.</p>
+<p>Morillo, I., Bermúdez, L. 2003. Bonus–malus system using an exponential
+loss function with an inverse Gaussian distribution. <em>Insurance:
+Mathematics and Economics 33</em>: 49-57.</p>
+<p>Pitrebois, S., Denuit, M., Walhin, J.F. 2003. Fitting the Belgian
+Bonus-Malus system. <em>Belgian Actuarial Bulletin</em> 3(1): 58-62.</p>
+<p>Renshaw, A.E., 1994. Modelling the claims process in the presence of
+covariates. <em>ASTIN Bulletin</em> 24(2): 265-285.</p>
+<p>Tremblay, L. 1992. Using the Poisson inverse Gaussian in Bonus-Malus
+systems. <em>ASTIN Bulletin 22</em>(1): 97-106.</p>
+<p>Vepsäläinen, S. 1972. Applications to a theory of bonus systems. <em>ASTIN
+Bulletin</em> 6: 212-221.</p>
+<p>Walhin, J. F., Paris, J. 1999. Using mixed Poisson processes in
+connection with Bonus-Malus systems. <em>ASTIN Bulletin 29</em>(1): 81-99.</p>
+<p>Winkelmann, R. 2008. <em>Econometric Analysis of Count Data</em>. Heidelberg:
+Springer Verlag.</p>
+<p>Zamani, H., Ismail, N. 2012. Functional form for the generalized Poisson
+regression model. <em>Communications in Statistics (Theory and Methods)</em>
+41(20): 3666–3675.</p>
 
 </div>
 </div>
@@ -1839,11 +2234,13 @@ in class }j) \\\\
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1851,12 +2248,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -1868,6 +2264,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -1884,10 +2284,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

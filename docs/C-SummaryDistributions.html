@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics</title>
   <meta name="description" content="Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 18 Appendix D: Summary of Distributions | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="C-AppC.html">
-<link rel="next" href="bibliography.html">
+<link rel="prev" href="C-AppC.html"/>
+<link rel="next" href="bibliography.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -307,41 +310,66 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -483,11 +511,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:MS:DedImpactClmFreq"><i class="fa fa-check"></i><b>5.5.2</b> Impact of Deductibles on Claim Frequency</a></li>
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a><ul>
-<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
-<li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
-</ul></li>
+<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="C-Simulation.html"><a href="C-Simulation.html"><i class="fa fa-check"></i><b>6</b> Simulation and Resampling</a><ul>
 <li class="chapter" data-level="6.1" data-path="C-Simulation.html"><a href="C-Simulation.html#S:SimulationFundamentals"><i class="fa fa-check"></i><b>6.1</b> Simulation Fundamentals</a><ul>
@@ -571,19 +595,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.2.3" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-for-severity"><i class="fa fa-check"></i><b>9.2.3</b> Full Credibility for Severity</a></li>
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#buhlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
-<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-buhlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
+<li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
+<li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
 <li class="chapter" data-level="9.5.1" data-path="C-Credibility.html"><a href="C-Credibility.html#gamma-poisson-model"><i class="fa fa-check"></i><b>9.5.1</b> Gamma-Poisson Model</a></li>
 <li class="chapter" data-level="9.5.2" data-path="C-Credibility.html"><a href="C-Credibility.html#beta-binomial-model"><i class="fa fa-check"></i><b>9.5.2</b> Beta-Binomial Model</a></li>
 <li class="chapter" data-level="9.5.3" data-path="C-Credibility.html"><a href="C-Credibility.html#exact-credibility"><i class="fa fa-check"></i><b>9.5.3</b> Exact Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="C-Credibility.html"><a href="C-Credibility.html#estimating-credibility-parameters"><i class="fa fa-check"></i><b>9.6</b> Estimating Credibility Parameters</a><ul>
 <li class="chapter" data-level="9.6.1" data-path="C-Credibility.html"><a href="C-Credibility.html#full-credibility-standard-for-limited-fluctuation-credibility"><i class="fa fa-check"></i><b>9.6.1</b> Full Credibility Standard for Limited Fluctuation Credibility</a></li>
-<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
-<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-buhlmann-and-buhlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.2" data-path="C-Credibility.html"><a href="C-Credibility.html#nonparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.2</b> Nonparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
+<li class="chapter" data-level="9.6.3" data-path="C-Credibility.html"><a href="C-Credibility.html#semiparametric-estimation-for-bühlmann-and-bühlmann-straub-models"><i class="fa fa-check"></i><b>9.6.3</b> Semiparametric Estimation for Bühlmann and Bühlmann-Straub Models</a></li>
 <li class="chapter" data-level="9.6.4" data-path="C-Credibility.html"><a href="C-Credibility.html#balancing-credibility-estimators"><i class="fa fa-check"></i><b>9.6.4</b> Balancing Credibility Estimators</a></li>
 </ul></li>
 <li class="chapter" data-level="9.7" data-path="C-Credibility.html"><a href="C-Credibility.html#Cred-further-reading-and-resources"><i class="fa fa-check"></i><b>9.7</b> Further Resources and Contributors</a></li>
@@ -813,25 +837,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="the-ab0-class" class="section level3">
 <h3><span class="header-section-number">18.1.1</span> The (a,b,0) Class</h3>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, 'disA')">
-Poisson
-</button>
-<button class="tablinks" onclick="openTab(event, 'disB')">
-Geometric
-</button>
-<button class="tablinks" onclick="openTab(event, 'disC')">
-Binomial
-</button>
-<button class="tablinks" onclick="openTab(event, 'disD')">
-Negative Binomial
-</button>
+<p><button class="tablinks" onclick="openTab(event, 'disA')">Poisson</button>
+<button class="tablinks" onclick="openTab(event, 'disB')">Geometric</button>
+<button class="tablinks" onclick="openTab(event, 'disC')">Binomial</button>
+<button class="tablinks" onclick="openTab(event, 'disD')">Negative Binomial</button></p>
 </div>
 <div id="disA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Poisson
 </h3>
@@ -883,11 +895,7 @@ Poisson
 \]</span></p>
 </div>
 <div id="disB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Geometric
 </h3>
@@ -939,11 +947,7 @@ Geometric
 \]</span></p>
 </div>
 <div id="disC" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Binomial
 </h3>
@@ -996,11 +1000,7 @@ Binomial
 \]</span></p>
 </div>
 <div id="disD" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Negative Binomial
 </h3>
@@ -1056,28 +1056,14 @@ Negative Binomial
 <h3><span class="header-section-number">18.1.2</span> The (a,b,1) Class</h3>
 </center>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, 'ztA')">
-Zero Truncated Poisson
-</button>
-<button class="tablinks" onclick="openTab(event, 'ztB')">
-Zero Truncated Geometric
-</button>
-<button class="tablinks" onclick="openTab(event, 'ztC')">
-Zero Truncated Binomial
-</button>
-<button class="tablinks" onclick="openTab(event, 'ztD')">
-Zero Truncated Negative Binomial
-</button>
-<button class="tablinks" onclick="openTab(event, 'ztE')">
-Logarithmic
-</button>
+<p><button class="tablinks" onclick="openTab(event, 'ztA')">Zero Truncated Poisson</button>
+<button class="tablinks" onclick="openTab(event, 'ztB')">Zero Truncated Geometric</button>
+<button class="tablinks" onclick="openTab(event, 'ztC')">Zero Truncated Binomial</button>
+<button class="tablinks" onclick="openTab(event, 'ztD')">Zero Truncated Negative Binomial</button>
+<button class="tablinks" onclick="openTab(event, 'ztE')">Logarithmic</button></p>
 </div>
 <div id="ztA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Zero Truncated Poisson
 </h3>
@@ -1129,11 +1115,7 @@ Zero Truncated Poisson
 \]</span></p>
 </div>
 <div id="ztB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Zero Truncated Geometric
 </h3>
@@ -1185,11 +1167,7 @@ Zero Truncated Geometric
 \]</span></p>
 </div>
 <div id="ztC" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Zero Truncated Binomial
 </h3>
@@ -1242,11 +1220,7 @@ Zero Truncated Binomial
 \]</span></p>
 </div>
 <div id="ztD" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Zero Truncated Negative Binomial
 </h3>
@@ -1298,11 +1272,7 @@ Zero Truncated Negative Binomial
 \]</span></p>
 </div>
 <div id="ztE" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Logarithmic
 </h3>
@@ -1362,22 +1332,12 @@ Logarithmic
 <div id="one-parameter-distributions" class="section level3">
 <h3><span class="header-section-number">18.2.1</span> One Parameter Distributions</h3>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, '1pA')">
-Exponential
-</button>
-<button class="tablinks" onclick="openTab(event, '1pB')">
-Inv Exponential
-</button>
-<button class="tablinks" onclick="openTab(event, 'odC')">
-Single Parameter Pareto
-</button>
+<p><button class="tablinks" onclick="openTab(event, '1pA')">Exponential</button>
+<button class="tablinks" onclick="openTab(event, '1pB')">Inv Exponential</button>
+<button class="tablinks" onclick="openTab(event, 'odC')">Single Parameter Pareto</button></p>
 </div>
 <div id="1pA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Exponential
 </h3>
@@ -1426,18 +1386,14 @@ Exponential
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dexp</span>(X,<span class="dt">rate=</span><span class="dv">1</span><span class="op">/</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Exponential Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-218-1.png" width="672" /></p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" title="1">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb190-2" title="2">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb190-3" title="3"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dexp</span>(X,<span class="dt">rate=</span><span class="dv">1</span><span class="op">/</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb190-4" title="4">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Exponential Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-219-1.png" width="672" /></p>
 </div>
 <div id="1pB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Inverse Exponential
 </h3>
@@ -1483,18 +1439,14 @@ Inverse Exponential
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">theta &lt;-<span class="st"> </span><span class="fl">0.01</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvexp</span>(X, <span class="dt">rate =</span>  <span class="dv">1</span><span class="op">/</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Exponential Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-219-1.png" width="672" /></p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" title="1">theta &lt;-<span class="st"> </span><span class="fl">0.01</span></a>
+<a class="sourceLine" id="cb191-2" title="2">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb191-3" title="3"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvexp</span>(X, <span class="dt">rate =</span>  <span class="dv">1</span><span class="op">/</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb191-4" title="4">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Exponential Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-220-1.png" width="672" /></p>
 </div>
 <div id="odC" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Single Parameter Pareto
 </h3>
@@ -1541,54 +1493,30 @@ Single Parameter Pareto
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">3</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dpareto1</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">min=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Single Parameter Pareto Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-220-1.png" width="672" /></p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb192-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb192-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb192-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dpareto1</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">min=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb192-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Single Parameter Pareto Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-221-1.png" width="672" /></p>
 </div>
 </div>
 <div id="two-parameter-distributions" class="section level3">
 <h3><span class="header-section-number">18.2.2</span> Two Parameter Distributions</h3>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, '2pA')">
-Pareto
-</button>
-<button class="tablinks" onclick="openTab(event, '2pB')">
-Inv Pareto
-</button>
-<button class="tablinks" onclick="openTab(event, '2pC')">
-Loglogistic
-</button>
-<button class="tablinks" onclick="openTab(event, '2pD')">
-Paralogistic
-</button>
-<button class="tablinks" onclick="openTab(event, '2pE')">
-Gamma
-</button>
-<button class="tablinks" onclick="openTab(event, '2pF')">
-Inv Gamma
-</button>
-<button class="tablinks" onclick="openTab(event, '2pG')">
-Weibull
-</button>
-<button class="tablinks" onclick="openTab(event, '2pH')">
-Inv Weibull
-</button>
-<button class="tablinks" onclick="openTab(event, '2pI')">
-Uniform
-</button>
-<button class="tablinks" onclick="openTab(event, '2pJ')">
-Normal
-</button>
+<p><button class="tablinks" onclick="openTab(event, '2pA')">Pareto</button>
+<button class="tablinks" onclick="openTab(event, '2pB')">Inv Pareto</button>
+<button class="tablinks" onclick="openTab(event, '2pC')">Loglogistic</button>
+<button class="tablinks" onclick="openTab(event, '2pD')">Paralogistic</button>
+<button class="tablinks" onclick="openTab(event, '2pE')">Gamma</button>
+<button class="tablinks" onclick="openTab(event, '2pF')">Inv Gamma</button>
+<button class="tablinks" onclick="openTab(event, '2pG')">Weibull</button>
+<button class="tablinks" onclick="openTab(event, '2pH')">Inv Weibull</button>
+<button class="tablinks" onclick="openTab(event, '2pI')">Uniform</button>
+<button class="tablinks" onclick="openTab(event, '2pJ')">Normal</button></p>
 </div>
 <div id="2pA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Pareto
 </h3>
@@ -1640,19 +1568,15 @@ Pareto
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">3</span>
-theta &lt;-<span class="st"> </span><span class="dv">200</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dpareto2</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Pareto Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-221-1.png" width="672" /></p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb193-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">200</span></a>
+<a class="sourceLine" id="cb193-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb193-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dpareto2</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb193-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Pareto Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-222-1.png" width="672" /></p>
 </div>
 <div id="2pB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Inverse Pareto
 </h3>
@@ -1679,7 +1603,8 @@ Inverse Pareto
 \hline
 \end{array}
 \end{matrix}
-\]</span> <strong><code>R</code> Commands</strong></p>
+\]</span>
+<strong><code>R</code> Commands</strong></p>
 <p><span class="math display">\[
 \begin{matrix}
 \begin{array}{l|c}
@@ -1698,19 +1623,15 @@ Inverse Pareto
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tau &lt;-<span class="st"> </span><span class="dv">5</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">3000</span>,<span class="dt">by=</span><span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvpareto</span>(X,<span class="dt">shape=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Pareto Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-222-1.png" width="672" /></p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" title="1">tau &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb194-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb194-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">3000</span>,<span class="dt">by=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb194-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvpareto</span>(X,<span class="dt">shape=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb194-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Pareto Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-223-1.png" width="672" /></p>
 </div>
 <div id="2pC" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Loglogistic
 </h3>
@@ -1739,22 +1660,18 @@ Loglogistic
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dloglogistic &lt;-<span class="st"> </span><span class="cf">function</span>(x, gamma, theta){
-  p=gamma<span class="op">*</span>(x<span class="op">/</span>theta)<span class="op">^</span>gamma<span class="op">/</span>(x<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>(x<span class="op">/</span>theta)<span class="op">^</span>gamma)<span class="op">^</span><span class="dv">2</span>)
-  <span class="kw">return</span>(p)
-}
-gamma &lt;-<span class="st"> </span><span class="dv">2</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dloglogistic</span>(X,<span class="dt">gamma=</span>gamma,<span class="dt">theta=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-223-1.png" width="672" /></p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" title="1">dloglogistic &lt;-<span class="st"> </span><span class="cf">function</span>(x, gamma, theta){</a>
+<a class="sourceLine" id="cb195-2" title="2">  p=gamma<span class="op">*</span>(x<span class="op">/</span>theta)<span class="op">^</span>gamma<span class="op">/</span>(x<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>(x<span class="op">/</span>theta)<span class="op">^</span>gamma)<span class="op">^</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb195-3" title="3">  <span class="kw">return</span>(p)</a>
+<a class="sourceLine" id="cb195-4" title="4">}</a>
+<a class="sourceLine" id="cb195-5" title="5">gamma &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb195-6" title="6">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb195-7" title="7">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb195-8" title="8"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dloglogistic</span>(X,<span class="dt">gamma=</span>gamma,<span class="dt">theta=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-224-1.png" width="672" /></p>
 </div>
 <div id="2pD" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Paralogistic
 </h3>
@@ -1801,19 +1718,15 @@ Paralogistic
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">2</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dparalogis</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Paralogistic Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-224-1.png" width="672" /></p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb196-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb196-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb196-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dparalogis</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb196-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Paralogistic Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-225-1.png" width="672" /></p>
 </div>
 <div id="2pE" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Gamma
 </h3>
@@ -1858,19 +1771,15 @@ Gamma
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">2</span>
-theta &lt;-<span class="st"> </span><span class="dv">50</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dgamma</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Gamma Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-225-1.png" width="672" /></p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb197-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">50</span></a>
+<a class="sourceLine" id="cb197-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb197-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dgamma</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb197-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Gamma Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-226-1.png" width="672" /></p>
 </div>
 <div id="2pF" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Inverse Gamma
 </h3>
@@ -1915,19 +1824,15 @@ Inverse Gamma
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">3</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">400</span>,<span class="dt">by=</span><span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvgamma</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Gamma Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-226-1.png" width="672" /></p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb198-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb198-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">400</span>,<span class="dt">by=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb198-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvgamma</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb198-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Gamma Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-227-1.png" width="672" /></p>
 </div>
 <div id="2pG" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Weibull
 </h3>
@@ -1974,19 +1879,15 @@ Weibull
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">2</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dweibull</span>(X,<span class="dt">shape=</span>alpha, <span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Weibull Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-227-1.png" width="672" /></p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb199-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb199-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb199-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dweibull</span>(X,<span class="dt">shape=</span>alpha, <span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb199-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Weibull Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-228-1.png" width="672" /></p>
 </div>
 <div id="2pH" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Inverse Weibull
 </h3>
@@ -2033,19 +1934,15 @@ Inverse Weibull
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tau &lt;-<span class="st"> </span><span class="dv">5</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvweibull</span>(X,<span class="dt">shape=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Weibull Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-228-1.png" width="672" /></p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" title="1">tau &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb200-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb200-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb200-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvweibull</span>(X,<span class="dt">shape=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb200-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Weibull Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-229-1.png" width="672" /></p>
 </div>
 <div id="2pI" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Uniform
 </h3>
@@ -2095,19 +1992,15 @@ Uniform
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">50</span>
-beta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(alpha,beta,<span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dunif</span>(X,alpha,beta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Continuous Uniform Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-229-1.png" width="672" /></p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">50</span></a>
+<a class="sourceLine" id="cb201-2" title="2">beta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb201-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(alpha,beta,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb201-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dunif</span>(X,alpha,beta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb201-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Continuous Uniform Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-230-1.png" width="672" /></p>
 </div>
 <div id="2pJ" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Normal
 </h3>
@@ -2157,19 +2050,15 @@ Normal
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">100</span>
-sigma &lt;-<span class="st"> </span><span class="dv">10</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">200</span>,<span class="dt">by=</span><span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dnorm</span>(X,<span class="dt">mean=</span>mu,<span class="dt">sd=</span>sigma),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Normal Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-230-1.png" width="672" /></p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" title="1">mu &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb202-2" title="2">sigma &lt;-<span class="st"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb202-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">200</span>,<span class="dt">by=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb202-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dnorm</span>(X,<span class="dt">mean=</span>mu,<span class="dt">sd=</span>sigma),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb202-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Normal Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-231-1.png" width="672" /></p>
 </div>
 <div id="2pK" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Cauchy
 </h3>
@@ -2207,33 +2096,23 @@ Cauchy
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">50</span>
-beta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dcauchy</span>(X,<span class="dt">location=</span>alpha,<span class="dt">scale=</span>beta),
-     <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Cauchy Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-231-1.png" width="672" /></p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">50</span></a>
+<a class="sourceLine" id="cb203-2" title="2">beta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb203-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb203-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dcauchy</span>(X,<span class="dt">location=</span>alpha,<span class="dt">scale=</span>beta),</a>
+<a class="sourceLine" id="cb203-5" title="5">     <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Cauchy Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-232-1.png" width="672" /></p>
 </div>
 </div>
 <div id="three-parameter-distributions" class="section level3">
 <h3><span class="header-section-number">18.2.3</span> Three Parameter Distributions</h3>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, '3pA')">
-Generalized Pareto
-</button>
-<button class="tablinks" onclick="openTab(event, '3pB')">
-Burr
-</button>
-<button class="tablinks" onclick="openTab(event, '3pC')">
-Inv Burr
-</button>
+<p><button class="tablinks" onclick="openTab(event, '3pA')">Generalized Pareto</button>
+<button class="tablinks" onclick="openTab(event, '3pB')">Burr</button>
+<button class="tablinks" onclick="openTab(event, '3pC')">Inv Burr</button></p>
 </div>
 <div id="3pA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Generalized Pareto
 </h3>
@@ -2280,20 +2159,16 @@ Generalized Pareto
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">3</span>
-tau &lt;-<span class="st"> </span><span class="dv">5</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dgenpareto</span>(X,<span class="dt">shape1=</span>alpha,<span class="dt">shape2=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Generalized Pareto Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-232-1.png" width="672" /></p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb204-2" title="2">tau &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb204-3" title="3">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb204-4" title="4">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb204-5" title="5"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dgenpareto</span>(X,<span class="dt">shape1=</span>alpha,<span class="dt">shape2=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb204-6" title="6">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Generalized Pareto Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-233-1.png" width="672" /></p>
 </div>
 <div id="3pB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Burr
 </h3>
@@ -2340,20 +2215,16 @@ Burr
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha &lt;-<span class="st"> </span><span class="dv">2</span>
-gamma &lt;-<span class="st"> </span><span class="dv">3</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dburr</span>(X,<span class="dt">shape1=</span>alpha,<span class="dt">shape2=</span>gamma,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Burr Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-233-1.png" width="672" /></p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb205-2" title="2">gamma &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb205-3" title="3">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb205-4" title="4">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb205-5" title="5"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dburr</span>(X,<span class="dt">shape1=</span>alpha,<span class="dt">shape2=</span>gamma,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb205-6" title="6">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Burr Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-234-1.png" width="672" /></p>
 </div>
 <div id="3pC" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Inverse Burr
 </h3>
@@ -2400,28 +2271,22 @@ Inverse Burr
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tau &lt;-<span class="st"> </span><span class="dv">2</span>
-gamma &lt;-<span class="st"> </span><span class="dv">3</span>
-theta &lt;-<span class="st"> </span><span class="dv">100</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvburr</span>(X,<span class="dt">shape1=</span>tau,<span class="dt">shape2=</span>gamma,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Burr Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-234-1.png" width="672" /></p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" title="1">tau &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb206-2" title="2">gamma &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb206-3" title="3">theta &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb206-4" title="4">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb206-5" title="5"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvburr</span>(X,<span class="dt">shape1=</span>tau,<span class="dt">shape2=</span>gamma,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb206-6" title="6">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Burr Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-235-1.png" width="672" /></p>
 </div>
 </div>
 <div id="four-parameter-distribution" class="section level3">
 <h3><span class="header-section-number">18.2.4</span> Four Parameter Distribution</h3>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, '4pA')">
-GB2
-</button>
+<p><button class="tablinks" onclick="openTab(event, '4pA')">GB2</button></p>
 </div>
 <div id="4pA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Generalized Beta of the Second Kind (GB2)
 </h3>
@@ -2450,20 +2315,12 @@ Generalized Beta of the Second Kind (GB2)
 <h3><span class="header-section-number">18.2.5</span> Other Distributions</h3>
 </center>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, 'odA')">
-Lognormal
-</button>
-<button class="tablinks" onclick="openTab(event, 'odB')">
-Inv Gaussian
-</button>
-<p><!-- <button class="tablinks" onclick="openTab(event, 'odC')">Single-Parameter Pareto</button> --></p>
+<p><button class="tablinks" onclick="openTab(event, 'odA')">Lognormal</button>
+<button class="tablinks" onclick="openTab(event, 'odB')">Inv Gaussian</button>
+<!-- <button class="tablinks" onclick="openTab(event, 'odC')">Single-Parameter Pareto</button> --></p>
 </div>
 <div id="odA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Lognormal
 </h3>
@@ -2492,23 +2349,19 @@ Lognormal
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dlognorm &lt;-<span class="st"> </span><span class="cf">function</span>(x,mu,sigma){
-  p=(<span class="dv">1</span><span class="op">/</span>(x<span class="op">*</span>sigma<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">2</span><span class="op">*</span>pi)))<span class="op">*</span><span class="kw">exp</span>(<span class="op">-</span>((<span class="kw">log</span>(x)<span class="op">-</span>mu)<span class="op">/</span>sigma)<span class="op">^</span><span class="dv">2</span>)
-  <span class="kw">return</span>(p)
-}
-mu &lt;-<span class="st"> </span><span class="dv">20</span>
-sigma &lt;-<span class="st"> </span><span class="dv">12</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dlognorm</span>(X,<span class="dt">mu=</span>mu,<span class="dt">sigma=</span>sigma),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-235-1.png" width="672" /></p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" title="1">dlognorm &lt;-<span class="st"> </span><span class="cf">function</span>(x,mu,sigma){</a>
+<a class="sourceLine" id="cb207-2" title="2">  p=(<span class="dv">1</span><span class="op">/</span>(x<span class="op">*</span>sigma<span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">2</span><span class="op">*</span>pi)))<span class="op">*</span><span class="kw">exp</span>(<span class="op">-</span>((<span class="kw">log</span>(x)<span class="op">-</span>mu)<span class="op">/</span>sigma)<span class="op">^</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb207-3" title="3">  <span class="kw">return</span>(p)</a>
+<a class="sourceLine" id="cb207-4" title="4">}</a>
+<a class="sourceLine" id="cb207-5" title="5">mu &lt;-<span class="st"> </span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb207-6" title="6">sigma &lt;-<span class="st"> </span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb207-7" title="7">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb207-8" title="8"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dlognorm</span>(X,<span class="dt">mu=</span>mu,<span class="dt">sigma=</span>sigma),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-236-1.png" width="672" /></p>
 </p>
 </div>
 <div id="odB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Inverse Gaussian
 </h3>
@@ -2557,31 +2410,23 @@ Inverse Gaussian
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">100</span>
-theta &lt;-<span class="st"> </span><span class="dv">1000</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">100</span>,<span class="dt">by=</span><span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvgauss</span>(X,<span class="dt">mean=</span>mu,<span class="dt">dispersion=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Gaussian Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-236-1.png" width="672" /></p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" title="1">mu &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb208-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb208-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">100</span>,<span class="dt">by=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb208-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dinvgauss</span>(X,<span class="dt">mean=</span>mu,<span class="dt">dispersion=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb208-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Inverse Gaussian Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-237-1.png" width="672" /></p>
 </div>
 </div>
 <div id="distributions-with-finite-support" class="section level3">
 <h3><span class="header-section-number">18.2.6</span> Distributions with Finite Support</h3>
 </center>
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, 'fsA')">
-Beta
-</button>
-<button class="tablinks" onclick="openTab(event, 'fsB')">
-Generalized Beta
-</button>
+<p><button class="tablinks" onclick="openTab(event, 'fsA')">Beta</button>
+<button class="tablinks" onclick="openTab(event, 'fsB')">Generalized Beta</button></p>
 </div>
 <div id="fsA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Beta
 </h3>
@@ -2628,20 +2473,16 @@ Beta
 \end{array}
 \end{matrix}
 \]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">2</span>
-b &lt;-<span class="st"> </span><span class="dv">4</span>
-theta &lt;-<span class="st"> </span><span class="dv">1</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">1</span>,<span class="dt">by=</span>.<span class="dv">0001</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dbeta</span>(X,<span class="dt">shape1=</span>a,<span class="dt">shape2=</span>b,<span class="dt">ncp=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Beta Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-237-1.png" width="672" /></p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" title="1">a &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb209-2" title="2">b &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb209-3" title="3">theta &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb209-4" title="4">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">1</span>,<span class="dt">by=</span>.<span class="dv">0001</span>)</a>
+<a class="sourceLine" id="cb209-5" title="5"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dbeta</span>(X,<span class="dt">shape1=</span>a,<span class="dt">shape2=</span>b,<span class="dt">ncp=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb209-6" title="6">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Beta Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-238-1.png" width="672" /></p>
 </div>
 <div id="fsB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Generalized Beta
 </h3>
@@ -2687,14 +2528,14 @@ Generalized Beta
 \end{matrix}
 \]</span></p>
 <p><strong>Illustrative Graph</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">3</span>
-b &lt;-<span class="st"> </span><span class="dv">5</span>
-tau &lt;-<span class="st"> </span><span class="dv">2</span>
-theta &lt;-<span class="st"> </span><span class="dv">1000</span>
-X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)
-<span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dgenbeta</span>(X,<span class="dt">shape1=</span>a,<span class="dt">shape2=</span>b,<span class="dt">shape3=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,
-     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Generalized Beta Distribution&quot;</span>)</code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-238-1.png" width="672" /></p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" title="1">a &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb210-2" title="2">b &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb210-3" title="3">tau &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb210-4" title="4">theta &lt;-<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb210-5" title="5">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb210-6" title="6"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dgenbeta</span>(X,<span class="dt">shape1=</span>a,<span class="dt">shape2=</span>b,<span class="dt">shape3=</span>tau,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb210-7" title="7">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Generalized Beta Distribution&quot;</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-239-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -2703,19 +2544,11 @@ X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">fro
 <p><strong>Overview.</strong> This section summarizes limited expected values for selected continuous distributions.</p>
 <!-- ## Limited Expected Values -->
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, 'levA')">
-Functions
-</button>
-<button class="tablinks" onclick="openTab(event, 'levB')">
-Graph
-</button>
+<p><button class="tablinks" onclick="openTab(event, 'levA')">Functions</button>
+<button class="tablinks" onclick="openTab(event, 'levB')">Graph</button></p>
 </div>
 <div id="levA" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-</span>
+<span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span>
 <h3>
 Functions
 </h3>
@@ -2773,11 +2606,7 @@ Functions
 \]</span></p>
 </div>
 <div id="levB" class="tabcontent">
-<span onclick="this.parentElement.style.display='none'" class="topright">
-<button>
-Hide
-</button>
-<p></span></p>
+<p><span class="topright" onclick="this.parentElement.style.display=&#39;none&#39;"><button>Hide</button></span></p>
 <h3>
 Illustrative Graph
 </h3>
@@ -2801,8 +2630,9 @@ Illustrative Graph
 \end{array}
 \end{matrix}
 \]</span></p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-239-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-240-1.png" width="672" /></p>
 </div>
+
 
 </div>
 </div>
@@ -2817,11 +2647,13 @@ Illustrative Graph
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -2829,12 +2661,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -2846,6 +2677,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -2862,10 +2697,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
