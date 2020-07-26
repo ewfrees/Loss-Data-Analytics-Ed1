@@ -422,7 +422,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.2" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:generating-functions"><i class="fa fa-check"></i><b>2.2.2</b> Moment and Probability Generating Functions</a></li>
 <li class="chapter" data-level="2.2.3" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:important-frequency-distributions"><i class="fa fa-check"></i><b>2.2.3</b> Important Frequency Distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:the-a-b-0-class"><i class="fa fa-check"></i><b>2.3</b> The (a, b, 0) Class</a></li>
+<li class="chapter" data-level="2.3" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:the-a-b-0-class"><i class="fa fa-check"></i><b>2.3</b> The (<em>a</em>, <em>b</em>, 0) Class</a></li>
 <li class="chapter" data-level="2.4" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions"><i class="fa fa-check"></i><b>2.4</b> Estimating Frequency Distributions</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:parameter-estimation"><i class="fa fa-check"></i><b>2.4.1</b> Parameter Estimation</a></li>
 <li class="chapter" data-level="2.4.2" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:frequency-distributions-mle"><i class="fa fa-check"></i><b>2.4.2</b> Frequency Distributions MLE</a></li>
@@ -824,8 +824,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="C:Frequency-Modeling" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Frequency Modeling</h1>
-<p><em>Chapter Preview.</em> A primary focus for insurers is estimating the magnitude of aggregate claims it must bear under its insurance contracts. <a href="#" class="tooltip" style="color:green"><em>Aggregate claims</em><span style="font-size:8pt">The sum of all claims observed in a period of time</span></a> are affected by both the frequency of insured events and the severity of the insured event. Decomposing aggregate claims into these two components, each of which warrant significant attention, is essential for analysis and pricing. This chapter discusses frequency distributions, summary measures, and parameter estimation techniques.</p>
-<p>In Section <a href="C-Frequency-Modeling.html#S:frequency-distributions">2.1</a>, we present terminology and discuss reasons why we study frequency and severity separately. The foundations of frequency distributions and measures are presented in Section <a href="C-Frequency-Modeling.html#S:basic-frequency-distributions">2.2</a> along with three principal distributions: the binomial, the Poisson, and the negative binomial. These three distributions are members of what is known as the (a,b,0) class of distributions, a distinguishing, identifying feature which allows for efficient calculation of probabilities, further discussed in Section <a href="C-Frequency-Modeling.html#S:the-a-b-0-class">2.3</a>. When fitting a dataset with a distribution, parameter values need to be estimated and in Section <a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions">2.4</a>, the procedure for maximum likelihood estimation is explained. For insurance datasets, the observation at 0, denoting the occurrence of zero of a particular event, is notable and may deserve additional attention. By nature of the dataset, and explained further in Section <a href="C-Frequency-Modeling.html#S:other-frequency-distributions">2.5</a>, it may be impossible to have zero of the studied event, or the probability at zero could be of such a magnitude that direct fitting would lead to improper estimates. Zero truncation or modification techniques allow for more appropriate distribution fit. Noting that our insurance portfolio could consist of different sub-groups, each with its own set of individual characteristics, Section <a href="C-Frequency-Modeling.html#S:mixture-distributions">2.6</a> introduces mixture distributions and methodology to allow for this heterogeneity within a portfolio. Section <a href="C-Frequency-Modeling.html#S:goodness-of-fit">2.7</a> describes Goodness of Fit which measures the reasonableness of the parameter estimates. Exercises are presented in Section <a href="C-Frequency-Modeling.html#S:exercises">2.8</a> and Section <a href="C-Frequency-Modeling.html#S:rcode">2.9.1</a> concludes the chapter with <code>R</code> Code for plots depicted in Section <a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions">2.4</a>.</p>
+<p><em>Chapter Preview.</em> A primary focus for insurers is estimating the magnitude of aggregate claims it must bear under its insurance contracts. <a href="#" class="tooltip" style="color:green"><em>Aggregate claims</em><span style="font-size:8pt">The sum of all claims observed in a period of time</span></a> are affected by both the frequency and the severity of the insured event. Decomposing aggregate claims into these two components, each of which warrant significant attention, is essential for analysis and pricing. This chapter discusses frequency distributions, summary measures, and parameter estimation techniques.</p>
+<p>In Section <a href="C-Frequency-Modeling.html#S:frequency-distributions">2.1</a>, we present terminology and discuss reasons why we study frequency and severity separately. The foundations of frequency distributions and measures are presented in Section <a href="C-Frequency-Modeling.html#S:basic-frequency-distributions">2.2</a> along with three principal distributions: the binomial, the Poisson, and the negative binomial. These three distributions are members of what is known as the <span class="math inline">\((a,b,0)\)</span> class of distributions, a distinguishing, identifying feature which allows for efficient calculation of probabilities, further discussed in Section <a href="C-Frequency-Modeling.html#S:the-a-b-0-class">2.3</a>. When fitting a dataset with a distribution, parameter values need to be estimated and in Section <a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions">2.4</a>, the procedure for maximum likelihood estimation is explained.</p>
+<p>For insurance datasets, the observation at 0 denotes no occurrence of a particular event; this often deserves additional attention. As explained further in Section <a href="C-Frequency-Modeling.html#S:other-frequency-distributions">2.5</a>, for some datasets it may be impossible to have zero of the studied event or zero events may follow a different model than other event counts.
+In either case, direct fitting of typical count models could lead to improper estimates. Zero truncation or modification techniques allow for more appropriate distribution fit.</p>
+<p>Noting that our insurance portfolio could consist of different sub-groups, each with its own set of individual characteristics, Section <a href="C-Frequency-Modeling.html#S:mixture-distributions">2.6</a> introduces mixture distributions and methodology to allow for this heterogeneity within a portfolio. Section <a href="C-Frequency-Modeling.html#S:goodness-of-fit">2.7</a> describes goodness of fit which measures the reasonableness of the parameter estimates. Exercises are presented in Section <a href="C-Frequency-Modeling.html#S:exercises">2.8</a> and Section <a href="C-Frequency-Modeling.html#S:rcode">2.9.1</a> concludes the chapter with <code>R</code> Code for plots depicted in Section <a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions">2.4</a>.</p>
 <div id="S:frequency-distributions" class="section level2">
 <h2><span class="header-section-number">2.1</span> Frequency Distributions</h2>
 <hr />
@@ -841,20 +844,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.1.1</span> How Frequency Augments Severity Information</h3>
 <div id="S:basic-terminology" class="section level4">
 <h4><span class="header-section-number">2.1.1.1</span> Basic Terminology</h4>
-<p>In this chapter, <strong>loss</strong>, also referred to as ground-up loss, denotes the amount suffered by the insured. We use <strong>claim</strong> to denote the indemnification upon the occurrence of an insured event, thus the amount paid by the insurer. While some texts use <strong>loss</strong> and <strong>claim</strong> interchangeably, we wish to make a distinction here to recognize how insurance contractual provisions, such as deductibles and limits, affect the size of the claim stemming from a loss. <a href="#" class="tooltip" style="color:green"><em>Frequency</em><span style="font-size:8pt">Count random variables that represent the number of claims</span></a> represents how often an insured event occurs, typically within a policy contract. Here, we focus on count random variables that represent the number of claims, that is, how frequently an event occurs. <a href="#" class="tooltip" style="color:green"><em>Severity</em><span style="font-size:8pt">The amount, or size, of each payment for an insured event</span></a> denotes the amount, or size, of each payment for an insured event. In future chapters, the aggregate model, which combines frequency models with severity models, is examined.</p>
+<p>In this chapter, <strong>loss</strong>, also referred to as ground-up loss, denotes the amount of financial loss suffered by the insured. We use <strong>claim</strong> to denote the indemnification upon the occurrence of an insured event, thus the amount paid by the insurer. While some texts use <strong>loss</strong> and <strong>claim</strong> interchangeably, we wish to make a distinction here to recognize how insurance contractual provisions, such as deductibles and limits, affect the size of the claim stemming from a loss. <a href="#" class="tooltip" style="color:green"><em>Frequency</em><span style="font-size:8pt">Count random variables that represent the number of claims</span></a> represents how often an insured event occurs, typically within a policy contract. Here, we focus on count random variables that represent the number of claims, that is, how frequently an event occurs. <a href="#" class="tooltip" style="color:green"><em>Severity</em><span style="font-size:8pt">The amount, or size, of each payment for an insured event</span></a> denotes the amount, or size, of each payment for an insured event. In future chapters, the aggregate model, which combines frequency models with severity models, is examined.</p>
 </div>
 <div id="S:the-importance-of-frequency" class="section level4">
 <h4><span class="header-section-number">2.1.1.2</span> The Importance of Frequency</h4>
 <p>Recall from Section <a href="C-Intro.html#S:PredModApps">1.2</a> that setting the price of an insurance good can be a complex problem. In manufacturing, the cost of a good is (relatively) known. In other financial service areas, market prices are available. In insurance, we can generalize the price setting as follows. Start with an expected cost, then add “margins” to account for the product’s riskiness, expenses incurred in servicing the product, and a profit/surplus allowance for the insurer.</p>
-<p>The expected cost for insurance can be determined as the expected number of claims times the expected amount per claim, that is, expected <em>frequency times severity</em>. The focus on claim count allows the insurer to consider those factors which directly affect the occurrence of a loss, thereby potentially generating a claim.</p>
+<p>The expected cost for insurance can be determined as the expected number of claims times the amount per claim, that is, expected <em>frequency times severity</em>. The focus on claim count allows the insurer to consider those factors which directly affect the occurrence of a loss, thereby potentially generating a claim.</p>
 <!-- The frequency process can then be modeled. -->
 </div>
 <div id="S:why-examine-frequency-information" class="section level4">
-<h4><span class="header-section-number">2.1.1.3</span> Why Examine Frequency Information</h4>
+<h4><span class="header-section-number">2.1.1.3</span> Why Examine Frequency Information?</h4>
 <p>Insurers and other stakeholders, including governmental organizations, have various motivations for gathering and maintaining frequency datasets.</p>
 <ul>
 <li><p><strong>Contractual.</strong> In insurance contracts, it is common for particular deductibles and policy limits to be listed and invoked for each occurrence of an insured event. Correspondingly, the claim count data generated would indicate the number of claims which meet these criteria, offering a unique claim frequency measure. Extending this, models of total insured losses would need to account for deductibles and policy limits for each insured event.</p></li>
-<li><p><strong>Behaviorial.</strong> In considering factors that influence loss frequency, the risk-taking and risk-reducing behavior of individuals and companies should be considered. Explanatory (rating) variables can have different effects on models of how often an event occurs in contrast to the size of the event.</p>
+<li><p><strong>Behavioral.</strong> In considering factors that influence loss frequency, the risk-taking and risk-reducing behavior of individuals and companies should be considered. Explanatory (rating) variables can have different effects on models of how often an event occurs in contrast to the size of the event.</p>
 <ul>
 <li>In healthcare, the decision to utilize healthcare by individuals, and minimize such healthcare utilization through preventive care and wellness measures, is related primarily to his or her personal characteristics. The cost per user is determined by those personal, the medical condition, potential treatment measures, and decisions made by the healthcare provider (such as the physician) and the patient. While there is overlap in those factors and how they affect total healthcare costs, attention can be focused on those separate drivers of healthcare visit frequency and healthcare cost severity.</li>
 <li>In personal lines, prior claims history is an important underwriting factor. It is common to use an indicator of whether or not the insured had a claim within a certain time period prior to the contract. Also, the number of claims incurred by the insured in previous periods has predictive power.</li>
@@ -896,28 +899,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this section, we introduce the distributions that are commonly used in actuarial practice to model count data. The claim count random variable is denoted by <span class="math inline">\(N\)</span>; by its very nature it assumes only non-negative integer values. Hence the distributions below are all discrete distributions supported on the set of non-negative integers <span class="math inline">\(\{0, 1, \ldots \}\)</span>.</p>
 <div id="S:foundations" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Foundations</h3>
-<p>Since <span class="math inline">\(N\)</span> is a discrete random variable taking values in <span class="math inline">\(\{0, 1, \ldots \}\)</span>, the most natural full description of its distribution is through the specification of the probabilities with which it assumes each of the non-negative integer values. This leads us to the concept of the <a href="#" class="tooltip" style="color:green"><em>probability mass function (pmf)</em><span style="font-size:8pt">A function that gives the probability that a discrete random variable is exactly equal to some value</span></a> of <span class="math inline">\(N\)</span>, denoted as <span class="math inline">\(p_N(\cdot)\)</span> and defined as follows:
-<span class="math display">\[\begin{equation}
+<p>Since <span class="math inline">\(N\)</span> is a discrete random variable taking values in <span class="math inline">\(\{0, 1, \ldots \}\)</span>, the most natural full description of its distribution is through the specification of the probabilities with which it assumes each of the non-negative integer values. This leads us to the concept of the <a href="#" class="tooltip" style="color:green"><em>probability mass function (pmf)</em><span style="font-size:8pt">A function that gives the probability that a discrete random variable is exactly equal to some value</span></a> of <span class="math inline">\(N\)</span>, denoted as <span class="math inline">\(p_N(\cdot)\)</span> and defined as follows:</p>
+<p><span class="math display">\[
 p_N(k)=\Pr(N=k), \quad \hbox{for } k=0,1,\ldots
-\end{equation}\]</span>
-We note that there are alternate complete descriptions, or characterizations, of the distribution of <span class="math inline">\(N\)</span>; for example, the <a href="#" class="tooltip" style="color:green"><em>distribution function</em><span style="font-size:8pt">The chance that the random variable is less than or equal to x, as a function of x</span></a> of <span class="math inline">\(N\)</span> denoted by <span class="math inline">\(F_N(\cdot)\)</span> and defined below is another such:
-<span class="math display">\[\begin{equation}
-F_N(x):=\begin{cases}
+\]</span></p>
+<p>We note that there are alternate complete descriptions, or characterizations, of the distribution of <span class="math inline">\(N\)</span>; for example, the <a href="#" class="tooltip" style="color:green"><em>distribution function</em><span style="font-size:8pt">The chance that the random variable is less than or equal to x, as a function of x</span></a> of <span class="math inline">\(N\)</span> defined by <span class="math inline">\(F_N(x) = \Pr(N \le x)\)</span> and determined as:</p>
+<p><span class="math display">\[
+F_N(x)=\begin{cases}
 \sum\limits_{k=0}^{\lfloor x \rfloor } \Pr(N=k), &amp;x\geq 0;\\
 0, &amp; \hbox{otherwise}.
 \end{cases}
-\end{equation}\]</span>
-In the above, <span class="math inline">\(\lfloor \cdot \rfloor\)</span> denotes the floor function; <span class="math inline">\(\lfloor x \rfloor\)</span> denotes the greatest integer less than or equal to <span class="math inline">\(x\)</span>. We note that the <a href="#" class="tooltip" style="color:green"><em>survival function</em><span style="font-size:8pt">The probability that the random variable takes on a value greater than a number x</span></a> of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(S_N(\cdot)\)</span>, is defined as the ones’-complement of <span class="math inline">\(F_N(\cdot)\)</span>, <em>i.e.</em> <span class="math inline">\(S_N(\cdot):=1-F_N(\cdot)\)</span>. Clearly, the latter is another characterization of the distribution of <span class="math inline">\(N\)</span>.</p>
+\]</span></p>
+<p>In the above, <span class="math inline">\(\lfloor \cdot \rfloor\)</span> denotes the floor function; <span class="math inline">\(\lfloor x \rfloor\)</span> denotes the greatest integer less than or equal to <span class="math inline">\(x\)</span>. This expression also suggests the descriptor <em>cumulative distribution function,</em> a commonly used alternative way of expressing the distribution function. We also note that the <a href="#" class="tooltip" style="color:green"><em>survival function</em><span style="font-size:8pt">The probability that the random variable takes on a value greater than a number x</span></a> of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(S_N(\cdot)\)</span>, is defined as the ones’-complement of <span class="math inline">\(F_N(\cdot)\)</span>, <em>i.e.</em> <span class="math inline">\(S_N(\cdot)=1-F_N(\cdot)\)</span>. Clearly, the latter is another characterization of the distribution of <span class="math inline">\(N\)</span>.</p>
 <p>Often one is interested in quantifying a certain aspect of the distribution and not in its complete description. This is particularly useful when comparing distributions. A <em>center of location</em> of the distribution is one such aspect, and there are many different measures that are commonly used to quantify it. Of these, the <a href="#" class="tooltip" style="color:green"><em>mean</em><span style="font-size:8pt">Average</span></a> is the most popular; the mean of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\mu_N\)</span>,<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> is defined as</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 \mu_N=\sum_{k=0}^\infty k~p_N(k).
-\end{equation}\]</span>
-We note that <span class="math inline">\(\mu_N\)</span> is the expected value of the random variable <span class="math inline">\(N\)</span>, <em>i.e.</em> <span class="math inline">\(\mu_N=\mathrm{E}[N]\)</span>. This leads to a general class of measures, the <a href="#" class="tooltip" style="color:green"><em>moments</em><span style="font-size:8pt">The rth moment of a list is the average value of the random variable raised to the rth power</span></a> of the distribution; the <span class="math inline">\(r\)</span>-th moment of <span class="math inline">\(N\)</span>, for <span class="math inline">\(r&gt; 0\)</span>, is defined as <span class="math inline">\(\mathrm{E}{[N^r]}\)</span> and denoted by <span class="math inline">\(\mu_N&#39;(r)\)</span>. Hence, for <span class="math inline">\(r&gt;0\)</span>, we have<br />
-<span class="math display">\[\begin{equation}
+\]</span></p>
+<p>We note that <span class="math inline">\(\mu_N\)</span> is the expected value of the random variable <span class="math inline">\(N\)</span>, <em>i.e.</em> <span class="math inline">\(\mu_N=\mathrm{E}[N]\)</span>. This leads to a general class of measures, the <a href="#" class="tooltip" style="color:green"><em>moments</em><span style="font-size:8pt">The rth moment of a list is the average value of the random variable raised to the rth power</span></a> of the distribution; the <span class="math inline">\(r\)</span>-th moment of <span class="math inline">\(N\)</span>, for <span class="math inline">\(r&gt; 0\)</span>, is defined as <span class="math inline">\(\mathrm{E}{[N^r]}\)</span> and denoted by <span class="math inline">\(\mu_N&#39;(r)\)</span>. Hence, for <span class="math inline">\(r&gt;0\)</span>, we have</p>
+<p><span class="math display">\[
 \mu_N&#39;(r)= \mathrm{E}{[N^r]}= \sum_{k=0}^\infty k^r~p_N(k).
-\end{equation}\]</span>
-We note that <span class="math inline">\(\mu_N&#39;(\cdot)\)</span> is a well-defined non-decreasing function taking values in <span class="math inline">\([0,\infty]\)</span>, as <span class="math inline">\(\Pr(N\in\{0, 1, \ldots \})=1\)</span>; also, note that <span class="math inline">\(\mu_N=\mu_N&#39;(1)\)</span>. In the following, when we refer to a moment it will be implicit that it is finite unless mentioned otherwise.</p>
-<p>Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the <a href="#" class="tooltip" style="color:green"><em>standard deviation</em><span style="font-size:8pt">The square-root of variance</span></a> is the most popular. Towards defining it, we first define the <a href="#" class="tooltip" style="color:green"><em>variance</em><span style="font-size:8pt">Second central moment of a random variable x, measuring the expected squared deviation of between the variable and its mean</span></a> of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\mathrm{Var}[N]\)</span>, as <span class="math inline">\(\mathrm{Var}[N]:=\mathrm{E}{[(N-\mu_N)^2]}\)</span> when <span class="math inline">\(\mu_N\)</span> is finite. By basic properties of the expected value of a random variable, we see that <span class="math inline">\(\mathrm{Var}[N]:=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2\)</span>. The standard deviation of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\sigma_N\)</span>, is defined as the square-root of <span class="math inline">\(\mathrm{Var}~N\)</span>. Note that the latter is well-defined as <span class="math inline">\(\mathrm{Var}[N]\)</span>, by its definition as the average squared deviation from the mean, is non-negative; <span class="math inline">\(\mathrm{Var}[N]\)</span> is denoted by <span class="math inline">\(\sigma_N^2\)</span>. Note that these two measures take values in <span class="math inline">\([0,\infty]\)</span>.</p>
+\]</span></p>
+<p>We note that <span class="math inline">\(\mu_N&#39;(\cdot)\)</span> is a well-defined non-decreasing function taking values in <span class="math inline">\([0,\infty]\)</span>, as <span class="math inline">\(\Pr(N\in\{0, 1, \ldots \})=1\)</span>; also, note that <span class="math inline">\(\mu_N=\mu_N&#39;(1)\)</span>. In the following, when we refer to a moment it will be implicit that it is finite unless mentioned otherwise.</p>
+<p>Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the <a href="#" class="tooltip" style="color:green"><em>standard deviation</em><span style="font-size:8pt">The square-root of variance</span></a> is the most popular. Towards defining it, we first define the <a href="#" class="tooltip" style="color:green"><em>variance</em><span style="font-size:8pt">Second central moment of a random variable x, measuring the expected squared deviation of between the variable and its mean</span></a> of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\mathrm{Var}[N]\)</span>, as <span class="math inline">\(\mathrm{Var}[N]=\mathrm{E}{[(N-\mu_N)^2]}\)</span> when <span class="math inline">\(\mu_N\)</span> is finite. By basic properties of the expected value of a random variable, we see that <span class="math inline">\(\mathrm{Var}[N]=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2\)</span>. The standard deviation of <span class="math inline">\(N\)</span>, denoted by <span class="math inline">\(\sigma_N\)</span>, is defined as the square-root of <span class="math inline">\(\mathrm{Var}~N\)</span>. Note that the latter is well-defined as <span class="math inline">\(\mathrm{Var}[N]\)</span>, by its definition as the average squared deviation from the mean, is non-negative; <span class="math inline">\(\mathrm{Var}[N]\)</span> is denoted by <span class="math inline">\(\sigma_N^2\)</span>. Note that these two measures take values in <span class="math inline">\([0,\infty]\)</span>.</p>
 </div>
 <div id="S:generating-functions" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Moment and Probability Generating Functions</h3>
@@ -941,11 +944,11 @@ The <em>mgf</em> can be used to <em>generate</em> its moments as follows:
 The <em>mgf</em> <span class="math inline">\(M_N(\cdot)\)</span> characterizes the distribution; in other words it uniquely specifies the distribution.
 </div>
 
-<p>Another reason that the <em>mgf</em> is very useful as a tool is that for two independent random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, with their mgfs existing in a neighborhood of <span class="math inline">\(0\)</span>, the <em>mgf</em> of <span class="math inline">\(X+Y\)</span> is the product of their respective mgfs.</p>
-<p>A related generating function to the <em>mgf</em> is called the <a href="#" class="tooltip" style="color:green"><em>probability generating function (pgf)</em><span style="font-size:8pt">For a random variable n, its pgf is defined as the expectation of s^n, as a function of s</span></a>, and is a useful tool for random variables taking values in the non-negative integers. For a random variable <span class="math inline">\(N\)</span>, by <span class="math inline">\(P_N(\cdot)\)</span> we denote its <em>pgf</em> and we define it as follows<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>:
-<span class="math display">\[\begin{equation}
-P_N(s):=\mathrm{E}~{[s^N]}, \quad s\geq 0.
-\end{equation}\]</span></p>
+<p>Another reason that the <em>mgf</em> is very useful as a tool is that for two independent random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, with their mgfs existing in a neighborhood of <span class="math inline">\(0\)</span>, the <em>mgf</em> of <span class="math inline">\(X+Y\)</span> is the product of their respective mgfs, that is, <span class="math inline">\(M_{X+Y}(t) = M_{X}(t)M_{Y}(t)\)</span>, for small <span class="math inline">\(t\)</span>.</p>
+<p>A related generating function to the <em>mgf</em> is called the <a href="#" class="tooltip" style="color:green"><em>probability generating function (pgf)</em><span style="font-size:8pt">For a random variable n, its pgf is defined as the expectation of s^n, as a function of s</span></a>, and is a useful tool for random variables taking values in the non-negative integers. For a random variable <span class="math inline">\(N\)</span>, by <span class="math inline">\(P_N(\cdot)\)</span> we denote its <em>pgf</em> and we define it as follows<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>:</p>
+<p><span class="math display">\[
+P_N(s)=\mathrm{E}~{[s^N]}, \quad s\geq 0.
+\]</span></p>
 <p>It is straightforward to see that if the <em>mgf</em> <span class="math inline">\(M_N(\cdot)\)</span> exists on <span class="math inline">\((-\infty,t^\ast)\)</span> then
 <span class="math display">\[
 P_N(s)=M_N(\log(s)), \quad s&lt;e^{t^\ast}.
@@ -991,20 +994,24 @@ The <em>pgf</em> <span class="math inline">\(P_N(\cdot)\)</span> characterizes t
 <div id="S:binomial-distribution" class="section level4">
 <h4><span class="header-section-number">2.2.3.1</span> Binomial Distribution</h4>
 <p>We begin with the binomial distribution which arises from any finite sequence of identical and independent experiments with <a href="#" class="tooltip" style="color:green"><em>binary outcomes</em><span style="font-size:8pt">Outcomes whose unit can take on only two possible states, traditionally labeled as 0 and 1</span></a>. The most canonical of such experiments is the (biased or unbiased) coin tossing experiment with the outcome being heads or tails. So if <span class="math inline">\(N\)</span> denotes the number of heads in a sequence of <span class="math inline">\(m\)</span> independent coin tossing experiments with an identical coin which turns heads up with probability <span class="math inline">\(q\)</span>, then the distribution of <span class="math inline">\(N\)</span> is called the <a href="#" class="tooltip" style="color:green"><em>binomial distribution</em><span style="font-size:8pt">A random variable has a binomial distribution (with parameters m and q) if it is the number of “successes” in a fixed number m of independent random trials, all of which have the same probability q of resulting in “success.” </span></a> with parameters <span class="math inline">\((m,q)\)</span>, with <span class="math inline">\(m\)</span> a positive integer and <span class="math inline">\(q\in[0,1]\)</span>. Note that when <span class="math inline">\(q=0\)</span> (resp., <span class="math inline">\(q=1\)</span>) then the distribution is degenerate with <span class="math inline">\(N=0\)</span> (resp., <span class="math inline">\(N=m\)</span>) with probability <span class="math inline">\(1\)</span>. Clearly, its support when <span class="math inline">\(q\in(0,1)\)</span> equals <span class="math inline">\(\{0,1,\ldots,m\}\)</span> with <em>pmf</em> given by<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
-<p><span class="math display">\[\begin{equation*}
-p_k:= \binom{m}{k} q^k (1-q)^{m-k}, \quad k=0,\ldots,m.
-\end{equation*}\]</span></p>
+<p><span class="math display">\[
+p_k= \binom{m}{k} q^k (1-q)^{m-k}, \quad k=0,\ldots,m.
+\]</span></p>
 <p>where <span class="math display">\[\binom{m}{k} = \frac{m!}{k!(m-k)!}\]</span></p>
-<p>The reason for its name is that the <em>pmf</em> takes values among the terms that arise from the binomial expansion of <span class="math inline">\((q +(1-q))^m\)</span>. This realization then leads to the the following expression for the <em>pgf</em> of the binomial distribution:
-<span class="math display">\[
-P_N(z):= \sum_{k=0}^m z^k \binom{m}{k} q^k (1-q)^{m-k} = \sum_{k=0}^m  \binom{m}{k} (zq)^k (1-q)^{m-k} = (qz+(1-q))^m = (1+q(z-1))^m.
-\]</span>
-Note that the above expression for the <em>pgf</em> confirms the fact that the binomial distribution is the <a href="#" class="tooltip" style="color:green"><em>m-convolution</em><span style="font-size:8pt">The addition of m independent random variables</span></a> of the Bernoulli distribution, which is the binomial distribution with <span class="math inline">\(m=1\)</span> and <em>pgf</em> <span class="math inline">\((1+q(z-1))\)</span>. Also, note that the <em>mgf</em> of the binomial distribution is given by <span class="math inline">\((1+q(e^t-1))^m\)</span>.</p>
-<p>The central moments of the binomial distribution can be found in a few different ways. To emphasize the key property that it is a <span class="math inline">\(m\)</span>-convolution of the Bernoulli distribution, we derive below the moments using this property. We begin by observing that the Bernoulli distribution with parameter <span class="math inline">\(q\)</span> assigns probability of <span class="math inline">\(q\)</span> and <span class="math inline">\(1-q\)</span> to <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span>, respectively. So its mean equals <span class="math inline">\(q\)</span> (<span class="math inline">\(=0\times (1-q) + 1\times q\)</span>); note that its raw second moment equals its mean as <span class="math inline">\(N^2=N\)</span> with probability <span class="math inline">\(1\)</span>. Using these two facts we see that the variance equals <span class="math inline">\(q(1-q)\)</span>. Moving on to the binomial distribution with parameters <span class="math inline">\(m\)</span> and <span class="math inline">\(q\)</span>, using the fact that it is the <span class="math inline">\(m\)</span>-convolution of the Bernoulli distribution, we write <span class="math inline">\(N\)</span> as the sum of <span class="math inline">\(N_1,\ldots,N_m\)</span>, where <span class="math inline">\(N_i\)</span> are <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Independent and identically distributed</span></a> Bernoulli variates. Now using the moments of Bernoulli and linearity of the expectation, we see that
-<span class="math display">\[
-\mathrm{E}[{N}]=\mathrm{E}[{\sum_{i=1}^m N_i}] = \sum_{i=1}^m ~\mathrm{E}[N_i] = mq.
-\]</span>
-Also, using the fact that the variance of the sum of independent random variables is the sum of their variances, we see that<br />
+<p>The reason for its name is that the <em>pmf</em> takes values among the terms that arise from the binomial expansion of <span class="math inline">\((q +(1-q))^m\)</span>. This realization then leads to the the following expression for the <em>pgf</em> of the binomial distribution:</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+P_N(z) &amp;= \sum_{k=0}^m z^k \binom{m}{k} q^k (1-q)^{m-k} \\
+&amp;= \sum_{k=0}^m  \binom{m}{k} (zq)^k (1-q)^{m-k} \\
+&amp;= (qz+(1-q))^m = (1+q(z-1))^m.
+\end{array}
+\]</span></p>
+<p>Note that the above expression for the <em>pgf</em> confirms the fact that the binomial distribution is the <a href="#" class="tooltip" style="color:green"><em>m-convolution</em><span style="font-size:8pt">The addition of m independent random variables</span></a> of the Bernoulli distribution, which is the binomial distribution with <span class="math inline">\(m=1\)</span> and <em>pgf</em> <span class="math inline">\((1+q(z-1))\)</span>. By “m-convolution,” we mean that we can write <span class="math inline">\(N\)</span> as the sum of <span class="math inline">\(N_1,\ldots,N_m\)</span>. Here, <span class="math inline">\(N_i\)</span> are <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Independent and identically distributed</span></a> Bernoulli variates. Also, note that the <em>mgf</em> of the binomial distribution is given by <span class="math inline">\((1+q(e^t-1))^m\)</span>.</p>
+<p>The mean and variance of the binomial distribution can be found in a few different ways. To emphasize the key property that it is a <span class="math inline">\(m\)</span>-convolution of the Bernoulli distribution, we derive below the moments using this property. We begin by observing that the Bernoulli distribution with parameter <span class="math inline">\(q\)</span> assigns probability of <span class="math inline">\(q\)</span> and <span class="math inline">\(1-q\)</span> to <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span>, respectively. So its mean equals <span class="math inline">\(q\)</span> (<span class="math inline">\(=0\times (1-q) + 1\times q\)</span>); note that its raw second moment equals its mean as <span class="math inline">\(N^2=N\)</span> with probability <span class="math inline">\(1\)</span>. Using these two facts we see that the variance equals <span class="math inline">\(q(1-q)\)</span>. Moving on to the binomial distribution with parameters <span class="math inline">\(m\)</span> and <span class="math inline">\(q\)</span>, using the fact that it is the <span class="math inline">\(m\)</span>-convolution of the Bernoulli distribution, we write <span class="math inline">\(N\)</span> as the sum of <span class="math inline">\(N_1,\ldots,N_m\)</span>, where <span class="math inline">\(N_i\)</span> are <em>iid</em> Bernoulli variates, as above. Now using the moments of Bernoulli and linearity of the expectation, we see that</p>
+<p><span class="math display">\[
+\mathrm{E}[{N}]=\mathrm{E}\left[{\sum_{i=1}^m N_i}\right] = \sum_{i=1}^m ~\mathrm{E}[N_i] = mq.
+\]</span></p>
+<p>Also, using the fact that the variance of the sum of independent random variables is the sum of their variances, we see that<br />
 <span class="math display">\[
 \mathrm{Var}[{N}]=\mathrm{Var}~\left({\sum_{i=1}^m N_i}\right)=\sum_{i=1}^m \mathrm{Var}[{N_i}] = mq(1-q).
 \]</span>
@@ -1115,11 +1122,11 @@ with the right hand side of the above equation being the <em>mgf</em> of the Poi
 </div>
 </div>
 <div id="S:the-a-b-0-class" class="section level2">
-<h2><span class="header-section-number">2.3</span> The (a, b, 0) Class</h2>
+<h2><span class="header-section-number">2.3</span> The (<em>a</em>, <em>b</em>, 0) Class</h2>
 <hr />
 <p>In this section, you learn how to:</p>
 <ul>
-<li>Define the (a,b,0) class of frequency distributions</li>
+<li>Define the (<em>a</em>,<em>b</em>,0) class of frequency distributions</li>
 <li>Discuss the importance of the recursive relationship underpinning this class of distributions</li>
 <li>Identify conditions under which this general class reduces to each of the binomial, Poisson, and negative binomial distributions</li>
 </ul>
@@ -1140,11 +1147,11 @@ and that for the negative binomial distribution
 <span class="math display">\[
 \frac{p_k}{p_{k-1}}=\frac{\beta}{1+\beta}+\left(\frac{(r-1)\beta}{1+\beta}\right)\frac{1}{k}, \quad k\geq 1. 
 \]</span>
-The above relationships are all of the form
-<span class="math display" id="eq:ab0">\[\begin{equation}
+The above relationships are all of the form</p>
+<p><span class="math display" id="eq:ab0">\[
 \frac{p_k}{p_{k-1}}=a+\frac{b}{k}, \quad k\geq 1; 
 \tag{2.1}
-\end{equation}\]</span></p>
+\]</span></p>
 <p>this raises the question if there are any other distributions which satisfy this seemingly general recurrence relation. Note that the ratio on the left, the ratio of two probabilities, is non-negative.</p>
 <p>To begin with, let <span class="math inline">\(a&lt;0\)</span>. In this case as <span class="math inline">\(k\rightarrow \infty\)</span>, <span class="math inline">\((a+b/k)\rightarrow a&lt;0\)</span>. It follows that if <span class="math inline">\(a&lt;0\)</span> then <span class="math inline">\(b\)</span> should satisfy <span class="math inline">\(b=-ka\)</span>, for some <span class="math inline">\(k\geq 1\)</span>. Any such pair <span class="math inline">\((a,b)\)</span> can be written as
 <span class="math display">\[
@@ -1156,7 +1163,7 @@ note that the case <span class="math inline">\(a&lt;0\)</span> with <span class=
 <span class="math display">\[
 p_k = \binom{k+r-1}{k} p_0 a^k, \quad k=1,2,\ldots. 
 \]</span>
-The above series converges for <span class="math inline">\(a&lt;1\)</span> when <span class="math inline">\(r&gt;0\)</span>, with the sum given by <span class="math inline">\(p_0*((1-a)^{(-r)}-1)\)</span>. Hence, equating the latter to <span class="math inline">\(1-p_0\)</span> we get <span class="math inline">\(p_0=(1-a)^{(r)}\)</span>. So in this case the pair <span class="math inline">\((a,b)\)</span> is of the form <span class="math inline">\((a,(r-1)a)\)</span>, for <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(0&lt;a&lt;1\)</span>; since an equivalent parametrization is <span class="math inline">\((\beta/(1+\beta),(r-1)\beta/(1+\beta))\)</span>, for <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(\beta&gt;0\)</span>, we see from above that such distributions are negative binomial distributions.</p>
+The above series converges for <span class="math inline">\(a&lt;1\)</span> when <span class="math inline">\(r&gt;0\)</span>, with the sum given by <span class="math inline">\(p_0 \cdot ((1-a)^{(-r)}-1)\)</span>. Hence, equating the latter to <span class="math inline">\(1-p_0\)</span> we get <span class="math inline">\(p_0=(1-a)^{(r)}\)</span>. So in this case the pair <span class="math inline">\((a,b)\)</span> is of the form <span class="math inline">\((a,(r-1)a)\)</span>, for <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(0&lt;a&lt;1\)</span>; since an equivalent parametrization is <span class="math inline">\((\beta/(1+\beta),(r-1)\beta/(1+\beta))\)</span>, for <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(\beta&gt;0\)</span>, we see from above that such distributions are negative binomial distributions.</p>
 <p>From the above development we see that not only does the recurrence <a href="C-Frequency-Modeling.html#eq:ab0">(2.1)</a> tie these three distributions together, but also it characterizes them. For this reason these three distributions are collectively referred to in the actuarial literature as <a href="#" class="tooltip" style="color:green"><em>(a,b,0) class</em><span style="font-size:8pt"></span></a> of distributions, with <span class="math inline">\(0\)</span> referring to the starting point of the recurrence. Note that the value of <span class="math inline">\(p_0\)</span> is implied by <span class="math inline">\((a,b)\)</span> since the probabilities have to sum to one. Of course, <a href="C-Frequency-Modeling.html#eq:ab0">(2.1)</a> as a recurrence relation for <span class="math inline">\(p_k\)</span> makes the computation of the <em>pmf</em> efficient by removing redundancies. Later, we will see that it does so even in the case of compound distributions with the frequency distribution belonging to the <span class="math inline">\((a,b,0)\)</span> class - this fact is the more important motivating reason to study these three distributions from this viewpoint.</p>
 <p><strong>Example 2.3.1.</strong>
 A discrete probability distribution has the following properties
@@ -1217,11 +1224,11 @@ Finally, since the mean of a negative binomial is <span class="math inline">\(r\
 <span class="math display">\[
 p_\theta(x)=e^{-\theta}\frac{\theta^x}{x!}, \quad x=0,1,\ldots,
 \]</span>
-with <span class="math inline">\(\theta=(0,\infty)\)</span>. In the case of the binomial distribution we have
+with <span class="math inline">\(\theta &gt; 0\)</span>. In the case of the binomial distribution we have
 <span class="math display">\[
 p_\theta(x)=\binom{m}{x} q^x(1-q)^{m-x}, \quad x=0,1,\ldots,m,
 \]</span>
-with <span class="math inline">\(\theta:=(m,q)\in \{0,1,2,\ldots\}\times[0,1]\)</span>. Let us suppose that the observations are <span class="math inline">\(x_1,\ldots,x_n\)</span>, observed values of the random sample <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> presented earlier. In this case, the probability of observing this sample from <span class="math inline">\(p_\theta\)</span> equals
+with <span class="math inline">\(\theta=(m,q)\in \{0,1,2,\ldots\}\times[0,1]\)</span>. Let us suppose that the observations are <span class="math inline">\(x_1,\ldots,x_n\)</span>, observed values of the random sample <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> presented earlier. In this case, the probability of observing this sample from <span class="math inline">\(p_\theta\)</span> equals
 <span class="math display">\[
 \prod_{i=1}^n p_\theta(x_i).
 \]</span>
@@ -1244,7 +1251,7 @@ q(1-q)^2=\left(q-\frac{1}{3}\right)^2\left(q-\frac{4}{3}\right)+\frac{4}{27},
 \]</span>
 and conclude that the maximum equals <span class="math inline">\(4/27\)</span>, and is attained at <span class="math inline">\(q=1/3\)</span> (using the fact that the first term is non-positive in the interval <span class="math inline">\([0,1]\)</span>). But as is apparent, this way of deriving the <em>mle</em> using algebra does not generalize. In general, one resorts to calculus to derive the <em>mle</em> - note that for some likelihoods one may have to resort to other optimization methods, especially when the likelihood has many <a href="#" class="tooltip" style="color:green"><em>local extrema</em><span style="font-size:8pt">The largest and smallest value of the function within a given range</span></a>. It is customary to equivalently maximize the logarithm of the likelihood<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> <span class="math inline">\(L(\cdot)\)</span>, denoted by <span class="math inline">\(l(\cdot)\)</span>, and look at the set of zeros of its first derivative<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> <span class="math inline">\(l&#39;(\cdot)\)</span>. In the case of the above likelihood, <span class="math inline">\(l(q)=\log(q)+2\log(1-q)\)</span>, and
 <span class="math display">\[
-l&#39;(q):=\frac{\rm d}{{\rm d}q}l(q)=\frac{1}{q}-\frac{2}{1-q}.
+l&#39;(q)=\frac{\rm d}{{\rm d}q}l(q)=\frac{1}{q}-\frac{2}{1-q}.
 \]</span>
 The unique zero of <span class="math inline">\(l&#39;(\cdot)\)</span> equals <span class="math inline">\(1/3\)</span>, and since <span class="math inline">\(l&#39;&#39;(\cdot)\)</span> is negative, we have <span class="math inline">\(1/3\)</span> is the unique maximizer of the likelihood and hence its maximum likelihood estimate.</p>
 <div class="figure" style="text-align: center"><span id="fig:berlik"></span>
@@ -1258,7 +1265,7 @@ Figure 2.1: Likelihood of a <span class="math inline">\((0,1,0)\)</span> <span c
 <h3><span class="header-section-number">2.4.2</span> Frequency Distributions MLE</h3>
 <p>In the following, we derive the maximum likelihood estimator, <em>MLE</em>, for the three members of the <span class="math inline">\((a,b,0)\)</span> class. We begin by summarizing the discussion above. In the setting of observing <em>iid</em>, independent and identically distributed, random variables <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> from a distribution with <em>pmf</em> <span class="math inline">\(p_\theta\)</span>, where <span class="math inline">\(\theta\)</span> takes an unknown value in <span class="math inline">\(\Theta\subseteq \mathbb{R}^d\)</span>, the likelihood <span class="math inline">\(L(\cdot)\)</span>, a function on <span class="math inline">\(\Theta\)</span> is defined as
 <span class="math display">\[
-L(\theta):=\prod_{i=1}^n p_\theta(x_i),
+L(\theta)=\prod_{i=1}^n p_\theta(x_i),
 \]</span>
 where <span class="math inline">\(x_1,\ldots,x_n\)</span> are the observed values. The <em>MLE</em> of <span class="math inline">\(\theta\)</span>, denoted as <span class="math inline">\(\hat{\theta}_{\rm MLE}\)</span>, is a function which maps the observations to an element of the set of maximizers of <span class="math inline">\(L(\cdot)\)</span>, namely
 <span class="math display">\[
@@ -1268,11 +1275,11 @@ Note the above set is a function of the observations, even though this dependenc
 In the case of the three distributions that we study, and quite generally, the above set is a singleton with probability tending to one (with increasing sample size). In other words, for many commonly used distributions and when the sample size is large, the likelihood estimate is uniquely defined with high probability.</p>
 <p>In the following, we assume that we have observed <span class="math inline">\(n\)</span> <em>iid</em> random variables <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> from the distribution under consideration, even though the parametric value is unknown. Also, <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> will denote the observed values. We note that in the case of count data, and data from discrete distributions in general, the likelihood can alternately be represented as
 <span class="math display">\[
-L(\theta):=\prod_{k\geq 0} \left(p_\theta(k)\right)^{m_k},
+L(\theta)=\prod_{k\geq 0} \left(p_\theta(k)\right)^{m_k},
 \]</span>
 where
 <span class="math display">\[
-m_k:= \left\vert \{i\vert x_i=k, 1\leq i \leq n\} \right\vert=\sum_{i= 1}^n I(x_i=k), \quad k\geq 0.
+m_k= \left\vert \{i\vert x_i=k, 1\leq i \leq n\} \right\vert=\sum_{i= 1}^n I(x_i=k), \quad k\geq 0.
 \]</span>
 Note that this transformation retains all of the data, compiling it in a streamlined manner. For large <span class="math inline">\(n\)</span> it leads to compression of the data in the sense of <em>sufficiency</em>. Below, we present expressions for the <em>MLE</em> in terms of <span class="math inline">\(\{m_k\}_{k\geq 1}\)</span> as well.</p>
 <p><strong>MLE - Poisson Distribution:</strong> In this case, as noted above, the likelihood is given by
@@ -1304,12 +1311,12 @@ and the log-likelihood by
 <span class="math display">\[
 l(m,q)= \sum_{i=1}^n \log\left(\binom{m}{x_i}\right) + \left({\sum_{i=1}^n x_i}\right)\log(q)+ \left({nm-\sum_{i=1}^n x_i}\right)\log(1-q). 
 \]</span>
-Note that since <span class="math inline">\(m\)</span> takes only non-negative integer values, we cannot use multivariate calculus to find the optimal values. Nevertheless, we can use single variable calculus to show that
-<span class="math display" id="eq:binmle">\[\begin{equation}
+Note that since <span class="math inline">\(m\)</span> takes only non-negative integer values, we cannot use multivariate calculus to find the optimal values. Nevertheless, we can use single variable calculus to show that</p>
+<p><span class="math display" id="eq:binmle">\[
 \hat{q}_{\rm MLE}\times \hat{m}_{\rm MLE}= \frac{1}{n}\sum_{i=1}^n X_i.  
 \tag{2.2}
-\end{equation}\]</span>
-Towards this we note that for a fixed value of <span class="math inline">\(m\)</span>,
+\]</span></p>
+<p>Towards this we note that for a fixed value of <span class="math inline">\(m\)</span>,
 <span class="math display">\[
 \frac{\delta}{\delta q} l(m,q) = \left({\sum_{i=1}^n x_i}\right)\frac{1}{q}- \left({nm-\sum_{i=1}^n x_i}\right)\frac{1}{1-q},
 \]</span>
@@ -1321,22 +1328,22 @@ The above implies that for any fixed value of <span class="math inline">\(m\)</s
 <span class="math display">\[
 mq=\frac{1}{n}\sum_{i=1}^n X_i,
 \]</span>
-and hence we establish equation <a href="C-Frequency-Modeling.html#eq:binmle">(2.2)</a>. The above reduces the task to the search for <span class="math inline">\(\hat{m}_{\rm MLE}\)</span>, which is member of the set of the maximizers of
-<span class="math display" id="eq:binlikm">\[\begin{equation}
+and hence we establish equation <a href="C-Frequency-Modeling.html#eq:binmle">(2.2)</a>. The above reduces the task to the search for <span class="math inline">\(\hat{m}_{\rm MLE}\)</span>, which is member of the set of the maximizers of</p>
+<p><span class="math display" id="eq:binlikm">\[
 L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right).
 \tag{2.3}
-\end{equation}\]</span>
-Note the likelihood would be zero for values of <span class="math inline">\(m\)</span> smaller than <span class="math inline">\(\max\limits_{1\leq i \leq n}x_i\)</span>, and hence
+\]</span></p>
+<p>Note the likelihood would be zero for values of <span class="math inline">\(m\)</span> smaller than <span class="math inline">\(\max\limits_{1\leq i \leq n}x_i\)</span>, and hence
 <span class="math display">\[
 \hat{m}_{\rm MLE}\geq \max_{1\leq i \leq n}x_i.
 \]</span>
 Towards specifying an algorithm to compute <span class="math inline">\(\hat{m}_{\rm MLE}\)</span>, we first point out that for some data sets <span class="math inline">\(\hat{m}_{\rm MLE}\)</span> could equal <span class="math inline">\(\infty\)</span>, indicating that a Poisson distribution would render a better fit than any binomial distribution. This is so as the binomial distribution with parameters <span class="math inline">\((m,\overline{x}/m)\)</span> approaches the Poisson distribution with parameter <span class="math inline">\(\overline{x}\)</span> with <span class="math inline">\(m\)</span> approaching infinity. The fact that some data sets <strong>prefer</strong> a Poisson distribution should not be surprising since in the above sense the set of Poisson distribution is on the boundary of the set of binomial distributions.</p>
-<p>Interestingly, in <span class="citation">(Olkin, Petkau, and Zidek <a href="#ref-olkin1981" role="doc-biblioref">1981</a>)</span> they show that if the sample mean is less than or equal to the sample variance then <span class="math inline">\(\hat{m}_{\rm MLE}=\infty\)</span>; otherwise, there exists a finite <span class="math inline">\(m\)</span> that maximizes equation <a href="C-Frequency-Modeling.html#eq:binlikm">(2.3)</a>. In Figure <a href="C-Frequency-Modeling.html#fig:MLEm">2.2</a> below we display the plot of <span class="math inline">\(L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)\)</span> for three different samples of size <span class="math inline">\(5\)</span>; they differ only in the value of the sample maximum. The first sample of <span class="math inline">\((2,2,2,4,5)\)</span> has the ratio of sample mean to sample variance greater than <span class="math inline">\(1\)</span> (<span class="math inline">\(1.875\)</span>), the second sample of <span class="math inline">\((2,2,2,4,6)\)</span> has the ratio equal to <span class="math inline">\(1.25\)</span> which is closer to <span class="math inline">\(1\)</span>, and the third sample of <span class="math inline">\((2,2,2,4,7)\)</span> has the ratio less than <span class="math inline">\(1\)</span> (<span class="math inline">\(0.885\)</span>). For these three samples, as shown in Figure <a href="C-Frequency-Modeling.html#fig:MLEm">2.2</a>, <span class="math inline">\(\hat{m}_{\rm MLE}\)</span> equals <span class="math inline">\(7\)</span>, <span class="math inline">\(18\)</span> and <span class="math inline">\(\infty\)</span>, respectively. Note that the limiting value of <span class="math inline">\(L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)\)</span> as <span class="math inline">\(m\)</span> approaches infinity equals
-<span class="math display" id="eq:Poilik">\[\begin{equation}
+<p>Interestingly, in <span class="citation">(Olkin, Petkau, and Zidek <a href="#ref-olkin1981" role="doc-biblioref">1981</a>)</span> they show that if the sample mean is less than or equal to the sample variance then <span class="math inline">\(\hat{m}_{\rm MLE}=\infty\)</span>; otherwise, there exists a finite <span class="math inline">\(m\)</span> that maximizes equation <a href="C-Frequency-Modeling.html#eq:binlikm">(2.3)</a>. In Figure <a href="C-Frequency-Modeling.html#fig:MLEm">2.2</a> below we display the plot of <span class="math inline">\(L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)\)</span> for three different samples of size <span class="math inline">\(5\)</span>; they differ only in the value of the sample maximum. The first sample of <span class="math inline">\((2,2,2,4,5)\)</span> has the ratio of sample mean to sample variance greater than <span class="math inline">\(1\)</span> (<span class="math inline">\(1.875\)</span>), the second sample of <span class="math inline">\((2,2,2,4,6)\)</span> has the ratio equal to <span class="math inline">\(1.25\)</span> which is closer to <span class="math inline">\(1\)</span>, and the third sample of <span class="math inline">\((2,2,2,4,7)\)</span> has the ratio less than <span class="math inline">\(1\)</span> (<span class="math inline">\(0.885\)</span>). For these three samples, as shown in Figure <a href="C-Frequency-Modeling.html#fig:MLEm">2.2</a>, <span class="math inline">\(\hat{m}_{\rm MLE}\)</span> equals <span class="math inline">\(7\)</span>, <span class="math inline">\(18\)</span> and <span class="math inline">\(\infty\)</span>, respectively. Note that the limiting value of <span class="math inline">\(L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)\)</span> as <span class="math inline">\(m\)</span> approaches infinity equals</p>
+<p><span class="math display" id="eq:Poilik">\[
 \left(\prod_{i=1}^n x_i! \right)^{-1} \exp\left\{-\sum_{i=1}^n x_i\right\} \overline{x}^{n\overline{x}}. 
 \tag{2.4}
-\end{equation}\]</span>
-Also, note that Figure <a href="C-Frequency-Modeling.html#fig:MLEm">2.2</a> shows that the <em>MLE</em> of <span class="math inline">\(m\)</span> is non-<a href="#" class="tooltip" style="color:green"><em>robust</em><span style="font-size:8pt">Resistant to errors in the results, produced by deviations from assumptions</span></a>, <em>i.e.</em> changes in a small proportion of the data set can cause large changes in the estimator.</p>
+\]</span></p>
+<p>Also, note that Figure <a href="C-Frequency-Modeling.html#fig:MLEm">2.2</a> shows that the <em>MLE</em> of <span class="math inline">\(m\)</span> is non-<a href="#" class="tooltip" style="color:green"><em>robust</em><span style="font-size:8pt">Resistant to errors in the results, produced by deviations from assumptions</span></a>, <em>i.e.</em> changes in a small proportion of the data set can cause large changes in the estimator.</p>
 <p>The above discussion suggests the following simple algorithm:</p>
 <ul>
 <li><em>Step 1</em>. If the sample mean is less than or equal to the sample variance, <span class="math inline">\(\hat{m}_{MLE}=\infty\)</span>. The <em>MLE</em> suggested distribution is a Poisson distribution with <span class="math inline">\(\hat{\lambda}=\overline{x}\)</span>.</li>
@@ -1387,21 +1394,20 @@ A simple but quickly converging iterative root finding algorithm is the <a href=
 <em>Step i</em>. Choose an approximate solution, say <span class="math inline">\(r_0\)</span>. Set <span class="math inline">\(k\)</span> to <span class="math inline">\(0\)</span>.<br />
 <em>Step ii</em>. Define <span class="math inline">\(r_{k+1}\)</span> as
 <span class="math display">\[
-r_{k+1}:= r_k - \frac{\left(\frac{1}{n}\right)\sum_{i=1}^n \sum_{j=1}^{x_i}\frac{1}{r_k-1+j} - \log(r_k+\overline{x}) + \log(r_k)}{\frac{\overline{x}}{r_k(r_k+\overline{x})}-\left(\frac{1}{n}\right)\sum_{i=1}^n \sum_{j=1}^{x_i}\frac{1}{(r_k-1+j)^2}}
+r_{k+1}= r_k - \frac{\left(\frac{1}{n}\right)\sum_{i=1}^n \sum_{j=1}^{x_i}\frac{1}{r_k-1+j} - \log(r_k+\overline{x}) + \log(r_k)}{\frac{\overline{x}}{r_k(r_k+\overline{x})}-\left(\frac{1}{n}\right)\sum_{i=1}^n \sum_{j=1}^{x_i}\frac{1}{(r_k-1+j)^2}}
 \]</span><br />
 <em>Step iii</em>. If <span class="math inline">\(r_{k+1}\sim r_k\)</span>, then report <span class="math inline">\(r_{k+1}\)</span> as <em>maximum likelihood estimate</em>; else increment <span class="math inline">\(k\)</span> by <span class="math inline">\(1\)</span> and repeat <em>Step ii</em>.</p>
 <p>For example, we simulated a <span class="math inline">\(5\)</span> observation sample of <span class="math inline">\(41, 49, 40, 27, 23\)</span> from the negative binomial with parameters <span class="math inline">\(r=10\)</span> and <span class="math inline">\(\beta=5\)</span>. Choosing the starting value of <span class="math inline">\(r\)</span> such that
 <span class="math display">\[
 r\beta=\hat{\mu} \quad \hbox{and} \quad r\beta(1+\beta)=\hat{\sigma}^2
 \]</span>
-where <span class="math inline">\(\hat{\mu}\)</span> represents the estimated mean and <span class="math inline">\(hat{\sigma}^2\)</span> is the estimated variance. This leads to the starting value for <span class="math inline">\(r\)</span> of <span class="math inline">\(23.14286\)</span>. The iterates of <span class="math inline">\(r\)</span> from the Newton’s method are
+where <span class="math inline">\(\hat{\mu}\)</span> represents the estimated mean and <span class="math inline">\(\hat{\sigma}^2\)</span> is the estimated variance. This leads to the starting value for <span class="math inline">\(r\)</span> of <span class="math inline">\(23.14286\)</span>. The iterates of <span class="math inline">\(r\)</span> from the Newton’s method are
 <span class="math display">\[
 21.39627, 21.60287, 21.60647, 21.60647;
 \]</span>
-the rapid convergence seen above is typical of the Newton’s method. Hence in this example, <span class="math inline">\(\hat{r}_{MLE}\sim21.60647\)</span> and <span class="math inline">\(\hat{\beta}_{MLE}=8.3308\)</span>.</p>
-<p><em>R Implementation of Newton’s Method - Negative Binomial MLE for <span class="math inline">\(r\)</span></em></p>
+the rapid convergence seen above is typical of the Newton’s method. Hence in this example, <span class="math inline">\(\hat{r}_{MLE} \sim 21.60647\)</span> and <span class="math inline">\(\hat{\beta}_{MLE} = 1.66616\)</span>.</p>
 <h5 style="text-align: center;">
-<a id="displayCode.Freq.1" href="javascript:togglecode('toggleCode.Freq.1','displayCode.Freq.1');"><i><strong>Show R Code</strong></i></a>
+<a id="displayCode.Freq.1" href="javascript:togglecode('toggleCode.Freq.1','displayCode.Freq.1');"><i><strong>Show R Implementation of Newtons Method - Negative Binomial MLE for r</strong></i></a>
 </h5>
 <div id="toggleCode.Freq.1" style="display: none">
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">Newton&lt;-<span class="cf">function</span>(x,abserr){</a>
@@ -1467,7 +1473,7 @@ Figure 2.3: Plot of <span class="math inline">\((a,b,0)\)</span> Partially Maxim
 <p>In this section, you learn how to:</p>
 <ul>
 <li>Define the (a,b,1) class of frequency distributions and discuss the importance of the recursive relationship underpinning this class of distributions</li>
-<li>Interpret zero truncated and modifed versions of the binomial, Poisson, and negative binomial distributions</li>
+<li>Interpret zero truncated and modified versions of the binomial, Poisson, and negative binomial distributions</li>
 <li>Compute probabilities using the recursive relationship</li>
 </ul>
 <hr />
@@ -1477,11 +1483,11 @@ Figure 2.3: Plot of <span class="math inline">\((a,b,0)\)</span> Partially Maxim
 <h3><span class="header-section-number">2.5.1</span> Zero Truncation or Modification</h3>
 <p>Let us suppose that we are looking at auto insurance policies which appear in a database of auto claims made in a certain period. If one is to study the number of claims that these policies have made during this period, then clearly the distribution has to assign a probability of zero to the count variable assuming the value zero. In other words, by restricting attention to count data from policies in the database of claims, we have in a sense zero-truncated the count data of all policies. In personal lines (like auto), policyholders may not want to report that first claim because of fear that it may increase future insurance rates - this behavior inflates the proportion of zero counts. Examples such as the latter modify the proportion of zero counts. Interestingly, natural modifications of the three distributions considered above are able to provide good fits to zero-modified/truncated data sets arising in insurance.</p>
 <p>As presented below, we modify the probability assigned to zero count by the <span class="math inline">\((a,b,0)\)</span> class while maintaining the relative probabilities assigned to non-zero counts - zero modification. Note that since the <span class="math inline">\((a,b,0)\)</span> class of distributions satisfies the recurrence <a href="C-Frequency-Modeling.html#eq:ab0">(2.1)</a>, maintaining relative probabilities of non-zero counts implies that recurrence <a href="C-Frequency-Modeling.html#eq:ab0">(2.1)</a> is satisfied for <span class="math inline">\(k\geq 2\)</span>. This leads to the definition of the following class of distributions.</p>
-<p><strong>Definition</strong>. A count distribution is a member of the <span class="math inline">\((a, b, 1)\)</span> class if for some constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> the probabilities <span class="math inline">\(p_k\)</span> satisfy
-<span class="math display" id="eq:ab1">\[\begin{equation}
+<p><strong>Definition</strong>. A count distribution is a member of the <span class="math inline">\((a, b, 1)\)</span> class if for some constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> the probabilities <span class="math inline">\(p_k\)</span> satisfy</p>
+<p><span class="math display" id="eq:ab1">\[
 \frac{p_k}{p_{k-1}}=a+\frac{b}{k},\quad k\geq 2.
 \tag{2.5}
-\end{equation}\]</span></p>
+\]</span></p>
 <p>Note that since the recursion starts with <span class="math inline">\(p_1\)</span>, and not <span class="math inline">\(p_0\)</span>, we refer to this super-class of <span class="math inline">\((a,b,0)\)</span> distributions by <a href="#" class="tooltip" style="color:green"><em>(a,b,1)</em><span style="font-size:8pt">A count distribution with probabilities satisfying p_k/p_{k-1}=a+b/k, for some some constants a and b and k&gt;=2</span></a>. To understand this class, recall that each valid pair of values for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> of the <span class="math inline">\((a,b,0)\)</span> class corresponds to a unique vector of probabilities <span class="math inline">\(\{p_k\}_{k\geq 0}\)</span>. If we now look at the probability vector <span class="math inline">\(\{\tilde{p}_k\}_{k\geq 0}\)</span> given by
 <span class="math display">\[
 \tilde{p}_k= \frac{1-\tilde{p}_0}{1-p_0}\cdot p_k, \quad k\geq 1,
@@ -1560,21 +1566,21 @@ p_3^M=p_2^M\left(\frac{\lambda}{3}\right)=0.083476\\\hline
 <hr />
 <p>In many applications, the underlying population consists of naturally defined sub-groups with some homogeneity within each sub-group. In such cases it is convenient to model the individual sub-groups, and in a ground-up manner model the whole population. As we shall see below, beyond the aesthetic appeal of the approach, it also extends the range of applications that can be catered to by standard parametric distributions.</p>
 <p>Let <span class="math inline">\(k\)</span> denote the number of defined sub-groups in a population, and let <span class="math inline">\(F_i\)</span> denote the distribution of an observation drawn from the <span class="math inline">\(i\)</span>-th subgroup. If we let <span class="math inline">\(\alpha_i\)</span> denote the proportion of the population in the <span class="math inline">\(i\)</span>-th subgroup, with <span class="math inline">\(\sum_{i=1}^k \alpha_i=1\)</span>, then the distribution of a randomly chosen observation from the population, denoted by <span class="math inline">\(F\)</span>, is given by
-<span class="math display" id="eq:mixdefn">\[\begin{equation}
+<span class="math display" id="eq:mixdefn">\[
 F(x)=\sum_{i=1}^k \alpha_i \cdot F_i(x).
 \tag{2.6}
-\end{equation}\]</span></p>
+\]</span></p>
 <p>The above expression can be seen as a direct application of the Law of Total Probability. As an example, consider a population of drivers split broadly into two sub-groups, those with at most <span class="math inline">\(5\)</span>-years of driving experience and those with more than <span class="math inline">\(5\)</span>-years experience. Let <span class="math inline">\(\alpha\)</span> denote the proportion of drivers with less than <span class="math inline">\(5\)</span> years experience, and <span class="math inline">\(F_{\leq 5}\)</span> and <span class="math inline">\(F_{&gt; 5}\)</span> denote the distribution of the count of claims in a year for a driver in each group, respectively. Then the distribution of claim count of a randomly selected driver is given by
 <span class="math display">\[
 \alpha\cdot F_{\leq 5}(x) + (1-\alpha)F_{&gt; 5}(x).
 \]</span></p>
 <p>An alternate definition of a <a href="#" class="tooltip" style="color:green"><em>mixture distribution</em><span style="font-size:8pt">The probability distribution of a random variable that is derived from a collection of other random variables as follows: first, a random variable is selected by chance from the collection according to given probabilities of selection, and then the value of the selected random variable is realized</span></a> is as follows. Let <span class="math inline">\(N_i\)</span> be a random variable with distribution <span class="math inline">\(F_i\)</span>, <span class="math inline">\(i=1,\ldots, k\)</span>. Let <span class="math inline">\(I\)</span> be a random variable taking values <span class="math inline">\(1,2,\ldots,k\)</span> with probabilities <span class="math inline">\(\alpha_1,\ldots,\alpha_k\)</span>, respectively. Then the random variable <span class="math inline">\(N_I\)</span> has a distribution given by equation <a href="C-Frequency-Modeling.html#eq:mixdefn">(2.6)</a><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
 <p>In <a href="C-Frequency-Modeling.html#eq:mixdefn">(2.6)</a> we see that the distribution function is a convex combination of the component distribution functions. This result easily extends to the density function, the survival function, the raw moments, and the expectation as these are all linear mappings of the distribution function. We note that this is not true for central moments like the variance, and conditional measures like the hazard rate function. In the case of variance it is easily seen as</p>
-<p><span class="math display" id="eq:LawTotalVariation">\[\begin{equation}
+<p><span class="math display" id="eq:LawTotalVariation">\[
 \mathrm{Var}{[N_I]}=\mathrm{E}[{\mathrm{Var}[{N_I\vert I}]]} + \mathrm{Var}[{\mathrm{E}[{N_I|I}}]]=\sum_{i=1}^k \alpha_i \mathrm{Var}[{N_i}] + \mathrm{Var}[{\mathrm{E}[{N_I|I}}]] .
 \tag{2.7}
-\end{equation}\]</span></p>
-<p>Appendix <a href="C-AppB.html#C:AppB">16</a> provides additonal background about this important expression.</p>
+\]</span></p>
+<p>Appendix Chapter <a href="C-AppB.html#C:AppB">16</a> provides additional background about this important expression.</p>
 <!-- \phantom{Exercise or example for hazard rate density/survival expectation etc..} -->
 <p><strong>Example 2.6.1. Actuarial Exam Question</strong>.
 In a certain town the number of common colds an individual will get in a year follows a Poisson distribution that depends on the individual’s age and smoking status. The distribution of the population and the mean number of colds are as follows:</p>
@@ -1618,24 +1624,27 @@ with <span class="math inline">\(N_1,N_2\)</span> and <span class="math inline">
 <hr />
 <p>In the above example, the number of subgroups <span class="math inline">\(k\)</span> was equal to three. In general, <span class="math inline">\(k\)</span> can be any natural number, but when <span class="math inline">\(k\)</span> is large it is parsimonious from a modeling point of view to take the following <em>infinitely many subgroup</em> approach. To motivate this approach, let the <span class="math inline">\(i\)</span>-th subgroup be such that its component distribution <span class="math inline">\(F_i\)</span> is given by <span class="math inline">\(G_{\tilde{\theta_i}}\)</span>, where <span class="math inline">\(G_\cdot\)</span> is a parametric family of distributions with parameter space <span class="math inline">\(\Theta\subseteq \mathbb{R}^d\)</span>. With this assumption, the distribution function <span class="math inline">\(F\)</span> of a randomly drawn observation from the population is given by
 <span class="math display">\[
-F(x)=\sum_{i=1}^k \alpha_i G_{\tilde{\theta_i}}(x),\quad \forall x\in\mathbb{R}.
-\]</span>
-which can be alternately written as<br />
+F(x)=\sum_{i=1}^k \alpha_i G_{\tilde{\theta_i}}(x),\quad \forall x\in\mathbb{R} ,
+\]</span></p>
+<p>similar to equation <a href="C-Frequency-Modeling.html#eq:mixdefn">(2.6)</a>. Alternately, it can be written as<br />
 <span class="math display">\[
 F(x)=\mathrm{E}[{G_{\tilde{\vartheta}}(x)}],\quad \forall x\in\mathbb{R},
 \]</span>
 where <span class="math inline">\(\tilde{\vartheta}\)</span> takes values <span class="math inline">\(\tilde{\theta_i}\)</span> with probability <span class="math inline">\(\alpha_i\)</span>, for <span class="math inline">\(i=1,\ldots,k\)</span>. The above makes it clear that when <span class="math inline">\(k\)</span> is large, one could model the above by treating <span class="math inline">\(\tilde{\vartheta}\)</span> as continuous random variable.</p>
 <p>To illustrate this approach, suppose we have a population of drivers with the distribution of claims for an individual driver being distributed as a Poisson. Each person has their own (personal) expected number of claims <span class="math inline">\(\lambda\)</span> - smaller values for good drivers, and larger values for others. There is a distribution of <span class="math inline">\(\lambda\)</span> in the population; a popular and convenient choice for modeling this distribution is a gamma distribution with parameters <span class="math inline">\((\alpha, \theta)\)</span>. With these specifications it turns out that the resulting distribution of <span class="math inline">\(N\)</span>, the claims of a randomly chosen driver, is a negative binomial with parameters <span class="math inline">\((r=\alpha,\beta=\theta)\)</span>. This can be shown in many ways, but a straightforward argument is as follows:</p>
-<p><span class="math display">\[\begin{align*}
-\Pr(N=k)&amp;= \int_0^\infty \frac{e^{-\lambda}\lambda^k}{k!} \frac{\lambda^{\alpha-1}e^{-\lambda/\theta}}{\Gamma{(\alpha)}\theta^{\alpha}} {\rm d}\lambda = 
-\frac{1}{k!\Gamma(\alpha)\theta^\alpha}\int_0^\infty \lambda^{\alpha+k-1}e^{-\lambda(1+1/\theta)}{\rm d}\lambda=\frac{\Gamma{(\alpha+k)}}{k!\Gamma(\alpha)\theta^\alpha(1+1/\theta)^{\alpha+k}} \\
+<p><span class="math display">\[
+\begin{array}{ll}
+\Pr(N=k)&amp;= \int_0^\infty \frac{e^{-\lambda}\lambda^k}{k!} \frac{\lambda^{\alpha-1}e^{-\lambda/\theta}}{\Gamma{(\alpha)}\theta^{\alpha}} d\lambda = 
+\frac{1}{k!\Gamma(\alpha)\theta^\alpha}\int_0^\infty \lambda^{\alpha+k-1}e^{-\lambda(1+1/\theta)}~d\lambda \\
+&amp;=\frac{\Gamma{(\alpha+k)}}{k!\Gamma(\alpha)\theta^\alpha(1+1/\theta)^{\alpha+k}} \\
 &amp;=\binom{\alpha+k-1}{k}\left(\frac{1}{1+\theta}\right)^\alpha\left(\frac{\theta}{1+\theta}\right)^k, \quad k=0,1,\ldots
-\end{align*}\]</span>
-Note that the above derivation implicitly uses the following:
+\end{array}
+\]</span></p>
+<p>Note that the above derivation implicitly uses the following:
 <span class="math display">\[
 f_{N\vert\Lambda=\lambda}(N=k)=\frac{e^{-\lambda}\lambda^k}{k!}, \quad k\geq 0; \quad \hbox{and} \quad f_{\Lambda}(\lambda)= \frac{\lambda^{\alpha-1}e^{-\lambda/\theta}}{\Gamma{(\alpha)}\theta^{\alpha}}, \quad \lambda&gt;0.
 \]</span></p>
-<p>It is worth mentioning that by considering mixtures of a parametric class of distributions we increase the richness of the class. This expansion of distributions results in the mixture class being able to cater well to more applications that the parametric class we started with. Mixture modeling is a very important modeling technique in insurance applications, and later chapters will cover more aspects of this modeling technique.</p>
+<p>By considering mixtures of a parametric class of distributions, we increase the richness of the class. This expansion of distributions results in the mixture class being able to cater well to more applications that the parametric class we started with. Mixture modeling is an important modeling technique in insurance applications and later chapters will cover more aspects of this modeling technique.</p>
 <p><strong>Example 2.6.2.</strong>
 Suppose that <span class="math inline">\(N|\Lambda \sim\)</span> Poisson<span class="math inline">\((\Lambda)\)</span> and that <span class="math inline">\(\Lambda \sim\)</span> gamma with mean of 1 and variance of 2. Determine the probability that <span class="math inline">\(N=1\)</span>.</p>
 <h5 style="text-align: center;">
@@ -1685,7 +1694,7 @@ Now, one can directly use the above result to conclude that <span class="math in
 <li>Compare the statistic to a reference distribution to assess the adequacy of the fit</li>
 </ul>
 <hr />
-<p>In the above we have discussed three basic frequency distributions, along with their extensions through zero modification/truncation and by looking at mixtures of these distributions. Nevertheless, these classes still remain parametric and hence by their very nature a small subset of the class of all possible frequency distributions (<em>i.e.</em> the set of distributions on non-negative integers.) Hence, even though we have talked about methods for estimating the unknown parameters, the <em>fitted</em> distribution is not be a good representation of the underlying distribution if the latter is <strong>far</strong> from the class of distribution used for modeling. In fact, it can be shown that the <em>maximum likelihood estimator</em> converges to a value such that the corresponding distribution is a Kullback-Leibler <em>projection</em> of the underlying distribution on the class of distributions used for modeling. Below we present one testing method - Pearson’s chi-square statistic - to check for the <a href="#" class="tooltip" style="color:green"><em>goodness of fit</em><span style="font-size:8pt">The goodness of fit of a statistical model describes how well it fits a set of observations.</span></a> of the fitted distribution. For more details on the <a href="#" class="tooltip" style="color:green"><em>Pearson’s chi-square test</em><span style="font-size:8pt">A statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance</span></a>, at an introductory mathematical statistics level, we refer the reader to Section 9.1 of <span class="citation">(Hogg, Tanis, and Zimmerman <a href="#ref-zimmerman2015" role="doc-biblioref">2015</a>)</span>.</p>
+<p>In the above we have discussed three basic frequency distributions, along with their extensions through zero modification/truncation and by looking at mixtures of these distributions. Nevertheless, these classes still remain parametric and hence by their very nature a small subset of the class of all possible frequency distributions (that is, the set of distributions on non-negative integers). Hence, even though we have talked about methods for estimating the unknown parameters, the <em>fitted</em> distribution is not be a good representation of the underlying distribution if the latter is <strong>far</strong> from the class of distribution used for modeling. In fact, it can be shown that the <em>maximum likelihood estimator</em> converges to a value such that the corresponding distribution is a Kullback-Leibler <em>projection</em> of the underlying distribution on the class of distributions used for modeling. Below we present one testing method - Pearson’s chi-square statistic - to check for the <a href="#" class="tooltip" style="color:green"><em>goodness of fit</em><span style="font-size:8pt">The goodness of fit of a statistical model describes how well it fits a set of observations.</span></a> of the fitted distribution. For more details on the <a href="#" class="tooltip" style="color:green"><em>Pearson’s chi-square test</em><span style="font-size:8pt">A statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance</span></a>, at an introductory mathematical statistics level, we refer the reader to Section 9.1 of <span class="citation">(Hogg, Tanis, and Zimmerman <a href="#ref-zimmerman2015" role="doc-biblioref">2015</a>)</span>.</p>
 <p>In <span class="math inline">\(1993\)</span>, a portfolio of <span class="math inline">\(n=7,483\)</span> automobile insurance policies from a major Singaporean insurance company had the distribution of auto accidents per policyholder as given in <a href="#tab:2.4">Table 2.4</a>.</p>
 <p><a id=tab:2.4></a></p>
 <p><span class="math display">\[\begin{matrix}
@@ -1768,7 +1777,7 @@ optim(sum(op*(0:4)),g,method=&quot;Brent&quot;,lower=0,upper=10)$par</code></pre
 </ul>
 <p><strong>Exercise 2.4.</strong> Let <span class="math inline">\(N\)</span> be a random variable with probability mass function given by
 <span class="math display">\[
-p_N(k):= \begin{cases}
+p_N(k)= \begin{cases}
 \left(\frac{6}{\pi^2}\right)\left(\frac{1}{k^{2}}\right), &amp; k\geq 1;\\
 0, &amp;\hbox{otherwise}.
 \end{cases}
@@ -1776,7 +1785,7 @@ p_N(k):= \begin{cases}
 Show that the mean of <span class="math inline">\(N\)</span> is <span class="math inline">\(\infty\)</span>.</p>
 <p><strong>Exercise 2.5.</strong> Let <span class="math inline">\(N\)</span> be a random variable with a finite second moment. Show that the function <span class="math inline">\(\psi(\cdot)\)</span> defined by
 <span class="math display">\[
-\psi(x):=\mathrm{E}{(N-x)^2}. \quad x\in\mathbb{R}
+\psi(x)=\mathrm{E}{(N-x)^2}. \quad x\in\mathbb{R}
 \]</span>
 is minimized at <span class="math inline">\(\mu_N\)</span> without using calculus. Also, give a proof of this fact using derivatives. Conclude that the minimum value equals the variance of <span class="math inline">\(N\)</span>.</p>
 <p><strong>Exercise 2.6.</strong> Derive the first two central moments of the <span class="math inline">\((a,b,0)\)</span> distributions using the methods mentioned below:</p>
@@ -1848,7 +1857,7 @@ Determine the value of <span class="math inline">\(\Pr(N=3)\)</span>. (Ans: 0.16
 <h4>Contributors</h4>
 <ul>
 <li><strong>N.D. Shyamalkumar</strong>, The University of Iowa, and <strong>Krupa Viswanathan</strong>, Temple University, are the principal authors of the initial version of this chapter. Email: <a href="mailto:shyamal-kumar@uiowa.edu" class="email">shyamal-kumar@uiowa.edu</a> for chapter comments and suggested improvements.</li>
-<li>Chapter reviewers include: Paul Johnson, Hirokazu (Iwahiro) Iwasawa, Rajesh Sahasrabuddhe, Michelle Xia.</li>
+<li>Chapter reviewers include: Chunsheng Ban, Paul Johnson, Hirokazu (Iwahiro) Iwasawa, Dalia Khalil, Tatjana Miljkovic, Rajesh Sahasrabuddhe, Michelle Xia.</li>
 </ul>
 </div>
 <div id="S:rcode" class="section level3">

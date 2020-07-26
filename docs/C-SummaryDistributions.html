@@ -422,7 +422,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.2" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:generating-functions"><i class="fa fa-check"></i><b>2.2.2</b> Moment and Probability Generating Functions</a></li>
 <li class="chapter" data-level="2.2.3" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:important-frequency-distributions"><i class="fa fa-check"></i><b>2.2.3</b> Important Frequency Distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:the-a-b-0-class"><i class="fa fa-check"></i><b>2.3</b> The (a, b, 0) Class</a></li>
+<li class="chapter" data-level="2.3" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:the-a-b-0-class"><i class="fa fa-check"></i><b>2.3</b> The (<em>a</em>, <em>b</em>, 0) Class</a></li>
 <li class="chapter" data-level="2.4" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions"><i class="fa fa-check"></i><b>2.4</b> Estimating Frequency Distributions</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:parameter-estimation"><i class="fa fa-check"></i><b>2.4.1</b> Parameter Estimation</a></li>
 <li class="chapter" data-level="2.4.2" data-path="C-Frequency-Modeling.html"><a href="C-Frequency-Modeling.html#S:frequency-distributions-mle"><i class="fa fa-check"></i><b>2.4.2</b> Frequency Distributions MLE</a></li>
@@ -1556,13 +1556,13 @@ Pareto
 \hline
   \text{Function Name} &amp; \text{R Command} \\
 \hline
-  \small{\text{Density function}} &amp; \text{dpareto2}(x=, shape=\alpha, scale=\theta) \\
+  \small{\text{Density function}} &amp; \text{dpareto}(x=, shape=\alpha, scale=\theta) \\
 \hline
-  \small{\text{Distribution function}} &amp; \text{ppareto2}(p=, shape=\alpha,scale=\theta) \\
+  \small{\text{Distribution function}} &amp; \text{ppareto}(p=, shape=\alpha,scale=\theta) \\
 \hline
-  \small{\text{Quantile function}} &amp; \text{qpareto2}(q=, shape=\alpha,scale=\theta) \\ 
+  \small{\text{Quantile function}} &amp; \text{qpareto}(q=, shape=\alpha,scale=\theta) \\ 
 \hline
-  \small{\text{Random sampling function}} &amp; \text{rpareto2}(n=, shape=\alpha,scale=\theta) \\
+  \small{\text{Random sampling function}} &amp; \text{rpareto}(n=, shape=\alpha,scale=\theta) \\
 \hline
 \end{array}
 \end{matrix}
@@ -1571,7 +1571,7 @@ Pareto
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1">alpha &lt;-<span class="st"> </span><span class="dv">3</span></a>
 <a class="sourceLine" id="cb193-2" title="2">theta &lt;-<span class="st"> </span><span class="dv">200</span></a>
 <a class="sourceLine" id="cb193-3" title="3">X &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb193-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span><span class="kw">dpareto2</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
+<a class="sourceLine" id="cb193-4" title="4"><span class="kw">plot</span>(<span class="dt">x=</span>X,<span class="dt">y=</span>actuar<span class="op">::</span><span class="kw">dpareto</span>(X,<span class="dt">shape=</span>alpha,<span class="dt">scale=</span>theta),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,</a>
 <a class="sourceLine" id="cb193-5" title="5">     <span class="dt">ylab=</span><span class="st">&quot;Probability density&quot;</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Pareto Distribution&quot;</span>)</a></code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-222-1.png" width="672" /></p>
 </div>
@@ -2630,6 +2630,7 @@ Illustrative Graph
 \end{array}
 \end{matrix}
 \]</span></p>
+<pre><code>## Warning in levpareto2(X, 3, 200): NaNs produced</code></pre>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-240-1.png" width="672" /></p>
 </div>
 
