@@ -279,7 +279,7 @@ $$
 alpha <- 3
 theta <- 200
 X <- seq(from = 0, to = 1000, by = 1)
-plot(x=X,y=dpareto(X,shape=alpha,scale=theta),type="l",
+plot(x=X,y=actuar::dpareto(X,shape=alpha,scale=theta),type="l",
      ylab="Probability density",col="red",main="Pareto Distribution")
 ```
 
