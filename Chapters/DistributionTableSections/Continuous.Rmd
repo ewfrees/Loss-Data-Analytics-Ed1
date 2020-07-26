@@ -261,13 +261,13 @@ $$
 \hline
   \text{Function Name} & \text{R Command} \\
 \hline
-  \small{\text{Density function}} & \text{dpareto2}(x=, shape=\alpha, scale=\theta) \\
+  \small{\text{Density function}} & \text{dpareto}(x=, shape=\alpha, scale=\theta) \\
 \hline
-  \small{\text{Distribution function}} & \text{ppareto2}(p=, shape=\alpha,scale=\theta) \\
+  \small{\text{Distribution function}} & \text{ppareto}(p=, shape=\alpha,scale=\theta) \\
 \hline
-  \small{\text{Quantile function}} & \text{qpareto2}(q=, shape=\alpha,scale=\theta) \\ 
+  \small{\text{Quantile function}} & \text{qpareto}(q=, shape=\alpha,scale=\theta) \\ 
 \hline
-  \small{\text{Random sampling function}} & \text{rpareto2}(n=, shape=\alpha,scale=\theta) \\
+  \small{\text{Random sampling function}} & \text{rpareto}(n=, shape=\alpha,scale=\theta) \\
 \hline
 \end{array}
 \end{matrix}
@@ -279,7 +279,7 @@ $$
 alpha <- 3
 theta <- 200
 X <- seq(from = 0, to = 1000, by = 1)
-plot(x=X,y=dpareto2(X,shape=alpha,scale=theta),type="l",
+plot(x=X,y=dpareto(X,shape=alpha,scale=theta),type="l",
      ylab="Probability density",col="red",main="Pareto Distribution")
 ```
 
