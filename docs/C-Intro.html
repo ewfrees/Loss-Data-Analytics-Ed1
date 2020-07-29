@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction to Loss Data Analytics | Loss Data Analytics</title>
   <meta name="description" content="Chapter 1 Introduction to Loss Data Analytics | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction to Loss Data Analytics | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -310,9 +311,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -321,14 +322,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -337,9 +340,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -1190,9 +1193,9 @@ this sample was 1.24 (=1377/1110).</p>
 <a id="displayCode.T:Frequency.1" href="javascript:togglecode('toggleCode.T:Frequency.1','displayCode.T:Frequency.1');"><i><strong>R Code for Frequency Table</strong></i></a>
 </h5>
 <div id="toggleCode.T:Frequency.1" style="display: none">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Insample.csv&quot;</span>, <span class="dt">header=</span>T,  <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb2-2" title="2">Insample2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample, Year<span class="op">==</span><span class="dv">2010</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">table</span>(Insample2010<span class="op">$</span>Freq)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="C-Intro.html#cb2-1"></a>Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Insample.csv&quot;</span>, <span class="dt">header=</span>T,  <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</span>
+<span id="cb2-2"><a href="C-Intro.html#cb2-2"></a>Insample2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample, Year<span class="op">==</span><span class="dv">2010</span>)</span>
+<span id="cb2-3"><a href="C-Intro.html#cb2-3"></a><span class="kw">table</span>(Insample2010<span class="op">$</span>Freq)</span></code></pre></div>
 </div>
 <p>For the severity distribution, a common approach is to examine the distribution of the sample of 1,377 claims. However, another common
 approach is to examine the distribution of the average claims of those policyholders with claims. In our 2010 sample, there were 403
@@ -1248,16 +1251,16 @@ Figure 1.2: Distribution of Positive Average Severities
 <a id="displayCode.SeverityFig.1" href="javascript:togglecode('toggleCode.SeverityFig.1','displayCode.SeverityFig.1');"><i><strong>R Code for Severity Distribution Table and Figures</strong></i></a>
 </h5>
 <div id="toggleCode.SeverityFig.1" style="display: none">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/PropertyFundInsample.csv&quot;</span>, <span class="dt">header=</span>T, <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb3-2" title="2">Insample2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample, Year<span class="op">==</span><span class="dv">2010</span>)</a>
-<a class="sourceLine" id="cb3-3" title="3">InsamplePos2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample2010, yAvg<span class="op">&gt;</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co"># Table</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="kw">summary</span>(InsamplePos2010<span class="op">$</span>yAvg)</a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="kw">length</span>(InsamplePos2010<span class="op">$</span>yAvg)</a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co"># Figures</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="kw">hist</span>(InsamplePos2010<span class="op">$</span>yAvg, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Average Claims&quot;</span>)</a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="kw">hist</span>(<span class="kw">log</span>(InsamplePos2010<span class="op">$</span>yAvg), <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Logarithmic Average Claims&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="C-Intro.html#cb3-1"></a>Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/PropertyFundInsample.csv&quot;</span>, <span class="dt">header=</span>T, <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</span>
+<span id="cb3-2"><a href="C-Intro.html#cb3-2"></a>Insample2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample, Year<span class="op">==</span><span class="dv">2010</span>)</span>
+<span id="cb3-3"><a href="C-Intro.html#cb3-3"></a>InsamplePos2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample2010, yAvg<span class="op">&gt;</span><span class="dv">0</span>)</span>
+<span id="cb3-4"><a href="C-Intro.html#cb3-4"></a><span class="co"># Table</span></span>
+<span id="cb3-5"><a href="C-Intro.html#cb3-5"></a><span class="kw">summary</span>(InsamplePos2010<span class="op">$</span>yAvg)</span>
+<span id="cb3-6"><a href="C-Intro.html#cb3-6"></a><span class="kw">length</span>(InsamplePos2010<span class="op">$</span>yAvg)</span>
+<span id="cb3-7"><a href="C-Intro.html#cb3-7"></a><span class="co"># Figures</span></span>
+<span id="cb3-8"><a href="C-Intro.html#cb3-8"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb3-9"><a href="C-Intro.html#cb3-9"></a><span class="kw">hist</span>(InsamplePos2010<span class="op">$</span>yAvg, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Average Claims&quot;</span>)</span>
+<span id="cb3-10"><a href="C-Intro.html#cb3-10"></a><span class="kw">hist</span>(<span class="kw">log</span>(InsamplePos2010<span class="op">$</span>yAvg), <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Logarithmic Average Claims&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="S:FundVariables" class="section level3">
@@ -1349,17 +1352,17 @@ Policyholders</th>
 <a id="displayCode.CoverageBC.1" href="javascript:togglecode('toggleCode.CoverageBC.1','displayCode.CoverageBC.1');"><i><strong>R Code for Claims Summary by Policyholder</strong></i></a>
 </h5>
 <div id="toggleCode.CoverageBC.1" style="display: none">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/PropertyFundInsample.csv&quot;</span>, <span class="dt">header=</span>T, <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw">library</span>(doBy)</a>
-<a class="sourceLine" id="cb4-3" title="3">T1A &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Freq <span class="op">~</span><span class="st"> </span>Year, <span class="dt">data =</span> Insample, </a>
-<a class="sourceLine" id="cb4-4" title="4">   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</a>
-<a class="sourceLine" id="cb4-5" title="5">T1B &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(yAvg    <span class="op">~</span><span class="st"> </span>Year, <span class="dt">data =</span> Insample,   </a>
-<a class="sourceLine" id="cb4-6" title="6">   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</a>
-<a class="sourceLine" id="cb4-7" title="7">T1C &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(BCcov    <span class="op">~</span><span class="st"> </span>Year, <span class="dt">data =</span> Insample,   </a>
-<a class="sourceLine" id="cb4-8" title="8">   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</a>
-<a class="sourceLine" id="cb4-9" title="9">Table1In &lt;-<span class="st"> </span><span class="kw">cbind</span>(T1A[<span class="dv">1</span>],T1A[<span class="dv">2</span>],T1B[<span class="dv">2</span>],T1C[<span class="dv">2</span>],T1A[<span class="dv">3</span>])</a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="kw">names</span>(Table1In) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;Average Frequency&quot;</span>,<span class="st">&quot;Average Severity&quot;</span>, <span class="st">&quot;Average&quot;</span>,<span class="st">&quot;Number of Policyholders&quot;</span>)</a>
-<a class="sourceLine" id="cb4-11" title="11">Table1In</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="C-Intro.html#cb4-1"></a>Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/PropertyFundInsample.csv&quot;</span>, <span class="dt">header=</span>T, <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</span>
+<span id="cb4-2"><a href="C-Intro.html#cb4-2"></a><span class="kw">library</span>(doBy)</span>
+<span id="cb4-3"><a href="C-Intro.html#cb4-3"></a>T1A &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Freq <span class="op">~</span><span class="st"> </span>Year, <span class="dt">data =</span> Insample, </span>
+<span id="cb4-4"><a href="C-Intro.html#cb4-4"></a>   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</span>
+<span id="cb4-5"><a href="C-Intro.html#cb4-5"></a>T1B &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(yAvg    <span class="op">~</span><span class="st"> </span>Year, <span class="dt">data =</span> Insample,   </span>
+<span id="cb4-6"><a href="C-Intro.html#cb4-6"></a>   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</span>
+<span id="cb4-7"><a href="C-Intro.html#cb4-7"></a>T1C &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(BCcov    <span class="op">~</span><span class="st"> </span>Year, <span class="dt">data =</span> Insample,   </span>
+<span id="cb4-8"><a href="C-Intro.html#cb4-8"></a>   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</span>
+<span id="cb4-9"><a href="C-Intro.html#cb4-9"></a>Table1In &lt;-<span class="st"> </span><span class="kw">cbind</span>(T1A[<span class="dv">1</span>],T1A[<span class="dv">2</span>],T1B[<span class="dv">2</span>],T1C[<span class="dv">2</span>],T1A[<span class="dv">3</span>])</span>
+<span id="cb4-10"><a href="C-Intro.html#cb4-10"></a><span class="kw">names</span>(Table1In) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Year&quot;</span>, <span class="st">&quot;Average Frequency&quot;</span>,<span class="st">&quot;Average Severity&quot;</span>, <span class="st">&quot;Average&quot;</span>,<span class="st">&quot;Number of Policyholders&quot;</span>)</span>
+<span id="cb4-11"><a href="C-Intro.html#cb4-11"></a>Table1In</span></code></pre></div>
 </div>
 <p>Table <a href="C-Intro.html#tab:CoverageBCIM">1.3</a> shows that the average claim varies over time,
 especially with the high 2010 value (that we saw was due to a single large claim)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. The
@@ -1430,24 +1433,24 @@ right-skewed distributions.</p>
 <a id="displayCode.DeductCov.1" href="javascript:togglecode('toggleCode.DeductCov.1','displayCode.DeductCov.1');"><i><strong>R Code for Summary of Claim Frequency and Severity, Deductibles, and Coverages</strong></i></a>
 </h5>
 <div id="toggleCode.DeductCov.1" style="display: none">
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/PropertyFundInsample.csv&quot;</span>, <span class="dt">header=</span>T, <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb5-2" title="2">t1&lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Insample<span class="op">$</span>Freq <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </a>
-<a class="sourceLine" id="cb5-3" title="3">   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x),<span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="kw">names</span>(t1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</a>
-<a class="sourceLine" id="cb5-5" title="5">t2 &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Insample<span class="op">$</span>yAvg <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </a>
-<a class="sourceLine" id="cb5-6" title="6">   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x), <span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="kw">names</span>(t2) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</a>
-<a class="sourceLine" id="cb5-8" title="8">t3 &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Deduct <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </a>
-<a class="sourceLine" id="cb5-9" title="9">   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x), <span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</a>
-<a class="sourceLine" id="cb5-10" title="10"><span class="kw">names</span>(t3) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</a>
-<a class="sourceLine" id="cb5-11" title="11">t4 &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(BCcov<span class="op">/</span><span class="dv">1000</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </a>
-<a class="sourceLine" id="cb5-12" title="12">   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x), <span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="kw">names</span>(t4) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</a>
-<a class="sourceLine" id="cb5-14" title="14">Table2 &lt;-<span class="st"> </span><span class="kw">rbind</span>(t1,t2,t3,t4)</a>
-<a class="sourceLine" id="cb5-15" title="15">Table2a &lt;-<span class="st"> </span><span class="kw">round</span>(Table2,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb5-16" title="16">Rowlable &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="st">&quot;Claim Frequency&quot;</span>,<span class="st">&quot;Claim Severity&quot;</span>,<span class="st">&quot;Deductible&quot;</span>,<span class="st">&quot;Coverage (000&#39;s)&quot;</span>)</a>
-<a class="sourceLine" id="cb5-17" title="17">Table2aa &lt;-<span class="st"> </span><span class="kw">cbind</span>(Rowlable,<span class="kw">as.matrix</span>(Table2a))</a>
-<a class="sourceLine" id="cb5-18" title="18">Table2aa</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="C-Intro.html#cb5-1"></a>Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/PropertyFundInsample.csv&quot;</span>, <span class="dt">header=</span>T, <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</span>
+<span id="cb5-2"><a href="C-Intro.html#cb5-2"></a>t1&lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Insample<span class="op">$</span>Freq <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </span>
+<span id="cb5-3"><a href="C-Intro.html#cb5-3"></a>   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x),<span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</span>
+<span id="cb5-4"><a href="C-Intro.html#cb5-4"></a><span class="kw">names</span>(t1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</span>
+<span id="cb5-5"><a href="C-Intro.html#cb5-5"></a>t2 &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Insample<span class="op">$</span>yAvg <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </span>
+<span id="cb5-6"><a href="C-Intro.html#cb5-6"></a>   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x), <span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</span>
+<span id="cb5-7"><a href="C-Intro.html#cb5-7"></a><span class="kw">names</span>(t2) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</span>
+<span id="cb5-8"><a href="C-Intro.html#cb5-8"></a>t3 &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Deduct <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </span>
+<span id="cb5-9"><a href="C-Intro.html#cb5-9"></a>   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x), <span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</span>
+<span id="cb5-10"><a href="C-Intro.html#cb5-10"></a><span class="kw">names</span>(t3) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</span>
+<span id="cb5-11"><a href="C-Intro.html#cb5-11"></a>t4 &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(BCcov<span class="op">/</span><span class="dv">1000</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> Insample, </span>
+<span id="cb5-12"><a href="C-Intro.html#cb5-12"></a>   <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">ma=</span><span class="kw">min</span>(x), <span class="dt">m1=</span><span class="kw">median</span>(x), <span class="dt">m=</span><span class="kw">mean</span>(x),<span class="dt">mb=</span><span class="kw">max</span>(x)) } )</span>
+<span id="cb5-13"><a href="C-Intro.html#cb5-13"></a><span class="kw">names</span>(t4) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Median&quot;</span>,<span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Maximum&quot;</span>)</span>
+<span id="cb5-14"><a href="C-Intro.html#cb5-14"></a>Table2 &lt;-<span class="st"> </span><span class="kw">rbind</span>(t1,t2,t3,t4)</span>
+<span id="cb5-15"><a href="C-Intro.html#cb5-15"></a>Table2a &lt;-<span class="st"> </span><span class="kw">round</span>(Table2,<span class="dv">3</span>)</span>
+<span id="cb5-16"><a href="C-Intro.html#cb5-16"></a>Rowlable &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="st">&quot;Claim Frequency&quot;</span>,<span class="st">&quot;Claim Severity&quot;</span>,<span class="st">&quot;Deductible&quot;</span>,<span class="st">&quot;Coverage (000&#39;s)&quot;</span>)</span>
+<span id="cb5-17"><a href="C-Intro.html#cb5-17"></a>Table2aa &lt;-<span class="st"> </span><span class="kw">cbind</span>(Rowlable,<span class="kw">as.matrix</span>(Table2a))</span>
+<span id="cb5-18"><a href="C-Intro.html#cb5-18"></a>Table2aa</span></code></pre></div>
 </div>
 <p>The following display describes the rating variables considered in this
 chapter. Hopefully, these are variables that you think might naturally be related to claims outcomes. You can learn more about them in <span class="citation">Frees, Lee, and Yang (<a href="#ref-frees2016multivariate" role="doc-biblioref">2016</a>)</span>. To handle the skewness, we henceforth focus on logarithmic transformations of coverage and deductibles.</p>
@@ -1594,44 +1597,44 @@ Severity</th>
 <a id="displayCode.ClaimRateVar.1" href="javascript:togglecode('toggleCode.ClaimRateVar.1','displayCode.ClaimRateVar.1');"><i><strong>R Code for Claims Summary by Entity Type, Fire Class, and No Claim Credit</strong></i></a>
 </h5>
 <div id="toggleCode.ClaimRateVar.1" style="display: none">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">ByVarSumm&lt;-<span class="cf">function</span>(datasub){</a>
-<a class="sourceLine" id="cb6-2" title="2">  tempA &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Freq    <span class="op">~</span><span class="st"> </span><span class="dv">1</span> , <span class="dt">data =</span> datasub,   </a>
-<a class="sourceLine" id="cb6-3" title="3">     <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</a>
-<a class="sourceLine" id="cb6-4" title="4">  datasub1 &lt;-<span class="st">  </span><span class="kw">subset</span>(datasub, yAvg<span class="op">&gt;</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb6-5" title="5">  tempB &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(yAvg   <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> datasub1,<span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x)) } )</a>
-<a class="sourceLine" id="cb6-6" title="6">  tempC &lt;-<span class="st"> </span><span class="kw">merge</span>(tempA,tempB,<span class="dt">all.x=</span>T)[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>)]</a>
-<a class="sourceLine" id="cb6-7" title="7">  tempC1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(tempC)</a>
-<a class="sourceLine" id="cb6-8" title="8">  <span class="kw">return</span>(tempC1)</a>
-<a class="sourceLine" id="cb6-9" title="9">  }</a>
-<a class="sourceLine" id="cb6-10" title="10">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeVillage <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);   </a>
-<a class="sourceLine" id="cb6-11" title="11">t1 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-12" title="12">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCity <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);      </a>
-<a class="sourceLine" id="cb6-13" title="13">t2 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-14" title="14">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCounty <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);   </a>
-<a class="sourceLine" id="cb6-15" title="15">t3 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-16" title="16">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeMisc <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);      </a>
-<a class="sourceLine" id="cb6-17" title="17">t4 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-18" title="18">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeSchool <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);    </a>
-<a class="sourceLine" id="cb6-19" title="19">t5 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-20" title="20">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeTown <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);      </a>
-<a class="sourceLine" id="cb6-21" title="21">t6 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-22" title="22">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Fire5 <span class="op">==</span><span class="st"> </span><span class="dv">0</span>);                      </a>
-<a class="sourceLine" id="cb6-23" title="23">t7 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-24" title="24">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Fire5 <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);                      </a>
-<a class="sourceLine" id="cb6-25" title="25">t8 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-26" title="26">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Insample<span class="op">$</span>NoClaimCredit <span class="op">==</span><span class="st"> </span><span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb6-27" title="27">t9 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-28" title="28">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Insample<span class="op">$</span>NoClaimCredit <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);</a>
-<a class="sourceLine" id="cb6-29" title="29">t10 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb6-30" title="30">t11 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(Insample)</a>
-<a class="sourceLine" id="cb6-31" title="31"></a>
-<a class="sourceLine" id="cb6-32" title="32">Tablea &lt;-<span class="st"> </span><span class="kw">rbind</span>(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11)</a>
-<a class="sourceLine" id="cb6-33" title="33">Tableaa &lt;-<span class="st"> </span><span class="kw">round</span>(Tablea,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb6-34" title="34">Rowlable &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="st">&quot;Village&quot;</span>,<span class="st">&quot;City&quot;</span>,<span class="st">&quot;County&quot;</span>,<span class="st">&quot;Misc&quot;</span>,<span class="st">&quot;School&quot;</span>,</a>
-<a class="sourceLine" id="cb6-35" title="35">          <span class="st">&quot;Town&quot;</span>,<span class="st">&quot;Fire5--No&quot;</span>,<span class="st">&quot;Fire5--Yes&quot;</span>,<span class="st">&quot;NoClaimCredit--No&quot;</span>,</a>
-<a class="sourceLine" id="cb6-36" title="36">        <span class="st">&quot;NoClaimCredit--Yes&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
-<a class="sourceLine" id="cb6-37" title="37">Table4 &lt;-<span class="st"> </span><span class="kw">cbind</span>(Rowlable,<span class="kw">as.matrix</span>(Tableaa))</a>
-<a class="sourceLine" id="cb6-38" title="38">Table4</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="C-Intro.html#cb6-1"></a>ByVarSumm&lt;-<span class="cf">function</span>(datasub){</span>
+<span id="cb6-2"><a href="C-Intro.html#cb6-2"></a>  tempA &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Freq    <span class="op">~</span><span class="st"> </span><span class="dv">1</span> , <span class="dt">data =</span> datasub,   </span>
+<span id="cb6-3"><a href="C-Intro.html#cb6-3"></a>     <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</span>
+<span id="cb6-4"><a href="C-Intro.html#cb6-4"></a>  datasub1 &lt;-<span class="st">  </span><span class="kw">subset</span>(datasub, yAvg<span class="op">&gt;</span><span class="dv">0</span>)</span>
+<span id="cb6-5"><a href="C-Intro.html#cb6-5"></a>  tempB &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(yAvg   <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> datasub1,<span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x)) } )</span>
+<span id="cb6-6"><a href="C-Intro.html#cb6-6"></a>  tempC &lt;-<span class="st"> </span><span class="kw">merge</span>(tempA,tempB,<span class="dt">all.x=</span>T)[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>)]</span>
+<span id="cb6-7"><a href="C-Intro.html#cb6-7"></a>  tempC1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(tempC)</span>
+<span id="cb6-8"><a href="C-Intro.html#cb6-8"></a>  <span class="kw">return</span>(tempC1)</span>
+<span id="cb6-9"><a href="C-Intro.html#cb6-9"></a>  }</span>
+<span id="cb6-10"><a href="C-Intro.html#cb6-10"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeVillage <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);   </span>
+<span id="cb6-11"><a href="C-Intro.html#cb6-11"></a>t1 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-12"><a href="C-Intro.html#cb6-12"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCity <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);      </span>
+<span id="cb6-13"><a href="C-Intro.html#cb6-13"></a>t2 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-14"><a href="C-Intro.html#cb6-14"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCounty <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);   </span>
+<span id="cb6-15"><a href="C-Intro.html#cb6-15"></a>t3 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-16"><a href="C-Intro.html#cb6-16"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeMisc <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);      </span>
+<span id="cb6-17"><a href="C-Intro.html#cb6-17"></a>t4 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-18"><a href="C-Intro.html#cb6-18"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeSchool <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);    </span>
+<span id="cb6-19"><a href="C-Intro.html#cb6-19"></a>t5 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-20"><a href="C-Intro.html#cb6-20"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeTown <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);      </span>
+<span id="cb6-21"><a href="C-Intro.html#cb6-21"></a>t6 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-22"><a href="C-Intro.html#cb6-22"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Fire5 <span class="op">==</span><span class="st"> </span><span class="dv">0</span>);                      </span>
+<span id="cb6-23"><a href="C-Intro.html#cb6-23"></a>t7 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-24"><a href="C-Intro.html#cb6-24"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Fire5 <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);                      </span>
+<span id="cb6-25"><a href="C-Intro.html#cb6-25"></a>t8 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-26"><a href="C-Intro.html#cb6-26"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Insample<span class="op">$</span>NoClaimCredit <span class="op">==</span><span class="st"> </span><span class="dv">0</span>);</span>
+<span id="cb6-27"><a href="C-Intro.html#cb6-27"></a>t9 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-28"><a href="C-Intro.html#cb6-28"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, Insample<span class="op">$</span>NoClaimCredit <span class="op">==</span><span class="st"> </span><span class="dv">1</span>);</span>
+<span id="cb6-29"><a href="C-Intro.html#cb6-29"></a>t10 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb6-30"><a href="C-Intro.html#cb6-30"></a>t11 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(Insample)</span>
+<span id="cb6-31"><a href="C-Intro.html#cb6-31"></a></span>
+<span id="cb6-32"><a href="C-Intro.html#cb6-32"></a>Tablea &lt;-<span class="st"> </span><span class="kw">rbind</span>(t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11)</span>
+<span id="cb6-33"><a href="C-Intro.html#cb6-33"></a>Tableaa &lt;-<span class="st"> </span><span class="kw">round</span>(Tablea,<span class="dv">3</span>)</span>
+<span id="cb6-34"><a href="C-Intro.html#cb6-34"></a>Rowlable &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="st">&quot;Village&quot;</span>,<span class="st">&quot;City&quot;</span>,<span class="st">&quot;County&quot;</span>,<span class="st">&quot;Misc&quot;</span>,<span class="st">&quot;School&quot;</span>,</span>
+<span id="cb6-35"><a href="C-Intro.html#cb6-35"></a>          <span class="st">&quot;Town&quot;</span>,<span class="st">&quot;Fire5--No&quot;</span>,<span class="st">&quot;Fire5--Yes&quot;</span>,<span class="st">&quot;NoClaimCredit--No&quot;</span>,</span>
+<span id="cb6-36"><a href="C-Intro.html#cb6-36"></a>        <span class="st">&quot;NoClaimCredit--Yes&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb6-37"><a href="C-Intro.html#cb6-37"></a>Table4 &lt;-<span class="st"> </span><span class="kw">cbind</span>(Rowlable,<span class="kw">as.matrix</span>(Tableaa))</span>
+<span id="cb6-38"><a href="C-Intro.html#cb6-38"></a>Table4</span></code></pre></div>
 </div>
 <p>Table <a href="C-Intro.html#tab:RateAlarmCredit">1.6</a> shows the claims experience by alarm credit.
 It underscores the difficulty of examining variables individually. For
@@ -1852,48 +1855,48 @@ Policies</th>
 <a id="displayCode.RateAlarmCredit.1" href="javascript:togglecode('toggleCode.RateAlarmCredit.1','displayCode.RateAlarmCredit.1');"><i><strong>R Code for Claims Summary by Entity Type and Alarm Credit Category</strong></i></a>
 </h5>
 <div id="toggleCode.RateAlarmCredit.1" style="display: none">
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co">#Claims Summary by Entity Type and Alarm Credit</span></a>
-<a class="sourceLine" id="cb7-2" title="2">ByVarSumm&lt;-<span class="cf">function</span>(datasub){</a>
-<a class="sourceLine" id="cb7-3" title="3">  tempA &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Freq    <span class="op">~</span><span class="st"> </span>AC00 , <span class="dt">data =</span> datasub,   </a>
-<a class="sourceLine" id="cb7-4" title="4">                     <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</a>
-<a class="sourceLine" id="cb7-5" title="5">  datasub1 &lt;-<span class="st">  </span><span class="kw">subset</span>(datasub, yAvg<span class="op">&gt;</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb7-6" title="6">  <span class="cf">if</span>(<span class="kw">nrow</span>(datasub1)<span class="op">==</span><span class="dv">0</span>) { n&lt;-<span class="kw">nrow</span>(datasub)</a>
-<a class="sourceLine" id="cb7-7" title="7">    <span class="kw">return</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,n))</a>
-<a class="sourceLine" id="cb7-8" title="8">  } <span class="cf">else</span> </a>
-<a class="sourceLine" id="cb7-9" title="9">  {</a>
-<a class="sourceLine" id="cb7-10" title="10">    tempB &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(yAvg   <span class="op">~</span><span class="st"> </span>AC00, <span class="dt">data =</span> datasub1,</a>
-<a class="sourceLine" id="cb7-11" title="11">                       <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x)) } )</a>
-<a class="sourceLine" id="cb7-12" title="12">    tempC &lt;-<span class="st"> </span><span class="kw">merge</span>(tempA,tempB,<span class="dt">all.x=</span>T)[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>)]</a>
-<a class="sourceLine" id="cb7-13" title="13">    tempC1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(tempC)</a>
-<a class="sourceLine" id="cb7-14" title="14">    <span class="kw">return</span>(tempC1)</a>
-<a class="sourceLine" id="cb7-15" title="15">  }</a>
-<a class="sourceLine" id="cb7-16" title="16">}</a>
-<a class="sourceLine" id="cb7-17" title="17">AlarmC &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(Insample<span class="op">$</span>AC00<span class="op">==</span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>(Insample<span class="op">$</span>AC05<span class="op">==</span><span class="dv">1</span>)<span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">*</span>(Insample<span class="op">$</span>AC10<span class="op">==</span><span class="dv">1</span>)<span class="op">+</span><span class="st"> </span><span class="dv">4</span><span class="op">*</span>(Insample<span class="op">$</span>AC15<span class="op">==</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb7-18" title="18">ByVarCredit&lt;-<span class="cf">function</span>(ACnum){</a>
-<a class="sourceLine" id="cb7-19" title="19">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeVillage <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum); </a>
-<a class="sourceLine" id="cb7-20" title="20">  t1 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb7-21" title="21">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCity <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);      </a>
-<a class="sourceLine" id="cb7-22" title="22">  t2 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb7-23" title="23">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCounty <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);   </a>
-<a class="sourceLine" id="cb7-24" title="24">  t3 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb7-25" title="25">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeMisc <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);</a>
-<a class="sourceLine" id="cb7-26" title="26">  t4 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb7-27" title="27">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeSchool <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);    </a>
-<a class="sourceLine" id="cb7-28" title="28">  t5 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb7-29" title="29">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeTown <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span>ACnum);      </a>
-<a class="sourceLine" id="cb7-30" title="30">  t6 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb7-31" title="31">datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, AlarmC <span class="op">==</span><span class="st"> </span>ACnum);  </a>
-<a class="sourceLine" id="cb7-32" title="32">  t7 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</a>
-<a class="sourceLine" id="cb7-33" title="33">Tablea &lt;-<span class="st"> </span><span class="kw">rbind</span>(t1,t2,t3,t4,t5,t6,t7)</a>
-<a class="sourceLine" id="cb7-34" title="34">Tableaa &lt;-<span class="st"> </span><span class="kw">round</span>(Tablea,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb7-35" title="35">Rowlable &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="st">&quot;Village&quot;</span>,<span class="st">&quot;City&quot;</span>,<span class="st">&quot;County&quot;</span>,<span class="st">&quot;Misc&quot;</span>,<span class="st">&quot;School&quot;</span>,</a>
-<a class="sourceLine" id="cb7-36" title="36">                  <span class="st">&quot;Town&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
-<a class="sourceLine" id="cb7-37" title="37">Table4 &lt;-<span class="st"> </span><span class="kw">cbind</span>(Rowlable,<span class="kw">as.matrix</span>(Tableaa))</a>
-<a class="sourceLine" id="cb7-38" title="38">}</a>
-<a class="sourceLine" id="cb7-39" title="39">Table4a &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">1</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==00</span></a>
-<a class="sourceLine" id="cb7-40" title="40">Table4b &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">2</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==05 </span></a>
-<a class="sourceLine" id="cb7-41" title="41">Table4c &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">3</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==10</span></a>
-<a class="sourceLine" id="cb7-42" title="42">Table4d &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">4</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==15</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="C-Intro.html#cb7-1"></a><span class="co">#Claims Summary by Entity Type and Alarm Credit</span></span>
+<span id="cb7-2"><a href="C-Intro.html#cb7-2"></a>ByVarSumm&lt;-<span class="cf">function</span>(datasub){</span>
+<span id="cb7-3"><a href="C-Intro.html#cb7-3"></a>  tempA &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(Freq    <span class="op">~</span><span class="st"> </span>AC00 , <span class="dt">data =</span> datasub,   </span>
+<span id="cb7-4"><a href="C-Intro.html#cb7-4"></a>                     <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x), <span class="dt">num=</span><span class="kw">length</span>(x)) } )</span>
+<span id="cb7-5"><a href="C-Intro.html#cb7-5"></a>  datasub1 &lt;-<span class="st">  </span><span class="kw">subset</span>(datasub, yAvg<span class="op">&gt;</span><span class="dv">0</span>)</span>
+<span id="cb7-6"><a href="C-Intro.html#cb7-6"></a>  <span class="cf">if</span>(<span class="kw">nrow</span>(datasub1)<span class="op">==</span><span class="dv">0</span>) { n&lt;-<span class="kw">nrow</span>(datasub)</span>
+<span id="cb7-7"><a href="C-Intro.html#cb7-7"></a>    <span class="kw">return</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,n))</span>
+<span id="cb7-8"><a href="C-Intro.html#cb7-8"></a>  } <span class="cf">else</span> </span>
+<span id="cb7-9"><a href="C-Intro.html#cb7-9"></a>  {</span>
+<span id="cb7-10"><a href="C-Intro.html#cb7-10"></a>    tempB &lt;-<span class="st"> </span><span class="kw">summaryBy</span>(yAvg   <span class="op">~</span><span class="st"> </span>AC00, <span class="dt">data =</span> datasub1,</span>
+<span id="cb7-11"><a href="C-Intro.html#cb7-11"></a>                       <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">m =</span> <span class="kw">mean</span>(x)) } )</span>
+<span id="cb7-12"><a href="C-Intro.html#cb7-12"></a>    tempC &lt;-<span class="st"> </span><span class="kw">merge</span>(tempA,tempB,<span class="dt">all.x=</span>T)[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>)]</span>
+<span id="cb7-13"><a href="C-Intro.html#cb7-13"></a>    tempC1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(tempC)</span>
+<span id="cb7-14"><a href="C-Intro.html#cb7-14"></a>    <span class="kw">return</span>(tempC1)</span>
+<span id="cb7-15"><a href="C-Intro.html#cb7-15"></a>  }</span>
+<span id="cb7-16"><a href="C-Intro.html#cb7-16"></a>}</span>
+<span id="cb7-17"><a href="C-Intro.html#cb7-17"></a>AlarmC &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(Insample<span class="op">$</span>AC00<span class="op">==</span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>(Insample<span class="op">$</span>AC05<span class="op">==</span><span class="dv">1</span>)<span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">*</span>(Insample<span class="op">$</span>AC10<span class="op">==</span><span class="dv">1</span>)<span class="op">+</span><span class="st"> </span><span class="dv">4</span><span class="op">*</span>(Insample<span class="op">$</span>AC15<span class="op">==</span><span class="dv">1</span>)</span>
+<span id="cb7-18"><a href="C-Intro.html#cb7-18"></a>ByVarCredit&lt;-<span class="cf">function</span>(ACnum){</span>
+<span id="cb7-19"><a href="C-Intro.html#cb7-19"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeVillage <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum); </span>
+<span id="cb7-20"><a href="C-Intro.html#cb7-20"></a>  t1 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb7-21"><a href="C-Intro.html#cb7-21"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCity <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);      </span>
+<span id="cb7-22"><a href="C-Intro.html#cb7-22"></a>  t2 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb7-23"><a href="C-Intro.html#cb7-23"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeCounty <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);   </span>
+<span id="cb7-24"><a href="C-Intro.html#cb7-24"></a>  t3 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb7-25"><a href="C-Intro.html#cb7-25"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeMisc <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);</span>
+<span id="cb7-26"><a href="C-Intro.html#cb7-26"></a>  t4 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb7-27"><a href="C-Intro.html#cb7-27"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeSchool <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span><span class="st"> </span>ACnum);    </span>
+<span id="cb7-28"><a href="C-Intro.html#cb7-28"></a>  t5 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb7-29"><a href="C-Intro.html#cb7-29"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, TypeTown <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>AlarmC <span class="op">==</span>ACnum);      </span>
+<span id="cb7-30"><a href="C-Intro.html#cb7-30"></a>  t6 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb7-31"><a href="C-Intro.html#cb7-31"></a>datasub &lt;-<span class="st">  </span><span class="kw">subset</span>(Insample, AlarmC <span class="op">==</span><span class="st"> </span>ACnum);  </span>
+<span id="cb7-32"><a href="C-Intro.html#cb7-32"></a>  t7 &lt;-<span class="st"> </span><span class="kw">ByVarSumm</span>(datasub)</span>
+<span id="cb7-33"><a href="C-Intro.html#cb7-33"></a>Tablea &lt;-<span class="st"> </span><span class="kw">rbind</span>(t1,t2,t3,t4,t5,t6,t7)</span>
+<span id="cb7-34"><a href="C-Intro.html#cb7-34"></a>Tableaa &lt;-<span class="st"> </span><span class="kw">round</span>(Tablea,<span class="dv">3</span>)</span>
+<span id="cb7-35"><a href="C-Intro.html#cb7-35"></a>Rowlable &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="st">&quot;Village&quot;</span>,<span class="st">&quot;City&quot;</span>,<span class="st">&quot;County&quot;</span>,<span class="st">&quot;Misc&quot;</span>,<span class="st">&quot;School&quot;</span>,</span>
+<span id="cb7-36"><a href="C-Intro.html#cb7-36"></a>                  <span class="st">&quot;Town&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb7-37"><a href="C-Intro.html#cb7-37"></a>Table4 &lt;-<span class="st"> </span><span class="kw">cbind</span>(Rowlable,<span class="kw">as.matrix</span>(Tableaa))</span>
+<span id="cb7-38"><a href="C-Intro.html#cb7-38"></a>}</span>
+<span id="cb7-39"><a href="C-Intro.html#cb7-39"></a>Table4a &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">1</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==00</span></span>
+<span id="cb7-40"><a href="C-Intro.html#cb7-40"></a>Table4b &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">2</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==05 </span></span>
+<span id="cb7-41"><a href="C-Intro.html#cb7-41"></a>Table4c &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">3</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==10</span></span>
+<span id="cb7-42"><a href="C-Intro.html#cb7-42"></a>Table4d &lt;-<span class="st"> </span><span class="kw">ByVarCredit</span>(<span class="dv">4</span>)    <span class="co">#Claims Summary by Entity Type and Alarm Credit==15</span></span></code></pre></div>
 </div>
 </div>
 <div id="fund-operations" class="section level3">
@@ -2028,7 +2031,7 @@ much longer to develop. Chapter <a href="C-LossReserves.html#C:LossReserves">11<
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Note that the average severity in Table <a href="C-Intro.html#tab:CoverageBCIM">1.3</a> differs from that reported in Table <a href="C-Intro.html#tab:Severity2010">1.2</a>. This is because the former includes policyholders with zero claims where as the latter does not. This is an important distinction that we will address in later portions of the text.<a href="C-Intro.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Note that the average severity in Table <a href="C-Intro.html#tab:CoverageBCIM">1.3</a> differs from that reported in Table <a href="C-Intro.html#tab:Severity2010">1.2</a>. This is because the former includes policyholders with zero claims where as the latter does not. This is an important distinction that we will address in later portions of the text.<a href="C-Intro.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
