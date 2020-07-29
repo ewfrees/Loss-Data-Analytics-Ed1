@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Risk Classification | Loss Data Analytics</title>
   <meta name="description" content="Chapter 8 Risk Classification | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Risk Classification | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -311,9 +310,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -322,16 +321,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -340,9 +337,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -1260,28 +1257,28 @@ As a result, the relativities are given by</p>
 <a id="displayCode.RiskClass.1" href="javascript:togglecode('toggleCode.RiskClass.1','displayCode.RiskClass.1');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.RiskClass.1" style="display: none">
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="C-RiskClass.html#cb96-1"></a><span class="op">&gt;</span><span class="st"> </span>mydat1&lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;eg1_v1a.csv&quot;</span>)</span>
-<span id="cb96-2"><a href="C-RiskClass.html#cb96-2"></a><span class="op">&gt;</span><span class="st"> </span>mydat1</span>
-<span id="cb96-3"><a href="C-RiskClass.html#cb96-3"></a>  Vtype Agebnd Expsr Claims</span>
-<span id="cb96-4"><a href="C-RiskClass.html#cb96-4"></a><span class="dv">1</span>     <span class="dv">1</span>      <span class="dv">1</span>  <span class="fl">89.1</span>      <span class="dv">9</span></span>
-<span id="cb96-5"><a href="C-RiskClass.html#cb96-5"></a><span class="dv">2</span>     <span class="dv">1</span>      <span class="dv">2</span> <span class="fl">208.5</span>      <span class="dv">8</span></span>
-<span id="cb96-6"><a href="C-RiskClass.html#cb96-6"></a><span class="dv">3</span>     <span class="dv">1</span>      <span class="dv">3</span> <span class="fl">155.2</span>      <span class="dv">6</span></span>
-<span id="cb96-7"><a href="C-RiskClass.html#cb96-7"></a><span class="dv">4</span>     <span class="dv">2</span>      <span class="dv">1</span>  <span class="fl">19.3</span>      <span class="dv">1</span></span>
-<span id="cb96-8"><a href="C-RiskClass.html#cb96-8"></a><span class="dv">5</span>     <span class="dv">2</span>      <span class="dv">2</span> <span class="fl">360.4</span>     <span class="dv">13</span></span>
-<span id="cb96-9"><a href="C-RiskClass.html#cb96-9"></a><span class="dv">6</span>     <span class="dv">2</span>      <span class="dv">3</span> <span class="fl">276.7</span>      <span class="dv">6</span></span>
-<span id="cb96-10"><a href="C-RiskClass.html#cb96-10"></a><span class="op">&gt;</span><span class="st"> </span>VtypeF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Vtype), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Vtype as factors with 1 as base.</span></span>
-<span id="cb96-11"><a href="C-RiskClass.html#cb96-11"></a><span class="op">&gt;</span><span class="st"> </span>AgebndF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Agebnd), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Age band as factors.</span></span>
-<span id="cb96-12"><a href="C-RiskClass.html#cb96-12"></a><span class="op">&gt;</span><span class="st"> </span>Pois_reg1 =<span class="st"> </span><span class="kw">glm</span>(Claims <span class="op">~</span><span class="st"> </span>VtypeF <span class="op">+</span><span class="st"> </span>AgebndF,</span>
-<span id="cb96-13"><a href="C-RiskClass.html#cb96-13"></a>                    <span class="dt">data =</span> mydat1, <span class="dt">family =</span> <span class="kw">poisson</span>(<span class="dt">link =</span> log), <span class="dt">offset =</span> <span class="kw">log</span>(Expsr) )</span>
-<span id="cb96-14"><a href="C-RiskClass.html#cb96-14"></a><span class="op">&gt;</span><span class="st"> </span>Pois_reg1</span>
-<span id="cb96-15"><a href="C-RiskClass.html#cb96-15"></a></span>
-<span id="cb96-16"><a href="C-RiskClass.html#cb96-16"></a>Coefficients<span class="op">:</span></span>
-<span id="cb96-17"><a href="C-RiskClass.html#cb96-17"></a>(Intercept)      VtypeF2     AgebndF2     AgebndF3  </span>
-<span id="cb96-18"><a href="C-RiskClass.html#cb96-18"></a>    <span class="fl">-2.3359</span>      <span class="fl">-0.3004</span>      <span class="fl">-0.7837</span>      <span class="fl">-1.0655</span>  </span>
-<span id="cb96-19"><a href="C-RiskClass.html#cb96-19"></a></span>
-<span id="cb96-20"><a href="C-RiskClass.html#cb96-20"></a>Degrees of Freedom<span class="op">:</span><span class="st"> </span><span class="dv">5</span> <span class="kw">Total</span> (i.e. Null);  <span class="dv">2</span> Residual</span>
-<span id="cb96-21"><a href="C-RiskClass.html#cb96-21"></a>Null Deviance<span class="op">:</span><span class="st">      </span><span class="fl">8.774</span> </span>
-<span id="cb96-22"><a href="C-RiskClass.html#cb96-22"></a>Residual Deviance<span class="op">:</span><span class="st"> </span><span class="fl">0.6514</span>   AIC<span class="op">:</span><span class="st"> </span><span class="fl">30.37</span></span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1"><span class="op">&gt;</span><span class="st"> </span>mydat1&lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;eg1_v1a.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb96-2" title="2"><span class="op">&gt;</span><span class="st"> </span>mydat1</a>
+<a class="sourceLine" id="cb96-3" title="3">  Vtype Agebnd Expsr Claims</a>
+<a class="sourceLine" id="cb96-4" title="4"><span class="dv">1</span>     <span class="dv">1</span>      <span class="dv">1</span>  <span class="fl">89.1</span>      <span class="dv">9</span></a>
+<a class="sourceLine" id="cb96-5" title="5"><span class="dv">2</span>     <span class="dv">1</span>      <span class="dv">2</span> <span class="fl">208.5</span>      <span class="dv">8</span></a>
+<a class="sourceLine" id="cb96-6" title="6"><span class="dv">3</span>     <span class="dv">1</span>      <span class="dv">3</span> <span class="fl">155.2</span>      <span class="dv">6</span></a>
+<a class="sourceLine" id="cb96-7" title="7"><span class="dv">4</span>     <span class="dv">2</span>      <span class="dv">1</span>  <span class="fl">19.3</span>      <span class="dv">1</span></a>
+<a class="sourceLine" id="cb96-8" title="8"><span class="dv">5</span>     <span class="dv">2</span>      <span class="dv">2</span> <span class="fl">360.4</span>     <span class="dv">13</span></a>
+<a class="sourceLine" id="cb96-9" title="9"><span class="dv">6</span>     <span class="dv">2</span>      <span class="dv">3</span> <span class="fl">276.7</span>      <span class="dv">6</span></a>
+<a class="sourceLine" id="cb96-10" title="10"><span class="op">&gt;</span><span class="st"> </span>VtypeF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Vtype), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Vtype as factors with 1 as base.</span></a>
+<a class="sourceLine" id="cb96-11" title="11"><span class="op">&gt;</span><span class="st"> </span>AgebndF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Agebnd), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Age band as factors.</span></a>
+<a class="sourceLine" id="cb96-12" title="12"><span class="op">&gt;</span><span class="st"> </span>Pois_reg1 =<span class="st"> </span><span class="kw">glm</span>(Claims <span class="op">~</span><span class="st"> </span>VtypeF <span class="op">+</span><span class="st"> </span>AgebndF,</a>
+<a class="sourceLine" id="cb96-13" title="13">                    <span class="dt">data =</span> mydat1, <span class="dt">family =</span> <span class="kw">poisson</span>(<span class="dt">link =</span> log), <span class="dt">offset =</span> <span class="kw">log</span>(Expsr) )</a>
+<a class="sourceLine" id="cb96-14" title="14"><span class="op">&gt;</span><span class="st"> </span>Pois_reg1</a>
+<a class="sourceLine" id="cb96-15" title="15"></a>
+<a class="sourceLine" id="cb96-16" title="16">Coefficients<span class="op">:</span></a>
+<a class="sourceLine" id="cb96-17" title="17">(Intercept)      VtypeF2     AgebndF2     AgebndF3  </a>
+<a class="sourceLine" id="cb96-18" title="18">    <span class="fl">-2.3359</span>      <span class="fl">-0.3004</span>      <span class="fl">-0.7837</span>      <span class="fl">-1.0655</span>  </a>
+<a class="sourceLine" id="cb96-19" title="19"></a>
+<a class="sourceLine" id="cb96-20" title="20">Degrees of Freedom<span class="op">:</span><span class="st"> </span><span class="dv">5</span> <span class="kw">Total</span> (i.e. Null);  <span class="dv">2</span> Residual</a>
+<a class="sourceLine" id="cb96-21" title="21">Null Deviance<span class="op">:</span><span class="st">      </span><span class="fl">8.774</span> </a>
+<a class="sourceLine" id="cb96-22" title="22">Residual Deviance<span class="op">:</span><span class="st"> </span><span class="fl">0.6514</span>   AIC<span class="op">:</span><span class="st"> </span><span class="fl">30.37</span></a></code></pre></div>
 </div>
 <hr />
 <p><strong>Example 8.2. Poisson regression for Singapore insurance claims data</strong></p>
@@ -1342,42 +1339,42 @@ First, there are 3,842 policies with vehicle type A (automobile) and 3,641 polic
 <a id="displayCode.RiskClass.2" href="javascript:togglecode('toggleCode.RiskClass.2','displayCode.RiskClass.2');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.RiskClass.2" style="display: none">
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="C-RiskClass.html#cb97-1"></a>mydat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;SingaporeAuto.csv&quot;</span>,  <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb97-2"><a href="C-RiskClass.html#cb97-2"></a><span class="kw">attach</span>(mydat)</span>
-<span id="cb97-3"><a href="C-RiskClass.html#cb97-3"></a></span>
-<span id="cb97-4"><a href="C-RiskClass.html#cb97-4"></a><span class="co"># create vehicle type as factor</span></span>
-<span id="cb97-5"><a href="C-RiskClass.html#cb97-5"></a>TypeA =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(VehicleType <span class="op">==</span><span class="st"> &quot;A&quot;</span>)</span>
-<span id="cb97-6"><a href="C-RiskClass.html#cb97-6"></a><span class="kw">table</span>(VehicleType)</span>
-<span id="cb97-7"><a href="C-RiskClass.html#cb97-7"></a>VtypeF &lt;-<span class="st"> </span><span class="kw">as.character</span>(VehicleType)</span>
-<span id="cb97-8"><a href="C-RiskClass.html#cb97-8"></a>VtypeF[VtypeF <span class="op">!=</span><span class="st"> &quot;A&quot;</span>] &lt;-<span class="st"> &quot;O&quot;</span></span>
-<span id="cb97-9"><a href="C-RiskClass.html#cb97-9"></a>VtypeF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(VtypeF), <span class="dt">ref=</span><span class="st">&quot;A&quot;</span>)</span>
-<span id="cb97-10"><a href="C-RiskClass.html#cb97-10"></a></span>
-<span id="cb97-11"><a href="C-RiskClass.html#cb97-11"></a><span class="co"># create gender as factor</span></span>
-<span id="cb97-12"><a href="C-RiskClass.html#cb97-12"></a>Female =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(SexInsured <span class="op">==</span><span class="st"> &quot;F&quot;</span> )</span>
-<span id="cb97-13"><a href="C-RiskClass.html#cb97-13"></a>Sex =<span class="st"> </span><span class="kw">as.character</span>(SexInsured)</span>
-<span id="cb97-14"><a href="C-RiskClass.html#cb97-14"></a>Sex[Sex <span class="op">!=</span><span class="st"> &quot;F&quot;</span>] &lt;-<span class="st"> &quot;M&quot;</span></span>
-<span id="cb97-15"><a href="C-RiskClass.html#cb97-15"></a>SexF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Sex), <span class="dt">ref =</span> <span class="st">&quot;F&quot;</span>)</span>
-<span id="cb97-16"><a href="C-RiskClass.html#cb97-16"></a></span>
-<span id="cb97-17"><a href="C-RiskClass.html#cb97-17"></a><span class="co"># create driver age as factor</span></span>
-<span id="cb97-18"><a href="C-RiskClass.html#cb97-18"></a>AgeCat =<span class="st"> </span><span class="kw">pmax</span>(AgeCat <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb97-19"><a href="C-RiskClass.html#cb97-19"></a>AgeCatF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(AgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span>)</span>
-<span id="cb97-20"><a href="C-RiskClass.html#cb97-20"></a><span class="kw">table</span>(AgeCatF) <span class="co"># No policy in the first age band</span></span>
-<span id="cb97-21"><a href="C-RiskClass.html#cb97-21"></a></span>
-<span id="cb97-22"><a href="C-RiskClass.html#cb97-22"></a><span class="co"># create vehicle age as factor</span></span>
-<span id="cb97-23"><a href="C-RiskClass.html#cb97-23"></a>VAgeCatF =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span> )</span>
-<span id="cb97-24"><a href="C-RiskClass.html#cb97-24"></a>VAgecat1 =<span class="st"> </span><span class="kw">factor</span>(VAgecat1, <span class="dt">labels =</span> </span>
-<span id="cb97-25"><a href="C-RiskClass.html#cb97-25"></a>                    <span class="kw">c</span>(<span class="st">&quot;Vage0-2&quot;</span>, <span class="st">&quot;Vage3-5&quot;</span>, <span class="st">&quot;Vage6-10&quot;</span>, <span class="st">&quot;Vage11-15&quot;</span>, <span class="st">&quot;Vage15+&quot;</span>) )</span>
-<span id="cb97-26"><a href="C-RiskClass.html#cb97-26"></a>VAgecat1F =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgecat1), <span class="dt">ref =</span> <span class="st">&quot;Vage0-2&quot;</span> )</span>
-<span id="cb97-27"><a href="C-RiskClass.html#cb97-27"></a></span>
-<span id="cb97-28"><a href="C-RiskClass.html#cb97-28"></a><span class="co"># Poisson reg model</span></span>
-<span id="cb97-29"><a href="C-RiskClass.html#cb97-29"></a>Pois_reg2 =<span class="st"> </span><span class="kw">glm</span>(Clm_Count <span class="op">~</span><span class="st"> </span>SexF <span class="op">+</span><span class="st"> </span>TypeA<span class="op">:</span>AgeCatF <span class="op">+</span><span class="st"> </span>VAgecat1F, </span>
-<span id="cb97-30"><a href="C-RiskClass.html#cb97-30"></a>                   <span class="dt">offset =</span> LNWEIGHT, <span class="kw">poisson</span>(<span class="dt">link =</span> log) )</span>
-<span id="cb97-31"><a href="C-RiskClass.html#cb97-31"></a><span class="kw">summary</span>(Pois_reg2) </span>
-<span id="cb97-32"><a href="C-RiskClass.html#cb97-32"></a></span>
-<span id="cb97-33"><a href="C-RiskClass.html#cb97-33"></a><span class="co"># compute relativities</span></span>
-<span id="cb97-34"><a href="C-RiskClass.html#cb97-34"></a><span class="kw">exp</span>(Pois_reg2<span class="op">$</span>coefficients)</span>
-<span id="cb97-35"><a href="C-RiskClass.html#cb97-35"></a></span>
-<span id="cb97-36"><a href="C-RiskClass.html#cb97-36"></a><span class="kw">detach</span>(mydat)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" title="1">mydat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;SingaporeAuto.csv&quot;</span>,  <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb97-2" title="2"><span class="kw">attach</span>(mydat)</a>
+<a class="sourceLine" id="cb97-3" title="3"></a>
+<a class="sourceLine" id="cb97-4" title="4"><span class="co"># create vehicle type as factor</span></a>
+<a class="sourceLine" id="cb97-5" title="5">TypeA =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(VehicleType <span class="op">==</span><span class="st"> &quot;A&quot;</span>)</a>
+<a class="sourceLine" id="cb97-6" title="6"><span class="kw">table</span>(VehicleType)</a>
+<a class="sourceLine" id="cb97-7" title="7">VtypeF &lt;-<span class="st"> </span><span class="kw">as.character</span>(VehicleType)</a>
+<a class="sourceLine" id="cb97-8" title="8">VtypeF[VtypeF <span class="op">!=</span><span class="st"> &quot;A&quot;</span>] &lt;-<span class="st"> &quot;O&quot;</span></a>
+<a class="sourceLine" id="cb97-9" title="9">VtypeF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(VtypeF), <span class="dt">ref=</span><span class="st">&quot;A&quot;</span>)</a>
+<a class="sourceLine" id="cb97-10" title="10"></a>
+<a class="sourceLine" id="cb97-11" title="11"><span class="co"># create gender as factor</span></a>
+<a class="sourceLine" id="cb97-12" title="12">Female =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(SexInsured <span class="op">==</span><span class="st"> &quot;F&quot;</span> )</a>
+<a class="sourceLine" id="cb97-13" title="13">Sex =<span class="st"> </span><span class="kw">as.character</span>(SexInsured)</a>
+<a class="sourceLine" id="cb97-14" title="14">Sex[Sex <span class="op">!=</span><span class="st"> &quot;F&quot;</span>] &lt;-<span class="st"> &quot;M&quot;</span></a>
+<a class="sourceLine" id="cb97-15" title="15">SexF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Sex), <span class="dt">ref =</span> <span class="st">&quot;F&quot;</span>)</a>
+<a class="sourceLine" id="cb97-16" title="16"></a>
+<a class="sourceLine" id="cb97-17" title="17"><span class="co"># create driver age as factor</span></a>
+<a class="sourceLine" id="cb97-18" title="18">AgeCat =<span class="st"> </span><span class="kw">pmax</span>(AgeCat <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb97-19" title="19">AgeCatF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(AgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span>)</a>
+<a class="sourceLine" id="cb97-20" title="20"><span class="kw">table</span>(AgeCatF) <span class="co"># No policy in the first age band</span></a>
+<a class="sourceLine" id="cb97-21" title="21"></a>
+<a class="sourceLine" id="cb97-22" title="22"><span class="co"># create vehicle age as factor</span></a>
+<a class="sourceLine" id="cb97-23" title="23">VAgeCatF =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span> )</a>
+<a class="sourceLine" id="cb97-24" title="24">VAgecat1 =<span class="st"> </span><span class="kw">factor</span>(VAgecat1, <span class="dt">labels =</span> </a>
+<a class="sourceLine" id="cb97-25" title="25">                    <span class="kw">c</span>(<span class="st">&quot;Vage0-2&quot;</span>, <span class="st">&quot;Vage3-5&quot;</span>, <span class="st">&quot;Vage6-10&quot;</span>, <span class="st">&quot;Vage11-15&quot;</span>, <span class="st">&quot;Vage15+&quot;</span>) )</a>
+<a class="sourceLine" id="cb97-26" title="26">VAgecat1F =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgecat1), <span class="dt">ref =</span> <span class="st">&quot;Vage0-2&quot;</span> )</a>
+<a class="sourceLine" id="cb97-27" title="27"></a>
+<a class="sourceLine" id="cb97-28" title="28"><span class="co"># Poisson reg model</span></a>
+<a class="sourceLine" id="cb97-29" title="29">Pois_reg2 =<span class="st"> </span><span class="kw">glm</span>(Clm_Count <span class="op">~</span><span class="st"> </span>SexF <span class="op">+</span><span class="st"> </span>TypeA<span class="op">:</span>AgeCatF <span class="op">+</span><span class="st"> </span>VAgecat1F, </a>
+<a class="sourceLine" id="cb97-30" title="30">                   <span class="dt">offset =</span> LNWEIGHT, <span class="kw">poisson</span>(<span class="dt">link =</span> log) )</a>
+<a class="sourceLine" id="cb97-31" title="31"><span class="kw">summary</span>(Pois_reg2) </a>
+<a class="sourceLine" id="cb97-32" title="32"></a>
+<a class="sourceLine" id="cb97-33" title="33"><span class="co"># compute relativities</span></a>
+<a class="sourceLine" id="cb97-34" title="34"><span class="kw">exp</span>(Pois_reg2<span class="op">$</span>coefficients)</a>
+<a class="sourceLine" id="cb97-35" title="35"></a>
+<a class="sourceLine" id="cb97-36" title="36"><span class="kw">detach</span>(mydat)</a></code></pre></div>
 </div>
 <hr />
 <p>As a concluding remark, we comment that the Poisson regression is not the only possible count regression model. Actually, the Poisson distribution can be restrictive in the sense that it has a single parameter and its mean and the variance are always equal. There are other count regression models that allow more flexible <a href="#" class="tooltip" style="color:green"><em>distributional structure</em><span style="font-size:8pt">The manner in which a statistical distribution is parameterized</span></a>, such as negative binomial regressions and zero-inflated (ZI) regressions; details of these alternative regressions can be found in other texts listed in the next section.</p>
@@ -1549,10 +1546,10 @@ On the one hand, free market competition dictates rating factors that insurers u
 <div class="footnotes">
 <hr />
 <ol start="9">
-<li id="fn9"><p>For example, if there are 3 risk factors each of which the number of levels are 2, 3 and 4, respectively, we have <span class="math inline">\(k=(2-1)\times(3-1)\times (4-1)=6\)</span>.<a href="C-RiskClass.html#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p>Preferring the <a href="#" class="tooltip" style="color:green"><em>multiplicative form</em><span style="font-size:8pt">Relationship where the dependent variable is a product of the explanatory variables</span></a> to others (e.g., additive one) was already hinted in <a href="C-RiskClass.html#eq:log-lin-mu">(8.4)</a>.<a href="C-RiskClass.html#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p>corresponding to <span class="math inline">\(\texttt{VAgecat1}\)</span><a href="C-RiskClass.html#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p>We use matrix derivative here.<a href="C-RiskClass.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>For example, if there are 3 risk factors each of which the number of levels are 2, 3 and 4, respectively, we have <span class="math inline">\(k=(2-1)\times(3-1)\times (4-1)=6\)</span>.<a href="C-RiskClass.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>Preferring the <a href="#" class="tooltip" style="color:green"><em>multiplicative form</em><span style="font-size:8pt">Relationship where the dependent variable is a product of the explanatory variables</span></a> to others (e.g., additive one) was already hinted in <a href="C-RiskClass.html#eq:log-lin-mu">(8.4)</a>.<a href="C-RiskClass.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>corresponding to <span class="math inline">\(\texttt{VAgecat1}\)</span><a href="C-RiskClass.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>We use matrix derivative here.<a href="C-RiskClass.html#fnref12" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

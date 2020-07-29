@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Premium Foundations | Loss Data Analytics</title>
   <meta name="description" content="Chapter 7 Premium Foundations | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Premium Foundations | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -311,9 +310,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -322,16 +321,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -340,9 +337,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -1671,28 +1668,28 @@ Figure 7.4: Lorenz versus Performance Curve
 <p>For our base premium, we assume a common distribution among all states. For these simulated data, the average in-sample loss is <span class="math inline">\(P_1\)</span>=221.36.</p>
 <p>As an alternative, we use averages that are state-specific; these averages form our premiums <span class="math inline">\(P_2\)</span>. Because this illustration uses means that vary by states, we anticipate this alternative rating procedure to be preferred to the community rating procedure.</p>
 <p>Out of sample claims were generated from the same gamma distribution as the in-sample model, with 100 observations for each state. The following <code>R</code> code shows how to calculate the performance curves.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="C-PremiumFoundations.html#cb95-1"></a>y &lt;-<span class="st"> </span>Outy </span>
-<span id="cb95-2"><a href="C-PremiumFoundations.html#cb95-2"></a>P1 &lt;-<span class="st"> </span>Flatpred</span>
-<span id="cb95-3"><a href="C-PremiumFoundations.html#cb95-3"></a>P2 &lt;-<span class="st"> </span>Predvec</span>
-<span id="cb95-4"><a href="C-PremiumFoundations.html#cb95-4"></a>n1 =<span class="st"> </span><span class="kw">length</span>(y)</span>
-<span id="cb95-5"><a href="C-PremiumFoundations.html#cb95-5"></a>XYmat =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(y,P1,P2))</span>
-<span id="cb95-6"><a href="C-PremiumFoundations.html#cb95-6"></a>XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P1),]  <span class="co">#  Sort by premiums P1</span></span>
-<span id="cb95-7"><a href="C-PremiumFoundations.html#cb95-7"></a>DFy1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</span>
-<span id="cb95-8"><a href="C-PremiumFoundations.html#cb95-8"></a>DFx1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P1)<span class="op">/</span><span class="kw">sum</span>(P1))</span>
-<span id="cb95-9"><a href="C-PremiumFoundations.html#cb95-9"></a>XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P2),]  <span class="co">#  Sort by premiums P2</span></span>
-<span id="cb95-10"><a href="C-PremiumFoundations.html#cb95-10"></a>DFy2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</span>
-<span id="cb95-11"><a href="C-PremiumFoundations.html#cb95-11"></a>DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P2)<span class="op">/</span><span class="kw">sum</span>(P2))</span>
-<span id="cb95-12"><a href="C-PremiumFoundations.html#cb95-12"></a></span>
-<span id="cb95-13"><a href="C-PremiumFoundations.html#cb95-13"></a><span class="co">#  FIGURE 3</span></span>
-<span id="cb95-14"><a href="C-PremiumFoundations.html#cb95-14"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb95-15"><a href="C-PremiumFoundations.html#cb95-15"></a><span class="co">#  Lorenz Curve</span></span>
-<span id="cb95-16"><a href="C-PremiumFoundations.html#cb95-16"></a><span class="kw">plot</span>(DFx1,DFy1,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</span>
-<span id="cb95-17"><a href="C-PremiumFoundations.html#cb95-17"></a><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Flat&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb95-18"><a href="C-PremiumFoundations.html#cb95-18"></a><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</span>
-<span id="cb95-19"><a href="C-PremiumFoundations.html#cb95-19"></a><span class="co">#  Performance Curve</span></span>
-<span id="cb95-20"><a href="C-PremiumFoundations.html#cb95-20"></a><span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</span>
-<span id="cb95-21"><a href="C-PremiumFoundations.html#cb95-21"></a><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb95-22"><a href="C-PremiumFoundations.html#cb95-22"></a><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1">y &lt;-<span class="st"> </span>Outy </a>
+<a class="sourceLine" id="cb95-2" title="2">P1 &lt;-<span class="st"> </span>Flatpred</a>
+<a class="sourceLine" id="cb95-3" title="3">P2 &lt;-<span class="st"> </span>Predvec</a>
+<a class="sourceLine" id="cb95-4" title="4">n1 =<span class="st"> </span><span class="kw">length</span>(y)</a>
+<a class="sourceLine" id="cb95-5" title="5">XYmat =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(y,P1,P2))</a>
+<a class="sourceLine" id="cb95-6" title="6">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P1),]  <span class="co">#  Sort by premiums P1</span></a>
+<a class="sourceLine" id="cb95-7" title="7">DFy1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
+<a class="sourceLine" id="cb95-8" title="8">DFx1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P1)<span class="op">/</span><span class="kw">sum</span>(P1))</a>
+<a class="sourceLine" id="cb95-9" title="9">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P2),]  <span class="co">#  Sort by premiums P2</span></a>
+<a class="sourceLine" id="cb95-10" title="10">DFy2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
+<a class="sourceLine" id="cb95-11" title="11">DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P2)<span class="op">/</span><span class="kw">sum</span>(P2))</a>
+<a class="sourceLine" id="cb95-12" title="12"></a>
+<a class="sourceLine" id="cb95-13" title="13"><span class="co">#  FIGURE 3</span></a>
+<a class="sourceLine" id="cb95-14" title="14"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb95-15" title="15"><span class="co">#  Lorenz Curve</span></a>
+<a class="sourceLine" id="cb95-16" title="16"><span class="kw">plot</span>(DFx1,DFy1,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
+<a class="sourceLine" id="cb95-17" title="17"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Flat&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb95-18" title="18"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a>
+<a class="sourceLine" id="cb95-19" title="19"><span class="co">#  Performance Curve</span></a>
+<a class="sourceLine" id="cb95-20" title="20"><span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
+<a class="sourceLine" id="cb95-21" title="21"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb95-22" title="22"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a></code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-217-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
