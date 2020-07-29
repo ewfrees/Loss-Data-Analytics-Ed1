@@ -4,7 +4,8 @@
 # Modeling Loss Severity {#C:Severity}
 
 
-*Chapter Preview.* The traditional loss distribution approach to modeling `r Gloss('aggregate losses')` starts by separately fitting a frequency distribution to the number of losses and a severity distribution to the size of losses. The estimated aggregate loss distribution combines the loss frequency distribution and the loss severity distribution by convolution. Discrete distributions often referred to as counting or frequency distributions were used in Chapter \@ref(C:Frequency-Modeling) to describe the number of events such as number of accidents to the driver or number of claims to the insurer. Lifetimes, asset values, losses and claim sizes are usually modeled as continuous random variables and as such are modeled using continuous distributions, often referred to as loss or severity distributions. A `r Gloss('mixture distribution', '3')` is a weighted combination of simpler distributions that is used to model phenomenon investigated in a heterogeneous population, such as modeling more than one type of claims in `r Gloss('liability insurance')` (small frequent claims and large relatively rare claims). In this chapter we explore the use of continuous as well as mixture distributions to model the random size of loss. We present key attributes that characterize continuous models and means of creating new distributions from existing ones. We also explore the effect of coverage modifications, which change the conditions that trigger a payment, such as applying deductibles, limits, or adjusting for inflation, on the distribution of individual loss amounts. The frequency distributions from Chapter \@ref(C:Frequency-Modeling) will be combined with the ideas from this chapter to describe the aggregate losses over the whole portfolio in Chapter \@ref(C:AggLossModels).
+*Chapter Preview.* The traditional loss distribution approach to modeling `r Gloss('aggregate losses')` starts by separately fitting a frequency distribution to the number of losses and a severity distribution to the size of losses. The estimated aggregate loss distribution combines the loss frequency distribution and the loss severity distribution by convolution. Discrete distributions often referred to as counting or frequency distributions were used in Chapter \@ref(C:Frequency-Modeling) to describe the number of events such as number of accidents to the driver or number of claims to the insurer. Lifetimes, asset values, losses and claim sizes are usually modeled as continuous random variables and as such are modeled using continuous distributions, often referred to as loss or severity distributions. A `r Gloss('mixture distribution', '3')` is a weighted combination of simpler distributions that is used to model phenomenon investigated in a heterogeneous population, such as modeling more than one type of claims in `r Gloss('liability insurance')` (small frequent claims and large relatively rare claims). In this chapter we explore the use of continuous as well as mixture distributions to model the random size of loss. Sections \@ref(S:BasicQuantities) and \@ref(S:ContinuousDistn)
+present key attributes that characterize continuous models and means of creating new distributions from existing ones. Section \@ref(S:CoverageModifications) describes the effect of coverage modifications, which change the conditions that trigger a payment, such as applying deductibles, limits, or adjusting for inflation, on the distribution of individual loss amounts. For calibrating models, Section \@ref(S:MaxLikeEstimation) deepens our understanding of maximum likelihood methods. The frequency distributions from Chapter \@ref(C:Frequency-Modeling) will be combined with the ideas from this chapter to describe the aggregate losses over the whole portfolio in Chapter \@ref(C:AggLossModels).
 
 
 
@@ -61,7 +62,7 @@ $\mathrm{Var}\left( X \right) = (\alpha  + 1)\alpha\theta^2 - (\alpha\theta)^2 =
 
 $$
 \begin{array}{ll}
-\text{Skewness}  &= \frac{\mathrm{E}\left\lbrack {(X - \mu_{1}^{\prime})}^{3} \right\rbrack}{{\mathrm{Var}\left( X \right)}^{3/2}} = \frac{\mu_{3}^{\prime} - 3\mu_{2}^{\prime}\mu_{1}^{\prime} + 2{\mu_{1}^{\prime}}^{3}}{{\mathrm{Var}\left( X \right)}^{3/2}} \\
+\text{Skewness}  &= \frac{\mathrm{E}\left\lbrack {(X - \mu_{1}^{\prime})}^{3} \right\rbrack}{{\left( \mathrm{Var}X \right)}^{3/2}} = \frac{\mu_{3}^{\prime} - 3\mu_{2}^{\prime}\mu_{1}^{\prime} + 2{\mu_{1}^{\prime}}^{3}}{{\left(\mathrm{Var} X \right)}^{3/2}} \\
  &= \frac{\left( \alpha + 2 \right)\left( \alpha + 1 \right)\alpha\theta^{3} - 3\left( \alpha + 1 \right)\alpha^{2}\theta^{3} + 2\alpha^{3}\theta^{3}}{\left( \alpha\theta^{2} \right)^{3/2}} \\
  &= \frac{2}{\alpha^{1/2}} = 1.
  \end{array}
@@ -148,7 +149,7 @@ $$
 M_{S}(t) = \prod_{i = 1}^{n}{\mathrm{E}\left( e^{tX_{i}} \right) = \prod_{i = 1}^{n}{M_{X_{i}}(t)}} .
 $$
 
-The moment generating function of the gamma distribution $X_i$ is $M_{X_i}(t) = (1-\theta)^{\alpha_i}$. Then,
+The moment generating function of the gamma distribution $X_i$ is $M_{X_i}(t) = (1-\theta t)^{\alpha_i}$. Then,
 $$
 M_{S}(t) = \prod_{i = 1}^{n}\left( 1 - \theta t \right)^{- \alpha_{i}} = \left( 1 - \theta t \right)^{- \sum_{i = 1}^{n}\alpha_{i}} . 
 $$
@@ -576,7 +577,7 @@ $$
 
 Hence, the probability density function of interest $f_{Y}(y)$ can be written as
 $$
-f_{Y}(y) = \frac{1}{\tau} y^{1/ \tau - 1} f_{X}\left( y^{1/ \tau} \right).
+f_{Y}(y) = \frac{1}{\tau} y^{(1/ \tau) - 1} f_{X}\left( y^{1/ \tau} \right).
 $$
 On the other hand, if $\tau < 0$, then the distribution function of $Y$ is given by
 $$
@@ -585,7 +586,7 @@ $$
 and
 
 $$
-f_{Y}(y) = \left| \frac{1}{\tau} \right|{y^{1/ \tau - 1}f}_{X}\left( y^{1/ \tau} \right).
+f_{Y}(y) = \left| \frac{1}{\tau} \right|{y^{(1/ \tau) - 1}f}_{X}\left( y^{1/ \tau} \right).
 $$
 
 **Example `r chapnum`.3.3.**
@@ -633,7 +634,7 @@ As an important special case, suppose that $X$ is normally distributed with mean
 
 $$
 f_{Y}(y) = \frac{1}{y}f_{X}\left( \ln y \right)
-= \frac{1}{y\sqrt{2 \pi}} \exp \left\{-\frac{1}{2}\left(\frac{ \ln y - \mu}{\sigma}\right)^2\right\}. 
+= \frac{1}{y \sigma \sqrt{2 \pi}} \exp \left\{-\frac{1}{2}\left(\frac{ \ln y - \mu}{\sigma}\right)^2\right\}. 
 $$
 This is known as a *lognormal* distribution.
 
@@ -914,7 +915,7 @@ $$
 $$
 This could be easily proved if we start with the initial definition of $\mathrm{E}(Y^L)$  and use integration by parts.
 
-We have seen that the deductible $d$ imposed on an insurance policy is the amount of loss that has to be paid out of pocket before the insurer makes any payment. The deductible $d$ imposed on an insurance policy reduces the insurer's payment. The `r Gloss('loss elimination ratio (LER)')` is the percentage decrease in the expected payment of the insurer as a result of imposing the deductible. *LER* is defined as
+We have seen that the deductible $d$ imposed on an insurance policy is the amount of loss that has to be paid out of pocket before the insurer makes any payment. The deductible $d$ imposed on an insurance policy reduces the insurer's payment. The `r Gloss('loss elimination ratio (LER)')` is the percentage decrease in the expected payment of the insurer as a result of imposing the deductible. It is defined as
 $$LER = \frac{\mathrm{E}\left( X \right) - \mathrm{E}\left( Y^{L} \right)}{\mathrm{E}\left( X \right)}.$$
 
 A little less common type of policy deductible is the franchise deductible. The `r Gloss('franchise deductible')` will apply to the policy in the same way as ordinary deductible except that when the loss exceeds the deductible $d$, the full loss is covered by the insurer. The payment per loss and payment per payment variables are defined as
@@ -1046,7 +1047,7 @@ $$
 
 It can be seen that the distinction between $Y^{L}$ and $Y^{P}$ is not needed under limited policy as the insurer will always make a payment.  
 
-Using the definitions of $\left(X-d\right)_+ \text{ and } \left(X\land d\right)$, it can be easily seen that the expected payment without any coverage modification, $X$, is equal to the sum of the expected payments with deductible $d$ and limit $d$. That is, ${X=\left(X-d\right)}_++ \left(X\land d\right)$.  
+Using the definitions of $\left(X-u\right)_+ \text{ and } \left(X\land u\right)$, it can be easily seen that the expected payment without any coverage modification, $X$, is equal to the sum of the expected payments with deductible $u$ and limit $u$. That is, ${X=\left(X-u\right)}_++ \left(X\land u\right)$.  
 
 When a loss is subject to a deductible $d$ and a limit $u$, the per-loss variable $Y^L$ is defined as
 $$
@@ -1955,7 +1956,7 @@ The mean of the Pareto only exists for $\alpha > 1$. Since $\hat{\alpha} = 0.785
 
 #### Exercises {-}
 
-Here are a set of exercises that guide the viewer through some of the theoretical foundations of **Loss Data Analytics**. Each tutorial is based on one or more questions from the professional actuarial examinations – typically the Society of Actuaries Exam C.
+Here are a set of exercises that guide the viewer through some of the theoretical foundations of **Loss Data Analytics**. Each tutorial is based on one or more questions from the professional actuarial examinations – typically the Society of Actuaries Exam C/STAM.
 
 <p style="text-align: center;">
 [Severity Distribution Guided Tutorials](http://www.ssc.wisc.edu/~jfrees/loss-data-analytics/chapter-3-modeling-loss-severity/loss-data-analytics-severity-problems/)
