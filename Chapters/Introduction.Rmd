@@ -294,7 +294,7 @@ Analytics can also be used to manage the portfolio, or collection, of risks that
 
 ### Loss Reserving {#S:Reserving}
 
-An important feature that distinguishes insurance from other sectors of the economy is the timing of the exchange of considerations. In manufacturing, payments for goods are typically made at the time of a transaction. In contrast, for insurance, money received from a customer occurs in advance of benefits or services; these are rendered at a later date if the insured event occurs. This leads to the need to hold a reservoir of wealth to meet future obligations in respect to obligations made, and to gain the trust of the insureds that the company will be able to fulfill its commitments. The size of this reservoir of wealth, and the importance of ensuring its adequacy, is a major concern for the insurance industry.
+An important feature that distinguishes insurance from other sectors of the economy is the timing of the exchange of considerations. In manufacturing, payments for goods are typically made at the time of a transaction. In contrast, for insurance, money received from a customer occurs in advance of benefits or services; these are rendered at a later date when the insured event occurs. This leads to the need to hold a reservoir of wealth to meet future obligations in respect to obligations made, and to gain the trust of the insureds that the company will be able to fulfill its commitments. The size of this reservoir of wealth, and the importance of ensuring its adequacy, is a major concern for the insurance industry.
 
 Setting aside money for unpaid claims is known as `r Gloss('loss reserving')`; in some jurisdictions, reserves are also known as *technical provisions*. We saw in Figure \@ref(fig:StochOperations) several times at which a company summarizes its financial position; these times are known as `r Gloss('valuation dates')`. Claims that arise prior to valuation dates have either been paid, are in the process of being paid, or are about to be paid; claims in the future of these valuation dates are unknown. A company must estimate these outstanding liabilities when determining its financial strength. Accurately determining loss reserves is important to insurers for many reasons.
 
@@ -669,7 +669,7 @@ severity than policyholders with the highest (15%, with 24/7 monitoring
 by a fire station or security company) alarm credit. In particular, when
 we look at the entity type School, the frequency is 0.422 and the
 severity 25,523 for no alarm credit, whereas for the highest alarm level
-it is 2.008 and 85,140, respectively. This may simply imply that entities with more
+it is 2.008 and 85,140. This may simply imply that entities with more
 claims are the ones that are likely to have an alarm system. Summary
 tables do not examine multivariate effects; for example, Table
 \@ref(tab:ClaimRateVar) ignores the effect of size (as we measure through
@@ -776,8 +776,10 @@ Table4d <- ByVarCredit(4)    #Claims Summary by Entity Type and Alarm Credit==15
 ### Fund Operations
 
 We have now seen distributions of the Fund’s two outcome variables: a count variable for the number of claims, and a continuous variable for the claims amount. We have also introduced a continuous rating variable (coverage); a discrete quantitative variable (logarithmic deductibles); two binary rating variables (no claims credit and fire class); and two categorical rating variables (entity type and alarm credit). Subsequent chapters will
-explain how to analyze and model the distribution of these variables and their relationships. Before getting into these technical details, let us
-first think about where we want to go. General insurance company functional areas are described in Section \@ref(S:PredModApps); we now consider how these areas might apply in the context of the property fund.
+explain how to analyze and model the distribution of these variables and
+there relationships. Before getting into these technical details, let us
+first think about where we want to go. General insurance company
+functional areas are described in Section \@ref(S:PredModApps); we now consider how these areas might apply in the context of the property fund.
 
 #### Initiating Insurance {-}
 
@@ -797,7 +799,7 @@ steady charge that local property managers could utilize in their
 budgets.
 
 Having a single price for all policyholders is nice but hardly seems
-fair. For example, Table \@ref(tab:ClaimRateVar) suggests that schools have
+fair. For example, Table \@ref(tab:ClaimRateVar) suggests that Schools have
 higher aggregate claims than other entities and so should pay more. However,
 simply doing the calculation on an entity by entity basis is not right
 either. For example, we saw in Table \@ref(tab:RateAlarmCredit) that had we
