@@ -7,7 +7,7 @@
 
 In Section \@ref(S:frequency-distributions), we present terminology and discuss reasons why we study frequency and severity separately. The foundations of frequency distributions and measures are presented in Section \@ref(S:basic-frequency-distributions) along with three principal distributions: the binomial, the Poisson, and the negative binomial. These three distributions are members of what is known as the $(a,b,0)$ class of distributions, a distinguishing, identifying feature which allows for efficient calculation of probabilities, further discussed in Section \@ref(S:the-a-b-0-class). When fitting a dataset with a distribution, parameter values need to be estimated and in Section \@ref(S:estimating-frequency-distributions), the procedure for maximum likelihood estimation is explained. 
 
-For insurance datasets, the observation at 0 denotes no occurrence of a particular event; this often deserves additional attention. As explained further in Section \@ref(S:other-frequency-distributions), for some datasets it may be impossible to have zero of the studied event or zero events may follow a different model than other event counts. 
+For insurance datasets, the observation at zero denotes no occurrence of a particular event; this often deserves additional attention. As explained further in Section \@ref(S:other-frequency-distributions), for some datasets it may be impossible to have zero of the studied event or zero events may follow a different model than other event counts. 
 In either case, direct fitting of typical count models could lead to improper estimates. Zero truncation or modification techniques allow for more appropriate distribution fit. 
 
 Noting that our insurance portfolio could consist of different sub-groups, each with its own set of individual characteristics, Section \@ref(S:mixture-distributions) introduces mixture distributions and methodology to allow for this heterogeneity within a portfolio. Section \@ref(S:goodness-of-fit) describes goodness of fit which measures the reasonableness of the parameter estimates. Exercises are presented in Section \@ref(S:exercises) and Section \@ref(S:rcode) concludes the chapter with `R` Code for plots depicted in Section \@ref(S:estimating-frequency-distributions).
@@ -35,7 +35,7 @@ In this chapter, **loss**, also referred to as ground-up loss, denotes the amoun
 
 Recall from Section \@ref(S:PredModApps) that setting the price of an insurance good can be a complex problem. In manufacturing, the cost of a good is (relatively) known. In other financial service areas, market prices are available. In insurance, we can generalize the price setting as follows. Start with an expected cost, then add "margins" to account for the product's riskiness, expenses incurred in servicing the product, and a profit/surplus allowance for the insurer.
   
-The expected cost for insurance can be determined as the expected number of claims times the amount per claim, that is, expected *frequency times severity*. The focus on claim count allows the insurer to consider those factors which directly affect the occurrence of a loss, thereby potentially generating a claim. 
+The expected cost for insurance can be determined as the expected number of claims times the amount per claim, that is, expected value of *frequency times severity*. The focus on claim count allows the insurer to consider those factors which directly affect the occurrence of a loss, thereby potentially generating a claim. 
 
 <!-- The frequency process can then be modeled. -->
 
@@ -47,12 +47,13 @@ Insurers and other stakeholders, including governmental organizations, have vari
 
 * **Behavioral.** In considering factors that influence loss frequency, the risk-taking and risk-reducing behavior of individuals and companies should be considered. Explanatory (rating) variables can have different effects on models of how often an event occurs in contrast to the size of the event.
 
-    + In healthcare, the decision to utilize healthcare by individuals, and minimize such healthcare utilization through preventive care and wellness measures, is related primarily to his or her personal characteristics. The cost per user is determined by those personal, the medical condition, potential treatment measures, and decisions made by the healthcare provider (such as the physician) and the patient. While there is overlap in those factors and how they affect total healthcare costs, attention can be focused on those separate drivers of healthcare visit frequency and healthcare cost severity.
+    + In healthcare, the decision to utilize healthcare by individuals, and minimize such healthcare utilization through preventive care and wellness measures, is related primarily to his or her personal characteristics. The cost per user is determined by the patient's medical condition, potential treatment measures, and decisions made by the healthcare provider (such as the physician) and the patient. While there is overlap in those factors and how they affect total healthcare costs, attention can be focused on those separate drivers of healthcare visit frequency and healthcare cost severity.
     + In personal lines, prior claims history is an important underwriting factor. It is common to use an indicator of whether or not the insured had a claim within a certain time period prior to the contract. Also, the number of claims incurred by the insured in previous periods has predictive power.
     + In homeowners insurance, in modeling potential loss frequency, the insurer could consider loss prevention measures that the homeowner has adopted, such as visible security systems. Separately, when modeling loss severity, the insurer would examine those factors that affect repair and replacement costs.
 
-    
-*  **Databases**. Insurers may hold separate data files that suggest developing separate frequency and severity models. For example, a policyholder file is established when a policy is written. This file records much underwriting information about the insured(s), such as age, gender, and prior claims experience, policy information such as coverage, deductibles and limitations, as well as the insurance claims event. A separate file, known as the "claims" file, records details of the claim against the insurer, including the amount. (There may also be a "payments" file that records the timing of the payments although we shall not deal with that here.) This recording process could then extend to  insurers modeling the frequency and severity as separate processes.
+<br>
+
+*  **Databases**. Insurers may hold separate data files that suggest developing separate frequency and severity models. For example, a policyholder file is established when a policy is written. This file records much underwriting information about the insured(s), such as age, gender, and prior claims experience, policy information such as coverage, deductibles and limitations, as well as any insurance claims event. A separate file, known as the "claims" file, records details of the claim against the insurer, including the amount. (There may also be a "payments" file that records the timing of the payments although we shall not deal with that here.) This recording process could then extend to  insurers modeling the frequency and severity as separate processes.
 
 * **Regulatory and Administrative.** Insurance is a highly regulated and monitored industry, given its importance in providing financial security to individuals and companies facing risk. As part of their duties, regulators routinely require the reporting of claims numbers as well as amounts. This may be due to the fact that there can be alternative definitions of an "amount," e.g., paid versus incurred, and there is less potential error when reporting claim numbers. This continual monitoring helps ensure financial stability of these insurance companies.
 
@@ -102,7 +103,7 @@ $$
 \mu_N=\sum_{k=0}^\infty k~p_N(k).
 $$
 
-We note that $\mu_N$ is the expected value of the random variable $N$, *i.e.* $\mu_N=\mathrm{E}[N]$. This leads to a general class of measures, the `r Gloss('moments')` of the distribution; the $r$-th moment of $N$, for $r> 0$,  is defined as $\mathrm{E}{[N^r]}$ and denoted by $\mu_N'(r)$. Hence, for $r>0$, we have  
+We note that $\mu_N$ is the expected value of the random variable $N$, *i.e.* $\mu_N=\mathrm{E}[N]$. This leads to a general class of measures, the `r Gloss('moments')` of the distribution; the $r$-th raw moment of $N$, for $r> 0$,  is defined as $\mathrm{E}{[N^r]}$ and denoted by $\mu_N'(r)$. We remark that the prime $\prime$ here does *not* denote differentiation. Rather, it is commonly used notation to distinguish a raw from a central moment, as will be introduction in Section \@ref(S:Chap3Moments). For $r>0$, we have  
 
 $$
 \mu_N'(r)= \mathrm{E}{[N^r]}= \sum_{k=0}^\infty k^r~p_N(k).
@@ -110,7 +111,7 @@ $$
 
 We note that $\mu_N'(\cdot)$ is a well-defined non-decreasing function taking values in $[0,\infty]$, as $\Pr(N\in\{0, 1, \ldots \})=1$; also, note that $\mu_N=\mu_N'(1)$. In the following, when we refer to a moment it will be implicit that it is finite unless mentioned otherwise.
 
-Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the `r Gloss('standard deviation')` is the most popular. Towards defining it, we first define the `r Gloss('variance')` of $N$, denoted by $\mathrm{Var}[N]$, as $\mathrm{Var}[N]=\mathrm{E}{[(N-\mu_N)^2]}$ when $\mu_N$ is finite. By basic properties of the expected value of a random variable, we see that $\mathrm{Var}[N]=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2$. The standard deviation of $N$, denoted by $\sigma_N$, is defined as the square-root of $\mathrm{Var}~N$. Note that the latter is well-defined as $\mathrm{Var}[N]$, by its definition as the average squared deviation from the mean, is non-negative; $\mathrm{Var}[N]$ is denoted by $\sigma_N^2$. Note that these two measures take values in $[0,\infty]$.  
+Another basic aspect of a distribution is its dispersion, and of the various measures of dispersion studied in the literature, the `r Gloss('standard deviation')` is the most popular. Towards defining it, we first define the `r Gloss('variance')` of $N$, denoted by $\mathrm{Var}[N]$, as $\mathrm{Var}[N]=\mathrm{E}{[(N-\mu_N)^2]}$ when $\mu_N$ is finite. By basic properties of the expected value of a random variable, we see that $\mathrm{Var}[N]=\mathrm{E}[N^2]-[\mathrm{E}(N)]^2$. The standard deviation of $N$, denoted by $\sigma_N$, is defined as the square root of $\mathrm{Var}~N$. Note that the latter is well-defined as $\mathrm{Var}[N]$, by its definition as the average squared deviation from the mean, is non-negative; $\mathrm{Var}[N]$ is denoted by $\sigma_N^2$. Note that these two measures take values in $[0,\infty]$.  
 
 ### Moment and Probability Generating Functions {#S:generating-functions}
 
@@ -133,7 +134,7 @@ $$
 
 The *mgf* can be used to *generate* its moments as follows:
 \[
-\left.\frac{{\rm d}^m}{{\rm d}t^m} M_N(t)\right\vert_{t=0}=\mathrm{E}{N^m}, \quad m\geq 1.
+\left.\frac{{\rm d}^m}{{\rm d}t^m} M_N(t)\right\vert_{t=0}=\mathrm{E}[N^m], \quad m\geq 1.
 \]
 The *mgf* $M_N(\cdot)$ characterizes the distribution; in other words it uniquely specifies the distribution.
 ```
@@ -152,7 +153,7 @@ It is straightforward to see that if the *mgf* $M_N(\cdot)$ exists on $(-\infty,
 \[
 P_N(s)=M_N(\log(s)), \quad s<e^{t^\ast}.
 \]
-Moreover, if the *pgf* exists on an interval $[0,s^\ast)$ with $s^\ast>1$, then the *mgf* $M_N(\cdot)$ exists on $(-\infty,\log(s^\ast))$, and hence uniquely specifies the distribution of $N$ by Theorem \@ref(thm:freq-thm1). The following result for *pgf* is an analog of Theorem \@ref(thm:freq-thm1), and in particular justifies its name.  
+Moreover, if the *pgf* exists on an interval $[0,s^\ast)$ with $s^\ast>1$, then the *mgf* $M_N(\cdot)$ exists on $(-\infty,\log(s^\ast))$, and hence uniquely specifies the distribution of $N$ by Theorem \@ref(thm:freq-thm1). (As a reminder, throughout this text we use *log* as the natural logarithm, not the base ten (common) logarithm or other version.) The following result for *pgf* is an analog of Theorem \@ref(thm:freq-thm1), and in particular justifies its name.  
 
 <!-- \begin{theorem}\label{pgfthm} -->
 ```{theorem, pgfthm}
@@ -162,7 +163,7 @@ All moments of $N$ are finite, *i.e.*
 \[
 \mathrm{E}~{N^r}<\infty, \quad r\geq 0.
 \]
-The `r Gloss('pmf')` of $N$ can be derived from the *pgf* as follows:
+The $pmf$ of $N$ can be derived from the *pgf* as follows:
 \[
 p_N(m)=\begin{cases} 
 P_N(0), &m=0;\cr
@@ -235,7 +236,7 @@ The Poisson distribution is parametrized by a single parameter usually denoted b
 \[
 p_k = \frac{e^{-\lambda}\lambda^k}{k!}, k=0,1,\ldots
 \]
-It is easy to check that the above specifies a *pmf* as the terms are clearly non-negative, and that they sum to one follows from the infinite Taylor series expansion of $e^\lambda$. More generally, we can derive its *pgf*, $P(\cdot)$, as follows:
+It is easy to check that the above specifies a *pmf* as the terms are clearly non-negative, and that they sum to one follows from the infinite Taylor series expansion of $e^\lambda$. More generally, we can derive its *pgf*, $P_N(\cdot)$, as follows:
 \[
 P_N(z)= \sum_{k=0}^\infty p_k z^k = \sum_{k=0}^\infty  \frac{e^{-\lambda}\lambda^kz^k}{k!} = e^{-\lambda} e^{\lambda z}
 = e^{\lambda(z-1)}, \forall z\in\mathbb{R}.
@@ -653,7 +654,7 @@ c(r,iter)
 
 *** 
 
-To summarize our discussion of `r Gloss('MLE')` for the $(a,b,0)$ class of distributions, in Figure \@ref(fig:MLEab0) below we plot the maximum value of the Poisson likelihood, $L(m,\overline{x}/m)$ for the binomial, and $L(r,\overline{x}/r)$ for the negative binomial, for the three samples of size $5$ given in [Table 2.1]. The data was constructed to cover the three orderings of the sample mean and variance. As show in the Figure \@ref(fig:MLEab0), and supported by theory, if $\hat{\mu}<\hat{\sigma}^2$ then the negative binomial results in a higher maximum likelihood value; if $\hat{\mu}=\hat{\sigma}^2$  the Poisson has the highest likelihood value; and finally in the case that $\hat{\mu}>\hat{\sigma}^2$ the binomial gives a better fit than the others. So before fitting a frequency data with an $(a,b,0,)$ distribution, it is best to start with examining the ordering of $\hat{\mu}$ and $\hat{\sigma}^2$. We again emphasize that the Poisson is on the **boundary** of the  negative binomial and binomial distributions. So in the case that $\hat{\mu}\geq\hat{\sigma}^2$ ($\hat{\mu}\leq\hat{\sigma}^2$, resp.) the Poisson yields a better fit than the negative binomial 
+To summarize our discussion of `r Gloss('MLE')` for the $(a,b,0)$ class of distributions, in Figure \@ref(fig:MLEab0) below we plot the maximum value of the Poisson likelihood, $L(m,\overline{x}/m)$ for the binomial, and $L(r,\overline{x}/r)$ for the negative binomial, for the three samples of size $5$ given in [Table 2.1]. The data was constructed to cover the three orderings of the sample mean and variance. As show in the Figure \@ref(fig:MLEab0), and supported by theory, if $\hat{\mu}<\hat{\sigma}^2$ then the negative binomial results in a higher maximum likelihood value; if $\hat{\mu}=\hat{\sigma}^2$  the Poisson has the highest likelihood value; and finally in the case that $\hat{\mu}>\hat{\sigma}^2$ the binomial gives a better fit than the others. So before fitting a frequency data with an $(a,b,0)$ distribution, it is best to start with examining the ordering of $\hat{\mu}$ and $\hat{\sigma}^2$. We again emphasize that the Poisson is on the **boundary** of the  negative binomial and binomial distributions. So in the case that $\hat{\mu}\geq\hat{\sigma}^2$ ($\hat{\mu}\leq\hat{\sigma}^2$, resp.) the Poisson yields a better fit than the negative binomial 
 (binomial, resp.), which is indicated by $\hat{r}=\infty$ ($\hat{m}=\infty$, resp.).
 
 <a id=tab:2.1></a>  
@@ -800,7 +801,7 @@ F(x)=\sum_{i=1}^k \alpha_i \cdot F_i(x).
 (\#eq:mixdefn)
 $$
 
-The above expression can be seen as a direct application of the Law of Total Probability. As an example, consider a population of drivers split broadly into two sub-groups, those with at most $5$-years of driving experience and those with more than $5$-years experience. Let $\alpha$ denote the proportion of drivers with less than $5$ years experience, and $F_{\leq 5}$ and $F_{> 5}$ denote the distribution of the count of claims in a year for a driver in each group, respectively. Then the distribution of claim count of a randomly selected driver is given by 
+The above expression can be seen as a direct application of the Law of Total Probability. As an example, consider a population of drivers split broadly into two sub-groups, those with at most five years of driving experience and those with more than five years experience. Let $\alpha$ denote the proportion of drivers with less than $5$ years experience, and $F_{\leq 5}$ and $F_{> 5}$ denote the distribution of the count of claims in a year for a driver in each group, respectively. Then the distribution of claim count of a randomly selected driver is given by 
 \[
 \alpha\cdot F_{\leq 5}(x) + (1-\alpha)F_{> 5}(x).
 \]
@@ -809,7 +810,7 @@ An alternate definition of a `r Gloss('mixture distribution', '2.6')` is as foll
 
 [^7]: This in particular lays out a way to simulate from a mixture distribution that makes use of efficient simulation schemes that may exist for the component distributions.
 
-In \@ref(eq:mixdefn) we see that the distribution function is a convex combination of the component distribution functions. This result easily extends to the density function, the survival function, the raw moments, and the expectation as these are all linear mappings of the distribution function. We note that this is not true for central moments like the variance, and conditional measures like the hazard rate function. In the case of variance it is easily seen as 
+In \@ref(eq:mixdefn) we see that the distribution function is a convex combination of the component distribution functions. This result easily extends to the probability mass function, the survival function, the raw moments, and the expectation as these are all linear mappings of the distribution function. We note that this is not true for central moments like the variance, and conditional measures like the hazard rate function. In the case of variance it is easily seen as 
 
 $$
 \mathrm{Var}{[N_I]}=\mathrm{E}[{\mathrm{Var}[{N_I\vert I}]]} + \mathrm{Var}[{\mathrm{E}[{N_I|I}}]]=\sum_{i=1}^k \alpha_i \mathrm{Var}[{N_i}] + \mathrm{Var}[{\mathrm{E}[{N_I|I}}]] .
@@ -876,7 +877,7 @@ F(x)=\mathrm{E}[{G_{\tilde{\vartheta}}(x)}],\quad \forall x\in\mathbb{R},
 \]
 where $\tilde{\vartheta}$ takes values $\tilde{\theta_i}$ with probability $\alpha_i$, for $i=1,\ldots,k$. The above makes it clear that when $k$ is large, one could model the above by treating $\tilde{\vartheta}$ as continuous random variable.  
 
-To illustrate this approach, suppose we have a population of drivers with the distribution of claims for an individual driver being distributed as a Poisson. Each person has their own (personal) expected number of claims \(\lambda\) - smaller values for good drivers, and larger values for others. There is a distribution of \(\lambda\) in the population; a popular and convenient choice for modeling this distribution is a gamma distribution with parameters \((\alpha, \theta)\). With these specifications it turns out that the resulting distribution of $N$, the claims of a randomly chosen driver, is a negative binomial with parameters $(r=\alpha,\beta=\theta)$. This can be shown in many ways, but a straightforward argument is as follows:
+To illustrate this approach, suppose we have a population of drivers with the distribution of claims for an individual driver being distributed as a Poisson. Each person has their own (personal) expected number of claims \(\lambda\) - smaller values for good drivers, and larger values for others. There is a distribution of \(\lambda\) in the population; a popular and convenient choice for modeling this distribution is a gamma distribution with parameters \((\alpha, \theta)\) (the gamma distribution will be introduced formally in Section \@ref(S:Loss:Gamma)). With these specifications it turns out that the resulting distribution of $N$, the claims of a randomly chosen driver, is a negative binomial with parameters $(r=\alpha,\beta=\theta)$. This can be shown in many ways, but a straightforward argument is as follows:
 
 $$
 \begin{array}{ll}

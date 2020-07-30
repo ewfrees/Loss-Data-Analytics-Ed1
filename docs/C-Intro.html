@@ -514,7 +514,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:MS:DedImpactClmFreq"><i class="fa fa-check"></i><b>5.5.2</b> Impact of Deductibles on Claim Frequency</a></li>
 <li class="chapter" data-level="5.5.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#impact-of-policy-modifications-on-aggregate-claims"><i class="fa fa-check"></i><b>5.5.3</b> Impact of Policy Modifications on Aggregate Claims</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a></li>
+<li class="chapter" data-level="5.6" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#AL-further-reading-and-resources"><i class="fa fa-check"></i><b>5.6</b> Further Resources and Contributors</a><ul>
+<li class="chapter" data-level="" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#ts-5.a.1.-individual-risk-model-properties"><i class="fa fa-check"></i>TS 5.A.1. Individual Risk Model Properties</a></li>
+<li><a href="C-AggLossModels.html#ts-5.a.2.-relationship-between-probability-generating-functions-of-x_i-and-x_it">TS 5.A.2. Relationship Between Probability Generating Functions of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_i^T\)</span></a></li>
+<li><a href="C-AggLossModels.html#ts-5.a.3.-example-5.3.8-moment-generating-function-of-aggregate-loss-s_n">TS 5.A.3. Example 5.3.8 Moment Generating Function of Aggregate Loss <span class="math inline">\(S_N\)</span></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="C-Simulation.html"><a href="C-Simulation.html"><i class="fa fa-check"></i><b>6</b> Simulation and Resampling</a><ul>
 <li class="chapter" data-level="6.1" data-path="C-Simulation.html"><a href="C-Simulation.html#S:SimulationFundamentals"><i class="fa fa-check"></i><b>6.1</b> Simulation Fundamentals</a><ul>
@@ -1056,7 +1060,7 @@ the need for analytics in underwriting, that is, risk classification at the init
 </div>
 <div id="S:Reserving" class="section level3">
 <h3><span class="header-section-number">1.2.4</span> Loss Reserving</h3>
-<p>An important feature that distinguishes insurance from other sectors of the economy is the timing of the exchange of considerations. In manufacturing, payments for goods are typically made at the time of a transaction. In contrast, for insurance, money received from a customer occurs in advance of benefits or services; these are rendered at a later date when the insured event occurs. This leads to the need to hold a reservoir of wealth to meet future obligations in respect to obligations made, and to gain the trust of the insureds that the company will be able to fulfill its commitments. The size of this reservoir of wealth, and the importance of ensuring its adequacy, is a major concern for the insurance industry.</p>
+<p>An important feature that distinguishes insurance from other sectors of the economy is the timing of the exchange of considerations. In manufacturing, payments for goods are typically made at the time of a transaction. In contrast, for insurance, money received from a customer occurs in advance of benefits or services; these are rendered at a later date if the insured event occurs. This leads to the need to hold a reservoir of wealth to meet future obligations in respect to obligations made, and to gain the trust of the insureds that the company will be able to fulfill its commitments. The size of this reservoir of wealth, and the importance of ensuring its adequacy, is a major concern for the insurance industry.</p>
 <p>Setting aside money for unpaid claims is known as <a href="#" class="tooltip" style="color:green"><em>loss reserving</em><span style="font-size:8pt">A loss reserve is an estimate of liability indicating the amount the insurer expects to pay for claims that have not yet been realized. this includes losses incurred but not yet reported (ibnr) and those claims that have been reported claims that haven’t been paid (known by the acronym rbns for reported but not settled).</span></a>; in some jurisdictions, reserves are also known as <em>technical provisions</em>. We saw in Figure <a href="C-Intro.html#fig:StochOperations">1.1</a> several times at which a company summarizes its financial position; these times are known as <a href="#" class="tooltip" style="color:green"><em>valuation dates</em><span style="font-size:8pt"></span></a>. Claims that arise prior to valuation dates have either been paid, are in the process of being paid, or are about to be paid; claims in the future of these valuation dates are unknown. A company must estimate these outstanding liabilities when determining its financial strength. Accurately determining loss reserves is important to insurers for many reasons.</p>
 <ol style="list-style-type: decimal">
 <li>Loss reserves represent an anticipated claim that the insurer owes its customers. Under-reserving may result in a failure to meet claim liabilities. Conversely, an insurer with excessive reserves may present a conservative estimate of surplus and thus portray a weaker financial position than it truly has.</li>
@@ -1644,7 +1648,7 @@ severity than policyholders with the highest (15%, with 24/7 monitoring
 by a fire station or security company) alarm credit. In particular, when
 we look at the entity type School, the frequency is 0.422 and the
 severity 25,523 for no alarm credit, whereas for the highest alarm level
-it is 2.008 and 85,140. This may simply imply that entities with more
+it is 2.008 and 85,140, respectively. This may simply imply that entities with more
 claims are the ones that are likely to have an alarm system. Summary
 tables do not examine multivariate effects; for example, Table
 <a href="C-Intro.html#tab:ClaimRateVar">1.5</a> ignores the effect of size (as we measure through
@@ -1902,10 +1906,8 @@ Policies</th>
 <div id="fund-operations" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> Fund Operations</h3>
 <p>We have now seen distributions of the Fund’s two outcome variables: a count variable for the number of claims, and a continuous variable for the claims amount. We have also introduced a continuous rating variable (coverage); a discrete quantitative variable (logarithmic deductibles); two binary rating variables (no claims credit and fire class); and two categorical rating variables (entity type and alarm credit). Subsequent chapters will
-explain how to analyze and model the distribution of these variables and
-there relationships. Before getting into these technical details, let us
-first think about where we want to go. General insurance company
-functional areas are described in Section <a href="C-Intro.html#S:PredModApps">1.2</a>; we now consider how these areas might apply in the context of the property fund.</p>
+explain how to analyze and model the distribution of these variables and their relationships. Before getting into these technical details, let us
+first think about where we want to go. General insurance company functional areas are described in Section <a href="C-Intro.html#S:PredModApps">1.2</a>; we now consider how these areas might apply in the context of the property fund.</p>
 <div id="initiating-insurance-1" class="section level4 unnumbered">
 <h4>Initiating Insurance</h4>
 <p>Because this is a government sponsored fund, we do not have to worry
@@ -1922,7 +1924,7 @@ in premiums would defeat the primary purpose of the fund, to allow for a
 steady charge that local property managers could utilize in their
 budgets.</p>
 <p>Having a single price for all policyholders is nice but hardly seems
-fair. For example, Table <a href="C-Intro.html#tab:ClaimRateVar">1.5</a> suggests that Schools have
+fair. For example, Table <a href="C-Intro.html#tab:ClaimRateVar">1.5</a> suggests that schools have
 higher aggregate claims than other entities and so should pay more. However,
 simply doing the calculation on an entity by entity basis is not right
 either. For example, we saw in Table <a href="C-Intro.html#tab:RateAlarmCredit">1.6</a> that had we
