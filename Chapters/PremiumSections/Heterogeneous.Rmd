@@ -1,13 +1,13 @@
 <!-- ###  Heterogeneous Risks {#S:HeterogeneousRisks} -->
 
-As noted in Section \@ref(S:IntroductionRatemaking), there are many variations in the risks being insured, the features of the contracts, and the people being insured. As an example, you might have a twin brother or sister who works in the same town and earns a roughly similar amount of money. Still, when it comes to selecting choices in rental insurance to insure contents of your apartment, you can imagine differences in the amount of contents to be insured, choices of deductibles for the amount of risk retained, and perhaps different levels of uncertainty given the relative safety of your neighborhoods. People, and risks that they insure, are different. 
+As noted in Section \@ref(S:IntroductionRatemaking), there are many variations in the risks being insured, the features of the contracts, and the people being insured. As an example, you might have a twin brother or sister who works in the same town and earns a roughly similar amount of money. Still, when it comes to selecting choices in rental insurance to insure contents of your apartment, you can imagine differences in the amount of contents to be insured, choices of deductibles for the amount of risk retained, and perhaps different levels of uncertainty given the relative safety of your neighborhoods. People and risks that they insure are different. 
 
-When thinking about a collection of different, or `r Gloss('heterogeneous')`, risks, one option is to price all risks the same. This is common, for example, in government sponsored programs for flood or health insurance. However, it is also common to have different prices where the differences are commensurate with the risk being insured.
+When thinking about a collection of different (`r Gloss('heterogeneous')`) risks, one option is to price all risks the same. This is common in government sponsored programs for flood or health insurance. However, it is also common to have different prices where the differences are commensurate with the risk being insured.
 
 
 ### Exposure to Risk {#S:ExposureToRisk}
 
-One easy way to make heterogeneous risks comparable is through the concept of an `r Gloss('exposure', '7.2, 7.4')`. To explain exposures, let us use *scale distributions* that we learned about in Chapter \@ref(C:Severity). To recall a `r Gloss('scale distribution', '7.4')`, suppose that $X$ has a `r Gloss('parametric distribution')` and define a rescaled version $R = X/E$, $E > 0$. If $R$ is in the same parametric family as $X$, then the distribution is said to be a scale distribution. As we have seen, the gamma, exponential, and Pareto distributions are examples of scale distributions.
+One way to make heterogeneous risks comparable is through the concept of an `r Gloss('exposure', '7.2, 7.4')`. To explain exposures, let us use *scale distributions* that we learned about in Chapter \@ref(C:Severity). To recall a `r Gloss('scale distribution', '7.4')`, suppose that $X$ has a `r Gloss('parametric distribution')` and define a rescaled version $R = X/E$, $E > 0$. If $R$ is in the same parametric family as $X$, then the distribution is said to be a scale distribution. As we have seen, the gamma, exponential, and Pareto distributions are examples of scale distributions.
 
 Intuitively, the idea behind exposures is to make risks more comparable to one another. For example, it may be that risks $X_1, \ldots, X_n$ come from different distributions and yet, with the choice of the right exposures, the rates $R_1, \ldots, R_n$ come from the same distribution. Here, we interpret the rate $R_i = X_i/E_i$ to be the loss divided by exposure.
 
@@ -48,13 +48,13 @@ For frequency and severity modeling, it is customary to think about the frequenc
 An exposure base should meet the following criteria. It should:
 
 - be an accurate measure of the quantitative exposure to loss
-- be easy for the insurer to determine (at the time the policy is calculated) and not subject to manipulation by the insured,
+- be easy for the insurer to determine (at the time the policy is initiated) and not subject to manipulation by the insured,
 - be easy to understand by the insured and to calculate by the insurer,
 - consider any preexisting exposure base established within the industry, and
-- for some lines of business, it is proportional to inflation. In this way, rates are not sensitive to the changing value of money over time as these changes are captured in exposure base.
+- for some lines of business, be proportional to inflation. In this way, rates are not sensitive to the changing value of money over time as these changes are captured in exposure base.
 
 
-To illustrate, consider personal automobile coverage. Instead of the exposure basis "earned car year," a more accurate measure of the quantitative exposure to loss might be number of miles driven. However, this measure is difficult to determine at the time the policy is issued and subject to potential manipulation by the insured.
+To illustrate, consider personal automobile coverage. Instead of the exposure basis "earned car year," a more accurate measure of the quantitative exposure to loss might be number of miles driven. However, because this measure is difficult to determine at the time the policy is issued and subject to potential manipulation by the insured, it is not typically used.
 
 As another example, the exposure measure in `r Gloss('commercial business property')`, e.g. fire insurance, is typically the amount of insurance coverage. As property values grow with inflation, so will the amount of insurance coverage. Thus, rates quoted on a per amount of insurance coverage are less sensitive to inflation than otherwise.
 
@@ -95,7 +95,7 @@ $$
 
 ***
 
-**Example. Losses and Premium by Amount of Insurance and Territory.** To illustrate, [Table 7.5] presents a small fictitious data set from @werner2016basic. The data consists of loss and loss adjustment expenses (*LossLAE*), decomposed by three levels of *AOI*, amount of insurance, and three territories (*Terr*). For each combination of *AOI* and *Terr*, we also have available the number of policies issued, given as the *Exposure*.
+**Example. Losses and Premium by Amount of Insurance and Territory.** To illustrate, [Table 7.5] presents a small fictitious data set from @werner2016basic. The data consists of loss and loss adjustment expenses (*LossLAE*), decomposed by three levels of amount of insurance (*AOI*), and three territories (*Terr*). For each combination of *AOI* and *Terr*, we also have available the number of policies issued, given as the *Exposure*.
 
 <a id=tab:7.5></a> 
 
@@ -129,7 +129,7 @@ In this case, the rating factors *AOI* and *Terr* produce nine cells. Note that 
 
 ***
 
-To understand the impact of rating factors, it is common to use relativities. A `r Gloss('relativity')` is the difference of the expected risk between a specific level of a rating factor and an accepted baseline value. In this book, we work with relativities defined through ratios; it is also possible to define relativities through arithmetic differences. Thus, our relativity is defined as
+To understand the impact of rating factors, it is common to use relativities. A `r Gloss('relativity')` compares the expected risk at a specific level of a rating factor to an accepted baseline value. In this book, we work with relativities defined through ratios; it is also possible to define relativities through arithmetic differences. Thus, our relativity is defined as
 
 $$
 \text{Relativity}_j = \frac{\text{(Loss/Exposure)}_j}{\text{(Loss/Exposure)}_{Base}} .
@@ -137,7 +137,7 @@ $$
 
 ***
 
-**Example. Losses and Premium by Amount of Insurance and Territory - Continued.** Traditional classification methods consider only one classification variable at a time - they are univariate. Thus, if we wanted relativities losses and expenses (*LossLAE*) by amount of insurance, we might sum over territories to get the information displayed in [Table 7.6].
+**Example. Losses and Premium by Amount of Insurance and Territory - Continued.** Traditional classification methods consider only one classification variable at a time - they are univariate. Thus, if we wanted relativities for losses and expenses (*LossLAE*) by amount of insurance, we might sum over territories to get the information displayed in [Table 7.6].
 
 <a id=tab:7.6></a> 
 
@@ -161,11 +161,11 @@ $$
 
 [Table 7.6] : Losses and Relativities by Amount of Insurance
 
-Thus, for example, losses and expenses per unit of exposure are 23.2% higher for risks with a high amount of insurance compared to those with a medium amount.  These relativities do not control for territory.
+Thus, losses and expenses per unit of exposure are 23.2% higher for risks with a high amount of insurance compared to those with a medium amount.  These relativities do not control for territory.
 
 ***
 
-The introduction of rating factors allows the analyst to create cells that define small collections of risks -- the goal is to choose the right combination of rating factors so that all risks within a cell may be treated the same. In statistical terminology, we want all risks within a cell to have the same distribution (subject to rescaling by an exposure variable). This is the foundation of insurance pricing. All risks within a cell have the same price yet risks from different cells may have different prices. 
+The introduction of rating factors allows the analyst to create cells that define small collections of risks -- the goal is to choose the right combination of rating factors so that all risks within a cell may be treated the same. In statistical terminology, we want all risks within a cell to have the same distribution (subject to rescaling by an exposure variable). This is the foundation of insurance pricing. All risks within a cell have the same price per exposure yet risks from different cells may have different prices. 
 
 Said another way, insurers are allowed to charge different rates for different risks; `r Gloss('discrimination')` of risks is legal and routinely done. Nonetheless, the basis of discrimination, the choice of risk factors, is the subject of extensive debate. The actuarial community, insurance management, regulators, and consumer advocates are all active participants in this debate. Technical Supplement TS **7.A** describes these issues from a regulatory perspective.
 

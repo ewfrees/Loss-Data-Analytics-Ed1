@@ -1,6 +1,6 @@
 <!-- ###  TrendDevelopment.Rmd {#S:TrendDevelopment} -->
 
-As we have seen in Section \@ref(S:AggRateMaking), insurers consider aggregate information for ratemaking such as exposures to risk, premiums, expenses, claims, and payments. This aggregate information is also useful for managing an insurers' activities; financial reports are commonly created at least annually and oftentimes quarterly. At any given financial reporting date, information about recent policies and claims will be ongoing and necessarily incomplete; this section introduces concepts for  projecting risk information so that it is usful for ratemaking purposes.
+As we have seen in Section \@ref(S:AggRateMaking), insurers consider aggregate information for ratemaking such as exposures to risk, premiums, expenses, claims, and payments. This aggregate information is also useful for managing an insurers' activities; financial reports are commonly created at least annually and oftentimes quarterly. At any given financial reporting date, information about recent policies and claims will be ongoing and necessarily incomplete; this section introduces concepts for  projecting risk information so that it is useful for ratemaking purposes.
 Information about the risks, such as exposures, premium, claim counts, losses, and rating factors, is typically organized into three databases:
 
 * *policy database* - contains information about the risk being insured, the policyholder, and the contract provisions
@@ -12,7 +12,7 @@ With these detailed databases, it is straightforward (in principle) to sum up po
 ### Exposures and Premiums
 
 A financial reporting period is a length of time that is fixed in the calendar; we use January 1 to December 31 for the examples in this book although other reporting periods are also common. The reporting period is fixed but policies may begin at any time during the year. Even if all policies have a common contract length of (say) one year, because of the differing starting time, they can end at any time during the financial reporting. Figure
-\@ref(fig:Exposures) presents four illustrative policies. Because of these differing starting and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.
+\@ref(fig:Exposures) presents four illustrative policies. Because of these differing start and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.
 
 
 (ref:Exposures) Timeline of Exposures for Four 12-Month Policies.
@@ -31,7 +31,7 @@ text(x[1], y[5]+.25, labels="1 Jan 2019", adj = 0, cex = 0.8)
 text(x[5],y[5],labels="X", adj = 0, cex = 1.4)
 text(x[5], y[5]+.25, labels="1 Jan 2020", adj = 0, cex = 0.8)
 text(x[9],y[5],labels="X", adj = 0, cex = 1.4)
-text(x[9], y[5]+.25, labels="1 Jan 2020", adj = 0, cex = 0.8)
+text(x[9], y[5]+.25, labels="1 Jan 2021", adj = 0, cex = 0.8)
 # Policy A
 arrows(x[1], y[4] , x[5], y[4], code = 2, lwd = 1, angle = 0, length = 0.10)
 text(0,y[4],labels="A", adj = 0, cex = 1.0)
@@ -76,7 +76,7 @@ $$
   \hline
 &  & & & & & &&\text{In-Force} \\
 &\text{Effective} & \text{Written}& \text{Exposure} & \text{Earned} &\text{Exposure}& \text{Unearned} &\text{Exposure}&  \text{Exposure} \\
-{Policy} &\text{Date}         & 2019 & 2020 & 2019 & 2020 & 2019 & 2020 & \text{1 Jan 2020} \\   \hline
+{Policy} &\text{Date}         & 1/1/2019 & 1/1/2020 & 1/1/2019 & 1/1/2020 & 1/1/2019 & 1/1/2020 & 1/1/2020 \\   \hline
 \text{A}&\text{1 Jan 2019}   & 1.00 & 0.00 & 1.00 & 0.00& 0.00 & 0.00 & 0.00 \\
 \text{B}&\text{1 April 2019} & 1.00 & 0.00 & 0.75 & 0.25 & 0.25 & 0.00& 1.00 \\
 \text{C}&\text{1 July 2019}  & 1.00 & 0.00 & 0.50 & 0.50 & 0.50 & 0.00& 1.00 \\
@@ -91,11 +91,11 @@ $$
 [Table 7.12]:  Exposures for Four 12-Month Policies
 
 
-This summarization is sometimes known as the `r Gloss('calendar year method')` of aggregation to serve as a contrast to the `r Gloss('policy year')` method. In the latter method, all policies start at the beginning of the year. This method is useful for ratemaking methods based on individual contracts and we do not pursue this further here.
+This summarization is sometimes known as the `r Gloss('calendar year method')` of aggregation to serve as a contrast to the `r Gloss('policy year')` method. In the policy year method, all premiums and losses for policies written in the policy year are aggregated regardless of when earned. For example, for all four policies A, B, C, and D, they have written and earned exposures of 1.00 for the policy year 2019 (starting on 1/1 or 1 Jan). This is despite the fact that they do not start at the beginning of the year. This method is useful for ratemaking methods based on individual contracts and we do not pursue this further here.
 
 In the same way as exposures, one can summarizes premiums. Premiums, like exposures, can be either *written*, *earned*, *unearned*, or *in force*. Consider the following example.
 
-**Example. `r chapnum`.5.1. CAS Exam 5, 2003, Number 10.** A 12-month policy is written on March 1, 2002 for a premium of $900. As of December 31, 2002, which of the following is true?
+**Example `r chapnum`.5.1. CAS Exam 5, 2003, Number 10.** A 12-month policy is written on March 1, 2002 for a premium of $900. As of December 31, 2002, which of the following is true?
 
 $$
 \small{
@@ -117,6 +117,8 @@ $$
 
 `r HideExample('7.5.1', 'Show Example Solution')`
 
+**Solution.**
+
 Only earned premium differs from written premium and inforce premium and therefore needs to be computed. Thus, earned premium at Dec 31, 2002, equals $\$900 \times 10/12 = \$750$. Answer E.
 
 ***
@@ -134,8 +136,7 @@ Broadly speaking, the terms `r Gloss('loss')` and `r Gloss('claim')` refer to th
 This text will follow the second bullet. However, when reading other sources, you will need to take care when thinking about definitions for the terms loss and claim.
 
 To establish additional terminology, it is helpful to follow the timeline of a claim as it develops. In Figure \@ref(fig:ClaimDevelopment), the claim occurs at time $t_1$ and the insuring company is notified at time $t_3$. There can be a long gap between occurrence and notification such that the
-end of a company financial reporting period, known as a `r Gloss('valuation date')`, occurs ($t_2$). In this case, the claim is said to be
-`r Gloss('incurred but not reported')` at this valuation date.
+end of a company financial reporting period, known as a `r Gloss('valuation date')`, occurs ($t_2$) before the loss is reported. In this case, the claim is said to be `r Gloss('incurred but not reported')` at this valuation date.
 
 After claim notification, there may one or more loss payments. Not all of the payments may be made by the next valuation date ($t_4$).
 As the claim develops, eventually the company deems its financial obligations on the claim to be resolved and declares the claim
@@ -194,7 +195,7 @@ text(9.8,0.3,expression(t[4]),adj=0, cex=0.8)
 Until the claim is settled, the reported claim is considered an `r Gloss('open claim')`. Once the claim is settled, it is categorized as a *closed claim*. In some instances, further activity may occur after the claim is closed, and the claim may be re-opened.
 
 
-Recall that a  loss is the amount paid or payable to claimants under the terms of insurance policies. Further, we have
+Recall that a claim is the amount paid or payable to claimants under the terms of insurance policies. Further, we have
 
 - *Paid losses* are those losses for a particular period that have actually been paid to claimants.
 - Where there is an expectation that payment will be made in the future, a claim will have an associated  *case reserve*  representing the estimated amount of that payment.
@@ -227,7 +228,7 @@ $$
 LR = \frac{\text{Losses}}{\text{Premium}}=\frac{1-V-Q}{\text{(Losses + Fixed)}/\text{Losses}}=\frac{1-V-Q}{1+G} ~,
 }
 $$
-where $G = \text{Fixed} / \text{Losses}$, the ratio of fixed expenses to premiums. With this expression, we define the *target loss ratio*
+where $G = \text{Fixed} / \text{Losses}$, the ratio of fixed expenses to losses. With this expression, we define the *target loss ratio*
 $$
 \small{
 LR_{target} =
@@ -252,7 +253,7 @@ Comparing equation \@ref(eq:IndicatedChangeFactor) to \@ref(eq:RevisedIndicatedC
 
 #### Comparison of Methods {-}
 
-Assuming that exposures, premiums, and claims have been trended to be representative of a period that rates are being developed for, we are now in a position to compare the pure premium and loss ratio methods for ratemaking. We start with the observation that for the same data inputs, these two approaches produce the same results. That is, they are algebraically equivalent. However, the rely on different inputs:
+Assuming that exposures, premiums, and claims have been trended to be representative of a period that rates are being developed for, we are now in a position to compare the pure premium and loss ratio methods for ratemaking. We start with the observation that for the same data inputs, these two approaches produce the same results. That is, they are algebraically equivalent. However, they rely on different inputs:
 
 $$
 \small{
@@ -276,7 +277,7 @@ Comparing the pure premium and loss ratio methods, we note that:
 
 In many developed countries like the US where lines of business have been in existence, the loss ratio approach is more popular.
 
-**Example. `r chapnum`.5.2. CAS Exam 5, 2006, Number 36.** You are given the following information:
+**Example `r chapnum`.5.2. CAS Exam 5, 2006, Number 36.** You are given the following information:
 
 - Experience period on-level earned premium = $500,000
 - Experience period trended and developed losses = $300,000
@@ -291,7 +292,9 @@ In many developed countries like the US where lines of business have been in exi
 
 `r HideExample('7.5.2', 'Show Example Solution')`
 
-(a) We will calculate the experience and target loss ratios, then take the ratio to get the indicated rate change. The experience loss ratio is
+**Solution.**
+
+**(a)** We will calculate the experience and target loss ratios, then take the ratio to get the indicated rate change. The experience loss ratio is
 $$
 \small{
 LR_{experience} =  \frac{\text{experience losses}}{\text{experience period premium}} =\frac{300000}{500000} = 0.60.
@@ -321,23 +324,23 @@ $$
 ICF =\frac{LR_{experience}}{LR_{target}} -1  = \frac{0.60}{0.673} -1 = -10.8\%.
 }
 $$
-(b) Using the pure premium method, the indicated change factor, $ICF$, is
+**(b)** Using the pure premium method with equation \@ref(eq:PremiumEquation), 
 
 $$
 \small{
 \begin{matrix}
 \begin{array}{ll}
-ICF
-&= \frac{\text{Losses + Fixed}}{\text{Premium} \times (1 - Q - V)}\\
-&= \frac{300000+ 21000}{500000 \times (1 - 0.23 - 0.05)} = 0.892 .
+Premium_{experience}
+&= \frac{\text{Losses + Fixed}}{1 - Q - V}\\
+&= \frac{300000+ 21000}{1 - 0.23 - 0.05} = 445833.33 .
 \end{array}
 \end{matrix}
 }
 $$
 
-Thus, the indicated rate level change is $0.892 -1 = -10.8\%$.
+Thus, the indicated rate level change is $\frac{445833.33}{500000} -1 = -10.8\%$.
 
-(c) The loss ratio method is preferable when the exposure unit is not available.
+**(c)** The loss ratio method is preferable when the exposure unit is not available.
 
 The loss ratio method is preferable when the exposure unit is not reasonably consistent between risks.
 

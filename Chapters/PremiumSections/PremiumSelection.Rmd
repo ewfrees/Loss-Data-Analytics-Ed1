@@ -43,7 +43,7 @@ We now introduce a modification of the classic Lorenz curve and Gini statistic t
 * $\mathbf{x}_i$ be a set of rating variables known to the analyst, and
 * $P_i=P(\mathbf{x}_i)$ be the associated premium that is a function of $\mathbf{x}_i$.
 
-The set of information used to calculate the performance curve for the $i$th policy is $(y_i, P_i)$. 
+The set of information used to calculate the performance curve for the $i$th policy is $(P_i, y_i)$. 
 
 #### Performance Curve {-}
 
@@ -74,7 +74,7 @@ Loss                $y_i$                            2   5    6   6  17
 Cumulative Loss     $\sum_{j=1}^i y_j$               2   7   13  19  36
 ----------          -----------------                -   -   --  --  -- 
 
-Figure \@ref(fig:LorenzVsOrdered) compares the Lorenz to the performance curve. The left-hand panel shows the Lorenz curve. The horizontal axis is the cumulative proportion of policyholders (0, 0.2, 0.4, and so forth) and the vertical axis is the cumulative proportion of losses (0, 2/36, 7/36, and so forth). For the Lorenz curve, you first order by the loss size (which turns out to be the same order as premiums for this simple dataset). This figure shows a large separation between the distributions of losses and policyholders.
+Figure \@ref(fig:LorenzVsOrdered) compares the Lorenz to the performance curve. The left-hand panel shows the Lorenz curve. The horizontal axis is the cumulative proportion of policyholders (0, 0.2, 0.4, 0.6, 0.8, 1.0) and the vertical axis is the cumulative proportion of losses (0, 2/36, 7/36, 13/36, 19/39, 36/36). For the Lorenz curve, you first order by the loss size (which turns out to be the same order as premiums for this simple dataset). This figure shows a large separation between the distributions of losses and policyholders.
 
 The right-hand panel shows the performance curve. Because observations are sorted by premiums, the first point after the origin (reading from left to right) is (2/34, 2/36). The second point is (6/34, 7/36), with the pattern continuing. From the figure, we see that there is little separation between losses and premiums.
 
@@ -170,7 +170,7 @@ stderrorGini <- temp[[3]];#Standard Error
 
 The performance curve can be helpful to the analyst who thinks about forming profitable portfolios for the insurer. For example, suppose that $s$ is chosen to represent the 95*th* percentile of the premium distribution. Then, the horizontal axis, $\hat{F}_P(s)$, represents the fraction of premiums for this portfolio and the vertical axis, $\hat{F}_L(s)$, the fraction of losses for this portfolio. When developing premium principles, analysts wish to avoid unprofitable situations and make profits, or at least break even.
 
-The expectation of the numerator in equation \@ref(eq:EmpLossDF) is $\sum_{i=1}^n \mathrm{E}~ y_i=\sum_{i=1}^n \mu_i$. Thus, if the premium principle is chosen such that $P_i= \mu_i$, then we anticipate a close relation between the premium and loss distributions, resulting in a 45 degree line. The 45 degree line presents equality between losses and premiums, a break-even situation which is the benchmark for insurance pricing.
+The expectation of the denominator in equation \@ref(eq:EmpLossDF) is $\sum_{i=1}^n \mathrm{E}~ y_i=\sum_{i=1}^n \mu_i$. Thus, if the premium principle is chosen such that $P_i= \mu_i$, then we anticipate a close relation between the premium and loss distributions, resulting in a 45 degree line. The 45 degree line presents equality between losses and premiums, a break-even situation which is the benchmark for insurance pricing.
 
 #### Gini Statistic {-}
 
@@ -196,10 +196,14 @@ To understand the formula for the Gini statistic, here is a sketch of a parallel
 #  FIGURE 3
 x = 1:100/100
 plot(x,x, type="l", xlab="",ylab="", main="", yaxt="n", xaxt="n")
+text(.43, .51, expression(paste("(",a[1], ",", a[1],")")), cex=.8)
 text(.45, .10, expression(paste("(",a[1], ",", b[1],")")), cex=.8)
 text(.75, .25, expression(paste("(",a[2], ",", b[2],")")), cex=.8)
+text(.73, .81, expression(paste("(",a[2], ",", a[2],")")), cex=.8)
+points(.45, .45, pch = 19)
 points(.45, .15, pch = 19)
 points(.75, .30, pch = 19)
+points(.75, .75, pch = 19)
 arrows(.45, .15, .75, .30,length=0.1, angle = 0)
 arrows(.45, .15, .45, .45,length=0.1, angle = 0)
 arrows(.75, .30, .75, .75,length=0.1, angle = 0)
@@ -223,7 +227,7 @@ arrows(.15, .32, .20, .25,length=0.1, angle = 30)
 The benefits of out-of-sample validation for model selection were introduced in Section 4.2. We now demonstrate the use of the a Gini statistic and performance curve in this context. The procedure follows:
 
 1.  Use an in-sample data set to estimate several competing models, each producing a premium function.
-2.  Designate an out-of-sample, or validation, data set of the form $\{(y_i, \mathbf{x}_i), i=1,\ldots,n\}$.
+2.  Designate an out-of-sample, or validation, data set of the form $\{(\mathbf{x}_i, y_i), i=1,\ldots,n\}$.
 3.  Use the explanatory variables from the validation sample to form premiums of the form $P(\mathbf{x}_i)$.
 4.  Compute the Gini statistic for each model. Choose the model with the lowest Gini statistic.
 
@@ -247,7 +251,7 @@ Flatpred <- Predvec*0+mean(PredClaims)
 Outy     <- as.vector(OutClaims)
 ```
 
-**Example -- Community Rating versus Premiums that Vary by State.** Suppose that we have experience from `r Nstate` states and that, for each state, we have available `r NInsamp` observations that can be used to predict future losses. For simplicity, assume that the analyst knows that these losses were generated by a gamma distribution with a common shape parameter equal to 5. Unknown to the analyst, the scale parameters vary by state, from a low of 20 to `r 18+2*(Nstate-1)`. 
+**Example -- Community Rating versus Premiums that Vary by State.** Suppose that we have experience from `r Nstate` states and that for each state we have available `r NInsamp` observations that can be used to predict future losses. For simplicity, assume that the analyst knows that these losses were generated by a gamma distribution with a common shape parameter equal to 5. Unknown to the analyst, the scale parameters vary by state from a low of 20 to `r 18+2*(Nstate-1)`. 
 
 * To compute base premiums, the analyst assumes a scale parameter that is common to all states that is to be estimated from the data. You can think of this common premium as based on a `r Gloss('community rating')` principle. 
 * As an alternative, the analyst allows the scale parameters to vary by state and will again use the data to estimate these parameters.
@@ -351,5 +355,5 @@ For these data, the Gini statistics are `r round(100*Gini1,digits=1)` percent fo
 In insurance claims modeling, standard out-of-sample validation measures are not the most informative due to the high proportions of zeros (corresponding to no claim) and the skewed fat-tailed distribution of the positive values. In contrast, the Gini statistic works well with many zeros (see the demonstration in [@frees2014insurance]). 
 
 The value of the performance curves and Gini statistics have been recently advanced in the paper of @denuit2019concentrationGini.
-Properties of an extended version, dealing with relatives for new premiums, were developed by @frees2011summarizing and @frees2014insurance. In these articles you can find formulas for the standard errors and additional background information.
+Properties of an extended version, dealing with relativities for new premiums, were developed by @frees2011summarizing and @frees2014insurance. In these articles you can find formulas for the standard errors and additional background information.
 
