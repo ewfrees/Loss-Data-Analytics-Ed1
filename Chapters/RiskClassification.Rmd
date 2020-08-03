@@ -175,7 +175,6 @@ x_2=
      1 & \text{if non-smoker}, \\
      0 & \text{otherwise}.
 \end{cases}
-(\#eq:dummy-x-2)
 $$
 
 Then we have, from \@ref(eq:log-lin-mu-2),
@@ -199,7 +198,6 @@ With this Poisson regression model we can easily understand how the coefficients
 
 $$
 \mu_{(1)}=e^{\beta_0+\beta_1}=\mu_{(2)} \,e^{\beta_1} \quad \text{or}\quad  \mu_{(1)}/\mu_{(2)} =e^{\beta_1}
-(\#eq:no-label)
 $$
 
 where $\mu_{(2)}$ is the Poisson mean for the non-smokers. This relation between the smokers and non-smokers suggests a useful way to compare the risks embedded in different levels of a given risk factor. That is, the proportional increase in the expected loss frequency of the smokers compared to that of the non-smokers is simply given by a multiplicative factor $e^{\beta_1}$. Putting another way, if we set the expected loss frequency of the non-smokers as the base value, the expected  loss frequency of the smokers is obtained by applying $e^{\beta_1}$ to the base value.  
@@ -569,7 +567,7 @@ Residual Deviance: 0.6514 	AIC: 30.37
 
 **Example `r chapnum`.2. Poisson regression for Singapore insurance claims data**  
 
-This actual dataset is a subset of the data used by [@frees2008hierarchical]. The data are from the General Insurance Association of Singapore, an organisation consisting of non-life insurers in Singapore. The data contains the number of car accidents for $n=7,483$ auto insurance policies with several categorical explanatory variables and the exposure for each policy. The explanatory variables include four risk factors: the type of the vehicle insured (either automobile (A) or other (O), denoted by $\tt{Vtype}$), the age of the vehicle in years ($\tt{Vage}$), gender of the policyholder ($\tt{Sex}$) and  the age of the policyholder (in years, grouped into seven categories, denoted $\tt{Age}$).  
+This actual dataset is a subset of the data used by [@frees2008hierarchical]. The data are from the General Insurance Association of Singapore, an organisation consisting of non-life insurers in Singapore. The data contains the number of car accidents for $n=7,483$ auto insurance policies with several categorical explanatory variables and the exposure for each policy. The explanatory variables include four risk factors: the type of the vehicle insured (either automobile (A) or other (O), denoted by `Vtype`), the age of the vehicle in years (`Vage`), gender of the policyholder (`Sex`) and  the age of the policyholder (in years, grouped into seven categories, denoted `Age`).  
 
 Based on the data description, there are several things to remember before constructing a model. 
 First, there are 3,842 policies with vehicle type A (automobile) and 3,641 policies with other vehicle types. However, age and sex  information is available for the policies of vehicle type A only; the drivers of all other types of vehicles are recorded to be aged 21 or less with sex unspecified, except for one policy, indicating that no driver information has been collected for `r Gloss('non-automobile vehicles')`. Second, type A vehicles are all classified as  private vehicles and all the other types are not.  
@@ -581,7 +579,7 @@ When we include these risk factors, we assume all unspecified sex to be male. As
 &+  \sum_{t=7}^{13} \beta_t \,I(Vtype_i=A)\times I(Age_i=t-7)+\log m_i.
 \end{align*}
 
-[^8.3]: corresponding to $\texttt{VAgecat1}$
+[^8.3]: corresponding to `VAgecat1`.
 
 The fitting result is given in [Table 8.3], for which we have several comments.  
 
