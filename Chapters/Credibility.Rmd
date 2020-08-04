@@ -50,10 +50,10 @@ In this section, you learn how to:
 
 Let $N$ be a random variable representing the number of claims for a group of risks, for example, risks within a particular rating classification.  The observed number of claims will be used to estimate $\mu_N=\mathrm{E}[N]$, the expected number of claims.  How big does $\mu_N$ need to be to get a good estimate?  One way to quantify the accuracy of the estimate would be a statement like:  ``The observed value of $N$ should be within 5$\%$ of $\mu_N$ at least 90$\%$ of the time."   Writing this as a mathematical expression would give   $\Pr[0.95\mu_N\leq N \leq1.05\mu_N] \geq 0.90$.  Generalizing this statement by letting $k$ replace 5$\%$ and probability $p$ replace 0.90 gives the equation
 
-\begin{equation}
+$$
 \Pr[(1-k)\mu_N\leq N \leq(1+k)\mu_N] \geq p.
 (\#eq:kpercent-interval)
-\end{equation}
+$$
 
 The expected number of claims required for the probability on the left-hand side of \@ref(eq:kpercent-interval) to equal $p$ is called the `r Gloss('full credibility standard')`.  
 
@@ -61,10 +61,10 @@ If the expected number of claims is greater than or equal to the full credibilit
 
 Subtracting $\mu_N$  from each term in \@ref(eq:kpercent-interval) and dividing by the standard deviation $\sigma_N$ of $N$ gives
 
-\begin{equation}
+$$
 \Pr\left[\frac{-k\mu_N}{\sigma_N}\leq \frac{N-\mu_N}{\sigma_N} \leq \frac{k\mu_N}{\sigma_N}\right] \geq p.
 (\#eq:normalized-interval)
-\end{equation}
+$$
 
 In limited fluctuation credibility the standard normal distribution is used to approximate the distribution for $(N-\mu_N)/\sigma_N$. If $N$ is the sum of many claims from a large group of similar risks and the claims are independent, then the approximation may be reasonable.
 
@@ -73,10 +73,10 @@ Let $y_p$ be the value such that $\Pr[-y_p\leq (N-\mu_N)/\sigma_N \leq y_p]=\Phi
 
 Equation \@ref(eq:normalized-interval) will be satisfied if $k\mu_N/\sigma_N \geq y_p$ assuming the normal approximation.  First we will consider this inequality for the case when $N$ has a Poisson distribution:  $\Pr[N=n] = \lambda^n\textrm{e}^{-\lambda}/n!$.  Because $\lambda=\mu_N=\sigma_N^2$ for the Poisson, taking square roots yields $\mu_N^{1/2}=\sigma_N$.  So, $k\mu_N/\mu_N^{1/2} \geq y_p$ which is equivalent to $\mu_N \geq (y_p/k)^2$.  Let's define $\lambda_{kp}$ to be the value of $\mu_N$ for which equality holds.  Then the full credibility standard for the Poisson distribution is 
 
-\begin{equation}
+$$
 \lambda_{kp} = \left(\frac{y_p}{k}\right)^2 \textrm{with } y_p=\Phi^{-1}((p+1)/2).
 (\#eq:full-credibility-Poisson)
-\end{equation}
+$$
 
 If the expected number of claims $\mu_N$ is greater than or equal to $\lambda_{kp}$ then equation \@ref(eq:kpercent-interval) is assumed to hold and full credibility can be assigned to the data.  As noted previously, because $\mu_N$ is usually unknown, full credibility is given if the observed number of claims $n$ satisfies $n \geq \lambda_{kp}.$
 
@@ -102,15 +102,15 @@ n_f=\left(\frac{y_p}{k}\right)^2\left(\frac{\sigma_N^2}{\mu_N}\right)=\lambda_{k
 (\#eq:full-credibility-frequency)
 \end{equation}
 
-This is the same equation as the Poisson full credibility standard except for the $(\sigma_N^2/\mu_N)$ multiplier.    When the claims distribution is Poisson this extra term is one because the variance equals the mean.  
+This is the same equation as the Poisson full credibility standard except for the $(\sigma_N^2/\mu_N)$ multiplier. When the claims distribution is Poisson this extra term is one because the variance equals the mean.  
 
 
 **Example `r chapnum`.2.2.** 
-The full credibility standard is set so that the total number of claims is to be within 5$\%$ of the observed value with probability $p=0.95$.  The number of claims has a negative binomial distribution
+The full credibility standard is set so that the total number of claims is to be within 5$\%$ of the observed value with probability $p=0.95$.  The number of claims has a negative binomial distribution,
 
-\begin{equation*}
-\Pr(N=x)={x+r-1\choose x} \left(\frac{1}{1+\beta}\right)^r \left(\frac{\beta}{1+\beta}\right)^x
-\end{equation*}
+$$
+\Pr(N=x)={x+r-1\choose x} \left(\frac{1}{1+\beta}\right)^r \left(\frac{\beta}{1+\beta}\right)^x ,
+$$
 
 with $\beta=1$.  Calculate the full credibility standard.
 
@@ -128,9 +128,9 @@ We see that the negative binomial distribution with $(\sigma_N^2/\mu_N)>1$ requi
 **Example `r chapnum`.2.3.**
 The full credibility standard is set so that the total number of claims is to be within 5$\%$ of the observed value with probability $p=0.95$.  The number of claims has a binomial distribution 
 
-\begin{equation*}
+$$
 \Pr(N=x)={m\choose x}q^x(1-q)^{m-x}.
-\end{equation*}
+$$
 
 Calculate the full credibility standard for $q=1/4$.
 
@@ -184,15 +184,15 @@ The random variable $N$ represents the number of losses and random variables $X_
 
 The mean and variance of $S$ are
 
-\begin{equation*}
-\mu_S=\mathrm{E}(S)=\mathrm{E}(N)\mathrm{E}(X)=\mu_N\mu_X\textrm{  and}
-\end{equation*}
+$$
+\mu_S=\mathrm{E}(S)=\mathrm{E}(N)\mathrm{E}(X)=\mu_N\mu_X
+$$
 
+and
 
-
-\begin{equation*}
-\sigma^{2}_S=\mathrm{Var}(S)=\mathrm{E}(N)\mathrm{Var}(X)+[\mathrm{E}(X)]^{2}\mathrm{Var}(N)=\mu_N\sigma^{2}_X+\mu^{2}_X\sigma^{2}_N.
-\end{equation*}
+$$
+\sigma^{2}_S=\mathrm{Var}(S)=\mathrm{E}(N)\mathrm{Var}(X)+[\mathrm{E}(X)]^{2}\mathrm{Var}(N)=\mu_N\sigma^{2}_X+\mu^{2}_X\sigma^{2}_N ,
+$$
 
 where $X$ is the amount of a single loss.  
 
@@ -204,9 +204,9 @@ Observed losses $S$ will be used to estimate expected losses $\mu_S=\mathrm{E}(S
 
 \noindent After subtracting the mean and dividing by the standard deviation,
 
-\begin{equation*}
-\Pr\left[\frac{-k\mu_S}{\sigma_S}\leq (S-\mu_S)/\sigma_S \leq \frac{k\mu_S}{\sigma_S}\right] \geq p
-\end{equation*}.
+$$
+\Pr\left[\frac{-k\mu_S}{\sigma_S}\leq (S-\mu_S)/\sigma_S \leq \frac{k\mu_S}{\sigma_S}\right] \geq p .
+$$
 
 As done in the previous section the distribution for $(S-\mu_S)/\sigma_S$ is assumed to be normal and $k\mu_S/\sigma_S=y_p=\Phi^{-1}((p+1)/2)$.  This equation can be rewritten as $\mu_S^2=(y_p/k)^2\sigma_S^2$.  Using the prior formulas for $\mu_S$ and $\sigma_{S}^2$ gives $(\mu_N\mu_X)^2=(y_p/k)^2(\mu_N\sigma^{2}_X+\mu^{2}_X\sigma^{2}_N)$.  Dividing both sides by $\mu_N\mu_X^2$ and reordering terms on the right side results in a full credibility standard $n_S$ for aggregate losses
 
@@ -262,23 +262,23 @@ n_{PP}=n_S=\lambda_{kp}\left[\left(\frac{\sigma_N^2}{\mu_n}\right)+\left(\frac{\
 
 Let $X$ be a random variable representing the size of one claim.  Claim severity is $\mu_X=\mathrm{E}(X)$.  Suppose that ${X_1,X_2, \ldots, X_n}$ is a random sample of $n$ claims that will be used to estimate claim severity $\mu_X$.  The claims are assumed to be *iid*.  The average value of the sample is 
 
-\begin{equation*}
+$$
 \bar{X}=\frac{1}{n}\left(X_1+X_2+\cdots+X_n\right).
-\end{equation*}
+$$
 
 How big does $n$ need to be to get a good estimate?  Note that $n$ is not a random variable whereas it is in the aggregate loss model.
 
 In Section \@ref(S:frequency) the accuracy of an estimator for frequency was defined by requiring that the number of claims lie within a specified interval about the mean number of claims with a specified probability.  For severity this requirement is
 
-\begin{equation*}
-\Pr[(1-k)\mu_X\leq \bar{X} \leq(1+k)\mu_X ]\geq p
-\end{equation*}
+$$
+\Pr[(1-k)\mu_X\leq \bar{X} \leq(1+k)\mu_X ]\geq p ,
+$$
 
 \noindent where $k$ and $p$ need to be specified.  Following the steps in Section \@ref(S:frequency), the mean claim severity $\mu_X$ is subtracted from each term and the standard deviation of the claim severity estimator $\sigma_{\bar{X}}$  is divided into each term yielding
 
-\begin{equation*}
-\Pr\left[\frac{-k\mu_X}{\sigma_{\bar{X}}}\leq (\bar{X}-\mu_X)/\sigma_{\bar{X}} \leq \frac{k\mu_X}{\sigma_{\bar{X}}}\right] \geq p
-\end{equation*}.  
+$$
+\Pr\left[\frac{-k~\mu_X}{\sigma_{\bar{X}}}\leq (\bar{X}-\mu_X)/\sigma_{\bar{X}} \leq \frac{k~\mu_X}{\sigma_{\bar{X}}}\right] \geq p .
+$$ 
 
 As in prior sections, it is assumed that $(\bar{X}-\mu_X)/\sigma_{\bar{X}}$ is approximately normally distributed and the prior equation is satisfied if $k\mu_X/\sigma_{\bar{X}}\geq y_p$ with $y_p=\Phi^{-1}((p+1)/2)$.  Because $\bar{X}$ is the average of individual claims $X_1, X_2,\dots, X_n$, its standard deviation is equal to the standard deviation of an individual claim divided by $\sqrt{n}$: $\sigma_{\bar{X}}=\sigma_X/\sqrt{n}$.  So, $k\mu_X/(\sigma_X/\sqrt{n})\geq y_p$ and with a little algebra this can be rewritten as $n \geq (y_p/k)^2(\sigma_X/\mu_X)^2$.  The full credibility standard for severity is 
 
@@ -308,9 +308,9 @@ In prior sections full credibility standards were calculated for estimating freq
 
 In limited fluctuation credibility, credibility weights $Z$ assigned to data are
 
-\begin{equation*} 
-Z=\quad \sqrt{\frac{n}{n_{0}}} \quad \textrm{if} \quad   n < n_{0} \quad \textrm{and}  \quad Z=\quad 1 \quad \textrm{for} \quad   n \geq n_{0}
-\end{equation*}
+$$ 
+Z=\quad \sqrt{\frac{n}{n_{0}}} \quad \textrm{if} \quad   n < n_{0} \quad \textrm{and}  \quad Z=\quad 1 \quad \textrm{for} \quad   n \geq n_{0} ,
+$$
 
 where $n_0$ is the full credibility standard.  The quantity $n$ is the number of claims for the data that is used to estimate the expected frequency, severity, or pure premium.
 
@@ -340,11 +340,11 @@ and if $\alpha=3$ then $n_0=n_{PP}=6,146.56$ or 6,147 if rounded up.  The credib
 Limited fluctuation credibility uses the formula $Z=\sqrt{n/n_0}$ to limit the fluctuation in the credibility-weighted estimate to match the fluctuation allowed for data with expected claims at the full credibility standard.  Variance or standard deviation is used as the measure of fluctuation.  Next we show an example to explain why the square-root formula is used.
 
 
-Suppose that average claim severity is being estimated from a sample of size $n$ that is less than the full credibility standard $n_0=n_X$.  Applying credibility theory the estimate $\hat{\mu}_X$ would be
+Suppose that average claim severity is being estimated from a sample of size $n$ that is less than the full credibility standard $n_0=n_X$.  Applying credibility theory, the estimate $\hat{\mu}_X$ would be
 
-\begin{equation*}
-\hat{\mu}_X=Z\bar{X}+(1-Z)M_X
-\end{equation*}
+$$
+\hat{\mu}_X=Z\bar{X}+(1-Z)M_X ,
+$$
 
 with $\bar{X}=(X_1+X_2+\cdots+X_n)/n$ and $iid$ random variables $X_i$ representing the sizes of individual claims.  The complement of credibility is applied to $M_X$ which could be last year's estimated average severity adjusted for inflation, the average severity for a much larger pool of risks, or some other relevant quantity selected by the actuary.  It is assumed that the variance of $M_X$ is zero or negligible.  With this assumption
 
@@ -372,7 +372,7 @@ In this section, you learn how to:
 
 *  Compute a credibility-weighted estimate for the expected loss for a risk or group of risks.
 *  Determine the credibility $Z$ assigned to observations.
-*  Calculate the values required in B&uuml;hlmann credibility including the Expected Value of the Process Variance (*EPV*), Variance of the Hypothetical Means (*VHM*) and collective mean $\mu$.
+*  Calculate the values required in B&uuml;hlmann credibility including the Expected Value of the Process Variance ($EPV$), Variance of the Hypothetical Means ($VHM$) and collective mean $\mu$.
 *  Recognize situations when the B&uuml;hlmann model is appropriate.
 
 ***
@@ -451,18 +451,18 @@ Note that in both of the examples the risk parameter is a random quantity with i
 
 Although formula \@ref(eq:buhlcred) was introduced using experience rating as an example, the B&uuml;hlmann credibility model has wider application.  Suppose that a rating plan has multiple classes.  Credibility formula \@ref(eq:buhlcred) can be used to determine individual class rates.  The overall mean $\mu$ would be the average loss for all classes combined, $\bar{X}$ would be the experience for the individual class, and $\hat{\mu}(\theta)$ would be the estimated loss for the class.  
 
-### Credibility Z, *EPV*, and *VHM* {#S:EPV-VHM-Z}
+### Credibility $Z$, $EPV$, and $VHM$ {#S:EPV-VHM-Z}
 
 When computing the credibility estimate $\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu$, how much weight $Z$ should go to experience $\bar{X}$ and how much weight $(1-Z)$ to the overall mean $\mu$?  In B&uuml;hlmann credibility there are three factors that need to be considered:
 
 
-1. How much variation is there in a single observation $X_j$ for a selected risk?  With $\bar{X}=(X_1+\cdots+X_n)/n$ and assuming that the observations are *iid* conditional on $\theta$, it follows that Var($\bar{X}|\theta)$=Var($X_j|\theta)/n$.  For larger Var($\bar{X}|\theta)$ less credibility weight $Z$ should be given to experience $\bar{X}$.  The `r Gloss('Expected Value of the Process Variance')`, abbreviated *EPV*, is the expected value of Var($X_j|\theta$) across all risks:
+1. How much variation is there in a single observation $X_j$ for a selected risk?  With $\bar{X}=(X_1+\cdots+X_n)/n$ and assuming that the observations are *iid* conditional on $\theta$, it follows that Var($\bar{X}|\theta)$=Var($X_j|\theta)/n$.  For larger Var($\bar{X}|\theta)$ less credibility weight $Z$ should be given to experience $\bar{X}$.  The `r Gloss('Expected Value of the Process Variance')`, abbreviated $EPV$, is the expected value of Var($X_j|\theta$) across all risks:
 \begin{equation*}
 EPV=\mathrm{E}(\mathrm{Var}(X_j|\theta)). 
 \end{equation*}
-Because Var($\bar{X}|\theta)$=Var($X_j|\theta)/n$ it follows that E(Var($\bar{X}|\theta)$)=EPV/$n$.
+Because Var($\bar{X}|\theta)$=Var($X_j|\theta)/n$ it follows that $\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))=EPV/n$.
 
-2. How homogeneous is the population of risks whose experience was combined to compute the overall mean $\mu$?  If all the risks are similar in loss potential then more weight $(1-Z)$ would be given to the overall mean $\mu$ because $\mu$ is the average for a group of similar risks whose means $\mu(\theta)$ are not far apart.  The homogeneity or heterogeneity of the population is measured by the `r Gloss('Variance of the Hypothetical Means')` with abbreviation *VHM*:
+2. How homogeneous is the population of risks whose experience was combined to compute the overall mean $\mu$?  If all the risks are similar in loss potential then more weight $(1-Z)$ would be given to the overall mean $\mu$ because $\mu$ is the average for a group of similar risks whose means $\mu(\theta)$ are not far apart.  The homogeneity or heterogeneity of the population is measured by the `r Gloss('Variance of the Hypothetical Means')` with abbreviation $VHM$:
 \begin{equation*}
 VHM=\mathrm{Var}(\mathrm{E}(X_j|\theta))=\mathrm{Var}(\mathrm{E}(\bar{X}|\theta)). 
 \end{equation*}
@@ -473,18 +473,18 @@ Note that we used $\mathrm{E}(\bar{X}|\theta)=\mathrm{E}(X_j|\theta)$ for the se
 
 
 **Example `r chapnum`.3.3.** 
-The number of claims $N$ in a year for a risk in a population has a Poisson distribution with mean $\lambda>0$.  The risk parameter $\lambda$ is uniformly distributed over the interval $(0,2)$.  Calculate the EPV and *VHM* for the population.
+The number of claims $N$ in a year for a risk in a population has a Poisson distribution with mean $\lambda>0$.  The risk parameter $\lambda$ is uniformly distributed over the interval $(0,2)$.  Calculate the $EPV$ and $VHM$ for the population.
 
 `r HideExample('9.3.3','Show Example Solution')`
 
-**Solution** Random variable $N$ is Poisson with parameter $\lambda$ so Var$(N|\lambda)=\lambda$.  The Expected Value of the Process variance is EPV=E(Var($N|\lambda$))=E$(\lambda)=\int_{0}^{2}\lambda \frac{1}{2} d\lambda=1$.  The Variance of the Hypothetical Means is *VHM*=Var(E(N$|\lambda$))= Var($\lambda$)=E($\lambda^2)-(\mathrm{E}(\lambda))^2=\int_{0}^{2}\lambda^2 \frac{1}{2} d\lambda-(1)^2=\frac{1}{3}$.
+**Solution** Random variable $N$ is Poisson with parameter $\lambda$ so Var$(N|\lambda)=\lambda$.  The Expected Value of the Process variance is EPV=E(Var($N|\lambda$))=E$(\lambda)=\int_{0}^{2}\lambda \frac{1}{2} d\lambda=1$.  The Variance of the Hypothetical Means is $VHM$=Var(E(N$|\lambda$))= Var($\lambda$)=E($\lambda^2)-(\mathrm{E}(\lambda))^2=\int_{0}^{2}\lambda^2 \frac{1}{2} d\lambda-(1)^2=\frac{1}{3}$.
 
 </div>
 
 *** 
 
 
-The B&uuml;hlmann credibility formula includes values for $n$, *EPV*, and *VHM*:
+The B&uuml;hlmann credibility formula includes values for $n$, $EPV$, and $VHM$:
 
 \begin{equation}
 Z=\frac{n}{n+K} \quad , \quad K =\frac{EPV}{VHM}. 
@@ -492,19 +492,19 @@ Z=\frac{n}{n+K} \quad , \quad K =\frac{EPV}{VHM}.
 \end{equation}
 
 
-If the *VHM* increases then $Z$ increases.  If the *EPV* increases then $Z$ gets smaller.  Unlike limited fluctuation credibility where $Z=1$ when the expected number of claims is greater than the full credibility standard, $Z$ can approach but not equal 1 as the number of observations $n$ goes to infinity.
+If the $VHM$ increases then $Z$ increases.  If the $EPV$ increases then $Z$ gets smaller.  Unlike limited fluctuation credibility where $Z=1$ when the expected number of claims is greater than the full credibility standard, $Z$ can approach but not equal 1 as the number of observations $n$ goes to infinity.
 
-If you multiply the numerator and denominator of the $Z$ formula by (*VHM*/$n$) then $Z$ can be rewritten as
+If you multiply the numerator and denominator of the $Z$ formula by ($VHM$/$n$) then $Z$ can be rewritten as
 
 \begin{equation*}
 Z=\frac{VHM}{VHM+(EPV/n)} . 
 \end{equation*}
 
-The number of observations $n$ is captured in the term (*EPV*/$n$). As shown in bullet (1) at the beginning of the section, E(Var($\bar{X}|\theta)$)=*EPV*/$n$.  As the number of observations get larger, the expected variance of $\bar{X}$ gets smaller and credibility $Z$ increases so that more weight gets assigned to $\bar{X}$ in the credibility-weighted estimate $\hat{\mu}(\theta)$.  
+The number of observations $n$ is captured in the term ($EPV$/$n$). As shown in bullet (1) at the beginning of the section, E(Var($\bar{X}|\theta)$)=$EPV$/$n$.  As the number of observations get larger, the expected variance of $\bar{X}$ gets smaller and credibility $Z$ increases so that more weight gets assigned to $\bar{X}$ in the credibility-weighted estimate $\hat{\mu}(\theta)$.  
 
 
 **Example `r chapnum`.3.4.**
-Use the law of total variance to show that Var($\bar{X}$) = *VHM* + (*EPV*/n) and derive a formula for $Z$ in terms of $\bar{X}$.
+Use the law of total variance to show that Var($\bar{X}$) = $VHM$ + ($EPV$/n) and derive a formula for $Z$ in terms of $\bar{X}$.
 
 `r HideExample('9.3.4','Show Example Solution')`
 
@@ -513,7 +513,7 @@ Use the law of total variance to show that Var($\bar{X}$) = *VHM* + (*EPV*/n) an
 \mathrm{Var}(\bar{X})=\textrm{E(Var}(\bar{X}|\theta))+\textrm{Var(E}(\bar{X}|\theta)). 
 \end{equation*}
 
-In bullet (1) at the beginning of this section we showed E(Var($\bar{X}|\theta)$)=*EPV*/$n$.  In the second bullet (2), Var(E($\bar{X}|\theta$))=*VHM*.  Reordering the right hand side gives Var($\bar{X}$)= *VHM* +(*EPV*/$n$).  Another way to write the formula for credibility $Z$ is  $Z$=Var(E($\bar{X}|\theta$))/Var($\bar{X}$).  This implies $(1-Z)$=E(Var($\bar{X}|\theta$))/Var($\bar{X}$).
+In bullet (1) at the beginning of this section we showed E(Var($\bar{X}|\theta)$)=$EPV$/$n$.  In the second bullet (2), Var(E($\bar{X}|\theta$))=$VHM$.  Reordering the right hand side gives Var($\bar{X}$)= $VHM$ +($EPV$/$n$).  Another way to write the formula for credibility $Z$ is  $Z$=Var(E($\bar{X}|\theta$))/Var($\bar{X}$).  This implies $(1-Z)$=E(Var($\bar{X}|\theta$))/Var($\bar{X}$).
 
 </div>
 
@@ -540,10 +540,10 @@ C & 20\% & \lambda=2.0 & \beta=2000 \\
 
 `r HideExample('9.3.5','Show Example Solution')`
 
-**Solution** Because individual loss amounts $X$ are exponentially distributed, E($X| \beta$)=$\beta$ and Var($X| \beta$)=$\beta^2$.  For aggregate loss $S=X_1+\cdots+X_N$, the mean is E($S$)=E($N$)E($X$) and process variance is Var($S$)=E($N$)Var($X$)+[E($X$)]$^2$Var($N$).  With Poisson frequency and exponentially distributed loss amounts, E($S| \lambda, \beta$)=$\lambda\beta$ and Var($S| \lambda, \beta$) = $\lambda\beta^2+\beta^2\lambda=2\lambda\beta^2$.  
+**Solution** Because individual loss amounts $X$ are exponentially distributed, E($X| \beta$)=$\beta$ and Var($X| \beta$)=$\beta^2$.  For aggregate loss $S=X_1+\cdots+X_N$, the mean is $\mathrm{E}(S)=\mathrm{E}(N)\mathrm{E}(X)$ and process variance is $\mathrm{Var}(S)=\mathrm{E}(N)\mathrm{Var}(X)+[\mathrm{E}(X)]^2 \mathrm{Var}(N)$.  With Poisson frequency and exponentially distributed loss amounts, E($S| \lambda, \beta$)=$\lambda\beta$ and Var($S| \lambda, \beta$) = $\lambda\beta^2+\beta^2\lambda=2\lambda\beta^2$.  
 **Population mean $\mu$**:  Risk means are $\mu$(A)=0.5(1000)=500; $\mu$(B)=1.0(1500)=1500; $\mu$(C)=2.0(2000)=4000; and  $\mu$=0.50(500)+0.30(1500)+0.20(4000)=1,500.  
 **VHM**:  *VHM*=$0.50(500-1500)^2+0.30(1500-1500)^2+0.20(4000-1500)^2$=1,750,000.  
-**EPV**:  Process variances are $\sigma^2(A)=2(0.5)(1000)^2=1,000,000$; $\sigma^2(B)=2(1.0)(1500)^2=4,500,000$; $\sigma^2(C)=2(2.0)(2000)^2=16,000,000$; and *EPV*=0.50(1,000,000)+0.30(4,500,000)+0.20(16,000,000)=5,050,000.  
+**EPV**:  Process variances are $\sigma^2(A)=2(0.5)(1000)^2=1,000,000$; $\sigma^2(B)=2(1.0)(1500)^2=4,500,000$; $\sigma^2(C)=2(2.0)(2000)^2=16,000,000$; and $EPV$=0.50(1,000,000)+0.30(4,500,000)+0.20(16,000,000)=5,050,000.  
 **$\mathbf{\bar{X}}$**:  $\bar{X}_5=5,000/5$=1,000.  
 **$\mathbf{K}$**:  $K=5,050,000/1,750,000$=2.89.  
 **$\mathbf{Z}$**:  There are five years of observations so $n=5$.  $Z=5/(5+2.89)$=0.63.  
@@ -557,7 +557,7 @@ In real world applications of B&uuml;hlmann credibility the value of $K=EPV/VHM$
 
 For a policyholder with risk parameter $\theta$, B&uuml;hlmann credibility uses a linear approximation $\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu$ to estimate E($\mu(\theta)|X_1,\ldots,X_n$), the expected loss for the policyholder given prior losses $X_1,\ldots, X_n$.  We can rewrite this as $\hat{\mu}(\theta)=a+b\bar{X}$ which makes it obvious that the credibility estimate is a linear function of $\bar{X}$.  
 
-If E($\mu(\theta)|X_1,\ldots,X_n$) is approximated by the linear function $a+b\bar{X}$ and constants $a$ and $b$ are chosen so that E[(E($\mu(\theta)|X_1,\ldots,X_n)-(a+b\bar{X}))^2$] is minimized, what are $a$ and $b$?  The answer is $b=n/(n+K)$ and $a=(1-b)\mu$ with $K=EPV/VHM$ and $\mu=E(\mu(\theta))$.  More details can be found in references [@buhlmann], [@buhlmanngisler], [@klugman2012], and [@tse].
+If E($\mu(\theta)|X_1,\ldots,X_n$) is approximated by the linear function $a+b\bar{X}$ and constants $a$ and $b$ are chosen so that E[(E($\mu(\theta)|X_1,\ldots,X_n)-(a+b\bar{X}))^2$] is minimized, what are $a$ and $b$?  The answer is $b=n/(n+K)$ and $a=(1-b)\mu$ with $K=EPV/VHM$ and $\mu=\mathrm{E}(\mu(\theta))$.  More details can be found in references [@buhlmann], [@buhlmanngisler], [@klugman2012], and [@tse].
 
 B&uuml;hlmann credibility is also called least-squares credibility, greatest accuracy credibility, or Bayesian credibility.
 
@@ -573,7 +573,7 @@ In this section, you learn how to:
 
 * Compute a credibility-weighted estimate for the expected loss for a risk or group of risks using the B&uuml;hlmann-Straub model.
 * Determine the credibility $Z$ assigned to observations.
-* Calculate required values including the Expected Value of the Process Variance (*EPV*), Variance of the Hypothetical Means (*VHM*) and collective mean $\mu$.
+* Calculate required values including the Expected Value of the Process Variance ($EPV$), Variance of the Hypothetical Means ($VHM$) and collective mean $\mu$.
 * Recognize situations when the B&uuml;hlmann-Straub model is appropriate.
 
 ***
@@ -639,7 +639,7 @@ Z=\frac{\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}{\mathrm{Var}(\bar{X})}=
 $$
 
 The denominator was expanded using the `r Gloss('law of total variance')`.  As noted above $\mathrm{E}(\bar{X}|\theta)=\mu(\theta)$ so $\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))=\mathrm{Var}(\mu(\theta))=VHM$.
-  Because Var$(\bar{X}|\theta)=\sigma^2(\theta)/m$ it follows that E(Var($\bar{X}|\theta$))=E($\sigma^2(\theta))/m$=*EPV*/m.  Making these substitutions and a little algebra gives
+  Because $\mathrm{Var}(\bar{X}|\theta)=\sigma^2(\theta)/m$ it follows that $\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))=\mathrm{E}(\sigma^2(\theta))/m$ = $EPV/m$.  Making these substitutions and a little algebra gives
 
 \begin{equation}
 Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}. 
@@ -670,7 +670,7 @@ The policyholder has 18 vehicles in its fleet in year 4.  Use B&uuml;hlmann-Stra
 
 `r HideExample('9.4.2','Show Example Solution')`
 
-**Solution** The expected number of claims for one vehicle for a randomly chosen policyholder is $\mu=\mathrm{E}(\lambda)=\int_{0}^{1} \lambda[6\lambda(1-\lambda)] d\lambda=1/2$.  The average number of claims per vehicle for the policyholder is $\bar{X}$=13/36.  The Expected Value of the Process Variance for a single vehicle is *EPV*=E($\lambda)=1/2$.  The Variance of the Hypothetical Means across policyholders is *VHM*=Var($\lambda$)=E($\lambda^2$)-$(\mathrm{E}(\lambda))^2=\int_{0}^{1} \lambda^2[6\lambda(1-\lambda)] d\lambda-(1/2)^2=(3/10)-(1/4)=(6/20)-(5/20)=1/20$.  So, $K$=*EPV*/*VHM*=(1/2)/(1/20)=10.  The number of exposures in the experience period is $m=9+12+15=36$.  The credibility is $Z=36/(36+10)=18/23$.  The credibility-weighted estimate for the number of claims for one vehicle is $\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu$=(18/23)(13/36)+(5/23)(1/2)=9/23.  With 18 vehicles in the fleet in year 4 the expected number of claims is 18(9/23)=162/23=7.04 .
+**Solution** The expected number of claims for one vehicle for a randomly chosen policyholder is $\mu=\mathrm{E}(\lambda)=\int_{0}^{1} \lambda[6\lambda(1-\lambda)] d\lambda=1/2$.  The average number of claims per vehicle for the policyholder is $\bar{X}$=13/36.  The expected value of the process variance for a single vehicle is $EPV=\mathrm{E}(\lambda)=1/2$.  The variance of the hypothetical means across policyholders is $VHM$=Var($\lambda$)=E($\lambda^2$)-$(\mathrm{E}(\lambda))^2=\int_{0}^{1} \lambda^2[6\lambda(1-\lambda)] d\lambda-(1/2)^2=(3/10)-(1/4)=(6/20)-(5/20)=1/20$.  So, $K=EPV/VHM$=(1/2)/(1/20)=10.  The number of exposures in the experience period is $m=9+12+15=36$.  The credibility is $Z=36/(36+10)=18/23$.  The credibility-weighted estimate for the number of claims for one vehicle is $\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu$=(18/23)(13/36)+(5/23)(1/2)=9/23.  With 18 vehicles in the fleet in year 4 the expected number of claims is 18(9/23)=162/23=7.04 .
 
 </div>
 
@@ -738,7 +738,7 @@ Because the posterior distribution is gamma the expected number of claims for th
 
 This formula is slightly different from chapter four because parameter $\beta$ is multiplied by $\lambda$ in the exponential of the gamma *pdf* whereas in chapter four $\lambda$ is divided by parameter $\theta$.  We have chosen this form for the exponential to simplify the equation for the expected number of claims. 
 
-Now we will compute the B&uuml;hlmann credibility estimate for the Gamma-Poisson model.  The variance for a Poisson distribution with parameter $\lambda$ is $\lambda$ so *EPV*=E(Var($X|\lambda$))=E($\lambda$)=$\alpha/\beta$. The mean number of claims per year for the risk is $\lambda$ so *VHM*=Var(E($X|\lambda$))=Var($\lambda$)=$\alpha/\beta^2$.  The credibility parameter is $K$=*EPV*/*VHM*=$(\alpha/\beta)/(\alpha/\beta^2)=\beta$.  The overall mean is E(E($X|\lambda$))=E($\lambda$)=$\alpha/\beta$.  The sample mean is $\bar{X}=(\sum_{j=1}^{n}x_j)/n$.  The credibility-weighted estimate for the expected number of claims for the risk is
+Now we will compute the B&uuml;hlmann credibility estimate for the Gamma-Poisson model.  The variance for a Poisson distribution with parameter $\lambda$ is $\lambda$ so $EPV=\mathrm{E}(\mathrm{Var}(X|\lambda))=\mathrm{E}(\lambda)=\alpha/\beta$. The mean number of claims per year for the risk is $\lambda$ so $VHM=\mathrm{Var}(\mathrm{E}(X|\lambda))$ = $\mathrm{Var}(\lambda)=\alpha/\beta^2$.  The credibility parameter is $K=EPV/VHM$ = $(\alpha/\beta)/(\alpha/\beta^2)=\beta$.  The overall mean is $\mathrm{E}(\mathrm{E}(X|\lambda))=\mathrm{E}(\lambda)=\alpha/\beta$.  The sample mean is $\bar{X}=(\sum_{j=1}^{n}x_j)/n$.  The credibility-weighted estimate for the expected number of claims for the risk is
 
 \begin{equation*} 
 \hat{\mu}=\frac{n}{n+\beta}\frac{\sum_{j=1}^{n}x_j}{n} +(1-\frac{n}{n+\beta})\frac{\alpha}{\beta}=\frac{\alpha+\sum_{j=1}^{n}x_j}{\beta+n}. 
@@ -788,13 +788,13 @@ The probability that a coin toss will yield heads is $p$.  The prior distributio
 
 `r HideExample('9.5.1','Show Example Solution')`
 
-**Solution** Define random variables $Y_j$ such that $Y_j=1$ if the $j^{th}$ coin toss is heads and $Y_j=0$ if tails for $j=1,\ldots, n$.  Random variables $Y_j$ are *iid* conditional on $p$ with Pr$[Y=1|p]=p$ and Pr$[Y=0|p]=1-p$  The number of heads in $n$ tosses can be represented by the random variable $X=Y_1+\cdots+Y_n$.  We want to estimate $p=E[Y_j]$ using B&uuml;hlmann credibility: $\hat{p} = Z\bar{Y} +(1-Z)\mu$.  The overall mean is $\mu=E(E(Y_j|p))=E(p)=\alpha/(\alpha+\beta)$.  The sample mean is $\bar{y}=x/n$.  The credibility is $Z=n/(n+K)$ and K=*EPV*/*VHM*.  With Var$(Y_j|p)=p(1-p)$ it follows that *EPV*=E(Var$(Y_j|p)$)=E($p(1-p)$).  Because E$(Y_j|p)=p$ then *VHM*=Var$(E(Y_j|p))$=Var($p$).  For the beta distribution
+**Solution** Define random variables $Y_j$ such that $Y_j=1$ if the $j^{th}$ coin toss is heads and $Y_j=0$ if tails for $j=1,\ldots, n$.  Random variables $Y_j$ are *iid* conditional on $p$ with Pr$[Y=1|p]=p$ and Pr$[Y=0|p]=1-p$  The number of heads in $n$ tosses can be represented by the random variable $X=Y_1+\cdots+Y_n$.  We want to estimate $p=E[Y_j]$ using B&uuml;hlmann credibility: $\hat{p} = Z\bar{Y} +(1-Z)\mu$.  The overall mean is $\mu=E(E(Y_j|p))=E(p)=\alpha/(\alpha+\beta)$.  The sample mean is $\bar{y}=x/n$.  The credibility is $Z=n/(n+K)$ and $K=EPV/VHM$.  With Var$(Y_j|p)=p(1-p)$ it follows that $EPV$=E(Var$(Y_j|p)$)=E($p(1-p)$).  Because E$(Y_j|p)=p$ then $VHM$=Var$(E(Y_j|p))$=Var($p$).  For the beta distribution
 
 \begin{equation*}  
 \mathrm{E}(p)=\frac{\alpha}{\alpha+\beta}, \mathrm{E}(p^2)=\frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)}, \textrm{ and } \mathrm{Var}(p)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
 \end{equation*}
 
-Parameter $K$=*EPV*/*VHM*=[E($p$)-E($p^2$)]/Var($p$).  With some algebra this reduces to $K=\alpha+\beta$.  The B&uuml;hlmann credibility-weighted estimate is
+Parameter $K=EPV/VHM$=[E($p$)-E($p^2$)]/Var($p$).  With some algebra this reduces to $K=\alpha+\beta$.  The B&uuml;hlmann credibility-weighted estimate is
 
 \begin{align*}
   \hat{p} &= \frac{n}{n+\alpha+\beta}\left(\frac{x}{n}\right)+\left(1-\frac{n}{n+\alpha+\beta}\right)\frac{\alpha}{\alpha+\beta} \\
@@ -820,7 +820,7 @@ In this section, you learn how to:
 
 * Perform nonparametric estimation with the B&uuml;hlmann and B&uuml;hlmann-Straub credibility models.
 * Identify situations when semiparametric estimation is appropriate.
-* Use data to approximate the *EPV* and *VHM*.
+* Use data to approximate the $EPV$ and $VHM$.
 * Balance credibility-weighted estimates.
 
 ***
@@ -831,9 +831,9 @@ The examples in this chapter have provided assumptions for calculating credibili
 
 Limited-fluctuation credibility requires a full credibility standard.  The general formula for aggregate losses or pure premium, as obtained in formula \@ref(eq:full-credibility-losses), is
 
-\begin{equation*}
-n_S=\left(\frac{y_p}{k}\right)^2\left[\left(\frac{\sigma_N^2}{\mu_N}\right)+\left(\frac{\sigma_X}{\mu_X}\right)^2\right]
-\end{equation*}
+$$
+n_S=\left(\frac{y_p}{k}\right)^2\left[\left(\frac{\sigma_N^2}{\mu_N}\right)+\left(\frac{\sigma_X}{\mu_X}\right)^2\right] ,
+$$
 
 \noindent with $N$ representing number of claims and $X$ the size of claims.  If one assumes $\sigma_X=0$ then the full credibility standard for frequency results.  If $\sigma_N=0$ then the full credibility formula for severity follows.  Probability $p$ and $k$ value are often selected using judgment and experience.
 
@@ -850,32 +850,32 @@ An empirical mean and second moment for the sizes of individual claim losses can
 Bayesian analysis as described previously requires assumptions about a prior distribution and likelihood.  It is possible to produce estimates without these assumptions and these methods are often referred to as `r Gloss('empirical Bayes methods')`.  B&uuml;hlmann and B&uuml;hlmann-Straub credibility with parameters estimated from the data are included in the category of empirical Bayes methods.
 
 
-**B&uuml;hlmann Model** First we will address the simpler B&uuml;hlmann model.  Assume that there are $r$ risks in a population.  For risk $i$ with risk parameter $\theta_i$ the losses for $n$ periods are $X_{i1},\ldots, X_{in}$.  The losses for a given risk are *iid* across periods as assumed in the B&uuml;hlmann model.  For risk $i$ the sample mean is $\bar{X}_i=\sum_{j=1}^{n}X_{ij}/n$ and the unbiased sample process variance is $s_i^2=\sum_{j=1}^{n}(X_{ij}-\bar{X}_i)^2/(n-1)$.  An unbiased estimator for the *EPV* can be calculated by taking the average of $s_i^2$ for the $r$ risks in the population:
+**B&uuml;hlmann Model** First we will address the simpler B&uuml;hlmann model.  Assume that there are $r$ risks in a population.  For risk $i$ with risk parameter $\theta_i$ the losses for $n$ periods are $X_{i1},\ldots, X_{in}$.  The losses for a given risk are *iid* across periods as assumed in the B&uuml;hlmann model.  For risk $i$ the sample mean is $\bar{X}_i=\sum_{j=1}^{n}X_{ij}/n$ and the unbiased sample process variance is $s_i^2=\sum_{j=1}^{n}(X_{ij}-\bar{X}_i)^2/(n-1)$.  An unbiased estimator for the $EPV$ can be calculated by taking the average of $s_i^2$ for the $r$ risks in the population:
 
 \begin{equation}  
 \widehat{EPV}=\frac{1}{r}\sum_{i=1}^{r} s_i^2 = \frac{1}{r(n-1)} \sum_{i=1}^{r} \sum_{j=1}^{n}(X_{ij}-\bar{X}_i)^2 .
 (\#eq:EPV-estimate)
 \end{equation}
 
-The individual risk means $\bar{X}_i$ for $i=1,\ldots, r$ can be used to estimate the *VHM*.  An unbiased estimator of Var($\bar{X}_i$) is 
+The individual risk means $\bar{X}_i$ for $i=1,\ldots, r$ can be used to estimate the $VHM$.  An unbiased estimator of Var($\bar{X}_i$) is 
 
 \begin{equation*} 
 \widehat{\mathrm{Var}}(\bar{X}_i)=\frac{1}{r-1} \sum_{i=1}^{r}(\bar{X}_i-\bar{X})^2 \textrm{  and  }  \bar{X}=\frac{1}{r}\sum_{i=1}^{r} \bar{X}_i,
 \end{equation*}
 
-but Var($\bar{X}_i$) is not the *VHM*.  The total variance formula or *unconditional variance* formula is
+but Var($\bar{X}_i$) is not the $VHM$.  The total variance formula or *unconditional variance* formula is
 
 \begin{equation*} 
 \mathrm{Var}(\bar{X}_i)=\textrm{E(Var}(\bar{X}_i|\Theta=\theta_i))+\textrm{Var(E}(\bar{X}_i|\Theta=\theta_i)).
 \end{equation*} 
 
-The *VHM* is the second term on the right because $\mu(\theta_i)=\mathrm{E}(\bar{X}_i|\Theta=\theta_i)$ is the hypothetical mean for risk $i$.  So,
+The $VHM$ is the second term on the right because $\mu(\theta_i)=\mathrm{E}(\bar{X}_i|\Theta=\theta_i)$ is the hypothetical mean for risk $i$.  So,
 
 \begin{equation*} 
 VHM=\textrm{Var(E}(\mu(\theta_i)) = \mathrm{Var}(\bar{X}_i) - \textrm{E(Var}(\bar{X}_i|\Theta=\theta_i)).
 \end{equation*} 
 
-As discussed previously in Section \@ref(S:EPV-VHM-Z), *EPV*/n = E(Var($\bar{X}_i|\Theta=\theta_i$)) and using the above estimators gives an unbiased estimator for the *VHM*:
+As discussed previously in Section \@ref(S:EPV-VHM-Z), $EPV$/n = E(Var($\bar{X}_i|\Theta=\theta_i$)) and using the above estimators gives an unbiased estimator for the $VHM$:
 
 \begin{equation} 
 \widehat{VHM} = \frac{1}{r-1} \sum_{i=1}^{r}(\bar{X}_i-\bar{X})^2 - \frac{\widehat{EPV}}{n} .
@@ -929,7 +929,7 @@ $\hat{\mu}_B=\frac{7}{8}\left(\frac{5}{3}\right)+(1-\frac{7}{8})1=\frac{19}{12}$
 *** 
 
 **Example `r chapnum`.6.2.**
-Two policyholders had claims over a three-year period as shown in the table below.  Calculate the nonparametric estimate for the *VHM*.
+Two policyholders had claims over a three-year period as shown in the table below.  Calculate the nonparametric estimate for the $VHM$.
  
 $$\begin{matrix}
 \begin{array}{|c|c|c|}
@@ -957,14 +957,14 @@ $\widehat{EPV}=\frac{1}{2}(3+3)=3$
 
 $\widehat{VHM}=\frac{1}{2-1}\left[(1-\frac{3}{2})^2+(2-\frac{3}{2})^2\right]-\frac{3}{3}=-\frac{1}{2}.$  
 
-The process variance is so large that it is not possible to estimate the *VHM*.  
+The process variance is so large that it is not possible to estimate the $VHM$.  
 
 
 </div>
 
 *** 
 
-**B&uuml;hlmann-Straub Model**  Empirical formulas for *EPV* and *VHM* in the B&uuml;hlmann-Straub model are more complicated because a risk's number of exposures can change from one period to another.  Also, the number of experience periods does not have to be constant across the population.  First some definitions:
+**B&uuml;hlmann-Straub Model**  Empirical formulas for $EPV$ and $VHM$ in the B&uuml;hlmann-Straub model are more complicated because a risk's number of exposures can change from one period to another.  Also, the number of experience periods does not have to be constant across the population.  First some definitions:
 
 * $X_{ij}$ is the losses per exposure for risk $i$ in period $j$.  Losses can refer to number of claims or amount of loss.  There are $r$ risks so $i=1,\ldots,r$.
 * $n_i$ is the number of observation periods for risk $i$
@@ -983,7 +983,7 @@ An unbiased estimator for the process variance $\sigma^2(\theta_i)$ of one expos
 \begin{equation*}  
 {s_i}^2=\frac{\sum_{j=1}^{n_i} m_{ij}(X_{ij}-\bar{X}_i)^2}{n_i-1}. \end{equation*}
 
-The weights $m_{ij}$ are applied to the squared differences because the $X_{ij}$ are the averages of $m_{ij}$ exposures.  The weighted average of the sample variances ${s_i}^2$ for each risk $i$ in the population with weights proportional to the number of $(n_i-1)$ observation periods will produce the expected value of the process variance (*EPV*) estimate
+The weights $m_{ij}$ are applied to the squared differences because the $X_{ij}$ are the averages of $m_{ij}$ exposures.  The weighted average of the sample variances ${s_i}^2$ for each risk $i$ in the population with weights proportional to the number of $(n_i-1)$ observation periods will produce the expected value of the process variance ($EPV$) estimate
 
 \begin{equation*}  
 \widehat{EPV}=\frac{\sum_{i=1}^r  (n_i-1){s_i}^2}{\sum_{i=1}^r (n_i-1)}=\frac{\sum_{i=1}^r \sum_{j=1}^{n_i} m_{ij}(X_{ij}-\bar{X}_i)^2}{\sum_{i=1}^r (n_i-1)}.     
@@ -991,13 +991,13 @@ The weights $m_{ij}$ are applied to the squared differences because the $X_{ij}$
 
 The quantity $\widehat{EPV}$ is an unbiased estimator for the expected value of the process variance of one exposure for a risk chosen at random from the population.
 
-To calculate an estimator for the variance in the hypothetical means (*VHM*) the squared differences of the individual risk sample means $\bar{X}_i$ and population mean $\bar{X}$ are used.  An unbiased estimator for the *VHM* is
+To calculate an estimator for the variance in the hypothetical means ($VHM$) the squared differences of the individual risk sample means $\bar{X}_i$ and population mean $\bar{X}$ are used.  An unbiased estimator for the $VHM$ is
 
 \begin{equation*}  
 \widehat{VHM}=\frac{\sum_{i=1}^r m_i(\bar{X}_i-\bar{X})^2 - (r-1)\widehat{EPV}}{m-\frac{1}{m}\sum_{i=1}^r m_i^2}.  
 \end{equation*}
 
-This complicated formula is necessary because of the varying number of exposures.  Proofs that the *EPV* and *VHM* estimators shown above are unbiased can be found in several references mentioned at the end of this chapter including [@buhlmanngisler], [@klugman2012], and [@tse].
+This complicated formula is necessary because of the varying number of exposures.  Proofs that the $EPV$ and $VHM$ estimators shown above are unbiased can be found in several references mentioned at the end of this chapter including [@buhlmanngisler], [@klugman2012], and [@tse].
 
 
 
@@ -1131,7 +1131,7 @@ In your model you assume that the number of claims for each policyholder has a P
 \widehat{EPV}=\bar{x}=\frac{923(0)+682(1)+249(2)+70(3)+51(4)+25(5)}{(5)(2000)}=0.1719.
 \end{equation*}
 
-Using the formula (\@ref(eq:VHM-estimate)), the *VHM* estimator is 
+Using the formula (\@ref(eq:VHM-estimate)), the $VHM$ estimator is 
 
 \begin{eqnarray*}
 \widehat{VHM}&=&\frac{1}{2000-1}[923(0-0.1719)^2+682(0.20-0.1719)^2+249(0.40-0.1719)^2\\
@@ -1152,47 +1152,50 @@ The credibility weighted model $\hat{\mu}(\theta_i)=Z_i\bar{X}_i+(1-Z_i)\bar{X}$
 
 For the credibility weighted estimators to be in balance we want 
 
-\begin{equation*}   
+$$  
 \bar{X}=\sum_{i=1}^r(m_i/m) \bar{X}_i=\sum_{i=1}^r(m_i/m) \hat{\mu}(\theta_i).
-\end{equation*}
+$$
 
-If this equation is satisfied then the estimated losses for each risk will add up to the population total, an important goal in ratemaking, but this may not happen if $\bar{X}$ is used for the complement of credibility. 
+If this equation is satisfied then the estimated losses for each risk will add up to the population total, an important goal in ratemaking, but this may not happen if the complement of credibility is applied to $\bar{X}$.  
 
-In order to find a complement of credibility that will bring the credibility-weighted estimators into balance we will set $\hat{\mu}$ as the complement of credibility and analyze the following equation:
+To achieve balance,  we will set $\hat{M}_X$ as the amount that is applied to the complement of credibility and thus analyze the following equation:
 
-\begin{equation*}   
-\sum_{i=1}^r(m_i/m) \bar{X}_i=\sum_{i=1}^r(m_i/m) (Z_i\bar{X}_i+(1-Z_i)\hat{\mu}) .
-\end{equation*}
+$$  
+\sum_{i=1}^r(m_i/m) \bar{X}_i=\sum_{i=1}^r(m_i/m) \left\{Z_i\bar{X}_i+(1-Z_i) \cdot \hat{M}_X\right\} .
+$$
 
 A little algebra gives
 
-\begin{equation*}   
-\sum_{i=1}^r m_i \bar{X}_i=\sum_{i=1}^r m_i Z_i\bar{X}_i + \hat{\mu}\sum_{i=1}^r m_i(1-Z_i),
-\end{equation*}
+$$   
+\sum_{i=1}^r m_i \bar{X}_i=\sum_{i=1}^r m_i Z_i\bar{X}_i + \hat{M}_X\sum_{i=1}^r m_i(1-Z_i),
+$$
 
 and
 
-\begin{equation*}  
-\hat{\mu}=\frac{\sum_{i=1}^r m_i(1-Z_i)\bar{X}_i}{\sum_{i=1}^r m_i(1-Z_i)}. \end{equation*}
+$$  
+\hat{M}_X=\frac{\sum_{i=1}^r m_i(1-Z_i)\bar{X}_i}{\sum_{i=1}^r m_i(1-Z_i)}.
+$$
 
-Using this value for $\hat{\mu}$  will bring the credibility weighted estimators into balance.
+Using this value for $\hat{M}_X$  will bring the credibility weighted estimators into balance.
 
 If credibilities $Z_i$ were computed using the B&uuml;hlmann-Straub model, then $Z_i=m_i/(m_i+K)$.  The prior formula can be simplified using the following relationship
 
-\begin{equation*}  
+$$  
 m_i(1-Z_i)=m_i\left(1-\frac{m_i}{m_i+K}\right)=m_i\left(\frac{(m_i+K)-m_i}{m_i+K}\right)=KZ_i .
-\end{equation*}
+$$
 
-Therefore, a complement of credibility that will bring the credibility-weighed estimators into balance with the overall mean loss per exposure is
+Therefore, an amount when applied to the complement of credibility that will bring the credibility-weighed estimators into balance with the overall mean loss per exposure is
 
-\begin{equation*}  
-\hat{\mu}=\frac{\sum_{i=1}^r  Z_i \bar{X}_i}{\sum_{i=1}^r  Z_i}. \end{equation*}
+$$  
+\hat{M}_X=\frac{\sum_{i=1}^r  Z_i \bar{X}_i}{\sum_{i=1}^r  Z_i}. 
+$$
  
 
 **Example `r chapnum`.6.6.**
-An example from the nonparametric B&uuml;hlmann-Straub section had the following data for two risks.  Find the complement of credibility $\hat{\mu}$ that will produce credibility-weighted estimates that are in balance.
+An example from the nonparametric B&uuml;hlmann-Straub section had the following data for two risks.  Find the amount associated with the complement of credibility, $\hat{M}_X$, that will produce credibility-weighted estimates that are in balance.
 
-$$\begin{matrix}
+$$
+\begin{matrix}
 \begin{array}{|c|c|c|c|c|c|}
 \hline
 \text{Policyholder} &  & \text{Year 1} & \text{Year 2} & \text{Year 3} & \text{Year 4} \\
@@ -1208,17 +1211,18 @@ $$\begin{matrix}
 \text{B} & \text{Insured vehicles} &  0 & 2 & 3 & 4\\      
 \hline
 \end{array}
-\end{matrix}$$
+\end{matrix}
+$$
 
 `r HideExample('9.6.6','Show Example Solution')`
 
 **Solution** The credibilities from the prior example are $Z_A=\frac{7}{7+2.0871}=0.7703$ and $Z_B=\frac{9}{9+2.0871}=0.8118$.  The sample means are $\bar{x}_A=1$ and $\bar{x}_B=1/3$.  The balanced complement of credibility is
 
-\begin{equation*}  
-\hat{\mu}=\frac{0.7703(1)+0.8118(1/3)}{0.7703+0.8118}=0.6579.
-\end{equation*}
+$$  
+\hat{M}_X=\frac{0.7703(1)+0.8118(1/3)}{0.7703+0.8118}=0.6579.
+$$
 
-The updated credibility estimates are $\hat{\mu}_A=0.7703(1)+(1-0.7703)(.6579)=0.9214$ versus the previous 0.9139 and $\hat{\mu}_B=0.8118(1/3)+(1-0.8118)(.6579)=0.3944$ versus the previous 0.3882.  Checking the balance on the new estimators:  (7/16)(0.9214)+(9/16)(0.3944)=0.6250.  This exactly matches $\bar{X}=10/16=0.6250$.
+The updated credibility estimates are $\hat{M}_X_A=0.7703(1)+(1-0.7703)(.6579)=0.9214$ versus the previous 0.9139 and $\hat{M}_X_B=0.8118(1/3)+(1-0.8118)(.6579)=0.3944$ versus the previous 0.3882.  Checking the balance on the new estimators:  (7/16)(0.9214)+(9/16)(0.3944)=0.6250.  This exactly matches $\bar{X}=10/16=0.6250$.
 
 
 </div>
