@@ -4,8 +4,7 @@
 # Modeling Loss Severity {#C:Severity}
 
 
-*Chapter Preview.* The traditional loss distribution approach to modeling `r Gloss('aggregate losses')` starts by separately fitting a frequency distribution to the number of losses and a severity distribution to the size of losses. The estimated aggregate loss distribution combines the loss frequency distribution and the loss severity distribution by convolution. Discrete distributions often referred to as counting or frequency distributions were used in Chapter \@ref(C:Frequency-Modeling) to describe the number of events such as number of accidents to the driver or number of claims to the insurer. Lifetimes, asset values, losses and claim sizes are usually modeled as continuous random variables and as such are modeled using continuous distributions, often referred to as loss or severity distributions. A `r Gloss('mixture distribution', '3')` is a weighted combination of simpler distributions that is used to model phenomenon investigated in a heterogeneous population, such as modeling more than one type of claims in `r Gloss('liability insurance')` (small frequent claims and large relatively rare claims). In this chapter we explore the use of continuous as well as mixture distributions to model the random size of loss. Sections \@ref(S:BasicQuantities) and \@ref(S:ContinuousDistn)
-present key attributes that characterize continuous models and means of creating new distributions from existing ones. Section \@ref(S:CoverageModifications) describes the effect of coverage modifications, which change the conditions that trigger a payment, such as applying deductibles, limits, or adjusting for inflation, on the distribution of individual loss amounts. For calibrating models, Section \@ref(S:MaxLikeEstimation) deepens our understanding of maximum likelihood methods. The frequency distributions from Chapter \@ref(C:Frequency-Modeling) will be combined with the ideas from this chapter to describe the aggregate losses over the whole portfolio in Chapter \@ref(C:AggLossModels).
+*Chapter Preview.* The traditional loss distribution approach to modeling `r Gloss('aggregate losses')` starts by separately fitting a frequency distribution to the number of losses and a severity distribution to the size of losses. The estimated aggregate loss distribution combines the loss frequency distribution and the loss severity distribution by convolution. Discrete distributions often referred to as counting or frequency distributions were used in Chapter \@ref(C:Frequency-Modeling) to describe the number of events such as number of accidents to the driver or number of claims to the insurer. Lifetimes, asset values, losses and claim sizes are usually modeled as continuous random variables and as such are modeled using continuous distributions, often referred to as loss or severity distributions. A `r Gloss('mixture distribution', '3')` is a weighted combination of simpler distributions that is used to model phenomenon investigated in a heterogeneous population, such as modeling more than one type of claims in `r Gloss('liability insurance')` (small frequent claims and large relatively rare claims). In this chapter we explore the use of continuous as well as mixture distributions to model the random size of loss. Sections \@ref(S:BasicQuantities) and \@ref(S:ContinuousDistn) present key attributes that characterize continuous models and means of creating new distributions from existing ones. Section \@ref(S:CoverageModifications) describes the effect of coverage modifications, which change the conditions that trigger a payment, such as applying deductibles, limits, or adjusting for inflation, on the distribution of individual loss amounts. For calibrating models, Section \@ref(S:MaxLikeEstimation) deepens our understanding of maximum likelihood methods. The frequency distributions from Chapter \@ref(C:Frequency-Modeling) will be combined with the ideas from this chapter to describe the aggregate losses over the whole portfolio in Chapter \@ref(C:AggLossModels).
 
 
 
@@ -23,7 +22,7 @@ In this section, you learn how to define some basic distributional quantities:
 
 ### Moments {#S:Chap3Moments}
 
-Let $X$ be a `r Gloss('continuous random variable')` with probability density function $f_{X}\left( x \right)$ and distribution function $F_{X}\left( x \right)$. The *k*-th `r Gloss ('raw moment')` of $X$, denoted by $\mu_{k}^{\prime}$, is the `r Gloss('expected value')` of the *k*-th power of $X$, provided it exists. The first raw moment $\mu_{1}^{\prime}$ is the mean of $X$ usually denoted by $\mu$. The formula for $\mu_{k}^{\prime}$ is given as
+Let $X$ be a `r Gloss('continuous random variable')` with probability density function (*pdf*) $f_{X}\left( x \right)$ and distribution function $F_{X}\left( x \right)$. The *k*-th `r Gloss ('raw moment')` of $X$, denoted by $\mu_{k}^{\prime}$, is the `r Gloss('expected value')` of the *k*-th power of $X$, provided it exists. The first raw moment $\mu_{1}^{\prime}$ is the mean of $X$ usually denoted by $\mu$. The formula for $\mu_{k}^{\prime}$ is given as
 $$
 \mu_{k}^{\prime} = \mathrm{E}\left( X^{k} \right) = \int_{0}^{\infty}{x^{k}f_{X}\left( x \right)dx } .
 $$
@@ -47,7 +46,7 @@ Assume that the `r Gloss('rv')` $X$ has a gamma distribution with mean 8 and ske
 
 `r HideExample('3.1.1','Show Example Solution')`
 
-**Solution.** The probability density function of $X$ is given by
+**Solution.** The *pdf* of $X$ is given by
 
 $$
 f_{X}\left( x \right) = \frac{\left( x / \theta \right)^{\alpha}}{x ~\Gamma\left( \alpha \right)} e^{- x / \theta}
@@ -91,7 +90,7 @@ Let $X$ be a continuous random variable with density function $f_{X}\left( x \ri
 
 **Solution.**
 
-The distribution function is $F_{X}\left( x \right) = 1 - e^{- \theta x}$. So, $F_{X}\left( \pi_{0.5} \right) = 1 - e^{- \theta\pi_{0.5}} = 0.5$. As, $\pi_{0.5} = \frac{1}{3}$, we have $F_X\left(\frac{1}{3}\right) =  1 - e^{-\theta / 3} = 0.5$ and $\theta = 3 \ln 2$.
+The distribution function is $F_{X}\left( x \right) = 1 - e^{- \theta x}$. So, $F_{X}\left( \pi_{0.5} \right) = 1 - e^{- \theta\pi_{0.5}} = 0.5$. As, $\pi_{0.5} = \frac{1}{3}$, we have $F_X\left(\frac{1}{3}\right) =  1 - e^{-\theta / 3} = 0.5$ and $\theta = 3 \log 2$.
 </div>
 
 *** 
@@ -100,11 +99,11 @@ Section \@ref(S:MS:QuantileEstimator) will extend the definition of quantiles to
 
 ### Moment Generating Function
 
-The moment generating function (*mgf*), denoted by $M_{X}(t)$ uniquely characterizes the distribution of $X$. While it is possible for two different distributions to have the same moments and yet still differ, this is not the case with the moment generating function. That is, if two random variables have the same moment generating function, then they have the same distribution. The moment generating function is given by
+The`r Gloss('moment generating function (mgf)')`, denoted by $M_{X}(t)$ uniquely characterizes the distribution of $X$. While it is possible for two different distributions to have the same moments and yet still differ, this is not the case with the moment generating function. That is, if two random variables have the same moment generating function, then they have the same distribution. The moment generating function is given by
 $$
 M_{X}(t) = \mathrm{E}\left( e^{tX} \right) = \int_{0}^{\infty}{e^{\text{tx}}f_{X}\left( x \right) dx }
 $$
-for all $t$ for which the expected value exists. The `r Gloss('moment generating function (mgf)')` is a real function whose *k*-th derivative at zero is equal to the *k*-th raw moment of $X$. In symbols, this is
+for all $t$ for which the expected value exists. The *mgf* is a real function whose *k*-th derivative at zero is equal to the *k*-th raw moment of $X$. In symbols, this is
 $$
 \left.\frac{d^k}{dt^k} M_{X}(t)\right|_{t=0} = \mathrm{E}\left( X^{k} \right) .
 $$
@@ -139,7 +138,7 @@ Let $X_{1}, \ldots, X_{n}$ be `r Gloss('independent')` random variables, where $
 
 **Solution.**
 
-The moment generating function of $S$ is
+The *mgf* of $S$ is
 $$
 M_{S}(t) = \text{E}\left( e^{\text{tS}} \right) = \mathrm{E}\left( e^{t\sum_{i = 1}^{n}X_{i}} \right) 
 = \mathrm{E}\left( \prod_{i = 1}^{n}e^{tX_{i}} \right) .
@@ -172,7 +171,7 @@ Hence, $\mathrm{Var}\left( S \right) = \alpha\theta^{2}$.
 One can also use the moment generating function to compute the probability generating function
 
 $$
-P_{X}(z) = \mathrm{E}\left( z^{X} \right) = M_{X}\left( \ln z \right) . 
+P_{X}(z) = \mathrm{E}\left( z^{X} \right) = M_{X}\left( \log z \right) . 
 $$
 
 As introduced in Section \@ref(S:generating-functions), the probability generating function is more useful for discrete *rv*s. 
@@ -197,7 +196,7 @@ In this section, you learn how to define and apply four fundamental severity dis
 
 ### Gamma Distribution {#S:Loss:Gamma}
 
-Recall that the traditional approach in modeling losses is to fit separate models for claim frequency and claim severity. When frequency and severity are modeled separately it is common for actuaries to use the Poisson distribution (introduced in Section \@ref(S:poisson-distribution)) for claim count and the gamma distribution to model severity. An alternative approach for modeling losses that has recently gained popularity is to create a single model for pure premium (average claim cost) that will be described in Chapter \@ref(C:ModelSelection).
+Recall that the traditional approach in modeling losses is to fit separate models for frequency and claim severity. When frequency and severity are modeled separately it is common for actuaries to use the Poisson distribution (introduced in Section \@ref(S:poisson-distribution)) for claim count and the gamma distribution to model severity. An alternative approach for modeling losses that has recently gained popularity is to create a single model for pure premium (average claim cost) that will be described in Chapter \@ref(C:ModelSelection).
 
 The continuous variable $X$ is said to have the gamma distribution with shape parameter $\alpha$ and scale parameter $\theta$ if its probability
 density function is given by
@@ -270,7 +269,7 @@ F_{X}\left( x \right) = \Gamma\left( \alpha; \frac{x}{\theta} \right) = \frac{1}
 $$
 with $\alpha  >  0,\ \theta  >  0$. For an integer $\alpha$, it can be written as $\Gamma\left( \alpha; \frac{x}{\theta} \right) = 1 - e^{-x/\theta}\sum_{k = 0}^{\alpha-1}\frac{(x/\theta)^k}{k!}$. 
 
-The $k$-th moment of the gamma distributed random variable for any positive $k$ is given by
+The $k$-th raw moment of the gamma distributed random variable for any positive $k$ is given by
 $$
 \mathrm{E}\left( X^{k} \right) = \theta^{k} \frac{\Gamma\left( \alpha + k \right)}{\Gamma\left( \alpha \right)} .
 $$
@@ -283,11 +282,14 @@ modeling risky assets as it will not provide a realistic assessment of the likel
 
 The `r Gloss('Pareto distribution')`, named after the Italian economist Vilfredo Pareto (1843-1923), has many economic and financial applications. It is a positively skewed and heavy-tailed distribution which makes it suitable for modeling income, high-risk insurance claims and severity of large casualty losses. The survival function of the Pareto distribution which decays slowly to zero was first used to describe the distribution of income where a small percentage of the population holds a large proportion of the total wealth. For extreme insurance claims, the tail of the severity distribution (losses in excess of a threshold) can be modeled using a Generalized Pareto distribution.
 
-The continuous variable $X$ is said to have the Pareto distribution with shape parameter $\alpha$ and scale parameter $\theta$ if its `r Gloss('pdf')` is given by
+The continuous variable $X$ is said to have the (two parameter) Pareto distribution with shape parameter $\alpha$ and scale parameter $\theta$ if its `r Gloss('pdf')` is given by
+
 $$
-f_{X}\left( x \right) = \frac{\alpha\theta^{\alpha}}{\left( x + \theta \right)^{\alpha + 1}} \ \ \  x  >  0,\ \alpha >  0,\ \theta > 0.
+f_{X}\left( x \right) = \frac{\alpha\theta^{\alpha}}{\left( x + \theta \right)^{\alpha + 1}} \ \ \  x  >  0, \ \alpha >  0, \ \theta > 0.
+(\#eq:Pareto)
 $$
-The two panels in Figure \@ref(fig:Paretopdf)  demonstrate the effect of the scale and shape parameters on the Pareto density function.
+
+The two panels in Figure \@ref(fig:Paretopdf)  demonstrate the effect of the scale and shape parameters on the Pareto density function. There are other formulations of the Pareto distribution including a one parameter version given in Appendix Section \@ref(S:ContinuousDistributions). Henceforth, when we refer the Pareto distribution, we mean the version given through the *pdf* in equation \ref(eq:Pareto).
 
 
 ```{r Paretopdf, message = FALSE, warning = FALSE, fig.cap='Pareto Densities. The left-hand panel is with scale=2000 and varying shape.  The right-hand panel is with shape=3 and varying scale', out.width='120%', fig.asp=.75, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
@@ -328,9 +330,9 @@ $$
 F_{X}\left( x \right) = 1 - \left( \frac{\theta}{x + \theta} \right)^{\alpha}  \ \ \ x > 0,\ \alpha > 0,\ \theta > 0.
 $$
 
-It can be easily seen that the `r Gloss('hazard function')` of the Pareto distribution is a decreasing function in $x$, another indication that the distribution is heavy tailed. When the hazard function decreases over time the population dies off at a decreasing rate resulting in a heavier tail for the distribution. The hazard function reveals information about the tail distribution and is often used to model data distributions in survival analysis. The hazard function is defined as the instantaneous potential that the event of interest occurs within a very narrow time frame.
+It can be easily seen that the `r Gloss('hazard function')` of the Pareto distribution is a decreasing function in $x$, another indication that the distribution is heavy tailed. Again using the analogy of the income of a population, when the hazard function decreases over time the population dies off at a decreasing rate resulting in a heavier tail for the distribution. The hazard function reveals information about the tail distribution and is often used to model data distributions in survival analysis. The hazard function is defined as the instantaneous potential that the event of interest occurs within a very narrow time frame.
 
-The $k$-th moment of the Pareto distributed random variable exists, if and only if, $\alpha > k$. If $k$ is a positive integer then
+The $k$-th raw moment of the Pareto distributed random variable exists, if and only if, $\alpha > k$. If $k$ is a positive integer then
 $$
 \mathrm{E}\left( X^{k} \right) = \frac{\theta^{k}~ k!}{\left( \alpha - 1 \right)\cdots\left( \alpha - k \right)} \ \ \ \alpha > k.
 $$
@@ -365,7 +367,7 @@ Thus, $\pi_{0.95} = 122.96$.
 
 The `r Gloss('Weibull distribution')`, named after the Swedish physicist Waloddi Weibull (1887-1979) is widely used in reliability, life data analysis, weather forecasts and general insurance claims. Truncated data arise frequently in insurance studies. The Weibull distribution has been used to model excess of loss treaty over automobile insurance as well as earthquake inter-arrival times.
 
-The continuous variable $X$ is said to have the Weibull distribution with shape parameter $\alpha$ and scale parameter $\theta$ if its probability density function is given by
+The continuous variable $X$ is said to have the Weibull distribution with shape parameter $\alpha$ and scale parameter $\theta$ if its *pdf* is given by
 $$
 f_{X}\left( x \right) = \frac{\alpha}{\theta}\left( \frac{x}{\theta} \right)^{\alpha - 1} \exp \left(- \left( \frac{x}{\theta} \right)^{\alpha}\right) \ \ \ x > 0,\ \alpha > 0,\ \theta > 0.
 $$
@@ -399,12 +401,12 @@ legend("topright", c("shape=1.5", "shape=2", "shape=2.5", "shape=3"), lty=1, col
 
 The distribution function of the Weibull distribution is given by
 $$
-F_{X}\left( x \right) = 1 - e^{- \left( x / \theta \right)^{\alpha}}  \ \ \ x >  0,\ \alpha >  0,\ \theta > 0.
+F_{X}\left( x \right) = 1 - \exp\left(- \left( \frac{x}{\theta} \right)^{\alpha}~\right)  \ \ \ x >  0,\ \alpha >  0,\ \theta > 0.
 $$
 
 It can be easily seen that the shape parameter $\alpha$ describes the shape of the hazard function of the Weibull distribution. The hazard function is a decreasing function when $\alpha < 1$ (heavy tailed distribution), constant when $\alpha = 1$ and increasing when $\alpha > 1$ (light tailed distribution). This behavior of the hazard function makes the Weibull distribution a suitable model for a wide variety of phenomena such as weather forecasting, electrical and industrial engineering, insurance modeling, and financial risk analysis.
 
-The $k$-th moment of the Weibull distributed random variable is given by
+The $k$-th raw moment of the Weibull distributed random variable is given by
 $$
 \mathrm{E}\left( X^{k} \right) = \theta^{k}~\Gamma\left( 1 + \frac{k}{\alpha} \right) .
 $$
@@ -422,7 +424,7 @@ respectively.
 **Example `r chapnum`.2.2.**
 Suppose that the probability distribution of the lifetime of AIDS patients (in months) from the time of diagnosis is described by the Weibull distribution with shape parameter 1.2 and scale parameter 33.33.
 
-a.  Find the probability that a randomly selected person from this population survives at least 12 months,
+a.  Find the probability that a randomly selected person from this population survives at least 12 months.
 b.  A random sample of 10 patients will be selected from this population. What is the probability that at most two will die within one year of diagnosis.
 c.  Find the 99-th percentile of the distribution of lifetimes.
 
@@ -453,21 +455,22 @@ Solving for $\pi_{0.99}$, we get $\pi_{0.99} = 118.99$.
 
 The `r Gloss('Generalized Beta Distribution of the Second Kind')` (*GB2*) was introduced by @venter1983transformed in the context of insurance loss modeling and by @mcdonald1984some as an income and wealth distribution. It is a four-parameter very flexible distribution that can model positively as well as negatively skewed distributions.
 
-The continuous variable $X$ is said to have the *GB2* distribution with parameters $\sigma$, $\theta$, $\alpha_1$ and $\alpha_2$ if its probability density function is given by
+The continuous variable $X$ is said to have the *GB2* distribution with parameters $\sigma$, $\theta$, $\alpha_1$ and $\alpha_2$ if its *pdf* is given by
 
-\begin{equation}
+$$
 f_{X}\left( x \right) = \frac{(x/\theta)^{\alpha_2/\sigma}}{x \sigma~\mathrm{B}\left( \alpha_1,\alpha_2\right)\left\lbrack 1 + \left( x/\theta \right)^{1/\sigma} \right\rbrack^{\alpha_1 + \alpha_2}} \ \ \ \text{for } x > 0,
   (\#eq:GB2Distn)
-\end{equation}
+$$
 
 $\sigma,\theta,\alpha_1,\alpha_2  > 0$, and where the beta function $\mathrm{B}\left( \alpha_1,\alpha_2 \right)$ is defined as
+
 $$
 \mathrm{B}\left( \alpha_1,\alpha_2\right) = \int_{0}^{1}{t^{\alpha_1 - 1}\left( 1 - t \right)^{\alpha_2 - 1}}~ dt.
 $$
 
 The *GB2* provides a model for heavy as well as light tailed data. It includes the exponential, gamma, Weibull, Burr, Lomax, F, chi-square, Rayleigh, lognormal and log-logistic as special or limiting cases. For example, by setting the parameters $\sigma = \alpha_1 = \alpha_2 = 1$, the *GB2* reduces to the log-logistic distribution. When $\sigma = 1$ and $\alpha_2 \rightarrow \infty$, it reduces to the gamma distribution, and when $\alpha = 1$ and $\alpha_2 \rightarrow \infty$, it reduces to the Weibull distribution.
 
-A *GB2* random variable can be constructed as follows. Suppose that $G_1$ and $G_2$ are independent random variables where $G_i$ has a gamma distribution with parameters $\alpha_i$ and scale parameter 1. Then, one can show that the random variable $X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}$ has a *GB2* distribution with *pdf* summarized in equation \@ref(eq:GB2Distn). This theoretical result has several implications. For example, when the moments exist, one can show that the $k$-th moment of the *GB2* distributed random variable is given by
+A *GB2* random variable can be constructed as follows. Suppose that $G_1$ and $G_2$ are independent random variables where $G_i$ has a gamma distribution with parameters $\alpha_i$ and scale parameter 1. Then, one can show that the random variable $X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}$ has a *GB2* distribution with *pdf* summarized in equation \@ref(eq:GB2Distn). This theoretical result has several implications. For example, when the moments exist, one can show that the $k$-th raw moment of the *GB2* distributed random variable is given by
 
 $$
 \mathrm{E}\left( X^{k} \right) = \frac{\theta^{k}~\mathrm{B}\left( \alpha_1 +k \sigma,\alpha_2 - k \sigma \right)}{\mathrm{B}\left( \alpha_1,\alpha_2 \right)}, \ \ \ k > 0.
@@ -493,7 +496,7 @@ In this section, you learn how to:
 
 ### Functions of Random Variables and their Distributions
 
-In Section \@ref(S:ContinuousDistn) we discussed some elementary known distributions. In this section we discuss means of creating new parametric probability distributions from existing ones. Specifically, let $X$ be a continuous random variable with a known probability density function $f_{X}(x)$ and distribution function $F_{X}(x)$. We are interested in the distribution of $Y = g\left( X \right)$, where $g(X)$ is a one-to-one `r Gloss('transformation')` defining a new random variable $Y$. In this section we apply the following techniques for creating new families of distributions: (a) multiplication by a constant (b) raising to a power, (c) exponentiation and (d) mixing.
+In Section \@ref(S:ContinuousDistn) we discussed some elementary known distributions. In this section we discuss means of creating new parametric probability distributions from existing ones. Specifically, let $X$ be a continuous random variable with a known *pdf* $f_{X}(x)$ and distribution function $F_{X}(x)$. We are interested in the distribution of $Y = g\left( X \right)$, where $g(X)$ is a one-to-one `r Gloss('transformation')` defining a new random variable $Y$. In this section we apply the following techniques for creating new families of distributions: (a) multiplication by a constant (b) raising to a power, (c) exponentiation and (d) mixing.
 
 ### Multiplication by a Constant
 
@@ -503,7 +506,7 @@ Consider the transformation $Y = cX$, where $c > 0$, then the distribution funct
 $$
 F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( cX \leq y \right) = \Pr\left( X \leq \frac{y}{c} \right) = F_{X}\left( \frac{y}{c} \right).
 $$
-Hence, the probability density function of interest $f_{Y}(y)$ can be written as
+Using the chain rule for differentiation, the *pdf* of interest $f_{Y}(y)$ can be written as
 $$
 f_{Y}\left( y \right) = \frac{1}{c}f_{X}\left( \frac{y}{c} \right).
 $$
@@ -514,7 +517,7 @@ Suppose that $X$ belongs to a certain set of `r Gloss('parametric distributions'
 
 
 **Example `r chapnum`.3.1. Actuarial Exam Question.**
-The aggregate losses of Eiffel Auto Insurance are denoted in Euro currency and follow a lognormal distribution with $\mu = 8$ and $\sigma = 2$. Given that 1 euro $=$ 1.3 dollars, find the set of lognormal parameters which describe the distribution of Eiffel's losses in dollars.
+Losses of Eiffel Auto Insurance are denoted in Euro currency and follow a lognormal distribution with $\mu = 8$ and $\sigma = 2$. Given that 1 euro $=$ 1.3 dollars, find the set of lognormal parameters which describe the distribution of Eiffel's losses in dollars.
 
 `r HideExample('3.3.1','Show Example Solution')`
 
@@ -525,20 +528,20 @@ $$
 F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( 1.3X \leq y \right) = \Pr\left( X \leq \frac{y}{1.3} \right) = F_{X}\left( \frac{y}{1.3} \right).
 $$
 
-$X$ follows a lognormal distribution with parameters $\mu = 8$ and $\sigma = 2$. The probability density function of $X$ is given by
+$X$ follows a lognormal distribution with parameters $\mu = 8$ and $\sigma = 2$. The *pdf* of $X$ is given by
 $$
-f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\ln x - \mu}{\sigma} \right)^{2}\right\} \ \ \ \text{for } x > 0.
+f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\log x - \mu}{\sigma} \right)^{2}\right\} \ \ \ \text{for } x > 0.
 $$
-As $\left| \frac{dx}{dy} \right| = \frac{1}{1.3}$, the probability density function of interest $f_{Y}(y)$ is
+As $\left| \frac{dx}{dy} \right| = \frac{1}{1.3}$, the *pdf* of interest $f_{Y}(y)$ is
 
 $$
 \begin{array}{ll}
 f_{Y}\left( y \right) & = \frac{1}{1.3}f_{X}\left( \frac{y}{1.3} \right) \\
-&= \frac{1}{1.3}\frac{1.3}{y \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\ln\left( y/1.3 \right) - \mu}{\sigma} \right)^{2}\right\} \\
-&= \frac{1}{y \sigma\sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\ln y - \left( \ln 1.3 + \mu \right)}{\sigma} \right)^{2}\right\}.
+&= \frac{1}{1.3}\frac{1.3}{y \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\log\left( y/1.3 \right) - \mu}{\sigma} \right)^{2}\right\} \\
+&= \frac{1}{y \sigma\sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\log y - \left( \log 1.3 + \mu \right)}{\sigma} \right)^{2}\right\}.
 \end{array}
 $$
-Then $Y$ follows a lognormal distribution with parameters $\ln 1.3 + \mu = 8.26$ and $\sigma = 2.00$. If we let $\mu = ln(m)$ then it can be easily seen that $m$=$e^{\mu}$ is the scale parameter which was multiplied by 1.3 while $\sigma$ is the shape parameter that remained unchanged.
+Then $Y$ follows a lognormal distribution with parameters $\log 1.3 + \mu = 8.26$ and $\sigma = 2.00$. If we let $\mu = \log(m)$ then it can be easily seen that $m = e^{\mu}$ is the scale parameter which was multiplied by 1.3 while $\sigma$ is the shape parameter that remained unchanged.
 
 </div>
 
@@ -575,7 +578,7 @@ $$
 F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( X^{\tau} \leq y \right) = \Pr\left( X \leq y^{1/ \tau} \right) = F_{X}\left( y^{1/ \tau} \right).
 $$
 
-Hence, the probability density function of interest $f_{Y}(y)$ can be written as
+Hence, the *pdf* of interest $f_{Y}(y)$ can be written as
 $$
 f_{Y}(y) = \frac{1}{\tau} y^{(1/ \tau) - 1} f_{X}\left( y^{1/ \tau} \right).
 $$
@@ -619,22 +622,22 @@ where $\alpha = \frac{1}{\tau}$ and $\beta = \theta^{\tau}$. Then, $Y$ follows t
 
 ### Exponentiation
 
-The normal distribution is a very popular model for a wide number of applications and when the sample size is large, it can serve as an approximate distribution for other models. If the random variable $X$ has a normal distribution with mean $\mu$ and variance $\sigma^{2}$, then $Y = e^{X}$ has `r Gloss('lognormal distribution')` with parameters $\mu$ and $\sigma^{2}$. The lognormal random variable has a lower bound of zero, is positively skewed and has a long right tail. A lognormal distribution is commonly used to describe distributions of financial assets such as stock prices. It is also used in fitting claim amounts for automobile as well as health insurance. This is an example of another type of transformation which involves exponentiation.
+The normal distribution is a very popular model for a wide number of applications and when the sample size is large, it can serve as an approximate distribution for other models. If the random variable $X$ has a normal distribution with mean $\mu$ and variance $\sigma^{2}$, then $Y = e^{X}$ has a `r Gloss('lognormal distribution')` with parameters $\mu$ and $\sigma^{2}$. The lognormal random variable has a lower bound of zero, is positively skewed and has a long right tail. A lognormal distribution is commonly used to describe distributions of financial assets such as stock prices. It is also used in fitting claim amounts for automobile as well as health insurance. This is an example of another type of transformation which involves exponentiation.
 
 In general, consider the transformation $Y = e^{X}$. Then, the distribution function of $Y$ is given by
 
 $$
-F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \ln y \right) = F_{X}\left( \ln y \right).
+F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \log y \right) = F_{X}\left( \log y \right).
 $$
-Taking derivatives, we see that the probability density function of interest $f_{Y}(y)$ can be written as
+Taking derivatives, we see that the *pdf* of interest $f_{Y}(y)$ can be written as
 $$
-f_{Y}(y) = \frac{1}{y}f_{X}\left( \ln y \right).
+f_{Y}(y) = \frac{1}{y}f_{X}\left( \log y \right).
 $$
 As an important special case, suppose that $X$ is normally distributed with mean $\mu$ and variance $\sigma^2$. Then, the distribution of $Y = e^X$ is
 
 $$
-f_{Y}(y) = \frac{1}{y}f_{X}\left( \ln y \right)
-= \frac{1}{y \sigma \sqrt{2 \pi}} \exp \left\{-\frac{1}{2}\left(\frac{ \ln y - \mu}{\sigma}\right)^2\right\}. 
+f_{Y}(y) = \frac{1}{y}f_{X}\left( \log y \right)
+= \frac{1}{y \sigma \sqrt{2 \pi}} \exp \left\{-\frac{1}{2}\left(\frac{ \log y - \mu}{\sigma}\right)^2\right\}. 
 $$
 This is known as a *lognormal* distribution.
 
@@ -648,12 +651,12 @@ Assume that $X$ has a uniform distribution on the interval $(0,\ c)$ and define 
 
 We begin with the `r Gloss('cdf')` of $Y$,
 $$
-F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \ln y \right) = F_{X}\left( \ln y \right).
+F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \log y \right) = F_{X}\left( \log y \right).
 $$
 Taking the derivative, we have,
 
 $$
-f_{Y}\left( y \right) = \frac{1}{y}f_{X}\left(\ln y \right) = \frac{1}{cy} .
+f_{Y}\left( y \right) = \frac{1}{y}f_{X}\left(\log y \right) = \frac{1}{cy} .
 $$
 Since $0 < x < c$, then $1 < y  <  e^{c}$.
 
@@ -668,12 +671,12 @@ thought to be divided into multiple subpopulations with distinct distributions.
 
 #### Two-point Mixture
 
-If the underlying phenomenon is diverse and can actually be described as two phenomena representing two subpopulations with different modes, we can construct the two point mixture random variable $X$. Given random variables $X_{1}$ and $X_{2}$, with probability density functions $f_{X_{1}}\left( x \right)$ and $f_{X_{2}}\left( x \right)$ respectively, the probability density function of $X$ is the weighted average of the component probability density function $f_{X_{1}}\left( x \right)$ and $f_{X_{2}}\left( x \right)$. The probability density function and distribution function of $X$ are given by
+If the underlying phenomenon is diverse and can actually be described as two phenomena representing two subpopulations with different modes, we can construct the two-point mixture random variable $X$. Given random variables $X_{1}$ and $X_{2}$, with *pdf*s $f_{X_{1}}\left( x \right)$ and $f_{X_{2}}\left( x \right)$ respectively, the *pdf* of $X$ is the weighted average of the component *pdf* $f_{X_{1}}\left( x \right)$ and $f_{X_{2}}\left( x \right)$. The *pdf* and distribution function of $X$ are given by
 $$f_{X}\left( x \right) = af_{X_{1}}\left( x \right) + \left( 1 - a \right)f_{X_{2}}\left( x \right),$$
 and
 $$F_{X}\left( x \right) = aF_{X_{1}}\left( x \right) + \left( 1 - a \right)F_{X_{2}}\left( x \right),$$
 
-for $0 < a <1$, where the `r Gloss('mixing parameters')` $a$ and $(1 - a)$ represent the proportions of data points that fall under each of the two subpopulations respectively. This weighted average can be applied to a number of other distribution related quantities. The *k*-th moment and moment generating function of $X$ are given by
+for $0 < a <1$, where the `r Gloss('mixing parameters')` $a$ and $(1 - a)$ represent the proportions of data points that fall under each of the two subpopulations respectively. This weighted average can be applied to a number of other distribution related quantities. The *k*-th raw moment and moment generating function of $X$ are given by
 $\mathrm{E}\left( X^{k} \right) = a\mathrm{E}\left( X_{1}^{K} \right) + \left( 1 - a \right)\mathrm{E}\left( X_{2}^{k} \right)$,
 and
 $$M_{X}(t) = aM_{X_{1}}(t) + \left( 1 - a \right)M_{X_{2}}(t),$$ respectively.
@@ -700,7 +703,7 @@ In case of finite mixture distributions, the random variable of interest $X$ has
 $$f_{X}\left( x \right) = \sum_{i = 1}^{k}{p_{i}f_{X_{i}}\left( x \right)},$$
 where $0 < p_{i} < 1$ and $\sum_{i = 1}^{k} p_{i} = 1$.
 
-This model is often referred to as a `r Gloss('finite mixture')` or a $k$-point mixture. The distribution function, $r$-th moment and moment generating functions of the $k$-th point mixture are given as
+This model is often referred to as a `r Gloss('finite mixture')` or a $k$-point mixture. The distribution function, $r$-th raw moment and moment generating functions of the $k$-th point mixture are given as
 
 $$F_{X}\left( x \right) = \sum_{i = 1}^{k}{p_{i}F_{X_{i}}\left( x \right)},$$
 $$\mathrm{E}\left( X^{r} \right) = \sum_{i = 1}^{k}{p_{i}\mathrm{E}\left( X_{i}^{r} \right)}, \ \ \ \text{and}$$
@@ -741,7 +744,7 @@ f_{X}\left( x \right) = \int_{-\infty}^{\infty}{f_{X}\left(x \left| \theta \righ
 $$
 where $f_{X}\left( x | \theta  \right)$ is the `r Gloss('conditional distribution')` of $X$ at a particular value of $\Theta=\theta$ and $g_{\Theta}\left( \theta \right)$ is the probability statement made about the unknown parameter $\theta$. In a Bayesian context (described in Section \@ref(S:MS:BayesInference)), this is known as the `r Gloss('prior distribution', '3.3')` of $\Theta$ (the prior information or expert opinion to be used in the analysis).
 
-The distribution function, $k$-th moment and moment generating functions of the continuous mixture are given as
+The distribution function, $k$-th raw moment and moment generating functions of the continuous mixture are given as
 
 $$
 F_{X}\left( x \right) = \int_{-\infty}^{\infty}{F_{X}\left(x \left| \theta \right.  \right) g_{\Theta}(\theta)} d \theta,
@@ -754,7 +757,7 @@ M_{X}(t) = \mathrm{E}\left( e^{t X} \right) = \int_{-\infty}^{\infty}{\mathrm{E}
 $$
 respectively.
 
-The $k$-th moment of the mixture distribution can be rewritten as
+The $k$-th raw moment of the mixture distribution can be rewritten as
 $$
 \mathrm{E}\left( X^{k} \right) = \int_{-\infty}^{\infty}{\mathrm{E}\left( X^{k}\left| \theta \right.  \right)g_{\Theta}(\theta)}d\theta ~=~ \mathrm{E}\left\lbrack \mathrm{E}\left( X^{k}\left| \Theta \right.  \right) \right\rbrack .
 $$
@@ -792,11 +795,27 @@ Claim sizes, $X$, are uniform on the interval $\left(\Theta,\Theta+10\right)$ fo
 
 **Solution.**
 
-The conditional distribution of $X$ is $f_{X}\left(  x | \theta \right) = \frac{1}{10}$ for $\theta < x < \theta + 10$.
-
+The conditional distribution of $X$ is $f_{X}\left(  x | \theta \right) = \frac{1}{10}$ for $\theta < x < \theta + 10$. 
 The prior distribution of $\theta$ is $g_{\Theta}(\theta) = \frac{1}{5}e^{- \frac{\theta}{5}}$ for $0 <  \theta <  \infty$.
 
-The conditional mean and variance of $X$ are given by
+
+Multiplying and integrating yields the unconditional distribution of $X$
+
+$$
+f_{X}\left( x \right) = \int f_{X}\left( x |\theta \right) ~g_{\Theta}(\theta) d \theta .
+$$
+
+For this example, this is
+
+$$
+f_{X}\left( x \right) = \left\{ \begin{matrix}
+\int_{0}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}}d\theta = \frac{1}{10}\left( 1 - e^{- \frac{x}{5}} \right)} & 0 \leq x \leq 10, \\
+\int_{x - 10}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}} d\theta} = \frac{1}{10}\left( e^{- \frac{\left( x - 10 \right)}{5}} - e^{- \frac{x}{5}} \right) & 10 < x < \infty. \\
+\end{matrix} \right.\ 
+$$
+
+One can use this to derive the mean and variance of the unconditional distribution. Alternatively, start with the conditional mean and variance of $X$, given by
+
 $$
 \mathrm{E}\left(  X | \theta \right)= \frac{\theta + \theta + 10}{2} = \theta + 5
 $$
@@ -804,9 +823,7 @@ and
 $$
 \mathrm{Var}\left(  X | \theta \right)= \frac{\left\lbrack \left( \theta + 10 \right) - \theta \right\rbrack^{2}}{12} = \frac{100}{12}, 
 $$
-respectively.
-
-Hence, the unconditional mean and variance of $X$ are given by
+respectively. With these, the unconditional mean and variance of $X$ are given by
 
 $$
 \mathrm{E}\left( X \right) = \mathrm{E}\left\lbrack \mathrm{E}\left( X\left| \Theta \right.  \right) \right\rbrack = \mathrm{E}\left( \Theta + 5 \right) = \mathrm{E}\left( \Theta \right) + 5 = 5 + 5 = 10,
@@ -819,21 +836,6 @@ $$
 = \mathrm{E}\left( \frac{100}{12} \right) + \mathrm{Var}\left( \Theta + 5 \right) = 8.33 + \mathrm{Var}\left( \Theta \right) = 33.33. 
 $$
 
-The unconditional distribution of $X$ is
-
-$$
-f_{X}\left( x \right) = \int f_{X}\left( x |\theta \right) ~g_{\Theta}(\theta) d \theta .
-$$
-
-
-$$
-f_{X}\left( x \right) = \left\{ \begin{matrix}
-\int_{0}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}}d\theta = \frac{1}{10}\left( 1 - e^{- \frac{x}{5}} \right)} & 0 \leq x \leq 10, \\
-\int_{x - 10}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}} d\theta} = \frac{1}{10}\left( e^{- \frac{\left( x - 10 \right)}{5}} - e^{- \frac{x}{5}} \right) & 10 < x < \infty. \\
-\end{matrix} \right.\ 
-$$
-
-
 </div>
 
 ***
@@ -844,7 +846,7 @@ $$
 
 ## Coverage Modifications {#S:CoverageModifications}
 
-In this section we evaluate the impacts of coverage modifications: a) deductibles, b) policy limit, c) coinsurance and inflation on insurer's costs.
+In this section we evaluate the impacts of coverage modifications: a) deductibles, b) policy limit, c) coinsurance and d) inflation on insurer's costs.
 
 ### Policy Deductibles {#S:PolicyDeduct}
 
@@ -875,7 +877,7 @@ Here, $Y^{P}$ is often referred to as `r Gloss('left truncated')` and shifted va
 
 Even when the distribution of $X$ is continuous, the distribution of $Y^{L}$ is a hybrid combination of discrete and continuous components. The discrete part of the distribution is concentrated at $Y = 0$ (when $X \leq d$) and the continuous part is spread over the interval $Y > 0$ (when $X > d$). For the discrete part, the probability that no payment is made is the probability that losses fall below the deductible; that is, 
 $$\Pr\left( Y^{L} = 0 \right) = \Pr\left( X \leq d \right) = F_{X}\left( d \right).$$ Using the transformation $Y^{L} = X - d$ for the continuous part of the
-distribution, we can find the probability density function of $Y^{L}$ given by
+distribution, we can find the *pdf* of $Y^{L}$ given by
 
 $$
 f_{Y^{L}}\left( y \right) = \left\{ \begin{matrix}
@@ -884,8 +886,12 @@ f_{X}\left( y + d \right) & y > 0 .
 \end{matrix} \right. 
 $$
 
-We can see that the payment per payment variable is the payment per loss variable conditional on the loss exceeding the deductible; that is, $Y^{P} = \left. \ Y^{L} \right|X > d$. Hence, the probability density function of $Y^{P}$ is given by
-$$f_{Y^{P}}\left( y \right) = \frac{f_{X}\left( y + d \right)}{1 - F_{X}\left( d \right)},$$
+We can see that the payment per payment variable is the payment per loss variable ($Y^P= Y^L$) conditional on the loss exceeding the deductible ($X > d$); that is, $Y^{P} = \left. \ Y^{L} \right|X > d$.. Alternatively, it can be expressed as $Y^P = (X - d)|X > d$, that is, $Y^P$ is the loss in excess of the deductible given that the loss exceeds the deductible.  Hence, the *pdf* of $Y^{P}$ is given by
+
+$$
+f_{Y^{P}}\left( y \right) = \frac{f_{X}\left( y + d \right)}{1 - F_{X}\left( d \right)},
+$$
+
 for $y > 0$. Accordingly, the distribution functions of $Y^{L}$and $Y^{P}$ are given by
 
 $$
@@ -903,7 +909,7 @@ $$
 
 for $y > 0$, respectively.
 
-The raw moments of $Y^{L}$ and $Y^{P}$ can be found directly using the probability density function of $X$ as follows
+The raw moments of $Y^{L}$ and $Y^{P}$ can be found directly using the *pdf* of $X$ as follows
 $$\mathrm{E}\left\lbrack \left( Y^{L} \right)^{k} \right\rbrack = \int_{d}^{\infty}\left( x - d \right)^{k}f_{X}\left( x \right)dx ,$$
 and
 $$
@@ -1061,7 +1067,7 @@ Hence, $Y^L$ can be expressed as $Y^L=\left(X\land u\right)-\left(X\land d\right
 
 Even when the distribution of $X$ is continuous, the distribution of $Y$ is a hybrid combination of discrete and continuous components. The discrete part of the distribution is concentrated at $Y = u$ (when $X > u$), while the continuous part is spread over the interval $Y < u$ (when $X \leq u$). For the discrete part, the probability that the benefit paid is $u$, is the probability that the loss exceeds the policy limit $u$; that is,
 $$\Pr \left( Y = u \right) = \Pr \left( X > u \right) = {1 - F}_{X}\left( u \right).$$
-For the continuous part of the distribution $Y = X$, hence the probability density function of $Y$ is given by
+For the continuous part of the distribution $Y = X$, hence the *pdf* of $Y$ is given by
 
 $$
 f_{Y}\left( y \right) = \left\{ \begin{matrix}
@@ -1079,7 +1085,7 @@ F_{X}\left( x \right) & 0 < y < u \\
 \end{matrix} \right.\ 
 $$
 
-The raw moments of $Y$ can be found directly using the probability density function of $X$ as follows
+The raw moments of $Y$ can be found directly using the *pdf* of $X$ as follows
 $$
 \mathrm{E}\left( Y^{k} \right) = \mathrm{E}\left\lbrack \left( X \land u \right)^{k} \right\rbrack = \int_{0}^{u}x^{k}f_{X}\left( x \right)dx + \int_{u}^{\infty}{u^{k}f_{X}\left( x \right)} dx \\ 
 = \int_{0}^{u}x^{k}f_{X}\left( x \right)dx + u^{k}\left\lbrack {1 - F}_{X}\left( u \right) \right\rbrack .
@@ -1120,7 +1126,7 @@ This approach uses the Fubini-Tonelli theorem to exchange the expectation and in
 
 
 **Example `r chapnum`.4.4. Actuarial Exam Question.**
-Under a `r Gloss('group insurance')` policy, an insurer agrees to pay 100% of the medical bills incurred during the year by employees of a small company, up to a maximum total of one million dollars. The total amount of bills incurred, $X$, has probability density function
+Under a `r Gloss('group insurance')` policy, an insurer agrees to pay 100% of the medical bills incurred during the year by employees of a small company, up to a maximum total of one million dollars. The total amount of bills incurred, $X$, has *pdf*
 
 $$
 f_{X}\left( x \right) = \left\{ \begin{matrix}
@@ -1162,7 +1168,7 @@ The policy limit (the maximum amount paid by the insurer) in this case is $\alph
 
 We have seen in Section \@ref(S:PolicyLimits) that when a loss is subject to both a deductible $d$ and a limit $u$ the per-loss variable $Y^L$ can be expressed as $Y^L=\left(X\land u\right)-\left(X\land d\right)$. With coinsurance, this becomes $Y^L$ can be expressed as $Y^L=\alpha\left[(X\land u)-(X\land d)\right]$.
 
-The $k$-th moment of $Y^{L}$ is given by
+The $k$-th raw moment of $Y^{L}$ is given by
 $$
 \mathrm{E}\left\lbrack \left( Y^{L} \right)^{k} \right\rbrack 
 = \int_{d}^{u}\left\lbrack \alpha\left( x - d \right) \right\rbrack^{k}f_{X}\left( x \right)dx 
@@ -1350,22 +1356,22 @@ In this section, you learn how to:
 ### Maximum Likelihood Estimators for Complete Data
 
 
-Up to this point, the chapter has focused on parametric distributions that are commonly used in insurance applications. However, to be useful in applied work, these distributions must use "realistic" values for the parameters and for this we turn to data. At a foundational level, we assume that the analyst has available a random sample $X_1, \ldots, X_n$ from a distribution with distribution function $F_X$ (for brevity, we sometimes drop the subscript $X$). As is common, we use the vector $\boldsymbol \theta$ to denote the set of parameters for $F$.This basic sample scheme is reviewed in Appendix Section \@ref(S:AppA:BASIC). Although basic, this sampling scheme provides the foundations for understanding more complex schemes that are regularly used in practice, and so it is important to master the basics.
+Up to this point, the chapter has focused on parametric distributions that are commonly used in insurance applications. However, to be useful in applied work, these distributions must use "realistic" values for the parameters and for this we turn to data. At a foundational level, we assume that the analyst has available a random sample $X_1, \ldots, X_n$ from a distribution with distribution function $F_X$ (for brevity, we sometimes drop the subscript $X$). As is common, we use the vector $\boldsymbol \theta$ to denote the set of parameters for $F$. This basic sample scheme is reviewed in Appendix Section \@ref(S:AppA:BASIC). Although basic, this sampling scheme provides the foundations for understanding more complex schemes that are regularly used in practice, and so it is important to master the basics.
 
-Before a draw from a distribution, we consider potential outcomes summarized by the random variable $X_i$ (here, $i$ is 1, 2, ..., $n$). After the draw, we observe $x_i$. Notationally, we use upper case roman letters for random variables and lower case ones for realizations. We have seen this set-up already in Section \@ref(S:estimating-frequency-distributions), where we used
-$\Pr(X_1 =x_1, \ldots, X_n=x_n)$ to quantify the "likelihood" of drawing a sample $\{x_1, \ldots, x_n\}$. With continuous data, we use the joint probability density function (*pdf*) instead of joint probabilities. With the independence assumption, the joint *pdf* may be written as the product of pdfs. Thus, we define the **likelihood** to be
+Before drawing from a distribution, we consider potential outcomes summarized by the random variable $X_i$ (here, $i$ is 1, 2, ..., $n$). After the draw, we observe $x_i$. Notationally, we use uppercase roman letters for random variables and lower case ones for realizations. We have seen this set-up already in Section \@ref(S:estimating-frequency-distributions), where we used
+$\Pr(X_1 =x_1, \ldots, X_n=x_n)$ to quantify the "likelihood" of drawing a sample $\{x_1, \ldots, x_n\}$. With continuous data, we use the joint probability density function instead of joint probabilities. With the independence assumption, the joint *pdf* may be written as the product of pdfs. Thus, we define the **likelihood** to be
 
 \begin{equation}
 L(\boldsymbol \theta) = \prod_{i=1}^n f(x_i) .
-  (\#eq:Likelihood)
+(\#eq:Likelihood)
 \end{equation}
 
 From the notation, note that we consider this to be a function of the parameters in $\boldsymbol \theta$, with the data $\{x_1, \ldots, x_n\}$ held fixed. The maximum likelihood estimator is that value of the parameters in $\boldsymbol \theta$ that maximize $L(\boldsymbol \theta)$.
 
-From calculus, we know that maximizing a function produces the same results as maximizing the logarithm of a function (this is because the logarithm is a monotone function). Because we get the same results, to ease computation considerations, it is common to consider the **logarithmic likelihood**, denoted as 
+From calculus, we know that maximizing a function produces the same results as maximizing the logarithm of a function (this is because the logarithm is a monotone function). Because we get the same results, to ease computational considerations, it is common to consider the **logarithmic likelihood**, denoted as 
 
 \begin{equation}
-l(\boldsymbol \theta) = \ln L(\boldsymbol \theta) = \sum_{i=1}^n \ln f(x_i) .
+l(\boldsymbol \theta) = \log L(\boldsymbol \theta) = \sum_{i=1}^n \log f(x_i) .
 (\#eq:Loglikelihood)
 \end{equation}
 
@@ -1378,13 +1384,14 @@ $$
 
 With $n=5$, the log-likelihood function is
 $$
-l(\alpha|\mathbf{x} ) =  \sum_{i=1}^5 \ln f(x_i;\alpha ) =  5 \alpha \ln 500 + 5 \ln \alpha
--(\alpha+1) \sum_{i=1}^5 \ln x_i.
+l(\alpha) =  \sum_{i=1}^5 \log f(x_i;\alpha ) =  5 \alpha \log 500 + 5 \log \alpha
+-(\alpha+1) \sum_{i=1}^5 \log x_i.
 $$
+
 Figure \@ref(fig:LoglikeOnePareto) shows the logarithmic likelihood as a function of the parameter $\alpha$.
 
 
-```{r LoglikeOnePareto, message = FALSE, warning = FALSE, fig.cap='Logarithmic Likelihood for a One Parameter Pareto', fig.align='center', echo=FALSE}
+```{r LoglikeOnePareto, message = FALSE, warning = FALSE, fig.cap='Logarithmic Likelihood for a One-Parameter Pareto', out.width='60%', fig.align='center', echo=FALSE}
 c1 <- log(521)+log(658)+log(702)+log(819)+log(1217)
 alpha <- seq(1, 5, by = 0.005)
 loglike <- function(alpha){5*alpha*log(500)+5*log(alpha)-(alpha+1)*c1}
@@ -1396,8 +1403,11 @@ plot(alpha,y,xlab="alpha",ylab="log-like", type = "l")
 We can determine the maximum value of the logarithmic likelihood by taking derivatives and setting it equal to zero.
 This yields
 $$
-\frac{ \partial}{\partial \alpha } l(\alpha |\mathbf{x}) =    5  \ln 500 + 5 / \alpha -  \sum_{i=1}^5 \ln x_i
-=_{set} 0 \Rightarrow \hat{\alpha}_{MLE} = \frac{5}{\sum_{i=1}^5 \ln x_i - 5  \ln 500 } = 2.453 .
+\begin{array}{ll}
+\frac{ \partial}{\partial \alpha } l(\alpha ) &=    5  \log 500 + 5 / \alpha -  \sum_{i=1}^5 \log x_i
+=_{set} 0 \Rightarrow \\
+ \hat{\alpha}_{MLE} &= \frac{5}{\sum_{i=1}^5 \log x_i - 5  \log 500 } = 2.453 .
+\end{array}
 $$
 
 Naturally, there are many problems where it is not practical to use hand calculations for optimization. Fortunately there are many statistical routines available such as the `R` function `optim`.
@@ -1422,7 +1432,7 @@ This code confirms our hand calculation result where the maximum likelihood esti
 We present a few additional examples to illustrate how actuaries fit a parametric distribution model to a set of claim data using maximum likelihood. 
 
 **Example `r chapnum`.5.2. Actuarial Exam Question.**
-Consider a random sample of claim amounts: 8,000 10,000 12,000 15,000. You assume that claim amounts follow an inverse exponential distribution, with parameter $\theta$. Calculate the maximum likelihood estimator for $\theta$.
+Consider a random sample of claim amounts: 8000 10000 12000 15000. You assume that claim amounts follow an inverse exponential distribution, with parameter $\theta$. Calculate the maximum likelihood estimator for $\theta$.
 
 
 `r HideExample('3.5.2','Show Example Solution')`
@@ -1430,7 +1440,7 @@ Consider a random sample of claim amounts: 8,000 10,000 12,000 15,000. You assum
 **Solution.**
 
 
-The probability density function is
+The *pdf* is
 $$f_{X}\left( x \right) = \frac{\theta e^{- \frac{\theta}{x}}}{x^{2}}, $$
 where $x > 0$. 
 
@@ -1440,16 +1450,16 @@ $$
 L\left( \theta \right) = \prod_{i = 1}^{4}{f_{X_{i}}\left( x_{i} \right)} = \frac{\theta^{4}e^{- \theta\sum_{i = 1}^{4}\frac{1}{x_{i}}}}{\prod_{i = 1}^{4}x_{i}^{2}}.
 $$
 
-The log-likelihood function, $\ln L \left( \theta \right)$, is the sum of the individual logarithms
+The log-likelihood function, $\log L \left( \theta \right)$, is the sum of the individual logarithms
 
 $$
-\ln L \left( \theta \right) = 4 \ln \theta - \theta\sum_{i = 1}^{4}\frac{1}{x_{i}} - 2\sum_{i = 1}^{4}\ln x_{i} .
+\log L \left( \theta \right) = 4 \log \theta - \theta\sum_{i = 1}^{4}\frac{1}{x_{i}} - 2\sum_{i = 1}^{4}\log x_{i} .
 $$
 
 Taking a derivative, we have
 
 $$
-\frac{d \ln L \left( \theta \right)}{d \theta} = \frac{4}{\theta} - \sum_{i = 1}^{4}\frac{1}{x_{i}}.
+\frac{d \log L \left( \theta \right)}{d \theta} = \frac{4}{\theta} - \sum_{i = 1}^{4}\frac{1}{x_{i}}.
 $$
 
 The maximum likelihood estimator of $\theta$, denoted by $\hat{\theta}$, is the solution to the equation
@@ -1461,10 +1471,10 @@ $$
 Thus,
 $\hat{\theta} = \frac{4}{\sum_{i = 1}^{4}\frac{1}{x_{i}}} = 10,667.$
 
-The second derivative of $\ln L \left( \theta \right)$ is given by
+The second derivative of $\log L \left( \theta \right)$ is given by
 
 $$
-\frac{d^{2}\ln L\left( \theta \right)}{d\theta^{2}} = \frac{- 4}{\theta^{2}}.
+\frac{d^{2}\log L\left( \theta \right)}{d\theta^{2}} = \frac{- 4}{\theta^{2}}.
 $$
 
 Evaluating the second derivative of the loglikelihood function at $\hat{\theta} = 10,667$ gives a negative value, indicating $\hat{\theta}$ as the value that maximizes the loglikelihood function.
@@ -1475,16 +1485,22 @@ Evaluating the second derivative of the loglikelihood function at $\hat{\theta} 
 
 
 **Example `r chapnum`.5.3. Actuarial Exam Question.**
-A random sample of size 6 is from a lognormal distribution with parameters $\mu$ and $\sigma$. The sample values are 200, 3,000, 8,000, 60,000, 60,000, 160,000. Calculate the maximum likelihood estimator for $\mu$ and $\sigma$.
+A random sample of size 6 is from a lognormal distribution with parameters $\mu$ and $\sigma$. The sample values are 
+
+$$
+200 \ \ \ 3000 \ \ \ 8000 \ \ \ 60000 \ \ \ 60000 \ \ \ 160000.
+$$
+
+Calculate the maximum likelihood estimator for $\mu$ and $\sigma$.
 
 `r HideExample('3.5.3','Show Example Solution')`
 
 **Solution.**
 
-The probability density function is
+The *pdf* is
 
 $$
-f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp - \frac{1}{2}\left( \frac{\ln x - \mu}{\sigma} \right)^{2},
+f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp\left( - \frac{1}{2}\left( \frac{\log x - \mu}{\sigma} \right)^{2} \right),
 $$
 
 where $x > 0$. 
@@ -1492,22 +1508,22 @@ where $x > 0$.
 The likelihood function, $L\left( \mu,\sigma \right)$, is the product of the *pdf* for each data point.
 
 $$
-L\left( \mu,\sigma \right) = \prod_{i = 1}^{6}{f_{X_{i}}\left( x_{i} \right)} = \frac{1}{\sigma^{6}\left( 2\pi \right)^{3}\prod_{i = 1}^{6}x_{i}}\exp\left( - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\ln x_{i} - \mu}{\sigma} \right)^{2}\right).
+L\left( \mu,\sigma \right) = \prod_{i = 1}^{6}{f_{X_{i}}\left( x_{i} \right)} = \frac{1}{\sigma^{6}\left( 2\pi \right)^{3}\prod_{i = 1}^{6}x_{i}}\exp\left( - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\log x_{i} - \mu}{\sigma} \right)^{2}\right).
 $$
 
-Taking a logarithm yields the loglikelihood function, $\ln L \left( \mu,\sigma \right)$, which is the sum of the individual logarithms.
+Taking a logarithm yields the loglikelihood function, $\log L \left( \mu,\sigma \right)$, which is the sum of the individual logarithms.
 
 $$
-\ln L\left( \mu,\sigma \right) 
-= - 6 \ln \sigma - 3 \ln \left( 2\pi \right) - \sum_{i = 1}^{6}\ln x_{i} - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\ln x_{i} - \mu}{\sigma} \right)^{2}.
+\log L\left( \mu,\sigma \right) 
+= - 6 \log \sigma - 3 \log \left( 2\pi \right) - \sum_{i = 1}^{6}\log x_{i} - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\log x_{i} - \mu}{\sigma} \right)^{2}.
 $$
 
 The first partial derivatives are
 
 $$
 \begin{array}{ll}
-\frac{\partial \ln L\left( \mu,\sigma \right)}{\partial\mu} &= \frac{1}{\sigma^{2}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right) \\
-\frac{\partial \ln L\left( \mu,\sigma \right)}{\partial\sigma} &= \frac{- 6}{\sigma} + \frac{1}{\sigma^{3}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right)^{2}.
+\frac{\partial \log L\left( \mu,\sigma \right)}{\partial\mu} &= \frac{1}{\sigma^{2}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right) \\
+\frac{\partial \log L\left( \mu,\sigma \right)}{\partial\sigma} &= \frac{- 6}{\sigma} + \frac{1}{\sigma^{3}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right)^{2}.
 \end{array}
 $$
 
@@ -1515,8 +1531,8 @@ The maximum likelihood estimators of $\mu$ and $\sigma$, denoted by $\hat{\mu}$ 
 
 $$
 \begin{array}{ll}
-\frac{1}{{\hat{\sigma}}^{2}}\sum_{i = 1}^{6}\left( \ln x_{i} - \hat{\mu} \right) &= 0 \\
-\frac{- 6}{\hat{\sigma}} + \frac{1}{{\hat{\sigma}}^{3}}\sum_{i = 1}^{6}\left( \ln x_{i} - \hat{\mu} \right)^{2} &= 0 .
+\frac{1}{{\hat{\sigma}}^{2}}\sum_{i = 1}^{6}\left( \log x_{i} - \hat{\mu} \right) &= 0 \\
+\frac{- 6}{\hat{\sigma}} + \frac{1}{{\hat{\sigma}}^{3}}\sum_{i = 1}^{6}\left( \log x_{i} - \hat{\mu} \right)^{2} &= 0 .
 \end{array}
 $$
 
@@ -1524,21 +1540,21 @@ $$
 These yield the estimates
 
 $$
-\hat{\mu} = \frac{\sum_{i = 1}^{6}{\ln x_{i}}}{6} = 9.38 \ \ \ \text{and} \ \ \ 
-{\hat{\sigma}}^{2} = \frac{\sum_{i = 1}^{6}\left( \ln x_{i} - \hat{\mu} \right)^{2}}{6} = 5.12 .
-$$.
+\hat{\mu} = \frac{\sum_{i = 1}^{6}{\log x_{i}}}{6} = 9.38 \ \ \ \text{and} \ \ \ 
+{\hat{\sigma}}^{2} = \frac{\sum_{i = 1}^{6}\left( \log x_{i} - \hat{\mu} \right)^{2}}{6} = 5.12 .
+$$
 
 To check that these estimates maximize, and do not minimize, the likelihood, you may also wish to compute the second partial derivatives. These are
 
 $$
-\frac{\partial^{2}\ln L\left( \mu,\sigma \right)}{\partial\mu^{2}} = \frac{- 6}{\sigma^{2}}, \ \ \ \ 
-\frac{\partial^{2}\ln L\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right)
+\frac{\partial^{2}\log L\left( \mu,\sigma \right)}{\partial\mu^{2}} = \frac{- 6}{\sigma^{2}}, \ \ \ \ 
+\frac{\partial^{2}\log L\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right)
 $$
 
 and
 
 $$
-\frac{\partial^{2}\ln L\left( \mu,\sigma \right)}{\partial\sigma^{2}} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right)^{2} .
+\frac{\partial^{2}\log L\left( \mu,\sigma \right)}{\partial\sigma^{2}} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right)^{2} .
 $$
 
 </div>
@@ -1559,26 +1575,32 @@ c.   Determine an approximate 95% confidence interval for $\Pr \left( X \leq 9,0
 
 **Solution.**
 
-**a.** Taking reciprocal of negative expectation of the second derivative of $\ln L \left( \theta \right)$, we obtain an estimate of the variance of $\hat{\theta}$, 
-$\widehat{Var}\left( \hat{\theta} \right) = \left. \ \left\lbrack E\left( \frac{d^{2}\ln L \left( \theta \right)}{d\theta^{2}} \right) \right\rbrack^{- 1} \right|_{\theta = \hat{\theta}} = \frac{{\hat{\theta}}^{2}}{4} = 28,446,222$.
+**a.** Taking reciprocal of negative expectation of the second derivative of $\log L \left( \theta \right)$, we obtain an estimate of the variance of $\hat{\theta}$, 
+$\widehat{Var}\left( \hat{\theta} \right) = \left. \ \left\lbrack E\left( \frac{d^{2}\log L \left( \theta \right)}{d\theta^{2}} \right) \right\rbrack^{- 1} \right|_{\theta = \hat{\theta}} = \frac{{\hat{\theta}}^{2}}{4} = 28,446,222$.
 
 It should be noted that as the sample size $n \rightarrow \infty$, the distribution of the maximum likelihood estimator $\hat{\theta}$ converges to a normal distribution with mean $\theta$ and variance $\hat{V}\left( \hat{\theta} \right)$. The approximate confidence interval in this example is based on the assumption of normality, despite the small sample size, only for the purpose of illustration.
 
 **b.** The 95% confidence interval for $\theta$ is given by
 
 $$
-10,667 \pm 1.96\sqrt{28,446,222} = \left( 213.34,\ 21,120.66 \right).
+10,667 \pm 1.96\sqrt{28,446,222} = \left( 213.34,\ 21120.66 \right).
 $$
 
 **c.** The distribution function of $X$ is $F\left( x \right) = 1 - e^{- \frac{x}{\theta}}$. Then, the maximum likelihood estimate of $g_{\Theta}(\theta) = F\left( 9,000 \right)$ is
-$$g\left( \hat{\theta} \right) = 1 - e^{- \frac{9,000}{10,667}} = 0.57.$$
+
+$$
+g\left( \hat{\theta} \right) = 1 - e^{- \frac{9,000}{10,667}} = 0.57.
+$$
+
 We use the delta method to approximate the variance of $g\left( \hat{\theta} \right)$.
-$$\frac{\text{dg}\left( \theta \right)}{d \theta} = {- \frac{9,000}{\theta^{2}}e}^{- \frac{9,000}{\theta}}.$$
+$$\frac{\text{dg}\left( \theta \right)}{d \theta} = {- \frac{9000}{\theta^{2}}e}^{- \frac{9000}{\theta}}.$$
 
-$\widehat{Var}\left\lbrack g\left( \hat{\theta} \right) \right\rbrack = \left( - {\frac{9,000}{{\hat{\theta}}^{2}}e}^{- \frac{9,000}{\hat{\theta}}} \right)^{2}\hat{V}\left( \hat{\theta} \right) = 0.0329$.
+$\widehat{Var}\left\lbrack g\left( \hat{\theta} \right) \right\rbrack = \left( - {\frac{9000}{{\hat{\theta}}^{2}}e}^{- \frac{9000}{\hat{\theta}}} \right)^{2}\hat{V}\left( \hat{\theta} \right) = 0.0329$.
 
-The 95% confidence interval for $F\left( 9,000 \right)$ is given by
-$$0.57 \pm 1.96\sqrt{0.0329} = \left( 0.214,\ 0.926 \right).$$
+The 95% confidence interval for $F\left( 9000 \right)$ is given by
+$$
+0.57 \pm 1.96\sqrt{0.0329} = \left( 0.214,\ 0.926 \right).
+$$
 
 </div>
 
@@ -1596,20 +1618,30 @@ c.  Determine an approximate 95% confidence interval for the mean of the lognorm
 `r HideExample('3.5.3a','Show Example Solution')`
 
 
-**a.** To derive the covariance matrix of the `r Gloss('mle')` we need to find the expectations of the second derivatives. Since the random variable $X$ is from a lognormal distribution with parameters $\mu$ and $\sigma$, then $\text{lnX}$ is normally distributed with mean $\mu$ and variance $\sigma^{2}$.
+**a.** To derive the covariance matrix of the `r Gloss('mle')` we need to find the expectations of the second derivatives. Since the random variable $X$ is from a lognormal distribution with parameters $\mu$ and $\sigma$, then $\log X$ is normally distributed with mean $\mu$ and variance $\sigma^{2}$.
 
-$\mathrm{E}\left( \frac{\partial^{2}\text{lnL}\left( \mu,\sigma \right)}{\partial\mu^{2}} \right) = \mathrm{E}\left( \frac{- 6}{\sigma^{2}} \right) = \frac{- 6}{\sigma^{2}}$,
+$$
+\mathrm{E}\left( \frac{\partial^{2}\text{log L}\left( \mu,\sigma \right)}{\partial\mu^{2}} \right) = \mathrm{E}\left( \frac{- 6}{\sigma^{2}} \right) = \frac{- 6}{\sigma^{2}} ,
+$$
 
-$\mathrm{E}\left( \frac{\partial^{2}\text{lnL}\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} \right) = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}{\mathrm{E}\left( \ln x_{i} - \mu \right)} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left\lbrack \mathrm{E}\left( \ln x_{i} \right) - \mu \right\rbrack$=$\frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \mu - \mu \right) = 0$,
+$$
+\mathrm{E}\left( \frac{\partial^{2}\text{log L}\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} \right) = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}{\mathrm{E}\left( \log x_{i} - \mu \right)} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left\lbrack \mathrm{E}\left( \log x_{i} \right) - \mu \right\rbrack$=$\frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \mu - \mu \right) = 0,
+$$
 
 and
 
-$\mathrm{E}\left( \frac{\partial^{2}\text{lnL}\left( \mu,\sigma \right)}{\partial\sigma^{2}} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{E}\left( \ln x_{i} - \mu \right)}^{2} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{V}\left( \ln x_{i} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\sigma^{2} = \frac{- 12}{\sigma^{2}}}}$.
+$$
+\mathrm{E}\left( \frac{\partial^{2}\text{log L}\left( \mu,\sigma \right)}{\partial\sigma^{2}} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{E}\left( \log x_{i} - \mu \right)}^{2} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{Var}\left( \log x_{i} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\sigma^{2} = \frac{- 12}{\sigma^{2}}}} .
+$$
 
-Using the negatives of these expectations we obtain the Fisher information matrix $$\begin{bmatrix}
+Using the negatives of these expectations we obtain the Fisher information matrix 
+
+$$
+\begin{bmatrix}
 \frac{6}{\sigma^{2}} & 0 \\
 0 & \frac{12}{\sigma^{2}} \\
-\end{bmatrix}.$$
+\end{bmatrix}.
+$$
 
 The covariance matrix, $\Sigma$, is the inverse of the Fisher information matrix 
 
@@ -1620,38 +1652,48 @@ $$
 \end{bmatrix}.
 $$
 
-The estimated matrix is given by $$\hat{\Sigma} = \begin{bmatrix}
+The estimated matrix is given by 
+
+$$
+\hat{\Sigma} = \begin{bmatrix}
 0.8533 & 0 \\
 0 & 0.4267 \\
-\end{bmatrix}.$$
+\end{bmatrix}.
+$$
 
 **b.** The 95% confidence interval for $\mu$ is given by $9.38 \pm 1.96\sqrt{0.8533} = \left( 7.57,\ 11.19 \right)$.
 
 The 95% confidence interval for $\sigma^{2}$ is given by $5.12 \pm 1.96\sqrt{0.4267} = \left( 3.84,\ 6.40 \right)$.
 
 **c.** The mean of *X* is $\exp\left( \mu + \frac{\sigma^{2}}{2} \right)$. Then, the maximum likelihood estimate of
-$$g\left( \mu,\sigma \right) = \exp\left( \mu + \frac{\sigma^{2}}{2} \right)$$
+
+$$
+g\left( \mu,\sigma \right) = \exp\left( \mu + \frac{\sigma^{2}}{2} \right)
+$$
+
 is
-$$g\left( \hat{\mu},\hat{\sigma} \right) = \exp\left( \hat{\mu} + \frac{{\hat{\sigma}}^{2}}{2} \right) = 153,277.$$
 
-We use the delta method to approximate the variance of the mle
-$g\left( \hat{\mu},\hat{\sigma} \right)$.
+$$
+g\left( \hat{\mu},\hat{\sigma} \right) = \exp\left( \hat{\mu} + \frac{{\hat{\sigma}}^{2}}{2} \right) = 153,277.
+$$
 
-$\frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} = exp\left( \mu + \frac{\sigma^{2}}{2} \right)$
+We use the delta method to approximate the variance of the mle $g\left( \hat{\mu},\hat{\sigma} \right)$.
+
+$\frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} = \exp\left( \mu + \frac{\sigma^{2}}{2} \right)$
 and
-$\frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} = \sigma exp\left( \mu + \frac{\sigma^{2}}{2} \right)$.
+$\frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} = \sigma \exp\left( \mu + \frac{\sigma^{2}}{2} \right)$.
 
 Using the delta method, the approximate variance of
 $g\left( \hat{\mu},\hat{\sigma} \right)$ is given by
 
-$$\left. \ \hat{V}\left( g\left( \hat{\mu},\hat{\sigma} \right) \right) = \begin{bmatrix}
+$$
+\left. \ \widehat{Var}\left( g\left( \hat{\mu},\hat{\sigma} \right) \right) = \begin{bmatrix}
 \frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} & \frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} \\
 \end{bmatrix}\Sigma\begin{bmatrix}
 \frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} \\
 \frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} \\
-\end{bmatrix} \right|_{\mu = \hat{\mu},\sigma = \hat{\sigma}}$$
-
-$$= \begin{bmatrix}
+\end{bmatrix} \right|_{\mu = \hat{\mu},\sigma = \hat{\sigma}} \\
+= \begin{bmatrix}
 153,277 & 346,826 \\
 \end{bmatrix}\begin{bmatrix}
 0.8533 & 0 \\
@@ -1659,11 +1701,16 @@ $$= \begin{bmatrix}
 \end{bmatrix}\begin{bmatrix}
 153,277 \\
 346,826 \\
-\end{bmatrix} =$$71,374,380,000
+\end{bmatrix} \\
+= 71,374,380,000 .
+$$
+
 
 The 95% confidence interval for $\exp\left( \mu + \frac{\sigma^{2}}{2} \right)$ is given by
 
-$153,277 \pm 1.96\sqrt{71,374,380,000} = \left( - 370,356,\ 676,910 \right)$.
+$$
+153277 \pm 1.96\sqrt{71,374,380,000} = \left( - 370356,\ 676910 \right).
+$$
 
 Since the mean of the lognormal distribution cannot be negative, we should replace the negative lower limit in the previous interval by a zero.
 
@@ -1675,7 +1722,7 @@ Since the mean of the lognormal distribution cannot be negative, we should repla
 
 **Example `r chapnum`.5.4. Wisconsin Property Fund.** To see how maximum likelihood estimators work with real data, we return to the 2010 claims data introduced in Section \@ref(S:LGPIF). 
 
-The following snippet of code shows how to fit the exponential, gamma, Pareto, lognormal, and GB2 models. For consistency, the code employs the `R` package `VGAM`. The acronym stands for *Vector Generalized Linear and Additive Models*; as suggested by the name, this package can do far more than fit these models although it suffices for our purposes. The one exception is the GB2 density which is not widely used outside of insurance applications; however, we can code this density and compute maximum likelihood estimators using the `optim` general purpose optimizer.
+The following snippet of code shows how to fit the exponential, gamma, Pareto, lognormal, and $GB2$ models. For consistency, the code employs the `R` package `VGAM`. The acronym stands for *Vector Generalized Linear and Additive Models*; as suggested by the name, this package can do far more than fit these models although it suffices for our purposes. The one exception is the $GB2$ density which is not widely used outside of insurance applications; however, we can code this density and compute maximum likelihood estimators using the `optim` general purpose optimizer.
 
 
 `r HideExample('3.5.4','Show Example Solution')`
@@ -1768,9 +1815,11 @@ In many applications, actuaries and other analysts wish to estimate model parame
 #### Maximum Likelihood Estimators for Grouped Data {#MLEGrouped}
 
 In the previous section we considered the maximum likelihood estimation of continuous models from complete (individual) data. Each individual observation is recorded, and its contribution to the likelihood function is the density at that value. In this section we consider the problem of obtaining maximum likelihood estimates of parameters from `r Gloss('grouped data')`. The observations are only available in grouped form, and the contribution of each observation to the likelihood function is the probability of falling in a specific group (interval). Let $n_{j}$ represent the number of observations in the interval $\left( \left. \ c_{j - 1},c_{j} \right\rbrack \right.\ $ The grouped data likelihood function is thus given by
+
 $$
 L\left( \theta \right) = \prod_{j = 1}^{k}\left\lbrack F_X\left( \left. \ c_{j} \right|\theta \right) - F_X\left( \left. \ c_{j - 1} \right|\theta \right) \right\rbrack^{n_{j}},
 $$
+
 where $c_{0}$ is the smallest possible observation (often set to zero) and $c_{k}$ is the largest possible observation (often set to infinity).
 
 
@@ -1797,24 +1846,32 @@ Calculate the maximum likelihood estimate of $\theta$.
 
 The contribution of each of the 9 observations in the first interval to the likelihood function is the probability of $X \leq 10$; that is, $\Pr\left( X \leq 10 \right) = F_X\left( 10 \right)$. Similarly, the contributions of each of 6 and 5 observations in the second and third intervals are $\Pr\left( 10 < X \leq 25 \right) = F_X\left( 25 \right) - F_X(10)$ and $P\left( X > 25 \right) = 1 - F_X(25)$, respectively. The likelihood function is thus given by 
 $$
-L\left( \theta \right) = \left\lbrack F_X\left( 10 \right) \right\rbrack^{9}\left\lbrack F_X\left( 25 \right) - F_X(10) \right\rbrack^{6}\left\lbrack 1 - F_X(25) \right\rbrack^{5}
+\begin{array}{ll}
+L\left( \theta \right) & = \left\lbrack F_X\left( 10 \right) \right\rbrack^{9}\left\lbrack F_X\left( 25 \right) - F_X(10) \right\rbrack^{6}\left\lbrack 1 - F_X(25) \right\rbrack^{5} \\
+& = {\left( 1 - \frac{\theta}{10} \right)}^{9}\left( \frac{\theta}{10} - \frac{\theta}{25} \right)^{6}\left( \frac{\theta}{25} \right)^{5} \\
+& = {\left( \frac{10 - \theta}{10} \right)}^{9}\left( \frac{15\theta}{250} \right)^{6}\left( \frac{\theta}{25} \right)^{5}.
+\end{array}
 $$
+
+Taking logarithms, the logarithmic likelihood is
+
 $$
-= {\left( 1 - \frac{\theta}{10} \right)}^{9}\left( \frac{\theta}{10} - \frac{\theta}{25} \right)^{6}\left( \frac{\theta}{25} \right)^{5}
+\begin{array}{ll}
+\log L \left( \theta \right) &= 9\log \left( 10 - \theta \right) + 6\log \theta + 5\log \theta - 9\log 10 + 6\log 15 - 6\log 250 - 5\log 25  \\
+&= 9\log \left( 10 - \theta \right) + 11\log \theta + constant .
+\end{array}
+$$ 
+
+Here, $constant$ is a number that does not depend on $\theta$. Taking derivatives, we have
+
 $$
-$$
-= {\left( \frac{10 - \theta}{10} \right)}^{9}\left( \frac{15\theta}{250} \right)^{6}\left( \frac{\theta}{25} \right)^{5}.
-$$
-Then,
-$\ln L \left( \theta \right) = 9\ln \left( 10 - \theta \right) + 6\ln \theta + 5\ln \theta - 9\ln 10 + 6\ln 15 - 6\ln 250 - 5\ln 25$.
-$$
-\frac{d \ln L \left( \theta \right)}{d \theta} = \frac{- 9}{\left( 10 - \theta \right)} + \frac{6}{\theta} + \frac{5}{\theta}.
+\frac{d \log L \left( \theta \right)}{d \theta} = \frac{- 9}{\left( 10 - \theta \right)} + \frac{11}{\theta} .
 $$
 The maximum likelihood estimator, $\hat{\theta}$, is the solution to the equation
 $$
 \frac{- 9}{\left( 10 - \hat{\theta} \right)} + \frac{11}{\hat{\theta}} = 0
 $$
-and $\hat{\theta} = 5.5$.
+which yields $\hat{\theta} = 5.5$.
 
 </div>
 
@@ -1847,7 +1904,7 @@ The contributions of the two observations 2 and 4 are $f_{X}\left( 2 \right)$ an
 $$
 L\left( \theta \right) = f_{X}\left( 2 \right)f_{X}\left( 4 \right)S_{X}\left( 4 \right).
 $$
-The probability density function of $X$ is given by
+The *pdf* of $X$ is given by
 $$
 f_{X}\left( x \right) = \frac{4x\theta^{4}}{\left( \theta^{2} + x^{2} \right)^{3}}.
 $$
@@ -1859,12 +1916,12 @@ $$
 
 So, 
 $$
-\ln L\left( \theta \right) = \ln 128 + 12\ln \theta - 3\ln \left( \theta^{2} + 4 \right) - 5\ln \left( \theta^{2} + 16 \right) ,
+\log L\left( \theta \right) = \log 128 + 12\log \theta - 3\log \left( \theta^{2} + 4 \right) - 5\log \left( \theta^{2} + 16 \right) ,
 $$
 
 and
 
-$\frac{d \ln L\left( \theta \right)}{d \theta} = \frac{12}{\theta} - \frac{6\theta}{\left( \theta^{2} + 4 \right)} - \frac{10\theta}{\left( \theta^{2} + 16 \right)}$.
+$\frac{d \log L\left( \theta \right)}{d \theta} = \frac{12}{\theta} - \frac{6\theta}{\left( \theta^{2} + 4 \right)} - \frac{10\theta}{\left( \theta^{2} + 16 \right)}$.
 
 The maximum likelihood estimator, $\hat{\theta}$, is the solution to the equation
 $$
@@ -1889,7 +1946,7 @@ $$
 where $k$ is the number of loss amounts larger than the deductible $d$.
 
 **Example `r chapnum`.5.7. Actuarial Exam Question.**
-For the single parameter Pareto distribution with $\theta = 2$, maximum likelihood estimation is applied to estimate the parameter $\alpha$. Find the estimated mean of the ground up loss distribution based on the maximum likelihood estimate of $\alpha$ for the following data set:
+For the single-parameter Pareto distribution with $\theta = 2$, maximum likelihood estimation is applied to estimate the parameter $\alpha$. Find the estimated mean of the ground up loss distribution based on the maximum likelihood estimate of $\alpha$ for the following data set:
 
 *  Ordinary policy deductible of 5, maximum covered loss of 25 (policy limit 20)
 *  8 insurance payment amounts: 2, 4, 5, 5, 8, 10, 12, 15
@@ -1913,30 +1970,41 @@ $$
 L\left( \alpha \right) = \frac{\prod_{i = 1}^{8}{f_{X}\left( x_{i} \right)}}{\left\lbrack S_{X}\left( 5 \right) \right\rbrack^{8}}\left\lbrack \frac{S_{X}\left( 25 \right)}{S_{X}\left( 5 \right)} \right\rbrack^{2}.
 $$
 
-For the single parameter Pareto the probability density and distribution functions are given by
+For the single-parameter Pareto the probability density and distribution functions are given by
 
 $$
 f_{X}\left( x \right) = \frac{\alpha\theta^{\alpha}}{x^{\alpha + 1}} \ \ \text{and} \ \ F_{X}\left( x \right) = 1 - \left( \frac{\theta}{x} \right)^{\alpha},
 $$
-for $x > \theta$, respectively. Then, the likelihood and loglikelihood functions are given by
+for $x > \theta$, respectively. Then, the likelihood is given by
 $$
-L\left( \alpha \right) = \frac{\alpha^{8}}{\prod_{i = 1}^{8}x_{i}^{\alpha + 1}}\frac{5^{10\alpha}}{25^{2\alpha}},
-$$
-$$
-\ln L \left( \alpha \right) = 8\ln\alpha - \left( \alpha + 1 \right)\sum_{i = 1}^{8}{\ln x_{i}} + 10\alpha \ln 5 - 2\alpha \ln 25.
+L\left( \alpha \right) = \frac{\alpha^{8}}{\prod_{i = 1}^{8}x_{i}^{\alpha + 1}}\frac{5^{10\alpha}}{25^{2\alpha}} .
 $$
 
-$\frac{d \ln L \left( \alpha \right)}{d \theta} = \frac{8}{\alpha} - \sum_{i = 1}^{8}{\ln x_{i}} + 10\ln 5 - 2\ln 25$.
+Taking logarithms, the loglikelihood function is 
 
-The maximum likelihood estimator, $\hat{\alpha}$, is the solution to the equation
 $$
-\frac{8}{\hat{\alpha}} - \sum_{i = 1}^{8}{\ln x_{i}} + 10\ln 5 - 2\ln 25 = 0,
+\log L \left( \alpha \right) = 8\log\alpha - \left( \alpha + 1 \right)\sum_{i = 1}^{8}{\log x_{i}} + 10\alpha \log 5 - 2\alpha \log 25.
+$$
+
+Taking a derivative, we have
+
+$$
+\frac{d \log L \left( \alpha \right)}{d \theta} = \frac{8}{\alpha} - \sum_{i = 1}^{8}{\log x_{i}} + 10\log 5 - 2\log 25.
+$$
+
+With this, the maximum likelihood estimator, $\hat{\alpha}$, is the solution to the equation
+
+$$
+\frac{8}{\hat{\alpha}} - \sum_{i = 1}^{8}{\log x_{i}} + 10\log 5 - 2\log 25 = 0,
 $$
 which yields
 $$
-\hat{\alpha} = \frac{8}{\sum_{i = 1}^{8}{\ln x_{i}} - 10\ln 5 + 2\ln 25} = \frac{8}{(\ln 7 + \ln 9 + \cdots + \ln 20) - 10\ln 5 + 2\ln 25} = 0.785.
+\begin{array}{ll}
+\hat{\alpha} &= \frac{8}{\sum_{i = 1}^{8}{\log x_{i}} - 10\log 5 + 2\log 25} \\
+&= \frac{8}{(\log 7 + \log 9 + \cdots + \log 20) - 10\log 5 + 2\log 25} = 0.785.
+\end{array}
 $$
-The mean of the Pareto only exists for $\alpha > 1$. Since $\hat{\alpha} = 0.785 < 1$. Then, the mean does not exist.
+The mean of the single-parameter Pareto is finite for $\alpha > 1$ (see Appendix Section \@ref(S:ContinuousDistributions)). Since $\hat{\alpha} = 0.785 < 1$. Then, the mean is infinite.
 
 </div>
 
