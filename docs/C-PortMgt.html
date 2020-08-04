@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics</title>
   <meta name="description" content="Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Insurance Portfolio Management including Reinsurance | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -311,9 +310,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -322,16 +321,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -340,9 +337,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -603,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
 <li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
@@ -798,7 +795,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
 <li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#S:ContinuousDistributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
@@ -1483,17 +1480,17 @@ Note that <span class="math inline">\(Y_{insurer}+Y_{reinsurer}=X\)</span>.</p>
 <a id="displayCode.QuotaShare" href="javascript:togglecode('toggleCode.QuotaShare','displayCode.QuotaShare');"><i><strong>Show the R Code</strong></i></a>
 </h5>
 <div id="toggleCode.QuotaShare" style="display: none">
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="C-PortMgt.html#cb98-1"></a><span class="kw">set.seed</span>(<span class="dv">2018</span>)</span>
-<span id="cb98-2"><a href="C-PortMgt.html#cb98-2"></a>theta =<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb98-3"><a href="C-PortMgt.html#cb98-3"></a>alpha =<span class="st"> </span><span class="dv">3</span></span>
-<span id="cb98-4"><a href="C-PortMgt.html#cb98-4"></a>nSim =<span class="st"> </span><span class="dv">10000</span></span>
-<span id="cb98-5"><a href="C-PortMgt.html#cb98-5"></a><span class="kw">library</span>(actuar)</span>
-<span id="cb98-6"><a href="C-PortMgt.html#cb98-6"></a>X &lt;-<span class="st">  </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha, <span class="dt">scale =</span> theta)</span>
-<span id="cb98-7"><a href="C-PortMgt.html#cb98-7"></a></span>
-<span id="cb98-8"><a href="C-PortMgt.html#cb98-8"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
-<span id="cb98-9"><a href="C-PortMgt.html#cb98-9"></a><span class="kw">plot</span>(<span class="kw">density</span>(X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>theta), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.008</span>), <span class="dt">main=</span><span class="st">&quot;Total Loss&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</span>
-<span id="cb98-10"><a href="C-PortMgt.html#cb98-10"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="fl">0.75</span><span class="op">*</span>X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>theta), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.008</span>), <span class="dt">main=</span><span class="st">&quot;Insurer (75%)&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</span>
-<span id="cb98-11"><a href="C-PortMgt.html#cb98-11"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="fl">0.25</span><span class="op">*</span>X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>theta), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.008</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer (25%)&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" title="1"><span class="kw">set.seed</span>(<span class="dv">2018</span>)</a>
+<a class="sourceLine" id="cb98-2" title="2">theta =<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb98-3" title="3">alpha =<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb98-4" title="4">nSim =<span class="st"> </span><span class="dv">10000</span></a>
+<a class="sourceLine" id="cb98-5" title="5"><span class="kw">library</span>(actuar)</a>
+<a class="sourceLine" id="cb98-6" title="6">X &lt;-<span class="st">  </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha, <span class="dt">scale =</span> theta)</a>
+<a class="sourceLine" id="cb98-7" title="7"></a>
+<a class="sourceLine" id="cb98-8" title="8"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb98-9" title="9"><span class="kw">plot</span>(<span class="kw">density</span>(X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>theta), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.008</span>), <span class="dt">main=</span><span class="st">&quot;Total Loss&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</a>
+<a class="sourceLine" id="cb98-10" title="10"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="fl">0.75</span><span class="op">*</span>X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>theta), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.008</span>), <span class="dt">main=</span><span class="st">&quot;Insurer (75%)&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</a>
+<a class="sourceLine" id="cb98-11" title="11"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="fl">0.25</span><span class="op">*</span>X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="op">*</span>theta), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.008</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer (25%)&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</a></code></pre></div>
 </div>
 <div id="quota-share-is-desirable-for-reinsurers" class="section level4">
 <h4><span class="header-section-number">10.4.1.1</span> Quota Share is Desirable for Reinsurers</h4>
@@ -1560,34 +1557,34 @@ and use this value of <span class="math inline">\(\lambda\)</span> to determine 
 <a id="displayCode.ParetoRisksProp" href="javascript:togglecode('toggleCode.ParetoRisksProp','displayCode.ParetoRisksProp');"><i><strong>Show an Example with Three Pareto Risks</strong></i></a>
 </h5>
 <div id="toggleCode.ParetoRisksProp" style="display: none">
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="C-PortMgt.html#cb99-1"></a>theta1 =<span class="st"> </span><span class="dv">1000</span>; theta2 =<span class="st"> </span><span class="dv">2000</span>; theta3 =<span class="st"> </span><span class="dv">3000</span>;</span>
-<span id="cb99-2"><a href="C-PortMgt.html#cb99-2"></a>alpha1 =<span class="st"> </span><span class="dv">3</span>; alpha2 =<span class="st"> </span><span class="dv">3</span>; alpha3 =<span class="st"> </span><span class="dv">4</span>;</span>
-<span id="cb99-3"><a href="C-PortMgt.html#cb99-3"></a><span class="kw">library</span>(actuar)</span>
-<span id="cb99-4"><a href="C-PortMgt.html#cb99-4"></a>propnfct &lt;-<span class="st"> </span><span class="cf">function</span>(alpha,theta){</span>
-<span id="cb99-5"><a href="C-PortMgt.html#cb99-5"></a>  mu    &lt;-<span class="st"> </span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha, <span class="dt">scale=</span>theta, <span class="dt">order=</span><span class="dv">1</span>)</span>
-<span id="cb99-6"><a href="C-PortMgt.html#cb99-6"></a>  var   &lt;-<span class="st"> </span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha, <span class="dt">scale=</span>theta, <span class="dt">order=</span><span class="dv">2</span>) <span class="op">-</span><span class="st"> </span>mu<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb99-7"><a href="C-PortMgt.html#cb99-7"></a>  mu<span class="op">/</span>var</span>
-<span id="cb99-8"><a href="C-PortMgt.html#cb99-8"></a>}</span>
-<span id="cb99-9"><a href="C-PortMgt.html#cb99-9"></a>temp &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha1, theta1)<span class="op">*</span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1, <span class="dt">order=</span><span class="dv">1</span>)<span class="op">+</span></span>
-<span id="cb99-10"><a href="C-PortMgt.html#cb99-10"></a><span class="st">        </span><span class="kw">propnfct</span>(alpha2, theta2)<span class="op">*</span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2, <span class="dt">order=</span><span class="dv">1</span>)<span class="op">+</span></span>
-<span id="cb99-11"><a href="C-PortMgt.html#cb99-11"></a><span class="st">        </span><span class="kw">propnfct</span>(alpha3, theta3)<span class="op">*</span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3, <span class="dt">order=</span><span class="dv">1</span>)  </span>
-<span id="cb99-12"><a href="C-PortMgt.html#cb99-12"></a>KVec &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">100</span>, <span class="dv">2500</span>, <span class="dt">length.out=</span><span class="dv">20</span>)</span>
-<span id="cb99-13"><a href="C-PortMgt.html#cb99-13"></a>Lambdavec &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>KVec<span class="op">/</span>temp</span>
-<span id="cb99-14"><a href="C-PortMgt.html#cb99-14"></a>c1 &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha1, theta1)</span>
-<span id="cb99-15"><a href="C-PortMgt.html#cb99-15"></a>c2 &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha2, theta2)</span>
-<span id="cb99-16"><a href="C-PortMgt.html#cb99-16"></a>c3 &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha3, theta3)</span>
-<span id="cb99-17"><a href="C-PortMgt.html#cb99-17"></a>c1Vec &lt;-<span class="st"> </span>c2Vec &lt;-<span class="st"> </span>c3Vec &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">*</span>KVec </span>
-<span id="cb99-18"><a href="C-PortMgt.html#cb99-18"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>) {</span>
-<span id="cb99-19"><a href="C-PortMgt.html#cb99-19"></a>  c1Vec[j] &lt;-<span class="st"> </span>(Lambdavec[j]<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">propnfct</span>(alpha1, theta1)</span>
-<span id="cb99-20"><a href="C-PortMgt.html#cb99-20"></a>  c2Vec[j] &lt;-<span class="st"> </span>(Lambdavec[j]<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">propnfct</span>(alpha2, theta2)</span>
-<span id="cb99-21"><a href="C-PortMgt.html#cb99-21"></a>  c3Vec[j] &lt;-<span class="st"> </span>(Lambdavec[j]<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">propnfct</span>(alpha3, theta3)</span>
-<span id="cb99-22"><a href="C-PortMgt.html#cb99-22"></a>  }</span>
-<span id="cb99-23"><a href="C-PortMgt.html#cb99-23"></a><span class="kw">plot</span>(KVec, c1Vec, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;proportion&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;required revenue (K)&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb99-24"><a href="C-PortMgt.html#cb99-24"></a><span class="kw">lines</span>(KVec, c2Vec)</span>
-<span id="cb99-25"><a href="C-PortMgt.html#cb99-25"></a><span class="kw">lines</span>(KVec, c3Vec)</span>
-<span id="cb99-26"><a href="C-PortMgt.html#cb99-26"></a><span class="kw">text</span>(<span class="dv">1200</span>,<span class="fl">0.80</span>, <span class="kw">expression</span>(c[<span class="dv">1</span>]))</span>
-<span id="cb99-27"><a href="C-PortMgt.html#cb99-27"></a><span class="kw">text</span>(<span class="dv">2000</span>,<span class="fl">0.75</span>, <span class="kw">expression</span>(c[<span class="dv">2</span>]))</span>
-<span id="cb99-28"><a href="C-PortMgt.html#cb99-28"></a><span class="kw">text</span>(<span class="dv">1500</span>,<span class="fl">0.30</span>, <span class="kw">expression</span>(c[<span class="dv">3</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" title="1">theta1 =<span class="st"> </span><span class="dv">1000</span>; theta2 =<span class="st"> </span><span class="dv">2000</span>; theta3 =<span class="st"> </span><span class="dv">3000</span>;</a>
+<a class="sourceLine" id="cb99-2" title="2">alpha1 =<span class="st"> </span><span class="dv">3</span>; alpha2 =<span class="st"> </span><span class="dv">3</span>; alpha3 =<span class="st"> </span><span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb99-3" title="3"><span class="kw">library</span>(actuar)</a>
+<a class="sourceLine" id="cb99-4" title="4">propnfct &lt;-<span class="st"> </span><span class="cf">function</span>(alpha,theta){</a>
+<a class="sourceLine" id="cb99-5" title="5">  mu    &lt;-<span class="st"> </span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha, <span class="dt">scale=</span>theta, <span class="dt">order=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb99-6" title="6">  var   &lt;-<span class="st"> </span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha, <span class="dt">scale=</span>theta, <span class="dt">order=</span><span class="dv">2</span>) <span class="op">-</span><span class="st"> </span>mu<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb99-7" title="7">  mu<span class="op">/</span>var</a>
+<a class="sourceLine" id="cb99-8" title="8">}</a>
+<a class="sourceLine" id="cb99-9" title="9">temp &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha1, theta1)<span class="op">*</span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1, <span class="dt">order=</span><span class="dv">1</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb99-10" title="10"><span class="st">        </span><span class="kw">propnfct</span>(alpha2, theta2)<span class="op">*</span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2, <span class="dt">order=</span><span class="dv">1</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb99-11" title="11"><span class="st">        </span><span class="kw">propnfct</span>(alpha3, theta3)<span class="op">*</span><span class="kw">mpareto</span>(<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3, <span class="dt">order=</span><span class="dv">1</span>)  </a>
+<a class="sourceLine" id="cb99-12" title="12">KVec &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">100</span>, <span class="dv">2500</span>, <span class="dt">length.out=</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb99-13" title="13">Lambdavec &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>KVec<span class="op">/</span>temp</a>
+<a class="sourceLine" id="cb99-14" title="14">c1 &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha1, theta1)</a>
+<a class="sourceLine" id="cb99-15" title="15">c2 &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha2, theta2)</a>
+<a class="sourceLine" id="cb99-16" title="16">c3 &lt;-<span class="st"> </span><span class="kw">propnfct</span>(alpha3, theta3)</a>
+<a class="sourceLine" id="cb99-17" title="17">c1Vec &lt;-<span class="st"> </span>c2Vec &lt;-<span class="st"> </span>c3Vec &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">*</span>KVec </a>
+<a class="sourceLine" id="cb99-18" title="18"><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>) {</a>
+<a class="sourceLine" id="cb99-19" title="19">  c1Vec[j] &lt;-<span class="st"> </span>(Lambdavec[j]<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">propnfct</span>(alpha1, theta1)</a>
+<a class="sourceLine" id="cb99-20" title="20">  c2Vec[j] &lt;-<span class="st"> </span>(Lambdavec[j]<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">propnfct</span>(alpha2, theta2)</a>
+<a class="sourceLine" id="cb99-21" title="21">  c3Vec[j] &lt;-<span class="st"> </span>(Lambdavec[j]<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">propnfct</span>(alpha3, theta3)</a>
+<a class="sourceLine" id="cb99-22" title="22">  }</a>
+<a class="sourceLine" id="cb99-23" title="23"><span class="kw">plot</span>(KVec, c1Vec, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;proportion&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;required revenue (K)&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb99-24" title="24"><span class="kw">lines</span>(KVec, c2Vec)</a>
+<a class="sourceLine" id="cb99-25" title="25"><span class="kw">lines</span>(KVec, c3Vec)</a>
+<a class="sourceLine" id="cb99-26" title="26"><span class="kw">text</span>(<span class="dv">1200</span>,<span class="fl">0.80</span>, <span class="kw">expression</span>(c[<span class="dv">1</span>]))</a>
+<a class="sourceLine" id="cb99-27" title="27"><span class="kw">text</span>(<span class="dv">2000</span>,<span class="fl">0.75</span>, <span class="kw">expression</span>(c[<span class="dv">2</span>]))</a>
+<a class="sourceLine" id="cb99-28" title="28"><span class="kw">text</span>(<span class="dv">1500</span>,<span class="fl">0.30</span>, <span class="kw">expression</span>(c[<span class="dv">3</span>]))</a></code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-82-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -1705,50 +1702,50 @@ E(X \wedge M)^2 = 2\int_0^M ~x(1- F(x))dx.
 </h5>
 <div id="toggleCode.ParetoRisksExcess" style="display: none">
 <p>We first optimize the Lagrangian using the <code>R</code> package <code>alabama</code> for <em>Augmented Lagrangian Adaptive Barrier Minimization Algorithm</em>.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="C-PortMgt.html#cb100-1"></a>theta1 =<span class="st"> </span><span class="dv">1000</span>;theta2 =<span class="st"> </span><span class="dv">2000</span>;theta3 =<span class="st"> </span><span class="dv">3000</span>;</span>
-<span id="cb100-2"><a href="C-PortMgt.html#cb100-2"></a>alpha1 =<span class="st"> </span><span class="dv">3</span>;   alpha2 =<span class="st"> </span><span class="dv">3</span>;   alpha3 =<span class="st"> </span><span class="dv">4</span>;</span>
-<span id="cb100-3"><a href="C-PortMgt.html#cb100-3"></a>Pmin &lt;-<span class="st"> </span><span class="dv">2000</span></span>
-<span id="cb100-4"><a href="C-PortMgt.html#cb100-4"></a><span class="kw">library</span>(actuar)</span>
-<span id="cb100-5"><a href="C-PortMgt.html#cb100-5"></a>VarFct &lt;-<span class="st"> </span><span class="cf">function</span>(M){</span>
-<span id="cb100-6"><a href="C-PortMgt.html#cb100-6"></a>  M1=M[<span class="dv">1</span>];M2=M[<span class="dv">2</span>];M3=M[<span class="dv">3</span>]</span>
-<span id="cb100-7"><a href="C-PortMgt.html#cb100-7"></a>  mu1    &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M1,<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1, <span class="dt">order=</span><span class="dv">1</span>)</span>
-<span id="cb100-8"><a href="C-PortMgt.html#cb100-8"></a>  var1   &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M1,<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1, <span class="dt">order=</span><span class="dv">2</span>)<span class="op">-</span>mu1<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb100-9"><a href="C-PortMgt.html#cb100-9"></a>  mu2    &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M2,<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2, <span class="dt">order=</span><span class="dv">1</span>)</span>
-<span id="cb100-10"><a href="C-PortMgt.html#cb100-10"></a>  var2   &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M2,<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2, <span class="dt">order=</span><span class="dv">2</span>)<span class="op">-</span>mu2<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb100-11"><a href="C-PortMgt.html#cb100-11"></a>  mu3    &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M3,<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3, <span class="dt">order=</span><span class="dv">1</span>)</span>
-<span id="cb100-12"><a href="C-PortMgt.html#cb100-12"></a>  var3   &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M3,<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3, <span class="dt">order=</span><span class="dv">2</span>)<span class="op">-</span>mu3<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb100-13"><a href="C-PortMgt.html#cb100-13"></a>  varFct &lt;-<span class="st"> </span>var1 <span class="op">+</span>var2<span class="op">+</span>var3</span>
-<span id="cb100-14"><a href="C-PortMgt.html#cb100-14"></a>  meanFct &lt;-<span class="st"> </span>mu1<span class="op">+</span>mu2<span class="op">+</span>mu3</span>
-<span id="cb100-15"><a href="C-PortMgt.html#cb100-15"></a>  <span class="kw">c</span>(meanFct,varFct)</span>
-<span id="cb100-16"><a href="C-PortMgt.html#cb100-16"></a>  }</span>
-<span id="cb100-17"><a href="C-PortMgt.html#cb100-17"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(M){<span class="kw">VarFct</span>(M)[<span class="dv">2</span>]}</span>
-<span id="cb100-18"><a href="C-PortMgt.html#cb100-18"></a>h &lt;-<span class="st"> </span><span class="cf">function</span>(M){<span class="kw">VarFct</span>(M)[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>Pmin}</span>
-<span id="cb100-19"><a href="C-PortMgt.html#cb100-19"></a><span class="kw">library</span>(alabama)</span>
-<span id="cb100-20"><a href="C-PortMgt.html#cb100-20"></a>par0=<span class="kw">rep</span>(<span class="dv">1000</span>,<span class="dv">3</span>)</span>
-<span id="cb100-21"><a href="C-PortMgt.html#cb100-21"></a>op &lt;-<span class="st"> </span><span class="kw">auglag</span>(<span class="dt">par=</span>par0,<span class="dt">fn=</span>f,<span class="dt">hin=</span>h,<span class="dt">control.outer=</span><span class="kw">list</span>(<span class="dt">trace=</span><span class="ot">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1">theta1 =<span class="st"> </span><span class="dv">1000</span>;theta2 =<span class="st"> </span><span class="dv">2000</span>;theta3 =<span class="st"> </span><span class="dv">3000</span>;</a>
+<a class="sourceLine" id="cb100-2" title="2">alpha1 =<span class="st"> </span><span class="dv">3</span>;   alpha2 =<span class="st"> </span><span class="dv">3</span>;   alpha3 =<span class="st"> </span><span class="dv">4</span>;</a>
+<a class="sourceLine" id="cb100-3" title="3">Pmin &lt;-<span class="st"> </span><span class="dv">2000</span></a>
+<a class="sourceLine" id="cb100-4" title="4"><span class="kw">library</span>(actuar)</a>
+<a class="sourceLine" id="cb100-5" title="5">VarFct &lt;-<span class="st"> </span><span class="cf">function</span>(M){</a>
+<a class="sourceLine" id="cb100-6" title="6">  M1=M[<span class="dv">1</span>];M2=M[<span class="dv">2</span>];M3=M[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb100-7" title="7">  mu1    &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M1,<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1, <span class="dt">order=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb100-8" title="8">  var1   &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M1,<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1, <span class="dt">order=</span><span class="dv">2</span>)<span class="op">-</span>mu1<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb100-9" title="9">  mu2    &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M2,<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2, <span class="dt">order=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb100-10" title="10">  var2   &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M2,<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2, <span class="dt">order=</span><span class="dv">2</span>)<span class="op">-</span>mu2<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb100-11" title="11">  mu3    &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M3,<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3, <span class="dt">order=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb100-12" title="12">  var3   &lt;-<span class="st"> </span><span class="kw">levpareto</span>(<span class="dt">limit=</span>M3,<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3, <span class="dt">order=</span><span class="dv">2</span>)<span class="op">-</span>mu3<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb100-13" title="13">  varFct &lt;-<span class="st"> </span>var1 <span class="op">+</span>var2<span class="op">+</span>var3</a>
+<a class="sourceLine" id="cb100-14" title="14">  meanFct &lt;-<span class="st"> </span>mu1<span class="op">+</span>mu2<span class="op">+</span>mu3</a>
+<a class="sourceLine" id="cb100-15" title="15">  <span class="kw">c</span>(meanFct,varFct)</a>
+<a class="sourceLine" id="cb100-16" title="16">  }</a>
+<a class="sourceLine" id="cb100-17" title="17">f &lt;-<span class="st"> </span><span class="cf">function</span>(M){<span class="kw">VarFct</span>(M)[<span class="dv">2</span>]}</a>
+<a class="sourceLine" id="cb100-18" title="18">h &lt;-<span class="st"> </span><span class="cf">function</span>(M){<span class="kw">VarFct</span>(M)[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>Pmin}</a>
+<a class="sourceLine" id="cb100-19" title="19"><span class="kw">library</span>(alabama)</a>
+<a class="sourceLine" id="cb100-20" title="20">par0=<span class="kw">rep</span>(<span class="dv">1000</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb100-21" title="21">op &lt;-<span class="st"> </span><span class="kw">auglag</span>(<span class="dt">par=</span>par0,<span class="dt">fn=</span>f,<span class="dt">hin=</span>h,<span class="dt">control.outer=</span><span class="kw">list</span>(<span class="dt">trace=</span><span class="ot">FALSE</span>))</a></code></pre></div>
 <p>The optimal retention limits <span class="math inline">\(M_1\)</span>, <span class="math inline">\(M_2\)</span>, and <span class="math inline">\(M_3\)</span> resulting retention limit minus expected insurer’s claims, <span class="math inline">\(M_i - E(X_i \wedge M_i)\)</span>, is the same for all risks, as we derived theoretically.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="C-PortMgt.html#cb101-1"></a>M1star =<span class="st"> </span>op<span class="op">$</span>par[<span class="dv">1</span>];M2star =<span class="st"> </span>op<span class="op">$</span>par[<span class="dv">2</span>];M3star =<span class="st"> </span>op<span class="op">$</span>par[<span class="dv">3</span>]</span>
-<span id="cb101-2"><a href="C-PortMgt.html#cb101-2"></a>M1star <span class="op">-</span><span class="kw">levpareto</span>(M1star,<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1,<span class="dt">order=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" title="1">M1star =<span class="st"> </span>op<span class="op">$</span>par[<span class="dv">1</span>];M2star =<span class="st"> </span>op<span class="op">$</span>par[<span class="dv">2</span>];M3star =<span class="st"> </span>op<span class="op">$</span>par[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb101-2" title="2">M1star <span class="op">-</span><span class="kw">levpareto</span>(M1star,<span class="dt">shape=</span>alpha1, <span class="dt">scale=</span>theta1,<span class="dt">order=</span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>[1] 1344.135</code></pre>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="C-PortMgt.html#cb103-1"></a>M2star <span class="op">-</span><span class="kw">levpareto</span>(M2star,<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2,<span class="dt">order=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" title="1">M2star <span class="op">-</span><span class="kw">levpareto</span>(M2star,<span class="dt">shape=</span>alpha2, <span class="dt">scale=</span>theta2,<span class="dt">order=</span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>[1] 1344.133</code></pre>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="C-PortMgt.html#cb105-1"></a>M3star <span class="op">-</span><span class="kw">levpareto</span>(M3star,<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3,<span class="dt">order=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" title="1">M3star <span class="op">-</span><span class="kw">levpareto</span>(M3star,<span class="dt">shape=</span>alpha3, <span class="dt">scale=</span>theta3,<span class="dt">order=</span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>[1] 1344.133</code></pre>
 <p>We graphically compare the distribution of total risks to that retained by the insurer and by the reinsurer.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="C-PortMgt.html#cb107-1"></a><span class="kw">set.seed</span>(<span class="dv">2018</span>)</span>
-<span id="cb107-2"><a href="C-PortMgt.html#cb107-2"></a>nSim =<span class="st"> </span><span class="dv">10000</span></span>
-<span id="cb107-3"><a href="C-PortMgt.html#cb107-3"></a><span class="kw">library</span>(actuar)</span>
-<span id="cb107-4"><a href="C-PortMgt.html#cb107-4"></a>Y1 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha1, <span class="dt">scale =</span> theta1)</span>
-<span id="cb107-5"><a href="C-PortMgt.html#cb107-5"></a>Y2 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha2, <span class="dt">scale =</span> theta2)</span>
-<span id="cb107-6"><a href="C-PortMgt.html#cb107-6"></a>Y3 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha3, <span class="dt">scale =</span> theta3)</span>
-<span id="cb107-7"><a href="C-PortMgt.html#cb107-7"></a>YTotal &lt;-<span class="st"> </span>Y1 <span class="op">+</span><span class="st"> </span>Y2 <span class="op">+</span><span class="st"> </span>Y3</span>
-<span id="cb107-8"><a href="C-PortMgt.html#cb107-8"></a>Yinsur &lt;-<span class="st">  </span><span class="kw">pmin</span>(Y1,M1star)<span class="op">+</span><span class="kw">pmin</span>(Y2,M2star)<span class="op">+</span><span class="kw">pmin</span>(Y3,M3star)</span>
-<span id="cb107-9"><a href="C-PortMgt.html#cb107-9"></a>Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span class="st"> </span>Yinsur</span>
-<span id="cb107-10"><a href="C-PortMgt.html#cb107-10"></a></span>
-<span id="cb107-11"><a href="C-PortMgt.html#cb107-11"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
-<span id="cb107-12"><a href="C-PortMgt.html#cb107-12"></a><span class="kw">plot</span>(<span class="kw">density</span>(YTotal),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Total Loss&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</span>
-<span id="cb107-13"><a href="C-PortMgt.html#cb107-13"></a><span class="kw">plot</span>(<span class="kw">density</span>(Yinsur),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer&quot;</span>,    <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</span>
-<span id="cb107-14"><a href="C-PortMgt.html#cb107-14"></a><span class="kw">plot</span>(<span class="kw">density</span>(Yreinsur), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer&quot;</span>,  <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1"><span class="kw">set.seed</span>(<span class="dv">2018</span>)</a>
+<a class="sourceLine" id="cb107-2" title="2">nSim =<span class="st"> </span><span class="dv">10000</span></a>
+<a class="sourceLine" id="cb107-3" title="3"><span class="kw">library</span>(actuar)</a>
+<a class="sourceLine" id="cb107-4" title="4">Y1 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha1, <span class="dt">scale =</span> theta1)</a>
+<a class="sourceLine" id="cb107-5" title="5">Y2 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha2, <span class="dt">scale =</span> theta2)</a>
+<a class="sourceLine" id="cb107-6" title="6">Y3 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim, <span class="dt">shape =</span> alpha3, <span class="dt">scale =</span> theta3)</a>
+<a class="sourceLine" id="cb107-7" title="7">YTotal &lt;-<span class="st"> </span>Y1 <span class="op">+</span><span class="st"> </span>Y2 <span class="op">+</span><span class="st"> </span>Y3</a>
+<a class="sourceLine" id="cb107-8" title="8">Yinsur &lt;-<span class="st">  </span><span class="kw">pmin</span>(Y1,M1star)<span class="op">+</span><span class="kw">pmin</span>(Y2,M2star)<span class="op">+</span><span class="kw">pmin</span>(Y3,M3star)</a>
+<a class="sourceLine" id="cb107-9" title="9">Yreinsur &lt;-<span class="st"> </span>YTotal <span class="op">-</span><span class="st"> </span>Yinsur</a>
+<a class="sourceLine" id="cb107-10" title="10"></a>
+<a class="sourceLine" id="cb107-11" title="11"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb107-12" title="12"><span class="kw">plot</span>(<span class="kw">density</span>(YTotal),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Total Loss&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</a>
+<a class="sourceLine" id="cb107-13" title="13"><span class="kw">plot</span>(<span class="kw">density</span>(Yinsur),   <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer&quot;</span>,    <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</a>
+<a class="sourceLine" id="cb107-14" title="14"><span class="kw">plot</span>(<span class="kw">density</span>(Yreinsur), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>), <span class="dt">main=</span><span class="st">&quot;Reinsurer&quot;</span>,  <span class="dt">xlab=</span><span class="st">&quot;Losses&quot;</span>)</a></code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-85-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <hr />
@@ -1867,53 +1864,53 @@ so that your retained risk is <span class="math inline">\(Y_{retained}= X- Y_{in
 </h5>
 <div id="toggleCode.PortMgt" style="display: none">
 <p>In preparation, here is the code needed to set the parameters.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="C-PortMgt.html#cb108-1"></a><span class="co"># For the gamma distributions, use</span></span>
-<span id="cb108-2"><a href="C-PortMgt.html#cb108-2"></a>alpha1 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta1 &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb108-3"><a href="C-PortMgt.html#cb108-3"></a>alpha2 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta2 &lt;-<span class="st"> </span><span class="dv">200</span></span>
-<span id="cb108-4"><a href="C-PortMgt.html#cb108-4"></a><span class="co"># For the Pareto distributions, use</span></span>
-<span id="cb108-5"><a href="C-PortMgt.html#cb108-5"></a>alpha3 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta3 &lt;-<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb108-6"><a href="C-PortMgt.html#cb108-6"></a>alpha4 &lt;-<span class="st"> </span><span class="dv">3</span>;      theta4 &lt;-<span class="st"> </span><span class="dv">2000</span></span>
-<span id="cb108-7"><a href="C-PortMgt.html#cb108-7"></a><span class="co"># Limits</span></span>
-<span id="cb108-8"><a href="C-PortMgt.html#cb108-8"></a>M1     &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb108-9"><a href="C-PortMgt.html#cb108-9"></a>M2     &lt;-<span class="st"> </span><span class="dv">200</span></span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1"><span class="co"># For the gamma distributions, use</span></a>
+<a class="sourceLine" id="cb108-2" title="2">alpha1 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta1 &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb108-3" title="3">alpha2 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta2 &lt;-<span class="st"> </span><span class="dv">200</span></a>
+<a class="sourceLine" id="cb108-4" title="4"><span class="co"># For the Pareto distributions, use</span></a>
+<a class="sourceLine" id="cb108-5" title="5">alpha3 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta3 &lt;-<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb108-6" title="6">alpha4 &lt;-<span class="st"> </span><span class="dv">3</span>;      theta4 &lt;-<span class="st"> </span><span class="dv">2000</span></a>
+<a class="sourceLine" id="cb108-7" title="7"><span class="co"># Limits</span></a>
+<a class="sourceLine" id="cb108-8" title="8">M1     &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb108-9" title="9">M2     &lt;-<span class="st"> </span><span class="dv">200</span></a></code></pre></div>
 <p>With these parameters, we can now simulate realizations of the portfolio risks.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="C-PortMgt.html#cb109-1"></a><span class="co"># Simulate the risks</span></span>
-<span id="cb109-2"><a href="C-PortMgt.html#cb109-2"></a>nSim &lt;-<span class="st"> </span><span class="dv">10000</span>  <span class="co">#number of simulations</span></span>
-<span id="cb109-3"><a href="C-PortMgt.html#cb109-3"></a><span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span></span>
-<span id="cb109-4"><a href="C-PortMgt.html#cb109-4"></a>X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha1,<span class="dt">scale =</span> theta1)  </span>
-<span id="cb109-5"><a href="C-PortMgt.html#cb109-5"></a>X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<span class="dt">scale =</span> theta2)  </span>
-<span id="cb109-6"><a href="C-PortMgt.html#cb109-6"></a><span class="co"># For the Pareto Distribution, use</span></span>
-<span id="cb109-7"><a href="C-PortMgt.html#cb109-7"></a><span class="kw">library</span>(actuar)</span>
-<span id="cb109-8"><a href="C-PortMgt.html#cb109-8"></a>X3 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim,<span class="dt">scale=</span>theta3,<span class="dt">shape=</span>alpha3)</span>
-<span id="cb109-9"><a href="C-PortMgt.html#cb109-9"></a>X4 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim,<span class="dt">scale=</span>theta4,<span class="dt">shape=</span>alpha4)</span>
-<span id="cb109-10"><a href="C-PortMgt.html#cb109-10"></a><span class="co"># Portfolio Risks</span></span>
-<span id="cb109-11"><a href="C-PortMgt.html#cb109-11"></a>X         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</span>
-<span id="cb109-12"><a href="C-PortMgt.html#cb109-12"></a>Yretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,M1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,M2)</span>
-<span id="cb109-13"><a href="C-PortMgt.html#cb109-13"></a>Yinsurer  &lt;-<span class="st"> </span>X <span class="op">-</span><span class="st"> </span>Yretained</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="co"># Simulate the risks</span></a>
+<a class="sourceLine" id="cb109-2" title="2">nSim &lt;-<span class="st"> </span><span class="dv">10000</span>  <span class="co">#number of simulations</span></a>
+<a class="sourceLine" id="cb109-3" title="3"><span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span></a>
+<a class="sourceLine" id="cb109-4" title="4">X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha1,<span class="dt">scale =</span> theta1)  </a>
+<a class="sourceLine" id="cb109-5" title="5">X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<span class="dt">scale =</span> theta2)  </a>
+<a class="sourceLine" id="cb109-6" title="6"><span class="co"># For the Pareto Distribution, use</span></a>
+<a class="sourceLine" id="cb109-7" title="7"><span class="kw">library</span>(actuar)</a>
+<a class="sourceLine" id="cb109-8" title="8">X3 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim,<span class="dt">scale=</span>theta3,<span class="dt">shape=</span>alpha3)</a>
+<a class="sourceLine" id="cb109-9" title="9">X4 &lt;-<span class="st"> </span><span class="kw">rpareto</span>(nSim,<span class="dt">scale=</span>theta4,<span class="dt">shape=</span>alpha4)</a>
+<a class="sourceLine" id="cb109-10" title="10"><span class="co"># Portfolio Risks</span></a>
+<a class="sourceLine" id="cb109-11" title="11">X         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</a>
+<a class="sourceLine" id="cb109-12" title="12">Yretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,M1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,M2)</a>
+<a class="sourceLine" id="cb109-13" title="13">Yinsurer  &lt;-<span class="st"> </span>X <span class="op">-</span><span class="st"> </span>Yretained</a></code></pre></div>
 <p><strong>(a)</strong> Here is the code for the expected claim amounts.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="C-PortMgt.html#cb110-1"></a><span class="co"># Expected Claim Amounts</span></span>
-<span id="cb110-2"><a href="C-PortMgt.html#cb110-2"></a>ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Yretained),<span class="kw">mean</span>(Yinsurer),<span class="kw">mean</span>(X))))</span>
-<span id="cb110-3"><a href="C-PortMgt.html#cb110-3"></a><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb110-4"><a href="C-PortMgt.html#cb110-4"></a><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1"><span class="co"># Expected Claim Amounts</span></a>
+<a class="sourceLine" id="cb110-2" title="2">ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Yretained),<span class="kw">mean</span>(Yinsurer),<span class="kw">mean</span>(X))))</a>
+<a class="sourceLine" id="cb110-3" title="3"><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb110-4" title="4"><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</a></code></pre></div>
 <pre><code>     Retained Insurer   Total
 [1,]   269.05 5274.41 5543.46</code></pre>
 <p><strong>(b)</strong> Here is the code for the quantiles.</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="C-PortMgt.html#cb112-1"></a><span class="co"># Quantiles</span></span>
-<span id="cb112-2"><a href="C-PortMgt.html#cb112-2"></a>quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</span>
-<span id="cb112-3"><a href="C-PortMgt.html#cb112-3"></a>  <span class="kw">quantile</span>(Yretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</span>
-<span id="cb112-4"><a href="C-PortMgt.html#cb112-4"></a>  <span class="kw">quantile</span>(Yinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</span>
-<span id="cb112-5"><a href="C-PortMgt.html#cb112-5"></a>  <span class="kw">quantile</span>(X       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</span>
-<span id="cb112-6"><a href="C-PortMgt.html#cb112-6"></a><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb112-7"><a href="C-PortMgt.html#cb112-7"></a><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1"><span class="co"># Quantiles</span></a>
+<a class="sourceLine" id="cb112-2" title="2">quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</a>
+<a class="sourceLine" id="cb112-3" title="3">  <span class="kw">quantile</span>(Yretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb112-4" title="4">  <span class="kw">quantile</span>(Yinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb112-5" title="5">  <span class="kw">quantile</span>(X       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</a>
+<a class="sourceLine" id="cb112-6" title="6"><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb112-7" title="7"><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</a></code></pre></div>
 <pre><code>             80%     90%     95%      99%
 Retained  300.00  300.00  300.00   300.00
 Insurer  6075.67 7399.80 9172.69 14859.02
 Total    6351.35 7675.04 9464.20 15159.02</code></pre>
 <p><strong>(c)</strong> Here is the code for the density plots of the retained, insurer, and total portfolio risk.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="C-PortMgt.html#cb114-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
-<span id="cb114-2"><a href="C-PortMgt.html#cb114-2"></a><span class="kw">plot</span>(<span class="kw">density</span>(Yretained), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">500</span>), <span class="dt">main=</span><span class="st">&quot;Retained Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss (Note the different horizontal scale)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Density (Note different vertical scale)&quot;</span>)</span>
-<span id="cb114-3"><a href="C-PortMgt.html#cb114-3"></a><span class="kw">plot</span>(<span class="kw">density</span>(Yinsurer), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)</span>
-<span id="cb114-4"><a href="C-PortMgt.html#cb114-4"></a><span class="kw">plot</span>(<span class="kw">density</span>(X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Total Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb114-2" title="2"><span class="kw">plot</span>(<span class="kw">density</span>(Yretained), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">500</span>), <span class="dt">main=</span><span class="st">&quot;Retained Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss (Note the different horizontal scale)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Density (Note different vertical scale)&quot;</span>)</a>
+<a class="sourceLine" id="cb114-3" title="3"><span class="kw">plot</span>(<span class="kw">density</span>(Yinsurer), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Insurer Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)</a>
+<a class="sourceLine" id="cb114-4" title="4"><span class="kw">plot</span>(<span class="kw">density</span>(X), <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">15000</span>), <span class="dt">main=</span><span class="st">&quot;Total Portfolio Risk&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Loss&quot;</span>)</a></code></pre></div>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-91-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>

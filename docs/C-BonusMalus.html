@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Experience Rating using Bonus-Malus | Loss Data Analytics</title>
   <meta name="description" content="Chapter 12 Experience Rating using Bonus-Malus | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Experience Rating using Bonus-Malus | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -311,9 +310,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -322,16 +321,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -340,9 +337,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -603,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
 <li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
@@ -798,7 +795,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
 <li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#S:ContinuousDistributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
@@ -1240,15 +1237,15 @@ claim-free years).</p>
 <p>We can use the left eigenvector of a transition matrix to calculate the
 stationary distribution. The following R program can be used to
 calculate the left eigenvector:</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="C-BonusMalus.html#cb142-1"></a><span class="co">#create transition matrix</span></span>
-<span id="cb142-2"><a href="C-BonusMalus.html#cb142-2"></a>entries=<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb142-3"><a href="C-BonusMalus.html#cb142-3"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb142-4"><a href="C-BonusMalus.html#cb142-4"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb142-5"><a href="C-BonusMalus.html#cb142-5"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,</span>
-<span id="cb142-6"><a href="C-BonusMalus.html#cb142-6"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,</span>
-<span id="cb142-7"><a href="C-BonusMalus.html#cb142-7"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>)</span>
-<span id="cb142-8"><a href="C-BonusMalus.html#cb142-8"></a>TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</span>
-<span id="cb142-9"><a href="C-BonusMalus.html#cb142-9"></a>TP</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1"><span class="co">#create transition matrix</span></a>
+<a class="sourceLine" id="cb142-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,</a>
+<a class="sourceLine" id="cb142-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>)</a>
+<a class="sourceLine" id="cb142-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb142-9" title="9">TP</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]  0.1  0.9  0.0  0.0  0.0  0.0
 ## [2,]  0.1  0.0  0.9  0.0  0.0  0.0
@@ -1256,9 +1253,9 @@ calculate the left eigenvector:</p>
 ## [4,]  0.1  0.0  0.0  0.0  0.9  0.0
 ## [5,]  0.1  0.0  0.0  0.0  0.0  0.9
 ## [6,]  0.1  0.0  0.0  0.0  0.0  0.9</code></pre>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="C-BonusMalus.html#cb144-1"></a><span class="co">#calculate left eigenvector</span></span>
-<span id="cb144-2"><a href="C-BonusMalus.html#cb144-2"></a><span class="co">#hint -- left eigenvector is the same as right eigenvector of transpose of transition matrix</span></span>
-<span id="cb144-3"><a href="C-BonusMalus.html#cb144-3"></a><span class="kw">eigen</span>(<span class="kw">t</span>(TP))</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="co">#calculate left eigenvector</span></a>
+<a class="sourceLine" id="cb144-2" title="2"><span class="co">#hint -- left eigenvector is the same as right eigenvector of transpose of transition matrix</span></a>
+<a class="sourceLine" id="cb144-3" title="3"><span class="kw">eigen</span>(<span class="kw">t</span>(TP))</a></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1]  1.0000000000+0.0000000000i -0.0004880382+0.0003546725i
@@ -1294,9 +1291,9 @@ calculate the left eigenvector:</p>
 ## [4,] -0.0001468014877601952+0.0004505247500856750i  0.0004736602551468477+0i
 ## [5,] -0.7070333538878578183-0.0004507115465249567i  0.7068696732221422252+0i
 ## [6,]  0.7071798984882565753+0.0000000000000000000i -0.7073436510810596767+0i</code></pre>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="C-BonusMalus.html#cb146-1"></a><span class="co">#divide entry of first column by sum of elements, so that entries sum to 1</span></span>
-<span id="cb146-2"><a href="C-BonusMalus.html#cb146-2"></a><span class="co">#provide answers in 4 decimal places</span></span>
-<span id="cb146-3"><a href="C-BonusMalus.html#cb146-3"></a><span class="kw">round</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]),<span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1"><span class="co">#divide entry of first column by sum of elements, so that entries sum to 1</span></a>
+<a class="sourceLine" id="cb146-2" title="2"><span class="co">#provide answers in 4 decimal places</span></a>
+<a class="sourceLine" id="cb146-3" title="3"><span class="kw">round</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]),<span class="dv">4</span>)</a></code></pre></div>
 <pre><code>## [1] 0.1000+0i 0.0900+0i 0.0810+0i 0.0729+0i 0.0656+0i 0.5905+0i</code></pre>
 <p><strong><em>Example 4</em></strong></p>
 <p><em>Find the stationary distribution for the NCD system in Brazil assuming that the number of successive years of claims is Poisson distributed with parameter</em> <span class="math inline">\(\lambda = 0.10\)</span>.</p>
@@ -1423,15 +1420,15 @@ using the <span class="math inline">\(n\)</span>th power of transition matrix
 <p>The following R program can be used to find the premium in the <em>n-</em>th
 year and the premiums in 20 years under the NCD system in Malaysia (to
 find the solution in Example 6).</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="C-BonusMalus.html#cb148-1"></a><span class="co">#create transition matrix</span></span>
-<span id="cb148-2"><a href="C-BonusMalus.html#cb148-2"></a>entries=<span class="kw">c</span>(<span class="fl">0.0952</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb148-3"><a href="C-BonusMalus.html#cb148-3"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb148-4"><a href="C-BonusMalus.html#cb148-4"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb148-5"><a href="C-BonusMalus.html#cb148-5"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,</span>
-<span id="cb148-6"><a href="C-BonusMalus.html#cb148-6"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,</span>
-<span id="cb148-7"><a href="C-BonusMalus.html#cb148-7"></a><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>)</span>
-<span id="cb148-8"><a href="C-BonusMalus.html#cb148-8"></a>TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</span>
-<span id="cb148-9"><a href="C-BonusMalus.html#cb148-9"></a>TP</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1"><span class="co">#create transition matrix</span></a>
+<a class="sourceLine" id="cb148-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.0952</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,</a>
+<a class="sourceLine" id="cb148-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>)</a>
+<a class="sourceLine" id="cb148-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb148-9" title="9">TP</a></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,] 0.0952 0.9048 0.0000 0.0000 0.0000 0.0000
 ## [2,] 0.0952 0.0000 0.9048 0.0000 0.0000 0.0000
@@ -1439,14 +1436,14 @@ find the solution in Example 6).</p>
 ## [4,] 0.0952 0.0000 0.0000 0.0000 0.9048 0.0000
 ## [5,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048
 ## [6,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048</code></pre>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="C-BonusMalus.html#cb150-1"></a><span class="co">#create function for nth power of square matrix</span></span>
-<span id="cb150-2"><a href="C-BonusMalus.html#cb150-2"></a>powA =<span class="st"> </span><span class="cf">function</span>(n) { </span>
-<span id="cb150-3"><a href="C-BonusMalus.html#cb150-3"></a>  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">1</span>) <span class="kw">return</span> (TP)</span>
-<span id="cb150-4"><a href="C-BonusMalus.html#cb150-4"></a>  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">2</span>) <span class="kw">return</span> (TP<span class="op">%*%</span>TP)</span>
-<span id="cb150-5"><a href="C-BonusMalus.html#cb150-5"></a>  <span class="cf">if</span> (n<span class="op">&gt;</span><span class="dv">2</span>) <span class="kw">return</span> ( TP<span class="op">%*%</span><span class="kw">powA</span>(n<span class="dv">-1</span>)) }</span>
-<span id="cb150-6"><a href="C-BonusMalus.html#cb150-6"></a></span>
-<span id="cb150-7"><a href="C-BonusMalus.html#cb150-7"></a><span class="co">#example for n=3</span></span>
-<span id="cb150-8"><a href="C-BonusMalus.html#cb150-8"></a><span class="kw">powA</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1"><span class="co">#create function for nth power of square matrix</span></a>
+<a class="sourceLine" id="cb150-2" title="2">powA =<span class="st"> </span><span class="cf">function</span>(n) { </a>
+<a class="sourceLine" id="cb150-3" title="3">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">1</span>) <span class="kw">return</span> (TP)</a>
+<a class="sourceLine" id="cb150-4" title="4">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">2</span>) <span class="kw">return</span> (TP<span class="op">%*%</span>TP)</a>
+<a class="sourceLine" id="cb150-5" title="5">  <span class="cf">if</span> (n<span class="op">&gt;</span><span class="dv">2</span>) <span class="kw">return</span> ( TP<span class="op">%*%</span><span class="kw">powA</span>(n<span class="dv">-1</span>)) }</a>
+<a class="sourceLine" id="cb150-6" title="6"></a>
+<a class="sourceLine" id="cb150-7" title="7"><span class="co">#example for n=3</span></a>
+<a class="sourceLine" id="cb150-8" title="8"><span class="kw">powA</span>(<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##        [,1]       [,2]       [,3]      [,4]      [,5]      [,6]
 ## [1,] 0.0952 0.08613696 0.07793672 0.7407263 0.0000000 0.0000000
 ## [2,] 0.0952 0.08613696 0.07793672 0.0000000 0.7407263 0.0000000
@@ -1454,24 +1451,24 @@ find the solution in Example 6).</p>
 ## [4,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263
 ## [5,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263
 ## [6,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263</code></pre>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="C-BonusMalus.html#cb152-1"></a><span class="co">#define NCD percentage</span></span>
-<span id="cb152-2"><a href="C-BonusMalus.html#cb152-2"></a>NCD=<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">75</span>,.<span class="dv">7</span>,.<span class="dv">6167</span>,.<span class="dv">55</span>,.<span class="dv">45</span>)</span>
-<span id="cb152-3"><a href="C-BonusMalus.html#cb152-3"></a></span>
-<span id="cb152-4"><a href="C-BonusMalus.html#cb152-4"></a><span class="co">#create function for premium in nth year</span></span>
-<span id="cb152-5"><a href="C-BonusMalus.html#cb152-5"></a>p=<span class="kw">numeric</span>(<span class="dv">0</span>)</span>
-<span id="cb152-6"><a href="C-BonusMalus.html#cb152-6"></a>prem=<span class="cf">function</span>(n){</span>
-<span id="cb152-7"><a href="C-BonusMalus.html#cb152-7"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(NCD))</span>
-<span id="cb152-8"><a href="C-BonusMalus.html#cb152-8"></a>  p[j]=<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])</span>
-<span id="cb152-9"><a href="C-BonusMalus.html#cb152-9"></a>  <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">sum</span>(p<span class="op">*</span>NCD)}</span>
-<span id="cb152-10"><a href="C-BonusMalus.html#cb152-10"></a></span>
-<span id="cb152-11"><a href="C-BonusMalus.html#cb152-11"></a><span class="co">#example for n=3</span></span>
-<span id="cb152-12"><a href="C-BonusMalus.html#cb152-12"></a><span class="kw">prem</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" title="1"><span class="co">#define NCD percentage</span></a>
+<a class="sourceLine" id="cb152-2" title="2">NCD=<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">75</span>,.<span class="dv">7</span>,.<span class="dv">6167</span>,.<span class="dv">55</span>,.<span class="dv">45</span>)</a>
+<a class="sourceLine" id="cb152-3" title="3"></a>
+<a class="sourceLine" id="cb152-4" title="4"><span class="co">#create function for premium in nth year</span></a>
+<a class="sourceLine" id="cb152-5" title="5">p=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb152-6" title="6">prem=<span class="cf">function</span>(n){</a>
+<a class="sourceLine" id="cb152-7" title="7">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(NCD))</a>
+<a class="sourceLine" id="cb152-8" title="8">  p[j]=<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])</a>
+<a class="sourceLine" id="cb152-9" title="9">  <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">sum</span>(p<span class="op">*</span>NCD)}</a>
+<a class="sourceLine" id="cb152-10" title="10"></a>
+<a class="sourceLine" id="cb152-11" title="11"><span class="co">#example for n=3</span></a>
+<a class="sourceLine" id="cb152-12" title="12"><span class="kw">prem</span>(<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## [1] 58.06106</code></pre>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="C-BonusMalus.html#cb154-1"></a><span class="co">#provide premiums for 20 years</span></span>
-<span id="cb154-2"><a href="C-BonusMalus.html#cb154-2"></a>premium=<span class="kw">numeric</span>(<span class="dv">0</span>)</span>
-<span id="cb154-3"><a href="C-BonusMalus.html#cb154-3"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</span>
-<span id="cb154-4"><a href="C-BonusMalus.html#cb154-4"></a>premium[n]=<span class="kw">prem</span>(n)</span>
-<span id="cb154-5"><a href="C-BonusMalus.html#cb154-5"></a><span class="kw">round</span>(premium,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" title="1"><span class="co">#provide premiums for 20 years</span></a>
+<a class="sourceLine" id="cb154-2" title="2">premium=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb154-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb154-4" title="4">premium[n]=<span class="kw">prem</span>(n)</a>
+<a class="sourceLine" id="cb154-5" title="5"><span class="kw">round</span>(premium,<span class="dv">2</span>)</a></code></pre></div>
 <pre><code>##  [1] 62.55 59.87 58.06 57.06 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58
 ## [13] 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58</code></pre>
 <p><strong><em>Example 7</em></strong></p>
@@ -1589,8 +1586,8 @@ transitions).</p>
 <p>The following R program can be used to calculate the total variation in
 the <span class="math inline">\(n\)</span>th year, and the total variations (convergence rates) in
 20 years under the NCD system in Malaysia (the solution in Example 8).</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="C-BonusMalus.html#cb156-1"></a><span class="co">#transition matrix</span></span>
-<span id="cb156-2"><a href="C-BonusMalus.html#cb156-2"></a>TP</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" title="1"><span class="co">#transition matrix</span></a>
+<a class="sourceLine" id="cb156-2" title="2">TP</a></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,] 0.0952 0.9048 0.0000 0.0000 0.0000 0.0000
 ## [2,] 0.0952 0.0000 0.9048 0.0000 0.0000 0.0000
@@ -1598,26 +1595,26 @@ the <span class="math inline">\(n\)</span>th year, and the total variations (con
 ## [4,] 0.0952 0.0000 0.0000 0.0000 0.9048 0.0000
 ## [5,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048
 ## [6,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="C-BonusMalus.html#cb158-1"></a><span class="co"># stationary probability</span></span>
-<span id="cb158-2"><a href="C-BonusMalus.html#cb158-2"></a>SP=<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>])</span>
-<span id="cb158-3"><a href="C-BonusMalus.html#cb158-3"></a>SP</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" title="1"><span class="co"># stationary probability</span></a>
+<a class="sourceLine" id="cb158-2" title="2">SP=<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb158-3" title="3">SP</a></code></pre></div>
 <pre><code>## [1] 0.09520000+0i 0.08613696+0i 0.07793672+0i 0.07051715+0i 0.06380391+0i
 ## [6] 0.60640526+0i</code></pre>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="C-BonusMalus.html#cb160-1"></a><span class="co">#create function for total variation in nth year</span></span>
-<span id="cb160-2"><a href="C-BonusMalus.html#cb160-2"></a>TV=<span class="cf">function</span>(n)</span>
-<span id="cb160-3"><a href="C-BonusMalus.html#cb160-3"></a>{dif=<span class="kw">numeric</span>(<span class="dv">0</span>)</span>
-<span id="cb160-4"><a href="C-BonusMalus.html#cb160-4"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(SP))</span>
-<span id="cb160-5"><a href="C-BonusMalus.html#cb160-5"></a>dif[j]=<span class="kw">abs</span>(<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])<span class="op">-</span>SP[j])</span>
-<span id="cb160-6"><a href="C-BonusMalus.html#cb160-6"></a><span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(dif)}</span>
-<span id="cb160-7"><a href="C-BonusMalus.html#cb160-7"></a></span>
-<span id="cb160-8"><a href="C-BonusMalus.html#cb160-8"></a><span class="co">#example for n=1</span></span>
-<span id="cb160-9"><a href="C-BonusMalus.html#cb160-9"></a><span class="kw">TV</span>(<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" title="1"><span class="co">#create function for total variation in nth year</span></a>
+<a class="sourceLine" id="cb160-2" title="2">TV=<span class="cf">function</span>(n)</a>
+<a class="sourceLine" id="cb160-3" title="3">{dif=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb160-4" title="4"><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(SP))</a>
+<a class="sourceLine" id="cb160-5" title="5">dif[j]=<span class="kw">abs</span>(<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])<span class="op">-</span>SP[j])</a>
+<a class="sourceLine" id="cb160-6" title="6"><span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(dif)}</a>
+<a class="sourceLine" id="cb160-7" title="7"></a>
+<a class="sourceLine" id="cb160-8" title="8"><span class="co">#example for n=1</span></a>
+<a class="sourceLine" id="cb160-9" title="9"><span class="kw">TV</span>(<span class="dv">1</span>)</a></code></pre></div>
 <pre><code>## [1] 0.6096105</code></pre>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="C-BonusMalus.html#cb162-1"></a><span class="co">#provide total variations (convergence rate) in 20 years</span></span>
-<span id="cb162-2"><a href="C-BonusMalus.html#cb162-2"></a>tot.var=<span class="kw">numeric</span>(<span class="dv">0</span>)</span>
-<span id="cb162-3"><a href="C-BonusMalus.html#cb162-3"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</span>
-<span id="cb162-4"><a href="C-BonusMalus.html#cb162-4"></a>tot.var[n]=<span class="kw">TV</span>(n)</span>
-<span id="cb162-5"><a href="C-BonusMalus.html#cb162-5"></a><span class="kw">round</span>(tot.var,<span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" title="1"><span class="co">#provide total variations (convergence rate) in 20 years</span></a>
+<a class="sourceLine" id="cb162-2" title="2">tot.var=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb162-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb162-4" title="4">tot.var[n]=<span class="kw">TV</span>(n)</a>
+<a class="sourceLine" id="cb162-5" title="5"><span class="kw">round</span>(tot.var,<span class="dv">4</span>)</a></code></pre></div>
 <pre><code>##  [1] 0.6096 0.3941 0.2252 0.0958 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
 ## [11] 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</code></pre>
 <p><strong><em>Example 9</em></strong></p>
