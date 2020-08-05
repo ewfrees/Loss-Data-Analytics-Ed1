@@ -852,15 +852,19 @@ M_{X^*} (t) &=\frac{1}{1- {{\theta(1+\beta)}} t}.
 \end{aligned}$$
 
 From (`r chapnum`.2), we note that $S_N$ is also equivalent to a 2-point mixture of 0 and $X^{*}$. Specifically,
-\begin{eqnarray*}
-S_N &=&
+
+$$
+\begin{array}{cl}
+S_N &=
 \left\{
 \begin{array}{cl}
 0 & {\rm with~ probability ~Pr}(N^*=0) = 1/(1+\beta) \\
 Y^{*} & {\rm with~ probability ~Pr}(N^*=1) = \beta/(1+\beta) .
 \end{array}
-\right..
-\end{eqnarray*}
+\right.
+\end{array}
+$$
+
 The distribution function of $S_N$ is:
 \begin{eqnarray*}
 \Pr(S_N=0) &=& \frac{1}{1+\beta}\\
@@ -886,13 +890,13 @@ The last equality is derived by applying integration by parts $n-1$ times.
 For the aggregate loss distribution, we can interchange the order of summations in the second line below to get
 
 $$
-\begin{eqnarray*}
-F_{S}\left(s\right) &=& p_{0}+\sum_{n=1}^{\infty }p_n F_{X}^{\ast n}\left(s\right)\\
-&=& 1 - \sum_{n=1}^{\infty }p_n \sum_{j=0}^{n-1}\frac{1}{j!}
+\begin{array}{ll}
+F_{S}\left(s\right) &= p_{0}+\sum_{n=1}^{\infty }p_n F_{X}^{\ast n}\left(s\right)\\
+&= 1 - \sum_{n=1}^{\infty }p_n \sum_{j=0}^{n-1}\frac{1}{j!}
 \left( \frac{s}{\theta}\right)^j e^{-s/\theta }\\
-&=& 1-e^{-s/\theta}\sum_{j=0}^{\infty} \frac{1}{j!}
+&= 1-e^{-s/\theta}\sum_{j=0}^{\infty} \frac{1}{j!}
 \left( \frac{s}{\theta} \right)^j \overline{P}_j
-\end{eqnarray*}
+\end{array}
 $$
 
 where $\overline{P}_j =p_{j+1}+p_{j+2}+\cdots = \Pr (N>j)$ is the ``survival function'' of the claims count distribution. 

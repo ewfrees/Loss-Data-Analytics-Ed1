@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Aggregate Loss Models | Loss Data Analytics</title>
   <meta name="description" content="Chapter 5 Aggregate Loss Models | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Aggregate Loss Models | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -805,6 +805,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>19</b> Appendix E: Conventions for Notation</a><ul>
+<li class="chapter" data-level="19.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:General"><i class="fa fa-check"></i><b>19.1</b> General Conventions</a></li>
+<li class="chapter" data-level="19.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Abbreviations"><i class="fa fa-check"></i><b>19.2</b> Abbreviations</a></li>
+<li class="chapter" data-level="19.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:StatSymbols"><i class="fa fa-check"></i><b>19.3</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="19.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Symbols"><i class="fa fa-check"></i><b>19.4</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="19.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>19.5</b> Further Readings</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/OpenActTexts/Loss-Data-Analytics" target="blank">Loss Data Analytics on GitHub</a></li>
@@ -1568,17 +1575,19 @@ where
 P_{N^*} (z) &amp;=1+ \frac{\beta}{1+ \beta} (z-1),\\
 M_{X^*} (t) &amp;=\frac{1}{1- {{\theta(1+\beta)}} t}.
 \end{aligned}\]</span></p>
-<p>From (5.2), we note that <span class="math inline">\(S_N\)</span> is also equivalent to a 2-point mixture of 0 and <span class="math inline">\(X^{*}\)</span>. Specifically,
-<span class="math display">\[\begin{eqnarray*}
-S_N &amp;=&amp;
+<p>From (5.2), we note that <span class="math inline">\(S_N\)</span> is also equivalent to a 2-point mixture of 0 and <span class="math inline">\(X^{*}\)</span>. Specifically,</p>
+<p><span class="math display">\[
+\begin{array}{cl}
+S_N &amp;=
 \left\{
 \begin{array}{cl}
 0 &amp; {\rm with~ probability ~Pr}(N^*=0) = 1/(1+\beta) \\
 Y^{*} &amp; {\rm with~ probability ~Pr}(N^*=1) = \beta/(1+\beta) .
 \end{array}
-\right..
-\end{eqnarray*}\]</span>
-The distribution function of <span class="math inline">\(S_N\)</span> is:
+\right.
+\end{array}
+\]</span></p>
+<p>The distribution function of <span class="math inline">\(S_N\)</span> is:
 <span class="math display">\[\begin{eqnarray*}
 \Pr(S_N=0) &amp;=&amp; \frac{1}{1+\beta}\\
 \Pr(S_N&gt;s) &amp;=&amp; \Pr(X^*&gt;s) =\frac{\beta}{1+\beta} \exp\left( -\frac{s}{
@@ -1599,13 +1608,13 @@ F_{X}^{\ast n}(s) &amp;=&amp; \Pr (S_n \le s) = \int_{0}^{s} \frac{1}{\Gamma(n)\
 The last equality is derived by applying integration by parts <span class="math inline">\(n-1\)</span> times.</p>
 <p>For the aggregate loss distribution, we can interchange the order of summations in the second line below to get</p>
 <p><span class="math display">\[
-\begin{eqnarray*}
-F_{S}\left(s\right) &amp;=&amp; p_{0}+\sum_{n=1}^{\infty }p_n F_{X}^{\ast n}\left(s\right)\\
-&amp;=&amp; 1 - \sum_{n=1}^{\infty }p_n \sum_{j=0}^{n-1}\frac{1}{j!}
+\begin{array}{ll}
+F_{S}\left(s\right) &amp;= p_{0}+\sum_{n=1}^{\infty }p_n F_{X}^{\ast n}\left(s\right)\\
+&amp;= 1 - \sum_{n=1}^{\infty }p_n \sum_{j=0}^{n-1}\frac{1}{j!}
 \left( \frac{s}{\theta}\right)^j e^{-s/\theta }\\
-&amp;=&amp; 1-e^{-s/\theta}\sum_{j=0}^{\infty} \frac{1}{j!}
+&amp;= 1-e^{-s/\theta}\sum_{j=0}^{\infty} \frac{1}{j!}
 \left( \frac{s}{\theta} \right)^j \overline{P}_j
-\end{eqnarray*}
+\end{array}
 \]</span></p>
 <p>where <span class="math inline">\(\overline{P}_j =p_{j+1}+p_{j+2}+\cdots = \Pr (N&gt;j)\)</span> is the ``survival function’’ of the claims count distribution.</p>
 <hr />

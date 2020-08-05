@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Simulation and Resampling | Loss Data Analytics</title>
   <meta name="description" content="Chapter 6 Simulation and Resampling | Loss Data Analytics is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Simulation and Resampling | Loss Data Analytics" />
   <meta property="og:type" content="book" />
@@ -805,6 +805,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>19</b> Appendix E: Conventions for Notation</a><ul>
+<li class="chapter" data-level="19.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:General"><i class="fa fa-check"></i><b>19.1</b> General Conventions</a></li>
+<li class="chapter" data-level="19.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Abbreviations"><i class="fa fa-check"></i><b>19.2</b> Abbreviations</a></li>
+<li class="chapter" data-level="19.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:StatSymbols"><i class="fa fa-check"></i><b>19.3</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="19.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Symbols"><i class="fa fa-check"></i><b>19.4</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="19.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>19.5</b> Further Readings</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/OpenActTexts/Loss-Data-Analytics" target="blank">Loss Data Analytics on GitHub</a></li>
@@ -1090,7 +1097,7 @@ given as:</p>
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right"><span class="math inline">\(~~~~~~~~~~\)</span></th>
 <th align="right"><span class="math inline">\(~~~~~~~~~~\)</span></th>
 <th align="right"><span class="math inline">\(~~~~~~~~~~\)</span></th>
@@ -1100,7 +1107,7 @@ given as:</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Time</td>
+<td align="left">Time</td>
 <td align="right">1.0</td>
 <td align="right">2.0</td>
 <td align="right">3.0</td>
@@ -1108,7 +1115,7 @@ given as:</p>
 <td align="right">5.0</td>
 </tr>
 <tr class="even">
-<td>Probability</td>
+<td align="left">Probability</td>
 <td align="right">0.1</td>
 <td align="right">0.2</td>
 <td align="right">0.1</td>
@@ -1116,7 +1123,7 @@ given as:</p>
 <td align="right">0.2</td>
 </tr>
 <tr class="odd">
-<td>Distribution Function <span class="math inline">\(F(x)\)</span></td>
+<td align="left">Distribution Function <span class="math inline">\(F(x)\)</span></td>
 <td align="right">0.1</td>
 <td align="right">0.3</td>
 <td align="right">0.4</td>
@@ -1389,19 +1396,19 @@ Table 6.1. Summary of Four Choices to Approximate <span class="math inline">\(\P
 </td>
 </tr>
 <tr>
-<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
 Estimator
 </th>
-<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
 Definition
 </th>
-<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
 Support Function
 </th>
-<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
 Estimate
 </th>
-<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
 Standard Error
 </th>
 </tr>
@@ -1687,6 +1694,14 @@ Figure 6.8: Inverse of an Empirical Distribution Function
 <div id="table-6.3.-bootstrap-estimates-of-ler-at-selected-deductibles" class="section level5 unnumbered">
 <h5>Table 6.3. Bootstrap Estimates of LER at Selected Deductibles</h5>
 <table>
+<colgroup>
+<col width="6%" />
+<col width="13%" />
+<col width="17%" />
+<col width="15%" />
+<col width="23%" />
+<col width="23%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">d</th>
@@ -1914,6 +1929,18 @@ In this expression, the denominator counts the number of observations that excee
 <div id="table-6.4.-bootstrap-estimates-of-quantiles-at-selected-fractions" class="section level5 unnumbered">
 <h5>Table 6.4. Bootstrap Estimates of Quantiles at Selected Fractions</h5>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="6%" />
+<col width="8%" />
+<col width="7%" />
+<col width="11%" />
+<col width="11%" />
+<col width="10%" />
+<col width="10%" />
+<col width="13%" />
+<col width="14%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Fraction</th>
@@ -2033,6 +2060,18 @@ and 7000, respectively. <a href="#tab:64">Table 6.4</a> also shows bootstrap est
 <div id="table-6.5.-bootstrap-estimates-of-tvar-at-selected-risk-levels" class="section level5 unnumbered">
 <h5>Table 6.5. Bootstrap Estimates of TVaR at Selected Risk Levels</h5>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="6%" />
+<col width="8%" />
+<col width="7%" />
+<col width="11%" />
+<col width="11%" />
+<col width="10%" />
+<col width="10%" />
+<col width="13%" />
+<col width="14%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Fraction</th>
@@ -2189,6 +2228,14 @@ Figure 6.11: Comparision of Nonparametric and Parametric Bootstrap Distributions
 <div id="table-6.6.-bootstrap-kaplan-meier-estimates-of-quantiles-at-selected-fractions" class="section level5 unnumbered">
 <h5>Table 6.6. Bootstrap Kaplan-Meier Estimates of Quantiles at Selected Fractions</h5>
 <table>
+<colgroup>
+<col width="10%" />
+<col width="16%" />
+<col width="16%" />
+<col width="14%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Fraction</th>
@@ -2388,6 +2435,16 @@ s_{jack} =\sqrt{\frac{n-1}{n}\sum_{i=1}^n \left(\widehat{\theta}_{-i} -\overline
 <div id="table-6.7.-jackknife-estimates-of-ler-at-selected-deductibles" class="section level5 unnumbered">
 <h5>Table 6.7. Jackknife Estimates of LER at Selected Deductibles</h5>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="10%" />
+<col width="12%" />
+<col width="10%" />
+<col width="12%" />
+<col width="10%" />
+<col width="19%" />
+<col width="19%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">d</th>
