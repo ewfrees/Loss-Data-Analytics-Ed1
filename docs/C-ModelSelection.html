@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -310,9 +311,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -321,14 +322,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -337,9 +340,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -600,7 +603,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></a></li>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
 <li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
@@ -795,7 +798,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
 <li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#S:ContinuousDistributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
@@ -804,13 +807,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.2.6" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#distributions-with-finite-support"><i class="fa fa-check"></i><b>18.2.6</b> Distributions with Finite Support</a></li>
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
-</ul></li>
-<li class="chapter" data-level="19" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>19</b> Appendix E: Conventions for Notation</a><ul>
-<li class="chapter" data-level="19.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:General"><i class="fa fa-check"></i><b>19.1</b> General Conventions</a></li>
-<li class="chapter" data-level="19.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Abbreviations"><i class="fa fa-check"></i><b>19.2</b> Abbreviations</a></li>
-<li class="chapter" data-level="19.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:StatSymbols"><i class="fa fa-check"></i><b>19.3</b> Common Statistical Symbols and Operators</a></li>
-<li class="chapter" data-level="19.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Symbols"><i class="fa fa-check"></i><b>19.4</b> Common Mathematical Symbols and Functions</a></li>
-<li class="chapter" data-level="19.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>19.5</b> Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -933,9 +929,9 @@ Figure 4.1: Empirical Distribution Function of a Toy Example
 <a id="displayCode.Toy.4f" href="javascript:togglecode('toggleCode.Toy.4f','displayCode.Toy.4f');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.Toy.4f" style="display: none">
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">(xExample &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">15</span>,<span class="dv">3</span>),<span class="dv">20</span>,<span class="kw">rep</span>(<span class="dv">23</span>,<span class="dv">4</span>),<span class="dv">30</span>))</a>
-<a class="sourceLine" id="cb17-2" title="2">PercentilesxExample &lt;-<span class="st"> </span><span class="kw">ecdf</span>(xExample)</a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="kw">plot</span>(PercentilesxExample, <span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="C-ModelSelection.html#cb17-1"></a>(xExample &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="kw">rep</span>(<span class="dv">15</span>,<span class="dv">3</span>),<span class="dv">20</span>,<span class="kw">rep</span>(<span class="dv">23</span>,<span class="dv">4</span>),<span class="dv">30</span>))</span>
+<span id="cb17-2"><a href="C-ModelSelection.html#cb17-2"></a>PercentilesxExample &lt;-<span class="st"> </span><span class="kw">ecdf</span>(xExample)</span>
+<span id="cb17-3"><a href="C-ModelSelection.html#cb17-3"></a><span class="kw">plot</span>(PercentilesxExample, <span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <hr />
@@ -973,7 +969,7 @@ Determine quantiles corresponding to the 20th, 50th, and 95th percentiles.</p>
 <div id="toggleExample.4.1.2" style="display: none">
 <p><strong>Solution</strong>.
 Consider Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a>. The case of <span class="math inline">\(q=0.20\)</span> corresponds to the middle panel of Figure Figure <a href="C-ModelSelection.html#fig:Quantile2">4.3</a>, so the 20th percentile is 15. The case of <span class="math inline">\(q=0.50\)</span> corresponds to the right panel, so the median is any number between 20 and 23 inclusive. Many software packages use the average 21.5 (e.g. <code>R</code>, as seen below). For the 95th percentile, the solution is 30. We can see from Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a> that 30 also corresponds to the 99th and the 99.99th percentiles.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">quantile</span>(xExample, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>), <span class="dt">type=</span><span class="dv">6</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="C-ModelSelection.html#cb18-1"></a><span class="kw">quantile</span>(xExample, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>), <span class="dt">type=</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>##  20%  50%  95% 
 ## 15.0 21.5 30.0</code></pre>
 </div>
@@ -1064,16 +1060,16 @@ Figure 4.4: Histogram of Logarithmic Property Claims with Superimposed Kernel De
 <a id="displayCode.kpdf" href="javascript:togglecode('toggleCode.kpdf','displayCode.kpdf');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.kpdf" style="display: none">
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">ClaimLev &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CLAIMLEVEL.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>); <span class="co">#nrow(ClaimLev); # 6258</span></a>
-<a class="sourceLine" id="cb20-2" title="2">ClaimData&lt;-<span class="kw">subset</span>(ClaimLev,Year<span class="op">==</span><span class="dv">2010</span>);     <span class="co">#2010 subset</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="co">#Density Comparison</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="kw">hist</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">35</span>),<span class="dt">xlab=</span><span class="st">&quot;Log Expenditures&quot;</span>, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>)</a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim)), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="fl">2.5</span>)</a>
-<a class="sourceLine" id="cb20-6" title="6"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span><span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span>.<span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb20-8" title="8"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;b=0.3255 (default)&quot;</span>, <span class="st">&quot;b=0.1&quot;</span>, <span class="st">&quot;b=1.0&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">lwd=</span><span class="kw">c</span>(<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb20-9" title="9">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">cex=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb20-10" title="10"><span class="co">#density(log(ClaimData$Claim))$bw   ##default bandwidth</span></a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="C-ModelSelection.html#cb20-1"></a>ClaimLev &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CLAIMLEVEL.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>); <span class="co">#nrow(ClaimLev); # 6258</span></span>
+<span id="cb20-2"><a href="C-ModelSelection.html#cb20-2"></a>ClaimData&lt;-<span class="kw">subset</span>(ClaimLev,Year<span class="op">==</span><span class="dv">2010</span>);     <span class="co">#2010 subset</span></span>
+<span id="cb20-3"><a href="C-ModelSelection.html#cb20-3"></a><span class="co">#Density Comparison</span></span>
+<span id="cb20-4"><a href="C-ModelSelection.html#cb20-4"></a><span class="kw">hist</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">35</span>),<span class="dt">xlab=</span><span class="st">&quot;Log Expenditures&quot;</span>, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb20-5"><a href="C-ModelSelection.html#cb20-5"></a><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim)), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="fl">2.5</span>)</span>
+<span id="cb20-6"><a href="C-ModelSelection.html#cb20-6"></a><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span><span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb20-7"><a href="C-ModelSelection.html#cb20-7"></a><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span>.<span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
+<span id="cb20-8"><a href="C-ModelSelection.html#cb20-8"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;b=0.3255 (default)&quot;</span>, <span class="st">&quot;b=0.1&quot;</span>, <span class="st">&quot;b=1.0&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">lwd=</span><span class="kw">c</span>(<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">1</span>),</span>
+<span id="cb20-9"><a href="C-ModelSelection.html#cb20-9"></a>       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">cex=</span><span class="dv">1</span>)</span>
+<span id="cb20-10"><a href="C-ModelSelection.html#cb20-10"></a><span class="co">#density(log(ClaimData$Claim))$bw   ##default bandwidth</span></span></code></pre></div>
 </div>
 <hr />
 <p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as</p>
@@ -1899,12 +1895,12 @@ Figure 4.14: Kaplan-Meier Estimate of the Survival Function for Bodily Injury Cl
 <a id="displayCode.KaplanMeier.4f" href="javascript:togglecode('toggleCode.KaplanMeier.4f','displayCode.KaplanMeier.4f');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.KaplanMeier.4f" style="display: none">
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(survival)                <span class="co"># for Surv(), survfit()</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="co">#BIData &lt;- read.csv(&quot;Data/DerrigResampling.csv&quot;, header =T)</span></a>
-<a class="sourceLine" id="cb21-3" title="3">BIData<span class="op">$</span>UnCensored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&lt;</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)</a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="co">## KM estimate</span></a>
-<a class="sourceLine" id="cb21-5" title="5">KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)</a>
-<a class="sourceLine" id="cb21-6" title="6"><span class="kw">plot</span>(KM0, <span class="dt">conf.int=</span><span class="ot">FALSE</span>, <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Kaplan Meier Survival&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="C-ModelSelection.html#cb21-1"></a><span class="kw">library</span>(survival)                <span class="co"># for Surv(), survfit()</span></span>
+<span id="cb21-2"><a href="C-ModelSelection.html#cb21-2"></a><span class="co">#BIData &lt;- read.csv(&quot;Data/DerrigResampling.csv&quot;, header =T)</span></span>
+<span id="cb21-3"><a href="C-ModelSelection.html#cb21-3"></a>BIData<span class="op">$</span>UnCensored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&lt;</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)</span>
+<span id="cb21-4"><a href="C-ModelSelection.html#cb21-4"></a><span class="co">## KM estimate</span></span>
+<span id="cb21-5"><a href="C-ModelSelection.html#cb21-5"></a>KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)</span>
+<span id="cb21-6"><a href="C-ModelSelection.html#cb21-6"></a><span class="kw">plot</span>(KM0, <span class="dt">conf.int=</span><span class="ot">FALSE</span>, <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Kaplan Meier Survival&quot;</span>)</span></code></pre></div>
 </div>
 <hr />
 <p><strong>Right-Censored, Left-Truncated Empirical Distribution Function.</strong>

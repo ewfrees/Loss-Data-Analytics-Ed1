@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -310,9 +311,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -321,14 +322,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -337,9 +340,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -600,7 +603,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></a></li>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
 <li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
@@ -795,7 +798,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
 <li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#S:ContinuousDistributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
@@ -804,13 +807,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.2.6" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#distributions-with-finite-support"><i class="fa fa-check"></i><b>18.2.6</b> Distributions with Finite Support</a></li>
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
-</ul></li>
-<li class="chapter" data-level="19" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>19</b> Appendix E: Conventions for Notation</a><ul>
-<li class="chapter" data-level="19.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:General"><i class="fa fa-check"></i><b>19.1</b> General Conventions</a></li>
-<li class="chapter" data-level="19.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Abbreviations"><i class="fa fa-check"></i><b>19.2</b> Abbreviations</a></li>
-<li class="chapter" data-level="19.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:StatSymbols"><i class="fa fa-check"></i><b>19.3</b> Common Statistical Symbols and Operators</a></li>
-<li class="chapter" data-level="19.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Symbols"><i class="fa fa-check"></i><b>19.4</b> Common Mathematical Symbols and Functions</a></li>
-<li class="chapter" data-level="19.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>19.5</b> Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -970,12 +966,13 @@ The setup <a href="C-RiskClass.html#eq:log-lin-mu">(8.4)</a> and <a href="C-Risk
 \tag{8.7}
 \]</span></p>
 <p>where <span class="math inline">\(x_2\)</span> is the second indicator variable with</p>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:dummy-x-2">\[
 x_2=
 \begin{cases}
      1 &amp; \text{if non-smoker}, \\
      0 &amp; \text{otherwise}.
 \end{cases}
+\tag{8.8}
 \]</span></p>
 <p>Then we have, from <a href="C-RiskClass.html#eq:log-lin-mu-2">(8.7)</a>,</p>
 <p><span class="math display" id="eq:ind-mu-2">\[
@@ -988,21 +985,22 @@ x_2=
      e^{\beta_1} &amp; \text{if smoker (level 1)}, \\
      e^{\beta_2} &amp; \text{if non-smoker (level 2)}.
 \end{cases}
-\tag{8.8}
+\tag{8.9}
 \]</span></p>
-<p>The numerical result of <a href="C-RiskClass.html#eq:ind-mu">(8.6)</a> is the same as <a href="C-RiskClass.html#eq:ind-mu-2">(8.8)</a> as all the coefficients are given as numbers in actual estimation, with the former setup more common in most texts; we also stick to the former.</p>
+<p>The numerical result of <a href="C-RiskClass.html#eq:ind-mu">(8.6)</a> is the same as <a href="C-RiskClass.html#eq:ind-mu-2">(8.9)</a> as all the coefficients are given as numbers in actual estimation, with the former setup more common in most texts; we also stick to the former.</p>
 <p>With this Poisson regression model we can easily understand how the coefficients <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are linked to the expected loss frequency in each level. According to <a href="C-RiskClass.html#eq:ind-mu">(8.6)</a>, the Poisson mean of the smokers, <span class="math inline">\(\mu_{(1)}\)</span>, is given by</p>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:no-label">\[
 \mu_{(1)}=e^{\beta_0+\beta_1}=\mu_{(2)} \,e^{\beta_1} \quad \text{or}\quad  \mu_{(1)}/\mu_{(2)} =e^{\beta_1}
+\tag{8.10}
 \]</span></p>
 <p>where <span class="math inline">\(\mu_{(2)}\)</span> is the Poisson mean for the non-smokers. This relation between the smokers and non-smokers suggests a useful way to compare the risks embedded in different levels of a given risk factor. That is, the proportional increase in the expected loss frequency of the smokers compared to that of the non-smokers is simply given by a multiplicative factor <span class="math inline">\(e^{\beta_1}\)</span>. Putting another way, if we set the expected loss frequency of the non-smokers as the base value, the expected loss frequency of the smokers is obtained by applying <span class="math inline">\(e^{\beta_1}\)</span> to the base value.</p>
 <p><strong>Dealing with multi-level case</strong><br />
 We can readily extend the two-level case to a multi-level one where <span class="math inline">\(l\)</span> different levels are involved for a single rating factor. For this we generally need <span class="math inline">\(l-1\)</span> indicator variables to formulate</p>
 <p><span class="math display" id="eq:log-lin-mu-1">\[
 \log \mu=\beta_0+\beta_1 x_1+\cdots+\beta_{l-1} x_{l-1},
-\tag{8.9}
+\tag{8.11}
 \]</span></p>
-<p>where <span class="math inline">\(x_k\)</span> is an indicator variable that takes 1 if the policy belongs to level <span class="math inline">\(k\)</span> and 0 otherwise, for <span class="math inline">\(k=1,2, \ldots, l-1\)</span>. By omitting the indicator variable associated with the last level in <a href="C-RiskClass.html#eq:log-lin-mu-1">(8.9)</a> we effectively chose level <span class="math inline">\(l\)</span> as the <a href="#" class="tooltip" style="color:green"><em>base case</em><span style="font-size:8pt">The categorical level chosen as the default with all dummy variable indicators of 0</span></a>, but this choice is arbitrary and does not matter numerically. The resulting Poisson parameter for policies in level <span class="math inline">\(k\)</span> then becomes, from <a href="C-RiskClass.html#eq:log-lin-mu-1">(8.9)</a>,</p>
+<p>where <span class="math inline">\(x_k\)</span> is an indicator variable that takes 1 if the policy belongs to level <span class="math inline">\(k\)</span> and 0 otherwise, for <span class="math inline">\(k=1,2, \ldots, l-1\)</span>. By omitting the indicator variable associated with the last level in <a href="C-RiskClass.html#eq:log-lin-mu-1">(8.11)</a> we effectively chose level <span class="math inline">\(l\)</span> as the <a href="#" class="tooltip" style="color:green"><em>base case</em><span style="font-size:8pt">The categorical level chosen as the default with all dummy variable indicators of 0</span></a>, but this choice is arbitrary and does not matter numerically. The resulting Poisson parameter for policies in level <span class="math inline">\(k\)</span> then becomes, from <a href="C-RiskClass.html#eq:log-lin-mu-1">(8.11)</a>,</p>
 <p><span class="math display">\[
 \mu= 
 \begin{cases}
@@ -1020,21 +1018,21 @@ This relative interpretation becomes more powerful when there are many risk fact
 <p>As done before, we describe the Poisson regression through its mean function. For this we first denote <span class="math inline">\(\mu_i\)</span> to be the expected loss count of the <span class="math inline">\(i\)</span>th policyholder under the Poisson specification <a href="C-RiskClass.html#eq:Pois-pmf">(8.1)</a>:</p>
 <p><span class="math display" id="eq:mui-glm">\[
 \mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n.
-\tag{8.10}
-\]</span></p>
-<p>The condition inside the expectation operation in <a href="C-RiskClass.html#eq:mui-glm">(8.10)</a> indicates that the loss frequency <span class="math inline">\(\mu_i\)</span> is the model output responding to the given set of risk factors or explanatory variables.
-In principle the conditional mean <span class="math inline">\(\mathrm{E~}{(y_i|\mathbf{ x}_i)}\)</span> in <a href="C-RiskClass.html#eq:mui-glm">(8.10)</a> can take different forms depending on how we specify the relationship between <span class="math inline">\(\mathbf{ x}\)</span> and <span class="math inline">\(y\)</span>. The standard choice for the Poisson regression is to adopt the exponential function, as we mentioned previously, so that</p>
-<p><span class="math display" id="eq:mean-ft-Pois">\[
-\mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}=e^{\mathbf{ x}^{\prime}_i\beta}, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n.
-\tag{8.11}
-\]</span></p>
-<p>Here <span class="math inline">\(\beta=(\beta_0, \ldots, \beta_k)^{\prime}\)</span> is the vector of coefficients so that <span class="math inline">\(\mathbf{ x}^{\prime}_i \boldsymbol \beta=\beta_0+\beta_1x_{i1} +\ldots+\beta_k x_{ik}\)</span>. The exponential function in <a href="C-RiskClass.html#eq:mean-ft-Pois">(8.11)</a> ensures that <span class="math inline">\(\mu_i &gt;0\)</span> for any set of rating factors <span class="math inline">\(\mathbf{ x}_i\)</span>. Often <a href="C-RiskClass.html#eq:mean-ft-Pois">(8.11)</a> is rewritten as a log linear form</p>
-<p><span class="math display" id="eq:mean-ft-Pois-2">\[
-\log \mu_i=\log \mathrm{E~}{(y_i|\mathbf{ x}_i)}=\mathbf{ x}^{\prime}_i \boldsymbol \beta, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n
 \tag{8.12}
 \]</span></p>
-<p>to reveal the relationship when the right side is set as the linear form, <span class="math inline">\(\mathbf{ x}^{\prime}_i\beta\)</span>. Again, we see that the mapping works well as both sides of <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.12)</a>, <span class="math inline">\(\log \mu_i\)</span> and <span class="math inline">\(\mathbf{ x}_i\beta\)</span>, can now cover the entire real values.
-This is the formulation of the Poisson regression, assuming that all policyholders have the same unit period of exposure. When the exposures differ among the policyholders, however, as is the case in most practical cases, we need to revise this formulation by adding exposure component as an additional term in <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.12)</a>.</p>
+<p>The condition inside the expectation operation in <a href="C-RiskClass.html#eq:mui-glm">(8.12)</a> indicates that the loss frequency <span class="math inline">\(\mu_i\)</span> is the model output responding to the given set of risk factors or explanatory variables.
+In principle the conditional mean <span class="math inline">\(\mathrm{E~}{(y_i|\mathbf{ x}_i)}\)</span> in <a href="C-RiskClass.html#eq:mui-glm">(8.12)</a> can take different forms depending on how we specify the relationship between <span class="math inline">\(\mathbf{ x}\)</span> and <span class="math inline">\(y\)</span>. The standard choice for the Poisson regression is to adopt the exponential function, as we mentioned previously, so that</p>
+<p><span class="math display" id="eq:mean-ft-Pois">\[
+\mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}=e^{\mathbf{ x}^{\prime}_i\beta}, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n.
+\tag{8.13}
+\]</span></p>
+<p>Here <span class="math inline">\(\beta=(\beta_0, \ldots, \beta_k)^{\prime}\)</span> is the vector of coefficients so that <span class="math inline">\(\mathbf{ x}^{\prime}_i \boldsymbol \beta=\beta_0+\beta_1x_{i1} +\ldots+\beta_k x_{ik}\)</span>. The exponential function in <a href="C-RiskClass.html#eq:mean-ft-Pois">(8.13)</a> ensures that <span class="math inline">\(\mu_i &gt;0\)</span> for any set of rating factors <span class="math inline">\(\mathbf{ x}_i\)</span>. Often <a href="C-RiskClass.html#eq:mean-ft-Pois">(8.13)</a> is rewritten as a log linear form</p>
+<p><span class="math display" id="eq:mean-ft-Pois-2">\[
+\log \mu_i=\log \mathrm{E~}{(y_i|\mathbf{ x}_i)}=\mathbf{ x}^{\prime}_i \boldsymbol \beta, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n
+\tag{8.14}
+\]</span></p>
+<p>to reveal the relationship when the right side is set as the linear form, <span class="math inline">\(\mathbf{ x}^{\prime}_i\beta\)</span>. Again, we see that the mapping works well as both sides of <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.14)</a>, <span class="math inline">\(\log \mu_i\)</span> and <span class="math inline">\(\mathbf{ x}_i\beta\)</span>, can now cover the entire real values.
+This is the formulation of the Poisson regression, assuming that all policyholders have the same unit period of exposure. When the exposures differ among the policyholders, however, as is the case in most practical cases, we need to revise this formulation by adding exposure component as an additional term in <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.14)</a>.</p>
 </div>
 <div id="incorporating-exposure" class="section level3">
 <h3><span class="header-section-number">8.2.3</span> Incorporating Exposure</h3>
@@ -1044,10 +1042,10 @@ This is the formulation of the Poisson regression, assuming that all policyholde
 <p>The Poisson distribution in <a href="C-RiskClass.html#eq:Pois-pmf">(8.1)</a> is parametrized via its mean. To understand the exposure, we alternatively parametrize the Poisson <em>pmf</em> in terms of the <em>rate</em> parameter <span class="math inline">\(\lambda\)</span>, based on the definition of the Poisson process:</p>
 <p><span class="math display" id="eq:Pois-pmf-2">\[
 \Pr(Y=y)=\frac{(\lambda t)^y e^{-\lambda t}}{y!},\qquad y=0,1,2, \ldots
-\tag{8.13}
+\tag{8.15}
 \]</span></p>
-<p>with <span class="math inline">\(\mathrm{E~}{(Y)}=\mathrm{Var~}{(Y)}=\lambda t\)</span>. Here <span class="math inline">\(\lambda\)</span> is known as the rate or intensity per unit period of the Poisson process and <span class="math inline">\(t\)</span> represents the length of time or <em>exposure</em>, a known constant value. For given <span class="math inline">\(\lambda\)</span> the Poisson distribution <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.13)</a> produces a larger expected loss count as the exposure <span class="math inline">\(t\)</span> gets larger.
-Clearly, <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.13)</a> reduces to <a href="C-RiskClass.html#eq:Pois-pmf">(8.1)</a> when <span class="math inline">\(t=1\)</span>, which means that the mean and the rate become the same for the unit exposure, the case we considered in the previous subsection.</p>
+<p>with <span class="math inline">\(\mathrm{E~}{(Y)}=\mathrm{Var~}{(Y)}=\lambda t\)</span>. Here <span class="math inline">\(\lambda\)</span> is known as the rate or intensity per unit period of the Poisson process and <span class="math inline">\(t\)</span> represents the length of time or <em>exposure</em>, a known constant value. For given <span class="math inline">\(\lambda\)</span> the Poisson distribution <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.15)</a> produces a larger expected loss count as the exposure <span class="math inline">\(t\)</span> gets larger.
+Clearly, <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.15)</a> reduces to <a href="C-RiskClass.html#eq:Pois-pmf">(8.1)</a> when <span class="math inline">\(t=1\)</span>, which means that the mean and the rate become the same for the unit exposure, the case we considered in the previous subsection.</p>
 <p>In principle, the exposure does not need to be measured in units of time and may represent different things depending the problem at hand. For example:</p>
 <ol style="list-style-type: decimal">
 <li>In health insurance, the rate may be the occurrence of a specific disease per 1,000 people and the exposure is the number of people considered in the unit of 1,000.</li>
@@ -1062,17 +1060,17 @@ Clearly, <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.13)</a> reduces to <a href=
 </ol>
 <p>Actuaries may be able to use different <a href="#" class="tooltip" style="color:green"><em>exposure bases</em><span style="font-size:8pt">The unit of measurement chosen to represent the exposure for a particular risk</span></a> for a given insurable loss. For example, in auto insurance, both the number of kilometers driven and the number of months covered by insurance can be used as exposure bases. Here the former is more accurate and useful in modelling the losses from car accidents, but more difficult to measure and manage for insurers. Thus, a good exposure base may not be the theoretically best one due to various practical constraints. As a rule, an exposure base must be easy to determine, accurately measurable, legally and socially acceptable, and free from potential manipulation by policyholders.</p>
 <p><strong>Incorporating exposure in Poisson regression</strong><br />
-As exposures affect the Poisson mean, constructing Poisson regressions requires us to carefully separate the rate and exposure in the modelling process. Focusing on the insurance context, let us denote the rate of the loss event of the <span class="math inline">\(i\)</span>th policyholder by <span class="math inline">\(\lambda_i\)</span>, the known exposure (the length of coverage) by <span class="math inline">\(m_i\)</span> and the expected loss count under the given exposure by <span class="math inline">\(\mu_i\)</span>. Then the Poisson regression formulation in <a href="C-RiskClass.html#eq:mean-ft-Pois">(8.11)</a> and <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.12)</a> should be revised in light of <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.13)</a> as</p>
+As exposures affect the Poisson mean, constructing Poisson regressions requires us to carefully separate the rate and exposure in the modelling process. Focusing on the insurance context, let us denote the rate of the loss event of the <span class="math inline">\(i\)</span>th policyholder by <span class="math inline">\(\lambda_i\)</span>, the known exposure (the length of coverage) by <span class="math inline">\(m_i\)</span> and the expected loss count under the given exposure by <span class="math inline">\(\mu_i\)</span>. Then the Poisson regression formulation in <a href="C-RiskClass.html#eq:mean-ft-Pois">(8.13)</a> and <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.14)</a> should be revised in light of <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.15)</a> as</p>
 <p><span class="math display" id="eq:mean-ft-Pois-6">\[
 \mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}=m_i \,\lambda_i=m_i \, e^{\mathbf{ x}^{\prime}_i \boldsymbol \beta}, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n,
-\tag{8.14}
+\tag{8.16}
 \]</span></p>
 <p>which gives</p>
 <p><span class="math display" id="eq:mean-ft-Pois-7">\[
 \log \mu_i=\log m_i+\mathbf{ x}^{\prime}_i \boldsymbol \beta, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots,
-\tag{8.15}
+\tag{8.17}
 \]</span></p>
-<p>Adding <span class="math inline">\(\log m_i\)</span> in <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.15)</a> does not pose a problem in fitting as we can always specify this as an extra explanatory variable, as it is a known constant, and fix its coefficient to 1. In the literature the log of exposure, <span class="math inline">\(\log m_i\)</span>, is commonly called the <a href="#" class="tooltip" style="color:green"><em>offset</em><span style="font-size:8pt">Natural log of the exposure amount that is added to a regression model to account for varying exposures</span></a>.</p>
+<p>Adding <span class="math inline">\(\log m_i\)</span> in <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.17)</a> does not pose a problem in fitting as we can always specify this as an extra explanatory variable, as it is a known constant, and fix its coefficient to 1. In the literature the log of exposure, <span class="math inline">\(\log m_i\)</span>, is commonly called the <a href="#" class="tooltip" style="color:green"><em>offset</em><span style="font-size:8pt">Natural log of the exposure amount that is added to a regression model to account for varying exposures</span></a>.</p>
 <div id="surveyElement82">
 
 </div>
@@ -1103,7 +1101,7 @@ As exposures affect the Poisson mean, constructing Poisson regressions requires 
 </li>
 <li>Produce the fitted Poisson counts for each smoking status in the table.</li>
 </ol></li>
-<li>In the Poisson regression formulation <a href="C-RiskClass.html#eq:mui-glm">(8.10)</a>, consider using <span class="math inline">\(\mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}=({\mathbf{ x}^{\prime}_i\beta})^2\)</span>, for <span class="math inline">\(i=1, \ldots, n\)</span>, instead of the exponential function. What potential issue would you have?</li>
+<li>In the Poisson regression formulation <a href="C-RiskClass.html#eq:mui-glm">(8.12)</a>, consider using <span class="math inline">\(\mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}=({\mathbf{ x}^{\prime}_i\beta})^2\)</span>, for <span class="math inline">\(i=1, \ldots, n\)</span>, instead of the exponential function. What potential issue would you have?</li>
 </ol>
 <!-- %3. Verify equation \@ref(eq:Inf-mtx-Poi) by differentiating the log-likelihood \@ref(eq:ll-Poi-reg). -->
 </div>
@@ -1154,7 +1152,7 @@ As exposures affect the Poisson mean, constructing Poisson regressions requires 
 <p><span class="math display">\[
 z_{jk}= \frac{y_{jk}}{ m_{jk}}, \qquad j=1,2;\, k=1, 2,3.
 \]</span></p>
-<p>For example, <span class="math inline">\(z_{12}=8/208.5=0.03837\)</span>, meaning that a policyholder in tariff cell (1,2) would have 0.03837 accidents if insured for a full year on average. The set of <span class="math inline">\(z_{ij}\)</span> values then corresponds to the <a href="#" class="tooltip" style="color:green"><em>rate parameter</em><span style="font-size:8pt">Parameter in certain distributions, such as the exponential, that indicate how quickly the function decays, and it is the reciprocal of the scale parameter</span></a> in the Poisson distribution <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.13)</a> as they are the event occurrence rates per unit exposure. That is, we have <span class="math inline">\(z_{jk}=\hat{\lambda}_{jk}\)</span> where <span class="math inline">\({\lambda}_{jk}\)</span> is the Poisson rate parameter. Producing <span class="math inline">\(z_{ij}\)</span> values however does not do much beyond comparing the average loss frequencies across risk classes. To fully exploit the dataset, we will construct a pricing model from <a href="#tab:8.2">Table 8.2</a> using the Poisson regression, for the remaining part of the chapter.</p>
+<p>For example, <span class="math inline">\(z_{12}=8/208.5=0.03837\)</span>, meaning that a policyholder in tariff cell (1,2) would have 0.03837 accidents if insured for a full year on average. The set of <span class="math inline">\(z_{ij}\)</span> values then corresponds to the <a href="#" class="tooltip" style="color:green"><em>rate parameter</em><span style="font-size:8pt">Parameter in certain distributions, such as the exponential, that indicate how quickly the function decays, and it is the reciprocal of the scale parameter</span></a> in the Poisson distribution <a href="C-RiskClass.html#eq:Pois-pmf-2">(8.15)</a> as they are the event occurrence rates per unit exposure. That is, we have <span class="math inline">\(z_{jk}=\hat{\lambda}_{jk}\)</span> where <span class="math inline">\({\lambda}_{jk}\)</span> is the Poisson rate parameter. Producing <span class="math inline">\(z_{ij}\)</span> values however does not do much beyond comparing the average loss frequencies across risk classes. To fully exploit the dataset, we will construct a pricing model from <a href="#tab:8.2">Table 8.2</a> using the Poisson regression, for the remaining part of the chapter.</p>
 <p>We comment that actual loss records used by insurers typically include much more risk factors, in which case the number of cells grows exponentially. The tariff would then consist of a set of tables, instead of one, separated by some of the basic rating factors, such as sex or territory.</p>
 </div>
 <div id="multiplicative-tariff-model" class="section level3">
@@ -1164,22 +1162,22 @@ z_{jk}= \frac{y_{jk}}{ m_{jk}}, \qquad j=1,2;\, k=1, 2,3.
 Among other possible <a href="#" class="tooltip" style="color:green"><em>functional forms</em><span style="font-size:8pt">The algebraic relationship between a dependent variable and explanatory variables</span></a>, we commonly choose the multiplicative<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> relation to model the Poisson rate <span class="math inline">\(\lambda_{jk}\)</span> for rating factor (<span class="math inline">\(j,k\)</span>):</p>
 <p><span class="math display" id="eq:multiplicative-tarrif">\[
 \lambda_{jk}= f_0 \times f_{1j} \times f_{2k}, \qquad j=1,2;\, k=1, 2,3.
-\tag{8.16}
+\tag{8.18}
 \]</span></p>
 <p>Here <span class="math inline">\(\{ f_{1j}, j=1,2\}\)</span> are the parameters associated with the two levels in the first rating factor, car type, and <span class="math inline">\(\{ f_{2k}, k=1,2,3\}\)</span> associated with the three levels in the age band, the second rating factor. For instance, the Poisson rate for a mid-aged policyholder with a Type B vehicle is given by <span class="math inline">\(\lambda_{22}=f_0 \times f_{12} \times f_{22}\)</span>. The first term <span class="math inline">\(f_0\)</span> is some base value to be discussed shortly. Thus these six parameters are understood as numerical representations of the levels within each rating factor, and are to be estimated from the dataset.</p>
-<p>The multiplicative form <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.16)</a> is easy to understand and use, because it clearly shows how the expected loss count (per unit exposure) changes as each rating factor varies. For example, if <span class="math inline">\(f_{11}=1\)</span> and <span class="math inline">\(f_{12}=1.2\)</span>, then the expected loss count of a policyholder with a vehicle of type B would be 20<span class="math inline">\(\%\)</span> larger than type A, when the other factors are the same. In non-life insurance, the parameters <span class="math inline">\(f_{1j}\)</span> and <span class="math inline">\(f_{2k}\)</span> are known as <a href="#" class="tooltip" style="color:green"><em>relativities</em><span style="font-size:8pt">A numerical estimate of value in one category relative to the value in a base classification, typically expressed as a factor</span></a> as they determine how much expected loss should change relative to the base value <span class="math inline">\(f_0\)</span>. The idea of relativity is quite convenient in practice, as we can decide the premium for a policyholder by simply multiplying a series of corresponding relativities to the base value.</p>
+<p>The multiplicative form <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.18)</a> is easy to understand and use, because it clearly shows how the expected loss count (per unit exposure) changes as each rating factor varies. For example, if <span class="math inline">\(f_{11}=1\)</span> and <span class="math inline">\(f_{12}=1.2\)</span>, then the expected loss count of a policyholder with a vehicle of type B would be 20<span class="math inline">\(\%\)</span> larger than type A, when the other factors are the same. In non-life insurance, the parameters <span class="math inline">\(f_{1j}\)</span> and <span class="math inline">\(f_{2k}\)</span> are known as <a href="#" class="tooltip" style="color:green"><em>relativities</em><span style="font-size:8pt">A numerical estimate of value in one category relative to the value in a base classification, typically expressed as a factor</span></a> as they determine how much expected loss should change relative to the base value <span class="math inline">\(f_0\)</span>. The idea of relativity is quite convenient in practice, as we can decide the premium for a policyholder by simply multiplying a series of corresponding relativities to the base value.</p>
 <p>Dropping an existing rating factor or adding a new one is also transparent with this multiplicative structure. In addition, the insurer may easily adjust the overall premium for all policyholders by controlling the base value <span class="math inline">\(f_0\)</span> without changing individual relativities. However, by adopting the multiplicative form, we implicitly assume that there is no serious interaction among the risk factors.</p>
 <p>When the multiplicative form is used we need to address an identification issue. That is, for any <span class="math inline">\(c&gt;0\)</span>, we can write</p>
 <p><span class="math display">\[
 \lambda_{jk}= f_0 \times \frac{f_{1j}}{c} \times c\,f_{2k}. 
 \]</span></p>
-<p>By comparing with <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.16)</a>, we see that the identical rate parameter <span class="math inline">\(\lambda_{jk}\)</span> can be obtained for very different individual relativities. This over-parametrization, meaning that many different sets of parameters arrive at the identical model, obviously calls for some restriction on <span class="math inline">\(f_{1j}\)</span> and <span class="math inline">\(f_{2k}\)</span>. The standard practice is to make one relativity in each rating factor equal to one. This can be made arbitrarily in theory, but the standard practice is to make the relativity of most common class (base class) equals to one. We will assume that <em>type A vehicles</em> and <em>young drivers</em> to be the most common classes, that is, <span class="math inline">\(f_{11} = 1\)</span> and <span class="math inline">\(f_{21} = 1\)</span>. This way all other relativities are uniquely determined. The tariff cell <span class="math inline">\((j,k)=(1,1)\)</span> is then called the <a href="#" class="tooltip" style="color:green"><em>base tariff cell</em><span style="font-size:8pt">The chosen set of rating categories where the rate equals the intercept of the model (the base value)</span></a>, where the rate simply becomes <span class="math inline">\(\lambda_{11}=f_0\)</span>, corresponding to the base value according to <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.16)</a>. Thus the base value <span class="math inline">\(f_0\)</span> is generally interpreted as the Poisson rate of the base tariff cell.</p>
-<p>Again, <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.16)</a> is log-transformed and rewritten as</p>
+<p>By comparing with <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.18)</a>, we see that the identical rate parameter <span class="math inline">\(\lambda_{jk}\)</span> can be obtained for very different individual relativities. This over-parametrization, meaning that many different sets of parameters arrive at the identical model, obviously calls for some restriction on <span class="math inline">\(f_{1j}\)</span> and <span class="math inline">\(f_{2k}\)</span>. The standard practice is to make one relativity in each rating factor equal to one. This can be made arbitrarily in theory, but the standard practice is to make the relativity of most common class (base class) equals to one. We will assume that <em>type A vehicles</em> and <em>young drivers</em> to be the most common classes, that is, <span class="math inline">\(f_{11} = 1\)</span> and <span class="math inline">\(f_{21} = 1\)</span>. This way all other relativities are uniquely determined. The tariff cell <span class="math inline">\((j,k)=(1,1)\)</span> is then called the <a href="#" class="tooltip" style="color:green"><em>base tariff cell</em><span style="font-size:8pt">The chosen set of rating categories where the rate equals the intercept of the model (the base value)</span></a>, where the rate simply becomes <span class="math inline">\(\lambda_{11}=f_0\)</span>, corresponding to the base value according to <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.18)</a>. Thus the base value <span class="math inline">\(f_0\)</span> is generally interpreted as the Poisson rate of the base tariff cell.</p>
+<p>Again, <a href="C-RiskClass.html#eq:multiplicative-tarrif">(8.18)</a> is log-transformed and rewritten as</p>
 <p><span class="math display" id="eq:log-linear-tariff">\[
 \log \lambda_{jk}= \log f_0 + \log f_{1j} + \log f_{2k},
-\tag{8.17}
+\tag{8.19}
 \]</span></p>
-<p>as it is easier to work with in estimating process, similar to <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.12)</a>. This log linear form makes the log relativities of the base level in each rating factor equal to zero, i.e., <span class="math inline">\(\log f_{11}=\log f_{21}=0\)</span>, and leads to the following alternative, more explicit expression for <a href="C-RiskClass.html#eq:log-linear-tariff">(8.17)</a>:</p>
+<p>as it is easier to work with in estimating process, similar to <a href="C-RiskClass.html#eq:mean-ft-Pois-2">(8.14)</a>. This log linear form makes the log relativities of the base level in each rating factor equal to zero, i.e., <span class="math inline">\(\log f_{11}=\log f_{21}=0\)</span>, and leads to the following alternative, more explicit expression for <a href="C-RiskClass.html#eq:log-linear-tariff">(8.19)</a>:</p>
 <p><span class="math display" id="eq:log-rate-Poi-tariff-3">\[
 \log \lambda_{jk}=\begin{cases}
 \log f_0 + \quad 0 \quad \,\,+ \quad 0 \quad \,\,&amp; \text{for a policy in cell }(1,1), \\
@@ -1189,9 +1187,9 @@ Among other possible <a href="#" class="tooltip" style="color:green"><em>functio
 \log f_0+\log f_{12}+\log f_{22}&amp; \text{for a policy in cell }(2,2), \\
 \log f_0+\log f_{12}+\log f_{23}&amp; \text{for a policy in cell }(2,3). \\
 \end{cases}
-\tag{8.18}
+\tag{8.20}
 \]</span></p>
-<p>This clearly shows that the Poisson rate parameter <span class="math inline">\(\lambda\)</span> varies across different tariff cells, with the same log linear form used in the Poisson regression framework. In fact the reader may see that <a href="C-RiskClass.html#eq:log-rate-Poi-tariff-3">(8.18)</a> is an extended version of the early expression <a href="C-RiskClass.html#eq:ind-mu">(8.6)</a> with multiple risk factors and that the log relativities now play the role of <span class="math inline">\(\beta_i\)</span> parameters.
+<p>This clearly shows that the Poisson rate parameter <span class="math inline">\(\lambda\)</span> varies across different tariff cells, with the same log linear form used in the Poisson regression framework. In fact the reader may see that <a href="C-RiskClass.html#eq:log-rate-Poi-tariff-3">(8.20)</a> is an extended version of the early expression <a href="C-RiskClass.html#eq:ind-mu">(8.6)</a> with multiple risk factors and that the log relativities now play the role of <span class="math inline">\(\beta_i\)</span> parameters.
 Therefore all the relativities can be readily estimated via fitting a Poisson regression with a suitably chosen set of indicator variables.</p>
 </div>
 <div id="poisson-regression-for-multiplicative-tariff" class="section level3">
@@ -1226,19 +1224,19 @@ x_3=
 <!-- % In addition, there is a one-to-one mapping between the tariff cell index $(j,k)$ and the triple $(x_1, x_2, x_3)$.  -->
 <!-- %For example, cell $(j,k)=(2,2)$ corresponds to $(1, 1, 0)$, and the base cell $(j,k)=(1,1)$ corresponds to $(0, 0, 0)$.  -->
 <!-- % --></p>
-<p>With the proposed indicator variables we can rewrite the log rate <a href="C-RiskClass.html#eq:log-linear-tariff">(8.17)</a> as</p>
+<p>With the proposed indicator variables we can rewrite the log rate <a href="C-RiskClass.html#eq:log-linear-tariff">(8.19)</a> as</p>
 <p><span class="math display" id="eq:log-linear-tariff-3">\[
 \log \lambda_{}= \log f_0+ \log f_{12}  \times x_1 + \log f_{22} \times x_2 +\log f_{23} \times x_3,
-\tag{8.19}
+\tag{8.21}
 \]</span></p>
-<p>which is identical to <a href="C-RiskClass.html#eq:log-rate-Poi-tariff-3">(8.18)</a> when each triple value is actually applied. For example, we can verify that the base tariff cell <span class="math inline">\((j,k)=(1,1)\)</span> corresponds to <span class="math inline">\((x_1, x_2,x_3)=(0, 0, 0)\)</span>, and in turn produces <span class="math inline">\(\log \lambda=\log f_0\)</span> or <span class="math inline">\(\lambda= f_0\)</span> in <a href="C-RiskClass.html#eq:log-linear-tariff-3">(8.19)</a> as required.</p>
+<p>which is identical to <a href="C-RiskClass.html#eq:log-rate-Poi-tariff-3">(8.20)</a> when each triple value is actually applied. For example, we can verify that the base tariff cell <span class="math inline">\((j,k)=(1,1)\)</span> corresponds to <span class="math inline">\((x_1, x_2,x_3)=(0, 0, 0)\)</span>, and in turn produces <span class="math inline">\(\log \lambda=\log f_0\)</span> or <span class="math inline">\(\lambda= f_0\)</span> in <a href="C-RiskClass.html#eq:log-linear-tariff-3">(8.21)</a> as required.</p>
 <p><strong>Poisson regression for the tariff model</strong><br />
 Under this specification, let us consider <span class="math inline">\(n\)</span> policyholders in the portfolio with the <span class="math inline">\(i\)</span>th policyholder’s risk characteristic given by a vector of explanatory variables <span class="math inline">\(\mathbf{ x}_i=(1, x_{i1}, x_{i2},x_{i3})^{\prime}\)</span>, for <span class="math inline">\(i=1, \ldots, n\)</span>.
-We then recognize <a href="C-RiskClass.html#eq:log-linear-tariff-3">(8.19)</a> as</p>
+We then recognize <a href="C-RiskClass.html#eq:log-linear-tariff-3">(8.21)</a> as</p>
 <p><span class="math display">\[
 \log \lambda_{i}= \beta_0+ \beta_1 \, x_{i1} + \beta_{2} \, x_{i2} +\beta_3  \, x_{i3}=\mathbf{ x}^{\prime}_i \boldsymbol \beta, \qquad i=1, \ldots, n,
 \]</span></p>
-<p>where <span class="math inline">\(\beta_0, \ldots, \beta_3\)</span> can be mapped to the corresponding log relativities in <a href="C-RiskClass.html#eq:log-linear-tariff-3">(8.19)</a>. This is exactly the same setup as in <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.15)</a> except for the exposure component. Therefore, by incorporating the exposure in each risk class, the Poisson regression model for this multiplicative tariff model finally becomes</p>
+<p>where <span class="math inline">\(\beta_0, \ldots, \beta_3\)</span> can be mapped to the corresponding log relativities in <a href="C-RiskClass.html#eq:log-linear-tariff-3">(8.21)</a>. This is exactly the same setup as in <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.17)</a> except for the exposure component. Therefore, by incorporating the exposure in each risk class, the Poisson regression model for this multiplicative tariff model finally becomes</p>
 <p><span class="math display">\[
 \begin{array}{ll}
 \log \mu_i &amp;=\log \lambda_{i}+\log m_i= \log m_i+ \beta_0+ \beta_1 \, x_{i1} + \beta_{2} \, x_{i2} +\beta_3  \, x_{i3}\\
@@ -1249,7 +1247,7 @@ We then recognize <a href="C-RiskClass.html#eq:log-linear-tariff-3">(8.19)</a> a
 As a result, the relativities are given by</p>
 <p><span class="math display" id="eq:relativity-1">\[
 {f}_0=e^{\beta_0}, \quad {f}_{12}=e^{\beta_1}, \quad {f}_{22}=e^{\beta_2}, \quad \text{and}\quad {f}_{23}=e^{\beta_3},
-\tag{8.20}
+\tag{8.22}
 \]</span></p>
 <p>with <span class="math inline">\(f_{11}=1\)</span> and <span class="math inline">\(f_{21}=1\)</span> from the original construction. For the actual dataset, <span class="math inline">\(\beta_i\)</span>, <span class="math inline">\(i=0,1, 2, 3\)</span>, is replaced with the <em>mle</em> <span class="math inline">\(b_i\)</span> using the method in the technical supplement at the end of this chapter (Section 8.A).</p>
 </div>
@@ -1261,37 +1259,37 @@ As a result, the relativities are given by</p>
 <p><span class="math display">\[
 {f}_0=0.0967, \quad {f}_{12}=  0.7405, \quad {f}_{22}=0.4567 \quad \text{and}\quad {f}_{23}=0.3445,
 \]</span></p>
-<p>from the relation given in <a href="C-RiskClass.html#eq:relativity-1">(8.20)</a>. The <code>R</code> script and the output are as follows.</p>
+<p>from the relation given in <a href="C-RiskClass.html#eq:relativity-1">(8.22)</a>. The <code>R</code> script and the output are as follows.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.RiskClass.1" href="javascript:togglecode('toggleCode.RiskClass.1','displayCode.RiskClass.1');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.RiskClass.1" style="display: none">
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1"><span class="op">&gt;</span><span class="st"> </span>mydat1&lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;eg1_v1a.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb96-2" title="2"><span class="op">&gt;</span><span class="st"> </span>mydat1</a>
-<a class="sourceLine" id="cb96-3" title="3">  Vtype Agebnd Expsr Claims</a>
-<a class="sourceLine" id="cb96-4" title="4"><span class="dv">1</span>     <span class="dv">1</span>      <span class="dv">1</span>  <span class="fl">89.1</span>      <span class="dv">9</span></a>
-<a class="sourceLine" id="cb96-5" title="5"><span class="dv">2</span>     <span class="dv">1</span>      <span class="dv">2</span> <span class="fl">208.5</span>      <span class="dv">8</span></a>
-<a class="sourceLine" id="cb96-6" title="6"><span class="dv">3</span>     <span class="dv">1</span>      <span class="dv">3</span> <span class="fl">155.2</span>      <span class="dv">6</span></a>
-<a class="sourceLine" id="cb96-7" title="7"><span class="dv">4</span>     <span class="dv">2</span>      <span class="dv">1</span>  <span class="fl">19.3</span>      <span class="dv">1</span></a>
-<a class="sourceLine" id="cb96-8" title="8"><span class="dv">5</span>     <span class="dv">2</span>      <span class="dv">2</span> <span class="fl">360.4</span>     <span class="dv">13</span></a>
-<a class="sourceLine" id="cb96-9" title="9"><span class="dv">6</span>     <span class="dv">2</span>      <span class="dv">3</span> <span class="fl">276.7</span>      <span class="dv">6</span></a>
-<a class="sourceLine" id="cb96-10" title="10"><span class="op">&gt;</span><span class="st"> </span>VtypeF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Vtype), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Vtype as factors with 1 as base.</span></a>
-<a class="sourceLine" id="cb96-11" title="11"><span class="op">&gt;</span><span class="st"> </span>AgebndF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Agebnd), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Age band as factors.</span></a>
-<a class="sourceLine" id="cb96-12" title="12"><span class="op">&gt;</span><span class="st"> </span>Pois_reg1 =<span class="st"> </span><span class="kw">glm</span>(Claims <span class="op">~</span><span class="st"> </span>VtypeF <span class="op">+</span><span class="st"> </span>AgebndF,</a>
-<a class="sourceLine" id="cb96-13" title="13">                    <span class="dt">data =</span> mydat1, <span class="dt">family =</span> <span class="kw">poisson</span>(<span class="dt">link =</span> log), <span class="dt">offset =</span> <span class="kw">log</span>(Expsr) )</a>
-<a class="sourceLine" id="cb96-14" title="14"><span class="op">&gt;</span><span class="st"> </span>Pois_reg1</a>
-<a class="sourceLine" id="cb96-15" title="15"></a>
-<a class="sourceLine" id="cb96-16" title="16">Coefficients<span class="op">:</span></a>
-<a class="sourceLine" id="cb96-17" title="17">(Intercept)      VtypeF2     AgebndF2     AgebndF3  </a>
-<a class="sourceLine" id="cb96-18" title="18">    <span class="fl">-2.3359</span>      <span class="fl">-0.3004</span>      <span class="fl">-0.7837</span>      <span class="fl">-1.0655</span>  </a>
-<a class="sourceLine" id="cb96-19" title="19"></a>
-<a class="sourceLine" id="cb96-20" title="20">Degrees of Freedom<span class="op">:</span><span class="st"> </span><span class="dv">5</span> <span class="kw">Total</span> (i.e. Null);  <span class="dv">2</span> Residual</a>
-<a class="sourceLine" id="cb96-21" title="21">Null Deviance<span class="op">:</span><span class="st">      </span><span class="fl">8.774</span> </a>
-<a class="sourceLine" id="cb96-22" title="22">Residual Deviance<span class="op">:</span><span class="st"> </span><span class="fl">0.6514</span>   AIC<span class="op">:</span><span class="st"> </span><span class="fl">30.37</span></a></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="C-RiskClass.html#cb96-1"></a><span class="op">&gt;</span><span class="st"> </span>mydat1&lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;eg1_v1a.csv&quot;</span>)</span>
+<span id="cb96-2"><a href="C-RiskClass.html#cb96-2"></a><span class="op">&gt;</span><span class="st"> </span>mydat1</span>
+<span id="cb96-3"><a href="C-RiskClass.html#cb96-3"></a>  Vtype Agebnd Expsr Claims</span>
+<span id="cb96-4"><a href="C-RiskClass.html#cb96-4"></a><span class="dv">1</span>     <span class="dv">1</span>      <span class="dv">1</span>  <span class="fl">89.1</span>      <span class="dv">9</span></span>
+<span id="cb96-5"><a href="C-RiskClass.html#cb96-5"></a><span class="dv">2</span>     <span class="dv">1</span>      <span class="dv">2</span> <span class="fl">208.5</span>      <span class="dv">8</span></span>
+<span id="cb96-6"><a href="C-RiskClass.html#cb96-6"></a><span class="dv">3</span>     <span class="dv">1</span>      <span class="dv">3</span> <span class="fl">155.2</span>      <span class="dv">6</span></span>
+<span id="cb96-7"><a href="C-RiskClass.html#cb96-7"></a><span class="dv">4</span>     <span class="dv">2</span>      <span class="dv">1</span>  <span class="fl">19.3</span>      <span class="dv">1</span></span>
+<span id="cb96-8"><a href="C-RiskClass.html#cb96-8"></a><span class="dv">5</span>     <span class="dv">2</span>      <span class="dv">2</span> <span class="fl">360.4</span>     <span class="dv">13</span></span>
+<span id="cb96-9"><a href="C-RiskClass.html#cb96-9"></a><span class="dv">6</span>     <span class="dv">2</span>      <span class="dv">3</span> <span class="fl">276.7</span>      <span class="dv">6</span></span>
+<span id="cb96-10"><a href="C-RiskClass.html#cb96-10"></a><span class="op">&gt;</span><span class="st"> </span>VtypeF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Vtype), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Vtype as factors with 1 as base.</span></span>
+<span id="cb96-11"><a href="C-RiskClass.html#cb96-11"></a><span class="op">&gt;</span><span class="st"> </span>AgebndF &lt;-<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Agebnd), <span class="dt">ref=</span><span class="st">&quot;1&quot;</span>) <span class="co"># treat Age band as factors.</span></span>
+<span id="cb96-12"><a href="C-RiskClass.html#cb96-12"></a><span class="op">&gt;</span><span class="st"> </span>Pois_reg1 =<span class="st"> </span><span class="kw">glm</span>(Claims <span class="op">~</span><span class="st"> </span>VtypeF <span class="op">+</span><span class="st"> </span>AgebndF,</span>
+<span id="cb96-13"><a href="C-RiskClass.html#cb96-13"></a>                    <span class="dt">data =</span> mydat1, <span class="dt">family =</span> <span class="kw">poisson</span>(<span class="dt">link =</span> log), <span class="dt">offset =</span> <span class="kw">log</span>(Expsr) )</span>
+<span id="cb96-14"><a href="C-RiskClass.html#cb96-14"></a><span class="op">&gt;</span><span class="st"> </span>Pois_reg1</span>
+<span id="cb96-15"><a href="C-RiskClass.html#cb96-15"></a></span>
+<span id="cb96-16"><a href="C-RiskClass.html#cb96-16"></a>Coefficients<span class="op">:</span></span>
+<span id="cb96-17"><a href="C-RiskClass.html#cb96-17"></a>(Intercept)      VtypeF2     AgebndF2     AgebndF3  </span>
+<span id="cb96-18"><a href="C-RiskClass.html#cb96-18"></a>    <span class="fl">-2.3359</span>      <span class="fl">-0.3004</span>      <span class="fl">-0.7837</span>      <span class="fl">-1.0655</span>  </span>
+<span id="cb96-19"><a href="C-RiskClass.html#cb96-19"></a></span>
+<span id="cb96-20"><a href="C-RiskClass.html#cb96-20"></a>Degrees of Freedom<span class="op">:</span><span class="st"> </span><span class="dv">5</span> <span class="kw">Total</span> (i.e. Null);  <span class="dv">2</span> Residual</span>
+<span id="cb96-21"><a href="C-RiskClass.html#cb96-21"></a>Null Deviance<span class="op">:</span><span class="st">      </span><span class="fl">8.774</span> </span>
+<span id="cb96-22"><a href="C-RiskClass.html#cb96-22"></a>Residual Deviance<span class="op">:</span><span class="st"> </span><span class="fl">0.6514</span>   AIC<span class="op">:</span><span class="st"> </span><span class="fl">30.37</span></span></code></pre></div>
 </div>
 <hr />
 <p><strong>Example 8.2. Poisson regression for Singapore insurance claims data</strong></p>
-<p>This actual dataset is a subset of the data used by <span class="citation">(Frees and Valdez <a href="#ref-frees2008hierarchical" role="doc-biblioref">2008</a>)</span>. The data are from the General Insurance Association of Singapore, an organisation consisting of non-life insurers in Singapore. The data contains the number of car accidents for <span class="math inline">\(n=7,483\)</span> auto insurance policies with several categorical explanatory variables and the exposure for each policy. The explanatory variables include four risk factors: the type of the vehicle insured (either automobile (A) or other (O), denoted by <code>Vtype</code>), the age of the vehicle in years (<code>Vage</code>), gender of the policyholder (<code>Sex</code>) and the age of the policyholder (in years, grouped into seven categories, denoted <code>Age</code>).</p>
+<p>This actual dataset is a subset of the data used by <span class="citation">(Frees and Valdez <a href="#ref-frees2008hierarchical" role="doc-biblioref">2008</a>)</span>. The data are from the General Insurance Association of Singapore, an organisation consisting of non-life insurers in Singapore. The data contains the number of car accidents for <span class="math inline">\(n=7,483\)</span> auto insurance policies with several categorical explanatory variables and the exposure for each policy. The explanatory variables include four risk factors: the type of the vehicle insured (either automobile (A) or other (O), denoted by <span class="math inline">\(\tt{Vtype}\)</span>), the age of the vehicle in years (<span class="math inline">\(\tt{Vage}\)</span>), gender of the policyholder (<span class="math inline">\(\tt{Sex}\)</span>) and the age of the policyholder (in years, grouped into seven categories, denoted <span class="math inline">\(\tt{Age}\)</span>).</p>
 <p>Based on the data description, there are several things to remember before constructing a model.
 First, there are 3,842 policies with vehicle type A (automobile) and 3,641 policies with other vehicle types. However, age and sex information is available for the policies of vehicle type A only; the drivers of all other types of vehicles are recorded to be aged 21 or less with sex unspecified, except for one policy, indicating that no driver information has been collected for <a href="#" class="tooltip" style="color:green"><em>non-automobile vehicles</em><span style="font-size:8pt">Motorized vehicles which are not autos, such as atvs, off-road vehicles, go-carts, etc.</span></a>. Second, type A vehicles are all classified as private vehicles and all the other types are not.</p>
 <p>When we include these risk factors, we assume all unspecified sex to be male. As the age information is only applicable to type A vehicles, we set the model accordingly. That is, we apply the age variable only to vehicles of type A. Also we used five vehicle age bands, simplifying the original seven bands, by combining vehicle ages 0,1 and 2; the combined band is marked as level 2<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> in the data file. Thus our Poisson model has the following explicit form:</p>
@@ -1348,42 +1346,42 @@ First, there are 3,842 policies with vehicle type A (automobile) and 3,641 polic
 <a id="displayCode.RiskClass.2" href="javascript:togglecode('toggleCode.RiskClass.2','displayCode.RiskClass.2');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.RiskClass.2" style="display: none">
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" title="1">mydat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;SingaporeAuto.csv&quot;</span>,  <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb97-2" title="2"><span class="kw">attach</span>(mydat)</a>
-<a class="sourceLine" id="cb97-3" title="3"></a>
-<a class="sourceLine" id="cb97-4" title="4"><span class="co"># create vehicle type as factor</span></a>
-<a class="sourceLine" id="cb97-5" title="5">TypeA =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(VehicleType <span class="op">==</span><span class="st"> &quot;A&quot;</span>)</a>
-<a class="sourceLine" id="cb97-6" title="6"><span class="kw">table</span>(VehicleType)</a>
-<a class="sourceLine" id="cb97-7" title="7">VtypeF &lt;-<span class="st"> </span><span class="kw">as.character</span>(VehicleType)</a>
-<a class="sourceLine" id="cb97-8" title="8">VtypeF[VtypeF <span class="op">!=</span><span class="st"> &quot;A&quot;</span>] &lt;-<span class="st"> &quot;O&quot;</span></a>
-<a class="sourceLine" id="cb97-9" title="9">VtypeF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(VtypeF), <span class="dt">ref=</span><span class="st">&quot;A&quot;</span>)</a>
-<a class="sourceLine" id="cb97-10" title="10"></a>
-<a class="sourceLine" id="cb97-11" title="11"><span class="co"># create gender as factor</span></a>
-<a class="sourceLine" id="cb97-12" title="12">Female =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(SexInsured <span class="op">==</span><span class="st"> &quot;F&quot;</span> )</a>
-<a class="sourceLine" id="cb97-13" title="13">Sex =<span class="st"> </span><span class="kw">as.character</span>(SexInsured)</a>
-<a class="sourceLine" id="cb97-14" title="14">Sex[Sex <span class="op">!=</span><span class="st"> &quot;F&quot;</span>] &lt;-<span class="st"> &quot;M&quot;</span></a>
-<a class="sourceLine" id="cb97-15" title="15">SexF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Sex), <span class="dt">ref =</span> <span class="st">&quot;F&quot;</span>)</a>
-<a class="sourceLine" id="cb97-16" title="16"></a>
-<a class="sourceLine" id="cb97-17" title="17"><span class="co"># create driver age as factor</span></a>
-<a class="sourceLine" id="cb97-18" title="18">AgeCat =<span class="st"> </span><span class="kw">pmax</span>(AgeCat <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb97-19" title="19">AgeCatF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(AgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb97-20" title="20"><span class="kw">table</span>(AgeCatF) <span class="co"># No policy in the first age band</span></a>
-<a class="sourceLine" id="cb97-21" title="21"></a>
-<a class="sourceLine" id="cb97-22" title="22"><span class="co"># create vehicle age as factor</span></a>
-<a class="sourceLine" id="cb97-23" title="23">VAgeCatF =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span> )</a>
-<a class="sourceLine" id="cb97-24" title="24">VAgecat1 =<span class="st"> </span><span class="kw">factor</span>(VAgecat1, <span class="dt">labels =</span> </a>
-<a class="sourceLine" id="cb97-25" title="25">                    <span class="kw">c</span>(<span class="st">&quot;Vage0-2&quot;</span>, <span class="st">&quot;Vage3-5&quot;</span>, <span class="st">&quot;Vage6-10&quot;</span>, <span class="st">&quot;Vage11-15&quot;</span>, <span class="st">&quot;Vage15+&quot;</span>) )</a>
-<a class="sourceLine" id="cb97-26" title="26">VAgecat1F =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgecat1), <span class="dt">ref =</span> <span class="st">&quot;Vage0-2&quot;</span> )</a>
-<a class="sourceLine" id="cb97-27" title="27"></a>
-<a class="sourceLine" id="cb97-28" title="28"><span class="co"># Poisson reg model</span></a>
-<a class="sourceLine" id="cb97-29" title="29">Pois_reg2 =<span class="st"> </span><span class="kw">glm</span>(Clm_Count <span class="op">~</span><span class="st"> </span>SexF <span class="op">+</span><span class="st"> </span>TypeA<span class="op">:</span>AgeCatF <span class="op">+</span><span class="st"> </span>VAgecat1F, </a>
-<a class="sourceLine" id="cb97-30" title="30">                   <span class="dt">offset =</span> LNWEIGHT, <span class="kw">poisson</span>(<span class="dt">link =</span> log) )</a>
-<a class="sourceLine" id="cb97-31" title="31"><span class="kw">summary</span>(Pois_reg2) </a>
-<a class="sourceLine" id="cb97-32" title="32"></a>
-<a class="sourceLine" id="cb97-33" title="33"><span class="co"># compute relativities</span></a>
-<a class="sourceLine" id="cb97-34" title="34"><span class="kw">exp</span>(Pois_reg2<span class="op">$</span>coefficients)</a>
-<a class="sourceLine" id="cb97-35" title="35"></a>
-<a class="sourceLine" id="cb97-36" title="36"><span class="kw">detach</span>(mydat)</a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="C-RiskClass.html#cb97-1"></a>mydat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;SingaporeAuto.csv&quot;</span>,  <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb97-2"><a href="C-RiskClass.html#cb97-2"></a><span class="kw">attach</span>(mydat)</span>
+<span id="cb97-3"><a href="C-RiskClass.html#cb97-3"></a></span>
+<span id="cb97-4"><a href="C-RiskClass.html#cb97-4"></a><span class="co"># create vehicle type as factor</span></span>
+<span id="cb97-5"><a href="C-RiskClass.html#cb97-5"></a>TypeA =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(VehicleType <span class="op">==</span><span class="st"> &quot;A&quot;</span>)</span>
+<span id="cb97-6"><a href="C-RiskClass.html#cb97-6"></a><span class="kw">table</span>(VehicleType)</span>
+<span id="cb97-7"><a href="C-RiskClass.html#cb97-7"></a>VtypeF &lt;-<span class="st"> </span><span class="kw">as.character</span>(VehicleType)</span>
+<span id="cb97-8"><a href="C-RiskClass.html#cb97-8"></a>VtypeF[VtypeF <span class="op">!=</span><span class="st"> &quot;A&quot;</span>] &lt;-<span class="st"> &quot;O&quot;</span></span>
+<span id="cb97-9"><a href="C-RiskClass.html#cb97-9"></a>VtypeF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(VtypeF), <span class="dt">ref=</span><span class="st">&quot;A&quot;</span>)</span>
+<span id="cb97-10"><a href="C-RiskClass.html#cb97-10"></a></span>
+<span id="cb97-11"><a href="C-RiskClass.html#cb97-11"></a><span class="co"># create gender as factor</span></span>
+<span id="cb97-12"><a href="C-RiskClass.html#cb97-12"></a>Female =<span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(SexInsured <span class="op">==</span><span class="st"> &quot;F&quot;</span> )</span>
+<span id="cb97-13"><a href="C-RiskClass.html#cb97-13"></a>Sex =<span class="st"> </span><span class="kw">as.character</span>(SexInsured)</span>
+<span id="cb97-14"><a href="C-RiskClass.html#cb97-14"></a>Sex[Sex <span class="op">!=</span><span class="st"> &quot;F&quot;</span>] &lt;-<span class="st"> &quot;M&quot;</span></span>
+<span id="cb97-15"><a href="C-RiskClass.html#cb97-15"></a>SexF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(Sex), <span class="dt">ref =</span> <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb97-16"><a href="C-RiskClass.html#cb97-16"></a></span>
+<span id="cb97-17"><a href="C-RiskClass.html#cb97-17"></a><span class="co"># create driver age as factor</span></span>
+<span id="cb97-18"><a href="C-RiskClass.html#cb97-18"></a>AgeCat =<span class="st"> </span><span class="kw">pmax</span>(AgeCat <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb97-19"><a href="C-RiskClass.html#cb97-19"></a>AgeCatF =<span class="st"> </span><span class="kw">relevel</span>(<span class="kw">factor</span>(AgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span>)</span>
+<span id="cb97-20"><a href="C-RiskClass.html#cb97-20"></a><span class="kw">table</span>(AgeCatF) <span class="co"># No policy in the first age band</span></span>
+<span id="cb97-21"><a href="C-RiskClass.html#cb97-21"></a></span>
+<span id="cb97-22"><a href="C-RiskClass.html#cb97-22"></a><span class="co"># create vehicle age as factor</span></span>
+<span id="cb97-23"><a href="C-RiskClass.html#cb97-23"></a>VAgeCatF =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgeCat), <span class="dt">ref =</span> <span class="st">&quot;0&quot;</span> )</span>
+<span id="cb97-24"><a href="C-RiskClass.html#cb97-24"></a>VAgecat1 =<span class="st"> </span><span class="kw">factor</span>(VAgecat1, <span class="dt">labels =</span> </span>
+<span id="cb97-25"><a href="C-RiskClass.html#cb97-25"></a>                    <span class="kw">c</span>(<span class="st">&quot;Vage0-2&quot;</span>, <span class="st">&quot;Vage3-5&quot;</span>, <span class="st">&quot;Vage6-10&quot;</span>, <span class="st">&quot;Vage11-15&quot;</span>, <span class="st">&quot;Vage15+&quot;</span>) )</span>
+<span id="cb97-26"><a href="C-RiskClass.html#cb97-26"></a>VAgecat1F =<span class="st"> </span><span class="kw">relevel</span>( <span class="kw">factor</span>(VAgecat1), <span class="dt">ref =</span> <span class="st">&quot;Vage0-2&quot;</span> )</span>
+<span id="cb97-27"><a href="C-RiskClass.html#cb97-27"></a></span>
+<span id="cb97-28"><a href="C-RiskClass.html#cb97-28"></a><span class="co"># Poisson reg model</span></span>
+<span id="cb97-29"><a href="C-RiskClass.html#cb97-29"></a>Pois_reg2 =<span class="st"> </span><span class="kw">glm</span>(Clm_Count <span class="op">~</span><span class="st"> </span>SexF <span class="op">+</span><span class="st"> </span>TypeA<span class="op">:</span>AgeCatF <span class="op">+</span><span class="st"> </span>VAgecat1F, </span>
+<span id="cb97-30"><a href="C-RiskClass.html#cb97-30"></a>                   <span class="dt">offset =</span> LNWEIGHT, <span class="kw">poisson</span>(<span class="dt">link =</span> log) )</span>
+<span id="cb97-31"><a href="C-RiskClass.html#cb97-31"></a><span class="kw">summary</span>(Pois_reg2) </span>
+<span id="cb97-32"><a href="C-RiskClass.html#cb97-32"></a></span>
+<span id="cb97-33"><a href="C-RiskClass.html#cb97-33"></a><span class="co"># compute relativities</span></span>
+<span id="cb97-34"><a href="C-RiskClass.html#cb97-34"></a><span class="kw">exp</span>(Pois_reg2<span class="op">$</span>coefficients)</span>
+<span id="cb97-35"><a href="C-RiskClass.html#cb97-35"></a></span>
+<span id="cb97-36"><a href="C-RiskClass.html#cb97-36"></a><span class="kw">detach</span>(mydat)</span></code></pre></div>
 </div>
 <hr />
 <p>As a concluding remark, we comment that the Poisson regression is not the only possible count regression model. Actually, the Poisson distribution can be restrictive in the sense that it has a single parameter and its mean and the variance are always equal. There are other count regression models that allow more flexible <a href="#" class="tooltip" style="color:green"><em>distributional structure</em><span style="font-size:8pt">The manner in which a statistical distribution is parameterized</span></a>, such as negative binomial regressions and zero-inflated (ZI) regressions; details of these alternative regressions can be found in other texts listed in the next section.</p>
@@ -1423,19 +1421,19 @@ First, there are 3,842 policies with vehicle type A (automobile) and 3,641 polic
 <h3>TS 8.A. Estimating Poisson Regression Models</h3>
 <p>The principles of maximum likelihood estimation (<em>mle</em>) are introduced in Sections <a href="C-Frequency-Modeling.html#S:parameter-estimation">2.4.1</a> and <a href="C-Severity.html#S:MaxLikeEstimation">3.5</a>, defined in Section <a href="C-AppA.html#S:AppA:MLE">15.2.2</a>, and theoretically developed in Chapter <a href="C-AppC.html#C:AppC">17</a>. Here we present the <em>mle</em> procedure of the Poisson regression so that the reader can see how the explanatory variables are treated in maximizing the likelihood function in the regression setting.</p>
 <p><strong>Maximum Likelihood Estimation for Individual Data</strong></p>
-<p>In the Poisson regression the varying Poisson mean is determined by parameters <span class="math inline">\(\beta_i\)</span>’s, as shown in <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.15)</a>. In this subsection we use the maximum likelihood method to estimate these parameters. Again, we assume that there are <span class="math inline">\(n\)</span> policyholders and the <span class="math inline">\(i\)</span>th policyholder is characterized by <span class="math inline">\(\mathbf{ x}_i=(1, x_{i1}, \ldots, x_{ik})^{\prime}\)</span> with the observed loss count <span class="math inline">\(y_i\)</span>. Then, from <a href="C-RiskClass.html#eq:mean-ft-Pois-6">(8.14)</a> and <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.15)</a>, the log-likelihood function of vector <span class="math inline">\(\beta=(\beta_0, \dots, \beta_k)\)</span> is given by</p>
+<p>In the Poisson regression the varying Poisson mean is determined by parameters <span class="math inline">\(\beta_i\)</span>’s, as shown in <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.17)</a>. In this subsection we use the maximum likelihood method to estimate these parameters. Again, we assume that there are <span class="math inline">\(n\)</span> policyholders and the <span class="math inline">\(i\)</span>th policyholder is characterized by <span class="math inline">\(\mathbf{ x}_i=(1, x_{i1}, \ldots, x_{ik})^{\prime}\)</span> with the observed loss count <span class="math inline">\(y_i\)</span>. Then, from <a href="C-RiskClass.html#eq:mean-ft-Pois-6">(8.16)</a> and <a href="C-RiskClass.html#eq:mean-ft-Pois-7">(8.17)</a>, the log-likelihood function of vector <span class="math inline">\(\beta=(\beta_0, \dots, \beta_k)\)</span> is given by</p>
 <p><span class="math display" id="eq:ll-Poi-reg">\[\begin{align}
 \nonumber \log L(\beta)    &amp;= l(\beta)=\sum^n_{i=1} \left( -\mu_i +y_i \, \log \mu_i -\log y_i! \right)  \\
     &amp;  = \sum^n_{i=1} \left( -m_i \exp(\mathbf{ x}^{\prime}_i\beta) +y_i \,(\log m_i+\mathbf{ x}^{\prime}_i\beta)  -\log y_i! \right)
-\tag{8.21}
+\tag{8.23}
 \end{align}\]</span></p>
 <p>To obtain the <em>mle</em> of <span class="math inline">\(\beta=(\beta_0, \ldots, \beta_k)^{\prime}\)</span>, we differentiate<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> <span class="math inline">\(l(\beta)\)</span> with respect to vector <span class="math inline">\(\beta\)</span> and set it to zero:</p>
 <p><span class="math display" id="eq:score-ft-Poi">\[
 \frac{\partial}{\partial \beta}l(\boldsymbol \beta)\Bigg{|}_{\beta=\mathbf{b}}=\sum^n_{i=1} \left(y_i -m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b}) \right)\mathbf{ x}_i=\mathbf{ 0}.
-\tag{8.22}
+\tag{8.24}
 \]</span></p>
 <p>Numerically solving this equation system gives the <em>mle</em> of <span class="math inline">\(\beta\)</span>, denoted by <span class="math inline">\(\mathbf{ b}=(b_0, b_1, \ldots, b_k)^{\prime}\)</span>.
-Note that, as <span class="math inline">\(\mathbf{ x}_i=(1, x_{i1}, \ldots, x_{ik})^{\prime}\)</span> is a column vector, equation <a href="C-RiskClass.html#eq:score-ft-Poi">(8.22)</a> is a system of <span class="math inline">\(k+1\)</span> equations with both sides written as column vectors of size <span class="math inline">\(k+1\)</span>. If we denote <span class="math inline">\(\hat{\mu}_i=m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b})\)</span>, we can rewrite <a href="C-RiskClass.html#eq:score-ft-Poi">(8.22)</a> as</p>
+Note that, as <span class="math inline">\(\mathbf{ x}_i=(1, x_{i1}, \ldots, x_{ik})^{\prime}\)</span> is a column vector, equation <a href="C-RiskClass.html#eq:score-ft-Poi">(8.24)</a> is a system of <span class="math inline">\(k+1\)</span> equations with both sides written as column vectors of size <span class="math inline">\(k+1\)</span>. If we denote <span class="math inline">\(\hat{\mu}_i=m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b})\)</span>, we can rewrite <a href="C-RiskClass.html#eq:score-ft-Poi">(8.24)</a> as</p>
 <p><span class="math display">\[
 \sum^n_{i=1} \left(y_i -\hat{\mu}_i \right)\mathbf{ x}_i=\mathbf{ 0}.
 \]</span></p>
@@ -1449,24 +1447,24 @@ n^{-1}\sum_{i=1}^n y_i =\bar{y}=n^{-1}\sum_{i=1}^n \hat{\mu}_i.
 \]</span></p>
 <p>This is an interesting property saying that the average of the individual losses, <span class="math inline">\(\bar{y}\)</span>, is same as the average of the estimated values. That is, the sample mean is preserved under the fitted Poisson regression model.</p>
 <p><strong>Maximum Likelihood Estimation for Grouped Data</strong></p>
-<p>Sometimes the data are not available at the individual policy level. For example, <a href="#tab:8.2">Table 8.2</a> provides collective loss information for each risk class after grouping individual policies. When this is the case, <span class="math inline">\(y_i\)</span> and <span class="math inline">\(m_i\)</span>, the quantities needed for the <em>mle</em> calculation in <a href="C-RiskClass.html#eq:score-ft-Poi">(8.22)</a>, are unavailable for each <span class="math inline">\(i\)</span>. However this does not pose a problem as long as we have the total loss counts and total exposure for each risk class.</p>
+<p>Sometimes the data are not available at the individual policy level. For example, <a href="#tab:8.2">Table 8.2</a> provides collective loss information for each risk class after grouping individual policies. When this is the case, <span class="math inline">\(y_i\)</span> and <span class="math inline">\(m_i\)</span>, the quantities needed for the <em>mle</em> calculation in <a href="C-RiskClass.html#eq:score-ft-Poi">(8.24)</a>, are unavailable for each <span class="math inline">\(i\)</span>. However this does not pose a problem as long as we have the total loss counts and total exposure for each risk class.</p>
 <p>To elaborate, let us assume that there are <span class="math inline">\(K\)</span> different risk classes, and further that, in the <span class="math inline">\(k\)</span>th risk class, we have <span class="math inline">\(n_k\)</span> policies with the total exposure <span class="math inline">\(m_{(k)}\)</span> and the average loss count <span class="math inline">\(\bar{y}_{(k)}\)</span>, for <span class="math inline">\(k=1, \ldots, K\)</span>; the total loss count for the <span class="math inline">\(k\)</span>th risk class is then <span class="math inline">\(n_k\, \bar{y}_{(k)}\)</span>. We denote the set of indices of the policies belonging to the <span class="math inline">\(k\)</span>th class by <span class="math inline">\(C_k\)</span>. As all policies in a given risk class share the same risk characteristics, we may denote
-<span class="math inline">\(\mathbf{ x}_i=\mathbf{ x}_{(k)}\)</span> for all <span class="math inline">\(i \in C_k\)</span>. With this notation, we can rewrite <a href="C-RiskClass.html#eq:score-ft-Poi">(8.22)</a> as</p>
+<span class="math inline">\(\mathbf{ x}_i=\mathbf{ x}_{(k)}\)</span> for all <span class="math inline">\(i \in C_k\)</span>. With this notation, we can rewrite <a href="C-RiskClass.html#eq:score-ft-Poi">(8.24)</a> as</p>
 <p><span class="math display" id="eq:score-ft-Poi-2">\[\begin{align}
 \nonumber \sum^n_{i=1} \left(y_i -m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b}) \right)\mathbf{ x}_i &amp;= \sum^K_{k=1}\Big{\{}\sum_{i \in C_k} \left(y_i -m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b}) \right)\mathbf{ x}_i  \Big{\}} \\
 \nonumber     &amp;  =\sum^K_{k=1}\Big{\{} \sum_{i \in C_k} \left(y_i -m_i \exp(\mathbf{ x}^{\prime}_{(k)} \mathbf{ b}) \right)\mathbf{ x}_{(k)}  \Big{\}} \\
 \nonumber     &amp;  =\sum^K_{k=1}\Big{\{}  \Big(\sum_{i \in C_k}y_i -\sum_{i \in C_k}m_i \exp(\mathbf{ x}^{\prime}_{(k)} \mathbf{ b}) \Big)\mathbf{ x}_{(k)}  \Big{\}} \\
       &amp;  =\sum^K_{k=1} \Big(n_k\, \bar{y}_{(k)}-m_{(k)} \exp(\mathbf{ x}^{\prime}_{(k)} \mathbf{ b}) \Big)\mathbf{ x}_{(k)} =0.
-\tag{8.23}
+\tag{8.25}
 \end{align}\]</span></p>
-<p>Since <span class="math inline">\(n_k\, \bar{y}_{(k)}\)</span> in <a href="C-RiskClass.html#eq:score-ft-Poi-2">(8.23)</a> represents the total loss count for the <span class="math inline">\(k\)</span>th risk class and <span class="math inline">\(m_{(k)}\)</span> is its total exposure, we see that for the Poisson regression the <em>mle</em> <span class="math inline">\(\mathbf{ b}\)</span> is the same whether if we use the individual data or the grouped data.</p>
+<p>Since <span class="math inline">\(n_k\, \bar{y}_{(k)}\)</span> in <a href="C-RiskClass.html#eq:score-ft-Poi-2">(8.25)</a> represents the total loss count for the <span class="math inline">\(k\)</span>th risk class and <span class="math inline">\(m_{(k)}\)</span> is its total exposure, we see that for the Poisson regression the <em>mle</em> <span class="math inline">\(\mathbf{ b}\)</span> is the same whether if we use the individual data or the grouped data.</p>
 <p><strong>Information matrix</strong><br />
-Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. Taking second derivatives to <a href="C-RiskClass.html#eq:ll-Poi-reg">(8.21)</a> gives the <a href="#" class="tooltip" style="color:green"><em>information matrix</em><span style="font-size:8pt">Matrix that measures the amount of information that an observable random variable x carries about an unknown parameter of a distribution, and is used to calculate covariance matrices of maximum likelihood estimators</span></a> of the <em>mle</em> estimators,</p>
+Section <a href="C-AppC.html#S:AppC:LF">17.1</a> defines information matrices. Taking second derivatives to <a href="C-RiskClass.html#eq:ll-Poi-reg">(8.23)</a> gives the <a href="#" class="tooltip" style="color:green"><em>information matrix</em><span style="font-size:8pt">Matrix that measures the amount of information that an observable random variable x carries about an unknown parameter of a distribution, and is used to calculate covariance matrices of maximum likelihood estimators</span></a> of the <em>mle</em> estimators,</p>
 <p><span class="math display" id="eq:Inf-mtx-Poi">\[
 \mathbf{ I}(\boldsymbol \beta)=-\mathrm{E~}{\left( \frac{\partial^2}{\partial \boldsymbol \beta \partial \boldsymbol \beta^{\prime}}l(\boldsymbol \beta) \right)}=\sum^n_{i=1}m_i \exp(\mathbf{ x}^{\prime}_i \boldsymbol \beta)\mathbf{ x}_i \mathbf{ x}_i^{\prime}=\sum^n_{i=1} {\mu}_i \mathbf{ x}_i \mathbf{ x}_i^{\prime}.
-\tag{8.24}
+\tag{8.26}
 \]</span></p>
-<p>For actual datasets, <span class="math inline">\({\mu}_i\)</span> in <a href="C-RiskClass.html#eq:Inf-mtx-Poi">(8.24)</a> is replaced with <span class="math inline">\(\hat{\mu}_i=m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b})\)</span> to estimate the relevant variances and covariances of the <em>mle</em> <span class="math inline">\(\mathbf{ b}\)</span> or its functions.</p>
+<p>For actual datasets, <span class="math inline">\({\mu}_i\)</span> in <a href="C-RiskClass.html#eq:Inf-mtx-Poi">(8.26)</a> is replaced with <span class="math inline">\(\hat{\mu}_i=m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b})\)</span> to estimate the relevant variances and covariances of the <em>mle</em> <span class="math inline">\(\mathbf{ b}\)</span> or its functions.</p>
 <p>For grouped datasets, we have</p>
 <p><span class="math display">\[
 \mathbf{ I}(\boldsymbol \beta)=\sum^K_{k=1} \Big{\{}\sum_{i \in C_k}m_i \exp(\mathbf{ x}^{\prime}_i \boldsymbol \beta)\mathbf{ x}_i \mathbf{ x}_i^{\prime} \Big{\}}=\sum^K_{k=1} m_{(k)} \exp(\mathbf{ x}^{\prime}_{(k)} \boldsymbol \beta)\mathbf{ x}_{(k)} \mathbf{ x}_{(k)}^{\prime}.
@@ -1558,10 +1556,10 @@ On the one hand, free market competition dictates rating factors that insurers u
 <div class="footnotes">
 <hr />
 <ol start="9">
-<li id="fn9"><p>For example, if there are 3 risk factors each of which the number of levels are 2, 3 and 4, respectively, we have <span class="math inline">\(k=(2-1)\times(3-1)\times (4-1)=6\)</span>.<a href="C-RiskClass.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>Preferring the <a href="#" class="tooltip" style="color:green"><em>multiplicative form</em><span style="font-size:8pt">Relationship where the dependent variable is a product of the explanatory variables</span></a> to others (e.g., additive one) was already hinted in <a href="C-RiskClass.html#eq:log-lin-mu">(8.4)</a>.<a href="C-RiskClass.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>corresponding to <code>VAgecat1</code>.<a href="C-RiskClass.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>We use matrix derivative here.<a href="C-RiskClass.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>For example, if there are 3 risk factors each of which the number of levels are 2, 3 and 4, respectively, we have <span class="math inline">\(k=(2-1)\times(3-1)\times (4-1)=6\)</span>.<a href="C-RiskClass.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Preferring the <a href="#" class="tooltip" style="color:green"><em>multiplicative form</em><span style="font-size:8pt">Relationship where the dependent variable is a product of the explanatory variables</span></a> to others (e.g., additive one) was already hinted in <a href="C-RiskClass.html#eq:log-lin-mu">(8.4)</a>.<a href="C-RiskClass.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>corresponding to <span class="math inline">\(\texttt{VAgecat1}\)</span><a href="C-RiskClass.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>We use matrix derivative here.<a href="C-RiskClass.html#fnref12" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
