@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -311,9 +310,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -322,16 +321,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -340,9 +337,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -443,7 +440,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="C-Severity.html"><a href="C-Severity.html"><i class="fa fa-check"></i><b>3</b> Modeling Loss Severity</a><ul>
 <li class="chapter" data-level="3.1" data-path="C-Severity.html"><a href="C-Severity.html#S:BasicQuantities"><i class="fa fa-check"></i><b>3.1</b> Basic Distributional Quantities</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="C-Severity.html"><a href="C-Severity.html#S:Chap3Moments"><i class="fa fa-check"></i><b>3.1.1</b> Moments</a></li>
-<li class="chapter" data-level="3.1.2" data-path="C-Severity.html"><a href="C-Severity.html#quantiles"><i class="fa fa-check"></i><b>3.1.2</b> Quantiles</a></li>
+<li class="chapter" data-level="3.1.2" data-path="C-Severity.html"><a href="C-Severity.html#S:LS:Quantiles"><i class="fa fa-check"></i><b>3.1.2</b> Quantiles</a></li>
 <li class="chapter" data-level="3.1.3" data-path="C-Severity.html"><a href="C-Severity.html#moment-generating-function"><i class="fa fa-check"></i><b>3.1.3</b> Moment Generating Function</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="C-Severity.html"><a href="C-Severity.html#S:ContinuousDistn"><i class="fa fa-check"></i><b>3.2</b> Continuous Distributions for Modeling Loss Severity</a><ul>
@@ -603,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
 <li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
@@ -798,7 +795,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
 <li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#S:ContinuousDistributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
@@ -807,6 +804,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.2.6" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#distributions-with-finite-support"><i class="fa fa-check"></i><b>18.2.6</b> Distributions with Finite Support</a></li>
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>19</b> Appendix E: Conventions for Notation</a><ul>
+<li class="chapter" data-level="19.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:General"><i class="fa fa-check"></i><b>19.1</b> General Conventions</a></li>
+<li class="chapter" data-level="19.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Abbreviations"><i class="fa fa-check"></i><b>19.2</b> Abbreviations</a></li>
+<li class="chapter" data-level="19.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:StatSymbols"><i class="fa fa-check"></i><b>19.3</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="19.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Symbols"><i class="fa fa-check"></i><b>19.4</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="19.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>19.5</b> Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -971,19 +975,19 @@ r = \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Cov}(X,X)\widehat{Cov}(Y,Y)}}.
 <a id="displayCode.pearson.1" href="javascript:togglecode('toggleCode.pearson.1','displayCode.pearson.1');"><i><strong>R Code for Pearson Correlation Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.pearson.1" style="display: none">
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="C-DependenceModel.html#cb164-1"></a><span class="co">### Pearson correlation between Claim and Coverage</span></span>
-<span id="cb164-2"><a href="C-DependenceModel.html#cb164-2"></a>r&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))</span>
-<span id="cb164-3"><a href="C-DependenceModel.html#cb164-3"></a><span class="kw">round</span>(r,<span class="dv">2</span>)</span>
-<span id="cb164-4"><a href="C-DependenceModel.html#cb164-4"></a></span>
-<span id="cb164-5"><a href="C-DependenceModel.html#cb164-5"></a>Output<span class="op">:</span></span>
-<span id="cb164-6"><a href="C-DependenceModel.html#cb164-6"></a>[<span class="dv">1</span>] <span class="fl">0.31</span></span>
-<span id="cb164-7"><a href="C-DependenceModel.html#cb164-7"></a></span>
-<span id="cb164-8"><a href="C-DependenceModel.html#cb164-8"></a><span class="co">### Pearson correlation between Claim and log(Coverage)</span></span>
-<span id="cb164-9"><a href="C-DependenceModel.html#cb164-9"></a>r&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))</span>
-<span id="cb164-10"><a href="C-DependenceModel.html#cb164-10"></a><span class="kw">round</span>(r,<span class="dv">2</span>)</span>
-<span id="cb164-11"><a href="C-DependenceModel.html#cb164-11"></a></span>
-<span id="cb164-12"><a href="C-DependenceModel.html#cb164-12"></a>Output<span class="op">:</span></span>
-<span id="cb164-13"><a href="C-DependenceModel.html#cb164-13"></a>[<span class="dv">1</span>] <span class="fl">0.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" title="1"><span class="co">### Pearson correlation between Claim and Coverage</span></a>
+<a class="sourceLine" id="cb164-2" title="2">r&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))</a>
+<a class="sourceLine" id="cb164-3" title="3"><span class="kw">round</span>(r,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb164-4" title="4"></a>
+<a class="sourceLine" id="cb164-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb164-6" title="6">[<span class="dv">1</span>] <span class="fl">0.31</span></a>
+<a class="sourceLine" id="cb164-7" title="7"></a>
+<a class="sourceLine" id="cb164-8" title="8"><span class="co">### Pearson correlation between Claim and log(Coverage)</span></a>
+<a class="sourceLine" id="cb164-9" title="9">r&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;pearson&quot;</span>))</a>
+<a class="sourceLine" id="cb164-10" title="10"><span class="kw">round</span>(r,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb164-11" title="11"></a>
+<a class="sourceLine" id="cb164-12" title="12">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb164-13" title="13">[<span class="dv">1</span>] <span class="fl">0.1</span></a></code></pre></div>
 </div>
 <p>From <code>R</code> output above, <span class="math inline">\(r=0.31\)</span> , which indicates a positive association between <em>Claim</em> and <em>Coverage</em>. This means that as the coverage amount of a policy increases we expect claim to increase.</p>
 </div>
@@ -1004,19 +1008,19 @@ r_S = \frac{\widehat{Cov}(R(X),R(Y))}{\sqrt{\widehat{Cov}(R(X),R(X))\widehat{Cov
 <a id="displayCode.spearman.1" href="javascript:togglecode('toggleCode.spearman.1','displayCode.spearman.1');"><i><strong>R Code for Spearman Correlation Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.spearman.1" style="display: none">
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="C-DependenceModel.html#cb165-1"></a><span class="co">### Spearman correlation between Claim and Coverage </span><span class="al">###</span></span>
-<span id="cb165-2"><a href="C-DependenceModel.html#cb165-2"></a>rs&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</span>
-<span id="cb165-3"><a href="C-DependenceModel.html#cb165-3"></a><span class="kw">round</span>(rs,<span class="dv">2</span>)</span>
-<span id="cb165-4"><a href="C-DependenceModel.html#cb165-4"></a></span>
-<span id="cb165-5"><a href="C-DependenceModel.html#cb165-5"></a>Output<span class="op">:</span></span>
-<span id="cb165-6"><a href="C-DependenceModel.html#cb165-6"></a>[<span class="dv">1</span>] <span class="fl">0.41</span></span>
-<span id="cb165-7"><a href="C-DependenceModel.html#cb165-7"></a></span>
-<span id="cb165-8"><a href="C-DependenceModel.html#cb165-8"></a><span class="co">### Spearman correlation between Claim and log(Coverage) </span><span class="al">###</span></span>
-<span id="cb165-9"><a href="C-DependenceModel.html#cb165-9"></a>rs&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</span>
-<span id="cb165-10"><a href="C-DependenceModel.html#cb165-10"></a><span class="kw">round</span>(rs,<span class="dv">2</span>)</span>
-<span id="cb165-11"><a href="C-DependenceModel.html#cb165-11"></a></span>
-<span id="cb165-12"><a href="C-DependenceModel.html#cb165-12"></a>Output<span class="op">:</span></span>
-<span id="cb165-13"><a href="C-DependenceModel.html#cb165-13"></a>[<span class="dv">1</span>] <span class="fl">0.41</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" title="1"><span class="co">### Spearman correlation between Claim and Coverage </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb165-2" title="2">rs&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</a>
+<a class="sourceLine" id="cb165-3" title="3"><span class="kw">round</span>(rs,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb165-4" title="4"></a>
+<a class="sourceLine" id="cb165-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb165-6" title="6">[<span class="dv">1</span>] <span class="fl">0.41</span></a>
+<a class="sourceLine" id="cb165-7" title="7"></a>
+<a class="sourceLine" id="cb165-8" title="8"><span class="co">### Spearman correlation between Claim and log(Coverage) </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb165-9" title="9">rs&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</a>
+<a class="sourceLine" id="cb165-10" title="10"><span class="kw">round</span>(rs,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb165-11" title="11"></a>
+<a class="sourceLine" id="cb165-12" title="12">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb165-13" title="13">[<span class="dv">1</span>] <span class="fl">0.41</span></a></code></pre></div>
 </div>
 <p>We can show that the Spearman correlation statistic is invariant under strictly increasing transformations. From the <code>R</code> Code for Spearman correlation statistic above, <span class="math inline">\(r_S=0.41\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
@@ -1039,19 +1043,19 @@ r_S = \frac{\widehat{Cov}(R(X),R(Y))}{\sqrt{\widehat{Cov}(R(X),R(X))\widehat{Cov
 <a id="displayCode.kendall.1" href="javascript:togglecode('toggleCode.kendall.1','displayCode.kendall.1');"><i><strong>R Code for Kendall’s Tau</strong></i></a>
 </h5>
 <div id="toggleCode.kendall.1" style="display: none">
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="C-DependenceModel.html#cb166-1"></a><span class="co">### Kendall&#39;s tau correlation between Claim and Coverage </span><span class="al">###</span></span>
-<span id="cb166-2"><a href="C-DependenceModel.html#cb166-2"></a>tau&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))</span>
-<span id="cb166-3"><a href="C-DependenceModel.html#cb166-3"></a><span class="kw">round</span>(tau,<span class="dv">2</span>)</span>
-<span id="cb166-4"><a href="C-DependenceModel.html#cb166-4"></a></span>
-<span id="cb166-5"><a href="C-DependenceModel.html#cb166-5"></a>Output<span class="op">:</span></span>
-<span id="cb166-6"><a href="C-DependenceModel.html#cb166-6"></a>[<span class="dv">1</span>]  <span class="fl">0.32</span></span>
-<span id="cb166-7"><a href="C-DependenceModel.html#cb166-7"></a></span>
-<span id="cb166-8"><a href="C-DependenceModel.html#cb166-8"></a><span class="co">### Kendall&#39;s tau correlation between Claim and log(Coverage) </span><span class="al">###</span></span>
-<span id="cb166-9"><a href="C-DependenceModel.html#cb166-9"></a>tau&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))</span>
-<span id="cb166-10"><a href="C-DependenceModel.html#cb166-10"></a><span class="kw">round</span>(tau,<span class="dv">2</span>)</span>
-<span id="cb166-11"><a href="C-DependenceModel.html#cb166-11"></a></span>
-<span id="cb166-12"><a href="C-DependenceModel.html#cb166-12"></a>Output<span class="op">:</span></span>
-<span id="cb166-13"><a href="C-DependenceModel.html#cb166-13"></a>[<span class="dv">1</span>] <span class="fl">0.32</span></span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" title="1"><span class="co">### Kendall&#39;s tau correlation between Claim and Coverage </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb166-2" title="2">tau&lt;-<span class="kw">cor</span>(Claim,Coverage, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))</a>
+<a class="sourceLine" id="cb166-3" title="3"><span class="kw">round</span>(tau,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb166-4" title="4"></a>
+<a class="sourceLine" id="cb166-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb166-6" title="6">[<span class="dv">1</span>]  <span class="fl">0.32</span></a>
+<a class="sourceLine" id="cb166-7" title="7"></a>
+<a class="sourceLine" id="cb166-8" title="8"><span class="co">### Kendall&#39;s tau correlation between Claim and log(Coverage) </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb166-9" title="9">tau&lt;-<span class="kw">cor</span>(Claim,<span class="kw">log</span>(Coverage), <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;kendall&quot;</span>))</a>
+<a class="sourceLine" id="cb166-10" title="10"><span class="kw">round</span>(tau,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb166-11" title="11"></a>
+<a class="sourceLine" id="cb166-12" title="12">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb166-13" title="13">[<span class="dv">1</span>] <span class="fl">0.32</span></a></code></pre></div>
 </div>
 <p>Also,to show that the Kendall’s tau is invariate under strictly increasing transformations , <span class="math inline">\(\tau=0.32\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
@@ -1116,11 +1120,11 @@ Although these statistics provide the same information as is the original odds r
 <a id="displayCode.wald.1" href="javascript:togglecode('toggleCode.wald.1','displayCode.wald.1');"><i><strong>R Code for Odds Ratios</strong></i></a>
 </h5>
 <div id="toggleCode.wald.1" style="display: none">
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="C-DependenceModel.html#cb167-1"></a><span class="kw">library</span>(epitools)</span>
-<span id="cb167-2"><a href="C-DependenceModel.html#cb167-2"></a><span class="kw">oddsratio</span>(NoClaimCredit, Fire5,<span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;wald&quot;</span>))<span class="op">$</span>measure</span>
-<span id="cb167-3"><a href="C-DependenceModel.html#cb167-3"></a></span>
-<span id="cb167-4"><a href="C-DependenceModel.html#cb167-4"></a>Output<span class="op">:</span></span>
-<span id="cb167-5"><a href="C-DependenceModel.html#cb167-5"></a>[<span class="dv">1</span>]  <span class="fl">0.79</span></span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" title="1"><span class="kw">library</span>(epitools)</a>
+<a class="sourceLine" id="cb167-2" title="2"><span class="kw">oddsratio</span>(NoClaimCredit, Fire5,<span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;wald&quot;</span>))<span class="op">$</span>measure</a>
+<a class="sourceLine" id="cb167-3" title="3"></a>
+<a class="sourceLine" id="cb167-4" title="4">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb167-5" title="5">[<span class="dv">1</span>]  <span class="fl">0.79</span></a></code></pre></div>
 </div>
 </div>
 <div id="categorical-variables" class="section level4">
@@ -1168,19 +1172,19 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 <a id="displayCode.chi.1" href="javascript:togglecode('toggleCode.chi.1','displayCode.chi.1');"><i><strong>R Code for Pearson Chi-square Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.chi.1" style="display: none">
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="C-DependenceModel.html#cb168-1"></a><span class="kw">library</span>(MASS)</span>
-<span id="cb168-2"><a href="C-DependenceModel.html#cb168-2"></a>table =<span class="st"> </span><span class="kw">table</span>(EntityType, NoClaimCredit)</span>
-<span id="cb168-3"><a href="C-DependenceModel.html#cb168-3"></a><span class="kw">chisq.test</span>(table)</span>
-<span id="cb168-4"><a href="C-DependenceModel.html#cb168-4"></a></span>
-<span id="cb168-5"><a href="C-DependenceModel.html#cb168-5"></a></span>
-<span id="cb168-6"><a href="C-DependenceModel.html#cb168-6"></a>Output<span class="op">:</span></span>
-<span id="cb168-7"><a href="C-DependenceModel.html#cb168-7"></a><span class="op">------------------------------------</span></span>
-<span id="cb168-8"><a href="C-DependenceModel.html#cb168-8"></a><span class="st"> </span>Test statistic   df     P value    </span>
-<span id="cb168-9"><a href="C-DependenceModel.html#cb168-9"></a><span class="op">----------------</span><span class="st"> </span><span class="op">----</span><span class="st"> </span><span class="op">--------------</span></span>
-<span id="cb168-10"><a href="C-DependenceModel.html#cb168-10"></a><span class="st">     </span><span class="fl">344.2</span>        <span class="dv">5</span>   <span class="fl">3.15e-72</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span></span>
-<span id="cb168-11"><a href="C-DependenceModel.html#cb168-11"></a><span class="op">------------------------------------</span></span>
-<span id="cb168-12"><a href="C-DependenceModel.html#cb168-12"></a></span>
-<span id="cb168-13"><a href="C-DependenceModel.html#cb168-13"></a>Table<span class="op">:</span><span class="st"> </span>Pearson<span class="st">&#39;s Chi-squared test</span></span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" title="1"><span class="kw">library</span>(MASS)</a>
+<a class="sourceLine" id="cb168-2" title="2">table =<span class="st"> </span><span class="kw">table</span>(EntityType, NoClaimCredit)</a>
+<a class="sourceLine" id="cb168-3" title="3"><span class="kw">chisq.test</span>(table)</a>
+<a class="sourceLine" id="cb168-4" title="4"></a>
+<a class="sourceLine" id="cb168-5" title="5"></a>
+<a class="sourceLine" id="cb168-6" title="6">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb168-7" title="7"><span class="op">------------------------------------</span></a>
+<a class="sourceLine" id="cb168-8" title="8"><span class="st"> </span>Test statistic   df     P value    </a>
+<a class="sourceLine" id="cb168-9" title="9"><span class="op">----------------</span><span class="st"> </span><span class="op">----</span><span class="st"> </span><span class="op">--------------</span></a>
+<a class="sourceLine" id="cb168-10" title="10"><span class="st">     </span><span class="fl">344.2</span>        <span class="dv">5</span>   <span class="fl">3.15e-72</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span></a>
+<a class="sourceLine" id="cb168-11" title="11"><span class="op">------------------------------------</span></a>
+<a class="sourceLine" id="cb168-12" title="12"></a>
+<a class="sourceLine" id="cb168-13" title="13">Table<span class="op">:</span><span class="st"> </span>Pearson<span class="st">&#39;s Chi-squared test</span></a></code></pre></div>
 </div>
 <p>As the p-value is less than the .05 significance level, we reject the null hypothesis that the <em>EntityType</em> is independent of <em>NoClaimCredit</em>.</p>
 <p>Furthermore, you can obtain the likelihood ratio test statistic , using the <code>likelihood.test()</code> function from the <code>Deducer</code> library in <code>R</code>. From below, we test whether the <em>EntityType</em> variable is independent of <em>NoClaimCredit</em> variable from the LGPIF data. Same conclusion is drawn as the Pearson chi-square test.</p>
@@ -1188,17 +1192,17 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 <a id="displayCode.lik.1" href="javascript:togglecode('toggleCode.lik.1','displayCode.lik.1');"><i><strong>R Code for Likelihood Ratio Test Statistic</strong></i></a>
 </h5>
 <div id="toggleCode.lik.1" style="display: none">
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="C-DependenceModel.html#cb169-1"></a><span class="kw">library</span>(Deducer)</span>
-<span id="cb169-2"><a href="C-DependenceModel.html#cb169-2"></a><span class="kw">likelihood.test</span>(EntityType, NoClaimCredit)</span>
-<span id="cb169-3"><a href="C-DependenceModel.html#cb169-3"></a></span>
-<span id="cb169-4"><a href="C-DependenceModel.html#cb169-4"></a>Output<span class="op">:</span></span>
-<span id="cb169-5"><a href="C-DependenceModel.html#cb169-5"></a><span class="op">-----------------------------------------</span></span>
-<span id="cb169-6"><a href="C-DependenceModel.html#cb169-6"></a><span class="st"> </span>Test statistic   X<span class="op">-</span>squared df   P value </span>
-<span id="cb169-7"><a href="C-DependenceModel.html#cb169-7"></a><span class="op">----------------</span><span class="st"> </span><span class="op">--------------</span><span class="st"> </span><span class="op">---------</span></span>
-<span id="cb169-8"><a href="C-DependenceModel.html#cb169-8"></a><span class="st">     </span><span class="fl">378.7</span>             <span class="dv">5</span>         <span class="dv">0</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span></span>
-<span id="cb169-9"><a href="C-DependenceModel.html#cb169-9"></a><span class="op">-----------------------------------------</span></span>
-<span id="cb169-10"><a href="C-DependenceModel.html#cb169-10"></a></span>
-<span id="cb169-11"><a href="C-DependenceModel.html#cb169-11"></a>Table<span class="op">:</span><span class="st"> </span>Log likelihood <span class="kw">ratio</span> (G<span class="op">-</span>test) test of independence without correction</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" title="1"><span class="kw">library</span>(Deducer)</a>
+<a class="sourceLine" id="cb169-2" title="2"><span class="kw">likelihood.test</span>(EntityType, NoClaimCredit)</a>
+<a class="sourceLine" id="cb169-3" title="3"></a>
+<a class="sourceLine" id="cb169-4" title="4">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb169-5" title="5"><span class="op">-----------------------------------------</span></a>
+<a class="sourceLine" id="cb169-6" title="6"><span class="st"> </span>Test statistic   X<span class="op">-</span>squared df   P value </a>
+<a class="sourceLine" id="cb169-7" title="7"><span class="op">----------------</span><span class="st"> </span><span class="op">--------------</span><span class="st"> </span><span class="op">---------</span></a>
+<a class="sourceLine" id="cb169-8" title="8"><span class="st">     </span><span class="fl">378.7</span>             <span class="dv">5</span>         <span class="dv">0</span> <span class="op">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span><span class="er">*</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb169-9" title="9"><span class="op">-----------------------------------------</span></a>
+<a class="sourceLine" id="cb169-10" title="10"></a>
+<a class="sourceLine" id="cb169-11" title="11">Table<span class="op">:</span><span class="st"> </span>Log likelihood <span class="kw">ratio</span> (G<span class="op">-</span>test) test of independence without correction</a></code></pre></div>
 </div>
 </div>
 </div>
@@ -1244,17 +1248,17 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 <a id="displayCode.poly.1" href="javascript:togglecode('toggleCode.poly.1','displayCode.poly.1');"><i><strong>R Code for Polychoric Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.poly.1" style="display: none">
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="C-DependenceModel.html#cb170-1"></a><span class="kw">library</span>(psych)</span>
-<span id="cb170-2"><a href="C-DependenceModel.html#cb170-2"></a>AlarmCredit&lt;-<span class="kw">as.numeric</span>(<span class="kw">ifelse</span>(Insample<span class="op">$</span>AC00<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;1&quot;</span>,</span>
-<span id="cb170-3"><a href="C-DependenceModel.html#cb170-3"></a>                   <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC05<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;2&quot;</span>,</span>
-<span id="cb170-4"><a href="C-DependenceModel.html#cb170-4"></a>                          <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC10<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;3&quot;</span>,</span>
-<span id="cb170-5"><a href="C-DependenceModel.html#cb170-5"></a>                                 <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC15<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;4&quot;</span>,<span class="dv">0</span>)))))</span>
-<span id="cb170-6"><a href="C-DependenceModel.html#cb170-6"></a>x &lt;-<span class="st"> </span><span class="kw">table</span>(AlarmCredit,NoClaimCredit)</span>
-<span id="cb170-7"><a href="C-DependenceModel.html#cb170-7"></a>rhoN&lt;-<span class="kw">polychoric</span>(x,<span class="dt">correct=</span><span class="ot">FALSE</span>)<span class="op">$</span>rho</span>
-<span id="cb170-8"><a href="C-DependenceModel.html#cb170-8"></a><span class="kw">round</span>(rhoN,<span class="dv">2</span>)</span>
-<span id="cb170-9"><a href="C-DependenceModel.html#cb170-9"></a></span>
-<span id="cb170-10"><a href="C-DependenceModel.html#cb170-10"></a>Output<span class="op">:</span></span>
-<span id="cb170-11"><a href="C-DependenceModel.html#cb170-11"></a>[<span class="dv">1</span>] <span class="fl">-0.14</span></span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" title="1"><span class="kw">library</span>(psych)</a>
+<a class="sourceLine" id="cb170-2" title="2">AlarmCredit&lt;-<span class="kw">as.numeric</span>(<span class="kw">ifelse</span>(Insample<span class="op">$</span>AC00<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;1&quot;</span>,</a>
+<a class="sourceLine" id="cb170-3" title="3">                   <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC05<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;2&quot;</span>,</a>
+<a class="sourceLine" id="cb170-4" title="4">                          <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC10<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;3&quot;</span>,</a>
+<a class="sourceLine" id="cb170-5" title="5">                                 <span class="kw">ifelse</span>(Insample<span class="op">$</span>AC15<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;4&quot;</span>,<span class="dv">0</span>)))))</a>
+<a class="sourceLine" id="cb170-6" title="6">x &lt;-<span class="st"> </span><span class="kw">table</span>(AlarmCredit,NoClaimCredit)</a>
+<a class="sourceLine" id="cb170-7" title="7">rhoN&lt;-<span class="kw">polychoric</span>(x,<span class="dt">correct=</span><span class="ot">FALSE</span>)<span class="op">$</span>rho</a>
+<a class="sourceLine" id="cb170-8" title="8"><span class="kw">round</span>(rhoN,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb170-9" title="9"></a>
+<a class="sourceLine" id="cb170-10" title="10">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb170-11" title="11">[<span class="dv">1</span>] <span class="fl">-0.14</span></a></code></pre></div>
 </div>
 </div>
 </div>
@@ -1297,12 +1301,12 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 <a id="displayCode.bis.1" href="javascript:togglecode('toggleCode.bis.1','displayCode.bis.1');"><i><strong>R Code for Biserial Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.bis.1" style="display: none">
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="C-DependenceModel.html#cb171-1"></a><span class="kw">library</span>(psych)</span>
-<span id="cb171-2"><a href="C-DependenceModel.html#cb171-2"></a>rhoN&lt;-<span class="kw">biserial</span>(Claim,NoClaimCredit)</span>
-<span id="cb171-3"><a href="C-DependenceModel.html#cb171-3"></a><span class="kw">round</span>(rhoN,<span class="dv">2</span>)</span>
-<span id="cb171-4"><a href="C-DependenceModel.html#cb171-4"></a></span>
-<span id="cb171-5"><a href="C-DependenceModel.html#cb171-5"></a>Output<span class="op">:</span></span>
-<span id="cb171-6"><a href="C-DependenceModel.html#cb171-6"></a>[<span class="dv">1</span>] <span class="fl">-0.04</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" title="1"><span class="kw">library</span>(psych)</a>
+<a class="sourceLine" id="cb171-2" title="2">rhoN&lt;-<span class="kw">biserial</span>(Claim,NoClaimCredit)</a>
+<a class="sourceLine" id="cb171-3" title="3"><span class="kw">round</span>(rhoN,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb171-4" title="4"></a>
+<a class="sourceLine" id="cb171-5" title="5">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb171-6" title="6">[<span class="dv">1</span>] <span class="fl">-0.04</span></a></code></pre></div>
 </div>
 <div id="surveyElement142">
 
@@ -1386,15 +1390,15 @@ u_1) -1)(\exp(\theta u_2) -1)} {\exp(\theta) -1} \right).\]</span></p>
 <a id="displayCode.ScaHis.1" href="javascript:togglecode('toggleCode.ScaHis.1','displayCode.ScaHis.1');"><i><strong>R Code for Scatterplots</strong></i></a>
 </h5>
 <div id="toggleCode.ScaHis.1" style="display: none">
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="C-DependenceModel.html#cb172-1"></a><span class="kw">library</span>(copula)</span>
-<span id="cb172-2"><a href="C-DependenceModel.html#cb172-2"></a><span class="kw">data</span>(loss) <span class="co"># loss data</span></span>
-<span id="cb172-3"><a href="C-DependenceModel.html#cb172-3"></a>Lossdata &lt;-<span class="st"> </span>loss </span>
-<span id="cb172-4"><a href="C-DependenceModel.html#cb172-4"></a><span class="kw">attach</span>(Lossdata) </span>
-<span id="cb172-5"><a href="C-DependenceModel.html#cb172-5"></a>loss &lt;-<span class="st"> </span>Lossdata<span class="op">$</span>loss</span>
-<span id="cb172-6"><a href="C-DependenceModel.html#cb172-6"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb172-7"><a href="C-DependenceModel.html#cb172-7"></a><span class="kw">plot</span>(loss,alae, <span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># real dollar scale</span></span>
-<span id="cb172-8"><a href="C-DependenceModel.html#cb172-8"></a><span class="kw">plot</span>(<span class="kw">log</span>(loss),<span class="kw">log</span>(alae),<span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># log scale</span></span>
-<span id="cb172-9"><a href="C-DependenceModel.html#cb172-9"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" title="1"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb172-2" title="2"><span class="kw">data</span>(loss) <span class="co"># loss data</span></a>
+<a class="sourceLine" id="cb172-3" title="3">Lossdata &lt;-<span class="st"> </span>loss </a>
+<a class="sourceLine" id="cb172-4" title="4"><span class="kw">attach</span>(Lossdata) </a>
+<a class="sourceLine" id="cb172-5" title="5">loss &lt;-<span class="st"> </span>Lossdata<span class="op">$</span>loss</a>
+<a class="sourceLine" id="cb172-6" title="6"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb172-7" title="7"><span class="kw">plot</span>(loss,alae, <span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># real dollar scale</span></a>
+<a class="sourceLine" id="cb172-8" title="8"><span class="kw">plot</span>(<span class="kw">log</span>(loss),<span class="kw">log</span>(alae),<span class="dt">cex=</span>.<span class="dv">5</span>) <span class="co"># log scale</span></a>
+<a class="sourceLine" id="cb172-9" title="9"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a></code></pre></div>
 </div>
 </div>
 <div id="marginal-models" class="section level3">
@@ -1408,32 +1412,32 @@ where <span class="math inline">\(\theta\)</span> is the scale parameter and <sp
 <a id="displayCode.Reg.1" href="javascript:togglecode('toggleCode.Reg.1','displayCode.Reg.1');"><i><strong>R Code for Pareto Fitting</strong></i></a>
 </h5>
 <div id="toggleCode.Reg.1" style="display: none">
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="C-DependenceModel.html#cb173-1"></a><span class="kw">library</span>(VGAM)</span>
-<span id="cb173-2"><a href="C-DependenceModel.html#cb173-2"></a></span>
-<span id="cb173-3"><a href="C-DependenceModel.html#cb173-3"></a>fit =<span class="st"> </span><span class="kw">vglm</span>(alae <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="kw">paretoII</span>(<span class="dt">location=</span><span class="dv">0</span>, <span class="dt">lscale=</span><span class="st">&quot;loge&quot;</span>, <span class="dt">lshape=</span><span class="st">&quot;loge&quot;</span>)) <span class="co"># fit the model by vlgm function</span></span>
-<span id="cb173-4"><a href="C-DependenceModel.html#cb173-4"></a><span class="kw">coef</span>(fit, <span class="dt">matrix=</span><span class="ot">TRUE</span>) <span class="co"># extract fitted model coefficients, matrix=TRUE gives logarithm of estimated parameters instead of default normal scale estimates</span></span>
-<span id="cb173-5"><a href="C-DependenceModel.html#cb173-5"></a><span class="kw">Coef</span>(fit)</span>
-<span id="cb173-6"><a href="C-DependenceModel.html#cb173-6"></a></span>
-<span id="cb173-7"><a href="C-DependenceModel.html#cb173-7"></a>Output<span class="op">:</span><span class="st"> </span></span>
-<span id="cb173-8"><a href="C-DependenceModel.html#cb173-8"></a><span class="st">               </span><span class="kw">loge</span>(scale) <span class="kw">loge</span>(shape)</span>
-<span id="cb173-9"><a href="C-DependenceModel.html#cb173-9"></a> (Intercept)     <span class="fl">9.624673</span>   <span class="fl">0.7988753</span></span>
-<span id="cb173-10"><a href="C-DependenceModel.html#cb173-10"></a> </span>
-<span id="cb173-11"><a href="C-DependenceModel.html#cb173-11"></a>                  scale        shape </span>
-<span id="cb173-12"><a href="C-DependenceModel.html#cb173-12"></a> (Intercept)  <span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" title="1"><span class="kw">library</span>(VGAM)</a>
+<a class="sourceLine" id="cb173-2" title="2"></a>
+<a class="sourceLine" id="cb173-3" title="3">fit =<span class="st"> </span><span class="kw">vglm</span>(alae <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="kw">paretoII</span>(<span class="dt">location=</span><span class="dv">0</span>, <span class="dt">lscale=</span><span class="st">&quot;loge&quot;</span>, <span class="dt">lshape=</span><span class="st">&quot;loge&quot;</span>)) <span class="co"># fit the model by vlgm function</span></a>
+<a class="sourceLine" id="cb173-4" title="4"><span class="kw">coef</span>(fit, <span class="dt">matrix=</span><span class="ot">TRUE</span>) <span class="co"># extract fitted model coefficients, matrix=TRUE gives logarithm of estimated parameters instead of default normal scale estimates</span></a>
+<a class="sourceLine" id="cb173-5" title="5"><span class="kw">Coef</span>(fit)</a>
+<a class="sourceLine" id="cb173-6" title="6"></a>
+<a class="sourceLine" id="cb173-7" title="7">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb173-8" title="8"><span class="st">               </span><span class="kw">loge</span>(scale) <span class="kw">loge</span>(shape)</a>
+<a class="sourceLine" id="cb173-9" title="9"> (Intercept)     <span class="fl">9.624673</span>   <span class="fl">0.7988753</span></a>
+<a class="sourceLine" id="cb173-10" title="10"> </a>
+<a class="sourceLine" id="cb173-11" title="11">                  scale        shape </a>
+<a class="sourceLine" id="cb173-12" title="12"> (Intercept)  <span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </a></code></pre></div>
 </div>
 <p>We repeat this procedure to fit the marginal distribution of the <em>loss</em> variable. Because the loss data also seems right-skewed and heavy-tail data, we also model the marginal distribution with Pareto II distribution.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.ParFit.1" href="javascript:togglecode('toggleCode.ParFit.1','displayCode.ParFit.1');"><i><strong>R Code for Pareto Fitting</strong></i></a>
 </h5>
 <div id="toggleCode.ParFit.1" style="display: none">
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="C-DependenceModel.html#cb174-1"></a>fitloss =<span class="st"> </span><span class="kw">vglm</span>(loss <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">trace=</span><span class="ot">TRUE</span>)</span>
-<span id="cb174-2"><a href="C-DependenceModel.html#cb174-2"></a><span class="kw">Coef</span>(fit)</span>
-<span id="cb174-3"><a href="C-DependenceModel.html#cb174-3"></a><span class="kw">summary</span>(fit)</span>
-<span id="cb174-4"><a href="C-DependenceModel.html#cb174-4"></a></span>
-<span id="cb174-5"><a href="C-DependenceModel.html#cb174-5"></a></span>
-<span id="cb174-6"><a href="C-DependenceModel.html#cb174-6"></a>Output<span class="op">:</span><span class="st"> </span></span>
-<span id="cb174-7"><a href="C-DependenceModel.html#cb174-7"></a><span class="st">       </span>scale        shape </span>
-<span id="cb174-8"><a href="C-DependenceModel.html#cb174-8"></a><span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1">fitloss =<span class="st"> </span><span class="kw">vglm</span>(loss <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">trace=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb174-2" title="2"><span class="kw">Coef</span>(fit)</a>
+<a class="sourceLine" id="cb174-3" title="3"><span class="kw">summary</span>(fit)</a>
+<a class="sourceLine" id="cb174-4" title="4"></a>
+<a class="sourceLine" id="cb174-5" title="5"></a>
+<a class="sourceLine" id="cb174-6" title="6">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb174-7" title="7"><span class="st">       </span>scale        shape </a>
+<a class="sourceLine" id="cb174-8" title="8"><span class="fl">15133.603598</span>     <span class="fl">2.223039</span> </a></code></pre></div>
 </div>
 <p>To visualize the fitted distribution of <em>expenses </em> and <em>loss</em> variables, we use the estimated parameters and plot the corresponding distribution function and density function. For more details on marginal model selection, see Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
 </div>
@@ -1460,15 +1464,15 @@ Figure 14.3: Histogram of Transformed Loss. The left-hand panel shows the distri
 <a id="displayCode.transalae.1" href="javascript:togglecode('toggleCode.transalae.1','displayCode.transalae.1');"><i><strong>R Code for Histograms of Transformed Variables</strong></i></a>
 </h5>
 <div id="toggleCode.transalae.1" style="display: none">
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="C-DependenceModel.html#cb175-1"></a>u1 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(alae<span class="op">/</span>b))<span class="op">^</span>(<span class="op">-</span>s) <span class="co"># or u1 &lt;- pparetoII(alae, location=0, scale=b, shape=s)</span></span>
-<span id="cb175-2"><a href="C-DependenceModel.html#cb175-2"></a><span class="kw">hist</span>(u1, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed alae&quot;</span>)</span>
-<span id="cb175-3"><a href="C-DependenceModel.html#cb175-3"></a></span>
-<span id="cb175-4"><a href="C-DependenceModel.html#cb175-4"></a>scaleloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">1</span>]</span>
-<span id="cb175-5"><a href="C-DependenceModel.html#cb175-5"></a>shapeloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">2</span>]</span>
-<span id="cb175-6"><a href="C-DependenceModel.html#cb175-6"></a>u2 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(loss<span class="op">/</span>scaleloss))<span class="op">^</span>(<span class="op">-</span>shapeloss)</span>
-<span id="cb175-7"><a href="C-DependenceModel.html#cb175-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb175-8"><a href="C-DependenceModel.html#cb175-8"></a><span class="kw">hist</span>(u2, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed Loss&quot;</span>)</span>
-<span id="cb175-9"><a href="C-DependenceModel.html#cb175-9"></a><span class="kw">hist</span>(<span class="kw">qnorm</span>(u2), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of qnorm(Loss)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1">u1 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(alae<span class="op">/</span>b))<span class="op">^</span>(<span class="op">-</span>s) <span class="co"># or u1 &lt;- pparetoII(alae, location=0, scale=b, shape=s)</span></a>
+<a class="sourceLine" id="cb175-2" title="2"><span class="kw">hist</span>(u1, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed alae&quot;</span>)</a>
+<a class="sourceLine" id="cb175-3" title="3"></a>
+<a class="sourceLine" id="cb175-4" title="4">scaleloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb175-5" title="5">shapeloss &lt;-<span class="st"> </span><span class="kw">Coef</span>(fitloss)[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb175-6" title="6">u2 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(loss<span class="op">/</span>scaleloss))<span class="op">^</span>(<span class="op">-</span>shapeloss)</a>
+<a class="sourceLine" id="cb175-7" title="7"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb175-8" title="8"><span class="kw">hist</span>(u2, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of Transformed Loss&quot;</span>)</a>
+<a class="sourceLine" id="cb175-9" title="9"><span class="kw">hist</span>(<span class="kw">qnorm</span>(u2), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Histogram of qnorm(Loss)&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="joint-modeling-with-copula-function" class="section level3">
@@ -1485,15 +1489,15 @@ Figure 14.4: Left: Scatter plot for transformed variables. Right:Scatter plot fo
 <a id="displayCode.Cor.1" href="javascript:togglecode('toggleCode.Cor.1','displayCode.Cor.1');"><i><strong>R Code for Scatter Plots and Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.Cor.1" style="display: none">
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="C-DependenceModel.html#cb176-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb176-2"><a href="C-DependenceModel.html#cb176-2"></a><span class="kw">plot</span>(u1, u2, <span class="dt">cex =</span> <span class="fl">0.5</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>),</span>
-<span id="cb176-3"><a href="C-DependenceModel.html#cb176-3"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Transformed Alae&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Transformed Loss&quot;</span>)</span>
-<span id="cb176-4"><a href="C-DependenceModel.html#cb176-4"></a><span class="kw">plot</span>(<span class="kw">qnorm</span>(u1), <span class="kw">qnorm</span>(u2))</span>
-<span id="cb176-5"><a href="C-DependenceModel.html#cb176-5"></a><span class="kw">cor</span>(u1, u2, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</span>
-<span id="cb176-6"><a href="C-DependenceModel.html#cb176-6"></a></span>
-<span id="cb176-7"><a href="C-DependenceModel.html#cb176-7"></a>Output<span class="op">:</span><span class="st"> </span></span>
-<span id="cb176-8"><a href="C-DependenceModel.html#cb176-8"></a></span>
-<span id="cb176-9"><a href="C-DependenceModel.html#cb176-9"></a>[<span class="dv">1</span>] <span class="fl">0.451872</span></span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb176-2" title="2"><span class="kw">plot</span>(u1, u2, <span class="dt">cex =</span> <span class="fl">0.5</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">1.1</span>),</a>
+<a class="sourceLine" id="cb176-3" title="3">     <span class="dt">xlab =</span> <span class="st">&quot;Transformed Alae&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Transformed Loss&quot;</span>)</a>
+<a class="sourceLine" id="cb176-4" title="4"><span class="kw">plot</span>(<span class="kw">qnorm</span>(u1), <span class="kw">qnorm</span>(u2))</a>
+<a class="sourceLine" id="cb176-5" title="5"><span class="kw">cor</span>(u1, u2, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</a>
+<a class="sourceLine" id="cb176-6" title="6"></a>
+<a class="sourceLine" id="cb176-7" title="7">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb176-8" title="8"></a>
+<a class="sourceLine" id="cb176-9" title="9">[<span class="dv">1</span>] <span class="fl">0.451872</span></a></code></pre></div>
 </div>
 <p>Scatter plots and Spearman’s rho correlation value (0.451) shows us there is a positive dependency between these two uniform random variables. It is more clear to see the relationship with normal scores in the second graph. To learn more details about normal scores and their applications in copula modeling, see <span class="citation">(Joe <a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>.</p>
 <p><span class="math inline">\((U_1, U_2)\)</span>, (<span class="math inline">\(U_1 = F_1(ALAE)\)</span> and <span class="math inline">\(U_2=F_2(LOSS)\)</span>), is fit to Frank’s copula with maximum likelihood method.</p>
@@ -1501,31 +1505,31 @@ Figure 14.4: Left: Scatter plot for transformed variables. Right:Scatter plot fo
 <a id="displayCode.FrankCopula.1" href="javascript:togglecode('toggleCode.FrankCopula.1','displayCode.FrankCopula.1');"><i><strong>R Code for Modeling with Frank Copula</strong></i></a>
 </h5>
 <div id="toggleCode.FrankCopula.1" style="display: none">
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="C-DependenceModel.html#cb177-1"></a>uu =<span class="st"> </span><span class="kw">cbind</span>(u1,u2) </span>
-<span id="cb177-2"><a href="C-DependenceModel.html#cb177-2"></a>frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="dv">5</span>), <span class="dt">dim =</span> <span class="dv">2</span>)</span>
-<span id="cb177-3"><a href="C-DependenceModel.html#cb177-3"></a>fit.ml &lt;-<span class="st"> </span><span class="kw">fitCopula</span>(frank.cop, uu, <span class="dt">method=</span><span class="st">&quot;ml&quot;</span>, <span class="dt">start=</span><span class="kw">c</span>(<span class="fl">0.4</span>))</span>
-<span id="cb177-4"><a href="C-DependenceModel.html#cb177-4"></a><span class="kw">summary</span>(fit.ml)</span>
-<span id="cb177-5"><a href="C-DependenceModel.html#cb177-5"></a></span>
-<span id="cb177-6"><a href="C-DependenceModel.html#cb177-6"></a></span>
-<span id="cb177-7"><a href="C-DependenceModel.html#cb177-7"></a>Output<span class="op">:</span><span class="st"> </span></span>
-<span id="cb177-8"><a href="C-DependenceModel.html#cb177-8"></a></span>
-<span id="cb177-9"><a href="C-DependenceModel.html#cb177-9"></a>Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)</span>
-<span id="cb177-10"><a href="C-DependenceModel.html#cb177-10"></a>Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.</span>
-<span id="cb177-11"><a href="C-DependenceModel.html#cb177-11"></a>Copula<span class="op">:</span><span class="st"> </span>frankCopula </span>
-<span id="cb177-12"><a href="C-DependenceModel.html#cb177-12"></a>param </span>
-<span id="cb177-13"><a href="C-DependenceModel.html#cb177-13"></a><span class="fl">3.114</span> </span>
-<span id="cb177-14"><a href="C-DependenceModel.html#cb177-14"></a>The maximized loglikelihood is <span class="fl">172.6</span> </span>
-<span id="cb177-15"><a href="C-DependenceModel.html#cb177-15"></a>Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.</span>
-<span id="cb177-16"><a href="C-DependenceModel.html#cb177-16"></a>Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)</span>
-<span id="cb177-17"><a href="C-DependenceModel.html#cb177-17"></a>Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.</span>
-<span id="cb177-18"><a href="C-DependenceModel.html#cb177-18"></a>Frank copula, dim. d =<span class="st"> </span><span class="dv">2</span> </span>
-<span id="cb177-19"><a href="C-DependenceModel.html#cb177-19"></a>      Estimate Std. Error</span>
-<span id="cb177-20"><a href="C-DependenceModel.html#cb177-20"></a>param    <span class="fl">3.114</span>         <span class="ot">NA</span></span>
-<span id="cb177-21"><a href="C-DependenceModel.html#cb177-21"></a>The maximized loglikelihood is <span class="fl">172.6</span> </span>
-<span id="cb177-22"><a href="C-DependenceModel.html#cb177-22"></a>Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.</span>
-<span id="cb177-23"><a href="C-DependenceModel.html#cb177-23"></a>Number of loglikelihood evaluations<span class="op">:</span></span>
-<span id="cb177-24"><a href="C-DependenceModel.html#cb177-24"></a><span class="cf">function</span> gradient </span>
-<span id="cb177-25"><a href="C-DependenceModel.html#cb177-25"></a>      <span class="dv">45</span>       <span class="dv">45</span> </span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1">uu =<span class="st"> </span><span class="kw">cbind</span>(u1,u2) </a>
+<a class="sourceLine" id="cb177-2" title="2">frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="dv">5</span>), <span class="dt">dim =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb177-3" title="3">fit.ml &lt;-<span class="st"> </span><span class="kw">fitCopula</span>(frank.cop, uu, <span class="dt">method=</span><span class="st">&quot;ml&quot;</span>, <span class="dt">start=</span><span class="kw">c</span>(<span class="fl">0.4</span>))</a>
+<a class="sourceLine" id="cb177-4" title="4"><span class="kw">summary</span>(fit.ml)</a>
+<a class="sourceLine" id="cb177-5" title="5"></a>
+<a class="sourceLine" id="cb177-6" title="6"></a>
+<a class="sourceLine" id="cb177-7" title="7">Output<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-8" title="8"></a>
+<a class="sourceLine" id="cb177-9" title="9">Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb177-10" title="10">Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.</a>
+<a class="sourceLine" id="cb177-11" title="11">Copula<span class="op">:</span><span class="st"> </span>frankCopula </a>
+<a class="sourceLine" id="cb177-12" title="12">param </a>
+<a class="sourceLine" id="cb177-13" title="13"><span class="fl">3.114</span> </a>
+<a class="sourceLine" id="cb177-14" title="14">The maximized loglikelihood is <span class="fl">172.6</span> </a>
+<a class="sourceLine" id="cb177-15" title="15">Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.</a>
+<a class="sourceLine" id="cb177-16" title="16">Call<span class="op">:</span><span class="st"> </span><span class="kw">fitCopula</span>(copula, <span class="dt">data =</span> data, <span class="dt">method =</span> <span class="st">&quot;ml&quot;</span>, <span class="dt">start =</span> ..<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb177-17" title="17">Fit based on <span class="st">&quot;maximum likelihood&quot;</span> and <span class="dv">1500</span> <span class="dv">2</span><span class="op">-</span>dimensional observations.</a>
+<a class="sourceLine" id="cb177-18" title="18">Frank copula, dim. d =<span class="st"> </span><span class="dv">2</span> </a>
+<a class="sourceLine" id="cb177-19" title="19">      Estimate Std. Error</a>
+<a class="sourceLine" id="cb177-20" title="20">param    <span class="fl">3.114</span>         <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb177-21" title="21">The maximized loglikelihood is <span class="fl">172.6</span> </a>
+<a class="sourceLine" id="cb177-22" title="22">Convergence problems<span class="op">:</span><span class="st"> </span>code is <span class="dv">52</span> see ?optim.</a>
+<a class="sourceLine" id="cb177-23" title="23">Number of loglikelihood evaluations<span class="op">:</span></a>
+<a class="sourceLine" id="cb177-24" title="24"><span class="cf">function</span> gradient </a>
+<a class="sourceLine" id="cb177-25" title="25">      <span class="dv">45</span>       <span class="dv">45</span> </a></code></pre></div>
 </div>
 <p>The fitted model implies that losses and expenses are positively dependent and their dependence is significant.</p>
 <p>We use the fitted parameter to update the Frank’s copula. The Spearman’s correlation corresponding to the fitted copula parameter(3.114) is calculated with the <code>rho</code> function. In this case, the Spearman’s correlation coefficient is 0.462, which is very close to the sample Spearman’s correlation coefficient; 0.452.</p>
@@ -1533,12 +1537,12 @@ Figure 14.4: Left: Scatter plot for transformed variables. Right:Scatter plot fo
 <a id="displayCode.fittedCop.1" href="javascript:togglecode('toggleCode.fittedCop.1','displayCode.fittedCop.1');"><i><strong>R Code for Spearman’s Correlation Using Frank’s Copula</strong></i></a>
 </h5>
 <div id="toggleCode.fittedCop.1" style="display: none">
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="C-DependenceModel.html#cb178-1"></a>(<span class="dt">param =</span> fit.ml<span class="op">@</span>estimate)</span>
-<span id="cb178-2"><a href="C-DependenceModel.html#cb178-2"></a>frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> param, <span class="dt">dim =</span> <span class="dv">2</span>)</span>
-<span id="cb178-3"><a href="C-DependenceModel.html#cb178-3"></a><span class="kw">rho</span>(frank.cop) </span>
-<span id="cb178-4"><a href="C-DependenceModel.html#cb178-4"></a></span>
-<span id="cb178-5"><a href="C-DependenceModel.html#cb178-5"></a>Output <span class="op">:</span><span class="st"> </span></span>
-<span id="cb178-6"><a href="C-DependenceModel.html#cb178-6"></a>[<span class="dv">1</span>] <span class="fl">0.4622722</span></span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1">(<span class="dt">param =</span> fit.ml<span class="op">@</span>estimate)</a>
+<a class="sourceLine" id="cb178-2" title="2">frank.cop &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> param, <span class="dt">dim =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb178-3" title="3"><span class="kw">rho</span>(frank.cop) </a>
+<a class="sourceLine" id="cb178-4" title="4"></a>
+<a class="sourceLine" id="cb178-5" title="5">Output <span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb178-6" title="6">[<span class="dv">1</span>] <span class="fl">0.4622722</span></a></code></pre></div>
 </div>
 <p>To visualize the fitted Frank’s copula, the distribution function and density function perspective plots are drawn in Figure <a href="C-DependenceModel.html#fig:FrankCop">14.5</a>.</p>
 <div class="figure"><span id="fig:FrankCop"></span>
@@ -1551,11 +1555,11 @@ Figure 14.5: Left: Plot for distribution function for Franks Copula. Right:Plot 
 <a id="displayCode.DistriPlot.1" href="javascript:togglecode('toggleCode.DistriPlot.1','displayCode.DistriPlot.1');"><i><strong>R Code for Frank’s Copula Plots</strong></i></a>
 </h5>
 <div id="toggleCode.DistriPlot.1" style="display: none">
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="C-DependenceModel.html#cb179-1"></a><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="fl">3.2</span>,<span class="dv">3</span>,.<span class="dv">2</span>,.<span class="dv">2</span>),<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb179-2"><a href="C-DependenceModel.html#cb179-2"></a><span class="kw">persp</span>(frank.cop, pCopula, <span class="dt">theta=</span><span class="dv">50</span>, <span class="dt">zlab=</span><span class="st">&quot;C(u,v)&quot;</span>,</span>
-<span id="cb179-3"><a href="C-DependenceModel.html#cb179-3"></a>        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</span>
-<span id="cb179-4"><a href="C-DependenceModel.html#cb179-4"></a><span class="kw">persp</span>(frank.cop, dCopula, <span class="dt">theta=</span><span class="dv">0</span>, <span class="dt">zlab=</span><span class="st">&quot;c(u,v)&quot;</span>,</span>
-<span id="cb179-5"><a href="C-DependenceModel.html#cb179-5"></a>        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" title="1"><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="fl">3.2</span>,<span class="dv">3</span>,.<span class="dv">2</span>,.<span class="dv">2</span>),<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb179-2" title="2"><span class="kw">persp</span>(frank.cop, pCopula, <span class="dt">theta=</span><span class="dv">50</span>, <span class="dt">zlab=</span><span class="st">&quot;C(u,v)&quot;</span>,</a>
+<a class="sourceLine" id="cb179-3" title="3">        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</a>
+<a class="sourceLine" id="cb179-4" title="4"><span class="kw">persp</span>(frank.cop, dCopula, <span class="dt">theta=</span><span class="dv">0</span>, <span class="dt">zlab=</span><span class="st">&quot;c(u,v)&quot;</span>,</a>
+<a class="sourceLine" id="cb179-5" title="5">        <span class="dt">xlab =</span><span class="st">&quot;u&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;v&quot;</span>, <span class="dt">cex.lab=</span><span class="fl">1.3</span>)</a></code></pre></div>
 </div>
 <p>Frank’s copula models positive dependence for this data set, with <span class="math inline">\(\theta=3.114\)</span>. For Frank’s copula, the dependence is related to values of <span class="math inline">\(\theta\)</span>. That is:</p>
 <ul>
@@ -1661,13 +1665,13 @@ Figure 14.6: Perfect Positive and Perfect negative dependence plots
 <a id="displayCode.plot.1" href="javascript:togglecode('toggleCode.plot.1','displayCode.plot.1');"><i><strong>R Code for Frechet-Hoeffding Bounds for Two Random Variables</strong></i></a>
 </h5>
 <div id="toggleCode.plot.1" style="display: none">
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="C-DependenceModel.html#cb180-1"></a><span class="kw">library</span>(copula)</span>
-<span id="cb180-2"><a href="C-DependenceModel.html#cb180-2"></a>n&lt;-<span class="dv">100</span></span>
-<span id="cb180-3"><a href="C-DependenceModel.html#cb180-3"></a><span class="kw">set.seed</span>(<span class="dv">1980</span>)</span>
-<span id="cb180-4"><a href="C-DependenceModel.html#cb180-4"></a>U&lt;-<span class="kw">runif</span>(n)</span>
-<span id="cb180-5"><a href="C-DependenceModel.html#cb180-5"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb180-6"><a href="C-DependenceModel.html#cb180-6"></a><span class="kw">plot</span>(<span class="kw">cbind</span>(U,<span class="dv">1</span><span class="op">-</span>U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]), <span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Negative Dependency&quot;</span>) <span class="co"># W for p=2</span></span>
-<span id="cb180-7"><a href="C-DependenceModel.html#cb180-7"></a><span class="kw">plot</span> (<span class="kw">cbind</span>(U,U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]),<span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Positive Dependency&quot;</span>)  <span class="co">#M for p=2</span></span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb180-2" title="2">n&lt;-<span class="dv">100</span></a>
+<a class="sourceLine" id="cb180-3" title="3"><span class="kw">set.seed</span>(<span class="dv">1980</span>)</a>
+<a class="sourceLine" id="cb180-4" title="4">U&lt;-<span class="kw">runif</span>(n)</a>
+<a class="sourceLine" id="cb180-5" title="5"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb180-6" title="6"><span class="kw">plot</span>(<span class="kw">cbind</span>(U,<span class="dv">1</span><span class="op">-</span>U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]), <span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Negative Dependency&quot;</span>) <span class="co"># W for p=2</span></a>
+<a class="sourceLine" id="cb180-7" title="7"><span class="kw">plot</span> (<span class="kw">cbind</span>(U,U), <span class="dt">xlab=</span><span class="kw">quote</span>(U[<span class="dv">1</span>]),<span class="dt">ylab=</span><span class="kw">quote</span>(U[<span class="dv">2</span>]),<span class="dt">main=</span><span class="st">&quot;Perfect Positive Dependency&quot;</span>)  <span class="co">#M for p=2</span></a></code></pre></div>
 </div>
 </div>
 <div id="measures-of-association" class="section level4">
@@ -1709,27 +1713,27 @@ Kendall’s tau uses an independent copy of (<span class="math inline">\(Y_1\)</
 <a id="displayCode.Tail.1" href="javascript:togglecode('toggleCode.Tail.1','displayCode.Tail.1');"><i><strong>R Code for Tail Copula Functions for Different Copulas</strong></i></a>
 </h5>
 <div id="toggleCode.Tail.1" style="display: none">
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="C-DependenceModel.html#cb181-1"></a><span class="kw">library</span>(copula)</span>
-<span id="cb181-2"><a href="C-DependenceModel.html#cb181-2"></a>U1 =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="fl">0.5</span>, <span class="dt">by=</span><span class="fl">0.002</span>)</span>
-<span id="cb181-3"><a href="C-DependenceModel.html#cb181-3"></a>U2 =<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.5</span>,<span class="dv">1</span>, <span class="dt">by=</span><span class="fl">0.002</span>)</span>
-<span id="cb181-4"><a href="C-DependenceModel.html#cb181-4"></a>U =<span class="st"> </span><span class="kw">rbind</span>(U1, U2)</span>
-<span id="cb181-5"><a href="C-DependenceModel.html#cb181-5"></a>TailFunction &lt;-<span class="st"> </span><span class="cf">function</span>(Tailcop) {</span>
-<span id="cb181-6"><a href="C-DependenceModel.html#cb181-6"></a>  lowertail &lt;-<span class="st"> </span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U1,U1), Tailcop)<span class="op">/</span>U1</span>
-<span id="cb181-7"><a href="C-DependenceModel.html#cb181-7"></a>  uppertail &lt;-<span class="st"> </span>(<span class="dv">1-2</span><span class="op">*</span>U2 <span class="op">+</span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U2,U2), Tailcop))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>U2)</span>
-<span id="cb181-8"><a href="C-DependenceModel.html#cb181-8"></a>  jointtail &lt;-<span class="st"> </span><span class="kw">rbind</span>(lowertail,uppertail)</span>
-<span id="cb181-9"><a href="C-DependenceModel.html#cb181-9"></a>}</span>
-<span id="cb181-10"><a href="C-DependenceModel.html#cb181-10"></a>Tailcop1 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="fl">0.05</span>), <span class="dt">dim =</span> <span class="dv">2</span>)</span>
-<span id="cb181-11"><a href="C-DependenceModel.html#cb181-11"></a>Tailcop2 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;gumbel&quot;</span>,<span class="dt">param =</span> <span class="dv">3</span>)</span>
-<span id="cb181-12"><a href="C-DependenceModel.html#cb181-12"></a>Tailcop3 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;normal&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)</span>
-<span id="cb181-13"><a href="C-DependenceModel.html#cb181-13"></a>Tailcop4 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;t&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>, <span class="dt">df=</span><span class="dv">5</span>)</span>
-<span id="cb181-14"><a href="C-DependenceModel.html#cb181-14"></a>jointtail1 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop1)</span>
-<span id="cb181-15"><a href="C-DependenceModel.html#cb181-15"></a>jointtail2 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop2)</span>
-<span id="cb181-16"><a href="C-DependenceModel.html#cb181-16"></a>jointtail3 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop3)</span>
-<span id="cb181-17"><a href="C-DependenceModel.html#cb181-17"></a>jointtail4 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop4)</span>
-<span id="cb181-18"><a href="C-DependenceModel.html#cb181-18"></a><span class="kw">tailIndex</span>(Tailcop1)</span>
-<span id="cb181-19"><a href="C-DependenceModel.html#cb181-19"></a><span class="kw">tailIndex</span>(Tailcop2)</span>
-<span id="cb181-20"><a href="C-DependenceModel.html#cb181-20"></a><span class="kw">tailIndex</span>(Tailcop3)</span>
-<span id="cb181-21"><a href="C-DependenceModel.html#cb181-21"></a><span class="kw">tailIndex</span>(Tailcop4)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb181-2" title="2">U1 =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="fl">0.5</span>, <span class="dt">by=</span><span class="fl">0.002</span>)</a>
+<a class="sourceLine" id="cb181-3" title="3">U2 =<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.5</span>,<span class="dv">1</span>, <span class="dt">by=</span><span class="fl">0.002</span>)</a>
+<a class="sourceLine" id="cb181-4" title="4">U =<span class="st"> </span><span class="kw">rbind</span>(U1, U2)</a>
+<a class="sourceLine" id="cb181-5" title="5">TailFunction &lt;-<span class="st"> </span><span class="cf">function</span>(Tailcop) {</a>
+<a class="sourceLine" id="cb181-6" title="6">  lowertail &lt;-<span class="st"> </span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U1,U1), Tailcop)<span class="op">/</span>U1</a>
+<a class="sourceLine" id="cb181-7" title="7">  uppertail &lt;-<span class="st"> </span>(<span class="dv">1-2</span><span class="op">*</span>U2 <span class="op">+</span><span class="kw">pCopula</span>(<span class="kw">cbind</span>(U2,U2), Tailcop))<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>U2)</a>
+<a class="sourceLine" id="cb181-8" title="8">  jointtail &lt;-<span class="st"> </span><span class="kw">rbind</span>(lowertail,uppertail)</a>
+<a class="sourceLine" id="cb181-9" title="9">}</a>
+<a class="sourceLine" id="cb181-10" title="10">Tailcop1 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;frank&quot;</span>, <span class="dt">param=</span> <span class="kw">c</span>(<span class="fl">0.05</span>), <span class="dt">dim =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb181-11" title="11">Tailcop2 &lt;-<span class="st"> </span><span class="kw">archmCopula</span>(<span class="dt">family =</span> <span class="st">&quot;gumbel&quot;</span>,<span class="dt">param =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb181-12" title="12">Tailcop3 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;normal&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)</a>
+<a class="sourceLine" id="cb181-13" title="13">Tailcop4 &lt;-<span class="st"> </span><span class="kw">ellipCopula</span>(<span class="st">&quot;t&quot;</span>, <span class="dt">param =</span> <span class="kw">c</span>(<span class="fl">0.25</span>),<span class="dt">dim =</span> <span class="dv">2</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>, <span class="dt">df=</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb181-14" title="14">jointtail1 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop1)</a>
+<a class="sourceLine" id="cb181-15" title="15">jointtail2 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop2)</a>
+<a class="sourceLine" id="cb181-16" title="16">jointtail3 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop3)</a>
+<a class="sourceLine" id="cb181-17" title="17">jointtail4 &lt;-<span class="st"> </span><span class="kw">TailFunction</span>(Tailcop4)</a>
+<a class="sourceLine" id="cb181-18" title="18"><span class="kw">tailIndex</span>(Tailcop1)</a>
+<a class="sourceLine" id="cb181-19" title="19"><span class="kw">tailIndex</span>(Tailcop2)</a>
+<a class="sourceLine" id="cb181-20" title="20"><span class="kw">tailIndex</span>(Tailcop3)</a>
+<a class="sourceLine" id="cb181-21" title="21"><span class="kw">tailIndex</span>(Tailcop4)</a></code></pre></div>
 </div>
 <div class="figure"><span id="fig:DepTails"></span>
 <img src="LossDataAnalytics_files/figure-html/DepTails-1.png" alt="Tail dependence plots" width="672" />
@@ -1741,15 +1745,15 @@ Figure 14.7: Tail dependence plots
 <a id="displayCode.Tailplot.1" href="javascript:togglecode('toggleCode.Tailplot.1','displayCode.Tailplot.1');"><i><strong>R Code for Tail Dependence Plots for Different Copulas</strong></i></a>
 </h5>
 <div id="toggleCode.Tailplot.1" style="display: none">
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="C-DependenceModel.html#cb182-1"></a><span class="kw">plot</span>(U,jointtail1, <span class="dt">cex=</span>.<span class="dv">2</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylab=</span><span class="st">&quot;Tail Dependence&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb182-2"><a href="C-DependenceModel.html#cb182-2"></a><span class="kw">lines</span>(U,jointtail2, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</span>
-<span id="cb182-3"><a href="C-DependenceModel.html#cb182-3"></a><span class="kw">lines</span>(U,jointtail3, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</span>
-<span id="cb182-4"><a href="C-DependenceModel.html#cb182-4"></a><span class="kw">lines</span>(U,jointtail4, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</span>
-<span id="cb182-5"><a href="C-DependenceModel.html#cb182-5"></a><span class="kw">text</span>(<span class="fl">0.75</span>, <span class="fl">0.1</span>, <span class="st">&quot;Frank&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#1</span></span>
-<span id="cb182-6"><a href="C-DependenceModel.html#cb182-6"></a><span class="kw">text</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>, <span class="st">&quot;Gumbel&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#2</span></span>
-<span id="cb182-7"><a href="C-DependenceModel.html#cb182-7"></a><span class="kw">text</span>(<span class="fl">0.25</span>, <span class="fl">0.1</span>, <span class="st">&quot;normal&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)       <span class="co">#3</span></span>
-<span id="cb182-8"><a href="C-DependenceModel.html#cb182-8"></a><span class="kw">arrows</span>(.<span class="dv">17</span>, <span class="fl">0.1</span>, <span class="fl">.07</span>, <span class="fl">0.12</span>,<span class="dt">code=</span><span class="dv">2</span>, <span class="dt">angle=</span><span class="dv">20</span>, <span class="dt">length=</span><span class="fl">0.1</span>)</span>
-<span id="cb182-9"><a href="C-DependenceModel.html#cb182-9"></a><span class="kw">text</span>(<span class="fl">0.9</span>, <span class="fl">0.4</span>, <span class="st">&quot;t with 5 df&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)   <span class="co">#4</span></span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" title="1"><span class="kw">plot</span>(U,jointtail1, <span class="dt">cex=</span>.<span class="dv">2</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylab=</span><span class="st">&quot;Tail Dependence&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb182-2" title="2"><span class="kw">lines</span>(U,jointtail2, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb182-3" title="3"><span class="kw">lines</span>(U,jointtail3, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb182-4" title="4"><span class="kw">lines</span>(U,jointtail4, <span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span>.<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb182-5" title="5"><span class="kw">text</span>(<span class="fl">0.75</span>, <span class="fl">0.1</span>, <span class="st">&quot;Frank&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#1</span></a>
+<a class="sourceLine" id="cb182-6" title="6"><span class="kw">text</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>, <span class="st">&quot;Gumbel&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)        <span class="co">#2</span></a>
+<a class="sourceLine" id="cb182-7" title="7"><span class="kw">text</span>(<span class="fl">0.25</span>, <span class="fl">0.1</span>, <span class="st">&quot;normal&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)       <span class="co">#3</span></a>
+<a class="sourceLine" id="cb182-8" title="8"><span class="kw">arrows</span>(.<span class="dv">17</span>, <span class="fl">0.1</span>, <span class="fl">.07</span>, <span class="fl">0.12</span>,<span class="dt">code=</span><span class="dv">2</span>, <span class="dt">angle=</span><span class="dv">20</span>, <span class="dt">length=</span><span class="fl">0.1</span>)</a>
+<a class="sourceLine" id="cb182-9" title="9"><span class="kw">text</span>(<span class="fl">0.9</span>, <span class="fl">0.4</span>, <span class="st">&quot;t with 5 df&quot;</span>, <span class="dt">cex=</span><span class="fl">1.3</span>)   <span class="co">#4</span></a></code></pre></div>
 </div>
 <div id="surveyElement145">
 
@@ -1802,86 +1806,86 @@ Figure 14.7: Tail dependence plots
 <a id="displayCode.SimG.1" href="javascript:togglecode('toggleCode.SimG.1','displayCode.SimG.1');"><i><strong>R Code for Simulation Using Gaussian Copula</strong></i></a>
 </h5>
 <div id="toggleCode.SimG.1" style="display: none">
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="C-DependenceModel.html#cb183-1"></a><span class="co"># For the gamma distributions, use</span></span>
-<span id="cb183-2"><a href="C-DependenceModel.html#cb183-2"></a>alpha1 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta1 &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb183-3"><a href="C-DependenceModel.html#cb183-3"></a>alpha2 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta2 &lt;-<span class="st"> </span><span class="dv">200</span></span>
-<span id="cb183-4"><a href="C-DependenceModel.html#cb183-4"></a><span class="co"># For the Pareto distributions, use</span></span>
-<span id="cb183-5"><a href="C-DependenceModel.html#cb183-5"></a>alpha3 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta3 &lt;-<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb183-6"><a href="C-DependenceModel.html#cb183-6"></a>alpha4 &lt;-<span class="st"> </span><span class="dv">3</span>;      theta4 &lt;-<span class="st"> </span><span class="dv">2000</span></span>
-<span id="cb183-7"><a href="C-DependenceModel.html#cb183-7"></a><span class="co"># Deductibles</span></span>
-<span id="cb183-8"><a href="C-DependenceModel.html#cb183-8"></a>d1     &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb183-9"><a href="C-DependenceModel.html#cb183-9"></a>d2     &lt;-<span class="st"> </span><span class="dv">200</span></span>
-<span id="cb183-10"><a href="C-DependenceModel.html#cb183-10"></a></span>
-<span id="cb183-11"><a href="C-DependenceModel.html#cb183-11"></a></span>
-<span id="cb183-12"><a href="C-DependenceModel.html#cb183-12"></a><span class="co"># Simulate the risks</span></span>
-<span id="cb183-13"><a href="C-DependenceModel.html#cb183-13"></a>nSim &lt;-<span class="st"> </span><span class="dv">10000</span>  <span class="co">#number of simulations</span></span>
-<span id="cb183-14"><a href="C-DependenceModel.html#cb183-14"></a><span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span></span>
-<span id="cb183-15"><a href="C-DependenceModel.html#cb183-15"></a>X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha1,<span class="dt">scale =</span> theta1)  </span>
-<span id="cb183-16"><a href="C-DependenceModel.html#cb183-16"></a>X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<span class="dt">scale =</span> theta2)  </span>
-<span id="cb183-17"><a href="C-DependenceModel.html#cb183-17"></a><span class="co"># For the Pareto Distribution, use</span></span>
-<span id="cb183-18"><a href="C-DependenceModel.html#cb183-18"></a><span class="kw">library</span>(VGAM)</span>
-<span id="cb183-19"><a href="C-DependenceModel.html#cb183-19"></a>X3 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta3,<span class="dt">shape=</span>alpha3)</span>
-<span id="cb183-20"><a href="C-DependenceModel.html#cb183-20"></a>X4 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta4,<span class="dt">shape=</span>alpha4)</span>
-<span id="cb183-21"><a href="C-DependenceModel.html#cb183-21"></a><span class="co"># Portfolio Risks</span></span>
-<span id="cb183-22"><a href="C-DependenceModel.html#cb183-22"></a>S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</span>
-<span id="cb183-23"><a href="C-DependenceModel.html#cb183-23"></a>Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)</span>
-<span id="cb183-24"><a href="C-DependenceModel.html#cb183-24"></a>Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained</span>
-<span id="cb183-25"><a href="C-DependenceModel.html#cb183-25"></a></span>
-<span id="cb183-26"><a href="C-DependenceModel.html#cb183-26"></a><span class="co"># Expected Claim Amounts</span></span>
-<span id="cb183-27"><a href="C-DependenceModel.html#cb183-27"></a>ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))</span>
-<span id="cb183-28"><a href="C-DependenceModel.html#cb183-28"></a><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb183-29"><a href="C-DependenceModel.html#cb183-29"></a><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</span>
-<span id="cb183-30"><a href="C-DependenceModel.html#cb183-30"></a></span>
-<span id="cb183-31"><a href="C-DependenceModel.html#cb183-31"></a><span class="co"># Quantiles</span></span>
-<span id="cb183-32"><a href="C-DependenceModel.html#cb183-32"></a>quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</span>
-<span id="cb183-33"><a href="C-DependenceModel.html#cb183-33"></a>  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</span>
-<span id="cb183-34"><a href="C-DependenceModel.html#cb183-34"></a>  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</span>
-<span id="cb183-35"><a href="C-DependenceModel.html#cb183-35"></a>  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</span>
-<span id="cb183-36"><a href="C-DependenceModel.html#cb183-36"></a><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb183-37"><a href="C-DependenceModel.html#cb183-37"></a><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</span>
-<span id="cb183-38"><a href="C-DependenceModel.html#cb183-38"></a></span>
-<span id="cb183-39"><a href="C-DependenceModel.html#cb183-39"></a><span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</span>
-<span id="cb183-40"><a href="C-DependenceModel.html#cb183-40"></a></span>
-<span id="cb183-41"><a href="C-DependenceModel.html#cb183-41"></a><span class="co">### Normal Copula ##</span></span>
-<span id="cb183-42"><a href="C-DependenceModel.html#cb183-42"></a><span class="kw">library</span>(VGAM)</span>
-<span id="cb183-43"><a href="C-DependenceModel.html#cb183-43"></a><span class="kw">library</span>(copula)</span>
-<span id="cb183-44"><a href="C-DependenceModel.html#cb183-44"></a><span class="kw">library</span>(GB2)</span>
-<span id="cb183-45"><a href="C-DependenceModel.html#cb183-45"></a><span class="kw">library</span>(statmod)</span>
-<span id="cb183-46"><a href="C-DependenceModel.html#cb183-46"></a><span class="kw">library</span>(numDeriv)</span>
-<span id="cb183-47"><a href="C-DependenceModel.html#cb183-47"></a><span class="kw">set.seed</span>(<span class="dv">2017</span>)</span>
-<span id="cb183-48"><a href="C-DependenceModel.html#cb183-48"></a>parm&lt;-<span class="kw">c</span>(<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>)</span>
-<span id="cb183-49"><a href="C-DependenceModel.html#cb183-49"></a>nc &lt;-<span class="st"> </span><span class="kw">normalCopula</span>(parm, <span class="dt">dim =</span> <span class="dv">4</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)</span>
-<span id="cb183-50"><a href="C-DependenceModel.html#cb183-50"></a>mcc &lt;-<span class="st"> </span><span class="kw">mvdc</span>(nc, <span class="dt">margins =</span> <span class="kw">c</span>(<span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;gamma&quot;</span>,<span class="st">&quot;paretoII&quot;</span>,<span class="st">&quot;paretoII&quot;</span>), </span>
-<span id="cb183-51"><a href="C-DependenceModel.html#cb183-51"></a>            <span class="dt">paramMargins =</span> <span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">scale =</span> theta1, <span class="dt">shape=</span>alpha1),</span>
-<span id="cb183-52"><a href="C-DependenceModel.html#cb183-52"></a>                                <span class="kw">list</span>(<span class="dt">scale =</span> theta2, <span class="dt">shape=</span>alpha2),</span>
-<span id="cb183-53"><a href="C-DependenceModel.html#cb183-53"></a>                                <span class="kw">list</span>(<span class="dt">scale =</span> theta3, <span class="dt">shape=</span>alpha3),</span>
-<span id="cb183-54"><a href="C-DependenceModel.html#cb183-54"></a>                                <span class="kw">list</span>(<span class="dt">scale =</span> theta4, <span class="dt">shape=</span>alpha4)))</span>
-<span id="cb183-55"><a href="C-DependenceModel.html#cb183-55"></a>X &lt;-<span class="st"> </span><span class="kw">rMvdc</span>(nSim, <span class="dt">mvdc =</span> mcc)</span>
-<span id="cb183-56"><a href="C-DependenceModel.html#cb183-56"></a></span>
-<span id="cb183-57"><a href="C-DependenceModel.html#cb183-57"></a>X1&lt;-X[,<span class="dv">1</span>]</span>
-<span id="cb183-58"><a href="C-DependenceModel.html#cb183-58"></a>X2&lt;-X[,<span class="dv">2</span>]</span>
-<span id="cb183-59"><a href="C-DependenceModel.html#cb183-59"></a>X3&lt;-X[,<span class="dv">3</span>]</span>
-<span id="cb183-60"><a href="C-DependenceModel.html#cb183-60"></a>X4&lt;-X[,<span class="dv">4</span>]</span>
-<span id="cb183-61"><a href="C-DependenceModel.html#cb183-61"></a></span>
-<span id="cb183-62"><a href="C-DependenceModel.html#cb183-62"></a><span class="co"># Portfolio Risks</span></span>
-<span id="cb183-63"><a href="C-DependenceModel.html#cb183-63"></a>S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</span>
-<span id="cb183-64"><a href="C-DependenceModel.html#cb183-64"></a>Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)</span>
-<span id="cb183-65"><a href="C-DependenceModel.html#cb183-65"></a>Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained</span>
-<span id="cb183-66"><a href="C-DependenceModel.html#cb183-66"></a></span>
-<span id="cb183-67"><a href="C-DependenceModel.html#cb183-67"></a><span class="co"># Expected Claim Amounts</span></span>
-<span id="cb183-68"><a href="C-DependenceModel.html#cb183-68"></a>ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))</span>
-<span id="cb183-69"><a href="C-DependenceModel.html#cb183-69"></a><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb183-70"><a href="C-DependenceModel.html#cb183-70"></a><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</span>
-<span id="cb183-71"><a href="C-DependenceModel.html#cb183-71"></a></span>
-<span id="cb183-72"><a href="C-DependenceModel.html#cb183-72"></a><span class="co"># Quantiles</span></span>
-<span id="cb183-73"><a href="C-DependenceModel.html#cb183-73"></a>quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</span>
-<span id="cb183-74"><a href="C-DependenceModel.html#cb183-74"></a>  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</span>
-<span id="cb183-75"><a href="C-DependenceModel.html#cb183-75"></a>  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</span>
-<span id="cb183-76"><a href="C-DependenceModel.html#cb183-76"></a>  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</span>
-<span id="cb183-77"><a href="C-DependenceModel.html#cb183-77"></a><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb183-78"><a href="C-DependenceModel.html#cb183-78"></a><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</span>
-<span id="cb183-79"><a href="C-DependenceModel.html#cb183-79"></a></span>
-<span id="cb183-80"><a href="C-DependenceModel.html#cb183-80"></a><span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1"><span class="co"># For the gamma distributions, use</span></a>
+<a class="sourceLine" id="cb183-2" title="2">alpha1 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta1 &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb183-3" title="3">alpha2 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta2 &lt;-<span class="st"> </span><span class="dv">200</span></a>
+<a class="sourceLine" id="cb183-4" title="4"><span class="co"># For the Pareto distributions, use</span></a>
+<a class="sourceLine" id="cb183-5" title="5">alpha3 &lt;-<span class="st"> </span><span class="dv">2</span>;      theta3 &lt;-<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb183-6" title="6">alpha4 &lt;-<span class="st"> </span><span class="dv">3</span>;      theta4 &lt;-<span class="st"> </span><span class="dv">2000</span></a>
+<a class="sourceLine" id="cb183-7" title="7"><span class="co"># Deductibles</span></a>
+<a class="sourceLine" id="cb183-8" title="8">d1     &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb183-9" title="9">d2     &lt;-<span class="st"> </span><span class="dv">200</span></a>
+<a class="sourceLine" id="cb183-10" title="10"></a>
+<a class="sourceLine" id="cb183-11" title="11"></a>
+<a class="sourceLine" id="cb183-12" title="12"><span class="co"># Simulate the risks</span></a>
+<a class="sourceLine" id="cb183-13" title="13">nSim &lt;-<span class="st"> </span><span class="dv">10000</span>  <span class="co">#number of simulations</span></a>
+<a class="sourceLine" id="cb183-14" title="14"><span class="kw">set.seed</span>(<span class="dv">2017</span>) <span class="co">#set seed to reproduce work </span></a>
+<a class="sourceLine" id="cb183-15" title="15">X1 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha1,<span class="dt">scale =</span> theta1)  </a>
+<a class="sourceLine" id="cb183-16" title="16">X2 &lt;-<span class="st"> </span><span class="kw">rgamma</span>(nSim,alpha2,<span class="dt">scale =</span> theta2)  </a>
+<a class="sourceLine" id="cb183-17" title="17"><span class="co"># For the Pareto Distribution, use</span></a>
+<a class="sourceLine" id="cb183-18" title="18"><span class="kw">library</span>(VGAM)</a>
+<a class="sourceLine" id="cb183-19" title="19">X3 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta3,<span class="dt">shape=</span>alpha3)</a>
+<a class="sourceLine" id="cb183-20" title="20">X4 &lt;-<span class="st"> </span><span class="kw">rparetoII</span>(nSim,<span class="dt">scale=</span>theta4,<span class="dt">shape=</span>alpha4)</a>
+<a class="sourceLine" id="cb183-21" title="21"><span class="co"># Portfolio Risks</span></a>
+<a class="sourceLine" id="cb183-22" title="22">S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</a>
+<a class="sourceLine" id="cb183-23" title="23">Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)</a>
+<a class="sourceLine" id="cb183-24" title="24">Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained</a>
+<a class="sourceLine" id="cb183-25" title="25"></a>
+<a class="sourceLine" id="cb183-26" title="26"><span class="co"># Expected Claim Amounts</span></a>
+<a class="sourceLine" id="cb183-27" title="27">ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))</a>
+<a class="sourceLine" id="cb183-28" title="28"><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-29" title="29"><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-30" title="30"></a>
+<a class="sourceLine" id="cb183-31" title="31"><span class="co"># Quantiles</span></a>
+<a class="sourceLine" id="cb183-32" title="32">quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</a>
+<a class="sourceLine" id="cb183-33" title="33">  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-34" title="34">  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-35" title="35">  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</a>
+<a class="sourceLine" id="cb183-36" title="36"><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-37" title="37"><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-38" title="38"></a>
+<a class="sourceLine" id="cb183-39" title="39"><span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</a>
+<a class="sourceLine" id="cb183-40" title="40"></a>
+<a class="sourceLine" id="cb183-41" title="41"><span class="co">### Normal Copula ##</span></a>
+<a class="sourceLine" id="cb183-42" title="42"><span class="kw">library</span>(VGAM)</a>
+<a class="sourceLine" id="cb183-43" title="43"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb183-44" title="44"><span class="kw">library</span>(GB2)</a>
+<a class="sourceLine" id="cb183-45" title="45"><span class="kw">library</span>(statmod)</a>
+<a class="sourceLine" id="cb183-46" title="46"><span class="kw">library</span>(numDeriv)</a>
+<a class="sourceLine" id="cb183-47" title="47"><span class="kw">set.seed</span>(<span class="dv">2017</span>)</a>
+<a class="sourceLine" id="cb183-48" title="48">parm&lt;-<span class="kw">c</span>(<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb183-49" title="49">nc &lt;-<span class="st"> </span><span class="kw">normalCopula</span>(parm, <span class="dt">dim =</span> <span class="dv">4</span>, <span class="dt">dispstr =</span> <span class="st">&quot;un&quot;</span>)</a>
+<a class="sourceLine" id="cb183-50" title="50">mcc &lt;-<span class="st"> </span><span class="kw">mvdc</span>(nc, <span class="dt">margins =</span> <span class="kw">c</span>(<span class="st">&quot;gamma&quot;</span>, <span class="st">&quot;gamma&quot;</span>,<span class="st">&quot;paretoII&quot;</span>,<span class="st">&quot;paretoII&quot;</span>), </a>
+<a class="sourceLine" id="cb183-51" title="51">            <span class="dt">paramMargins =</span> <span class="kw">list</span>(<span class="kw">list</span>(<span class="dt">scale =</span> theta1, <span class="dt">shape=</span>alpha1),</a>
+<a class="sourceLine" id="cb183-52" title="52">                                <span class="kw">list</span>(<span class="dt">scale =</span> theta2, <span class="dt">shape=</span>alpha2),</a>
+<a class="sourceLine" id="cb183-53" title="53">                                <span class="kw">list</span>(<span class="dt">scale =</span> theta3, <span class="dt">shape=</span>alpha3),</a>
+<a class="sourceLine" id="cb183-54" title="54">                                <span class="kw">list</span>(<span class="dt">scale =</span> theta4, <span class="dt">shape=</span>alpha4)))</a>
+<a class="sourceLine" id="cb183-55" title="55">X &lt;-<span class="st"> </span><span class="kw">rMvdc</span>(nSim, <span class="dt">mvdc =</span> mcc)</a>
+<a class="sourceLine" id="cb183-56" title="56"></a>
+<a class="sourceLine" id="cb183-57" title="57">X1&lt;-X[,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb183-58" title="58">X2&lt;-X[,<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb183-59" title="59">X3&lt;-X[,<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb183-60" title="60">X4&lt;-X[,<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb183-61" title="61"></a>
+<a class="sourceLine" id="cb183-62" title="62"><span class="co"># Portfolio Risks</span></a>
+<a class="sourceLine" id="cb183-63" title="63">S         &lt;-<span class="st"> </span>X1 <span class="op">+</span><span class="st"> </span>X2 <span class="op">+</span><span class="st"> </span>X3 <span class="op">+</span><span class="st"> </span>X4</a>
+<a class="sourceLine" id="cb183-64" title="64">Sretained &lt;-<span class="st"> </span><span class="kw">pmin</span>(X1,d1) <span class="op">+</span><span class="st"> </span><span class="kw">pmin</span>(X2,d2)</a>
+<a class="sourceLine" id="cb183-65" title="65">Sinsurer  &lt;-<span class="st"> </span>S <span class="op">-</span><span class="st"> </span>Sretained</a>
+<a class="sourceLine" id="cb183-66" title="66"></a>
+<a class="sourceLine" id="cb183-67" title="67"><span class="co"># Expected Claim Amounts</span></a>
+<a class="sourceLine" id="cb183-68" title="68">ExpVec &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">as.matrix</span>(<span class="kw">c</span>(<span class="kw">mean</span>(Sretained),<span class="kw">mean</span>(Sinsurer),<span class="kw">mean</span>(S))))</a>
+<a class="sourceLine" id="cb183-69" title="69"><span class="kw">colnames</span>(ExpVec) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-70" title="70"><span class="kw">round</span>(ExpVec,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-71" title="71"></a>
+<a class="sourceLine" id="cb183-72" title="72"><span class="co"># Quantiles</span></a>
+<a class="sourceLine" id="cb183-73" title="73">quantMat &lt;-<span class="st"> </span><span class="kw">rbind</span>(</a>
+<a class="sourceLine" id="cb183-74" title="74">  <span class="kw">quantile</span>(Sretained, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-75" title="75">  <span class="kw">quantile</span>(Sinsurer,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)),</a>
+<a class="sourceLine" id="cb183-76" title="76">  <span class="kw">quantile</span>(S       ,  <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)))</a>
+<a class="sourceLine" id="cb183-77" title="77"><span class="kw">rownames</span>(quantMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Retained&quot;</span>, <span class="st">&quot;Insurer&quot;</span>,<span class="st">&quot;Total&quot;</span>)</a>
+<a class="sourceLine" id="cb183-78" title="78"><span class="kw">round</span>(quantMat,<span class="dt">digits=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb183-79" title="79"></a>
+<a class="sourceLine" id="cb183-80" title="80"><span class="kw">plot</span>(<span class="kw">density</span>(S), <span class="dt">main=</span><span class="st">&quot;Density of Total Portfolio Risk S&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;S&quot;</span>)</a></code></pre></div>
 </div>
 <div id="surveyElement146">
 
@@ -1929,24 +1933,24 @@ See, for example, <span class="citation">(Joe <a href="#ref-joe2014dependence" r
 <a id="displayCode.beta.1" href="javascript:togglecode('toggleCode.beta.1','displayCode.beta.1');"><i><strong>R Code for Blomqvist’s Beta</strong></i></a>
 </h5>
 <div id="toggleCode.beta.1" style="display: none">
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="C-DependenceModel.html#cb184-1"></a><span class="co">### Blomqvist&#39;s beta correlation between Claim and Coverage </span><span class="al">###</span></span>
-<span id="cb184-2"><a href="C-DependenceModel.html#cb184-2"></a><span class="kw">library</span>(copula)</span>
-<span id="cb184-3"><a href="C-DependenceModel.html#cb184-3"></a>n&lt;-<span class="kw">length</span>(Claim)</span>
-<span id="cb184-4"><a href="C-DependenceModel.html#cb184-4"></a>U&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Coverage)))</span>
-<span id="cb184-5"><a href="C-DependenceModel.html#cb184-5"></a>beta&lt;-<span class="kw">betan</span>(U, <span class="dt">scaling=</span><span class="ot">FALSE</span>)</span>
-<span id="cb184-6"><a href="C-DependenceModel.html#cb184-6"></a><span class="kw">round</span>(beta,<span class="dv">2</span>)</span>
-<span id="cb184-7"><a href="C-DependenceModel.html#cb184-7"></a></span>
-<span id="cb184-8"><a href="C-DependenceModel.html#cb184-8"></a>Output<span class="op">:</span></span>
-<span id="cb184-9"><a href="C-DependenceModel.html#cb184-9"></a>[<span class="dv">1</span>]  <span class="fl">0.3</span></span>
-<span id="cb184-10"><a href="C-DependenceModel.html#cb184-10"></a></span>
-<span id="cb184-11"><a href="C-DependenceModel.html#cb184-11"></a><span class="co">### Blomqvist&#39;s beta correlation between Claim and log(Coverage) </span><span class="al">###</span></span>
-<span id="cb184-12"><a href="C-DependenceModel.html#cb184-12"></a>n&lt;-<span class="kw">length</span>(Claim)</span>
-<span id="cb184-13"><a href="C-DependenceModel.html#cb184-13"></a>Fx&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(<span class="kw">log</span>(Coverage))))</span>
-<span id="cb184-14"><a href="C-DependenceModel.html#cb184-14"></a>beta&lt;-<span class="kw">betan</span>(Fx, <span class="dt">scaling=</span><span class="ot">FALSE</span>)</span>
-<span id="cb184-15"><a href="C-DependenceModel.html#cb184-15"></a><span class="kw">round</span>(beta,<span class="dv">2</span>)</span>
-<span id="cb184-16"><a href="C-DependenceModel.html#cb184-16"></a></span>
-<span id="cb184-17"><a href="C-DependenceModel.html#cb184-17"></a>Output<span class="op">:</span></span>
-<span id="cb184-18"><a href="C-DependenceModel.html#cb184-18"></a>[<span class="dv">1</span>]  <span class="fl">0.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1"><span class="co">### Blomqvist&#39;s beta correlation between Claim and Coverage </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb184-2" title="2"><span class="kw">library</span>(copula)</a>
+<a class="sourceLine" id="cb184-3" title="3">n&lt;-<span class="kw">length</span>(Claim)</a>
+<a class="sourceLine" id="cb184-4" title="4">U&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Coverage)))</a>
+<a class="sourceLine" id="cb184-5" title="5">beta&lt;-<span class="kw">betan</span>(U, <span class="dt">scaling=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb184-6" title="6"><span class="kw">round</span>(beta,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb184-7" title="7"></a>
+<a class="sourceLine" id="cb184-8" title="8">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb184-9" title="9">[<span class="dv">1</span>]  <span class="fl">0.3</span></a>
+<a class="sourceLine" id="cb184-10" title="10"></a>
+<a class="sourceLine" id="cb184-11" title="11"><span class="co">### Blomqvist&#39;s beta correlation between Claim and log(Coverage) </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb184-12" title="12">n&lt;-<span class="kw">length</span>(Claim)</a>
+<a class="sourceLine" id="cb184-13" title="13">Fx&lt;-<span class="kw">cbind</span>(((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(Claim)),((n<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>n<span class="op">*</span><span class="kw">pobs</span>(<span class="kw">log</span>(Coverage))))</a>
+<a class="sourceLine" id="cb184-14" title="14">beta&lt;-<span class="kw">betan</span>(Fx, <span class="dt">scaling=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb184-15" title="15"><span class="kw">round</span>(beta,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb184-16" title="16"></a>
+<a class="sourceLine" id="cb184-17" title="17">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb184-18" title="18">[<span class="dv">1</span>]  <span class="fl">0.3</span></a></code></pre></div>
 </div>
 <p>In addition,to show that the Blomqvist’s beta is invariate under strictly increasing transformations , <span class="math inline">\(\beta=0.3\)</span> between the <em>Coverage</em> rating variable in logarithmic millions of dollars and <em>Claim</em> amount variable in dollars.</p>
 </div>
@@ -2005,11 +2009,11 @@ where <span class="math inline">\(\hat{\pi}_X = (n-n_{0\centerdot})/n\)</span> a
 <a id="displayCode.spearT.1" href="javascript:togglecode('toggleCode.spearT.1','displayCode.spearT.1');"><i><strong>R Code for Ties-corrected Spearman Correlation</strong></i></a>
 </h5>
 <div id="toggleCode.spearT.1" style="display: none">
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="C-DependenceModel.html#cb185-1"></a>rs_ties&lt;-<span class="kw">cor</span>(AlarmCredit,NoClaimCredit, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</span>
-<span id="cb185-2"><a href="C-DependenceModel.html#cb185-2"></a><span class="kw">round</span>(rs_ties,<span class="dv">2</span>)</span>
-<span id="cb185-3"><a href="C-DependenceModel.html#cb185-3"></a></span>
-<span id="cb185-4"><a href="C-DependenceModel.html#cb185-4"></a>Output<span class="op">:</span></span>
-<span id="cb185-5"><a href="C-DependenceModel.html#cb185-5"></a>[<span class="dv">1</span>] <span class="fl">-0.09</span></span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" title="1">rs_ties&lt;-<span class="kw">cor</span>(AlarmCredit,NoClaimCredit, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;spearman&quot;</span>))</a>
+<a class="sourceLine" id="cb185-2" title="2"><span class="kw">round</span>(rs_ties,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb185-3" title="3"></a>
+<a class="sourceLine" id="cb185-4" title="4">Output<span class="op">:</span></a>
+<a class="sourceLine" id="cb185-5" title="5">[<span class="dv">1</span>] <span class="fl">-0.09</span></a></code></pre></div>
 </div>
 
 </div>

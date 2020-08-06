@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -311,9 +310,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -322,16 +321,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -340,9 +337,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -443,7 +440,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="C-Severity.html"><a href="C-Severity.html"><i class="fa fa-check"></i><b>3</b> Modeling Loss Severity</a><ul>
 <li class="chapter" data-level="3.1" data-path="C-Severity.html"><a href="C-Severity.html#S:BasicQuantities"><i class="fa fa-check"></i><b>3.1</b> Basic Distributional Quantities</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="C-Severity.html"><a href="C-Severity.html#S:Chap3Moments"><i class="fa fa-check"></i><b>3.1.1</b> Moments</a></li>
-<li class="chapter" data-level="3.1.2" data-path="C-Severity.html"><a href="C-Severity.html#quantiles"><i class="fa fa-check"></i><b>3.1.2</b> Quantiles</a></li>
+<li class="chapter" data-level="3.1.2" data-path="C-Severity.html"><a href="C-Severity.html#S:LS:Quantiles"><i class="fa fa-check"></i><b>3.1.2</b> Quantiles</a></li>
 <li class="chapter" data-level="3.1.3" data-path="C-Severity.html"><a href="C-Severity.html#moment-generating-function"><i class="fa fa-check"></i><b>3.1.3</b> Moment Generating Function</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="C-Severity.html"><a href="C-Severity.html#S:ContinuousDistn"><i class="fa fa-check"></i><b>3.2</b> Continuous Distributions for Modeling Loss Severity</a><ul>
@@ -603,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
 <li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
@@ -798,7 +795,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
 <li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#S:ContinuousDistributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
@@ -807,6 +804,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.2.6" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#distributions-with-finite-support"><i class="fa fa-check"></i><b>18.2.6</b> Distributions with Finite Support</a></li>
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>19</b> Appendix E: Conventions for Notation</a><ul>
+<li class="chapter" data-level="19.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:General"><i class="fa fa-check"></i><b>19.1</b> General Conventions</a></li>
+<li class="chapter" data-level="19.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Abbreviations"><i class="fa fa-check"></i><b>19.2</b> Abbreviations</a></li>
+<li class="chapter" data-level="19.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:StatSymbols"><i class="fa fa-check"></i><b>19.3</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="19.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Symbols"><i class="fa fa-check"></i><b>19.4</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="19.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>19.5</b> Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -831,8 +835,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="C:Severity" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Modeling Loss Severity</h1>
-<p><em>Chapter Preview.</em> The traditional loss distribution approach to modeling <a href="#" class="tooltip" style="color:green"><em>aggregate losses</em><span style="font-size:8pt">Aggregate claims, or total claims observed in the time period</span></a> starts by separately fitting a frequency distribution to the number of losses and a severity distribution to the size of losses. The estimated aggregate loss distribution combines the loss frequency distribution and the loss severity distribution by convolution. Discrete distributions often referred to as counting or frequency distributions were used in Chapter <a href="C-Frequency-Modeling.html#C:Frequency-Modeling">2</a> to describe the number of events such as number of accidents to the driver or number of claims to the insurer. Lifetimes, asset values, losses and claim sizes are usually modeled as continuous random variables and as such are modeled using continuous distributions, often referred to as loss or severity distributions. A <a href="#" class="tooltip" style="color:green"><em>mixture distribution</em><span style="font-size:8pt">A weighted average of other distributions, which may be continuous or discrete</span></a> is a weighted combination of simpler distributions that is used to model phenomenon investigated in a heterogeneous population, such as modeling more than one type of claims in <a href="#" class="tooltip" style="color:green"><em>liability insurance</em><span style="font-size:8pt">Insurance that compensates an insured for loss due to legal liability towards others</span></a> (small frequent claims and large relatively rare claims). In this chapter we explore the use of continuous as well as mixture distributions to model the random size of loss. Sections <a href="C-Severity.html#S:BasicQuantities">3.1</a> and <a href="C-Severity.html#S:ContinuousDistn">3.2</a>
-present key attributes that characterize continuous models and means of creating new distributions from existing ones. Section <a href="C-Severity.html#S:CoverageModifications">3.4</a> describes the effect of coverage modifications, which change the conditions that trigger a payment, such as applying deductibles, limits, or adjusting for inflation, on the distribution of individual loss amounts. For calibrating models, Section <a href="C-Severity.html#S:MaxLikeEstimation">3.5</a> deepens our understanding of maximum likelihood methods. The frequency distributions from Chapter <a href="C-Frequency-Modeling.html#C:Frequency-Modeling">2</a> will be combined with the ideas from this chapter to describe the aggregate losses over the whole portfolio in Chapter <a href="C-AggLossModels.html#C:AggLossModels">5</a>.</p>
+<p><em>Chapter Preview.</em> The traditional loss distribution approach to modeling <a href="#" class="tooltip" style="color:green"><em>aggregate losses</em><span style="font-size:8pt">Aggregate claims, or total claims observed in the time period</span></a> starts by separately fitting a frequency distribution to the number of losses and a severity distribution to the size of losses. The estimated aggregate loss distribution combines the loss frequency distribution and the loss severity distribution by convolution. Discrete distributions often referred to as counting or frequency distributions were used in Chapter <a href="C-Frequency-Modeling.html#C:Frequency-Modeling">2</a> to describe the number of events such as number of accidents to the driver or number of claims to the insurer. Lifetimes, asset values, losses and claim sizes are usually modeled as continuous random variables and as such are modeled using continuous distributions, often referred to as loss or severity distributions. A <a href="#" class="tooltip" style="color:green"><em>mixture distribution</em><span style="font-size:8pt">A weighted average of other distributions, which may be continuous or discrete</span></a> is a weighted combination of simpler distributions that is used to model phenomenon investigated in a heterogeneous population, such as modeling more than one type of claims in <a href="#" class="tooltip" style="color:green"><em>liability insurance</em><span style="font-size:8pt">Insurance that compensates an insured for loss due to legal liability towards others</span></a> (small frequent claims and large relatively rare claims). In this chapter we explore the use of continuous as well as mixture distributions to model the random size of loss. Sections <a href="C-Severity.html#S:BasicQuantities">3.1</a> and <a href="C-Severity.html#S:ContinuousDistn">3.2</a> present key attributes that characterize continuous models and means of creating new distributions from existing ones. Section <a href="C-Severity.html#S:CoverageModifications">3.4</a> describes the effect of coverage modifications, which change the conditions that trigger a payment, such as applying deductibles, limits, or adjusting for inflation, on the distribution of individual loss amounts. For calibrating models, Section <a href="C-Severity.html#S:MaxLikeEstimation">3.5</a> deepens our understanding of maximum likelihood methods. The frequency distributions from Chapter <a href="C-Frequency-Modeling.html#C:Frequency-Modeling">2</a> will be combined with the ideas from this chapter to describe the aggregate losses over the whole portfolio in Chapter <a href="C-AggLossModels.html#C:AggLossModels">5</a>.</p>
 <div id="S:BasicQuantities" class="section level2">
 <h2><span class="header-section-number">3.1</span> Basic Distributional Quantities</h2>
 <hr />
@@ -845,7 +848,7 @@ present key attributes that characterize continuous models and means of creating
 <hr />
 <div id="S:Chap3Moments" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Moments</h3>
-<p>Let <span class="math inline">\(X\)</span> be a <a href="#" class="tooltip" style="color:green"><em>continuous random variable</em><span style="font-size:8pt">Random variable which can take infinitely many values in its specified domain</span></a> with probability density function <span class="math inline">\(f_{X}\left( x \right)\)</span> and distribution function <span class="math inline">\(F_{X}\left( x \right)\)</span>. The <em>k</em>-th <a href="#" class="tooltip" style="color:green"><em>raw moment</em><span style="font-size:8pt">The kth moment of a random variable x is the average (expected) value of x^k</span></a> of <span class="math inline">\(X\)</span>, denoted by <span class="math inline">\(\mu_{k}^{\prime}\)</span>, is the <a href="#" class="tooltip" style="color:green"><em>expected value</em><span style="font-size:8pt">Average</span></a> of the <em>k</em>-th power of <span class="math inline">\(X\)</span>, provided it exists. The first raw moment <span class="math inline">\(\mu_{1}^{\prime}\)</span> is the mean of <span class="math inline">\(X\)</span> usually denoted by <span class="math inline">\(\mu\)</span>. The formula for <span class="math inline">\(\mu_{k}^{\prime}\)</span> is given as
+<p>Let <span class="math inline">\(X\)</span> be a <a href="#" class="tooltip" style="color:green"><em>continuous random variable</em><span style="font-size:8pt">Random variable which can take infinitely many values in its specified domain</span></a> with probability density function (<em>pdf</em>) <span class="math inline">\(f_{X}\left( x \right)\)</span> and distribution function <span class="math inline">\(F_{X}\left( x \right)\)</span>. The <em>k</em>-th <a href="#" class="tooltip" style="color:green"><em>raw moment</em><span style="font-size:8pt">The kth moment of a random variable x is the average (expected) value of x^k</span></a> of <span class="math inline">\(X\)</span>, denoted by <span class="math inline">\(\mu_{k}^{\prime}\)</span>, is the <a href="#" class="tooltip" style="color:green"><em>expected value</em><span style="font-size:8pt">Average</span></a> of the <em>k</em>-th power of <span class="math inline">\(X\)</span>, provided it exists. The first raw moment <span class="math inline">\(\mu_{1}^{\prime}\)</span> is the mean of <span class="math inline">\(X\)</span> usually denoted by <span class="math inline">\(\mu\)</span>. The formula for <span class="math inline">\(\mu_{k}^{\prime}\)</span> is given as
 <span class="math display">\[
 \mu_{k}^{\prime} = \mathrm{E}\left( X^{k} \right) = \int_{0}^{\infty}{x^{k}f_{X}\left( x \right)dx } .
 \]</span>
@@ -866,7 +869,7 @@ Assume that the <a href="#" class="tooltip" style="color:green"><em>rv</em><span
 <a id="displayExample.3.1.1" href="javascript:toggleEX('toggleExample.3.1.1','displayExample.3.1.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.3.1.1" style="display: none">
-<p><strong>Solution.</strong> The probability density function of <span class="math inline">\(X\)</span> is given by</p>
+<p><strong>Solution.</strong> The <em>pdf</em> of <span class="math inline">\(X\)</span> is given by</p>
 <p><span class="math display">\[
 f_{X}\left( x \right) = \frac{\left( x / \theta \right)^{\alpha}}{x ~\Gamma\left( \alpha \right)} e^{- x / \theta}
 \]</span>
@@ -887,7 +890,7 @@ Given <span class="math inline">\(\Gamma\left( r + 1 \right) = r\Gamma\left( r \
 </div>
 <hr />
 </div>
-<div id="quantiles" class="section level3">
+<div id="S:LS:Quantiles" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Quantiles</h3>
 <p>Quantiles can also be used to describe the characteristics of the distribution of <span class="math inline">\(X\)</span>. When the distribution of <span class="math inline">\(X\)</span> is continuous, for a given fraction <span class="math inline">\(0 \leq p \leq 1\)</span> the corresponding quantile is the solution of the equation
 <span class="math display">\[
@@ -901,18 +904,18 @@ Let <span class="math inline">\(X\)</span> be a continuous random variable with 
 </h5>
 <div id="toggleExample.3.1.2" style="display: none">
 <p><strong>Solution.</strong></p>
-<p>The distribution function is <span class="math inline">\(F_{X}\left( x \right) = 1 - e^{- \theta x}\)</span>. So, <span class="math inline">\(F_{X}\left( \pi_{0.5} \right) = 1 - e^{- \theta\pi_{0.5}} = 0.5\)</span>. As, <span class="math inline">\(\pi_{0.5} = \frac{1}{3}\)</span>, we have <span class="math inline">\(F_X\left(\frac{1}{3}\right) = 1 - e^{-\theta / 3} = 0.5\)</span> and <span class="math inline">\(\theta = 3 \ln 2\)</span>.</p>
+<p>The distribution function is <span class="math inline">\(F_{X}\left( x \right) = 1 - e^{- \theta x}\)</span>. So, <span class="math inline">\(F_{X}\left( \pi_{0.5} \right) = 1 - e^{- \theta\pi_{0.5}} = 0.5\)</span>. As, <span class="math inline">\(\pi_{0.5} = \frac{1}{3}\)</span>, we have <span class="math inline">\(F_X\left(\frac{1}{3}\right) = 1 - e^{-\theta / 3} = 0.5\)</span> and <span class="math inline">\(\theta = 3 \log 2\)</span>.</p>
 </div>
 <hr />
 <p>Section <a href="C-ModelSelection.html#S:MS:QuantileEstimator">4.1.1.3</a> will extend the definition of quantiles to include distributions that are discrete, continuous, or a hybrid combination.</p>
 </div>
 <div id="moment-generating-function" class="section level3">
 <h3><span class="header-section-number">3.1.3</span> Moment Generating Function</h3>
-<p>The moment generating function (<em>mgf</em>), denoted by <span class="math inline">\(M_{X}(t)\)</span> uniquely characterizes the distribution of <span class="math inline">\(X\)</span>. While it is possible for two different distributions to have the same moments and yet still differ, this is not the case with the moment generating function. That is, if two random variables have the same moment generating function, then they have the same distribution. The moment generating function is given by
+<p>The<a href="#" class="tooltip" style="color:green"><em>moment generating function (mgf)</em><span style="font-size:8pt">The mgf of random variable n is defined the expectation of exp(tn), as a function of t</span></a>, denoted by <span class="math inline">\(M_{X}(t)\)</span> uniquely characterizes the distribution of <span class="math inline">\(X\)</span>. While it is possible for two different distributions to have the same moments and yet still differ, this is not the case with the moment generating function. That is, if two random variables have the same moment generating function, then they have the same distribution. The moment generating function is given by
 <span class="math display">\[
 M_{X}(t) = \mathrm{E}\left( e^{tX} \right) = \int_{0}^{\infty}{e^{\text{tx}}f_{X}\left( x \right) dx }
 \]</span>
-for all <span class="math inline">\(t\)</span> for which the expected value exists. The <a href="#" class="tooltip" style="color:green"><em>moment generating function (mgf)</em><span style="font-size:8pt">The mgf of random variable n is defined the expectation of exp(tn), as a function of t</span></a> is a real function whose <em>k</em>-th derivative at zero is equal to the <em>k</em>-th raw moment of <span class="math inline">\(X\)</span>. In symbols, this is
+for all <span class="math inline">\(t\)</span> for which the expected value exists. The <em>mgf</em> is a real function whose <em>k</em>-th derivative at zero is equal to the <em>k</em>-th raw moment of <span class="math inline">\(X\)</span>. In symbols, this is
 <span class="math display">\[
 \left.\frac{d^k}{dt^k} M_{X}(t)\right|_{t=0} = \mathrm{E}\left( X^{k} \right) .
 \]</span></p>
@@ -941,7 +944,7 @@ Let <span class="math inline">\(X_{1}, \ldots, X_{n}\)</span> be <a href="#" cla
 </h5>
 <div id="toggleExample.3.1.4" style="display: none">
 <p><strong>Solution.</strong></p>
-<p>The moment generating function of <span class="math inline">\(S\)</span> is
+<p>The <em>mgf</em> of <span class="math inline">\(S\)</span> is
 <span class="math display">\[
 M_{S}(t) = \text{E}\left( e^{\text{tS}} \right) = \mathrm{E}\left( e^{t\sum_{i = 1}^{n}X_{i}} \right) 
 = \mathrm{E}\left( \prod_{i = 1}^{n}e^{tX_{i}} \right) .
@@ -965,7 +968,7 @@ Hence, <span class="math inline">\(\mathrm{Var}\left( S \right) = \alpha\theta^{
 <hr />
 <p>One can also use the moment generating function to compute the probability generating function</p>
 <p><span class="math display">\[
-P_{X}(z) = \mathrm{E}\left( z^{X} \right) = M_{X}\left( \ln z \right) . 
+P_{X}(z) = \mathrm{E}\left( z^{X} \right) = M_{X}\left( \log z \right) . 
 \]</span></p>
 <p>As introduced in Section <a href="C-Frequency-Modeling.html#S:generating-functions">2.2.2</a>, the probability generating function is more useful for discrete <em>rv</em>s.</p>
 <div id="surveyElement31">
@@ -1000,7 +1003,7 @@ P_{X}(z) = \mathrm{E}\left( z^{X} \right) = M_{X}\left( \ln z \right) .
 <hr />
 <div id="S:Loss:Gamma" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Gamma Distribution</h3>
-<p>Recall that the traditional approach in modeling losses is to fit separate models for claim frequency and claim severity. When frequency and severity are modeled separately it is common for actuaries to use the Poisson distribution (introduced in Section <a href="C-Frequency-Modeling.html#S:poisson-distribution">2.2.3.2</a>) for claim count and the gamma distribution to model severity. An alternative approach for modeling losses that has recently gained popularity is to create a single model for pure premium (average claim cost) that will be described in Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
+<p>Recall that the traditional approach in modeling losses is to fit separate models for frequency and claim severity. When frequency and severity are modeled separately it is common for actuaries to use the Poisson distribution (introduced in Section <a href="C-Frequency-Modeling.html#S:poisson-distribution">2.2.3.2</a>) for claim count and the gamma distribution to model severity. An alternative approach for modeling losses that has recently gained popularity is to create a single model for pure premium (average claim cost) that will be described in Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
 <p>The continuous variable <span class="math inline">\(X\)</span> is said to have the gamma distribution with shape parameter <span class="math inline">\(\alpha\)</span> and scale parameter <span class="math inline">\(\theta\)</span> if its probability
 density function is given by
 <span class="math display">\[
@@ -1020,28 +1023,28 @@ The right-hand panel is with scale=100 and varying shape.
 <a id="displayCode.gamma.1" href="javascript:togglecode('toggleCode.gamma.1','displayCode.gamma.1');"><i><strong>R Code for Gamma Density Plots</strong></i></a>
 </h5>
 <div id="toggleCode.gamma.1" style="display: none">
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="C-Severity.html#cb12-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</span>
-<span id="cb12-2"><a href="C-Severity.html#cb12-2"></a></span>
-<span id="cb12-3"><a href="C-Severity.html#cb12-3"></a><span class="co"># Varying Scale Gamma Densities</span></span>
-<span id="cb12-4"><a href="C-Severity.html#cb12-4"></a>scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">100</span>, <span class="dv">250</span>, <span class="dt">by =</span> <span class="dv">50</span>)</span>
-<span id="cb12-5"><a href="C-Severity.html#cb12-5"></a>shapeparam &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">5</span></span>
-<span id="cb12-6"><a href="C-Severity.html#cb12-6"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</span>
-<span id="cb12-7"><a href="C-Severity.html#cb12-7"></a>fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x, <span class="dt">shape =</span> <span class="dv">2</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>])</span>
-<span id="cb12-8"><a href="C-Severity.html#cb12-8"></a><span class="kw">plot</span>(x, fgamma, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gamma Density&quot;</span>)</span>
-<span id="cb12-9"><a href="C-Severity.html#cb12-9"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){</span>
-<span id="cb12-10"><a href="C-Severity.html#cb12-10"></a>  fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x,<span class="dt">shape =</span> <span class="dv">2</span>, <span class="dt">scale =</span> scaleparam[k])</span>
-<span id="cb12-11"><a href="C-Severity.html#cb12-11"></a>  <span class="kw">lines</span>(x,fgamma, <span class="dt">col =</span> k)</span>
-<span id="cb12-12"><a href="C-Severity.html#cb12-12"></a>}</span>
-<span id="cb12-13"><a href="C-Severity.html#cb12-13"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;scale=100&quot;</span>, <span class="st">&quot;scale=150&quot;</span>, <span class="st">&quot;scale=200&quot;</span>, <span class="st">&quot;scale=250&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb12-14"><a href="C-Severity.html#cb12-14"></a></span>
-<span id="cb12-15"><a href="C-Severity.html#cb12-15"></a><span class="co"># Varying Shape Gamma Densities</span></span>
-<span id="cb12-16"><a href="C-Severity.html#cb12-16"></a>fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">100</span>)</span>
-<span id="cb12-17"><a href="C-Severity.html#cb12-17"></a><span class="kw">plot</span>(x, fgamma, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gamma Density&quot;</span>)</span>
-<span id="cb12-18"><a href="C-Severity.html#cb12-18"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){</span>
-<span id="cb12-19"><a href="C-Severity.html#cb12-19"></a>  fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x,<span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">100</span>)</span>
-<span id="cb12-20"><a href="C-Severity.html#cb12-20"></a>  <span class="kw">lines</span>(x,fgamma, <span class="dt">col =</span> k)</span>
-<span id="cb12-21"><a href="C-Severity.html#cb12-21"></a>}</span>
-<span id="cb12-22"><a href="C-Severity.html#cb12-22"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;shape=2&quot;</span>, <span class="st">&quot;shape=3&quot;</span>, <span class="st">&quot;shape=4&quot;</span>, <span class="st">&quot;shape=5&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
+<a class="sourceLine" id="cb12-2" title="2"></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="co"># Varying Scale Gamma Densities</span></a>
+<a class="sourceLine" id="cb12-4" title="4">scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">100</span>, <span class="dv">250</span>, <span class="dt">by =</span> <span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb12-5" title="5">shapeparam &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb12-6" title="6">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb12-7" title="7">fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x, <span class="dt">shape =</span> <span class="dv">2</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb12-8" title="8"><span class="kw">plot</span>(x, fgamma, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gamma Density&quot;</span>)</a>
+<a class="sourceLine" id="cb12-9" title="9"><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){</a>
+<a class="sourceLine" id="cb12-10" title="10">  fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x,<span class="dt">shape =</span> <span class="dv">2</span>, <span class="dt">scale =</span> scaleparam[k])</a>
+<a class="sourceLine" id="cb12-11" title="11">  <span class="kw">lines</span>(x,fgamma, <span class="dt">col =</span> k)</a>
+<a class="sourceLine" id="cb12-12" title="12">}</a>
+<a class="sourceLine" id="cb12-13" title="13"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;scale=100&quot;</span>, <span class="st">&quot;scale=150&quot;</span>, <span class="st">&quot;scale=200&quot;</span>, <span class="st">&quot;scale=250&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb12-14" title="14"></a>
+<a class="sourceLine" id="cb12-15" title="15"><span class="co"># Varying Shape Gamma Densities</span></a>
+<a class="sourceLine" id="cb12-16" title="16">fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb12-17" title="17"><span class="kw">plot</span>(x, fgamma, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Gamma Density&quot;</span>)</a>
+<a class="sourceLine" id="cb12-18" title="18"><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){</a>
+<a class="sourceLine" id="cb12-19" title="19">  fgamma &lt;-<span class="st"> </span><span class="kw">dgamma</span>(x,<span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb12-20" title="20">  <span class="kw">lines</span>(x,fgamma, <span class="dt">col =</span> k)</a>
+<a class="sourceLine" id="cb12-21" title="21">}</a>
+<a class="sourceLine" id="cb12-22" title="22"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;shape=2&quot;</span>, <span class="st">&quot;shape=3&quot;</span>, <span class="st">&quot;shape=4&quot;</span>, <span class="st">&quot;shape=5&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a></code></pre></div>
 </div>
 <p>When <span class="math inline">\(\alpha = 1\)</span> the gamma reduces to an <a href="#" class="tooltip" style="color:green"><em>exponential distribution</em><span style="font-size:8pt">A single parameter continous probability distribution that is defined by its rate parameter</span></a> and when <span class="math inline">\(\alpha = \frac{n}{2}\)</span> and <span class="math inline">\(\theta = 2\)</span> the gamma reduces to a <a href="#" class="tooltip" style="color:green"><em>chi-square distribution</em><span style="font-size:8pt">A common distribution used in chi-square tests for determining goodness of fit of observed data to a theorized distribution</span></a> with <span class="math inline">\(n\)</span> degrees of freedom. As we will see in Section <a href="C-AppA.html#S:AppA:HT">15.4</a>, the chi-square distribution is used extensively in statistical hypothesis testing.</p>
 <p>The distribution function of the gamma model is the <em>incomplete gamma function</em>, denoted by <span class="math inline">\(\Gamma\left(\alpha; \frac{x}{\theta} \right)\)</span>, and defined as
@@ -1049,7 +1052,7 @@ The right-hand panel is with scale=100 and varying shape.
 F_{X}\left( x \right) = \Gamma\left( \alpha; \frac{x}{\theta} \right) = \frac{1}{\Gamma\left( \alpha \right)}\int_{0}^{x /\theta}t^{\alpha - 1}e^{- t}~dt ,
 \]</span>
 with <span class="math inline">\(\alpha &gt; 0,\ \theta &gt; 0\)</span>. For an integer <span class="math inline">\(\alpha\)</span>, it can be written as <span class="math inline">\(\Gamma\left( \alpha; \frac{x}{\theta} \right) = 1 - e^{-x/\theta}\sum_{k = 0}^{\alpha-1}\frac{(x/\theta)^k}{k!}\)</span>.</p>
-<p>The <span class="math inline">\(k\)</span>-th moment of the gamma distributed random variable for any positive <span class="math inline">\(k\)</span> is given by
+<p>The <span class="math inline">\(k\)</span>-th raw moment of the gamma distributed random variable for any positive <span class="math inline">\(k\)</span> is given by
 <span class="math display">\[
 \mathrm{E}\left( X^{k} \right) = \theta^{k} \frac{\Gamma\left( \alpha + k \right)}{\Gamma\left( \alpha \right)} .
 \]</span>
@@ -1060,11 +1063,12 @@ modeling risky assets as it will not provide a realistic assessment of the likel
 <div id="pareto-distribution" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Pareto Distribution</h3>
 <p>The <a href="#" class="tooltip" style="color:green"><em>Pareto distribution</em><span style="font-size:8pt">A heavy-tailed and positively skewed distribution with 2 parameters</span></a>, named after the Italian economist Vilfredo Pareto (1843-1923), has many economic and financial applications. It is a positively skewed and heavy-tailed distribution which makes it suitable for modeling income, high-risk insurance claims and severity of large casualty losses. The survival function of the Pareto distribution which decays slowly to zero was first used to describe the distribution of income where a small percentage of the population holds a large proportion of the total wealth. For extreme insurance claims, the tail of the severity distribution (losses in excess of a threshold) can be modeled using a Generalized Pareto distribution.</p>
-<p>The continuous variable <span class="math inline">\(X\)</span> is said to have the Pareto distribution with shape parameter <span class="math inline">\(\alpha\)</span> and scale parameter <span class="math inline">\(\theta\)</span> if its <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">Probability density function</span></a> is given by
-<span class="math display">\[
-f_{X}\left( x \right) = \frac{\alpha\theta^{\alpha}}{\left( x + \theta \right)^{\alpha + 1}} \ \ \  x  &gt;  0,\ \alpha &gt;  0,\ \theta &gt; 0.
-\]</span>
-The two panels in Figure <a href="C-Severity.html#fig:Paretopdf">3.2</a> demonstrate the effect of the scale and shape parameters on the Pareto density function.</p>
+<p>The continuous variable <span class="math inline">\(X\)</span> is said to have the (two parameter) Pareto distribution with shape parameter <span class="math inline">\(\alpha\)</span> and scale parameter <span class="math inline">\(\theta\)</span> if its <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">Probability density function</span></a> is given by</p>
+<p><span class="math display" id="eq:Pareto">\[
+f_{X}\left( x \right) = \frac{\alpha\theta^{\alpha}}{\left( x + \theta \right)^{\alpha + 1}} \ \ \  x  &gt;  0, \ \alpha &gt;  0, \ \theta &gt; 0.
+\tag{3.1}
+\]</span></p>
+<p>The two panels in Figure <a href="C-Severity.html#fig:Paretopdf">3.2</a> demonstrate the effect of the scale and shape parameters on the Pareto density function. There are other formulations of the Pareto distribution including a one parameter version given in Appendix Section <a href="C-SummaryDistributions.html#S:ContinuousDistributions">18.2</a>. Henceforth, when we refer the Pareto distribution, we mean the version given through the <em>pdf</em> in equation (eq:Pareto).</p>
 <div class="figure" style="text-align: center"><span id="fig:Paretopdf"></span>
 <img src="LossDataAnalytics_files/figure-html/Paretopdf-1.png" alt="Pareto Densities. The left-hand panel is with scale=2000 and varying shape.  The right-hand panel is with shape=3 and varying scale" width="120%" />
 <p class="caption">
@@ -1075,33 +1079,33 @@ Figure 3.2: Pareto Densities. The left-hand panel is with scale=2000 and varying
 <a id="displayCode.Pareto.1" href="javascript:togglecode('toggleCode.Pareto.1','displayCode.Pareto.1');"><i><strong>R Code for Pareto Density Plots</strong></i></a>
 </h5>
 <div id="toggleCode.Pareto.1" style="display: none">
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="C-Severity.html#cb13-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</span>
-<span id="cb13-2"><a href="C-Severity.html#cb13-2"></a></span>
-<span id="cb13-3"><a href="C-Severity.html#cb13-3"></a><span class="co"># Varying Scale Pareto Densities</span></span>
-<span id="cb13-4"><a href="C-Severity.html#cb13-4"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">3000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</span>
-<span id="cb13-5"><a href="C-Severity.html#cb13-5"></a>scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">2000</span>, <span class="dv">3500</span>, <span class="dv">500</span>)</span>
-<span id="cb13-6"><a href="C-Severity.html#cb13-6"></a>shapeparam &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span></span>
-<span id="cb13-7"><a href="C-Severity.html#cb13-7"></a></span>
-<span id="cb13-8"><a href="C-Severity.html#cb13-8"></a><span class="co"># varying the shape parameter</span></span>
-<span id="cb13-9"><a href="C-Severity.html#cb13-9"></a><span class="kw">plot</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">2000</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.002</span>),<span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Pareto density&quot;</span>)</span>
-<span id="cb13-10"><a href="C-Severity.html#cb13-10"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){</span>
-<span id="cb13-11"><a href="C-Severity.html#cb13-11"></a>  <span class="kw">lines</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">2000</span>), <span class="dt">col =</span> k)</span>
-<span id="cb13-12"><a href="C-Severity.html#cb13-12"></a>}</span>
-<span id="cb13-13"><a href="C-Severity.html#cb13-13"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=1&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=2&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=3&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=4&#39;</span>)), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb13-14"><a href="C-Severity.html#cb13-14"></a></span>
-<span id="cb13-15"><a href="C-Severity.html#cb13-15"></a><span class="co"># Varying Shape Pareto Densities</span></span>
-<span id="cb13-16"><a href="C-Severity.html#cb13-16"></a><span class="kw">plot</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>]), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Pareto density&quot;</span>)</span>
-<span id="cb13-17"><a href="C-Severity.html#cb13-17"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){</span>
-<span id="cb13-18"><a href="C-Severity.html#cb13-18"></a>  <span class="kw">lines</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[k]), <span class="dt">col =</span> k)</span>
-<span id="cb13-19"><a href="C-Severity.html#cb13-19"></a>}</span>
-<span id="cb13-20"><a href="C-Severity.html#cb13-20"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=2000&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=2500&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=3000&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=3500&#39;</span>)), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="co"># Varying Scale Pareto Densities</span></a>
+<a class="sourceLine" id="cb13-4" title="4">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">3000</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb13-5" title="5">scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">2000</span>, <span class="dv">3500</span>, <span class="dv">500</span>)</a>
+<a class="sourceLine" id="cb13-6" title="6">shapeparam &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb13-7" title="7"></a>
+<a class="sourceLine" id="cb13-8" title="8"><span class="co"># varying the shape parameter</span></a>
+<a class="sourceLine" id="cb13-9" title="9"><span class="kw">plot</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">2000</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.002</span>),<span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Pareto density&quot;</span>)</a>
+<a class="sourceLine" id="cb13-10" title="10"><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){</a>
+<a class="sourceLine" id="cb13-11" title="11">  <span class="kw">lines</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">2000</span>), <span class="dt">col =</span> k)</a>
+<a class="sourceLine" id="cb13-12" title="12">}</a>
+<a class="sourceLine" id="cb13-13" title="13"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=1&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=2&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=3&#39;</span>), <span class="kw">expression</span>(alpha<span class="op">~</span><span class="st">&#39;=4&#39;</span>)), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb13-14" title="14"></a>
+<a class="sourceLine" id="cb13-15" title="15"><span class="co"># Varying Shape Pareto Densities</span></a>
+<a class="sourceLine" id="cb13-16" title="16"><span class="kw">plot</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>]), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Pareto density&quot;</span>)</a>
+<a class="sourceLine" id="cb13-17" title="17"><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){</a>
+<a class="sourceLine" id="cb13-18" title="18">  <span class="kw">lines</span>(x, actuar<span class="op">::</span><span class="kw">dpareto</span>(x, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[k]), <span class="dt">col =</span> k)</a>
+<a class="sourceLine" id="cb13-19" title="19">}</a>
+<a class="sourceLine" id="cb13-20" title="20"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=2000&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=2500&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=3000&#39;</span>), <span class="kw">expression</span>(theta<span class="op">~</span><span class="st">&#39;=3500&#39;</span>)), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a></code></pre></div>
 </div>
 <p>The distribution function of the Pareto distribution is given by
 <span class="math display">\[
 F_{X}\left( x \right) = 1 - \left( \frac{\theta}{x + \theta} \right)^{\alpha}  \ \ \ x &gt; 0,\ \alpha &gt; 0,\ \theta &gt; 0.
 \]</span></p>
-<p>It can be easily seen that the <a href="#" class="tooltip" style="color:green"><em>hazard function</em><span style="font-size:8pt">Ratio of the probability density function and the survival function: f(x)/s(x), and represents an instantaneous probability within a small time frame</span></a> of the Pareto distribution is a decreasing function in <span class="math inline">\(x\)</span>, another indication that the distribution is heavy tailed. When the hazard function decreases over time the population dies off at a decreasing rate resulting in a heavier tail for the distribution. The hazard function reveals information about the tail distribution and is often used to model data distributions in survival analysis. The hazard function is defined as the instantaneous potential that the event of interest occurs within a very narrow time frame.</p>
-<p>The <span class="math inline">\(k\)</span>-th moment of the Pareto distributed random variable exists, if and only if, <span class="math inline">\(\alpha &gt; k\)</span>. If <span class="math inline">\(k\)</span> is a positive integer then
+<p>It can be easily seen that the <a href="#" class="tooltip" style="color:green"><em>hazard function</em><span style="font-size:8pt">Ratio of the probability density function and the survival function: f(x)/s(x), and represents an instantaneous probability within a small time frame</span></a> of the Pareto distribution is a decreasing function in <span class="math inline">\(x\)</span>, another indication that the distribution is heavy tailed. Again using the analogy of the income of a population, when the hazard function decreases over time the population dies off at a decreasing rate resulting in a heavier tail for the distribution. The hazard function reveals information about the tail distribution and is often used to model data distributions in survival analysis. The hazard function is defined as the instantaneous potential that the event of interest occurs within a very narrow time frame.</p>
+<p>The <span class="math inline">\(k\)</span>-th raw moment of the Pareto distributed random variable exists, if and only if, <span class="math inline">\(\alpha &gt; k\)</span>. If <span class="math inline">\(k\)</span> is a positive integer then
 <span class="math display">\[
 \mathrm{E}\left( X^{k} \right) = \frac{\theta^{k}~ k!}{\left( \alpha - 1 \right)\cdots\left( \alpha - k \right)} \ \ \ \alpha &gt; k.
 \]</span>
@@ -1133,7 +1137,7 @@ Thus, <span class="math inline">\(\pi_{0.95} = 122.96\)</span>.</p>
 <div id="S:LS:Weibull" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Weibull Distribution</h3>
 <p>The <a href="#" class="tooltip" style="color:green"><em>Weibull distribution</em><span style="font-size:8pt">A positively skewed continuous distribution with 2 parameters that can have an increasing or decreasing hazard function depending on the shape parameter</span></a>, named after the Swedish physicist Waloddi Weibull (1887-1979) is widely used in reliability, life data analysis, weather forecasts and general insurance claims. Truncated data arise frequently in insurance studies. The Weibull distribution has been used to model excess of loss treaty over automobile insurance as well as earthquake inter-arrival times.</p>
-<p>The continuous variable <span class="math inline">\(X\)</span> is said to have the Weibull distribution with shape parameter <span class="math inline">\(\alpha\)</span> and scale parameter <span class="math inline">\(\theta\)</span> if its probability density function is given by
+<p>The continuous variable <span class="math inline">\(X\)</span> is said to have the Weibull distribution with shape parameter <span class="math inline">\(\alpha\)</span> and scale parameter <span class="math inline">\(\theta\)</span> if its <em>pdf</em> is given by
 <span class="math display">\[
 f_{X}\left( x \right) = \frac{\alpha}{\theta}\left( \frac{x}{\theta} \right)^{\alpha - 1} \exp \left(- \left( \frac{x}{\theta} \right)^{\alpha}\right) \ \ \ x &gt; 0,\ \alpha &gt; 0,\ \theta &gt; 0.
 \]</span>
@@ -1148,29 +1152,29 @@ Figure 3.3: Weibull Densities. The left-hand panel is with shape=3 and varying s
 <a id="displayCode.Weibull.1" href="javascript:togglecode('toggleCode.Weibull.1','displayCode.Weibull.1');"><i><strong>R Code for Weibull Density Plots</strong></i></a>
 </h5>
 <div id="toggleCode.Weibull.1" style="display: none">
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="C-Severity.html#cb14-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</span>
-<span id="cb14-2"><a href="C-Severity.html#cb14-2"></a></span>
-<span id="cb14-3"><a href="C-Severity.html#cb14-3"></a><span class="co"># Varying Scale Weibull Densities</span></span>
-<span id="cb14-4"><a href="C-Severity.html#cb14-4"></a>z&lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">400</span>,<span class="dt">by=</span><span class="dv">1</span>)</span>
-<span id="cb14-5"><a href="C-Severity.html#cb14-5"></a>scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">50</span>,<span class="dv">200</span>,<span class="dv">50</span>)</span>
-<span id="cb14-6"><a href="C-Severity.html#cb14-6"></a>shapeparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">1.5</span>,<span class="dv">3</span>,<span class="fl">0.5</span>)</span>
-<span id="cb14-7"><a href="C-Severity.html#cb14-7"></a><span class="kw">plot</span>(z, <span class="kw">dweibull</span>(z, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>]), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weibull density&quot;</span>)</span>
-<span id="cb14-8"><a href="C-Severity.html#cb14-8"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){</span>
-<span id="cb14-9"><a href="C-Severity.html#cb14-9"></a>  <span class="kw">lines</span>(z,<span class="kw">dweibull</span>(z,<span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[k]), <span class="dt">col =</span> k)}</span>
-<span id="cb14-10"><a href="C-Severity.html#cb14-10"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;scale=50&quot;</span>, <span class="st">&quot;scale=100&quot;</span>, <span class="st">&quot;scale=150&quot;</span>, <span class="st">&quot;scale=200&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb14-11"><a href="C-Severity.html#cb14-11"></a></span>
-<span id="cb14-12"><a href="C-Severity.html#cb14-12"></a><span class="co"># Varying Shape Weibull Densities</span></span>
-<span id="cb14-13"><a href="C-Severity.html#cb14-13"></a><span class="kw">plot</span>(z, <span class="kw">dweibull</span>(z, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">100</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.012</span>), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weibull density&quot;</span>)</span>
-<span id="cb14-14"><a href="C-Severity.html#cb14-14"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){</span>
-<span id="cb14-15"><a href="C-Severity.html#cb14-15"></a>  <span class="kw">lines</span>(z,<span class="kw">dweibull</span>(z,<span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">100</span>), <span class="dt">col =</span> k)}</span>
-<span id="cb14-16"><a href="C-Severity.html#cb14-16"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;shape=1.5&quot;</span>, <span class="st">&quot;shape=2&quot;</span>, <span class="st">&quot;shape=2.5&quot;</span>, <span class="st">&quot;shape=3&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="co"># Varying Scale Weibull Densities</span></a>
+<a class="sourceLine" id="cb14-4" title="4">z&lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">400</span>,<span class="dt">by=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb14-5" title="5">scaleparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">50</span>,<span class="dv">200</span>,<span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb14-6" title="6">shapeparam &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">1.5</span>,<span class="dv">3</span>,<span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="kw">plot</span>(z, <span class="kw">dweibull</span>(z, <span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[<span class="dv">1</span>]), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weibull density&quot;</span>)</a>
+<a class="sourceLine" id="cb14-8" title="8"><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(scaleparam)){</a>
+<a class="sourceLine" id="cb14-9" title="9">  <span class="kw">lines</span>(z,<span class="kw">dweibull</span>(z,<span class="dt">shape =</span> <span class="dv">3</span>, <span class="dt">scale =</span> scaleparam[k]), <span class="dt">col =</span> k)}</a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;scale=50&quot;</span>, <span class="st">&quot;scale=100&quot;</span>, <span class="st">&quot;scale=150&quot;</span>, <span class="st">&quot;scale=200&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb14-11" title="11"></a>
+<a class="sourceLine" id="cb14-12" title="12"><span class="co"># Varying Shape Weibull Densities</span></a>
+<a class="sourceLine" id="cb14-13" title="13"><span class="kw">plot</span>(z, <span class="kw">dweibull</span>(z, <span class="dt">shape =</span> shapeparam[<span class="dv">1</span>], <span class="dt">scale =</span> <span class="dv">100</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.012</span>), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Weibull density&quot;</span>)</a>
+<a class="sourceLine" id="cb14-14" title="14"><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(shapeparam)){</a>
+<a class="sourceLine" id="cb14-15" title="15">  <span class="kw">lines</span>(z,<span class="kw">dweibull</span>(z,<span class="dt">shape =</span> shapeparam[k], <span class="dt">scale =</span> <span class="dv">100</span>), <span class="dt">col =</span> k)}</a>
+<a class="sourceLine" id="cb14-16" title="16"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;shape=1.5&quot;</span>, <span class="st">&quot;shape=2&quot;</span>, <span class="st">&quot;shape=2.5&quot;</span>, <span class="st">&quot;shape=3&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a></code></pre></div>
 </div>
 <p>The distribution function of the Weibull distribution is given by
 <span class="math display">\[
-F_{X}\left( x \right) = 1 - e^{- \left( x / \theta \right)^{\alpha}}  \ \ \ x &gt;  0,\ \alpha &gt;  0,\ \theta &gt; 0.
+F_{X}\left( x \right) = 1 - \exp\left(- \left( \frac{x}{\theta} \right)^{\alpha}~\right)  \ \ \ x &gt;  0,\ \alpha &gt;  0,\ \theta &gt; 0.
 \]</span></p>
 <p>It can be easily seen that the shape parameter <span class="math inline">\(\alpha\)</span> describes the shape of the hazard function of the Weibull distribution. The hazard function is a decreasing function when <span class="math inline">\(\alpha &lt; 1\)</span> (heavy tailed distribution), constant when <span class="math inline">\(\alpha = 1\)</span> and increasing when <span class="math inline">\(\alpha &gt; 1\)</span> (light tailed distribution). This behavior of the hazard function makes the Weibull distribution a suitable model for a wide variety of phenomena such as weather forecasting, electrical and industrial engineering, insurance modeling, and financial risk analysis.</p>
-<p>The <span class="math inline">\(k\)</span>-th moment of the Weibull distributed random variable is given by
+<p>The <span class="math inline">\(k\)</span>-th raw moment of the Weibull distributed random variable is given by
 <span class="math display">\[
 \mathrm{E}\left( X^{k} \right) = \theta^{k}~\Gamma\left( 1 + \frac{k}{\alpha} \right) .
 \]</span></p>
@@ -1186,7 +1190,7 @@ respectively.</p>
 <p><strong>Example 3.2.2.</strong>
 Suppose that the probability distribution of the lifetime of AIDS patients (in months) from the time of diagnosis is described by the Weibull distribution with shape parameter 1.2 and scale parameter 33.33.</p>
 <ol style="list-style-type: lower-alpha">
-<li>Find the probability that a randomly selected person from this population survives at least 12 months,</li>
+<li>Find the probability that a randomly selected person from this population survives at least 12 months.</li>
 <li>A random sample of 10 patients will be selected from this population. What is the probability that at most two will die within one year of diagnosis.</li>
 <li>Find the 99-th percentile of the distribution of lifetimes.</li>
 </ol>
@@ -1211,17 +1215,17 @@ Solving for <span class="math inline">\(\pi_{0.99}\)</span>, we get <span class=
 <div id="the-generalized-beta-distribution-of-the-second-kind" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> The Generalized Beta Distribution of the Second Kind</h3>
 <p>The <a href="#" class="tooltip" style="color:green"><em>Generalized Beta Distribution of the Second Kind</em><span style="font-size:8pt">A 4-parameter flexible distribution that encompasses many common distributions</span></a> (<em>GB2</em>) was introduced by <span class="citation">Venter (<a href="#ref-venter1983transformed" role="doc-biblioref">1983</a>)</span> in the context of insurance loss modeling and by <span class="citation">McDonald (<a href="#ref-mcdonald1984some" role="doc-biblioref">1984</a>)</span> as an income and wealth distribution. It is a four-parameter very flexible distribution that can model positively as well as negatively skewed distributions.</p>
-<p>The continuous variable <span class="math inline">\(X\)</span> is said to have the <em>GB2</em> distribution with parameters <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span> if its probability density function is given by</p>
-<p><span class="math display" id="eq:GB2Distn">\[\begin{equation}
+<p>The continuous variable <span class="math inline">\(X\)</span> is said to have the <em>GB2</em> distribution with parameters <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span> if its <em>pdf</em> is given by</p>
+<p><span class="math display" id="eq:GB2Distn">\[
 f_{X}\left( x \right) = \frac{(x/\theta)^{\alpha_2/\sigma}}{x \sigma~\mathrm{B}\left( \alpha_1,\alpha_2\right)\left\lbrack 1 + \left( x/\theta \right)^{1/\sigma} \right\rbrack^{\alpha_1 + \alpha_2}} \ \ \ \text{for } x &gt; 0,
-  \tag{3.1}
-\end{equation}\]</span></p>
-<p><span class="math inline">\(\sigma,\theta,\alpha_1,\alpha_2 &gt; 0\)</span>, and where the beta function <span class="math inline">\(\mathrm{B}\left( \alpha_1,\alpha_2 \right)\)</span> is defined as
-<span class="math display">\[
+  \tag{3.2}
+\]</span></p>
+<p><span class="math inline">\(\sigma,\theta,\alpha_1,\alpha_2 &gt; 0\)</span>, and where the beta function <span class="math inline">\(\mathrm{B}\left( \alpha_1,\alpha_2 \right)\)</span> is defined as</p>
+<p><span class="math display">\[
 \mathrm{B}\left( \alpha_1,\alpha_2\right) = \int_{0}^{1}{t^{\alpha_1 - 1}\left( 1 - t \right)^{\alpha_2 - 1}}~ dt.
 \]</span></p>
 <p>The <em>GB2</em> provides a model for heavy as well as light tailed data. It includes the exponential, gamma, Weibull, Burr, Lomax, F, chi-square, Rayleigh, lognormal and log-logistic as special or limiting cases. For example, by setting the parameters <span class="math inline">\(\sigma = \alpha_1 = \alpha_2 = 1\)</span>, the <em>GB2</em> reduces to the log-logistic distribution. When <span class="math inline">\(\sigma = 1\)</span> and <span class="math inline">\(\alpha_2 \rightarrow \infty\)</span>, it reduces to the gamma distribution, and when <span class="math inline">\(\alpha = 1\)</span> and <span class="math inline">\(\alpha_2 \rightarrow \infty\)</span>, it reduces to the Weibull distribution.</p>
-<p>A <em>GB2</em> random variable can be constructed as follows. Suppose that <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> are independent random variables where <span class="math inline">\(G_i\)</span> has a gamma distribution with parameters <span class="math inline">\(\alpha_i\)</span> and scale parameter 1. Then, one can show that the random variable <span class="math inline">\(X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}\)</span> has a <em>GB2</em> distribution with <em>pdf</em> summarized in equation <a href="C-Severity.html#eq:GB2Distn">(3.1)</a>. This theoretical result has several implications. For example, when the moments exist, one can show that the <span class="math inline">\(k\)</span>-th moment of the <em>GB2</em> distributed random variable is given by</p>
+<p>A <em>GB2</em> random variable can be constructed as follows. Suppose that <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> are independent random variables where <span class="math inline">\(G_i\)</span> has a gamma distribution with parameters <span class="math inline">\(\alpha_i\)</span> and scale parameter 1. Then, one can show that the random variable <span class="math inline">\(X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}\)</span> has a <em>GB2</em> distribution with <em>pdf</em> summarized in equation <a href="C-Severity.html#eq:GB2Distn">(3.2)</a>. This theoretical result has several implications. For example, when the moments exist, one can show that the <span class="math inline">\(k\)</span>-th raw moment of the <em>GB2</em> distributed random variable is given by</p>
 <p><span class="math display">\[
 \mathrm{E}\left( X^{k} \right) = \frac{\theta^{k}~\mathrm{B}\left( \alpha_1 +k \sigma,\alpha_2 - k \sigma \right)}{\mathrm{B}\left( \alpha_1,\alpha_2 \right)}, \ \ \ k &gt; 0.
 \]</span></p>
@@ -1257,7 +1261,7 @@ f_{X}\left( x \right) = \frac{(x/\theta)^{\alpha_2/\sigma}}{x \sigma~\mathrm{B}\
 <hr />
 <div id="functions-of-random-variables-and-their-distributions" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Functions of Random Variables and their Distributions</h3>
-<p>In Section <a href="C-Severity.html#S:ContinuousDistn">3.2</a> we discussed some elementary known distributions. In this section we discuss means of creating new parametric probability distributions from existing ones. Specifically, let <span class="math inline">\(X\)</span> be a continuous random variable with a known probability density function <span class="math inline">\(f_{X}(x)\)</span> and distribution function <span class="math inline">\(F_{X}(x)\)</span>. We are interested in the distribution of <span class="math inline">\(Y = g\left( X \right)\)</span>, where <span class="math inline">\(g(X)\)</span> is a one-to-one <a href="#" class="tooltip" style="color:green"><em>transformation</em><span style="font-size:8pt">A function or method that turns one distribution into another</span></a> defining a new random variable <span class="math inline">\(Y\)</span>. In this section we apply the following techniques for creating new families of distributions: (a) multiplication by a constant (b) raising to a power, (c) exponentiation and (d) mixing.</p>
+<p>In Section <a href="C-Severity.html#S:ContinuousDistn">3.2</a> we discussed some elementary known distributions. In this section we discuss means of creating new parametric probability distributions from existing ones. Specifically, let <span class="math inline">\(X\)</span> be a continuous random variable with a known <em>pdf</em> <span class="math inline">\(f_{X}(x)\)</span> and distribution function <span class="math inline">\(F_{X}(x)\)</span>. We are interested in the distribution of <span class="math inline">\(Y = g\left( X \right)\)</span>, where <span class="math inline">\(g(X)\)</span> is a one-to-one <a href="#" class="tooltip" style="color:green"><em>transformation</em><span style="font-size:8pt">A function or method that turns one distribution into another</span></a> defining a new random variable <span class="math inline">\(Y\)</span>. In this section we apply the following techniques for creating new families of distributions: (a) multiplication by a constant (b) raising to a power, (c) exponentiation and (d) mixing.</p>
 </div>
 <div id="multiplication-by-a-constant" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Multiplication by a Constant</h3>
@@ -1266,7 +1270,7 @@ f_{X}\left( x \right) = \frac{(x/\theta)^{\alpha_2/\sigma}}{x \sigma~\mathrm{B}\
 <span class="math display">\[
 F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( cX \leq y \right) = \Pr\left( X \leq \frac{y}{c} \right) = F_{X}\left( \frac{y}{c} \right).
 \]</span>
-Hence, the probability density function of interest <span class="math inline">\(f_{Y}(y)\)</span> can be written as
+Using the chain rule for differentiation, the <em>pdf</em> of interest <span class="math inline">\(f_{Y}(y)\)</span> can be written as
 <span class="math display">\[
 f_{Y}\left( y \right) = \frac{1}{c}f_{X}\left( \frac{y}{c} \right).
 \]</span>
@@ -1276,7 +1280,7 @@ Suppose that <span class="math inline">\(X\)</span> belongs to a certain set of 
 <li>All other parameters remain unchanged.</li>
 </ul>
 <p><strong>Example 3.3.1. Actuarial Exam Question.</strong>
-The aggregate losses of Eiffel Auto Insurance are denoted in Euro currency and follow a lognormal distribution with <span class="math inline">\(\mu = 8\)</span> and <span class="math inline">\(\sigma = 2\)</span>. Given that 1 euro <span class="math inline">\(=\)</span> 1.3 dollars, find the set of lognormal parameters which describe the distribution of Eiffel’s losses in dollars.</p>
+Losses of Eiffel Auto Insurance are denoted in Euro currency and follow a lognormal distribution with <span class="math inline">\(\mu = 8\)</span> and <span class="math inline">\(\sigma = 2\)</span>. Given that 1 euro <span class="math inline">\(=\)</span> 1.3 dollars, find the set of lognormal parameters which describe the distribution of Eiffel’s losses in dollars.</p>
 <h5 style="text-align: center;">
 <a id="displayExample.3.3.1" href="javascript:toggleEX('toggleExample.3.3.1','displayExample.3.3.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1286,19 +1290,19 @@ The aggregate losses of Eiffel Auto Insurance are denoted in Euro currency and f
 <span class="math display">\[
 F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( 1.3X \leq y \right) = \Pr\left( X \leq \frac{y}{1.3} \right) = F_{X}\left( \frac{y}{1.3} \right).
 \]</span></p>
-<p><span class="math inline">\(X\)</span> follows a lognormal distribution with parameters <span class="math inline">\(\mu = 8\)</span> and <span class="math inline">\(\sigma = 2\)</span>. The probability density function of <span class="math inline">\(X\)</span> is given by
+<p><span class="math inline">\(X\)</span> follows a lognormal distribution with parameters <span class="math inline">\(\mu = 8\)</span> and <span class="math inline">\(\sigma = 2\)</span>. The <em>pdf</em> of <span class="math inline">\(X\)</span> is given by
 <span class="math display">\[
-f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\ln x - \mu}{\sigma} \right)^{2}\right\} \ \ \ \text{for } x &gt; 0.
+f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\log x - \mu}{\sigma} \right)^{2}\right\} \ \ \ \text{for } x &gt; 0.
 \]</span>
-As <span class="math inline">\(\left| \frac{dx}{dy} \right| = \frac{1}{1.3}\)</span>, the probability density function of interest <span class="math inline">\(f_{Y}(y)\)</span> is</p>
+As <span class="math inline">\(\left| \frac{dx}{dy} \right| = \frac{1}{1.3}\)</span>, the <em>pdf</em> of interest <span class="math inline">\(f_{Y}(y)\)</span> is</p>
 <p><span class="math display">\[
 \begin{array}{ll}
 f_{Y}\left( y \right) &amp; = \frac{1}{1.3}f_{X}\left( \frac{y}{1.3} \right) \\
-&amp;= \frac{1}{1.3}\frac{1.3}{y \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\ln\left( y/1.3 \right) - \mu}{\sigma} \right)^{2}\right\} \\
-&amp;= \frac{1}{y \sigma\sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\ln y - \left( \ln 1.3 + \mu \right)}{\sigma} \right)^{2}\right\}.
+&amp;= \frac{1}{1.3}\frac{1.3}{y \sigma \sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\log\left( y/1.3 \right) - \mu}{\sigma} \right)^{2}\right\} \\
+&amp;= \frac{1}{y \sigma\sqrt{2\pi}}\exp \left\{- \frac{1}{2}\left( \frac{\log y - \left( \log 1.3 + \mu \right)}{\sigma} \right)^{2}\right\}.
 \end{array}
 \]</span>
-Then <span class="math inline">\(Y\)</span> follows a lognormal distribution with parameters <span class="math inline">\(\ln 1.3 + \mu = 8.26\)</span> and <span class="math inline">\(\sigma = 2.00\)</span>. If we let <span class="math inline">\(\mu = ln(m)\)</span> then it can be easily seen that <span class="math inline">\(m\)</span>=<span class="math inline">\(e^{\mu}\)</span> is the scale parameter which was multiplied by 1.3 while <span class="math inline">\(\sigma\)</span> is the shape parameter that remained unchanged.</p>
+Then <span class="math inline">\(Y\)</span> follows a lognormal distribution with parameters <span class="math inline">\(\log 1.3 + \mu = 8.26\)</span> and <span class="math inline">\(\sigma = 2.00\)</span>. If we let <span class="math inline">\(\mu = \log(m)\)</span> then it can be easily seen that <span class="math inline">\(m = e^{\mu}\)</span> is the scale parameter which was multiplied by 1.3 while <span class="math inline">\(\sigma\)</span> is the shape parameter that remained unchanged.</p>
 </div>
 <hr />
 <p><strong>Example 3.3.2. Actuarial Exam Question.</strong>
@@ -1324,7 +1328,7 @@ We can see that <span class="math inline">\(Y\sim Ga(\alpha,c\theta)\)</span> in
 <p><span class="math display">\[
 F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( X^{\tau} \leq y \right) = \Pr\left( X \leq y^{1/ \tau} \right) = F_{X}\left( y^{1/ \tau} \right).
 \]</span></p>
-<p>Hence, the probability density function of interest <span class="math inline">\(f_{Y}(y)\)</span> can be written as
+<p>Hence, the <em>pdf</em> of interest <span class="math inline">\(f_{Y}(y)\)</span> can be written as
 <span class="math display">\[
 f_{Y}(y) = \frac{1}{\tau} y^{(1/ \tau) - 1} f_{X}\left( y^{1/ \tau} \right).
 \]</span>
@@ -1362,19 +1366,19 @@ where <span class="math inline">\(\alpha = \frac{1}{\tau}\)</span> and <span cla
 </div>
 <div id="exponentiation" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> Exponentiation</h3>
-<p>The normal distribution is a very popular model for a wide number of applications and when the sample size is large, it can serve as an approximate distribution for other models. If the random variable <span class="math inline">\(X\)</span> has a normal distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^{2}\)</span>, then <span class="math inline">\(Y = e^{X}\)</span> has <a href="#" class="tooltip" style="color:green"><em>lognormal distribution</em><span style="font-size:8pt">A heavy-tailed, positively skewed 2-parameter continuous distribution such that the natural log of the random variable is normally distributed with the same parameter values</span></a> with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^{2}\)</span>. The lognormal random variable has a lower bound of zero, is positively skewed and has a long right tail. A lognormal distribution is commonly used to describe distributions of financial assets such as stock prices. It is also used in fitting claim amounts for automobile as well as health insurance. This is an example of another type of transformation which involves exponentiation.</p>
+<p>The normal distribution is a very popular model for a wide number of applications and when the sample size is large, it can serve as an approximate distribution for other models. If the random variable <span class="math inline">\(X\)</span> has a normal distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^{2}\)</span>, then <span class="math inline">\(Y = e^{X}\)</span> has a <a href="#" class="tooltip" style="color:green"><em>lognormal distribution</em><span style="font-size:8pt">A heavy-tailed, positively skewed 2-parameter continuous distribution such that the natural log of the random variable is normally distributed with the same parameter values</span></a> with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^{2}\)</span>. The lognormal random variable has a lower bound of zero, is positively skewed and has a long right tail. A lognormal distribution is commonly used to describe distributions of financial assets such as stock prices. It is also used in fitting claim amounts for automobile as well as health insurance. This is an example of another type of transformation which involves exponentiation.</p>
 <p>In general, consider the transformation <span class="math inline">\(Y = e^{X}\)</span>. Then, the distribution function of <span class="math inline">\(Y\)</span> is given by</p>
 <p><span class="math display">\[
-F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \ln y \right) = F_{X}\left( \ln y \right).
+F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \log y \right) = F_{X}\left( \log y \right).
 \]</span>
-Taking derivatives, we see that the probability density function of interest <span class="math inline">\(f_{Y}(y)\)</span> can be written as
+Taking derivatives, we see that the <em>pdf</em> of interest <span class="math inline">\(f_{Y}(y)\)</span> can be written as
 <span class="math display">\[
-f_{Y}(y) = \frac{1}{y}f_{X}\left( \ln y \right).
+f_{Y}(y) = \frac{1}{y}f_{X}\left( \log y \right).
 \]</span>
 As an important special case, suppose that <span class="math inline">\(X\)</span> is normally distributed with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. Then, the distribution of <span class="math inline">\(Y = e^X\)</span> is</p>
 <p><span class="math display">\[
-f_{Y}(y) = \frac{1}{y}f_{X}\left( \ln y \right)
-= \frac{1}{y \sigma \sqrt{2 \pi}} \exp \left\{-\frac{1}{2}\left(\frac{ \ln y - \mu}{\sigma}\right)^2\right\}. 
+f_{Y}(y) = \frac{1}{y}f_{X}\left( \log y \right)
+= \frac{1}{y \sigma \sqrt{2 \pi}} \exp \left\{-\frac{1}{2}\left(\frac{ \log y - \mu}{\sigma}\right)^2\right\}. 
 \]</span>
 This is known as a <em>lognormal</em> distribution.</p>
 <p><strong>Example 3.3.4. Actuarial Exam Question.</strong>
@@ -1386,11 +1390,11 @@ Assume that <span class="math inline">\(X\)</span> has a uniform distribution on
 <p><strong>Solution.</strong></p>
 <p>We begin with the <a href="#" class="tooltip" style="color:green"><em>cdf</em><span style="font-size:8pt">Cumulative distribution function</span></a> of <span class="math inline">\(Y\)</span>,
 <span class="math display">\[
-F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \ln y \right) = F_{X}\left( \ln y \right).
+F_{Y}\left( y \right) = \Pr\left( Y \leq y \right) = \Pr\left( e^{X} \leq y \right) = \Pr\left( X \leq \log y \right) = F_{X}\left( \log y \right).
 \]</span>
 Taking the derivative, we have,</p>
 <p><span class="math display">\[
-f_{Y}\left( y \right) = \frac{1}{y}f_{X}\left(\ln y \right) = \frac{1}{cy} .
+f_{Y}\left( y \right) = \frac{1}{y}f_{X}\left(\log y \right) = \frac{1}{cy} .
 \]</span>
 Since <span class="math inline">\(0 &lt; x &lt; c\)</span>, then <span class="math inline">\(1 &lt; y &lt; e^{c}\)</span>.</p>
 </div>
@@ -1402,11 +1406,11 @@ Since <span class="math inline">\(0 &lt; x &lt; c\)</span>, then <span class="ma
 thought to be divided into multiple subpopulations with distinct distributions.</p>
 <div id="two-point-mixture" class="section level4">
 <h4><span class="header-section-number">3.3.5.1</span> Two-point Mixture</h4>
-<p>If the underlying phenomenon is diverse and can actually be described as two phenomena representing two subpopulations with different modes, we can construct the two point mixture random variable <span class="math inline">\(X\)</span>. Given random variables <span class="math inline">\(X_{1}\)</span> and <span class="math inline">\(X_{2}\)</span>, with probability density functions <span class="math inline">\(f_{X_{1}}\left( x \right)\)</span> and <span class="math inline">\(f_{X_{2}}\left( x \right)\)</span> respectively, the probability density function of <span class="math inline">\(X\)</span> is the weighted average of the component probability density function <span class="math inline">\(f_{X_{1}}\left( x \right)\)</span> and <span class="math inline">\(f_{X_{2}}\left( x \right)\)</span>. The probability density function and distribution function of <span class="math inline">\(X\)</span> are given by
+<p>If the underlying phenomenon is diverse and can actually be described as two phenomena representing two subpopulations with different modes, we can construct the two-point mixture random variable <span class="math inline">\(X\)</span>. Given random variables <span class="math inline">\(X_{1}\)</span> and <span class="math inline">\(X_{2}\)</span>, with <em>pdf</em>s <span class="math inline">\(f_{X_{1}}\left( x \right)\)</span> and <span class="math inline">\(f_{X_{2}}\left( x \right)\)</span> respectively, the <em>pdf</em> of <span class="math inline">\(X\)</span> is the weighted average of the component <em>pdf</em> <span class="math inline">\(f_{X_{1}}\left( x \right)\)</span> and <span class="math inline">\(f_{X_{2}}\left( x \right)\)</span>. The <em>pdf</em> and distribution function of <span class="math inline">\(X\)</span> are given by
 <span class="math display">\[f_{X}\left( x \right) = af_{X_{1}}\left( x \right) + \left( 1 - a \right)f_{X_{2}}\left( x \right),\]</span>
 and
 <span class="math display">\[F_{X}\left( x \right) = aF_{X_{1}}\left( x \right) + \left( 1 - a \right)F_{X_{2}}\left( x \right),\]</span></p>
-<p>for <span class="math inline">\(0 &lt; a &lt;1\)</span>, where the <a href="#" class="tooltip" style="color:green"><em>mixing parameters</em><span style="font-size:8pt">Proportion weight given to each subpopulation in a mixture</span></a> <span class="math inline">\(a\)</span> and <span class="math inline">\((1 - a)\)</span> represent the proportions of data points that fall under each of the two subpopulations respectively. This weighted average can be applied to a number of other distribution related quantities. The <em>k</em>-th moment and moment generating function of <span class="math inline">\(X\)</span> are given by
+<p>for <span class="math inline">\(0 &lt; a &lt;1\)</span>, where the <a href="#" class="tooltip" style="color:green"><em>mixing parameters</em><span style="font-size:8pt">Proportion weight given to each subpopulation in a mixture</span></a> <span class="math inline">\(a\)</span> and <span class="math inline">\((1 - a)\)</span> represent the proportions of data points that fall under each of the two subpopulations respectively. This weighted average can be applied to a number of other distribution related quantities. The <em>k</em>-th raw moment and moment generating function of <span class="math inline">\(X\)</span> are given by
 <span class="math inline">\(\mathrm{E}\left( X^{k} \right) = a\mathrm{E}\left( X_{1}^{K} \right) + \left( 1 - a \right)\mathrm{E}\left( X_{2}^{k} \right)\)</span>,
 and
 <span class="math display">\[M_{X}(t) = aM_{X_{1}}(t) + \left( 1 - a \right)M_{X_{2}}(t),\]</span> respectively.</p>
@@ -1428,7 +1432,7 @@ A collection of insurance policies consists of two types. 25% of policies are Ty
 <p>In case of finite mixture distributions, the random variable of interest <span class="math inline">\(X\)</span> has a probability <span class="math inline">\(p_{i}\)</span> of being drawn from homogeneous subpopulation <span class="math inline">\(i\)</span>, where <span class="math inline">\(i = 1,2,\ldots,k\)</span> and <span class="math inline">\(k\)</span> is the initially specified number of subpopulations in our mixture. The mixing parameter <span class="math inline">\(p_{i}\)</span> represents the proportion of observations from subpopulation <span class="math inline">\(i\)</span>. Consider the random variable <span class="math inline">\(X\)</span> generated from <span class="math inline">\(k\)</span> distinct subpopulations, where subpopulation <span class="math inline">\(i\)</span> is modeled by the continuous distribution <span class="math inline">\(f_{X_{i}}\left( x \right)\)</span>. The probability distribution of <span class="math inline">\(X\)</span> is given by
 <span class="math display">\[f_{X}\left( x \right) = \sum_{i = 1}^{k}{p_{i}f_{X_{i}}\left( x \right)},\]</span>
 where <span class="math inline">\(0 &lt; p_{i} &lt; 1\)</span> and <span class="math inline">\(\sum_{i = 1}^{k} p_{i} = 1\)</span>.</p>
-<p>This model is often referred to as a <a href="#" class="tooltip" style="color:green"><em>finite mixture</em><span style="font-size:8pt">A mixture distribution with a finite k number of subpopulations</span></a> or a <span class="math inline">\(k\)</span>-point mixture. The distribution function, <span class="math inline">\(r\)</span>-th moment and moment generating functions of the <span class="math inline">\(k\)</span>-th point mixture are given as</p>
+<p>This model is often referred to as a <a href="#" class="tooltip" style="color:green"><em>finite mixture</em><span style="font-size:8pt">A mixture distribution with a finite k number of subpopulations</span></a> or a <span class="math inline">\(k\)</span>-point mixture. The distribution function, <span class="math inline">\(r\)</span>-th raw moment and moment generating functions of the <span class="math inline">\(k\)</span>-th point mixture are given as</p>
 <p><span class="math display">\[F_{X}\left( x \right) = \sum_{i = 1}^{k}{p_{i}F_{X_{i}}\left( x \right)},\]</span>
 <span class="math display">\[\mathrm{E}\left( X^{r} \right) = \sum_{i = 1}^{k}{p_{i}\mathrm{E}\left( X_{i}^{r} \right)}, \ \ \ \text{and}\]</span>
 <span class="math display">\[M_{X}(t) = \sum_{i = 1}^{k}{p_{i}M_{X_{i}}(t)},\]</span> respectively.</p>
@@ -1459,7 +1463,7 @@ Applying the formula for a mixed distribution, we get
 f_{X}\left( x \right) = \int_{-\infty}^{\infty}{f_{X}\left(x \left| \theta \right.  \right)g_{\Theta}( \theta )} d \theta ,
 \]</span>
 where <span class="math inline">\(f_{X}\left( x | \theta \right)\)</span> is the <a href="#" class="tooltip" style="color:green"><em>conditional distribution</em><span style="font-size:8pt">A probability distribution that applies to a subpopulation satisfying the condition</span></a> of <span class="math inline">\(X\)</span> at a particular value of <span class="math inline">\(\Theta=\theta\)</span> and <span class="math inline">\(g_{\Theta}\left( \theta \right)\)</span> is the probability statement made about the unknown parameter <span class="math inline">\(\theta\)</span>. In a Bayesian context (described in Section <a href="C-ModelSelection.html#S:MS:BayesInference">4.4</a>), this is known as the <a href="#" class="tooltip" style="color:green"><em>prior distribution</em><span style="font-size:8pt">A probability distribution assigned prior to observing additional data</span></a> of <span class="math inline">\(\Theta\)</span> (the prior information or expert opinion to be used in the analysis).</p>
-<p>The distribution function, <span class="math inline">\(k\)</span>-th moment and moment generating functions of the continuous mixture are given as</p>
+<p>The distribution function, <span class="math inline">\(k\)</span>-th raw moment and moment generating functions of the continuous mixture are given as</p>
 <p><span class="math display">\[
 F_{X}\left( x \right) = \int_{-\infty}^{\infty}{F_{X}\left(x \left| \theta \right.  \right) g_{\Theta}(\theta)} d \theta,
 \]</span>
@@ -1470,7 +1474,7 @@ F_{X}\left( x \right) = \int_{-\infty}^{\infty}{F_{X}\left(x \left| \theta \righ
 M_{X}(t) = \mathrm{E}\left( e^{t X} \right) = \int_{-\infty}^{\infty}{\mathrm{E}\left( e^{ tx}\left| \theta \right.  \right)g_{\Theta}(\theta)}d \theta, 
 \]</span>
 respectively.</p>
-<p>The <span class="math inline">\(k\)</span>-th moment of the mixture distribution can be rewritten as
+<p>The <span class="math inline">\(k\)</span>-th raw moment of the mixture distribution can be rewritten as
 <span class="math display">\[
 \mathrm{E}\left( X^{k} \right) = \int_{-\infty}^{\infty}{\mathrm{E}\left( X^{k}\left| \theta \right.  \right)g_{\Theta}(\theta)}d\theta ~=~ \mathrm{E}\left\lbrack \mathrm{E}\left( X^{k}\left| \Theta \right.  \right) \right\rbrack .
 \]</span></p>
@@ -1502,18 +1506,28 @@ Claim sizes, <span class="math inline">\(X\)</span>, are uniform on the interval
 </h5>
 <div id="toggleExample.3.3.8" style="display: none">
 <p><strong>Solution.</strong></p>
-<p>The conditional distribution of <span class="math inline">\(X\)</span> is <span class="math inline">\(f_{X}\left( x | \theta \right) = \frac{1}{10}\)</span> for <span class="math inline">\(\theta &lt; x &lt; \theta + 10\)</span>.</p>
-<p>The prior distribution of <span class="math inline">\(\theta\)</span> is <span class="math inline">\(g_{\Theta}(\theta) = \frac{1}{5}e^{- \frac{\theta}{5}}\)</span> for <span class="math inline">\(0 &lt; \theta &lt; \infty\)</span>.</p>
-<p>The conditional mean and variance of <span class="math inline">\(X\)</span> are given by
-<span class="math display">\[
+<p>The conditional distribution of <span class="math inline">\(X\)</span> is <span class="math inline">\(f_{X}\left( x | \theta \right) = \frac{1}{10}\)</span> for <span class="math inline">\(\theta &lt; x &lt; \theta + 10\)</span>.
+The prior distribution of <span class="math inline">\(\theta\)</span> is <span class="math inline">\(g_{\Theta}(\theta) = \frac{1}{5}e^{- \frac{\theta}{5}}\)</span> for <span class="math inline">\(0 &lt; \theta &lt; \infty\)</span>.</p>
+<p>Multiplying and integrating yields the unconditional distribution of <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[
+f_{X}\left( x \right) = \int f_{X}\left( x |\theta \right) ~g_{\Theta}(\theta) d \theta .
+\]</span></p>
+<p>For this example, this is</p>
+<p><span class="math display">\[
+f_{X}\left( x \right) = \left\{ \begin{matrix}
+\int_{0}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}}d\theta = \frac{1}{10}\left( 1 - e^{- \frac{x}{5}} \right)} &amp; 0 \leq x \leq 10, \\
+\int_{x - 10}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}} d\theta} = \frac{1}{10}\left( e^{- \frac{\left( x - 10 \right)}{5}} - e^{- \frac{x}{5}} \right) &amp; 10 &lt; x &lt; \infty. \\
+\end{matrix} \right.\ 
+\]</span></p>
+<p>One can use this to derive the mean and variance of the unconditional distribution. Alternatively, start with the conditional mean and variance of <span class="math inline">\(X\)</span>, given by</p>
+<p><span class="math display">\[
 \mathrm{E}\left(  X | \theta \right)= \frac{\theta + \theta + 10}{2} = \theta + 5
 \]</span>
 and
 <span class="math display">\[
 \mathrm{Var}\left(  X | \theta \right)= \frac{\left\lbrack \left( \theta + 10 \right) - \theta \right\rbrack^{2}}{12} = \frac{100}{12}, 
 \]</span>
-respectively.</p>
-<p>Hence, the unconditional mean and variance of <span class="math inline">\(X\)</span> are given by</p>
+respectively. With these, the unconditional mean and variance of <span class="math inline">\(X\)</span> are given by</p>
 <p><span class="math display">\[
 \mathrm{E}\left( X \right) = \mathrm{E}\left\lbrack \mathrm{E}\left( X\left| \Theta \right.  \right) \right\rbrack = \mathrm{E}\left( \Theta + 5 \right) = \mathrm{E}\left( \Theta \right) + 5 = 5 + 5 = 10,
 \]</span></p>
@@ -1521,16 +1535,6 @@ respectively.</p>
 <p><span class="math display">\[
 \mathrm{Var}\left( X \right) = \mathrm{E}\left\lbrack V\left( X\left| \Theta \right.  \right) \right\rbrack + \mathrm{Var}\left\lbrack \mathrm{E}\left( X\left| \Theta \right.  \right) \right\rbrack \\
 = \mathrm{E}\left( \frac{100}{12} \right) + \mathrm{Var}\left( \Theta + 5 \right) = 8.33 + \mathrm{Var}\left( \Theta \right) = 33.33. 
-\]</span></p>
-<p>The unconditional distribution of <span class="math inline">\(X\)</span> is</p>
-<p><span class="math display">\[
-f_{X}\left( x \right) = \int f_{X}\left( x |\theta \right) ~g_{\Theta}(\theta) d \theta .
-\]</span></p>
-<p><span class="math display">\[
-f_{X}\left( x \right) = \left\{ \begin{matrix}
-\int_{0}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}}d\theta = \frac{1}{10}\left( 1 - e^{- \frac{x}{5}} \right)} &amp; 0 \leq x \leq 10, \\
-\int_{x - 10}^{x}{\frac{1}{50}e^{- \frac{\theta}{5}} d\theta} = \frac{1}{10}\left( e^{- \frac{\left( x - 10 \right)}{5}} - e^{- \frac{x}{5}} \right) &amp; 10 &lt; x &lt; \infty. \\
-\end{matrix} \right.\ 
 \]</span></p>
 </div>
 <hr />
@@ -1555,7 +1559,7 @@ f_{X}\left( x \right) = \left\{ \begin{matrix}
 </div>
 <div id="S:CoverageModifications" class="section level2">
 <h2><span class="header-section-number">3.4</span> Coverage Modifications</h2>
-<p>In this section we evaluate the impacts of coverage modifications: a) deductibles, b) policy limit, c) coinsurance and inflation on insurer’s costs.</p>
+<p>In this section we evaluate the impacts of coverage modifications: a) deductibles, b) policy limit, c) coinsurance and d) inflation on insurer’s costs.</p>
 <div id="S:PolicyDeduct" class="section level3">
 <h3><span class="header-section-number">3.4.1</span> Policy Deductibles</h3>
 <p>Under an ordinary deductible policy, the insured (policyholder) agrees to cover a fixed amount of an insurance claim before the insurer starts to pay. This fixed expense paid out of pocket is called the deductible and often denoted by <span class="math inline">\(d\)</span>. If the loss exceeds <span class="math inline">\(d\)</span> then the insurer is responsible for covering the loss X less the deductible <span class="math inline">\(d\)</span>. Depending on the agreement, the deductible may apply to each covered loss or to the total losses during a defined benefit period (such as a month, year, etc.)</p>
@@ -1579,16 +1583,18 @@ X - d &amp; X &gt; d .
 Here, <span class="math inline">\(Y^{P}\)</span> is often referred to as <a href="#" class="tooltip" style="color:green"><em>left truncated</em><span style="font-size:8pt">Values below a threshold d are not reported and unknown</span></a> and shifted variable or excess loss variable because the claims smaller than <span class="math inline">\(d\)</span> are not reported and values above <span class="math inline">\(d\)</span> are shifted by <span class="math inline">\(d\)</span>.</p>
 <p>Even when the distribution of <span class="math inline">\(X\)</span> is continuous, the distribution of <span class="math inline">\(Y^{L}\)</span> is a hybrid combination of discrete and continuous components. The discrete part of the distribution is concentrated at <span class="math inline">\(Y = 0\)</span> (when <span class="math inline">\(X \leq d\)</span>) and the continuous part is spread over the interval <span class="math inline">\(Y &gt; 0\)</span> (when <span class="math inline">\(X &gt; d\)</span>). For the discrete part, the probability that no payment is made is the probability that losses fall below the deductible; that is,
 <span class="math display">\[\Pr\left( Y^{L} = 0 \right) = \Pr\left( X \leq d \right) = F_{X}\left( d \right).\]</span> Using the transformation <span class="math inline">\(Y^{L} = X - d\)</span> for the continuous part of the
-distribution, we can find the probability density function of <span class="math inline">\(Y^{L}\)</span> given by</p>
+distribution, we can find the <em>pdf</em> of <span class="math inline">\(Y^{L}\)</span> given by</p>
 <p><span class="math display">\[
 f_{Y^{L}}\left( y \right) = \left\{ \begin{matrix}
 F_{X}\left( d \right) &amp; y = 0 \\
 f_{X}\left( y + d \right) &amp; y &gt; 0 .
 \end{matrix} \right. 
 \]</span></p>
-<p>We can see that the payment per payment variable is the payment per loss variable conditional on the loss exceeding the deductible; that is, <span class="math inline">\(Y^{P} = \left. \ Y^{L} \right|X &gt; d\)</span>. Hence, the probability density function of <span class="math inline">\(Y^{P}\)</span> is given by
-<span class="math display">\[f_{Y^{P}}\left( y \right) = \frac{f_{X}\left( y + d \right)}{1 - F_{X}\left( d \right)},\]</span>
-for <span class="math inline">\(y &gt; 0\)</span>. Accordingly, the distribution functions of <span class="math inline">\(Y^{L}\)</span>and <span class="math inline">\(Y^{P}\)</span> are given by</p>
+<p>We can see that the payment per payment variable is the payment per loss variable (<span class="math inline">\(Y^P= Y^L\)</span>) conditional on the loss exceeding the deductible (<span class="math inline">\(X &gt; d\)</span>); that is, <span class="math inline">\(Y^{P} = \left. \ Y^{L} \right|X &gt; d\)</span>.. Alternatively, it can be expressed as <span class="math inline">\(Y^P = (X - d)|X &gt; d\)</span>, that is, <span class="math inline">\(Y^P\)</span> is the loss in excess of the deductible given that the loss exceeds the deductible. Hence, the <em>pdf</em> of <span class="math inline">\(Y^{P}\)</span> is given by</p>
+<p><span class="math display">\[
+f_{Y^{P}}\left( y \right) = \frac{f_{X}\left( y + d \right)}{1 - F_{X}\left( d \right)},
+\]</span></p>
+<p>for <span class="math inline">\(y &gt; 0\)</span>. Accordingly, the distribution functions of <span class="math inline">\(Y^{L}\)</span>and <span class="math inline">\(Y^{P}\)</span> are given by</p>
 <p><span class="math display">\[
 F_{Y^{L}}\left( y \right) = \left\{ \begin{matrix}
 F_{X}\left( d \right) &amp; y = 0 \\
@@ -1600,7 +1606,7 @@ F_{X}\left( y + d \right) &amp; y &gt; 0, \\
 F_{Y^{P}}\left( y \right) = \frac{F_{X}\left( y + d \right) - F_{X}\left( d \right)}{1 - F_{X}\left( d \right)},
 \]</span></p>
 <p>for <span class="math inline">\(y &gt; 0\)</span>, respectively.</p>
-<p>The raw moments of <span class="math inline">\(Y^{L}\)</span> and <span class="math inline">\(Y^{P}\)</span> can be found directly using the probability density function of <span class="math inline">\(X\)</span> as follows
+<p>The raw moments of <span class="math inline">\(Y^{L}\)</span> and <span class="math inline">\(Y^{P}\)</span> can be found directly using the <em>pdf</em> of <span class="math inline">\(X\)</span> as follows
 <span class="math display">\[\mathrm{E}\left\lbrack \left( Y^{L} \right)^{k} \right\rbrack = \int_{d}^{\infty}\left( x - d \right)^{k}f_{X}\left( x \right)dx ,\]</span>
 and
 <span class="math display">\[
@@ -1732,7 +1738,7 @@ X - d  &amp; d &lt;  X \leq u \\
 Hence, <span class="math inline">\(Y^L\)</span> can be expressed as <span class="math inline">\(Y^L=\left(X\land u\right)-\left(X\land d\right)\)</span>.</p>
 <p>Even when the distribution of <span class="math inline">\(X\)</span> is continuous, the distribution of <span class="math inline">\(Y\)</span> is a hybrid combination of discrete and continuous components. The discrete part of the distribution is concentrated at <span class="math inline">\(Y = u\)</span> (when <span class="math inline">\(X &gt; u\)</span>), while the continuous part is spread over the interval <span class="math inline">\(Y &lt; u\)</span> (when <span class="math inline">\(X \leq u\)</span>). For the discrete part, the probability that the benefit paid is <span class="math inline">\(u\)</span>, is the probability that the loss exceeds the policy limit <span class="math inline">\(u\)</span>; that is,
 <span class="math display">\[\Pr \left( Y = u \right) = \Pr \left( X &gt; u \right) = {1 - F}_{X}\left( u \right).\]</span>
-For the continuous part of the distribution <span class="math inline">\(Y = X\)</span>, hence the probability density function of <span class="math inline">\(Y\)</span> is given by</p>
+For the continuous part of the distribution <span class="math inline">\(Y = X\)</span>, hence the <em>pdf</em> of <span class="math inline">\(Y\)</span> is given by</p>
 <p><span class="math display">\[
 f_{Y}\left( y \right) = \left\{ \begin{matrix}
 f_{X}\left( y \right) &amp; 0 &lt; y &lt; u \\
@@ -1746,7 +1752,7 @@ F_{X}\left( x \right) &amp; 0 &lt; y &lt; u \\
 1 &amp; y \geq u. \\
 \end{matrix} \right.\ 
 \]</span></p>
-<p>The raw moments of <span class="math inline">\(Y\)</span> can be found directly using the probability density function of <span class="math inline">\(X\)</span> as follows
+<p>The raw moments of <span class="math inline">\(Y\)</span> can be found directly using the <em>pdf</em> of <span class="math inline">\(X\)</span> as follows
 <span class="math display">\[
 \mathrm{E}\left( Y^{k} \right) = \mathrm{E}\left\lbrack \left( X \land u \right)^{k} \right\rbrack = \int_{0}^{u}x^{k}f_{X}\left( x \right)dx + \int_{u}^{\infty}{u^{k}f_{X}\left( x \right)} dx \\ 
 = \int_{0}^{u}x^{k}f_{X}\left( x \right)dx + u^{k}\left\lbrack {1 - F}_{X}\left( u \right) \right\rbrack .
@@ -1778,7 +1784,7 @@ This could be easily proved if we start with the initial definition of <span cla
 <hr />
 </div>
 <p><strong>Example 3.4.4. Actuarial Exam Question.</strong>
-Under a <a href="#" class="tooltip" style="color:green"><em>group insurance</em><span style="font-size:8pt">Insurance provided to groups of people to take advantage of lower administrative costs vs. individual policies</span></a> policy, an insurer agrees to pay 100% of the medical bills incurred during the year by employees of a small company, up to a maximum total of one million dollars. The total amount of bills incurred, <span class="math inline">\(X\)</span>, has probability density function</p>
+Under a <a href="#" class="tooltip" style="color:green"><em>group insurance</em><span style="font-size:8pt">Insurance provided to groups of people to take advantage of lower administrative costs vs. individual policies</span></a> policy, an insurer agrees to pay 100% of the medical bills incurred during the year by employees of a small company, up to a maximum total of one million dollars. The total amount of bills incurred, <span class="math inline">\(X\)</span>, has <em>pdf</em></p>
 <p><span class="math display">\[
 f_{X}\left( x \right) = \left\{ \begin{matrix}
 \frac{x\left( 4 - x \right)}{9} &amp; 0 &lt; x &lt; 3 \\
@@ -1815,7 +1821,7 @@ Y^{L} = \left\{ \begin{matrix}
 \]</span>
 The policy limit (the maximum amount paid by the insurer) in this case is <span class="math inline">\(\alpha\left( u - d \right)\)</span>, while <span class="math inline">\(u\)</span> is the maximum covered loss.</p>
 <p>We have seen in Section <a href="C-Severity.html#S:PolicyLimits">3.4.2</a> that when a loss is subject to both a deductible <span class="math inline">\(d\)</span> and a limit <span class="math inline">\(u\)</span> the per-loss variable <span class="math inline">\(Y^L\)</span> can be expressed as <span class="math inline">\(Y^L=\left(X\land u\right)-\left(X\land d\right)\)</span>. With coinsurance, this becomes <span class="math inline">\(Y^L\)</span> can be expressed as <span class="math inline">\(Y^L=\alpha\left[(X\land u)-(X\land d)\right]\)</span>.</p>
-<p>The <span class="math inline">\(k\)</span>-th moment of <span class="math inline">\(Y^{L}\)</span> is given by
+<p>The <span class="math inline">\(k\)</span>-th raw moment of <span class="math inline">\(Y^{L}\)</span> is given by
 <span class="math display">\[
 \mathrm{E}\left\lbrack \left( Y^{L} \right)^{k} \right\rbrack 
 = \int_{d}^{u}\left\lbrack \alpha\left( x - d \right) \right\rbrack^{k}f_{X}\left( x \right)dx 
@@ -1980,18 +1986,18 @@ Thus, the variance is <span class="math inline">\(1560600-765^2 =975375.\)</span
 <hr />
 <div id="maximum-likelihood-estimators-for-complete-data" class="section level3">
 <h3><span class="header-section-number">3.5.1</span> Maximum Likelihood Estimators for Complete Data</h3>
-<p>Up to this point, the chapter has focused on parametric distributions that are commonly used in insurance applications. However, to be useful in applied work, these distributions must use “realistic” values for the parameters and for this we turn to data. At a foundational level, we assume that the analyst has available a random sample <span class="math inline">\(X_1, \ldots, X_n\)</span> from a distribution with distribution function <span class="math inline">\(F_X\)</span> (for brevity, we sometimes drop the subscript <span class="math inline">\(X\)</span>). As is common, we use the vector <span class="math inline">\(\boldsymbol \theta\)</span> to denote the set of parameters for <span class="math inline">\(F\)</span>.This basic sample scheme is reviewed in Appendix Section <a href="C-AppA.html#S:AppA:BASIC">15.1</a>. Although basic, this sampling scheme provides the foundations for understanding more complex schemes that are regularly used in practice, and so it is important to master the basics.</p>
-<p>Before a draw from a distribution, we consider potential outcomes summarized by the random variable <span class="math inline">\(X_i\)</span> (here, <span class="math inline">\(i\)</span> is 1, 2, …, <span class="math inline">\(n\)</span>). After the draw, we observe <span class="math inline">\(x_i\)</span>. Notationally, we use upper case roman letters for random variables and lower case ones for realizations. We have seen this set-up already in Section <a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions">2.4</a>, where we used
-<span class="math inline">\(\Pr(X_1 =x_1, \ldots, X_n=x_n)\)</span> to quantify the “likelihood” of drawing a sample <span class="math inline">\(\{x_1, \ldots, x_n\}\)</span>. With continuous data, we use the joint probability density function (<em>pdf</em>) instead of joint probabilities. With the independence assumption, the joint <em>pdf</em> may be written as the product of pdfs. Thus, we define the <strong>likelihood</strong> to be</p>
+<p>Up to this point, the chapter has focused on parametric distributions that are commonly used in insurance applications. However, to be useful in applied work, these distributions must use “realistic” values for the parameters and for this we turn to data. At a foundational level, we assume that the analyst has available a random sample <span class="math inline">\(X_1, \ldots, X_n\)</span> from a distribution with distribution function <span class="math inline">\(F_X\)</span> (for brevity, we sometimes drop the subscript <span class="math inline">\(X\)</span>). As is common, we use the vector <span class="math inline">\(\boldsymbol \theta\)</span> to denote the set of parameters for <span class="math inline">\(F\)</span>. This basic sample scheme is reviewed in Appendix Section <a href="C-AppA.html#S:AppA:BASIC">15.1</a>. Although basic, this sampling scheme provides the foundations for understanding more complex schemes that are regularly used in practice, and so it is important to master the basics.</p>
+<p>Before drawing from a distribution, we consider potential outcomes summarized by the random variable <span class="math inline">\(X_i\)</span> (here, <span class="math inline">\(i\)</span> is 1, 2, …, <span class="math inline">\(n\)</span>). After the draw, we observe <span class="math inline">\(x_i\)</span>. Notationally, we use uppercase roman letters for random variables and lower case ones for realizations. We have seen this set-up already in Section <a href="C-Frequency-Modeling.html#S:estimating-frequency-distributions">2.4</a>, where we used
+<span class="math inline">\(\Pr(X_1 =x_1, \ldots, X_n=x_n)\)</span> to quantify the “likelihood” of drawing a sample <span class="math inline">\(\{x_1, \ldots, x_n\}\)</span>. With continuous data, we use the joint probability density function instead of joint probabilities. With the independence assumption, the joint <em>pdf</em> may be written as the product of pdfs. Thus, we define the <strong>likelihood</strong> to be</p>
 <p><span class="math display" id="eq:Likelihood">\[\begin{equation}
 L(\boldsymbol \theta) = \prod_{i=1}^n f(x_i) .
-  \tag{3.2}
+\tag{3.3}
 \end{equation}\]</span></p>
 <p>From the notation, note that we consider this to be a function of the parameters in <span class="math inline">\(\boldsymbol \theta\)</span>, with the data <span class="math inline">\(\{x_1, \ldots, x_n\}\)</span> held fixed. The maximum likelihood estimator is that value of the parameters in <span class="math inline">\(\boldsymbol \theta\)</span> that maximize <span class="math inline">\(L(\boldsymbol \theta)\)</span>.</p>
-<p>From calculus, we know that maximizing a function produces the same results as maximizing the logarithm of a function (this is because the logarithm is a monotone function). Because we get the same results, to ease computation considerations, it is common to consider the <strong>logarithmic likelihood</strong>, denoted as</p>
+<p>From calculus, we know that maximizing a function produces the same results as maximizing the logarithm of a function (this is because the logarithm is a monotone function). Because we get the same results, to ease computational considerations, it is common to consider the <strong>logarithmic likelihood</strong>, denoted as</p>
 <p><span class="math display" id="eq:Loglikelihood">\[\begin{equation}
-l(\boldsymbol \theta) = \ln L(\boldsymbol \theta) = \sum_{i=1}^n \ln f(x_i) .
-\tag{3.3}
+l(\boldsymbol \theta) = \log L(\boldsymbol \theta) = \sum_{i=1}^n \log f(x_i) .
+\tag{3.4}
 \end{equation}\]</span></p>
 <p><strong>Example 3.5.1. Actuarial Exam Question.</strong> You are given the following five observations: 521, 658, 702, 819, 1217. You use the single-parameter Pareto with distribution function:</p>
 <p><span class="math display">\[
@@ -1999,56 +2005,59 @@ F(x) = 1- \left(\frac{500}{x}\right)^{\alpha}, ~~~~ x&gt;500 .
 \]</span></p>
 <p>With <span class="math inline">\(n=5\)</span>, the log-likelihood function is
 <span class="math display">\[
-l(\alpha|\mathbf{x} ) =  \sum_{i=1}^5 \ln f(x_i;\alpha ) =  5 \alpha \ln 500 + 5 \ln \alpha
--(\alpha+1) \sum_{i=1}^5 \ln x_i.
-\]</span>
-Figure <a href="C-Severity.html#fig:LoglikeOnePareto">3.4</a> shows the logarithmic likelihood as a function of the parameter <span class="math inline">\(\alpha\)</span>.</p>
+l(\alpha) =  \sum_{i=1}^5 \log f(x_i;\alpha ) =  5 \alpha \log 500 + 5 \log \alpha
+-(\alpha+1) \sum_{i=1}^5 \log x_i.
+\]</span></p>
+<p>Figure <a href="C-Severity.html#fig:LoglikeOnePareto">3.4</a> shows the logarithmic likelihood as a function of the parameter <span class="math inline">\(\alpha\)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:LoglikeOnePareto"></span>
-<img src="LossDataAnalytics_files/figure-html/LoglikeOnePareto-1.png" alt="Logarithmic Likelihood for a One Parameter Pareto" width="672" />
+<img src="LossDataAnalytics_files/figure-html/LoglikeOnePareto-1.png" alt="Logarithmic Likelihood for a One-Parameter Pareto" width="60%" />
 <p class="caption">
-Figure 3.4: Logarithmic Likelihood for a One Parameter Pareto
+Figure 3.4: Logarithmic Likelihood for a One-Parameter Pareto
 </p>
 </div>
 <p>We can determine the maximum value of the logarithmic likelihood by taking derivatives and setting it equal to zero.
 This yields
 <span class="math display">\[
-\frac{ \partial}{\partial \alpha } l(\alpha |\mathbf{x}) =    5  \ln 500 + 5 / \alpha -  \sum_{i=1}^5 \ln x_i
-=_{set} 0 \Rightarrow \hat{\alpha}_{MLE} = \frac{5}{\sum_{i=1}^5 \ln x_i - 5  \ln 500 } = 2.453 .
+\begin{array}{ll}
+\frac{ \partial}{\partial \alpha } l(\alpha ) &amp;=    5  \log 500 + 5 / \alpha -  \sum_{i=1}^5 \log x_i
+=_{set} 0 \Rightarrow \\
+ \hat{\alpha}_{MLE} &amp;= \frac{5}{\sum_{i=1}^5 \log x_i - 5  \log 500 } = 2.453 .
+\end{array}
 \]</span></p>
 <p>Naturally, there are many problems where it is not practical to use hand calculations for optimization. Fortunately there are many statistical routines available such as the <code>R</code> function <code>optim</code>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.optim.1" href="javascript:togglecode('toggleCode.optim.1','displayCode.optim.1');"><i><strong>R Code for Optimization</strong></i></a>
 </h5>
 <div id="toggleCode.optim.1" style="display: none">
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="C-Severity.html#cb15-1"></a>c1 &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="dv">521</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">658</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">702</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">819</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">1217</span>)</span>
-<span id="cb15-2"><a href="C-Severity.html#cb15-2"></a>nloglike &lt;-<span class="st"> </span><span class="cf">function</span>(alpha){<span class="op">-</span>(<span class="dv">5</span><span class="op">*</span>alpha<span class="op">*</span><span class="kw">log</span>(<span class="dv">500</span>)<span class="op">+</span><span class="dv">5</span><span class="op">*</span><span class="kw">log</span>(alpha)<span class="op">-</span>(alpha<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>c1)}</span>
-<span id="cb15-3"><a href="C-Severity.html#cb15-3"></a>MLE &lt;-<span class="st"> </span><span class="kw">optim</span>(<span class="dt">par=</span><span class="dv">1</span>, <span class="dt">fn=</span>nloglike)<span class="op">$</span>par</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">c1 &lt;-<span class="st"> </span><span class="kw">log</span>(<span class="dv">521</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">658</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">702</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">819</span>)<span class="op">+</span><span class="kw">log</span>(<span class="dv">1217</span>)</a>
+<a class="sourceLine" id="cb15-2" title="2">nloglike &lt;-<span class="st"> </span><span class="cf">function</span>(alpha){<span class="op">-</span>(<span class="dv">5</span><span class="op">*</span>alpha<span class="op">*</span><span class="kw">log</span>(<span class="dv">500</span>)<span class="op">+</span><span class="dv">5</span><span class="op">*</span><span class="kw">log</span>(alpha)<span class="op">-</span>(alpha<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>c1)}</a>
+<a class="sourceLine" id="cb15-3" title="3">MLE &lt;-<span class="st"> </span><span class="kw">optim</span>(<span class="dt">par=</span><span class="dv">1</span>, <span class="dt">fn=</span>nloglike)<span class="op">$</span>par</a></code></pre></div>
 <hr />
 </div>
 <p>This code confirms our hand calculation result where the maximum likelihood estimator is <span class="math inline">\(\alpha_{MLE} =\)</span> 2.453125.</p>
 <hr />
 <p>We present a few additional examples to illustrate how actuaries fit a parametric distribution model to a set of claim data using maximum likelihood.</p>
 <p><strong>Example 3.5.2. Actuarial Exam Question.</strong>
-Consider a random sample of claim amounts: 8,000 10,000 12,000 15,000. You assume that claim amounts follow an inverse exponential distribution, with parameter <span class="math inline">\(\theta\)</span>. Calculate the maximum likelihood estimator for <span class="math inline">\(\theta\)</span>.</p>
+Consider a random sample of claim amounts: 8000 10000 12000 15000. You assume that claim amounts follow an inverse exponential distribution, with parameter <span class="math inline">\(\theta\)</span>. Calculate the maximum likelihood estimator for <span class="math inline">\(\theta\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayExample.3.5.2" href="javascript:toggleEX('toggleExample.3.5.2','displayExample.3.5.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.3.5.2" style="display: none">
 <p><strong>Solution.</strong></p>
-<p>The probability density function is
+<p>The <em>pdf</em> is
 <span class="math display">\[f_{X}\left( x \right) = \frac{\theta e^{- \frac{\theta}{x}}}{x^{2}}, \]</span>
 where <span class="math inline">\(x &gt; 0\)</span>.</p>
 <p>The likelihood function, <span class="math inline">\(L\left( \theta \right)\)</span>, can be viewed as the probability of the observed data, written as a function of the model’s parameter <span class="math inline">\(\theta\)</span></p>
 <p><span class="math display">\[
 L\left( \theta \right) = \prod_{i = 1}^{4}{f_{X_{i}}\left( x_{i} \right)} = \frac{\theta^{4}e^{- \theta\sum_{i = 1}^{4}\frac{1}{x_{i}}}}{\prod_{i = 1}^{4}x_{i}^{2}}.
 \]</span></p>
-<p>The log-likelihood function, <span class="math inline">\(\ln L \left( \theta \right)\)</span>, is the sum of the individual logarithms</p>
+<p>The log-likelihood function, <span class="math inline">\(\log L \left( \theta \right)\)</span>, is the sum of the individual logarithms</p>
 <p><span class="math display">\[
-\ln L \left( \theta \right) = 4 \ln \theta - \theta\sum_{i = 1}^{4}\frac{1}{x_{i}} - 2\sum_{i = 1}^{4}\ln x_{i} .
+\log L \left( \theta \right) = 4 \log \theta - \theta\sum_{i = 1}^{4}\frac{1}{x_{i}} - 2\sum_{i = 1}^{4}\log x_{i} .
 \]</span></p>
 <p>Taking a derivative, we have</p>
 <p><span class="math display">\[
-\frac{d \ln L \left( \theta \right)}{d \theta} = \frac{4}{\theta} - \sum_{i = 1}^{4}\frac{1}{x_{i}}.
+\frac{d \log L \left( \theta \right)}{d \theta} = \frac{4}{\theta} - \sum_{i = 1}^{4}\frac{1}{x_{i}}.
 \]</span></p>
 <p>The maximum likelihood estimator of <span class="math inline">\(\theta\)</span>, denoted by <span class="math inline">\(\hat{\theta}\)</span>, is the solution to the equation</p>
 <p><span class="math display">\[
@@ -2056,61 +2065,65 @@ L\left( \theta \right) = \prod_{i = 1}^{4}{f_{X_{i}}\left( x_{i} \right)} = \fra
 \]</span></p>
 <p>Thus,
 <span class="math inline">\(\hat{\theta} = \frac{4}{\sum_{i = 1}^{4}\frac{1}{x_{i}}} = 10,667.\)</span></p>
-<p>The second derivative of <span class="math inline">\(\ln L \left( \theta \right)\)</span> is given by</p>
+<p>The second derivative of <span class="math inline">\(\log L \left( \theta \right)\)</span> is given by</p>
 <p><span class="math display">\[
-\frac{d^{2}\ln L\left( \theta \right)}{d\theta^{2}} = \frac{- 4}{\theta^{2}}.
+\frac{d^{2}\log L\left( \theta \right)}{d\theta^{2}} = \frac{- 4}{\theta^{2}}.
 \]</span></p>
 <p>Evaluating the second derivative of the loglikelihood function at <span class="math inline">\(\hat{\theta} = 10,667\)</span> gives a negative value, indicating <span class="math inline">\(\hat{\theta}\)</span> as the value that maximizes the loglikelihood function.</p>
 </div>
 <hr />
 <p><strong>Example 3.5.3. Actuarial Exam Question.</strong>
-A random sample of size 6 is from a lognormal distribution with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. The sample values are 200, 3,000, 8,000, 60,000, 60,000, 160,000. Calculate the maximum likelihood estimator for <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>.</p>
+A random sample of size 6 is from a lognormal distribution with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. The sample values are</p>
+<p><span class="math display">\[
+200 \ \ \ 3000 \ \ \ 8000 \ \ \ 60000 \ \ \ 60000 \ \ \ 160000.
+\]</span></p>
+<p>Calculate the maximum likelihood estimator for <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayExample.3.5.3" href="javascript:toggleEX('toggleExample.3.5.3','displayExample.3.5.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.3.5.3" style="display: none">
 <p><strong>Solution.</strong></p>
-<p>The probability density function is</p>
+<p>The <em>pdf</em> is</p>
 <p><span class="math display">\[
-f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp - \frac{1}{2}\left( \frac{\ln x - \mu}{\sigma} \right)^{2},
+f_{X}\left( x \right) = \frac{1}{x \sigma \sqrt{2\pi}}\exp\left( - \frac{1}{2}\left( \frac{\log x - \mu}{\sigma} \right)^{2} \right),
 \]</span></p>
 <p>where <span class="math inline">\(x &gt; 0\)</span>.</p>
 <p>The likelihood function, <span class="math inline">\(L\left( \mu,\sigma \right)\)</span>, is the product of the <em>pdf</em> for each data point.</p>
 <p><span class="math display">\[
-L\left( \mu,\sigma \right) = \prod_{i = 1}^{6}{f_{X_{i}}\left( x_{i} \right)} = \frac{1}{\sigma^{6}\left( 2\pi \right)^{3}\prod_{i = 1}^{6}x_{i}}\exp\left( - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\ln x_{i} - \mu}{\sigma} \right)^{2}\right).
+L\left( \mu,\sigma \right) = \prod_{i = 1}^{6}{f_{X_{i}}\left( x_{i} \right)} = \frac{1}{\sigma^{6}\left( 2\pi \right)^{3}\prod_{i = 1}^{6}x_{i}}\exp\left( - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\log x_{i} - \mu}{\sigma} \right)^{2}\right).
 \]</span></p>
-<p>Taking a logarithm yields the loglikelihood function, <span class="math inline">\(\ln L \left( \mu,\sigma \right)\)</span>, which is the sum of the individual logarithms.</p>
+<p>Taking a logarithm yields the loglikelihood function, <span class="math inline">\(\log L \left( \mu,\sigma \right)\)</span>, which is the sum of the individual logarithms.</p>
 <p><span class="math display">\[
-\ln L\left( \mu,\sigma \right) 
-= - 6 \ln \sigma - 3 \ln \left( 2\pi \right) - \sum_{i = 1}^{6}\ln x_{i} - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\ln x_{i} - \mu}{\sigma} \right)^{2}.
+\log L\left( \mu,\sigma \right) 
+= - 6 \log \sigma - 3 \log \left( 2\pi \right) - \sum_{i = 1}^{6}\log x_{i} - \frac{1}{2}\sum_{i = 1}^{6}\left( \frac{\log x_{i} - \mu}{\sigma} \right)^{2}.
 \]</span></p>
 <p>The first partial derivatives are</p>
 <p><span class="math display">\[
 \begin{array}{ll}
-\frac{\partial \ln L\left( \mu,\sigma \right)}{\partial\mu} &amp;= \frac{1}{\sigma^{2}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right) \\
-\frac{\partial \ln L\left( \mu,\sigma \right)}{\partial\sigma} &amp;= \frac{- 6}{\sigma} + \frac{1}{\sigma^{3}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right)^{2}.
+\frac{\partial \log L\left( \mu,\sigma \right)}{\partial\mu} &amp;= \frac{1}{\sigma^{2}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right) \\
+\frac{\partial \log L\left( \mu,\sigma \right)}{\partial\sigma} &amp;= \frac{- 6}{\sigma} + \frac{1}{\sigma^{3}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right)^{2}.
 \end{array}
 \]</span></p>
 <p>The maximum likelihood estimators of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, denoted by <span class="math inline">\(\hat{\mu}\)</span> and <span class="math inline">\(\hat{\sigma}\)</span>, are the solutions to the equations</p>
 <p><span class="math display">\[
 \begin{array}{ll}
-\frac{1}{{\hat{\sigma}}^{2}}\sum_{i = 1}^{6}\left( \ln x_{i} - \hat{\mu} \right) &amp;= 0 \\
-\frac{- 6}{\hat{\sigma}} + \frac{1}{{\hat{\sigma}}^{3}}\sum_{i = 1}^{6}\left( \ln x_{i} - \hat{\mu} \right)^{2} &amp;= 0 .
+\frac{1}{{\hat{\sigma}}^{2}}\sum_{i = 1}^{6}\left( \log x_{i} - \hat{\mu} \right) &amp;= 0 \\
+\frac{- 6}{\hat{\sigma}} + \frac{1}{{\hat{\sigma}}^{3}}\sum_{i = 1}^{6}\left( \log x_{i} - \hat{\mu} \right)^{2} &amp;= 0 .
 \end{array}
 \]</span></p>
 <p>These yield the estimates</p>
 <p><span class="math display">\[
-\hat{\mu} = \frac{\sum_{i = 1}^{6}{\ln x_{i}}}{6} = 9.38 \ \ \ \text{and} \ \ \ 
-{\hat{\sigma}}^{2} = \frac{\sum_{i = 1}^{6}\left( \ln x_{i} - \hat{\mu} \right)^{2}}{6} = 5.12 .
-\]</span>.</p>
+\hat{\mu} = \frac{\sum_{i = 1}^{6}{\log x_{i}}}{6} = 9.38 \ \ \ \text{and} \ \ \ 
+{\hat{\sigma}}^{2} = \frac{\sum_{i = 1}^{6}\left( \log x_{i} - \hat{\mu} \right)^{2}}{6} = 5.12 .
+\]</span></p>
 <p>To check that these estimates maximize, and do not minimize, the likelihood, you may also wish to compute the second partial derivatives. These are</p>
 <p><span class="math display">\[
-\frac{\partial^{2}\ln L\left( \mu,\sigma \right)}{\partial\mu^{2}} = \frac{- 6}{\sigma^{2}}, \ \ \ \ 
-\frac{\partial^{2}\ln L\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right)
+\frac{\partial^{2}\log L\left( \mu,\sigma \right)}{\partial\mu^{2}} = \frac{- 6}{\sigma^{2}}, \ \ \ \ 
+\frac{\partial^{2}\log L\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right)
 \]</span></p>
 <p>and</p>
 <p><span class="math display">\[
-\frac{\partial^{2}\ln L\left( \mu,\sigma \right)}{\partial\sigma^{2}} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}\left( \ln x_{i} - \mu \right)^{2} .
+\frac{\partial^{2}\log L\left( \mu,\sigma \right)}{\partial\sigma^{2}} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}\left( \log x_{i} - \mu \right)^{2} .
 \]</span></p>
 </div>
 <hr />
@@ -2126,20 +2139,24 @@ L\left( \mu,\sigma \right) = \prod_{i = 1}^{6}{f_{X_{i}}\left( x_{i} \right)} = 
 </h5>
 <div id="toggleExample.3.5.2a" style="display: none">
 <p><strong>Solution.</strong></p>
-<p><strong>a.</strong> Taking reciprocal of negative expectation of the second derivative of <span class="math inline">\(\ln L \left( \theta \right)\)</span>, we obtain an estimate of the variance of <span class="math inline">\(\hat{\theta}\)</span>,
-<span class="math inline">\(\widehat{Var}\left( \hat{\theta} \right) = \left. \ \left\lbrack E\left( \frac{d^{2}\ln L \left( \theta \right)}{d\theta^{2}} \right) \right\rbrack^{- 1} \right|_{\theta = \hat{\theta}} = \frac{{\hat{\theta}}^{2}}{4} = 28,446,222\)</span>.</p>
+<p><strong>a.</strong> Taking reciprocal of negative expectation of the second derivative of <span class="math inline">\(\log L \left( \theta \right)\)</span>, we obtain an estimate of the variance of <span class="math inline">\(\hat{\theta}\)</span>,
+<span class="math inline">\(\widehat{Var}\left( \hat{\theta} \right) = \left. \ \left\lbrack E\left( \frac{d^{2}\log L \left( \theta \right)}{d\theta^{2}} \right) \right\rbrack^{- 1} \right|_{\theta = \hat{\theta}} = \frac{{\hat{\theta}}^{2}}{4} = 28,446,222\)</span>.</p>
 <p>It should be noted that as the sample size <span class="math inline">\(n \rightarrow \infty\)</span>, the distribution of the maximum likelihood estimator <span class="math inline">\(\hat{\theta}\)</span> converges to a normal distribution with mean <span class="math inline">\(\theta\)</span> and variance <span class="math inline">\(\hat{V}\left( \hat{\theta} \right)\)</span>. The approximate confidence interval in this example is based on the assumption of normality, despite the small sample size, only for the purpose of illustration.</p>
 <p><strong>b.</strong> The 95% confidence interval for <span class="math inline">\(\theta\)</span> is given by</p>
 <p><span class="math display">\[
-10,667 \pm 1.96\sqrt{28,446,222} = \left( 213.34,\ 21,120.66 \right).
+10,667 \pm 1.96\sqrt{28,446,222} = \left( 213.34,\ 21120.66 \right).
 \]</span></p>
-<p><strong>c.</strong> The distribution function of <span class="math inline">\(X\)</span> is <span class="math inline">\(F\left( x \right) = 1 - e^{- \frac{x}{\theta}}\)</span>. Then, the maximum likelihood estimate of <span class="math inline">\(g_{\Theta}(\theta) = F\left( 9,000 \right)\)</span> is
-<span class="math display">\[g\left( \hat{\theta} \right) = 1 - e^{- \frac{9,000}{10,667}} = 0.57.\]</span>
-We use the delta method to approximate the variance of <span class="math inline">\(g\left( \hat{\theta} \right)\)</span>.
-<span class="math display">\[\frac{\text{dg}\left( \theta \right)}{d \theta} = {- \frac{9,000}{\theta^{2}}e}^{- \frac{9,000}{\theta}}.\]</span></p>
-<p><span class="math inline">\(\widehat{Var}\left\lbrack g\left( \hat{\theta} \right) \right\rbrack = \left( - {\frac{9,000}{{\hat{\theta}}^{2}}e}^{- \frac{9,000}{\hat{\theta}}} \right)^{2}\hat{V}\left( \hat{\theta} \right) = 0.0329\)</span>.</p>
-<p>The 95% confidence interval for <span class="math inline">\(F\left( 9,000 \right)\)</span> is given by
-<span class="math display">\[0.57 \pm 1.96\sqrt{0.0329} = \left( 0.214,\ 0.926 \right).\]</span></p>
+<p><strong>c.</strong> The distribution function of <span class="math inline">\(X\)</span> is <span class="math inline">\(F\left( x \right) = 1 - e^{- \frac{x}{\theta}}\)</span>. Then, the maximum likelihood estimate of <span class="math inline">\(g_{\Theta}(\theta) = F\left( 9,000 \right)\)</span> is</p>
+<p><span class="math display">\[
+g\left( \hat{\theta} \right) = 1 - e^{- \frac{9,000}{10,667}} = 0.57.
+\]</span></p>
+<p>We use the delta method to approximate the variance of <span class="math inline">\(g\left( \hat{\theta} \right)\)</span>.
+<span class="math display">\[\frac{\text{dg}\left( \theta \right)}{d \theta} = {- \frac{9000}{\theta^{2}}e}^{- \frac{9000}{\theta}}.\]</span></p>
+<p><span class="math inline">\(\widehat{Var}\left\lbrack g\left( \hat{\theta} \right) \right\rbrack = \left( - {\frac{9000}{{\hat{\theta}}^{2}}e}^{- \frac{9000}{\hat{\theta}}} \right)^{2}\hat{V}\left( \hat{\theta} \right) = 0.0329\)</span>.</p>
+<p>The 95% confidence interval for <span class="math inline">\(F\left( 9000 \right)\)</span> is given by
+<span class="math display">\[
+0.57 \pm 1.96\sqrt{0.0329} = \left( 0.214,\ 0.926 \right).
+\]</span></p>
 </div>
 <hr />
 <p><strong>Example 3.5.3 - Follow - Up.</strong> Refer to <strong>Example 3.5.3.</strong></p>
@@ -2152,15 +2169,24 @@ We use the delta method to approximate the variance of <span class="math inline"
 <a id="displayExample.3.5.3a" href="javascript:toggleEX('toggleExample.3.5.3a','displayExample.3.5.3a');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.3.5.3a" style="display: none">
-<p><strong>a.</strong> To derive the covariance matrix of the <a href="#" class="tooltip" style="color:green"><em>mle</em><span style="font-size:8pt">Maximum likelihood estimate</span></a> we need to find the expectations of the second derivatives. Since the random variable <span class="math inline">\(X\)</span> is from a lognormal distribution with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, then <span class="math inline">\(\text{lnX}\)</span> is normally distributed with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^{2}\)</span>.</p>
-<p><span class="math inline">\(\mathrm{E}\left( \frac{\partial^{2}\text{lnL}\left( \mu,\sigma \right)}{\partial\mu^{2}} \right) = \mathrm{E}\left( \frac{- 6}{\sigma^{2}} \right) = \frac{- 6}{\sigma^{2}}\)</span>,</p>
-<p><span class="math inline">\(\mathrm{E}\left( \frac{\partial^{2}\text{lnL}\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} \right) = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}{\mathrm{E}\left( \ln x_{i} - \mu \right)} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left\lbrack \mathrm{E}\left( \ln x_{i} \right) - \mu \right\rbrack\)</span>=<span class="math inline">\(\frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \mu - \mu \right) = 0\)</span>,</p>
+<p><strong>a.</strong> To derive the covariance matrix of the <a href="#" class="tooltip" style="color:green"><em>mle</em><span style="font-size:8pt">Maximum likelihood estimate</span></a> we need to find the expectations of the second derivatives. Since the random variable <span class="math inline">\(X\)</span> is from a lognormal distribution with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, then <span class="math inline">\(\log X\)</span> is normally distributed with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^{2}\)</span>.</p>
+<p><span class="math display">\[
+\mathrm{E}\left( \frac{\partial^{2}\text{log L}\left( \mu,\sigma \right)}{\partial\mu^{2}} \right) = \mathrm{E}\left( \frac{- 6}{\sigma^{2}} \right) = \frac{- 6}{\sigma^{2}} ,
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{E}\left( \frac{\partial^{2}\text{log L}\left( \mu,\sigma \right)}{\partial\mu\partial\sigma} \right) = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}{\mathrm{E}\left( \log x_{i} - \mu \right)} = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left\lbrack \mathrm{E}\left( \log x_{i} \right) - \mu \right\rbrack = \frac{- 2}{\sigma^{3}}\sum_{i = 1}^{6}\left( \mu - \mu \right) = 0,
+\]</span></p>
 <p>and</p>
-<p><span class="math inline">\(\mathrm{E}\left( \frac{\partial^{2}\text{lnL}\left( \mu,\sigma \right)}{\partial\sigma^{2}} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{E}\left( \ln x_{i} - \mu \right)}^{2} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{V}\left( \ln x_{i} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\sigma^{2} = \frac{- 12}{\sigma^{2}}}}\)</span>.</p>
-<p>Using the negatives of these expectations we obtain the Fisher information matrix <span class="math display">\[\begin{bmatrix}
+<p><span class="math display">\[
+\mathrm{E}\left( \frac{\partial^{2}\text{log L}\left( \mu,\sigma \right)}{\partial\sigma^{2}} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{E}\left( \log x_{i} - \mu \right)}^{2} = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\mathrm{Var}\left( \log x_{i} \right) = \frac{6}{\sigma^{2}} - \frac{3}{\sigma^{4}}\sum_{i = 1}^{6}{\sigma^{2} = \frac{- 12}{\sigma^{2}}}} .
+\]</span></p>
+<p>Using the negatives of these expectations we obtain the Fisher information matrix</p>
+<p><span class="math display">\[
+\begin{bmatrix}
 \frac{6}{\sigma^{2}} &amp; 0 \\
 0 &amp; \frac{12}{\sigma^{2}} \\
-\end{bmatrix}.\]</span></p>
+\end{bmatrix}.
+\]</span></p>
 <p>The covariance matrix, <span class="math inline">\(\Sigma\)</span>, is the inverse of the Fisher information matrix</p>
 <p><span class="math display">\[
 \Sigma = \begin{bmatrix}
@@ -2168,30 +2194,37 @@ We use the delta method to approximate the variance of <span class="math inline"
 0 &amp; \frac{\sigma^{2}}{12} \\
 \end{bmatrix}.
 \]</span></p>
-<p>The estimated matrix is given by <span class="math display">\[\hat{\Sigma} = \begin{bmatrix}
+<p>The estimated matrix is given by</p>
+<p><span class="math display">\[
+\hat{\Sigma} = \begin{bmatrix}
 0.8533 &amp; 0 \\
 0 &amp; 0.4267 \\
-\end{bmatrix}.\]</span></p>
+\end{bmatrix}.
+\]</span></p>
 <p><strong>b.</strong> The 95% confidence interval for <span class="math inline">\(\mu\)</span> is given by <span class="math inline">\(9.38 \pm 1.96\sqrt{0.8533} = \left( 7.57,\ 11.19 \right)\)</span>.</p>
 <p>The 95% confidence interval for <span class="math inline">\(\sigma^{2}\)</span> is given by <span class="math inline">\(5.12 \pm 1.96\sqrt{0.4267} = \left( 3.84,\ 6.40 \right)\)</span>.</p>
-<p><strong>c.</strong> The mean of <em>X</em> is <span class="math inline">\(\exp\left( \mu + \frac{\sigma^{2}}{2} \right)\)</span>. Then, the maximum likelihood estimate of
-<span class="math display">\[g\left( \mu,\sigma \right) = \exp\left( \mu + \frac{\sigma^{2}}{2} \right)\]</span>
-is
-<span class="math display">\[g\left( \hat{\mu},\hat{\sigma} \right) = \exp\left( \hat{\mu} + \frac{{\hat{\sigma}}^{2}}{2} \right) = 153,277.\]</span></p>
-<p>We use the delta method to approximate the variance of the mle
-<span class="math inline">\(g\left( \hat{\mu},\hat{\sigma} \right)\)</span>.</p>
-<p><span class="math inline">\(\frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} = exp\left( \mu + \frac{\sigma^{2}}{2} \right)\)</span>
+<p><strong>c.</strong> The mean of <em>X</em> is <span class="math inline">\(\exp\left( \mu + \frac{\sigma^{2}}{2} \right)\)</span>. Then, the maximum likelihood estimate of</p>
+<p><span class="math display">\[
+g\left( \mu,\sigma \right) = \exp\left( \mu + \frac{\sigma^{2}}{2} \right)
+\]</span></p>
+<p>is</p>
+<p><span class="math display">\[
+g\left( \hat{\mu},\hat{\sigma} \right) = \exp\left( \hat{\mu} + \frac{{\hat{\sigma}}^{2}}{2} \right) = 153,277.
+\]</span></p>
+<p>We use the delta method to approximate the variance of the mle <span class="math inline">\(g\left( \hat{\mu},\hat{\sigma} \right)\)</span>.</p>
+<p><span class="math inline">\(\frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} = \exp\left( \mu + \frac{\sigma^{2}}{2} \right)\)</span>
 and
-<span class="math inline">\(\frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} = \sigma exp\left( \mu + \frac{\sigma^{2}}{2} \right)\)</span>.</p>
+<span class="math inline">\(\frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} = \sigma \exp\left( \mu + \frac{\sigma^{2}}{2} \right)\)</span>.</p>
 <p>Using the delta method, the approximate variance of
 <span class="math inline">\(g\left( \hat{\mu},\hat{\sigma} \right)\)</span> is given by</p>
-<p><span class="math display">\[\left. \ \hat{V}\left( g\left( \hat{\mu},\hat{\sigma} \right) \right) = \begin{bmatrix}
+<p><span class="math display">\[
+\left. \ \widehat{Var}\left( g\left( \hat{\mu},\hat{\sigma} \right) \right) = \begin{bmatrix}
 \frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} &amp; \frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} \\
 \end{bmatrix}\Sigma\begin{bmatrix}
 \frac{\partial g\left( \mu,\sigma \right)}{\partial\mu} \\
 \frac{\partial g\left( \mu,\sigma \right)}{\partial\sigma} \\
-\end{bmatrix} \right|_{\mu = \hat{\mu},\sigma = \hat{\sigma}}\]</span></p>
-<p><span class="math display">\[= \begin{bmatrix}
+\end{bmatrix} \right|_{\mu = \hat{\mu},\sigma = \hat{\sigma}} \\
+= \begin{bmatrix}
 153,277 &amp; 346,826 \\
 \end{bmatrix}\begin{bmatrix}
 0.8533 &amp; 0 \\
@@ -2199,82 +2232,86 @@ and
 \end{bmatrix}\begin{bmatrix}
 153,277 \\
 346,826 \\
-\end{bmatrix} =\]</span>71,374,380,000</p>
+\end{bmatrix} \\
+= 71,374,380,000 .
+\]</span></p>
 <p>The 95% confidence interval for <span class="math inline">\(\exp\left( \mu + \frac{\sigma^{2}}{2} \right)\)</span> is given by</p>
-<p><span class="math inline">\(153,277 \pm 1.96\sqrt{71,374,380,000} = \left( - 370,356,\ 676,910 \right)\)</span>.</p>
+<p><span class="math display">\[
+153277 \pm 1.96\sqrt{71,374,380,000} = \left( - 370356,\ 676910 \right).
+\]</span></p>
 <p>Since the mean of the lognormal distribution cannot be negative, we should replace the negative lower limit in the previous interval by a zero.</p>
 </div>
 <hr />
 <p><strong>Example 3.5.4. Wisconsin Property Fund.</strong> To see how maximum likelihood estimators work with real data, we return to the 2010 claims data introduced in Section <a href="C-Intro.html#S:LGPIF">1.3</a>.</p>
-<p>The following snippet of code shows how to fit the exponential, gamma, Pareto, lognormal, and GB2 models. For consistency, the code employs the <code>R</code> package <code>VGAM</code>. The acronym stands for <em>Vector Generalized Linear and Additive Models</em>; as suggested by the name, this package can do far more than fit these models although it suffices for our purposes. The one exception is the GB2 density which is not widely used outside of insurance applications; however, we can code this density and compute maximum likelihood estimators using the <code>optim</code> general purpose optimizer.</p>
+<p>The following snippet of code shows how to fit the exponential, gamma, Pareto, lognormal, and <span class="math inline">\(GB2\)</span> models. For consistency, the code employs the <code>R</code> package <code>VGAM</code>. The acronym stands for <em>Vector Generalized Linear and Additive Models</em>; as suggested by the name, this package can do far more than fit these models although it suffices for our purposes. The one exception is the <span class="math inline">\(GB2\)</span> density which is not widely used outside of insurance applications; however, we can code this density and compute maximum likelihood estimators using the <code>optim</code> general purpose optimizer.</p>
 <h5 style="text-align: center;">
 <a id="displayExample.3.5.4" href="javascript:toggleEX('toggleExample.3.5.4','displayExample.3.5.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.3.5.4" style="display: none">
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="C-Severity.html#cb16-1"></a><span class="kw">library</span>(VGAM)</span>
-<span id="cb16-2"><a href="C-Severity.html#cb16-2"></a>claim_lev &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CLAIMLEVEL.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>) </span>
-<span id="cb16-3"><a href="C-Severity.html#cb16-3"></a>claim_data &lt;-<span class="st"> </span><span class="kw">subset</span>(claim_lev, Year <span class="op">==</span><span class="st"> </span><span class="dv">2010</span>); </span>
-<span id="cb16-4"><a href="C-Severity.html#cb16-4"></a></span>
-<span id="cb16-5"><a href="C-Severity.html#cb16-5"></a><span class="co"># Inference assuming a GB2 Distribution - this is more complicated</span></span>
-<span id="cb16-6"><a href="C-Severity.html#cb16-6"></a><span class="co"># The likelihood function of GB2 distribution (negative for optimization)</span></span>
-<span id="cb16-7"><a href="C-Severity.html#cb16-7"></a>lik_gb2 &lt;-<span class="st"> </span><span class="cf">function</span> (param) {</span>
-<span id="cb16-8"><a href="C-Severity.html#cb16-8"></a>  a_<span class="dv">1</span> &lt;-<span class="st"> </span>param[<span class="dv">1</span>]</span>
-<span id="cb16-9"><a href="C-Severity.html#cb16-9"></a>  a_<span class="dv">2</span> &lt;-<span class="st"> </span>param[<span class="dv">2</span>]</span>
-<span id="cb16-10"><a href="C-Severity.html#cb16-10"></a>  mu &lt;-<span class="st"> </span>param[<span class="dv">3</span>]</span>
-<span id="cb16-11"><a href="C-Severity.html#cb16-11"></a>  sigma &lt;-<span class="st"> </span>param[<span class="dv">4</span>]</span>
-<span id="cb16-12"><a href="C-Severity.html#cb16-12"></a>  yt &lt;-<span class="st"> </span>(<span class="kw">log</span>(claim_data<span class="op">$</span>Claim) <span class="op">-</span><span class="st"> </span>mu) <span class="op">/</span><span class="st"> </span>sigma</span>
-<span id="cb16-13"><a href="C-Severity.html#cb16-13"></a>  logexpyt &lt;-<span class="st"> </span><span class="kw">ifelse</span>(yt <span class="op">&gt;</span><span class="st"> </span><span class="dv">23</span>, yt, <span class="kw">log</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(yt)))</span>
-<span id="cb16-14"><a href="C-Severity.html#cb16-14"></a>  logdens &lt;-<span class="st"> </span>a_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>yt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(sigma) <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(<span class="kw">beta</span>(a_<span class="dv">1</span>,a_<span class="dv">2</span>)) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb16-15"><a href="C-Severity.html#cb16-15"></a><span class="st">    </span>(a_<span class="dv">1</span><span class="op">+</span>a_<span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>logexpyt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(claim_data<span class="op">$</span>Claim) </span>
-<span id="cb16-16"><a href="C-Severity.html#cb16-16"></a>  <span class="kw">return</span>(<span class="op">-</span><span class="kw">sum</span>(logdens))</span>
-<span id="cb16-17"><a href="C-Severity.html#cb16-17"></a>}</span>
-<span id="cb16-18"><a href="C-Severity.html#cb16-18"></a><span class="co"># &quot;optim&quot; is a general purpose minimization function</span></span>
-<span id="cb16-19"><a href="C-Severity.html#cb16-19"></a>gb2_bop &lt;-<span class="st"> </span><span class="kw">optim</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>), lik_gb2, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;L-BFGS-B&quot;</span>), </span>
-<span id="cb16-20"><a href="C-Severity.html#cb16-20"></a>                 <span class="dt">lower =</span> <span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="dv">-500</span>, <span class="fl">0.01</span>), </span>
-<span id="cb16-21"><a href="C-Severity.html#cb16-21"></a>                 <span class="dt">upper =</span> <span class="kw">c</span>(<span class="dv">500</span>, <span class="dv">500</span>, <span class="dv">500</span>, <span class="dv">500</span>), <span class="dt">hessian =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb16-22"><a href="C-Severity.html#cb16-22"></a><span class="co"># Nonparametric Plot</span></span>
-<span id="cb16-23"><a href="C-Severity.html#cb16-23"></a><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">log</span>(claim_data<span class="op">$</span>Claim)), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Log Expenditures&quot;</span>,</span>
-<span id="cb16-24"><a href="C-Severity.html#cb16-24"></a>     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span> ,<span class="fl">0.37</span>))</span>
-<span id="cb16-25"><a href="C-Severity.html#cb16-25"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">15</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)</span>
-<span id="cb16-26"><a href="C-Severity.html#cb16-26"></a><span class="co">#Exponential</span></span>
-<span id="cb16-27"><a href="C-Severity.html#cb16-27"></a>fit.exp &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, exponential, <span class="dt">data =</span> claim_data)</span>
-<span id="cb16-28"><a href="C-Severity.html#cb16-28"></a>theta =<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.exp))</span>
-<span id="cb16-29"><a href="C-Severity.html#cb16-29"></a>fexp_ex &lt;-<span class="st"> </span><span class="kw">dgamma</span>(<span class="kw">exp</span>(x), <span class="dt">scale =</span> <span class="kw">exp</span>(<span class="op">-</span><span class="kw">coef</span>(fit.exp)), <span class="dt">shape =</span> <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</span>
-<span id="cb16-30"><a href="C-Severity.html#cb16-30"></a><span class="kw">lines</span>(x, fexp_ex, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span><span class="dv">2</span>)</span>
-<span id="cb16-31"><a href="C-Severity.html#cb16-31"></a><span class="co"># Inference assuming a gamma distribution</span></span>
-<span id="cb16-32"><a href="C-Severity.html#cb16-32"></a>fit.gamma &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">family =</span> gamma2, <span class="dt">data =</span> claim_data)</span>
-<span id="cb16-33"><a href="C-Severity.html#cb16-33"></a>theta &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">1</span>]) <span class="op">/</span><span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">2</span>])  <span class="co"># theta = mu / alpha</span></span>
-<span id="cb16-34"><a href="C-Severity.html#cb16-34"></a>alpha &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">2</span>]) </span>
-<span id="cb16-35"><a href="C-Severity.html#cb16-35"></a>fgamma_ex &lt;-<span class="st"> </span><span class="kw">dgamma</span>(<span class="kw">exp</span>(x), <span class="dt">shape =</span> alpha, <span class="dt">scale =</span> theta) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</span>
-<span id="cb16-36"><a href="C-Severity.html#cb16-36"></a><span class="kw">lines</span>(x, fgamma_ex, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span><span class="dv">3</span>)</span>
-<span id="cb16-37"><a href="C-Severity.html#cb16-37"></a><span class="co">#Pareto</span></span>
-<span id="cb16-38"><a href="C-Severity.html#cb16-38"></a>fit.pareto &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">loc =</span> <span class="dv">0</span>, <span class="dt">data =</span> claim_data)</span>
-<span id="cb16-39"><a href="C-Severity.html#cb16-39"></a>fpareto_ex &lt;-<span class="st"> </span><span class="kw">dparetoII</span>(<span class="kw">exp</span>(x), <span class="dt">loc =</span> <span class="dv">0</span>, <span class="dt">shape =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">2</span>]), </span>
-<span id="cb16-40"><a href="C-Severity.html#cb16-40"></a>                        <span class="dt">scale =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">1</span>])) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</span>
-<span id="cb16-41"><a href="C-Severity.html#cb16-41"></a><span class="kw">lines</span>(x, fpareto_ex, <span class="dt">col =</span> <span class="st">&quot;purple&quot;</span>)</span>
-<span id="cb16-42"><a href="C-Severity.html#cb16-42"></a><span class="co"># Lognormal</span></span>
-<span id="cb16-43"><a href="C-Severity.html#cb16-43"></a>fit.LN &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">family =</span> lognormal, <span class="dt">data =</span> claim_data)</span>
-<span id="cb16-44"><a href="C-Severity.html#cb16-44"></a>flnorm_ex &lt;-<span class="st"> </span><span class="kw">dlnorm</span>(<span class="kw">exp</span>(x), <span class="dt">mean =</span> <span class="kw">coef</span>(fit.LN)[<span class="dv">1</span>],</span>
-<span id="cb16-45"><a href="C-Severity.html#cb16-45"></a>                    <span class="dt">sd =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.LN)[<span class="dv">2</span>])) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</span>
-<span id="cb16-46"><a href="C-Severity.html#cb16-46"></a><span class="kw">lines</span>(x, flnorm_ex, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>)</span>
-<span id="cb16-47"><a href="C-Severity.html#cb16-47"></a><span class="co"># Density for GB II</span></span>
-<span id="cb16-48"><a href="C-Severity.html#cb16-48"></a>gb2_density &lt;-<span class="st"> </span><span class="cf">function</span> (x) {</span>
-<span id="cb16-49"><a href="C-Severity.html#cb16-49"></a>  a_<span class="dv">1</span> &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">1</span>]</span>
-<span id="cb16-50"><a href="C-Severity.html#cb16-50"></a>  a_<span class="dv">2</span> &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">2</span>]</span>
-<span id="cb16-51"><a href="C-Severity.html#cb16-51"></a>  mu &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">3</span>]</span>
-<span id="cb16-52"><a href="C-Severity.html#cb16-52"></a>  sigma &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">4</span>]</span>
-<span id="cb16-53"><a href="C-Severity.html#cb16-53"></a>  xt &lt;-<span class="st"> </span>(<span class="kw">log</span>(x) <span class="op">-</span><span class="st"> </span>mu) <span class="op">/</span><span class="st"> </span>sigma</span>
-<span id="cb16-54"><a href="C-Severity.html#cb16-54"></a>  logexpxt &lt;-<span class="st"> </span><span class="kw">ifelse</span> (xt <span class="op">&gt;</span><span class="st"> </span><span class="dv">23</span>, yt, <span class="kw">log</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(xt)))</span>
-<span id="cb16-55"><a href="C-Severity.html#cb16-55"></a>  logdens &lt;-<span class="st"> </span>a_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>xt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(sigma) <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(<span class="kw">beta</span>(a_<span class="dv">1</span>, a_<span class="dv">2</span>)) <span class="op">-</span><span class="st"> </span></span>
-<span id="cb16-56"><a href="C-Severity.html#cb16-56"></a><span class="st">    </span>(a_<span class="dv">1</span><span class="op">+</span>a_<span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>logexpxt <span class="op">-</span><span class="kw">log</span>(x) </span>
-<span id="cb16-57"><a href="C-Severity.html#cb16-57"></a>  <span class="kw">exp</span>(logdens)</span>
-<span id="cb16-58"><a href="C-Severity.html#cb16-58"></a>  }</span>
-<span id="cb16-59"><a href="C-Severity.html#cb16-59"></a>fGB2_ex =<span class="st"> </span><span class="kw">gb2_density</span>(<span class="kw">exp</span>(x)) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</span>
-<span id="cb16-60"><a href="C-Severity.html#cb16-60"></a><span class="kw">lines</span>(x, fGB2_ex, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb16-61"><a href="C-Severity.html#cb16-61"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;log(Expend)&quot;</span>, <span class="st">&quot;Exponential&quot;</span>, <span class="st">&quot;Gamma&quot;</span>, <span class="st">&quot;Pareto&quot;</span>, </span>
-<span id="cb16-62"><a href="C-Severity.html#cb16-62"></a>                    <span class="st">&quot;Lognormal&quot;</span>, <span class="st">&quot;GB2&quot;</span>), <span class="dt">cex=</span><span class="fl">0.8</span>,</span>
-<span id="cb16-63"><a href="C-Severity.html#cb16-63"></a>       <span class="dt">lty =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="co">#4 is &quot;longdash&quot;</span></span>
-<span id="cb16-64"><a href="C-Severity.html#cb16-64"></a>       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;green&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">library</span>(VGAM)</a>
+<a class="sourceLine" id="cb16-2" title="2">claim_lev &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CLAIMLEVEL.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>) </a>
+<a class="sourceLine" id="cb16-3" title="3">claim_data &lt;-<span class="st"> </span><span class="kw">subset</span>(claim_lev, Year <span class="op">==</span><span class="st"> </span><span class="dv">2010</span>); </a>
+<a class="sourceLine" id="cb16-4" title="4"></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="co"># Inference assuming a GB2 Distribution - this is more complicated</span></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="co"># The likelihood function of GB2 distribution (negative for optimization)</span></a>
+<a class="sourceLine" id="cb16-7" title="7">lik_gb2 &lt;-<span class="st"> </span><span class="cf">function</span> (param) {</a>
+<a class="sourceLine" id="cb16-8" title="8">  a_<span class="dv">1</span> &lt;-<span class="st"> </span>param[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb16-9" title="9">  a_<span class="dv">2</span> &lt;-<span class="st"> </span>param[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb16-10" title="10">  mu &lt;-<span class="st"> </span>param[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb16-11" title="11">  sigma &lt;-<span class="st"> </span>param[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb16-12" title="12">  yt &lt;-<span class="st"> </span>(<span class="kw">log</span>(claim_data<span class="op">$</span>Claim) <span class="op">-</span><span class="st"> </span>mu) <span class="op">/</span><span class="st"> </span>sigma</a>
+<a class="sourceLine" id="cb16-13" title="13">  logexpyt &lt;-<span class="st"> </span><span class="kw">ifelse</span>(yt <span class="op">&gt;</span><span class="st"> </span><span class="dv">23</span>, yt, <span class="kw">log</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(yt)))</a>
+<a class="sourceLine" id="cb16-14" title="14">  logdens &lt;-<span class="st"> </span>a_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>yt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(sigma) <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(<span class="kw">beta</span>(a_<span class="dv">1</span>,a_<span class="dv">2</span>)) <span class="op">-</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-15" title="15"><span class="st">    </span>(a_<span class="dv">1</span><span class="op">+</span>a_<span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>logexpyt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(claim_data<span class="op">$</span>Claim) </a>
+<a class="sourceLine" id="cb16-16" title="16">  <span class="kw">return</span>(<span class="op">-</span><span class="kw">sum</span>(logdens))</a>
+<a class="sourceLine" id="cb16-17" title="17">}</a>
+<a class="sourceLine" id="cb16-18" title="18"><span class="co"># &quot;optim&quot; is a general purpose minimization function</span></a>
+<a class="sourceLine" id="cb16-19" title="19">gb2_bop &lt;-<span class="st"> </span><span class="kw">optim</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>), lik_gb2, <span class="dt">method =</span> <span class="kw">c</span>(<span class="st">&quot;L-BFGS-B&quot;</span>), </a>
+<a class="sourceLine" id="cb16-20" title="20">                 <span class="dt">lower =</span> <span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="dv">-500</span>, <span class="fl">0.01</span>), </a>
+<a class="sourceLine" id="cb16-21" title="21">                 <span class="dt">upper =</span> <span class="kw">c</span>(<span class="dv">500</span>, <span class="dv">500</span>, <span class="dv">500</span>, <span class="dv">500</span>), <span class="dt">hessian =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb16-22" title="22"><span class="co"># Nonparametric Plot</span></a>
+<a class="sourceLine" id="cb16-23" title="23"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">log</span>(claim_data<span class="op">$</span>Claim)), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Log Expenditures&quot;</span>,</a>
+<a class="sourceLine" id="cb16-24" title="24">     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span> ,<span class="fl">0.37</span>))</a>
+<a class="sourceLine" id="cb16-25" title="25">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">15</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb16-26" title="26"><span class="co">#Exponential</span></a>
+<a class="sourceLine" id="cb16-27" title="27">fit.exp &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, exponential, <span class="dt">data =</span> claim_data)</a>
+<a class="sourceLine" id="cb16-28" title="28">theta =<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.exp))</a>
+<a class="sourceLine" id="cb16-29" title="29">fexp_ex &lt;-<span class="st"> </span><span class="kw">dgamma</span>(<span class="kw">exp</span>(x), <span class="dt">scale =</span> <span class="kw">exp</span>(<span class="op">-</span><span class="kw">coef</span>(fit.exp)), <span class="dt">shape =</span> <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</a>
+<a class="sourceLine" id="cb16-30" title="30"><span class="kw">lines</span>(x, fexp_ex, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb16-31" title="31"><span class="co"># Inference assuming a gamma distribution</span></a>
+<a class="sourceLine" id="cb16-32" title="32">fit.gamma &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">family =</span> gamma2, <span class="dt">data =</span> claim_data)</a>
+<a class="sourceLine" id="cb16-33" title="33">theta &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">1</span>]) <span class="op">/</span><span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">2</span>])  <span class="co"># theta = mu / alpha</span></a>
+<a class="sourceLine" id="cb16-34" title="34">alpha &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">coef</span>(fit.gamma)[<span class="dv">2</span>]) </a>
+<a class="sourceLine" id="cb16-35" title="35">fgamma_ex &lt;-<span class="st"> </span><span class="kw">dgamma</span>(<span class="kw">exp</span>(x), <span class="dt">shape =</span> alpha, <span class="dt">scale =</span> theta) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</a>
+<a class="sourceLine" id="cb16-36" title="36"><span class="kw">lines</span>(x, fgamma_ex, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb16-37" title="37"><span class="co">#Pareto</span></a>
+<a class="sourceLine" id="cb16-38" title="38">fit.pareto &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, paretoII, <span class="dt">loc =</span> <span class="dv">0</span>, <span class="dt">data =</span> claim_data)</a>
+<a class="sourceLine" id="cb16-39" title="39">fpareto_ex &lt;-<span class="st"> </span><span class="kw">dparetoII</span>(<span class="kw">exp</span>(x), <span class="dt">loc =</span> <span class="dv">0</span>, <span class="dt">shape =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">2</span>]), </a>
+<a class="sourceLine" id="cb16-40" title="40">                        <span class="dt">scale =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.pareto)[<span class="dv">1</span>])) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</a>
+<a class="sourceLine" id="cb16-41" title="41"><span class="kw">lines</span>(x, fpareto_ex, <span class="dt">col =</span> <span class="st">&quot;purple&quot;</span>)</a>
+<a class="sourceLine" id="cb16-42" title="42"><span class="co"># Lognormal</span></a>
+<a class="sourceLine" id="cb16-43" title="43">fit.LN &lt;-<span class="st"> </span><span class="kw">vglm</span>(Claim <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">family =</span> lognormal, <span class="dt">data =</span> claim_data)</a>
+<a class="sourceLine" id="cb16-44" title="44">flnorm_ex &lt;-<span class="st"> </span><span class="kw">dlnorm</span>(<span class="kw">exp</span>(x), <span class="dt">mean =</span> <span class="kw">coef</span>(fit.LN)[<span class="dv">1</span>],</a>
+<a class="sourceLine" id="cb16-45" title="45">                    <span class="dt">sd =</span> <span class="kw">exp</span>(<span class="kw">coef</span>(fit.LN)[<span class="dv">2</span>])) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</a>
+<a class="sourceLine" id="cb16-46" title="46"><span class="kw">lines</span>(x, flnorm_ex, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>)</a>
+<a class="sourceLine" id="cb16-47" title="47"><span class="co"># Density for GB II</span></a>
+<a class="sourceLine" id="cb16-48" title="48">gb2_density &lt;-<span class="st"> </span><span class="cf">function</span> (x) {</a>
+<a class="sourceLine" id="cb16-49" title="49">  a_<span class="dv">1</span> &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb16-50" title="50">  a_<span class="dv">2</span> &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb16-51" title="51">  mu &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb16-52" title="52">  sigma &lt;-<span class="st"> </span>gb2_bop<span class="op">$</span>par[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb16-53" title="53">  xt &lt;-<span class="st"> </span>(<span class="kw">log</span>(x) <span class="op">-</span><span class="st"> </span>mu) <span class="op">/</span><span class="st"> </span>sigma</a>
+<a class="sourceLine" id="cb16-54" title="54">  logexpxt &lt;-<span class="st"> </span><span class="kw">ifelse</span> (xt <span class="op">&gt;</span><span class="st"> </span><span class="dv">23</span>, yt, <span class="kw">log</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(xt)))</a>
+<a class="sourceLine" id="cb16-55" title="55">  logdens &lt;-<span class="st"> </span>a_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>xt <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(sigma) <span class="op">-</span><span class="st"> </span><span class="kw">log</span>(<span class="kw">beta</span>(a_<span class="dv">1</span>, a_<span class="dv">2</span>)) <span class="op">-</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-56" title="56"><span class="st">    </span>(a_<span class="dv">1</span><span class="op">+</span>a_<span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>logexpxt <span class="op">-</span><span class="kw">log</span>(x) </a>
+<a class="sourceLine" id="cb16-57" title="57">  <span class="kw">exp</span>(logdens)</a>
+<a class="sourceLine" id="cb16-58" title="58">  }</a>
+<a class="sourceLine" id="cb16-59" title="59">fGB2_ex =<span class="st"> </span><span class="kw">gb2_density</span>(<span class="kw">exp</span>(x)) <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(x)</a>
+<a class="sourceLine" id="cb16-60" title="60"><span class="kw">lines</span>(x, fGB2_ex, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb16-61" title="61"><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;log(Expend)&quot;</span>, <span class="st">&quot;Exponential&quot;</span>, <span class="st">&quot;Gamma&quot;</span>, <span class="st">&quot;Pareto&quot;</span>, </a>
+<a class="sourceLine" id="cb16-62" title="62">                    <span class="st">&quot;Lognormal&quot;</span>, <span class="st">&quot;GB2&quot;</span>), <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
+<a class="sourceLine" id="cb16-63" title="63">       <span class="dt">lty =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="co">#4 is &quot;longdash&quot;</span></a>
+<a class="sourceLine" id="cb16-64" title="64">       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;green&quot;</span>))</a></code></pre></div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:MLEComparea"></span>
 <img src="LossDataAnalytics_files/figure-html/MLEComparea-1.png" alt="Density Comparisons for the Wisconsin Property Fund" width="672" />
@@ -2290,11 +2327,11 @@ Figure 3.5: Density Comparisons for the Wisconsin Property Fund
 <p>In many applications, actuaries and other analysts wish to estimate model parameters based on individual data that are not limited. However, there are also important applications when only limited, or <em>modified</em>, data are available. This section introduces maximum likelihood estimation for grouped, censored, and truncated data. Later, we will follow up with additional details in Section <a href="C-ModelSelection.html#S:MS:ModifiedData">4.3</a>.</p>
 <div id="MLEGrouped" class="section level4">
 <h4><span class="header-section-number">3.5.2.1</span> Maximum Likelihood Estimators for Grouped Data</h4>
-<p>In the previous section we considered the maximum likelihood estimation of continuous models from complete (individual) data. Each individual observation is recorded, and its contribution to the likelihood function is the density at that value. In this section we consider the problem of obtaining maximum likelihood estimates of parameters from <a href="#" class="tooltip" style="color:green"><em>grouped data</em><span style="font-size:8pt">Data bucketed into categories with ranges, such as for use in histograms or frequency tables</span></a>. The observations are only available in grouped form, and the contribution of each observation to the likelihood function is the probability of falling in a specific group (interval). Let <span class="math inline">\(n_{j}\)</span> represent the number of observations in the interval <span class="math inline">\(\left( \left. \ c_{j - 1},c_{j} \right\rbrack \right.\ \)</span> The grouped data likelihood function is thus given by
-<span class="math display">\[
+<p>In the previous section we considered the maximum likelihood estimation of continuous models from complete (individual) data. Each individual observation is recorded, and its contribution to the likelihood function is the density at that value. In this section we consider the problem of obtaining maximum likelihood estimates of parameters from <a href="#" class="tooltip" style="color:green"><em>grouped data</em><span style="font-size:8pt">Data bucketed into categories with ranges, such as for use in histograms or frequency tables</span></a>. The observations are only available in grouped form, and the contribution of each observation to the likelihood function is the probability of falling in a specific group (interval). Let <span class="math inline">\(n_{j}\)</span> represent the number of observations in the interval <span class="math inline">\(\left( \left. \ c_{j - 1},c_{j} \right\rbrack \right.\ \)</span> The grouped data likelihood function is thus given by</p>
+<p><span class="math display">\[
 L\left( \theta \right) = \prod_{j = 1}^{k}\left\lbrack F_X\left( \left. \ c_{j} \right|\theta \right) - F_X\left( \left. \ c_{j - 1} \right|\theta \right) \right\rbrack^{n_{j}},
-\]</span>
-where <span class="math inline">\(c_{0}\)</span> is the smallest possible observation (often set to zero) and <span class="math inline">\(c_{k}\)</span> is the largest possible observation (often set to infinity).</p>
+\]</span></p>
+<p>where <span class="math inline">\(c_{0}\)</span> is the smallest possible observation (often set to zero) and <span class="math inline">\(c_{k}\)</span> is the largest possible observation (often set to infinity).</p>
 <p><strong>Example 3.5.5. Actuarial Exam Question.</strong>
 For a group of policies, you are given that losses follow the distribution function <span class="math inline">\(F_X\left( x \right) = 1 - \frac{\theta}{x}\)</span>, for <span class="math inline">\(\theta &lt; x &lt; \infty.\)</span> Further, a sample of 20 losses resulted in the following:</p>
 <p><span class="math display">\[
@@ -2315,24 +2352,28 @@ For a group of policies, you are given that losses follow the distribution funct
 <p><strong>Solution.</strong></p>
 <p>The contribution of each of the 9 observations in the first interval to the likelihood function is the probability of <span class="math inline">\(X \leq 10\)</span>; that is, <span class="math inline">\(\Pr\left( X \leq 10 \right) = F_X\left( 10 \right)\)</span>. Similarly, the contributions of each of 6 and 5 observations in the second and third intervals are <span class="math inline">\(\Pr\left( 10 &lt; X \leq 25 \right) = F_X\left( 25 \right) - F_X(10)\)</span> and <span class="math inline">\(P\left( X &gt; 25 \right) = 1 - F_X(25)\)</span>, respectively. The likelihood function is thus given by
 <span class="math display">\[
-L\left( \theta \right) = \left\lbrack F_X\left( 10 \right) \right\rbrack^{9}\left\lbrack F_X\left( 25 \right) - F_X(10) \right\rbrack^{6}\left\lbrack 1 - F_X(25) \right\rbrack^{5}
-\]</span>
-<span class="math display">\[
-= {\left( 1 - \frac{\theta}{10} \right)}^{9}\left( \frac{\theta}{10} - \frac{\theta}{25} \right)^{6}\left( \frac{\theta}{25} \right)^{5}
-\]</span>
-<span class="math display">\[
-= {\left( \frac{10 - \theta}{10} \right)}^{9}\left( \frac{15\theta}{250} \right)^{6}\left( \frac{\theta}{25} \right)^{5}.
-\]</span>
-Then,
-<span class="math inline">\(\ln L \left( \theta \right) = 9\ln \left( 10 - \theta \right) + 6\ln \theta + 5\ln \theta - 9\ln 10 + 6\ln 15 - 6\ln 250 - 5\ln 25\)</span>.
-<span class="math display">\[
-\frac{d \ln L \left( \theta \right)}{d \theta} = \frac{- 9}{\left( 10 - \theta \right)} + \frac{6}{\theta} + \frac{5}{\theta}.
+\begin{array}{ll}
+L\left( \theta \right) &amp; = \left\lbrack F_X\left( 10 \right) \right\rbrack^{9}\left\lbrack F_X\left( 25 \right) - F_X(10) \right\rbrack^{6}\left\lbrack 1 - F_X(25) \right\rbrack^{5} \\
+&amp; = {\left( 1 - \frac{\theta}{10} \right)}^{9}\left( \frac{\theta}{10} - \frac{\theta}{25} \right)^{6}\left( \frac{\theta}{25} \right)^{5} \\
+&amp; = {\left( \frac{10 - \theta}{10} \right)}^{9}\left( \frac{15\theta}{250} \right)^{6}\left( \frac{\theta}{25} \right)^{5}.
+\end{array}
+\]</span></p>
+<p>Taking logarithms, the logarithmic likelihood is</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+\log L \left( \theta \right) &amp;= 9\log \left( 10 - \theta \right) + 6\log \theta + 5\log \theta - 9\log 10 + 6\log 15 - 6\log 250 - 5\log 25  \\
+&amp;= 9\log \left( 10 - \theta \right) + 11\log \theta + constant .
+\end{array}
+\]</span></p>
+<p>Here, <span class="math inline">\(constant\)</span> is a number that does not depend on <span class="math inline">\(\theta\)</span>. Taking derivatives, we have</p>
+<p><span class="math display">\[
+\frac{d \log L \left( \theta \right)}{d \theta} = \frac{- 9}{\left( 10 - \theta \right)} + \frac{11}{\theta} .
 \]</span>
 The maximum likelihood estimator, <span class="math inline">\(\hat{\theta}\)</span>, is the solution to the equation
 <span class="math display">\[
 \frac{- 9}{\left( 10 - \hat{\theta} \right)} + \frac{11}{\hat{\theta}} = 0
 \]</span>
-and <span class="math inline">\(\hat{\theta} = 5.5\)</span>.</p>
+which yields <span class="math inline">\(\hat{\theta} = 5.5\)</span>.</p>
 </div>
 <hr />
 </div>
@@ -2359,7 +2400,7 @@ Calculate the maximum likelihood estimate of <span class="math inline">\(\theta\
 <span class="math display">\[
 L\left( \theta \right) = f_{X}\left( 2 \right)f_{X}\left( 4 \right)S_{X}\left( 4 \right).
 \]</span>
-The probability density function of <span class="math inline">\(X\)</span> is given by
+The <em>pdf</em> of <span class="math inline">\(X\)</span> is given by
 <span class="math display">\[
 f_{X}\left( x \right) = \frac{4x\theta^{4}}{\left( \theta^{2} + x^{2} \right)^{3}}.
 \]</span>
@@ -2370,10 +2411,10 @@ L\left( \theta \right) = \frac{8\theta^{4}}{\left( \theta^{2} + 4 \right)^{3}}\f
 \]</span></p>
 <p>So,
 <span class="math display">\[
-\ln L\left( \theta \right) = \ln 128 + 12\ln \theta - 3\ln \left( \theta^{2} + 4 \right) - 5\ln \left( \theta^{2} + 16 \right) ,
+\log L\left( \theta \right) = \log 128 + 12\log \theta - 3\log \left( \theta^{2} + 4 \right) - 5\log \left( \theta^{2} + 16 \right) ,
 \]</span></p>
 <p>and</p>
-<p><span class="math inline">\(\frac{d \ln L\left( \theta \right)}{d \theta} = \frac{12}{\theta} - \frac{6\theta}{\left( \theta^{2} + 4 \right)} - \frac{10\theta}{\left( \theta^{2} + 16 \right)}\)</span>.</p>
+<p><span class="math inline">\(\frac{d \log L\left( \theta \right)}{d \theta} = \frac{12}{\theta} - \frac{6\theta}{\left( \theta^{2} + 4 \right)} - \frac{10\theta}{\left( \theta^{2} + 16 \right)}\)</span>.</p>
 <p>The maximum likelihood estimator, <span class="math inline">\(\hat{\theta}\)</span>, is the solution to the equation
 <span class="math display">\[
 \frac{12}{\hat{\theta}} - \frac{6\hat{\theta}}{\left( {\hat{\theta}}^{2} + 4 \right)} - \frac{10\hat{\theta}}{\left( {\hat{\theta}}^{2} + 16 \right)} = 0
@@ -2393,7 +2434,7 @@ L(\theta) = \prod_{i=1}^k \frac{f_X(x_i)}{S_X(d)} ,
 \]</span>
 where <span class="math inline">\(k\)</span> is the number of loss amounts larger than the deductible <span class="math inline">\(d\)</span>.</p>
 <p><strong>Example 3.5.7. Actuarial Exam Question.</strong>
-For the single parameter Pareto distribution with <span class="math inline">\(\theta = 2\)</span>, maximum likelihood estimation is applied to estimate the parameter <span class="math inline">\(\alpha\)</span>. Find the estimated mean of the ground up loss distribution based on the maximum likelihood estimate of <span class="math inline">\(\alpha\)</span> for the following data set:</p>
+For the single-parameter Pareto distribution with <span class="math inline">\(\theta = 2\)</span>, maximum likelihood estimation is applied to estimate the parameter <span class="math inline">\(\alpha\)</span>. Find the estimated mean of the ground up loss distribution based on the maximum likelihood estimate of <span class="math inline">\(\alpha\)</span> for the following data set:</p>
 <ul>
 <li>Ordinary policy deductible of 5, maximum covered loss of 25 (policy limit 20)</li>
 <li>8 insurance payment amounts: 2, 4, 5, 5, 8, 10, 12, 15</li>
@@ -2417,27 +2458,34 @@ For the single parameter Pareto distribution with <span class="math inline">\(\t
 <p><span class="math display">\[
 L\left( \alpha \right) = \frac{\prod_{i = 1}^{8}{f_{X}\left( x_{i} \right)}}{\left\lbrack S_{X}\left( 5 \right) \right\rbrack^{8}}\left\lbrack \frac{S_{X}\left( 25 \right)}{S_{X}\left( 5 \right)} \right\rbrack^{2}.
 \]</span></p>
-<p>For the single parameter Pareto the probability density and distribution functions are given by</p>
+<p>For the single-parameter Pareto the probability density and distribution functions are given by</p>
 <p><span class="math display">\[
 f_{X}\left( x \right) = \frac{\alpha\theta^{\alpha}}{x^{\alpha + 1}} \ \ \text{and} \ \ F_{X}\left( x \right) = 1 - \left( \frac{\theta}{x} \right)^{\alpha},
 \]</span>
-for <span class="math inline">\(x &gt; \theta\)</span>, respectively. Then, the likelihood and loglikelihood functions are given by
+for <span class="math inline">\(x &gt; \theta\)</span>, respectively. Then, the likelihood is given by
 <span class="math display">\[
-L\left( \alpha \right) = \frac{\alpha^{8}}{\prod_{i = 1}^{8}x_{i}^{\alpha + 1}}\frac{5^{10\alpha}}{25^{2\alpha}},
-\]</span>
-<span class="math display">\[
-\ln L \left( \alpha \right) = 8\ln\alpha - \left( \alpha + 1 \right)\sum_{i = 1}^{8}{\ln x_{i}} + 10\alpha \ln 5 - 2\alpha \ln 25.
+L\left( \alpha \right) = \frac{\alpha^{8}}{\prod_{i = 1}^{8}x_{i}^{\alpha + 1}}\frac{5^{10\alpha}}{25^{2\alpha}} .
 \]</span></p>
-<p><span class="math inline">\(\frac{d \ln L \left( \alpha \right)}{d \theta} = \frac{8}{\alpha} - \sum_{i = 1}^{8}{\ln x_{i}} + 10\ln 5 - 2\ln 25\)</span>.</p>
-<p>The maximum likelihood estimator, <span class="math inline">\(\hat{\alpha}\)</span>, is the solution to the equation
-<span class="math display">\[
-\frac{8}{\hat{\alpha}} - \sum_{i = 1}^{8}{\ln x_{i}} + 10\ln 5 - 2\ln 25 = 0,
+<p>Taking logarithms, the loglikelihood function is</p>
+<p><span class="math display">\[
+\log L \left( \alpha \right) = 8\log\alpha - \left( \alpha + 1 \right)\sum_{i = 1}^{8}{\log x_{i}} + 10\alpha \log 5 - 2\alpha \log 25.
+\]</span></p>
+<p>Taking a derivative, we have</p>
+<p><span class="math display">\[
+\frac{d \log L \left( \alpha \right)}{d \theta} = \frac{8}{\alpha} - \sum_{i = 1}^{8}{\log x_{i}} + 10\log 5 - 2\log 25.
+\]</span></p>
+<p>With this, the maximum likelihood estimator, <span class="math inline">\(\hat{\alpha}\)</span>, is the solution to the equation</p>
+<p><span class="math display">\[
+\frac{8}{\hat{\alpha}} - \sum_{i = 1}^{8}{\log x_{i}} + 10\log 5 - 2\log 25 = 0,
 \]</span>
 which yields
 <span class="math display">\[
-\hat{\alpha} = \frac{8}{\sum_{i = 1}^{8}{\ln x_{i}} - 10\ln 5 + 2\ln 25} = \frac{8}{(\ln 7 + \ln 9 + \cdots + \ln 20) - 10\ln 5 + 2\ln 25} = 0.785.
+\begin{array}{ll}
+\hat{\alpha} &amp;= \frac{8}{\sum_{i = 1}^{8}{\log x_{i}} - 10\log 5 + 2\log 25} \\
+&amp;= \frac{8}{(\log 7 + \log 9 + \cdots + \log 20) - 10\log 5 + 2\log 25} = 0.785.
+\end{array}
 \]</span>
-The mean of the Pareto only exists for <span class="math inline">\(\alpha &gt; 1\)</span>. Since <span class="math inline">\(\hat{\alpha} = 0.785 &lt; 1\)</span>. Then, the mean does not exist.</p>
+The mean of the single-parameter Pareto is finite for <span class="math inline">\(\alpha &gt; 1\)</span> (see Appendix Section <a href="C-SummaryDistributions.html#S:ContinuousDistributions">18.2</a>). Since <span class="math inline">\(\hat{\alpha} = 0.785 &lt; 1\)</span>. Then, the mean is infinite.</p>
 </div>
 <hr />
 <div id="surveyElement35">

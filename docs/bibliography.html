@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="C-SummaryDistributions.html"/>
+<link rel="prev" href="C-NotationConvention.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <!-- Mathjax -->
@@ -311,9 +310,9 @@ document.getElementById("defaultOpen").click();
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -322,16 +321,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -340,9 +337,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -443,7 +440,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="C-Severity.html"><a href="C-Severity.html"><i class="fa fa-check"></i><b>3</b> Modeling Loss Severity</a><ul>
 <li class="chapter" data-level="3.1" data-path="C-Severity.html"><a href="C-Severity.html#S:BasicQuantities"><i class="fa fa-check"></i><b>3.1</b> Basic Distributional Quantities</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="C-Severity.html"><a href="C-Severity.html#S:Chap3Moments"><i class="fa fa-check"></i><b>3.1.1</b> Moments</a></li>
-<li class="chapter" data-level="3.1.2" data-path="C-Severity.html"><a href="C-Severity.html#quantiles"><i class="fa fa-check"></i><b>3.1.2</b> Quantiles</a></li>
+<li class="chapter" data-level="3.1.2" data-path="C-Severity.html"><a href="C-Severity.html#S:LS:Quantiles"><i class="fa fa-check"></i><b>3.1.2</b> Quantiles</a></li>
 <li class="chapter" data-level="3.1.3" data-path="C-Severity.html"><a href="C-Severity.html#moment-generating-function"><i class="fa fa-check"></i><b>3.1.3</b> Moment Generating Function</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="C-Severity.html"><a href="C-Severity.html#S:ContinuousDistn"><i class="fa fa-check"></i><b>3.2</b> Continuous Distributions for Modeling Loss Severity</a><ul>
@@ -603,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.4" data-path="C-Credibility.html"><a href="C-Credibility.html#partial-credibility"><i class="fa fa-check"></i><b>9.2.4</b> Partial Credibility</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-credibility"><i class="fa fa-check"></i><b>9.3</b> Bühlmann Credibility</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility Z, <em>EPV</em>, and <em>VHM</em></a></li>
+<li class="chapter" data-level="9.3.1" data-path="C-Credibility.html"><a href="C-Credibility.html#S:EPV-VHM-Z"><i class="fa fa-check"></i><b>9.3.1</b> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="C-Credibility.html"><a href="C-Credibility.html#bühlmann-straub-credibility"><i class="fa fa-check"></i><b>9.4</b> Bühlmann-Straub Credibility</a></li>
 <li class="chapter" data-level="9.5" data-path="C-Credibility.html"><a href="C-Credibility.html#bayesian-inference-and-bühlmann-credibility"><i class="fa fa-check"></i><b>9.5</b> Bayesian Inference and Bühlmann Credibility</a><ul>
@@ -798,7 +795,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab0-class"><i class="fa fa-check"></i><b>18.1.1</b> The (a,b,0) Class</a></li>
 <li class="chapter" data-level="18.1.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#the-ab1-class"><i class="fa fa-check"></i><b>18.1.2</b> The (a,b,1) Class</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#continuous-distributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
+<li class="chapter" data-level="18.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#S:ContinuousDistributions"><i class="fa fa-check"></i><b>18.2</b> Continuous Distributions</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#one-parameter-distributions"><i class="fa fa-check"></i><b>18.2.1</b> One Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.2" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#two-parameter-distributions"><i class="fa fa-check"></i><b>18.2.2</b> Two Parameter Distributions</a></li>
 <li class="chapter" data-level="18.2.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#three-parameter-distributions"><i class="fa fa-check"></i><b>18.2.3</b> Three Parameter Distributions</a></li>
@@ -807,6 +804,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.2.6" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#distributions-with-finite-support"><i class="fa fa-check"></i><b>18.2.6</b> Distributions with Finite Support</a></li>
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="C-SummaryDistributions.html"><a href="C-SummaryDistributions.html#limited-expected-values"><i class="fa fa-check"></i><b>18.3</b> Limited Expected Values</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>19</b> Appendix E: Conventions for Notation</a><ul>
+<li class="chapter" data-level="19.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:General"><i class="fa fa-check"></i><b>19.1</b> General Conventions</a></li>
+<li class="chapter" data-level="19.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Abbreviations"><i class="fa fa-check"></i><b>19.2</b> Abbreviations</a></li>
+<li class="chapter" data-level="19.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:StatSymbols"><i class="fa fa-check"></i><b>19.3</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="19.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:Symbols"><i class="fa fa-check"></i><b>19.4</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="19.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>19.5</b> Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -837,6 +841,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Aalen, Odd. 1978. “Nonparametric Inference for a Family of Counting Processes.” <em>The Annals of Statistics</em> 6 (4): 701–26.</p>
 </div>
 <div>
+<p>Abadir, Karim, and Jan Magnus. 2002. “Notation in Econometrics: A Proposal for a Standard.” <em>The Econometrics Journal</em> 5 (1): 76–90.</p>
+</div>
+<div>
 <p>Abbott, Dean. 2014. <em>Applied Predictive Analytics: Principles and Techniques for the Professional Data Analyst</em>. Hoboken, NJ: Wiley.</p>
 </div>
 <div>
@@ -858,7 +865,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Antonio, K., and R. Plat. 2014. “Micro–Level Stochastic Loss Reserving for General Insurance.” <em>Scandinavian Actuarial Journal</em> 7: 649–69.</p>
 </div>
 <div>
-<p>Bahnemann, David. 2015. “Distributions for Actuaries.” <em>CAS Monograph Series</em>, no. 2. <a href="https://www.casact.org/pubs/monographs/papers/02-Bahnemann.pdf">https://www.casact.org/pubs/monographs/papers/02-Bahnemann.pdf</a>.</p>
+<p>Bahnemann, David. 2015. <em>Distributions for Actuaries</em>. <em>CAS Monograph Series</em>. 2. <a href="https://www.casact.org/pubs/monographs/papers/02-Bahnemann.pdf">https://www.casact.org/pubs/monographs/papers/02-Bahnemann.pdf</a>.</p>
 </div>
 <div>
 <p>Bailey, Robert A., and J. Simon LeRoy. 1960. “Two Studies in Automobile Ratemaking.” <em>Proceedings of the Casualty Actuarial Society Casualty Actuarial Society</em> XLVII (I).</p>
@@ -883,6 +890,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div>
 <p>Bluman, Allan. 2012. <em>Elementary Statistics: A Step by Step Approach</em>. New York, NY: McGraw-Hill.</p>
+</div>
+<div>
+<p>Boehm, C, J Engelfriet, M Helbig, A IM Kool, P Leepin, E Neuburger, and AD Wilkie. 1975. “Thoughts on the Harmonization of Some Proposals for a New International Actuarial Notation.” <em>Blätter Der DGVFM</em> 12 (2): 99–129.</p>
 </div>
 <div>
 <p>Bowers, Newton L., Hans U. Gerber, James C. Hickman, Donald A. Jones, and Cecil J. Nesbitt. 1986. <em>Actuarial Mathematics</em>. Society of Actuaries Itasca, Ill.</p>
@@ -915,7 +925,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Chen, Min, Shiwen Mao, Yin Zhang, and Victor CM Leung. 2014. <em>Big Data: Related Technologies, Challenges and Future Prospects</em>. New York, NY: Springer.</p>
 </div>
 <div>
-<p>Clark, David R. 1996. “Basics of Reinsurance Pricing.” <em>CAS Study Note</em>, 41–43. <a href="https://www.soa.org/files/edu/edu-2014-exam-at-study-note-basics-rein.pdf">https://www.soa.org/files/edu/edu-2014-exam-at-study-note-basics-rein.pdf</a>.</p>
+<p>Clark, David R. 1996. <em>Basics of Reinsurance Pricing</em>. <em>CAS Study Note</em>. <a href="https://www.soa.org/files/edu/edu-2014-exam-at-study-note-basics-rein.pdf">https://www.soa.org/files/edu/edu-2014-exam-at-study-note-basics-rein.pdf</a>.</p>
 </div>
 <div>
 <p>Clarke, Bertrand, Ernest Fokoue, and Hao Helen Zhang. 2009. <em>Principles and Theory for Data Mining and Machine Learning</em>. New York, NY: Springer-Verlag.</p>
@@ -1032,7 +1042,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Greenwood, Major. 1926. “The Errors of Sampling of the Survivorship Tables.” In <em>Reports on Public Health and Statistical Subjects</em>. Vol. 33. London: Her Majesty’s Stationary Office.</p>
 </div>
 <div>
-<p>Hardy, Mary R. 2006. “An Introduction to Risk Measures for Actuarial Applications.”</p>
+<p>Halperin, Max, Herman O Hartley, and Paul G Hoel. 1965. “Recommended Standards for Statistical Symbols and Notation: Copss Committee on Symbols and Notation.” <em>The American Statistician</em> 19 (3): 12–14.</p>
+</div>
+<div>
+<p>Hardy, Mary R. 2006. <em>An Introduction to Risk Measures for Actuarial Applications</em>. <em>SOA Syllabus Study Note</em>. Society of Actuaries. <a href="https://www.soa.org/globalassets/assets/files/edu/c-25-07.pdf">https://www.soa.org/globalassets/assets/files/edu/c-25-07.pdf</a>.</p>
 </div>
 <div>
 <p>Hartman, Brian. 2016. “Bayesian Computational Methods.” <em>Predictive Modeling Applications in Actuarial Science: Volume 2, Case Studies in Insurance</em>.</p>
@@ -1262,7 +1275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="C-SummaryDistributions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="C-NotationConvention.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
