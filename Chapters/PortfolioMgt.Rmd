@@ -961,12 +961,12 @@ Now, for any retention function, we have $g(X) \le X$, that is, the insurer's re
 $$
 \begin{array}{ll}
 M- g_{SL}(X) &= M-(X \wedge M) \\
-&= (M-X) \wedge 0 \\
-&\le (M-g(X)) \wedge 0 .
+&= \max(M-X, 0) \\
+&\le \max(M-g(X), 0) .
 \end{array}
 $$
 Squaring each side yields 
-$$(M- g_{SL}(X))^2 \le (M-g(X))^2 \wedge 0 \le (M-g(X))^2.$$
+$$(M- g_{SL}(X))^2 \le \max((M-g(X))^2, 0)  \le (M-g(X))^2.$$
 
 Returning to our expression for the variance, we have
 $$
