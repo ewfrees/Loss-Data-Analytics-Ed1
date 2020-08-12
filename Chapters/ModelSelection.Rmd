@@ -4,7 +4,7 @@
 
 *Chapter Preview*. Chapters \@ref(C:Frequency-Modeling) and \@ref(C:Severity) have described how to fit parametric models to frequency and severity data, respectively. This chapter begins with the selection of models. To compare alternative parametric models, it is helpful to summarize data without reference to a specific parametric distribution. Section \@ref(S:MS:NonParInf) describes nonparametric estimation, how we can use it for model comparisons and how it can be used to provide starting values for parametric procedures. The process of model selection is then summarized in Section \@ref(S:MS:ModelSelection). Although our focus is on data from continuous distributions, the same process can be used for discrete versions or data that come from a hybrid combination of discrete and continuous distributions. 
 
-Model selection and estimation are fundamental aspects of statistical modeling. To provide a flavor as to how they can be adapted to alternative sampling schemes, Section \@ref(S:MS:ModifiedData) describes estimation for grouped, censored and truncated data (following the Section \@ref(S:MaxLikeEstimation) introduction). To see how they can be adapted to alternative models, the chapter closes with Section \@ref(S:MS:BayesInference) on Bayesian inference, an alternative procedure where the (typically unknown) parameters are treated as random variables.
+Model selection and estimation are fundamental aspects of statistical modeling. To provide a flavor as to how they can be adapted to alternative sampling schemes, Section \@ref(S:MS:ModifiedData1) describes estimation for grouped, censored and truncated data (following the Section \@ref(S:MaxLikeEstimation) introduction). To see how they can be adapted to alternative models, the chapter closes with Section \@ref(S:MS:BayesInference) on Bayesian inference, an alternative procedure where the (typically unknown) parameters are treated as random variables.
 
 
 ##  Nonparametric Inference {#S:MS:NonParInf}
@@ -21,7 +21,7 @@ In this section, you learn how to:
 ***
 
 
-### Nonparametric Estimation
+### Nonparametric Estimation {#S:MS:NonParEst}
 
 In Section \@ref(S:basic-frequency-distributions) for frequency and Section \@ref(S:BasicQuantities) for severity, we learned how to summarize  a distribution by computing means, variances, quantiles/percentiles, and so on. To approximate these summary measures using a dataset, one strategy is to: 
 
@@ -919,7 +919,7 @@ In this section, you learn how to:
 ***
 
 
-### Parametric Estimation using Modified Data
+### Parametric Estimation using Modified Data {#S:MS:ModifiedData1}
 
 Basic theory and many applications are based on *individual* observations that are "*complete*" and "*unmodified*," as we have seen in the previous section.  Section \@ref(S:MaxLikeEstimation) introduced the concept of observations that are "*modified*" due to two common types of limitations: **censoring** and **truncation**. For example, it is common to think about an insurance deductible as producing data that are truncated (from the left) or policy limits as yielding data that are censored (from the right). This viewpoint is from the primary insurer (the seller of the insurance). Another viewpoint is that of a reinsurer (an insurer of an insurance company) that will be discussed more in Chapter \@ref(C:PortMgt).
 A reinsurer may not observe a claim smaller than an amount, only that a claim exists; this is an example of censoring from the left. So, in this section, we cover the full gamut of alternatives. Specifically, this section will address parametric estimation methods for three alternatives to individual, complete, and unmodified data: **interval-censored** data available only in groups, data that are limited or **censored**, and data that may not be observed due to **truncation**. 
