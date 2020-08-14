@@ -85,19 +85,11 @@ integrating this framework with concerns about how the data may arise. From an i
 micro oriented view, we can think  about what happens to a
 contract at various stages of its existence. 
 
-Figure \@ref(fig:StochOperations) traces a timeline of a typical insurance contract. Throughout the life of the contract, the company regularly processes events such as premium collection and valuation,
-described in Section \@ref(S:PredModApps); these are marked with an **x** on
-the timeline. Non-regular and unanticipated events also occur.
-To illustrate, $\mathrm{t}_2$ and $\mathrm{t}_4$ mark the
-event of an insurance claim (some contracts, such as life insurance, can
-have only a single claim). Times $\mathrm{t}_3$ and $\mathrm{t}_5$
-mark events when a policyholder wishes to alter certain contract
-features, such as the choice of a `r Gloss('deductible')` or the amount of coverage.
-From a company perspective, one can even think about the
-contract initiation (arrival, time $\mathrm{t}_1$) and contract
-termination (departure, time $\mathrm{t}_6$) as uncertain events.  (Alternatively, for some purposes, you may condition on these events and treat them as certain.)
+Figure \@ref(fig:StochOperations) traces a timeline of a typical insurance contract. Throughout the life of the contract, the company regularly processes events such as premium collection and valuation, described in Section \@ref(S:PredModApps); these are marked with an **x** on the timeline. Non-regular and unanticipated events also occur. To illustrate, $\mathrm{t}_2$ and $\mathrm{t}_4$ mark the event of an insurance claim (some contracts, such as life insurance, can have only a single claim). Times $\mathrm{t}_3$ and $\mathrm{t}_5$ mark events when a policyholder wishes to alter certain contract
+features, such as the choice of a `r Gloss('deductible')` or the amount of coverage. From a company perspective, one can even think about the
+contract initiation (arrival, time $\mathrm{t}_1$) and contract termination (departure, time $\mathrm{t}_6$) as uncertain events.  (Alternatively, for some purposes, you may condition on these events and treat them as certain.)
 
-(ref:StochOperations) Timeline of a Typical Insurance Policy. Arrows mark the occurrences of random events. Each x marks the time of scheduled events that are typically non-random.
+(ref:StochOperations) **Timeline of a Typical Insurance Policy. Arrows mark the occurrences of random events. Each x marks the time of scheduled events that are typically non-random**.
 
 ```{r StochOperations, fig.cap='(ref:StochOperations)', out.width='100%', fig.asp=.75, fig.align='center', echo=FALSE}
 plot.new() 
@@ -342,9 +334,15 @@ written on a per occurrence basis. Frequency is routinely monitored by insurance
 regulators and can be a key driver in the overall indemnification
 obligation of the insurer. We shall consider the frequency and severity as the two main claim variables that we wish to understand, model, and manage.
 
-To illustrate, in 2010 there were 1,110 policyholders in the property fund who experienced a total of 1,377 claims. Table \@ref(tab:Frequency2010) shows the distribution. Almost two-thirds (0.637) of the policyholders did not have any claims and an additional 18.8% had only one claim. The remaining 17.5%
+To illustrate, in 2010 there were 1,110 policyholders in the property fund who experienced a total of 1,377 claims. [Table 1.1] shows the distribution. Almost two-thirds (0.637) of the policyholders did not have any claims and an additional 18.8% had only one claim. The remaining 17.5%
 (=1 - 0.637 - 0.188) had more than one claim; the policyholder with the highest number recorded 239 claims. The average number of claims for
 this sample was 1.24 (=1377/1110).
+
+<a id=tab:1.1></a> 
+
+[Table 1.1]: \#tab:1.1
+
+Table 1.1. **2010 Claims Frequency Distribution**
 
   Type                                                                                             
   ------------- ------ ------- ------- ------- ------- ------- ------- ------- ------- ----------- -------
@@ -354,8 +352,7 @@ this sample was 1.24 (=1377/1110).
   Proportion     0.637   0.188   0.077   0.036   0.016   0.011   0.008   0.004   0.005       0.017   1.000
   ------------- ------ ------- ------- ------- ------- ------- ------- ------- ------- ----------- -------
 
-Table: (\#tab:Frequency2010)  2010 Claims Frequency Distribution
-  
+ 
 `r HideRCode('T:Frequency.1',"R Code for Frequency Table")`
 
 ```{r, echo=SHOW_PDF, eval=FALSE}
@@ -372,12 +369,18 @@ approach is to examine the distribution of the average claims of those policyhol
 policyholder with highest frequency, the average claim is an average over 239 separately reported claim events. This average is also known as the 
 `r Gloss('pure premium')` or *loss cost*.
 
-Table \@ref(tab:Severity2010) summarizes the sample distribution of average severities from the 403 policyholders who made a claim; it shows that the average claim amount was 56,330 (all amounts are in U.S. Dollars). However, the average gives only a limited look at the distribution. More information can be
+[Table 1.2] summarizes the sample distribution of average severities from the 403 policyholders who made a claim; it shows that the average claim amount was 56,330 (all amounts are in U.S. Dollars). However, the average gives only a limited look at the distribution. More information can be
 gleaned from the summary statistics which show a very large claim in the amount of 12,920,000. Figure \@ref(fig:SeverityFig) provides further
 information about the distribution of sample claims, showing a distribution that is dominated by this single large claim so that the
 histogram is not very helpful. Even when removing the large claim, you will find a distribution that is skewed to the right. A generally
 accepted technique is to work with claims in logarithmic units especially for graphical purposes; the corresponding figure in the
 right-hand panel is much easier to interpret.
+
+<a id=tab:1.2></a> 
+
+[Table 1.2]: \#tab:1.2
+
+Table 1.2. **2010 Average Severity Distribution**
 
   --------- ---------- -------- -------- ---------- ------------
                  First                        Third 
@@ -386,10 +389,10 @@ right-hand panel is much easier to interpret.
         167      2,226    4,951   56,330     11,900   12,920,000
   --------- ---------- -------- -------- ---------- ------------
 
-Table: (\#tab:Severity2010)  2010 Average Severity Distribution
   
- 
-```{r SeverityFig, echo=FALSE, fig.cap='Distribution of Positive Average Severities', out.width='80%', fig.asp=.75, fig.align='center'}
+(ref:SeverityFig) **Distribution of Positive Average Severities**
+
+```{r SeverityFig, echo=FALSE, fig.cap='(ref:SeverityFig)', out.width='80%', fig.asp=.75, fig.align='center'}
 Insample <- read.csv("Data/PropertyFundInsample.csv", header=T, na.strings=c("."), stringsAsFactors=FALSE)
 Insample2010 <- subset(Insample, Year==2010)
 InsamplePos2010 <- subset(Insample2010, yAvg>0)
@@ -434,7 +437,7 @@ to examine outcomes from multiple years, thus increasing the sample
 size. We will discuss the strengths and limitations of this strategy
 later but, at this juncture, we just wish to show the reader how it works.
 
-Specifically, Table \@ref(tab:CoverageBCIM) shows that we now consider
+Specifically, [Table 1.3] shows that we now consider
 policies over five years of data, 2006, ..., 2010, inclusive. The
 data begins in 2006 because there was a shift in claim coding in 2005 so
 that comparisons with earlier years are not helpful. To mitigate the
@@ -443,6 +446,11 @@ claim means that not all of the obligations for the claim are known at the time 
 accident or in the workplace, it can take years before costs are fully
 known.
 
+<a id=tab:1.3></a> 
+
+[Table 1.3]: \#tab:1.3
+
+Table 1.3. **Claims Summary by Policyholder**
 
   ------------------------------------------------------------------
   Year            Average    Average         Average       Number of
@@ -459,9 +467,8 @@ known.
   2010              1.241     20,452      41,242,070           1,110
   ------------------------------------------------------------------
 
-  Table: (\#tab:CoverageBCIM) Claims Summary by Policyholder
 
-[^1.1]: Note that the average severity in Table \@ref(tab:CoverageBCIM) differs from that reported in Table \@ref(tab:Severity2010). This is because the former includes policyholders with zero claims where as the latter does not. This is an important distinction that we will address in later portions of the text. 
+[^1.1]: Note that the average severity in [Table 1.3] differs from that reported in [Table 1.2]. This is because the former includes policyholders with zero claims where as the latter does not. This is an important distinction that we will address in later portions of the text. 
 
 `r HideRCode('CoverageBC.1',"R Code for Claims Summary by Policyholder")`
 
@@ -480,7 +487,7 @@ Table1In
 ```
 </div>
 
-Table \@ref(tab:CoverageBCIM) shows that the average claim varies over time,
+[Table 1.3] shows that the average claim varies over time,
 especially with the high 2010 value (that we saw was due to a single large claim)[^1.1]. The
 total number of policyholders is steadily declining and, conversely, the
 coverage is steadily increasing. The coverage variable is the amount of
@@ -490,13 +497,20 @@ the coverage is our first rating variable. Other things being equal, we would
 expect that policyholders with larger coverage have larger claims.
 We will make this vague idea much more precise as we proceed, and also justify this expectation with data.
 
-For a different look at the 2006-2010 data, Table \@ref(tab:DeductCov)
+For a different look at the 2006-2010 data, [Table 1.4]
 summarizes the distribution of our two outcomes, frequency and claims
 amount. In each case, the average exceeds the median, suggesting that
 the two distributions are right-skewed. In addition, the table
 summarizes our continuous rating variables, coverage and deductible
 amount. The table also suggests that these variables also have
 right-skewed distributions.
+
+
+<a id=tab:1.4></a> 
+
+[Table 1.4]: \#tab:1.4
+
+Table 1.4. **Summary of Claim Frequency and Severity, Deductibles, and Coverages**
 
   ------------------ --------- -------- --------- ------------
                        Minimum   Median   Average      Maximum    
@@ -509,8 +523,6 @@ right-skewed distributions.
   
   Coverage (000's)       8.937   11,354    37,281    2,444,797    
   ------------------ --------- -------- --------- ------------
-  
-Table: (\#tab:DeductCov) Summary of Claim Frequency and Severity, Deductibles, and Coverages
   
 `r HideRCode('DeductCov.1',"R Code for Summary of Claim Frequency and Severity, Deductibles, and Coverages")`
 
@@ -537,12 +549,15 @@ Table2aa
 </div>  
   
 
-The following display describes the rating variables considered in this
-chapter. Hopefully, these are variables that you think might naturally be  related to claims outcomes. You can learn more about them in @frees2016multivariate. To handle the skewness, we henceforth focus on logarithmic transformations of coverage and deductibles. 
+[Table 1.5] describes the rating variables considered in this chapter. Hopefully, these are variables that you think might naturally be  related to claims outcomes. You can learn more about them in @frees2016multivariate. To handle the skewness, we henceforth focus on logarithmic transformations of coverage and deductibles. 
 
 
+<a id=tab:1.5></a> 
 
-**Description of Rating Variables** 
+[Table 1.5]: \#tab:1.5
+
+Table 1.5. **Description of Rating Variables**
+
 $${\small \begin{matrix}
 \begin{array}{ l | l}
 \hline
@@ -563,11 +578,8 @@ Variable 	& Description \\
 <!-- <Description of Rating Variables>(\#tab:VarDesc)  -->
 
 
-To get a sense of the
-relationship between the non-continuous rating variables and claims,
-Table \@ref(tab:ClaimRateVar) relates the claims outcomes to these
-categorical variables. Table \@ref(tab:ClaimRateVar) suggests substantial
-variation in the claim frequency and average severity of the claims by
+To get a sense of the relationship between the non-continuous rating variables and claims, [Table 1.6] relates the claims outcomes to these
+categorical variables. [Table 1.6] suggests substantial variation in the claim frequency and average severity of the claims by
 entity type. It also demonstrates higher frequency and severity for the
  ${\tt Fire5}$ variable and the reverse for the ${\tt NoClaimCredit}$ variable.
 The relationship for the ${\tt Fire5}$ variable is counter-intuitive in that
@@ -579,7 +591,11 @@ for in the subsequent multivariate regression analysis, which yields an
 intuitive, appealing (negative) sign for the ${\tt Fire5}$ variable.
 
 
+<a id=tab:1.6></a> 
 
+[Table 1.6]: \#tab:1.6
+
+Table 1.6. **Claims Summary by Entity Type, Fire Class, and No Claim Credit**
 
   --------------------- ----------- ----------- ----------
                           Number of       Claim    Average
@@ -614,7 +630,7 @@ intuitive, appealing (negative) sign for the ${\tt Fire5}$ variable.
   **Total**                   5,639       1.109     31,206
   --------------------- ----------- ----------- ----------
 
- Table: (\#tab:ClaimRateVar) Claims Summary by Entity Type, Fire Class, and No Claim Credit
+ Table: (\#tab:ClaimRateVar) 
   
 `r HideRCode('ClaimRateVar.1',"R Code for Claims Summary by Entity Type, Fire Class, and No Claim Credit")`
 
@@ -661,7 +677,7 @@ Table4
 </div>  
     
 
-Table \@ref(tab:RateAlarmCredit) shows the claims experience by alarm credit.
+[Table 1.7] shows the claims experience by alarm credit.
 It underscores the difficulty of examining variables individually. For
 example, when looking at the experience for all entities, we see that
 policyholders with no alarm credit have on average lower frequency and
@@ -671,9 +687,14 @@ we look at the entity type School, the frequency is 0.422 and the
 severity 25,523 for no alarm credit, whereas for the highest alarm level
 it is 2.008 and 85,140, respectively. This may simply imply that entities with more
 claims are the ones that are likely to have an alarm system. Summary
-tables do not examine multivariate effects; for example, Table
-\@ref(tab:ClaimRateVar) ignores the effect of size (as we measure through
+tables do not examine multivariate effects; for example, [Table 1.6] ignores the effect of size (as we measure through
 coverage amounts) that affect claims.
+
+<a id=tab:1.7></a> 
+
+[Table 1.7]: \#tab:1.7
+
+Table 1.7. **Claims Summary by Entity Type and Alarm Credit (AC) Category**
 
   -----------------------------------------------------------------------------
                     AC0        AC0        AC0         AC5        AC5        AC5
@@ -694,10 +715,6 @@ coverage amounts) that affect claims.
   
   Total           0.318     15,118      2,611       0.431     10,762        239
   -----------------------------------------------------------------------------
-
-  Table: (\#tab:RateAlarmCredit) Claims Summary by Entity Type and Alarm Credit (AC) Category
-  
-   
 
   -----------------------------------------------------------------------------
                    AC10      AC10        AC10        AC15       AC15       AC15
@@ -720,7 +737,6 @@ coverage amounts) that affect claims.
   Total           0.517     10,194        327       2.093     41,458      2,462
   -----------------------------------------------------------------------------
 
-  : Claims Summary by Entity Type and Alarm Credit (AC) Category
   
 `r HideRCode('RateAlarmCredit.1',"R Code for Claims Summary by Entity Type and Alarm Credit Category")`
 
@@ -797,10 +813,10 @@ steady charge that local property managers could utilize in their
 budgets.
 
 Having a single price for all policyholders is nice but hardly seems
-fair. For example, Table \@ref(tab:ClaimRateVar) suggests that schools have
+fair. For example, [Table 1.6] suggests that schools have
 higher aggregate claims than other entities and so should pay more. However,
 simply doing the calculation on an entity by entity basis is not right
-either. For example, we saw in Table \@ref(tab:RateAlarmCredit) that had we
+either. For example, we saw in [Table 1.7] that had we
 used this strategy, entities with a 15% alarm credit (for good behavior,
 having top alarm systems) would actually wind up paying more.
 
@@ -812,8 +828,7 @@ classification*.
 
 #### Renewing Insurance {-}
 
-Although property insurance is typically a one-year contract, Table
-\@ref(tab:CoverageBCIM) suggests that policyholders tend to renew; this is
+Although property insurance is typically a one-year contract, [Table 1.3] suggests that policyholders tend to renew; this is
 typical of general insurance. For renewing policyholders, in addition to
 their rating variables we have their claims history and this claims
 history can be a good predictor of future claims. For example, Table

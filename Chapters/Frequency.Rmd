@@ -119,29 +119,37 @@ Now we introduce two generating functions that are found to be useful when worki
 \[
 M_N(t) = \mathrm{E}~{[e^{tN}]} = \sum^{\infty}_{k=0} ~e^{tk}~ p_N(k), \quad t\in \mathbb{R}.
 \]
-We note that while $M_N(\cdot)$ is well defined as it is the expectation of a non-negative random variable ($e^{tN}$), though it can assume the value $\infty$. Note that for a count random variable, $M_N(\cdot)$ is finite valued on $(-\infty,0]$ with $M_N(0)=1$. The following theorem, whose proof can be found in [@billingsley] (pages 285-6), encapsulates the reason for its name.  
+We note that while $M_N(\cdot)$ is well defined as it is the expectation of a non-negative random variable ($e^{tN}$), though it can assume the value $\infty$. Note that for a count random variable, $M_N(\cdot)$ is finite valued on $(-\infty,0]$ with $M_N(0)=1$. The following theorem, whose proof can be found in @billingsley (pages 285-6), encapsulates the reason for its name.  
+
+***
+
+<a id=thm:2.1></a> 
+
+[Theorem 2.1]: \#thm:2.1
+
+**Theorem 2.1**
 
 <!-- \begin{theorem}\label{freq:thm1} -->
 
-```{theorem, freq-thm1}
 Let $N$ be a count random variable such that $\mathrm{E}~{[e^{t^\ast N}]}$ is finite for some $t^\ast>0$. We have the following:
 
-All moments of $N$ are finite, *i.e.*
+a.  All moments of $N$ are finite, *i.e.*
   
 $$
 \mathrm{E}{[N^r]}<\infty, \quad r > 0.
 $$
 
-The *mgf* can be used to *generate* its moments as follows:
+b.  The *mgf* can be used to *generate* its moments as follows:
 \[
 \left.\frac{{\rm d}^m}{{\rm d}t^m} M_N(t)\right\vert_{t=0}=\mathrm{E}[N^m], \quad m\geq 1.
 \]
-The *mgf* $M_N(\cdot)$ characterizes the distribution; in other words it uniquely specifies the distribution.
-```
+c.  The *mgf* $M_N(\cdot)$ characterizes the distribution; in other words it uniquely specifies the distribution.
+
+***
 
 Another reason that the *mgf* is very useful as a tool is that for two independent random variables $X$ and $Y$, with their mgfs existing in a neighborhood of $0$, the *mgf* of $X+Y$ is the product of their respective mgfs, that is, $M_{X+Y}(t) = M_{X}(t)M_{Y}(t)$, for small $t$.
 
-A related generating function to the *mgf* is called the `r Gloss('probability generating function (pgf)')`, and is a useful tool for random variables taking values in the non-negative integers. For a random variable $N$, by $P_N(\cdot)$ we denote its *pgf* and we define it as follows[^2]:
+A related generating function to the *mgf* is the `r Gloss('probability generating function (pgf)')`, and is a useful tool for random variables taking values in the non-negative integers. For a random variable $N$, by $P_N(\cdot)$ we denote its *pgf* and we define it as follows[^2]:
 
 $$
 P_N(s)=\mathrm{E}~{[s^N]}, \quad s\geq 0.
@@ -153,7 +161,7 @@ It is straightforward to see that if the *mgf* $M_N(\cdot)$ exists on $(-\infty,
 \[
 P_N(s)=M_N(\log(s)), \quad s<e^{t^\ast}.
 \]
-Moreover, if the *pgf* exists on an interval $[0,s^\ast)$ with $s^\ast>1$, then the *mgf* $M_N(\cdot)$ exists on $(-\infty,\log(s^\ast))$, and hence uniquely specifies the distribution of $N$ by Theorem \@ref(thm:freq-thm1). (As a reminder, throughout this text we use *log* as the natural logarithm, not the base ten (common) logarithm or other version.) The following result for *pgf* is an analog of Theorem \@ref(thm:freq-thm1), and in particular justifies its name.  
+Moreover, if the *pgf* exists on an interval $[0,s^\ast)$ with $s^\ast>1$, then the *mgf* $M_N(\cdot)$ exists on $(-\infty,\log(s^\ast))$, and hence uniquely specifies the distribution of $N$ by [Theorem 2.1]. (As a reminder, throughout this text we use *log* as the natural logarithm, not the base ten (common) logarithm or other version.) The following result for *pgf* is an analog of [Theorem 2.1], and in particular justifies its name.  
 
 <!-- \begin{theorem}\label{pgfthm} -->
 ```{theorem, pgfthm}
@@ -230,6 +238,7 @@ Also, using the fact that the variance of the sum of independent random variable
 Alternate derivations of the above moments are suggested in the exercises. One important observation, especially from the point of view of applications, is that the mean is greater than the variance unless $q=0$.  
 
 #### Poisson Distribution{#S:poisson-distribution}
+
 After the binomial distribution, the `r Gloss('Poisson distribution')` (named after the French polymath Simeon Denis Poisson) is probably the most well known of discrete distributions. This is partly due to  the fact that it arises naturally as the distribution of the count of the random occurrences of a type of event in a certain time period, if the rate of occurrences of such events is a constant. It also arises as the asymptotic limit of the binomial distribution with $m\rightarrow \infty$ and $mq\rightarrow \lambda$. 
 
 The Poisson distribution is parametrized by a single parameter usually denoted by $\lambda$ which takes values in $(0,\infty)$. Its *pmf* is given by 
@@ -248,15 +257,15 @@ M_N(t)=P_N(e^t)=e^{\lambda(e^t-1)}, t\in \mathbb{R}.
 Towards deriving its mean, we note that for the Poisson distribution
 \[
 kp_k=\begin{cases}
-0,  &k=0;\cr
-\lambda~p_{k-1}, &k\geq1.
+0,  &k=0 \cr
+\lambda~p_{k-1}, &k\geq1 .
 \end{cases}
 \]
-this can be checked easily. In particular, this implies that 
+This can be checked easily. In particular, this implies that 
 \[
 \mathrm{E}[{N}]=\sum_{k\geq 0} k~p_k =\lambda\sum_{k\geq 1} p_{k-1} = \lambda\sum_{j\geq 0} p_{j} =\lambda.
 \]
-In fact, more generally, using either a generalization of the above or using Theorem \@ref(thm:pgfthm), we see that
+In fact, more generally, using either a generalization of the above or using [Theorem 2.1], we see that
 \[
 \mathrm{E}{\prod\limits_{i=0}^{m-1} (N-i)}=\left.\frac{{\rm d}^m}{{\rm d}s^m} P_N(s)\right\vert_{s=1}=\lambda^m, \quad m\geq 1.
 \]
@@ -300,7 +309,7 @@ The above implies that the *mgf* is given by
   M_N(t) &= (1-\beta(e^t-1))^{-r}, \quad t < \log\left(1+\frac{1}{\beta}\right), \beta\geq0. 
 \end{aligned}
 \]
-We derive its moments using Theorem \@ref(thm:freq-thm1) as follows:
+We derive its moments using [Theorem 2.1] as follows:
 
 \begin{eqnarray*}
 \mathrm{E}[N]&=&M'(0)= \left. r\beta e^t (1-\beta(e^t-1))^{-r-1}\right\vert_{t=0}=r\beta;\\
@@ -317,7 +326,7 @@ Finally, we observe that the Poisson distribution also emerges as a limit of neg
 \]
 with the right hand side of the above equation being the *mgf* of the Poisson distribution with parameter $\lambda$.[^4]
 
-[^4]: For the theoretical basis underlying the above argument, see [@billingsley]. 
+[^4]: For the theoretical basis underlying the above argument, see @billingsley. 
 
 
 ```{r child = './Quizzes/Quiz22.html', eval = QUIZ}
@@ -354,10 +363,10 @@ and that for the negative binomial distribution
 \]
 The above relationships are all of the form
 
-$$
+\begin{equation}
 \frac{p_k}{p_{k-1}}=a+\frac{b}{k}, \quad k\geq 1; 
 (\#eq:ab0)
-$$
+\end{equation}
 
 this raises the question if there are any other distributions which satisfy this seemingly general recurrence relation. Note that the ratio on the left, the ratio of two probabilities, is non-negative.
 
@@ -464,7 +473,9 @@ The unique zero of $l'(\cdot)$ equals $1/3$, and since $l''(\cdot)$ is negative,
 
 [^6]: A slight benefit of working with $l(\cdot)$ is that constant terms in $L(\cdot)$ do not appear in $l'(\cdot)$ whereas they do in $L'(\cdot)$.
 
-```{r, berlik, echo=FALSE, fig.cap="Likelihood of a $(0,1,0)$ $3$-sample from Bernoulli", out.width='45%', fig.align='center'}
+(ref:berlik) **Likelihood of a $(0,1,0)$ $3$-sample from Bernoulli**
+
+```{r berlik, echo=FALSE, fig.cap='(ref:berlik)', out.width='45%', fig.align='center'}
 knitr::include_graphics("Figures/figure2.1.png")
 ```
 
@@ -524,10 +535,10 @@ l(m,q)= \sum_{i=1}^n \log\left(\binom{m}{x_i}\right) + \left({\sum_{i=1}^n x_i}\
 \]
 Note that since $m$ takes only non-negative integer values, we cannot use multivariate calculus to find the optimal values. Nevertheless, we can use single variable calculus to show that 
 
-$$
+\begin{equation}
 \hat{q}_{\rm MLE}\times \hat{m}_{\rm MLE}= \frac{1}{n}\sum_{i=1}^n X_i.  
 (\#eq:binmle)
-$$
+\end{equation}
 
 Towards this we note that for a fixed value of $m$, 
 \[
@@ -543,10 +554,10 @@ mq=\frac{1}{n}\sum_{i=1}^n X_i,
 \]
 and hence we establish equation \@ref(eq:binmle). The above reduces the task to the search for $\hat{m}_{\rm MLE}$, which is member of the set of the maximizers of 
 
-$$
+\begin{equation}
 L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right).
 (\#eq:binlikm)
-$$
+\end{equation}
 
 Note the likelihood would be zero for values of $m$ smaller than $\max\limits_{1\leq i \leq n}x_i$, and hence 
 \[
@@ -554,12 +565,12 @@ Note the likelihood would be zero for values of $m$ smaller than $\max\limits_{1
 \]
 Towards specifying an algorithm to compute $\hat{m}_{\rm MLE}$, we first point out that for some data sets $\hat{m}_{\rm MLE}$ could equal $\infty$, indicating that a Poisson distribution would render a better fit than any binomial distribution. This is so as the binomial distribution with parameters $(m,\overline{x}/m)$ approaches the Poisson distribution with parameter $\overline{x}$ with $m$ approaching infinity. The fact that some data sets **prefer** a Poisson distribution should not be surprising since in the above sense the set of Poisson distribution is on the boundary of the set of binomial distributions. 
 
-Interestingly, in [@olkin1981] they show that if the sample mean is less than or equal to the sample variance then $\hat{m}_{\rm MLE}=\infty$; otherwise, there exists a finite $m$ that maximizes equation \@ref(eq:binlikm). In Figure \@ref(fig:MLEm) below we display the plot of $L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)$ for three different samples of size $5$; they differ only in the value of the sample maximum. The first sample of $(2,2,2,4,5)$ has the ratio of sample mean to sample variance greater than $1$ ($1.875$), the second sample of $(2,2,2,4,6)$ has the ratio equal to $1.25$ which is closer to $1$, and the third sample of $(2,2,2,4,7)$ has the ratio less than $1$ ($0.885$). For these three samples, as shown in Figure \@ref(fig:MLEm), $\hat{m}_{\rm MLE}$ equals $7$, $18$ and $\infty$, respectively. Note that the limiting value of $L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)$ as $m$ approaches infinity equals 
+Interestingly, in @olkin1981 they show that if the sample mean is less than or equal to the sample variance then $\hat{m}_{\rm MLE}=\infty$; otherwise, there exists a finite $m$ that maximizes equation \@ref(eq:binlikm). In Figure \@ref(fig:MLEm) below we display the plot of $L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)$ for three different samples of size $5$; they differ only in the value of the sample maximum. The first sample of $(2,2,2,4,5)$ has the ratio of sample mean to sample variance greater than $1$ ($1.875$), the second sample of $(2,2,2,4,6)$ has the ratio equal to $1.25$ which is closer to $1$, and the third sample of $(2,2,2,4,7)$ has the ratio less than $1$ ($0.885$). For these three samples, as shown in Figure \@ref(fig:MLEm), $\hat{m}_{\rm MLE}$ equals $7$, $18$ and $\infty$, respectively. Note that the limiting value of $L\left(m,\frac{1}{nm}\sum_{i=1}^n x_i\right)$ as $m$ approaches infinity equals 
 
-$$
+\begin{equation}
 \left(\prod_{i=1}^n x_i! \right)^{-1} \exp\left\{-\sum_{i=1}^n x_i\right\} \overline{x}^{n\overline{x}}. 
 (\#eq:Poilik)
-$$
+\end{equation}
 
 Also, note that Figure \@ref(fig:MLEm) shows that the *MLE* of $m$ is non-`r Gloss('robust', '2.4')`, *i.e.* changes in a small proportion of the data set can cause large changes in the estimator. 
 
@@ -570,8 +581,9 @@ The above discussion suggests the following simple algorithm:
 
 We note that if the underlying distribution is the binomial distribution with parameters $(m,q)$ (with $q>0$) then $\hat{m}_{MLE}$ equals $m$ for large sample sizes. Also, $\hat{q}_{MLE}$ will have an asymptotically normal distribution and converge with probability one to $q$.  
 
+(ref:MLEm) **Plot of $L(m,\\overline{x}/m)$ for a Binomial Distribution**
 
-```{r, MLEm, echo=FALSE, fig.cap="Plot of $L(m,\\overline{x}/m)$ for binomial distribution", out.width='80%', fig.align='center'}
+```{r MLEm, echo=FALSE, fig.cap='(ref:MLEm)', out.width='80%', fig.align='center'}
 knitr::include_graphics("Figures/figure2.2.png")
 ```
 
@@ -595,7 +607,7 @@ The above reduces the two dimensional optimization problem to a one-dimensional 
 \[
 l(r,\overline{x}/r)=\sum_{i=1}^n \log\binom{r+x_i-1}{x_i} -n(r+\overline{x}) \log(1+\overline{x}/r) +n\overline{x}\log(\overline{x}/r),
 \]
-with respect to $r$, with the maximizing $r$ being its *MLE* and $\hat{\beta}_{MLE}=\overline{x}/\hat{r}_{MLE}$. In [@levin1977] it is shown that if the sample variance is greater than the sample mean then there exists a unique $r>0$ that maximizes $l(r,\overline{x}/r)$ and hence a unique 
+with respect to $r$, with the maximizing $r$ being its *MLE* and $\hat{\beta}_{MLE}=\overline{x}/\hat{r}_{MLE}$. In @levin1977 it is shown that if the sample variance is greater than the sample mean then there exists a unique $r>0$ that maximizes $l(r,\overline{x}/r)$ and hence a unique 
 *MLE* for $r$ and $\beta$. Also, they show that if $\hat{\sigma}^2\leq \overline{x}$, then the negative binomial likelihood will be dominated by the Poisson likelihood with $\hat{\lambda}=\overline{x}$. In other words, a Poisson distribution offers a better fit to the data. The guarantee in the case of $\hat{\sigma}^2>\hat{\mu}$ permits us to use some algorithm to maximize $l(r,\overline{x}/r)$. Towards an alternate method of computing the likelihood, we note that 
 \[
 l(r,\overline{x}/r)=\sum_{i=1}^n \sum_{j=1}^{x_i}\log(r-1+j) - \sum_{i=1}^n\log(x_i!) - n(r+\overline{x}) \log(r+\overline{x}) + nr\log(r) + n\overline{x}\log(\overline{x}),
@@ -655,11 +667,15 @@ c(r,iter)
 *** 
 
 To summarize our discussion of `r Gloss('MLE')` for the $(a,b,0)$ class of distributions, in Figure \@ref(fig:MLEab0) below we plot the maximum value of the Poisson likelihood, $L(m,\overline{x}/m)$ for the binomial, and $L(r,\overline{x}/r)$ for the negative binomial, for the three samples of size $5$ given in [Table 2.1]. The data was constructed to cover the three orderings of the sample mean and variance. As show in the Figure \@ref(fig:MLEab0), and supported by theory, if $\hat{\mu}<\hat{\sigma}^2$ then the negative binomial results in a higher maximum likelihood value; if $\hat{\mu}=\hat{\sigma}^2$  the Poisson has the highest likelihood value; and finally in the case that $\hat{\mu}>\hat{\sigma}^2$ the binomial gives a better fit than the others. So before fitting a frequency data with an $(a,b,0)$ distribution, it is best to start with examining the ordering of $\hat{\mu}$ and $\hat{\sigma}^2$. We again emphasize that the Poisson is on the **boundary** of the  negative binomial and binomial distributions. So in the case that $\hat{\mu}\geq\hat{\sigma}^2$ ($\hat{\mu}\leq\hat{\sigma}^2$, resp.) the Poisson yields a better fit than the negative binomial 
-(binomial, resp.), which is indicated by $\hat{r}=\infty$ ($\hat{m}=\infty$, resp.).
+(binomial, resp.), which is indicated by $\hat{r}=\infty$ ($\hat{m}=\infty$, respectively).
+
+\newpage
 
 <a id=tab:2.1></a>  
 
 [Table 2.1]: \#tab:2.1
+
+Table 2.1. **Three Samples of Size 5**
 
 $$\begin{matrix}
 \begin{array}{c|c|c}
@@ -672,10 +688,10 @@ $$\begin{matrix}
 \end{array}
 \end{matrix}$$
 
-[Table 2.1] : Three Samples of Size $5$
 
+(ref:MLEab0) **Plot of** $(a,b,0)$ **Partially Maximized Likelihoods**
 
-```{r, MLEab0, echo=FALSE, fig.cap="Plot of $(a,b,0)$ Partially Maximized Likelihoods", out.width='80%', fig.align='center'}
+```{r MLEab0, echo=FALSE, fig.cap='(ref:MLEab0)', out.width='80%', fig.align='center'}
 knitr::include_graphics("Figures/figure2.3.png")
 ```
 
@@ -696,7 +712,7 @@ In this section, you learn how to:
 
 ***
 
-In the previous sections, we discussed three distributions with supports contained in the set of non-negative integers, which well cater to many insurance applications. Moreover, typically by allowing the parameters to be a function of known (to the insurer) `r Gloss('explanatory variables')` such as age, sex, geographic location (territory), and so forth, these distributions allow us to explain claim probabilities in terms of these  variables. The field of statistical study that studies such models is known as `r Gloss('regression analysis')` - it is an important topic of actuarial interest that we will not pursue in this book; see [@freesregression].
+In the previous sections, we discussed three distributions with supports contained in the set of non-negative integers, which well cater to many insurance applications. Moreover, typically by allowing the parameters to be a function of known (to the insurer) `r Gloss('explanatory variables')` such as age, sex, geographic location (territory), and so forth, these distributions allow us to explain claim probabilities in terms of these  variables. The field of statistical study that studies such models is known as `r Gloss('regression analysis')` - it is an important topic of actuarial interest that we will not pursue in this book; see @freesregression.
 
 There are clearly infinitely many other count distributions, and more importantly the above distributions by themselves do not cater to all practical needs. In particular, one feature of some insurance data is that the proportion of zero counts can be out of place with the proportion of other counts to be explainable by the above distributions. In the following we modify the above distributions to allow for arbitrary probability for zero count irrespective of the assignment of relative probabilities for the other counts. Another feature of a data set which is naturally comprised of `r Gloss('homogeneous')` subsets is that while the above distributions may provide good fits to each subset, they may fail to do so to the whole data set. Later we naturally extend the $(a,b,0)$ distributions to be able to cater to, in particular,  such data sets. 
   
@@ -708,10 +724,10 @@ As presented below, we modify the probability assigned to zero count by the $(a,
 
 **Definition**. A count distribution is a member of the $(a, b, 1)$ class if for some constants $a$ and $b$ the probabilities \(p_k\) satisfy 
 
-$$
+\begin{equation}
 \frac{p_k}{p_{k-1}}=a+\frac{b}{k},\quad k\geq 2.
 (\#eq:ab1)
-$$
+\end{equation}
 
 Note that since the recursion starts with $p_1$, and not $p_0$, we refer to this super-class of $(a,b,0)$ distributions by `r Gloss('(a,b,1)')`. To understand this class, recall that each valid pair of values for $a$ and $b$ of the $(a,b,0)$ class corresponds to a unique vector of probabilities $\{p_k\}_{k\geq 0}$. If we now look at the probability vector $\{\tilde{p}_k\}_{k\geq 0}$ given by
 \[
@@ -743,13 +759,14 @@ version with \((p_0^M=0.6)\).
 
 `r HideExample('2.5.1', 'Show Example Solution')`
 
-**Solution.** For the Poisson distribution as a member of the (\(a,b\),0) class, we have \(a=0\) and \(b=\lambda=2\). Thus, we may use the recursion \(p_k = \lambda p_{k-1}/k= 2 p_{k-1}/k\) for each type,
-after determining starting probabilities. The calculation of probabilities for $k\leq 3$ is shown in [Table 2.2].
+**Solution.** For the Poisson distribution as a member of the (\(a,b\),0) class, we have \(a=0\) and \(b=\lambda=2\). Thus, we may use the recursion \(p_k = \lambda p_{k-1}/k= 2 p_{k-1}/k\) for each type, after determining starting probabilities. The calculation of probabilities for $k\leq 3$ is shown in [Table 2.2].
 
 
 <a id=tab:2.2></a>  
 
 [Table 2.2]: \#tab:2.2
+
+Table 2.2. **Calculation of Probabilities for** $k\leq 3$ 
 
 $$\begin{matrix}
 \begin{array}{c|c|c|c}
@@ -768,7 +785,6 @@ p_3^M=p_2^M\left(\frac{\lambda}{3}\right)=0.083476\\\hline
 \end{array}
 \end{matrix}$$
 
-[Table 2.2] : Calculation of probabilities for $k\leq 3$ 
 
 </div>
 
@@ -796,10 +812,11 @@ In this section, you learn how to:
 In many applications, the underlying population consists of naturally defined sub-groups with some homogeneity within each sub-group. In such cases it is convenient to model the individual sub-groups, and in a ground-up manner model the whole population. As we shall see below, beyond the aesthetic appeal of the approach, it also extends the range of applications that can be catered to by standard parametric distributions. 
 
 Let $k$ denote the number of defined sub-groups in a population, and let $F_i$ denote the distribution of an observation drawn from the $i$-th subgroup. If we let $\alpha_i$ denote the proportion of the population in the $i$-th subgroup, with $\sum_{i=1}^k \alpha_i=1$,  then the distribution of a randomly chosen observation from the population, denoted by $F$, is given by 
-$$
+
+\begin{equation}
 F(x)=\sum_{i=1}^k \alpha_i \cdot F_i(x).
 (\#eq:mixdefn)
-$$
+\end{equation}
 
 The above expression can be seen as a direct application of the Law of Total Probability. As an example, consider a population of drivers split broadly into two sub-groups, those with at most five years of driving experience and those with more than five years experience. Let $\alpha$ denote the proportion of drivers with less than $5$ years experience, and $F_{\leq 5}$ and $F_{> 5}$ denote the distribution of the count of claims in a year for a driver in each group, respectively. Then the distribution of claim count of a randomly selected driver is given by 
 \[
@@ -812,10 +829,10 @@ An alternate definition of a `r Gloss('mixture distribution', '2.6')` is as foll
 
 In \@ref(eq:mixdefn) we see that the distribution function is a convex combination of the component distribution functions. This result easily extends to the probability mass function, the survival function, the raw moments, and the expectation as these are all linear mappings of the distribution function. We note that this is not true for central moments like the variance, and conditional measures like the hazard rate function. In the case of variance it is easily seen as 
 
-$$
+\begin{equation}
 \mathrm{Var}{[N_I]}=\mathrm{E}[{\mathrm{Var}[{N_I\vert I}]]} + \mathrm{Var}[{\mathrm{E}[{N_I|I}}]]=\sum_{i=1}^k \alpha_i \mathrm{Var}[{N_i}] + \mathrm{Var}[{\mathrm{E}[{N_I|I}}]] .
 (\#eq:LawTotalVariation)
-$$
+\end{equation}
 
 Appendix Chapter \@ref(C:AppB) provides additional background about this important expression.
 
@@ -827,6 +844,8 @@ In a certain town the number of common colds an individual will get in a year fo
 <a id=tab:2.3></a>  
 
 [Table 2.3]: \#tab:2.3
+
+Table 2.3. **The Distribution of the Population and the Mean Number of Colds**
 
 $$
 \begin{matrix}
@@ -841,7 +860,7 @@ $$
 \end{matrix}
 $$
 
-[Table 2.3] : The distribution of the population and the mean number of colds
+
 
 <!-- \def\labelenumi{\arabic{enumi}.} -->
 1. Calculate the probability that a randomly drawn person has 3 common colds in a year.
@@ -935,7 +954,7 @@ In this section, you learn how to:
 
 ***
 
-In the above we have discussed three basic frequency distributions, along with their extensions through zero modification/truncation and by looking at mixtures of these distributions. Nevertheless, these classes still remain parametric and hence by their very nature a small subset of the class of all possible frequency distributions (that is, the set of distributions on non-negative integers). Hence, even though we have talked about methods for estimating the unknown parameters, the *fitted* distribution is not be a good representation of the underlying distribution if the latter is **far** from the class of distribution used for modeling. In fact, it can be shown that the *maximum likelihood estimator* converges to a value such that the corresponding distribution is a Kullback-Leibler *projection* of the underlying distribution on the class of distributions used for modeling. Below we present one testing method - Pearson's chi-square statistic - to check for the `r Gloss('goodness of fit')` of the fitted distribution. For more details on the `r Gloss("Pearson's chi-square test")`, at an introductory mathematical statistics level, we refer the reader to Section 9.1 of [@zimmerman2015].
+In the above we have discussed three basic frequency distributions, along with their extensions through zero modification/truncation and by looking at mixtures of these distributions. Nevertheless, these classes still remain parametric and hence by their very nature a small subset of the class of all possible frequency distributions (that is, the set of distributions on non-negative integers). Hence, even though we have talked about methods for estimating the unknown parameters, the *fitted* distribution is not be a good representation of the underlying distribution if the latter is **far** from the class of distribution used for modeling. In fact, it can be shown that the *maximum likelihood estimator* converges to a value such that the corresponding distribution is a Kullback-Leibler *projection* of the underlying distribution on the class of distributions used for modeling. Below we present one testing method - Pearson's chi-square statistic - to check for the `r Gloss('goodness of fit')` of the fitted distribution. For more details on the `r Gloss("Pearson's chi-square test")`, at an introductory mathematical statistics level, we refer the reader to Section 9.1 of @zimmerman2015.
 
 In $1993$, a portfolio of $n=7,483$ automobile insurance policies from a major Singaporean insurance company had the distribution of auto accidents per policyholder as given in [Table 2.4].
 
@@ -943,6 +962,7 @@ In $1993$, a portfolio of $n=7,483$ automobile insurance policies from a major S
 
 [Table 2.4]: \#tab:2.4
 
+Table 2.4. **Singaporean Automobile Accident Data**
 
 $$\begin{matrix}
 \begin{array}{c|c|c|c|c|c|c}
@@ -954,7 +974,7 @@ $$\begin{matrix}
 \end{array}
 \end{matrix}$$
 
-[Table 2.4] : Singaporean Automobile Accident Data
+
 
 If we a fit a Poisson distribution, then the *MLE* for $\lambda$, the Poisson mean, is the sample mean which is given by 
 \[
@@ -966,6 +986,8 @@ Now if we use Poisson ($\hat{\lambda}_{MLE}$) as the fitted distribution, then a
 
 [Table 2.5]: \#tab:2.5
 
+Table 2.5. **Comparison of Observed to Fitted Counts: Singaporean Auto Data**
+
 $$\begin{matrix}
 \begin{array}{c|c|c}
 \hline
@@ -976,14 +998,14 @@ $$\begin{matrix}
 1 & 455 & 487.70 \\
 2 & 28 & 17.04 \\
 3 & 4 & 0.40 \\
-\geq4 & 0 & 0.01\\
+\geq 4 & 0 & 0.01\\
 \hline
 \text{Total} & 7,483 & 7,483.00\\
 \hline
 \end{array}
 \end{matrix}$$
 
-[Table 2.5] : Comparison of Observed to Fitted Counts: Singaporean Auto Data
+
 
 While the fit seems *reasonable*, a tabular comparison falls short of a statistical test of the hypothesis that the underlying distribution is indeed Poisson. The Pearson's chi-square statistic is a goodness of fit statistical measure that can be used for this purpose. To explain this statistic let us suppose that a dataset of size $n$ is grouped into $k$ cells with $m_k/n$ and $\hat{p}_k$, for $k=1\ldots,K$  being the observed and estimated probabilities of an observation belonging to the $k$-th cell, respectively. The Pearson's chi-square test statistic is then given by 
 \[

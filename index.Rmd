@@ -19,6 +19,8 @@ description: "Loss Data Analytics is an interactive, online, freely available te
 
 ```{r setup, include=FALSE}
 options(bookdown.render.file_scope = FALSE)
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.table.format = function() {if (knitr::is_latex_output()) 'latex' else 'pandoc'})
 ```
 
 # Preface {-}

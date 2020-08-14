@@ -207,7 +207,9 @@ Note that $\alpha  >  0,\ \theta  >  0$.
 
 The two panels in Figure \@ref(fig:gammapdf) demonstrate the effect of the scale and shape parameters on the gamma density function.
 
-```{r gammapdf, message = FALSE, warning = FALSE, fig.cap='Gamma Densities. The left-hand panel is with shape=2 and varying scale. \n The right-hand panel is with scale=100 and varying shape.', out.width='120%', fig.asp=.75, fig.align='center', echo=FALSE}
+(ref:gammapdf) **Gamma Densities**. The left-hand panel is with shape=2 and varying scale. The right-hand panel is with scale=100 and varying shape.
+
+```{r gammapdf, message = FALSE, warning = FALSE, fig.cap='(ref:gammapdf)', out.width='120%', fig.asp=.75, fig.align='center', echo=FALSE}
 par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
 
 # Varying Scale Gamma Densities
@@ -284,15 +286,16 @@ The `r Gloss('Pareto distribution')`, named after the Italian economist Vilfredo
 
 The continuous variable $X$ is said to have the (two parameter) Pareto distribution with shape parameter $\alpha$ and scale parameter $\theta$ if its `r Gloss('pdf')` is given by
 
-$$
+\begin{equation}
 f_{X}\left( x \right) = \frac{\alpha\theta^{\alpha}}{\left( x + \theta \right)^{\alpha + 1}} \ \ \  x  >  0, \ \alpha >  0, \ \theta > 0.
 (\#eq:Pareto)
-$$
+\end{equation}
 
 The two panels in Figure \@ref(fig:Paretopdf)  demonstrate the effect of the scale and shape parameters on the Pareto density function. There are other formulations of the Pareto distribution including a one parameter version given in Appendix Section \@ref(S:ContinuousDistributions). Henceforth, when we refer the Pareto distribution, we mean the version given through the *pdf* in equation \ref(eq:Pareto).
 
+(ref:Paretopdf) **Pareto Densities**. The left-hand panel is with scale=2000 and varying shape.  The right-hand panel is with shape=3 and varying scale.
 
-```{r Paretopdf, message = FALSE, warning = FALSE, fig.cap='Pareto Densities. The left-hand panel is with scale=2000 and varying shape.  The right-hand panel is with shape=3 and varying scale', out.width='120%', fig.asp=.75, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
+```{r Paretopdf, message = FALSE, warning = FALSE, fig.cap='(ref:Paretopdf)', fig.asp=.75, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
 par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
 
 # Varying Scale Pareto Densities
@@ -373,7 +376,9 @@ f_{X}\left( x \right) = \frac{\alpha}{\theta}\left( \frac{x}{\theta} \right)^{\a
 $$
 The two panels in Figure \@ref(fig:Weibullpdf) demonstrate the effects of the scale and shape parameters on the Weibull density function.
 
-```{r Weibullpdf, message = FALSE, warning = FALSE, fig.cap='Weibull Densities. The left-hand panel is with shape=3 and varying scale. The right-hand panel is with scale=100 and varying shape.', out.width='120%', fig.asp=.75, fig.align='center', echo=FALSE}
+(ref:Weibullpdf) **Weibull Densities**. The left-hand panel is with shape=3 and varying scale. The right-hand panel is with scale=100 and varying shape.
+
+```{r Weibullpdf, message = FALSE, warning = FALSE, fig.cap='(ref:Weibullpdf)', out.width='120%', fig.asp=.75, fig.align='center', echo=FALSE}
 par(mfrow=c(1, 2), mar = c(4, 4, .1, .1))
 
 # Varying Scale Weibull Densities
@@ -457,10 +462,10 @@ The `r Gloss('Generalized Beta Distribution of the Second Kind')` (*GB2*) was in
 
 The continuous variable $X$ is said to have the *GB2* distribution with parameters $\sigma$, $\theta$, $\alpha_1$ and $\alpha_2$ if its *pdf* is given by
 
-$$
+\begin{equation}
 f_{X}\left( x \right) = \frac{(x/\theta)^{\alpha_2/\sigma}}{x \sigma~\mathrm{B}\left( \alpha_1,\alpha_2\right)\left\lbrack 1 + \left( x/\theta \right)^{1/\sigma} \right\rbrack^{\alpha_1 + \alpha_2}} \ \ \ \text{for } x > 0,
-  (\#eq:GB2Distn)
-$$
+(\#eq:GB2Distn)
+\end{equation}
 
 $\sigma,\theta,\alpha_1,\alpha_2  > 0$, and where the beta function $\mathrm{B}\left( \alpha_1,\alpha_2 \right)$ is defined as
 
@@ -1390,8 +1395,9 @@ $$
 
 Figure \@ref(fig:LoglikeOnePareto) shows the logarithmic likelihood as a function of the parameter $\alpha$.
 
+(ref:LoglikeOnePareto) **Logarithmic Likelihood for a One-Parameter Pareto**
 
-```{r LoglikeOnePareto, message = FALSE, warning = FALSE, fig.cap='Logarithmic Likelihood for a One-Parameter Pareto', out.width='60%', fig.align='center', echo=FALSE}
+```{r LoglikeOnePareto, message = FALSE, warning = FALSE, fig.cap='(ref:LoglikeOnePareto)', out.width='60%', fig.align='center', echo=FALSE}
 c1 <- log(521)+log(658)+log(702)+log(819)+log(1217)
 alpha <- seq(1, 5, by = 0.005)
 loglike <- function(alpha){5*alpha*log(500)+5*log(alpha)-(alpha+1)*c1}
@@ -1798,7 +1804,9 @@ legend("topleft", c("log(Expend)", "Exponential", "Gamma", "Pareto",
 
 </div>
 
-```{r MLEComparea, ref.label = 'MLECompare', message = FALSE, warning = FALSE, fig.cap='Density Comparisons for the Wisconsin Property Fund', fig.align='center', echo = FALSE}
+(ref:MLEComparea) **Density Comparisons for the Wisconsin Property Fund**
+
+```{r MLEComparea, ref.label = 'MLECompare', message = FALSE, warning = FALSE, fig.cap='(ref:MLEComparea)', fig.align='center', echo = FALSE}
 
 ```
 
