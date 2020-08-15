@@ -969,7 +969,7 @@ $$\begin{matrix}
 \hline
 \text{Count }(k) & 0 & 1 & 2 & 3 & 4 & \text{Total}\\
 \hline
-\text{No. of Policies with }k\text{ accidents }(m_k) & 6,996 & 455 & 28 & 4 & 0 & 7483\\
+\text{No. of Policies with }k\text{ accidents }(m_k) & 6,996 & 455 & 28 & 4 & 0 & 7,483\\
 \hline
 \end{array}
 \end{matrix}$$
@@ -988,8 +988,9 @@ Now if we use Poisson ($\hat{\lambda}_{MLE}$) as the fitted distribution, then a
 
 Table 2.5. **Comparison of Observed to Fitted Counts: Singaporean Auto Data**
 
-$$\begin{matrix}
-\begin{array}{c|c|c}
+$$
+\begin{matrix}
+\begin{array}{c|r|r}
 \hline
 \text{Count}  & \text{Observed}  & \text{Fitted Counts}\\
 (k) & (m_k) & \text{Using Poisson }(n\hat{p}_k)\\
@@ -1003,7 +1004,8 @@ $$\begin{matrix}
 \text{Total} & 7,483 & 7,483.00\\
 \hline
 \end{array}
-\end{matrix}$$
+\end{matrix}
+$$
 
 
 

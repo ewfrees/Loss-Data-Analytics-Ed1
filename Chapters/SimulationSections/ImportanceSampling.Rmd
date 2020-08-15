@@ -40,7 +40,9 @@ pic_ani = function(){
 
 </div>
 
-```{r sampleani1, animation.hook=ANIMATIONHOOK, fig.cap='Animated Demonstration of Draws In and Outside of (2,4)', eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF, cache = TRUE}
+(ref:sampleani1) **Animated Demonstration of Draws In and Outside of (2,4)**
+
+```{r sampleani1, animation.hook=ANIMATIONHOOK, fig.cap='(ref:sampleani1)', eval = ANIMATION, comment = "", fig.align='center', out.width='50%', fig.asp=.75, echo=SHOW_PDF, cache = TRUE}
 for (i in 1:numAnimation) {pic_ani()}
 ```
 

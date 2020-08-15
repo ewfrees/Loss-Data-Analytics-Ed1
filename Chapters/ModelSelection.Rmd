@@ -143,8 +143,8 @@ To generalize this concept, consider a distribution function $F(\cdot)$, which m
 To be precise, for a given $0<q<1$, define the $q$**th quantile** $q_F$ to be *any* number that satisfies
 
 \begin{equation}
-  F(q_F-) \le q \le F(q_F)
-  (\#eq:Quantile)
+F(q_F-) \le q \le F(q_F)
+(\#eq:Quantile)
 \end{equation}
 
 Here, the notation $F(x-)$ means to evaluate the function $F(\cdot)$ as a left-hand limit.
@@ -234,7 +234,7 @@ $$\hat{\pi}_{0.2} = (1-0.2) X_{(2)} + (0.2) X_{(3)} = 0.8 (15) + (0.2)(15) = 15.
 ***
 
 
-#### Density Estimators
+#### Density Estimators {#S:MS:Density}
 
 **Discrete Variable.** When the random variable is discrete, estimating the probability mass function $f(x) = \Pr(X=x)$ is straightforward. We simply use the sample average, defined to be 
 
@@ -251,8 +251,8 @@ where $n_j$ is the number of observations ($X_i$) that fall into the interval $[
 **Continuous Variable (not grouped).** Extending this notion to instances where we observe individual data, note that we can always create arbitrary groupings and use this formula. More formally, let $b>0$ be a small positive constant, known as a `r Gloss('bandwidth')`, and define a density estimator to be
 
 \begin{equation}
-  f_n(x) = \frac{1}{2nb} \sum_{i=1}^n I(x-b < X_i \le x + b)
-  (\#eq:KDF)
+f_n(x) = \frac{1}{2nb} \sum_{i=1}^n I(x-b < X_i \le x + b)
+(\#eq:KDF)
 \end{equation}
 
 `r HideProofTheory('kernel.1',"Show A Snippet of Theory")`
@@ -277,8 +277,8 @@ as $b\rightarrow  0$. That is, $f_n(x)$ is an `r Gloss('asymptotically unbiased'
 More generally, define the `r Gloss('kernel density estimator')` of the `r Gloss('pdf')` at $x$ as 
 
 \begin{equation} 
-  f_n(x) = \frac{1}{nb} \sum_{i=1}^n w\left(\frac{x-X_i}{b}\right) ,
-  (\#eq:kernelDens)
+f_n(x) = \frac{1}{nb} \sum_{i=1}^n w\left(\frac{x-X_i}{b}\right) ,
+(\#eq:kernelDens)
 \end{equation}
 
 where $w$ is a probability density function centered about 0. Note that equation \@ref(eq:KDF) is a special case of the kernel density estimator where $w(x) = \frac{1}{2}I(-1 < x \le 1)$, also known as the *uniform kernel*. Other popular choices are shown in [Table 4.1].
@@ -400,7 +400,7 @@ Then the kernel density estimate at $x=2.5$ is $$f_n(2.5) = \frac{1}{5(2)}\left(
 
 ***
 
-#### Plug-in Principle
+#### Plug-in Principle {#S:MS:PlugIn}
 
 One way to create a nonparametric estimator of some quantity is to use the *analog* or `r Gloss('plug-in principle')` where one replaces the unknown `r Gloss('cdf')` $F$ with a known estimate such as the empirical *cdf* $F_n$. So, if we are trying to estimate $\mathrm{E}~[\mathrm{g}(X)]=\mathrm{E}_F~[\mathrm{g}(X)]$ for a generic function *g*, then we define a nonparametric estimator to be $\mathrm{E}_{F_n}~[\mathrm{g}(X)]=n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)$.
 
@@ -900,17 +900,17 @@ Various researchers recommend different proportions for the allocation. @snee197
 $$y = \mathrm{g}\left(x_1, \ldots, x_k\right).$$
 One uses the training sample to develop an estimate of $\mathrm{g}$, say, $\hat{\mathrm{g}}$, and then calibrate the distance from the observed outcomes to the predictions using a criterion of the form
 
-$$
+\begin{equation}
 \sum_i \mathrm{d}(y_i,\hat{\mathrm{g}}\left(x_{i1}, \ldots, x_{ik}\right) ) .
 (\#eq:OutSampleCriter)
-$$
+\end{equation}
 
 Here, "d" is some measure of distance and the sum $i$ is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form $\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2$. In actuarial applications, Euclidean distance $\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|$ is often preferred because of the skewed nature of the data (large outlying values of $y$ can have a large effect on the measure). Chapter \@ref(C:PremiumFoundations) describes another measure, the `r Gloss('Gini index', '4.2')`, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).
 
 **Selecting a Distribution.** Still, our focus so far has been to select a distribution for a data set that can be used for actuarial modeling without additional inputs $x_1, \ldots, x_k$. Even in this more fundamental problem, the model validation approach is valuable. If we base all inference on only in-sample data, then there is a tendency to select more complicated models than needed. For example, we might select a four parameter GB2, generalized beta of the second kind, distribution when only a two parameter Pareto is needed. Information criteria such as `r Gloss('AIC')` and `r Gloss('BIC')` included penalties for model complexity and so provide some protection but using a test sample is the best guarantee to achieve parsimonious models. From a quote often attributed to Albert Einstein, we want to "use the simplest model as possible but no simpler."
 
 
-### Model Selection Based on Cross-Validation
+### Model Selection Based on Cross-Validation {#S:MS:Cross-Validation}
 
 Although out-of-sample validation is the gold standard in predictive modeling, it is not always practical to do so. The main reason is that we have limited sample sizes and the out-of-sample model selection criterion in equation \@ref(eq:OutSampleCriter) depends on a *random* split of the data. This means that different analysts, even when working the same data set and same approach to modeling, may select different models. This is likely in actuarial applications because we work with skewed data sets where there is a large chance of getting some very large outcomes and large outcomes may have a great influence on the parameter estimates.
 
@@ -1250,15 +1250,16 @@ $$
 
 To simplify the notation, define $\delta_i = I(X_i < C_{Ui})$ to be a binary variable that indicates right-censoring. Let $X_i^{\ast \ast} = \min(X_i, C_{Ui}) - C_{Li}$ be the amount that the observed variable exceeds the lower truncation limit. With this, the log-likelihood is 
 
-
-$$
-  l(\theta) =  - \sum_{i=1}^n \left((1-\delta_i) \log \theta + \frac{x_i^{\ast \ast}}{\theta}\right)
-  (\#eq:EXPloglik)
-$$
+\begin{equation}
+l(\theta) =  - \sum_{i=1}^n \left((1-\delta_i) \log \theta + \frac{x_i^{\ast \ast}}{\theta}\right)
+(\#eq:EXPloglik)
+\end{equation}
 
 Taking derivatives with respect to the parameter $\theta$ and setting it equal to zero yields the maximum likelihood estimator
 
-$$\widehat{\theta}  = \frac{1}{n_u} \sum_{i=1}^n  x_i^{\ast \ast},$$
+$$
+\widehat{\theta}  = \frac{1}{n_u} \sum_{i=1}^n  x_i^{\ast \ast},
+$$
 
 where $n_u = \sum_i (1-\delta_i)$ is the number of uncensored observations.
 
@@ -1395,7 +1396,7 @@ Thus, the probability that a claim is between 2000 and 6000 is $F_{100}(6000) - 
 
 ***
 
-#### Right-Censored Empirical Distribution Function
+#### Right-Censored Empirical Distribution Function {#S:MS:RightCensored}
 
 
 It can be useful to calibrate parametric estimators with nonparametric methods that do not rely on a parametric form of the distribution. The `r Gloss("product-limit estimator")` due to [@kaplan1958] is a well-known estimator of the distribution function in the presence of censoring. 
@@ -1417,15 +1418,16 @@ $$
 
 With this notation, the **product-limit estimator** of the distribution function is 
 
-$$
+\begin{equation}
 \hat{F}(x) =
 \left\{
 \begin{array}{ll}
 0 & x<t_{1} \\
 1-\prod_{j:t_{j} \leq x}\left( 1-\frac{s_j}{R_{j}}\right) & x \geq t_{1} 
 \end{array}
-\right. .(\#eq:KaplanMeier)
-$$
+\right. .
+(\#eq:KaplanMeier)
+\end{equation}
 
 For example, if $x$ is smaller than the smallest uncensored loss, then $x<t_1$ and $\hat{F}(x) =0$. As another example, if $x$ falls between then second and third smallest uncensored losses, then $x \in (t_2,t_3]$ and $\hat{F}(x) = 1 - \left(1- \frac{s_1}{R_{1}}\right)\left(1- \frac{s_2}{R_{2}}\right)$.
 

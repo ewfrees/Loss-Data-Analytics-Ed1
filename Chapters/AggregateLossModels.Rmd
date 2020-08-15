@@ -3,23 +3,27 @@
 # Aggregate Loss Models {#C:AggLossModels}
 
 
-*Chapter Preview*. This chapter introduces probability models for describing the aggregate (total) claims that arise from a portfolio of insurance contracts. We present two standard modeling approaches, the individual risk model and the collective risk model. Further, we discuss strategies for computing the distribution of the aggregate claims, including exact methods for special cases, recursion, and simulation. Finally, we examine the effects of individual policy modifications such as deductibles, coinsurance, and inflation, on the frequency and severity distributions, and thus the aggregate loss distribution.
+*Chapter Preview*. This chapter introduces probability models for describing the aggregate (total) claims that arise from a portfolio of insurance contracts. We present two standard modeling approaches, the individual risk model and the collective risk model. Further, we discuss strategies for computing the distribution of the aggregate claims, including exact methods for special cases, recursion, and simulation. Finally, we examine the effects of individual policy modifications such as deductibles, coinsurance, and inflation, on the frequency and severity distributions, and thus on the aggregate loss distribution.
 
 ## Introduction
 
 The objective of this chapter is to build a probability model to describe the aggregate claims by an insurance system occurring in a fixed time period. The insurance system could be a single policy, a group insurance contract, a `r Gloss('business line')`, or an entire book of an insurer's business. In this chapter, `r Gloss('aggregate claims')` refer to either the number or the amount of claims from a portfolio of insurance contracts. However, the modeling framework can be readily applied in the more general setup.
 
 Consider an insurance portfolio of $n$ individual contracts, and let $S$ denote the aggregate losses of the portfolio in a given time period. There are two approaches to modeling the aggregate losses $S$, the individual risk model and the collective risk model. The `r Gloss('individual risk model')` emphasizes the loss from each individual contract and represents the aggregate losses as:
-$$\begin{aligned}
+
+$$
 S_n=X_1 +X_2 +\cdots+X_n,
-\end{aligned}$$
-where $X_i~(i=1,\ldots,n)$ is interpreted as the loss amount from the $i$th contract. It is worth stressing that $n$ denotes the number of contracts in the portfolio and thus is a fixed number rather than a random variable. For the individual risk model, one usually assumes $X_{i}$'s are independent. Because of different contract features such as `r Gloss('coverage')` and `r Gloss('exposure', '5.1')`, $X_{i}$'s are not necessarily identically
+$$
+
+where $X_i~(i=1,\ldots,n)$ is interpreted as the loss amount from the $i$th contract. It is worth stressing that $n$ denotes the number of contracts in the portfolio and thus is a fixed number rather than a random variable. For the individual risk model, one usually assumes the $X_{i}$'s are independent. Because of different contract features such as `r Gloss('coverage')` and `r Gloss('exposure', '5.1')`, the $X_{i}$'s are not necessarily identically
 distributed. A notable feature of the distribution of each $X_i$ is the probability mass at zero corresponding to the event of no claims.
 
 The `r Gloss('collective risk model')` represents the aggregate losses in terms of a frequency distribution and a severity distribution:
-$$\begin{aligned}
-S_N=X_1 +X_2 +\cdots+X_N.
-\end{aligned}$$
+
+$$
+S_N=X_1 +X_2 + \cdots + X_N .
+$$
+
 Here, one thinks of a random number of claims $N$ that may represent either the number of losses or the number of payments. In contrast, in the individual risk model, we use a fixed number of contracts $n$. We think of $X_1, X_2, \ldots, X_N$ as representing the amount of each loss. Each loss may or may not correspond to a unique contract. For instance, there may be multiple claims arising from a single contract. It is natural to think about $X_i>0$ because if $X_i=0$ then no claim has occurred. Typically we assume that conditional on $N=n$, $X_{1},X_{2},\ldots ,X_{n}$ are `r Gloss('iid')` random variables. The distribution of $N$ is known as the `r Gloss('frequency distribution')`, and the common distribution of $X$ is known as the `r Gloss('severity distribution')`. We further assume $N$ and $X$ are independent. With the collective risk model, we may decompose the aggregate losses into the frequency ($N$) process and the severity ($X$) model. This flexibility allows the analyst to comment on these two separate components. For example, sales growth due to lower underwriting standards could lead to higher frequency of losses but might not affect severity. Similarly, `r Gloss('inflation')` or other economic forces could have an impact on severity but not on frequency.
 
 
@@ -29,20 +33,26 @@ Here, one thinks of a random number of claims $N$ that may represent either the 
 ## Individual Risk Model
 
 As noted earlier, for the *individual risk model*, we think of $X_i$ as the loss from $i$th contract and interpret
-\begin{eqnarray*}
+
+$$
 S_n=X_1 +X_2 +\cdots+X_n ,
-\end{eqnarray*}
+$$
+
 to be the aggregate loss from all contracts in a portfolio or group of contracts. Here, the $X_i$'s are not necessarily identically distributed and we have 
-$$\begin{aligned}
-    {\rm E}(S_n) &= \sum_{i=1}^{n} {\rm E}(X_i)~.
-\end{aligned}$$
+$$
+{\rm E}(S_n) = \sum_{i=1}^{n} {\rm E}(X_i)~.
+$$
 
 Under the independence assumption on $X_i$'s (which implies $\mathrm{Cov}\left( X_i, X_j \right) = 0$ for all $i \neq j$), it can further be shown that
- $$\begin{aligned}
+
+$$
+\begin{aligned}
     {\rm Var}(S_n) &= \sum_{i=1}^{n} {\rm Var}(X_i) \\
     P_{S_n}(z) &= \prod_{i=1}^{n}P_{X_i}(z) \\
     M_{S_n}(t) &= \prod_{i=1}^{n}M_{X_i}(t), 
- \end{aligned}$$
+\end{aligned}
+$$
+
 where $P_{S_n}(\cdot)$ and $M_{S_n}(\cdot)$ are the probability generating function (*pgf*) and the moment generating function (*mgf*) of $S_n$, respectively. The distribution of each $X_i$ contains a probability mass at zero, corresponding to the event of no claims from the $i$th contract. One strategy to incorporate the zero mass in the distribution is to use the two-part framework:
 $$\begin{aligned}
 X_i = I_i\times B_i = \left\{\begin{array}{ll}
@@ -60,7 +70,7 @@ M_{S_n}(t) & =\prod_{i=1}^n \left( 1-q_i+q_i M_{B_i}(t) \right) .
 \end{aligned}$$
 A special case of the above model is when $B_i$ follows a degenerate distribution with $\mu_i=b_i$ and $\sigma^2_i=0$. One example is `r Gloss('term life insurance')` or a `r Gloss('pure endowment')` insurance where $b_i$ represents the insurance benefit amount of the $i$th contract.
 
-Another strategy to accommodate the zero mass in the loss from each contract is to consider them in aggregate on the portfolio level, as in the *collective risk model*. Here, the aggregate loss is $S_{N} = X_1 + \cdots + X_N$, where $N$ is a random variable representing the number of non-zero claims that occurred out of the entire group of contracts. Thus, not every contract in the portfolio may be represented in this sum, and $S_N=0$ when $N=0$. The collective risk model will be discussed in detail in the next section. 
+Another strategy to accommodate the zero mass in the loss from each contract is to consider them in aggregate at the portfolio level, as in the *collective risk model*. Here, the aggregate loss is $S_{N} = X_1 + \cdots + X_N$, where $N$ is a random variable representing the number of non-zero claims that occurred out of the entire group of contracts. Thus, not every contract in the portfolio may be represented in this sum, and $S_N=0$ when $N=0$. The collective risk model will be discussed in detail in the next section. 
 
 ***
 
@@ -237,7 +247,7 @@ $$\begin{aligned}
 
 *** 
 
-For small $n$, the distribution of $S_n$ is likely skewed, and the normal approximation would be a poor choice. To examine the aggregate loss distribution, we go back to the basics and first principles. Specifically, the distribution can be derived recursively. Define $S_k=X_1 + \cdots + X_k, k=1,\ldots,n$.
+For small $n$, the distribution of $S_n$ is likely skewed, and the normal approximation would be a poor choice. To examine the aggregate loss distribution, we go back to first principles. Specifically, the distribution can be derived recursively. Define $S_k=X_1 + \cdots + X_k, k=1,\ldots,n$.
 
 For $k=1$:
 $$F_{S_1}(s) = {\rm Pr}(S_1\leq s) = {\rm Pr}(X_1\leq s) = F_{X_1}(s).$$
@@ -275,12 +285,17 @@ F^{\ast n}\left(x\right) &=& \Pr(S_n \le x) = \Pr(S_{n-1} + X_n \le x)\\
 \end{array}\right.
 \end{eqnarray*}  
 
-When $X_i$'s are independent and belong to the same family of distributions, there are some simple cases where $S_n$ has a closed form. This makes it easy to compute $\Pr(S_n \le x)$. This property is known as *closed under convolution*, meaning the distribution of the sum of independent random variables belongs to the same family of distributions as that of the component variables, just with different parameters. Examples include:
+When the $X_i$'s are independent and belong to the same family of distributions, there are some simple cases where $S_n$ has a closed form. This makes it easy to compute $\Pr(S_n \le x)$. This property is known as *closed under convolution*, meaning the distribution of the sum of independent random variables belongs to the same family of distributions as that of the component variables, just with different parameters. [Table 5.1] provides a few examples.
+
+<a id=tab:5.1></a>  
+
+[Table 5.1]: \#tab:5.1
+
+Table 5.1. **Closed Form Partial Sum Distributions**
 
 $$
 {\small
 \begin{matrix}
-\text{Table of Closed Form Partial Sum Distributions}\\
 	\begin{array}{l|l|l} \hline
 		\text{Distribution of } X_i & \text{Abbreviation} & \text{Distribution of } S_n   \\ \hline
 \text{Normal with mean } \mu_i \text{ and variance } \sigma_i^2 & N(\mu_i,\sigma_i^2) & N\left(\sum_{i=1}^{n}\mu_i,~\sum_{i=1}^{n}\sigma_i^2\right) \\
@@ -585,7 +600,7 @@ F_{S_N}(3) &= p_0 + F^{\ast 1}(3) \ p_1 + F^{\ast 2}(3) \ p_2 + F^{\ast 3}(3) \ 
 ***
 
 
-When $\mathrm{E}(N)$ and $\mathrm{Var}(N)$ are known, one may also use the central limit theorem to approximate the distribution of $S_N$ as in the individual risk model. That is, $\frac{S_N - \mathrm{E}(S_N)}{\sqrt{\mathrm{Var}(S_N)}}$ approximately follows the standard normal distribution $N(0,1)$. 
+When $\mathrm{E}(N)$ and $\mathrm{Var}(N)$ are known, one may also use a type of central limit theorem to approximate the distribution of $S_N$ as in the individual risk model. That is, $\frac{S_N - \mathrm{E}(S_N)}{\sqrt{\mathrm{Var}(S_N)}}$ approximately follows the standard normal distribution $N(0,1)$. From this type of central limit theorem, the approximation works well if $\mathrm{E}[N]$ is sufficiently large.
 
 ***
 
@@ -672,7 +687,7 @@ $$\begin{aligned}
 
 ### Stop-loss Insurance
 
-Recall the coverage modifications on the individual policy level in Section \@ref(S:CoverageModifications). Insurance on the aggregate loss $S_N$, subjected to a `r Gloss('deductible')` $d$, is called \textit{net stop-loss insurance}. The expected value of the amount of the aggregate loss in excess of the deductible,
+Recall the coverage modifications on the individual policy level in Section \@ref(S:CoverageModifications). Insurance on the aggregate loss $S_N$, subject to a `r Gloss('deductible')` $d$, is called \textit{net stop-loss insurance}. The expected value of the amount of the aggregate loss in excess of the deductible,
 
 \begin{eqnarray*}
 \mathrm{E}[(S-d)_+]
@@ -851,7 +866,7 @@ P_{N^*} (z) &=1+ \frac{\beta}{1+ \beta} (z-1),\\
 M_{X^*} (t) &=\frac{1}{1- {{\theta(1+\beta)}} t}.
 \end{aligned}$$
 
-From (`r chapnum`.2), we note that $S_N$ is also equivalent to a 2-point mixture of 0 and $X^{*}$. Specifically,
+From (`r chapnum`.2), we note that $S_N$ is also equivalent to a two-point mixture of 0 and $X^{*}$. Specifically,
 
 $$
 \begin{array}{cl}
@@ -880,7 +895,7 @@ f_{S_N}(s) = \frac{\beta}{\theta (1+\beta)^2}\exp\left( -\frac{s}{
 ***  
 
 **Example `r chapnum`.3.9.**
-Consider a collective risk model with an exponential severity and an arbitrary frequency distribution. Recall that if $X_i\sim Exp(\theta)$, then the sum of *iid* exponential, $S_n=X_1+\cdots+X_n$, has a gamma distribution, i.e. $S_n\sim Gam(n,\theta)$. This has cdf:
+Consider a collective risk model with an exponential severity and an arbitrary frequency distribution. Recall that if $X_i\sim Exp(\theta)$, then the sum of *iid* exponential random variables, $S_n=X_1+\cdots+X_n$, has a gamma distribution, i.e. $S_n\sim Gam(n,\theta)$. This has cdf:
 \begin{eqnarray*}
 F_{X}^{\ast n}(s) &=& \Pr (S_n \le s) = \int_{0}^{s} \frac{1}{\Gamma(n)\theta^n}s^{n-1}\exp\left(-\frac{s}{\theta}\right) ds\\
 &=& 1-\sum_{j=0}^{n-1}\frac{1}{j!}\left( \frac{s}{\theta}\right)^j e^{-s/\theta } .
@@ -899,7 +914,7 @@ F_{S}\left(s\right) &= p_{0}+\sum_{n=1}^{\infty }p_n F_{X}^{\ast n}\left(s\right
 \end{array}
 $$
 
-where $\overline{P}_j =p_{j+1}+p_{j+2}+\cdots = \Pr (N>j)$ is the ``survival function'' of the claims count distribution. 
+where $\overline{P}_j =p_{j+1}+p_{j+2}+\cdots = \Pr (N>j)$ is the "survival function" of the claims count distribution. 
 
 ***
 
@@ -907,7 +922,7 @@ where $\overline{P}_j =p_{j+1}+p_{j+2}+\cdots = \Pr (N>j)$ is the ``survival fun
 
 In this section, we examine a particular compound distribution where the number of claims has a Poisson distribution and the amount of claims has a gamma distribution. This specification leads to what is known as a `r Gloss('Tweedie distribution')`. The Tweedie distribution has a mass probability at zero and a continuous component for positive values. Because of this feature, it is widely used in insurance claims modeling, where the zero mass is interpreted as no claims and the positive component as the amount of claims.
 
-Specifically, consider the collective risk model $S_N=X_1+\cdots+X_N$. Suppose that $N$ has a Poisson distribution with mean $\lambda$, and each $X_i$ has a gamma distribution `r Gloss('shape parameter')` $\alpha$ and `r Gloss('scale parameter')` $\gamma$. The Tweedie distribution is derived as the Poisson sum of gamma variables. To understand the distribution of $S_N$, we first examine the mass probability at zero. The aggregate loss is zero when no claims occurred, i.e.
+Specifically, consider the collective risk model $S_N=X_1+\cdots+X_N$. Suppose that $N$ has a Poisson distribution with mean $\lambda$, and each $X_i$ has a gamma distribution with `r Gloss('shape parameter')` $\alpha$ and `r Gloss('scale parameter')` $\gamma$. The Tweedie distribution is derived as the Poisson sum of gamma variables. To understand the distribution of $S_N$, we first examine the mass probability at zero. The aggregate loss is zero when no claims occurred, i.e.
 $${\rm Pr}(S_N=0)= {\rm Pr}(N=0)=e^{-\lambda}.$$
 In addition, note that $S_N$ conditional on $N=n$, denoted by $S_n=X_1+\cdots+X_n$, follows a gamma distribution with shape $n\alpha$ and scale $\gamma$. Thus, for $s>0$, the density of a Tweedie distribution can be calculated as
 $$\begin{aligned}
@@ -922,16 +937,26 @@ As another important feature, the Tweedie distribution is a special case of `r G
 \lambda=\frac{\mu^{2-p}}{\phi(2-p)},~~~~\alpha=\frac{2-p}{p-1},~~~~\frac{1}{\gamma}=\phi(p-1)\mu^{p-1} .
 \end{equation*}
 With the above relationships, one can show that the distribution of $S_N$ is
-$$f_{S_N}(s)=\exp\left[\frac{1}{\phi}\left(\frac{-s}{(p-1)\mu^{p-1}}-\frac{\mu^{2-p}}{2-p}\right)+C(s;\phi)\right]$$
+
+$$
+f_{S_N}(s)=\exp\left[\frac{1}{\phi}\left(\frac{-s}{(p-1)\mu^{p-1}}-\frac{\mu^{2-p}}{2-p}\right)+C(s;\phi)\right]
+$$
+
 where
-\begin{equation*}
-C(s;\phi/\omega_i)=\left\{\begin{array}{ll}
-                    \displaystyle 0 & {\rm if}~ y=0 \\
-                   \displaystyle \ln \sum\limits_{n\ge 1} \left\{\frac{(1/\phi)^{1/(p-1)}y^{(2-p)/(p-1)}}{(2-p)(p-1)^{(2-p)/(p-1)}}\right\}^{n}\frac{1}{n!\Gamma(n(2-p)/(p-1))s} & {\rm if}~ y>0 .
+
+$$
+C(s;\phi)=\left\{\begin{array}{ll}
+                    \displaystyle 0 & {\rm if}~ s=0 \\
+                   \displaystyle \log \sum\limits_{n \ge 1} \left\{\frac{(1/\phi)^{1/(p-1)}s^{(2-p)/(p-1)}}{(2-p)(p-1)^{(2-p)/(p-1)}}\right\}^{n}\frac{1}{n!~\Gamma[n(2-p)/(p-1)]s} & {\rm if}~ s>0 .
                   \end{array}\right.
-\end{equation*}
+$$
+
 Hence, the distribution of $S_N$ belongs to the `r Gloss('exponential family')` with parameters $\mu$, $\phi$, and $1 < p < 2$, and we have
-$${\rm E} (S_N)=\mu~~~~{\rm and}~~~~{\rm Var} (S_N)=\phi\mu^{p}.$$
+
+$$
+{\rm E} (S_N)=\mu~~~~{\rm and}~~~~{\rm Var} (S_N)=\phi\mu^{p}.
+$$
+
 This allows us to use the Tweedie distribution with generalized linear models to model claims. It is also worth mentioning the two limiting cases of the Tweedie model: $p\rightarrow 1$ results in the Poisson distribution and $p\rightarrow 2$ results in the gamma distribution. Thus, the Tweedie model accommodates the situations in between the gamma and Poisson distributions, which makes intuitive sense as it is the Poisson sum of gamma random variables.
 
 
@@ -943,7 +968,7 @@ This allows us to use the Tweedie distribution with generalized linear models to
 ## Computing the Aggregate Claims Distribution
 
 
-Computing the distribution of aggregate losses is a difficult, yet important, problem. As we have seen, for both individual risk model and collective risk model, computing the distribution frequently involves the evaluation of a $n$-fold convolution. To make the problem tractable, one strategy is to use a distribution that is easy to evaluate to approximate the aggregate loss distribution. For instance, normal distribution is a natural choice based on central limit theorem where parameters of the normal distribution can be estimated by matching the moments. This approach has its strength and limitations. The main advantage is the ease of computation. The disadvantage are: first, the size and direction of approximation error are unknown; second, the approximation may fail to capture some special features of the aggregate loss such as mass point at zero.
+Computing the distribution of aggregate losses is a difficult, yet important, problem. As we have seen, for both individual risk model and collective risk model, computing the distribution frequently involves the evaluation of a $n$-fold convolution. To make the problem tractable, one strategy is to use a distribution that is easy to evaluate to approximate the aggregate loss distribution. For instance, normal distribution is a natural choice based on central limit theorem where parameters of the normal distribution can be estimated by matching the moments. This approach has its strength and limitations. The main advantage is the ease of computation. The disadvantages are: first, the size and direction of approximation error are unknown; second, the approximation may fail to capture some special features of the aggregate loss such as mass point at zero.
 
 This section discusses two practical approaches to computing the distribution of aggregate loss, the recursive method and the simulation.
 
@@ -1003,16 +1028,18 @@ f_{S_N} (3) &= \frac{4}{5} \left[ f_X(1) f_{S_N}(2) + f_X(2)f_{S_N}(1) + f_X(3) 
 
 ### Simulation
 
-The distribution of aggregate loss can be evaluated using `r Gloss('Monte Carlo simulation')`. You can get a broad introduction to simulation procedures in Chapter \@ref(C:Simulation). For aggregate losses, the idea is that one can calculate the empirical distribution of $S_N$ using a random sample. The expected value and variance of the aggregate loss can also be estimated using the sample mean and sample variance of the simulated values. Below we summarize the simulation procedures for the aggregate loss models. Let $m$ be the size of the generated random sample of aggregate losses.
+The distribution of aggregate loss can be evaluated using `r Gloss('Monte Carlo simulation')`. You can get a broad introduction to simulation procedures in Chapter \@ref(C:Simulation). For aggregate losses, the idea is that one can calculate the empirical distribution of $S_N$ using a random sample. The expected value and variance of the aggregate loss can also be estimated using the sample mean and sample variance of the simulated values. 
 
-1. Individual Risk Model $S_n=X_1+\cdots+X_n$    
+We now summarize simulation procedures for aggregate loss models. Let $m$ be the size of the generated random sample of aggregate losses.
+
+1. Individual Risk Model: $S_n=X_1+\cdots+X_n$    
 
     + Let $j=1,\ldots,m$ be a counter. Start by setting $j=1$.
     + Generate each individual loss realization $x_{ij}$ for $i=1,\ldots,n$. For example, this can be done using the inverse transformation method (Section 6.2).
     + Calculate the aggregate loss $s_j = x_{1j} + \cdots + x_{nj}$.
     + Repeat the above two steps for $j=2,\ldots,m$ to obtain a size-$m$ sample of $S_n$, i.e. $\{s_1,\ldots,s_m\}$.
 
-2. Collective Risk Model $S_N=X_1+\cdots+X_N$  
+2. Collective Risk Model: $S_N=X_1+\cdots+X_N$  
 
     + Let $j=1, \ldots, m$ be a counter. Start by setting $j=1$.
     + Generate the number of claims $n_j$ from the frequency distribution $N$.
@@ -1024,19 +1051,19 @@ Given the random sample of $S$, the empirical distribution can be calculated as
 $$\hat{F}_S(s)=\frac{1}{m}\sum_{i=1}^{m}I(s_i\leq s),$$
 where $I(\cdot)$ is an indicator function. The `r Gloss('empirical distribution')` $\hat{F}_S(s)$ will `r Gloss('converge')` to ${F}_S(s)$ almost surely as the sample size $m\rightarrow \infty$.
 
-The above procedure assumes that the probability distributions, including the parameter values, of the frequency and severity distributions are known. In practice, one would need to first assume these distributions, estimate their parameters from the data, and then assess the quality of model fit using various model validation tools (see Chapter \@ref(C:ModelSelection)). For instance, the assumptions in the collective risk model suggest a two-stage estimation where one model is developed for the number of claims $N$ from the data on claim counts, and another model is developed for the severity of claims $X$ from the data on the amount of claims.
+The above procedure assumes that the probability distributions, including the parameter values, of the frequency and severity distributions are known. In practice, one would need to first assume these distributions, estimate their parameters from data, and then assess the quality of model fit using various model validation tools (see Chapter \@ref(C:ModelSelection)). For instance, the assumptions in the collective risk model suggest a two-stage estimation where one model is developed for the number of claims $N$ from data on claim counts, and another model is developed for the severity of claims $X$ from data on the amount of claims.
 
 ***
 
 **Example `r chapnum`.4.2.**
-Recall Example `r chapnum`.3.5 with an individual's claim frequency $N \sim Poi(\lambda=25)$ and claim severity $X \sim U(5,95)$. Using a simulated sample of 10000 observations, estimate the mean and variance of the aggregate loss $S_N$. In addition, use the simulated sample to estimate the probability that aggregate claims for this individual will exceed 2000 and compare with the normal approximation estimates from Example `r chapnum`.3.5.
+Recall Example `r chapnum`.3.5 with an individual's claim frequency $N$ has a Poisson distribution with mean $\lambda=25$ and claim severity $X$ is uniformly distributed on the interval $(5,95)$. Using a simulated sample of 10,000 observations, estimate the mean and variance of the aggregate loss $S_N$. In addition, use the simulated sample to estimate the probability that aggregate claims for this individual will exceed 2,000 and compare with the normal approximation estimates from Example `r chapnum`.3.5.
 
 `r HideExample('5.4.2','Show Example Solution')`
 
 **Solution.**
 We follow the algorithm for the collective risk model, where we first simulate frequencies $n_1,\ldots,n_{10000}$, and conditional on $n_j,~j=1,\ldots,10000$, simulate each individual loss $x_{ij},~i=1,\ldots n_j$. 
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, comment = NA}
 set.seed(4321)  # For reproducibility of results
 m <- 10000      # Number of observations to simulate
 lambda <- 25    # Parameter for frequency distribution N
@@ -1396,7 +1423,7 @@ $$\mathrm{E}(S)=\mathrm{E}(N) ~ \mathrm{E} \left(X^L \right)= 300 (75) = 22,500 
 *** 
 
 **Example `r chapnum`.5.6. Follow-Up.**
-What is the variance of the total claim payment, $\mathrm{Var~}S$?  
+What is the variance of the total claim payment, $\mathrm{Var~}(S)$?  
 
 
 `r HideExample('5.5.6','Show Example Solution')`
