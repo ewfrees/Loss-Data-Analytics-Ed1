@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <!-- Mathjax -->
@@ -479,7 +480,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.1" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#iterative-model-selection"><i class="fa fa-check"></i><b>4.2.1</b> Iterative Model Selection</a></li>
 <li class="chapter" data-level="4.2.2" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#model-selection-based-on-a-training-dataset"><i class="fa fa-check"></i><b>4.2.2</b> Model Selection Based on a Training Dataset</a></li>
 <li class="chapter" data-level="4.2.3" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#model-selection-based-on-a-test-dataset"><i class="fa fa-check"></i><b>4.2.3</b> Model Selection Based on a Test Dataset</a></li>
-<li class="chapter" data-level="4.2.4" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#model-selection-based-on-cross-validation"><i class="fa fa-check"></i><b>4.2.4</b> Model Selection Based on Cross-Validation</a></li>
+<li class="chapter" data-level="4.2.4" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:MS:Cross-Validation"><i class="fa fa-check"></i><b>4.2.4</b> Model Selection Based on Cross-Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:MS:ModifiedData"><i class="fa fa-check"></i><b>4.3</b> Estimation using Modified Data</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:MS:ModifiedData1"><i class="fa fa-check"></i><b>4.3.1</b> Parametric Estimation using Modified Data</a></li>
@@ -526,7 +527,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="C-Simulation.html"><a href="C-Simulation.html#S:Bootstrap"><i class="fa fa-check"></i><b>6.2</b> Bootstrapping and Resampling</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="C-Simulation.html"><a href="C-Simulation.html#bootstrap-foundations"><i class="fa fa-check"></i><b>6.2.1</b> Bootstrap Foundations</a></li>
-<li class="chapter" data-level="6.2.2" data-path="C-Simulation.html"><a href="C-Simulation.html#bootstrap-precision-bias-standard-deviation-and-mse"><i class="fa fa-check"></i><b>6.2.2</b> Bootstrap Precision: Bias, Standard Deviation, and MSE</a></li>
+<li class="chapter" data-level="6.2.2" data-path="C-Simulation.html"><a href="C-Simulation.html#S:Sim:Precision"><i class="fa fa-check"></i><b>6.2.2</b> Bootstrap Precision: Bias, Standard Deviation, and Mean Square Error</a></li>
 <li class="chapter" data-level="6.2.3" data-path="C-Simulation.html"><a href="C-Simulation.html#confidence-intervals"><i class="fa fa-check"></i><b>6.2.3</b> Confidence Intervals</a></li>
 <li class="chapter" data-level="6.2.4" data-path="C-Simulation.html"><a href="C-Simulation.html#S:ParametricBootStrap"><i class="fa fa-check"></i><b>6.2.4</b> Parametric Bootstrap</a></li>
 </ul></li>
@@ -867,24 +868,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \frac{1}{n} \sum_{i=1}^n X_i^k ,
 \]</span>
 which is the corresponding nonparametric estimator. In typical applications, <span class="math inline">\(k\)</span> is a positive integer, although it need not be in theory.</p>
-<p>An important special case is the first moment where <span class="math inline">\(k=1\)</span>. In this case, the prime symbol (<span class="math inline">\(\prime\)</span>) and the <span class="math inline">\(1\)</span> subscript are usually dropped and one uses <span class="math inline">\(\mu=\mu^{\prime}_1\)</span> to denote the population mean, or simply the <em>mean</em>. The corresponding sample estimator for <span class="math inline">\(\mu\)</span> is called the <em>sample mean</em>, denoted with a bar on top of the random variable:
-<span class="math display">\[
-\bar{X} =\frac{1}{n} \sum_{i=1}^n X_i .
-\]</span>
-Another type of summary measure of interest is the <span class="math inline">\(k\)</span><em>-th central moment</em>, <span class="math inline">\(\mathrm{E~} [(X-\mu)^k] = \mu_k\)</span>. (Sometimes, <span class="math inline">\(\mu^{\prime}_k\)</span> is called the <span class="math inline">\(k\)</span>-th <em>raw</em> moment to distinguish it from the central moment <span class="math inline">\(\mu_k\)</span>.). A nonparametric, or sample, estimator of <span class="math inline">\(\mu_k\)</span> is
-<span class="math display">\[
-\frac{1}{n} \sum_{i=1}^n \left(X_i - \bar{X}\right)^k .
-\]</span>
-The second central moment (<span class="math inline">\(k=2\)</span>) is an important case for which we typically assign a new symbol, <span class="math inline">\(\sigma^2 = \mathrm{E~} [(X-\mu)^2]\)</span>, known as the <em>variance</em>. Properties of sample moment estimator of the variance such as <span class="math inline">\(n^{-1}\sum_{i=1}^n \left(X_i - \bar{X}\right)^2\)</span> have been studied extensively but is not the only possible estimator. The most widely used version is one where the effective sample size is reduced by one, and so we define
-<span class="math display">\[
-s^2 = \frac{1}{n-1} \sum_{i=1}^n \left(X_i - \bar{X}\right)^2.
+<p>An important special case is the first moment where <span class="math inline">\(k=1\)</span>. In this case, the prime symbol (<span class="math inline">\(\prime\)</span>) and the <span class="math inline">\(1\)</span> subscript are usually dropped and one uses <span class="math inline">\(\mu=\mu^{\prime}_1\)</span> to denote the population mean, or simply the <em>mean</em>. The corresponding sample estimator for <span class="math inline">\(\mu\)</span> is called the <em>sample mean</em>, denoted with a bar on top of the random variable:</p>
+<p><span class="math display">\[
+\overline{X} =\frac{1}{n} \sum_{i=1}^n X_i .
 \]</span></p>
-<p>Dividing by <span class="math inline">\(n-1\)</span> instead of <span class="math inline">\(n\)</span> matters little when you have a large sample size <span class="math inline">\(n\)</span> as is common in insurance applications. The <em>sample variance</em> estimator <span class="math inline">\(s^2\)</span> is <a href="#" class="tooltip" style="color:green"><em>unbiased</em><span style="font-size:8pt">An estimator that has no bias, that is, the expected value of an estimator equals the parameter being estimated.</span></a> in the sense that <span class="math inline">\(\mathrm{E~} s^2 = \sigma^2\)</span>, a desirable property particularly when interpreting results of an analysis.</p>
+<p>Another type of summary measure of interest is the <span class="math inline">\(k\)</span><em>-th central moment</em>, <span class="math inline">\(\mathrm{E~} [(X-\mu)^k] = \mu_k\)</span>. (Sometimes, <span class="math inline">\(\mu^{\prime}_k\)</span> is called the <span class="math inline">\(k\)</span>-th <em>raw</em> moment to distinguish it from the central moment <span class="math inline">\(\mu_k\)</span>.). A nonparametric, or sample, estimator of <span class="math inline">\(\mu_k\)</span> is
+<span class="math display">\[
+\frac{1}{n} \sum_{i=1}^n \left(X_i - \overline{X}\right)^k .
+\]</span>
+The second central moment (<span class="math inline">\(k=2\)</span>) is an important case for which we typically assign a new symbol, <span class="math inline">\(\sigma^2 = \mathrm{E~} [(X-\mu)^2]\)</span>, known as the <em>variance</em>. Properties of the sample moment estimator of the variance such as <span class="math inline">\(n^{-1}\sum_{i=1}^n \left(X_i - \overline{X}\right)^2\)</span> have been studied extensively but is not the only possible estimator. The most widely used version is one where the effective sample size is reduced by one, and so we define
+<span class="math display">\[
+s^2 = \frac{1}{n-1} \sum_{i=1}^n \left(X_i - \overline{X}\right)^2.
+\]</span></p>
+<p>Dividing by <span class="math inline">\(n-1\)</span> instead of <span class="math inline">\(n\)</span> matters little when you have a large sample size <span class="math inline">\(n\)</span> as is common in insurance applications. The <em>sample variance</em> estimator <span class="math inline">\(s^2\)</span> is <a href="#" class="tooltip" style="color:green"><em>unbiased</em><span style="font-size:8pt">An estimator that has no bias, that is, the expected value of an estimator equals the parameter being estimated.</span></a> in the sense that <span class="math inline">\(\mathrm{E~} [s^2] = \sigma^2\)</span>, a desirable property particularly when interpreting results of an analysis.</p>
 </div>
 <div id="empirical-distribution-function" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Empirical Distribution Function</h4>
-<p>We have seen how to compute nonparametric estimators of the <span class="math inline">\(k\)</span>th moment <span class="math inline">\(\mathrm{E~} X^k\)</span>. In the same way, for any known function <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, we can estimate <span class="math inline">\(\mathrm{E~} \mathrm{g}(X)\)</span> using <span class="math inline">\(n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>.</p>
-<p>Now consider the function <span class="math inline">\(\mathrm{g}(X) = I(X \le x)\)</span> for a fixed <span class="math inline">\(x\)</span>. Here, the notation <span class="math inline">\(I(\cdot)\)</span> is the <a href="#" class="tooltip" style="color:green"><em>indicator</em><span style="font-size:8pt">A categorical variable that has only two groups. the numerical values are usually taken to be one to indicate the presence of an attribute, and zero otherwise. another name for a binary variable.</span></a> function; it returns 1 if the event <span class="math inline">\((\cdot)\)</span> is true and 0 otherwise. For this choice of <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, the expected value is <span class="math inline">\(\mathrm{E~} I(X \le x) = \Pr(X \le x) = F(x)\)</span>, the distribution function evaluated at <span class="math inline">\(x\)</span>. Using the <a href="#" class="tooltip" style="color:green"><em>analog principle</em><span style="font-size:8pt"></span></a>, we define the nonparametric estimator of the distribution function</p>
+<p>We have seen how to compute nonparametric estimators of the <span class="math inline">\(k\)</span>th moment <span class="math inline">\(\mathrm{E~} [X^k]\)</span>. In the same way, for any known function <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, we can estimate <span class="math inline">\(\mathrm{E~} [\mathrm{g}(X)]\)</span> using <span class="math inline">\(n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>.</p>
+<p>Now consider the function <span class="math inline">\(\mathrm{g}(X) = I(X \le x)\)</span> for a fixed <span class="math inline">\(x\)</span>. Here, the notation <span class="math inline">\(I(\cdot)\)</span> is the <a href="#" class="tooltip" style="color:green"><em>indicator</em><span style="font-size:8pt">A categorical variable that has only two groups. the numerical values are usually taken to be one to indicate the presence of an attribute, and zero otherwise. another name for a binary variable.</span></a> function; it returns 1 if the event <span class="math inline">\((\cdot)\)</span> is true and 0 otherwise. For this choice of <span class="math inline">\(\mathrm{g}(\cdot)\)</span>, the expected value is <span class="math inline">\(\mathrm{E~} [I(X \le x)] = \Pr(X \le x) = F(x)\)</span>, the distribution function evaluated at <span class="math inline">\(x\)</span>. Using the <a href="#" class="tooltip" style="color:green"><em>analog principle</em><span style="font-size:8pt"></span></a>, we define the nonparametric estimator of the distribution function</p>
 <p><span class="math display">\[
 \begin{aligned}
 F_n(x)
@@ -892,7 +893,7 @@ F_n(x)
 &amp;=  \frac{\text{number of observations less than or equal to }x}{n} . 
 \end{aligned}
 \]</span>
-As <span class="math inline">\(F_n(\cdot)\)</span> is based on only observations and does not assume a parametric family for the distribution, it is nonparametric and also known as the <a href="#" class="tooltip" style="color:green"><em>empirical distribution function</em><span style="font-size:8pt">The empirical distribution is a non-parametric estimate of the underlying distribution of a random variable. it directly uses the data observations to construct the distribution, with each observed data point in a size-n sample having probability 1/n. </span></a>.</p>
+As <span class="math inline">\(F_n(\cdot)\)</span> is based on only observations and does not assume a parametric family for the distribution, it is nonparametric and also known as the <a href="#" class="tooltip" style="color:green"><em>empirical distribution function</em><span style="font-size:8pt">The empirical distribution is a non-parametric estimate of the underlying distribution of a random variable. it directly uses the data observations to construct the distribution, with each observed data point in a size-n sample having probability 1/n. </span></a>. It is also known as the <em>empirical cumulative distribution function</em> and, in <code>R</code>, one can use the <code>ecdf(.)</code> function to compute it.</p>
 <p><strong>Example 4.1.1. Toy Data Set</strong>. To illustrate, consider a fictitious, or “toy,” data set of <span class="math inline">\(n=10\)</span> observations. Determine the empirical distribution function.</p>
 <p><span class="math display">\[
 {\small
@@ -908,7 +909,7 @@ X_i&amp; 10 &amp;15 &amp;15 &amp;15 &amp;20 &amp;23 &amp;23 &amp;23 &amp;23 &amp
 <a id="displayExample.4.1.1" href="javascript:toggleEX('toggleExample.4.1.1','displayExample.4.1.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.4.1.1" style="display: none">
-<p>You should check that the sample mean is <span class="math inline">\(\bar{X} = 19.7\)</span> and that the sample variance is <span class="math inline">\(s^2 =34.45556\)</span>. The corresponding empirical distribution function is</p>
+<p>You should check that the sample mean is <span class="math inline">\(\overline{X} = 19.7\)</span> and that the sample variance is <span class="math inline">\(s^2 =34.45556\)</span>. The corresponding empirical distribution function is</p>
 <p><span class="math display">\[
 \begin{aligned}
 F_n(x) &amp;=
@@ -924,10 +925,11 @@ F_n(x) &amp;=
 \right.\end{aligned}
 \]</span></p>
 <p>as shown in Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a>. The empirical distribution is generally discrete and continuous from the right.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:EDFToy"></span>
 <img src="LossDataAnalytics_files/figure-html/EDFToy-1.png" alt="Empirical Distribution Function of a Toy Example" width="60%" />
 <p class="caption">
-Figure 4.1: Empirical Distribution Function of a Toy Example
+Figure 4.1: <strong>Empirical Distribution Function of a Toy Example</strong>
 </p>
 </div>
 <h5 style="text-align: center;">
@@ -944,25 +946,27 @@ Figure 4.1: Empirical Distribution Function of a Toy Example
 <div id="S:MS:QuantileEstimator" class="section level4">
 <h4><span class="header-section-number">4.1.1.3</span> Quartiles, Percentiles and Quantiles</h4>
 <p>We have already seen in Section <a href="C-Severity.html#S:Chap3Moments">3.1.1</a> the <a href="#" class="tooltip" style="color:green"><em>median</em><span style="font-size:8pt">50th percentile of a definition, or middle value where half of the distribution lies below</span></a>, which is the number such that approximately half of a data set is below (or above) it. The <a href="#" class="tooltip" style="color:green"><em>first quartile</em><span style="font-size:8pt">The 25th percentile; the number such that approximately 25% of the data is below it.</span></a> is the number such that approximately 25% of the data is below it and the <a href="#" class="tooltip" style="color:green"><em>third quartile</em><span style="font-size:8pt">The 75th percentile; the number such that approximately 75% of the data is below it.</span></a> is the number such that approximately 75% of the data is below it. A <span class="math inline">\(100p\)</span> <a href="#" class="tooltip" style="color:green"><em>percentile</em><span style="font-size:8pt">A 100p-th percentile is the number such that 100 times p percent of the data is below it.</span></a> is the number such that <span class="math inline">\(100 \times p\)</span> percent of the data is below it.</p>
-<p>To generalize this concept, consider a distribution function <span class="math inline">\(F(\cdot)\)</span>, which may or may not be continuous, and let <span class="math inline">\(q\)</span> be a fraction so that <span class="math inline">\(0&lt;q&lt;1\)</span>. We want to define a <a href="#" class="tooltip" style="color:green"><em>quantile</em><span style="font-size:8pt">The q-th quantile is the point(s) at which the distribution function is equal to q, i.e. the inverse of the cumulative distribution function.</span></a>, say <span class="math inline">\(q_F\)</span>, to be a number such that <span class="math inline">\(F(q_F) \approx q\)</span>. Notice that when <span class="math inline">\(q = 0.5\)</span>, <span class="math inline">\(q_F\)</span> is the median; when <span class="math inline">\(q = 0.25\)</span>, <span class="math inline">\(q_F\)</span> is the first quartile, and so on. So, a quantile generalizes the concepts of median, quartiles, and percentiles.</p>
+<p>To generalize this concept, consider a distribution function <span class="math inline">\(F(\cdot)\)</span>, which may or may not be continuous, and let <span class="math inline">\(q\)</span> be a fraction so that <span class="math inline">\(0&lt;q&lt;1\)</span>. We want to define a <a href="#" class="tooltip" style="color:green"><em>quantile</em><span style="font-size:8pt">The q-th quantile is the point(s) at which the distribution function is equal to q, i.e. the inverse of the cumulative distribution function.</span></a>, say <span class="math inline">\(q_F\)</span>, to be a number such that <span class="math inline">\(F(q_F) \approx q\)</span>. Notice that when <span class="math inline">\(q = 0.5\)</span>, <span class="math inline">\(q_F\)</span> is the median; when <span class="math inline">\(q = 0.25\)</span>, <span class="math inline">\(q_F\)</span> is the first quartile, and so on. In the same way, when <span class="math inline">\(q = 0, 0.01, 0.02, \ldots, 0.99, 1.00\)</span>, the resulting <span class="math inline">\(q_F\)</span> is a percentile. So, a quantile generalizes the concepts of median, quartiles, and percentiles.</p>
 <p>To be precise, for a given <span class="math inline">\(0&lt;q&lt;1\)</span>, define the <span class="math inline">\(q\)</span><strong>th quantile</strong> <span class="math inline">\(q_F\)</span> to be <em>any</em> number that satisfies</p>
 <p><span class="math display" id="eq:Quantile">\[\begin{equation}
-  F(q_F-) \le q \le F(q_F)
-  \tag{4.1}
+F(q_F-) \le q \le F(q_F)
+\tag{4.1}
 \end{equation}\]</span></p>
 <p>Here, the notation <span class="math inline">\(F(x-)\)</span> means to evaluate the function <span class="math inline">\(F(\cdot)\)</span> as a left-hand limit.</p>
 <p>To get a better understanding of this definition, let us look at a few special cases. First, consider the case where <span class="math inline">\(X\)</span> is a continuous random variable so that the distribution function <span class="math inline">\(F(\cdot)\)</span> has no jump points, as illustrated in Figure <a href="C-ModelSelection.html#fig:Quantile1">4.2</a>. In this figure, a few fractions, <span class="math inline">\(q_1\)</span>, <span class="math inline">\(q_2\)</span>, and <span class="math inline">\(q_3\)</span> are shown with their corresponding quantiles <span class="math inline">\(q_{F,1}\)</span>, <span class="math inline">\(q_{F,2}\)</span>, and <span class="math inline">\(q_{F,3}\)</span>. In each case, it can be seen that <span class="math inline">\(F(q_F-)= F(q_F)\)</span> so that there is a unique quantile. Because we can find a unique inverse of the distribution function at any <span class="math inline">\(0&lt;q&lt;1\)</span>, we can write <span class="math inline">\(q_F= F^{-1}(q)\)</span>.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:Quantile1"></span>
 <img src="LossDataAnalytics_files/figure-html/Quantile1-1.png" alt="Continuous Quantile Case" width="60%" />
 <p class="caption">
-Figure 4.2: Continuous Quantile Case
+Figure 4.2: <strong>Continuous Quantile Case</strong>
 </p>
 </div>
 <p>Figure <a href="C-ModelSelection.html#fig:Quantile2">4.3</a> shows three cases for distribution functions. The left panel corresponds to the continuous case just discussed. The middle panel displays a jump point similar to those we already saw in the empirical distribution function of Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a>. For the value of <span class="math inline">\(q\)</span> shown in this panel, we still have a unique value of the quantile <span class="math inline">\(q_F\)</span>. Even though there are many values of <span class="math inline">\(q\)</span> such that <span class="math inline">\(F(q_F-) \le q \le F(q_F)\)</span>, for a particular value of <span class="math inline">\(q\)</span>, there is only one solution to equation <a href="C-ModelSelection.html#eq:Quantile">(4.1)</a>. The right panel depicts a situation in which the quantile cannot be uniquely determined for the <span class="math inline">\(q\)</span> shown as there is a range of <span class="math inline">\(q_F\)</span>’s satisfying equation <a href="C-ModelSelection.html#eq:Quantile">(4.1)</a>.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:Quantile2"></span>
 <img src="LossDataAnalytics_files/figure-html/Quantile2-1.png" alt="Three Quantile Cases" width="90%" />
 <p class="caption">
-Figure 4.3: Three Quantile Cases
+Figure 4.3: <strong>Three Quantile Cases</strong>
 </p>
 </div>
 <hr />
@@ -974,7 +978,6 @@ Determine quantiles corresponding to the 20th, 50th, and 95th percentiles.</p>
 <div id="toggleExample.4.1.2" style="display: none">
 <p><strong>Solution</strong>.
 Consider Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a>. The case of <span class="math inline">\(q=0.20\)</span> corresponds to the middle panel of Figure Figure <a href="C-ModelSelection.html#fig:Quantile2">4.3</a>, so the 20th percentile is 15. The case of <span class="math inline">\(q=0.50\)</span> corresponds to the right panel, so the median is any number between 20 and 23 inclusive. Many software packages use the average 21.5 (e.g. <code>R</code>, as seen below). For the 95th percentile, the solution is 30. We can see from Figure <a href="C-ModelSelection.html#fig:EDFToy">4.1</a> that 30 also corresponds to the 99th and the 99.99th percentiles.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">quantile</span>(xExample, <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>), <span class="dt">type=</span><span class="dv">6</span>)</a></code></pre></div>
 <pre><code>##  20%  50%  95% 
 ## 15.0 21.5 30.0</code></pre>
 </div>
@@ -991,14 +994,14 @@ Determine the 50th and 20th smoothed percentiles.</p>
 </h5>
 <div id="toggleExample.4.1.3" style="display: none">
 <p><strong>Solution</strong>
-Take <span class="math inline">\(n=10\)</span> and <span class="math inline">\(q=0.5\)</span>. Then, <span class="math inline">\(j=\lfloor(11)0.5 \rfloor= \lfloor5.5 \rfloor=5\)</span> and <span class="math inline">\(h=(11)(0.5)-5=0.5\)</span>. Then the 0.5-th smoothed empirical quantile is
+Take <span class="math inline">\(n=10\)</span> and <span class="math inline">\(q=0.5\)</span>. Then, <span class="math inline">\(j=\lfloor(11)(0.5) \rfloor= \lfloor 5.5 \rfloor=5\)</span> and <span class="math inline">\(h=(11)(0.5)-5=0.5\)</span>. Then the 0.5-th smoothed empirical quantile is
 <span class="math display">\[\hat{\pi}_{0.5} = (1-0.5) X_{(5)} + (0.5) X_{(6)} = 0.5 (20) + (0.5)(23) = 21.5.\]</span>
-Now take <span class="math inline">\(n=10\)</span> and <span class="math inline">\(q=0.2\)</span>. In this case, <span class="math inline">\(j=\lfloor(11)0.2\rfloor=\lfloor 2.2 \rfloor=2\)</span> and <span class="math inline">\(h=(11)(0.2)-2=0.2\)</span>. Then the 0.2-th smoothed empirical quantile is
+Now take <span class="math inline">\(n=10\)</span> and <span class="math inline">\(q=0.2\)</span>. In this case, <span class="math inline">\(j=\lfloor(11)(0.2)\rfloor=\lfloor 2.2 \rfloor=2\)</span> and <span class="math inline">\(h=(11)(0.2)-2=0.2\)</span>. Then the 0.2-th smoothed empirical quantile is
 <span class="math display">\[\hat{\pi}_{0.2} = (1-0.2) X_{(2)} + (0.2) X_{(3)} = 0.8 (15) + (0.2)(15) = 15.\]</span></p>
 </div>
 <hr />
 </div>
-<div id="density-estimators" class="section level4">
+<div id="S:MS:Density" class="section level4">
 <h4><span class="header-section-number">4.1.1.4</span> Density Estimators</h4>
 <p><strong>Discrete Variable.</strong> When the random variable is discrete, estimating the probability mass function <span class="math inline">\(f(x) = \Pr(X=x)\)</span> is straightforward. We simply use the sample average, defined to be</p>
 <p><span class="math display">\[
@@ -1010,8 +1013,8 @@ f_n(x) = \frac{1}{n} \sum_{i=1}^n I(X_i = x),
 where <span class="math inline">\(n_j\)</span> is the number of observations (<span class="math inline">\(X_i\)</span>) that fall into the interval <span class="math inline">\([c_{j-1}, c_j)\)</span>.</p>
 <p><strong>Continuous Variable (not grouped).</strong> Extending this notion to instances where we observe individual data, note that we can always create arbitrary groupings and use this formula. More formally, let <span class="math inline">\(b&gt;0\)</span> be a small positive constant, known as a <a href="#" class="tooltip" style="color:green"><em>bandwidth</em><span style="font-size:8pt">A small positive constant that defines the width of the steps and the degree of smoothing.</span></a>, and define a density estimator to be</p>
 <p><span class="math display" id="eq:KDF">\[\begin{equation}
-  f_n(x) = \frac{1}{2nb} \sum_{i=1}^n I(x-b &lt; X_i \le x + b)
-  \tag{4.2}
+f_n(x) = \frac{1}{2nb} \sum_{i=1}^n I(x-b &lt; X_i \le x + b)
+\tag{4.2}
 \end{equation}\]</span></p>
 <h5 style="text-align: center;">
 <a id="displayTheory.kernel.1" href="javascript:toggleTheory('toggleTheory.kernel.1','displayCode.kernel.1');"><i><strong>Show A Snippet of Theory</strong></i></a>
@@ -1021,7 +1024,7 @@ where <span class="math inline">\(n_j\)</span> is the number of observations (<s
 <p>The idea is that the estimator <span class="math inline">\(f_n(x)\)</span> in equation <a href="C-ModelSelection.html#eq:KDF">(4.2)</a> is the average over <span class="math inline">\(n\)</span> <em>iid</em> realizations of a random variable with mean</p>
 <p><span class="math display">\[
 \begin{aligned}
-\mathrm{E~ } \frac{1}{2b} I(x-b &lt; X \le x + b) &amp;=  \frac{1}{2b}\left(F(x+b)-F(x-b)\right) \\
+\mathrm{E~ } \left[\frac{1}{2b} I(x-b &lt; X \le x + b)\right] &amp;=  \frac{1}{2b}\left(F(x+b)-F(x-b)\right) \\
 &amp; \rightarrow  F^{\prime}(x) = f(x),
 \end{aligned}
 \]</span></p>
@@ -1030,15 +1033,15 @@ where <span class="math inline">\(n_j\)</span> is the number of observations (<s
 </div>
 <p>More generally, define the <a href="#" class="tooltip" style="color:green"><em>kernel density estimator</em><span style="font-size:8pt">A nonparametric estimator of the density function of a random variable.</span></a> of the <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">Probability density function</span></a> at <span class="math inline">\(x\)</span> as</p>
 <p><span class="math display" id="eq:kernelDens">\[\begin{equation} 
-  f_n(x) = \frac{1}{nb} \sum_{i=1}^n w\left(\frac{x-X_i}{b}\right) ,
-  \tag{4.3}
+f_n(x) = \frac{1}{nb} \sum_{i=1}^n w\left(\frac{x-X_i}{b}\right) ,
+\tag{4.3}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(w\)</span> is a probability density function centered about 0. Note that equation <a href="C-ModelSelection.html#eq:KDF">(4.2)</a> is a special case of the kernel density estimator where <span class="math inline">\(w(x) = \frac{1}{2}I(-1 &lt; x \le 1)\)</span>, also known as the <em>uniform kernel</em>. Other popular choices are shown in <a href="#tab:41">Table 4.1</a>.</p>
 <p><a id=tab:41></a></p>
+<p>Table 4.1. <strong>Popular Kernel Choices</strong></p>
 <p><span class="math display">\[
 {\small
 \begin{matrix}
-\text{Table 4.1: Popular Kernel Choices}\\
 \begin{array}{l|cc}
 \hline
 \text{Kernel} &amp;  w(x) \\
@@ -1054,33 +1057,34 @@ where <span class="math inline">\(n_j\)</span> is the number of observations (<s
 <p>Here, <span class="math inline">\(\phi(\cdot)\)</span> is the standard normal density function. As we will see in the following example, the choice of bandwidth <span class="math inline">\(b\)</span> comes with a <a href="#" class="tooltip" style="color:green"><em>bias-variance tradeoff</em><span style="font-size:8pt">The tradeoff between model simplicity (underfitting; high bias) and flexibility (overfitting; high variance).</span></a> between matching local distributional features and reducing the volatility.</p>
 <hr />
 <p><strong>Example 4.1.4. Property Fund.</strong>
-Figure <a href="C-ModelSelection.html#fig:Density2">4.4</a> shows a histogram (with shaded gray rectangles) of logarithmic property claims from 2010. The (blue) thick curve represents a Gaussian kernel density where the bandwidth was selected automatically using an ad hoc rule based on the sample size and volatility of the data. For this dataset, the bandwidth turned out to be <span class="math inline">\(b=0.3255\)</span>. For comparison, the (red) dashed curve represents the density estimator with a bandwidth equal to 0.1 and the green smooth curve uses a bandwidth of 1. As anticipated, the smaller bandwidth (0.1) indicates taking local averages over less data so that we get a better idea of the local average, but at the price of higher volatility. In contrast, the larger bandwidth (1) smooths out local fluctuations, yielding a smoother curve that may miss perturbations in the local average. For actuarial applications, we mainly use the kernel density estimator to get a quick visual impression of the data. From this perspective, you can simply use the default ad hoc rule for bandwidth selection, knowing that you have the ability to change it depending on the situation at hand.</p>
+Figure <a href="C-ModelSelection.html#fig:Density2">4.4</a> shows a histogram (with shaded gray rectangles) of logarithmic property claims from 2010. The (blue) thick curve represents a Gaussian kernel density where the bandwidth was selected automatically using an ad hoc rule based on the sample size and volatility of these data. For this dataset, the bandwidth turned out to be <span class="math inline">\(b=0.3255\)</span>. For comparison, the (red) dashed curve represents the density estimator with a bandwidth equal to 0.1 and the green smooth curve uses a bandwidth of 1. As anticipated, the smaller bandwidth (0.1) indicates taking local averages over less data so that we get a better idea of the local average, but at the price of higher volatility. In contrast, the larger bandwidth (1) smooths out local fluctuations, yielding a smoother curve that may miss perturbations in the local average. For actuarial applications, we mainly use the kernel density estimator to get a quick visual impression of the data. From this perspective, you can simply use the default ad hoc rule for bandwidth selection, knowing that you have the ability to change it depending on the situation at hand.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:Density2"></span>
 <img src="LossDataAnalytics_files/figure-html/Density2-1.png" alt="Histogram of Logarithmic Property Claims with Superimposed Kernel Density Estimators" width="70%" />
 <p class="caption">
-Figure 4.4: Histogram of Logarithmic Property Claims with Superimposed Kernel Density Estimators
+Figure 4.4: <strong>Histogram of Logarithmic Property Claims with Superimposed Kernel Density Estimators</strong>
 </p>
 </div>
 <h5 style="text-align: center;">
 <a id="displayCode.kpdf" href="javascript:togglecode('toggleCode.kpdf','displayCode.kpdf');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.kpdf" style="display: none">
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">ClaimLev &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CLAIMLEVEL.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>); <span class="co">#nrow(ClaimLev); # 6258</span></a>
-<a class="sourceLine" id="cb20-2" title="2">ClaimData&lt;-<span class="kw">subset</span>(ClaimLev,Year<span class="op">==</span><span class="dv">2010</span>);     <span class="co">#2010 subset</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="co">#Density Comparison</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="kw">hist</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">35</span>),<span class="dt">xlab=</span><span class="st">&quot;Log Expenditures&quot;</span>, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>)</a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim)), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="fl">2.5</span>)</a>
-<a class="sourceLine" id="cb20-6" title="6"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span><span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span>.<span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb20-8" title="8"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;b=0.3255 (default)&quot;</span>, <span class="st">&quot;b=0.1&quot;</span>, <span class="st">&quot;b=1.0&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">lwd=</span><span class="kw">c</span>(<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb20-9" title="9">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">cex=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb20-10" title="10"><span class="co">#density(log(ClaimData$Claim))$bw   ##default bandwidth</span></a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">ClaimLev &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CLAIMLEVEL.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>); <span class="co">#nrow(ClaimLev); # 6258</span></a>
+<a class="sourceLine" id="cb19-2" title="2">ClaimData&lt;-<span class="kw">subset</span>(ClaimLev,Year<span class="op">==</span><span class="dv">2010</span>);     <span class="co">#2010 subset</span></a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="co">#Density Comparison</span></a>
+<a class="sourceLine" id="cb19-4" title="4"><span class="kw">hist</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">35</span>),<span class="dt">xlab=</span><span class="st">&quot;Log Expenditures&quot;</span>, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>)</a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim)), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lwd=</span><span class="fl">2.5</span>)</a>
+<a class="sourceLine" id="cb19-6" title="6"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span><span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb19-7" title="7"><span class="kw">lines</span>(<span class="kw">density</span>(<span class="kw">log</span>(ClaimData<span class="op">$</span>Claim), <span class="dt">bw=</span>.<span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb19-8" title="8"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;b=0.3255 (default)&quot;</span>, <span class="st">&quot;b=0.1&quot;</span>, <span class="st">&quot;b=1.0&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">lwd=</span><span class="kw">c</span>(<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb19-9" title="9">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">cex=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb19-10" title="10"><span class="co">#density(log(ClaimData$Claim))$bw   ##default bandwidth</span></a></code></pre></div>
 </div>
 <hr />
 <p>Nonparametric density estimators, such as the kernel estimator, are regularly used in practice. The concept can also be extended to give smooth versions of an empirical distribution function. Given the definition of the kernel density estimator, the <em>kernel estimator of the distribution function</em> can be found as</p>
 <p><span class="math display">\[
 \begin{aligned}
-\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}
+\tilde{F}_n(x) = \frac{1}{n} \sum_{i=1}^n W\left(\frac{x-X_i}{b}\right).\end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(W\)</span> is the distribution function associated with the kernel density <span class="math inline">\(w\)</span>. To illustrate, for the uniform kernel, we have <span class="math inline">\(w(y) = \frac{1}{2}I(-1 &lt; y \le 1)\)</span>, so</p>
 <p><span class="math display">\[
@@ -1128,21 +1132,22 @@ X_i &amp; \frac{x-X_i}{b} &amp; w\left(\frac{x-X_i}{b} \right) \\
 </div>
 <hr />
 </div>
-<div id="plug-in-principle" class="section level4">
+<div id="S:MS:PlugIn" class="section level4">
 <h4><span class="header-section-number">4.1.1.5</span> Plug-in Principle</h4>
-<p>One way to create a nonparametric estimator of some quantity is to use the <em>analog</em> or <a href="#" class="tooltip" style="color:green"><em>plug-in principle</em><span style="font-size:8pt">The plug-in principle or analog principle of estimation proposes that population parameters be estimated by sample statistics which have the same property in the sample as the parameters do in the population.</span></a> where one replaces the unknown <a href="#" class="tooltip" style="color:green"><em>cdf</em><span style="font-size:8pt">Cumulative distribution function</span></a> <span class="math inline">\(F\)</span> with a known estimate such as the empirical <em>cdf</em> <span class="math inline">\(F_n\)</span>. So, if we are trying to estimate <span class="math inline">\(\mathrm{E}~\mathrm{g}(X)=\mathrm{E}_F~\mathrm{g}(X)\)</span> for a generic function <em>g</em>, then we define a nonparametric estimator to be <span class="math inline">\(\mathrm{E}_{F_n}~\mathrm{g}(X)=n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>.</p>
+<p>One way to create a nonparametric estimator of some quantity is to use the <em>analog</em> or <a href="#" class="tooltip" style="color:green"><em>plug-in principle</em><span style="font-size:8pt">The plug-in principle or analog principle of estimation proposes that population parameters be estimated by sample statistics which have the same property in the sample as the parameters do in the population.</span></a> where one replaces the unknown <a href="#" class="tooltip" style="color:green"><em>cdf</em><span style="font-size:8pt">Cumulative distribution function</span></a> <span class="math inline">\(F\)</span> with a known estimate such as the empirical <em>cdf</em> <span class="math inline">\(F_n\)</span>. So, if we are trying to estimate <span class="math inline">\(\mathrm{E}~[\mathrm{g}(X)]=\mathrm{E}_F~[\mathrm{g}(X)]\)</span> for a generic function <em>g</em>, then we define a nonparametric estimator to be <span class="math inline">\(\mathrm{E}_{F_n}~[\mathrm{g}(X)]=n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)\)</span>.</p>
 <p>To see how this works, as a special case of <em>g</em> we consider the loss per payment random variable is <span class="math inline">\(Y = (X-d)_+\)</span> and the <em>loss elimination ratio</em> introduced in Section 3.4.1. We can express this as
 <span class="math display">\[
-LER(d) = \frac{\mathrm{E~}(X - (X-d)_+)}{\mathrm{E~}X} =\frac{\mathrm{E~}(\min(X,d) )}{\mathrm{E~}X} ,
+LER(d) = \frac{\mathrm{E~}[X - (X-d)_+]}{\mathrm{E~}[X]} =\frac{\mathrm{E~}[\min(X,d)]}{\mathrm{E~}[X]} ,
 \]</span>
 for a fixed deductible <span class="math inline">\(d\)</span>.</p>
-<p><strong>Example. 4.1.11. Bodily Injury Claims and Loss Elimination Ratios</strong></p>
+<p><strong>Example. 4.1.6. Bodily Injury Claims and Loss Elimination Ratios</strong></p>
 <p>We use a sample of 432 closed auto claims from Boston from <span class="citation">Derrig, Ostaszewski, and Rempala (<a href="#ref-derrig2001applications" role="doc-biblioref">2001</a>)</span>. Losses are recorded for payments due to bodily injuries in auto accidents. Losses are not subject to deductibles but are limited by various maximum coverage amounts that are also available in the data. It turns out that only 17 out of 432 (<span class="math inline">\(\approx\)</span> 4%) were subject to these policy limits and so we ignore these data for this illustration.</p>
 <p>The average loss paid is 6906 in U.S. dollars. Figure <a href="C-ModelSelection.html#fig:BIClaims">4.5</a> shows other aspects of the distribution. Specifically, the left-hand panel shows the empirical distribution function, the right-hand panel gives a nonparametric density plot.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:BIClaims"></span>
 <img src="LossDataAnalytics_files/figure-html/BIClaims-1.png" alt="Bodily Injury Claims. The left-hand panel gives the empirical distribution function. The right-hand panel presents a nonparametric density plot." width="672" />
 <p class="caption">
-Figure 4.5: Bodily Injury Claims. The left-hand panel gives the empirical distribution function. The right-hand panel presents a nonparametric density plot.
+Figure 4.5: <strong>Bodily Injury Claims.</strong> The left-hand panel gives the empirical distribution function. The right-hand panel presents a nonparametric density plot.
 </p>
 </div>
 <p>The impact of bodily injury losses can be mitigated by the imposition of limits or purchasing reinsurance policies (see Section 10.3). To quantify the impact of these risk mitigation tools, it is common to compute the <em>loss elimination ratio (LER)</em> as introduced in Section 3.4.1. The distribution function is not available and so must be estimated in some way. Using the plug-in principle, a nonparametric estimator can be defined as</p>
@@ -1150,10 +1155,11 @@ Figure 4.5: Bodily Injury Claims. The left-hand panel gives the empirical distri
 LER_n(d) = \frac{n^{-1} \sum_{i=1}^n \min(X_i,d)}{n^{-1} \sum_{i=1}^n X_i} = \frac{\sum_{i=1}^n \min(X_i,d)}{\sum_{i=1}^n X_i} .
 \]</span></p>
 <p>Figure <a href="C-ModelSelection.html#fig:LER">4.6</a> shows the estimator <span class="math inline">\(LER_n(d)\)</span> for various choices of <span class="math inline">\(d\)</span>. For example, at <span class="math inline">\(d=1,000\)</span>, we have <span class="math inline">\(LER_n(1000) \approx\)</span> 0.1442. Thus, imposing a limit of 1,000 means that expected retained claims are 14.42 percent lower when compared to expected claims with a zero deductible.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:LER"></span>
-<img src="LossDataAnalytics_files/figure-html/LER-1.png" alt="LER for Bodily Injury Claims. The figure presents the loss elimination ratio (LER) as a function of deductible $d$." width="672" />
+<img src="LossDataAnalytics_files/figure-html/LER-1.png" alt="LER for Bodily Injury Claims. The figure presents the loss elimination ratio (LER) as a function of deductible \(d\)." width="672" />
 <p class="caption">
-Figure 4.6: LER for Bodily Injury Claims. The figure presents the loss elimination ratio (LER) as a function of deductible <span class="math inline">\(d\)</span>.
+Figure 4.6: <strong>LER for Bodily Injury Claims.</strong> The figure presents the loss elimination ratio (LER) as a function of deductible <span class="math inline">\(d\)</span>.
 </p>
 </div>
 </div>
@@ -1161,42 +1167,46 @@ Figure 4.6: LER for Bodily Injury Claims. The figure presents the loss eliminati
 <div id="S:MS:ToolsModelSelection" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Tools for Model Selection and Diagnostics</h3>
 <p>The previous section introduced nonparametric estimators in which there was no parametric form assumed about the underlying distributions. However, in many actuarial applications, analysts seek to employ a parametric fit of a distribution for ease of explanation and the ability to readily extend it to more complex situations such as including explanatory variables in a regression setting. When fitting a parametric distribution, one analyst might try to use a gamma distribution to represent a set of loss data. However, another analyst may prefer to use a Pareto distribution. How does one determine which model to select?</p>
-<p>Nonparametric tools can be used to corroborate the selection of parametric models. Essentially, the approach is to compute selected summary measures under a fitted parametric model and to compare it to the corresponding quantity under the nonparametric model. As the nonparametric model does not assume a specific distribution and is merely a function of the data, it is used as a benchmark to assess how well the parametric distribution/model represents the data. This comparison may alert the analyst to deficiencies in the parametric model and sometimes point ways to improving the parametric specification. Procedures geared towards assessing the validity of a model are known as <a href="#" class="tooltip" style="color:green"><em>model diagnostics</em><span style="font-size:8pt">Procedures to assess the validity of a model</span></a>.</p>
+<p>Nonparametric tools can be used to corroborate the selection of parametric models. Essentially, the approach is to compute selected summary measures under a fitted parametric model and to compare it to the corresponding quantity under the nonparametric model. As the nonparametric model does not assume a specific distribution and is merely a function of the data, it is used as a benchmark to assess how well the parametric distribution/model represents the data.
+Also, as the sample size increases, the empirical distribution converges almost surely to the underlying population distribution (by the strong law of large numbers). Thus the empirical distribution is a good proxy for the population. The comparison of parametric to nonparametric estimators may alert the analyst to deficiencies in the parametric model and sometimes point ways to improving the parametric specification. Procedures geared towards assessing the validity of a model are known as <a href="#" class="tooltip" style="color:green"><em>model diagnostics</em><span style="font-size:8pt">Procedures to assess the validity of a model</span></a>.</p>
 <div id="S:MS:GraphComparison" class="section level4">
 <h4><span class="header-section-number">4.1.2.1</span> Graphical Comparison of Distributions</h4>
 <p>We have already seen the technique of overlaying graphs for comparison purposes. To reinforce the application of this technique, Figure <a href="C-ModelSelection.html#fig:ComparisonCDFPDF">4.7</a> compares the empirical distribution to two parametric fitted distributions. The left panel shows the distribution functions of claims distributions. The dots forming an “S-shaped” curve represent the empirical distribution function at each observation. The thick blue curve gives corresponding values for the fitted gamma distribution and the light purple is for the fitted Pareto distribution. Because the Pareto is much closer to the empirical distribution function than the gamma, this provides evidence that the Pareto is the better model for this data set. The right panel gives similar information for the density function and provides a consistent message. Based (only) on these figures, the Pareto distribution is the clear choice for the analyst.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:ComparisonCDFPDF"></span>
 <img src="LossDataAnalytics_files/figure-html/ComparisonCDFPDF-1.png" alt="Nonparametric Versus Fitted Parametric Distribution and Density Functions. The left-hand panel compares distribution functions, with the dots corresponding to the empirical distribution, the thick blue curve corresponding to the fitted gamma and the light purple curve corresponding to the fitted Pareto. The right hand panel compares these three distributions summarized using probability density functions." width="80%" />
 <p class="caption">
-Figure 4.7: Nonparametric Versus Fitted Parametric Distribution and Density Functions. The left-hand panel compares distribution functions, with the dots corresponding to the empirical distribution, the thick blue curve corresponding to the fitted gamma and the light purple curve corresponding to the fitted Pareto. The right hand panel compares these three distributions summarized using probability density functions.
+Figure 4.7: <strong>Nonparametric Versus Fitted Parametric Distribution and Density Functions.</strong> The left-hand panel compares distribution functions, with the dots corresponding to the empirical distribution, the thick blue curve corresponding to the fitted gamma and the light purple curve corresponding to the fitted Pareto. The right hand panel compares these three distributions summarized using probability density functions.
 </p>
 </div>
-<p>For another way to compare the appropriateness of two fitted models, consider the <a href="#" class="tooltip" style="color:green"><em>probability-probability (pp) plot</em><span style="font-size:8pt">A plot that compares two models through their cumulative probabilities.</span></a>. A <span class="math inline">\(pp\)</span> plot compares cumulative probabilities under two models. For our purposes, these two models are the nonparametric empirical distribution function and the parametric fitted model. Figure <a href="C-ModelSelection.html#fig:PPPlot">4.8</a> shows <span class="math inline">\(pp\)</span> plots for the Property Fund data. The fitted gamma is on the left and the fitted Pareto is on the right, compared to the same empirical distribution function of the data. The straight line represents equality between the two distributions being compared, so points close to the line are desirable. As seen in earlier demonstrations, the Pareto is much closer to the empirical distribution than the gamma, providing additional evidence that the Pareto is the better model.</p>
+<p>For another way to compare the appropriateness of two fitted models, consider the <a href="#" class="tooltip" style="color:green"><em>probability-probability (pp) plot</em><span style="font-size:8pt">A plot that compares two models through their cumulative probabilities.</span></a>. A <span class="math inline">\(pp\)</span> plot compares cumulative probabilities under two models. For our purposes, these two models are the nonparametric empirical distribution function and the parametric fitted model. Figure <a href="C-ModelSelection.html#fig:PPPlot">4.8</a> shows <span class="math inline">\(pp\)</span> plots for the Property Fund data introduced in Section <a href="C-Intro.html#S:LGPIF">1.3</a>. The fitted gamma is on the left and the fitted Pareto is on the right, compared to the same empirical distribution function of the data. The straight line represents equality between the two distributions being compared, so points close to the line are desirable. As seen in earlier demonstrations, the Pareto is much closer to the empirical distribution than the gamma, providing additional evidence that the Pareto is the better model.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:PPPlot"></span>
-<img src="LossDataAnalytics_files/figure-html/PPPlot-1.png" alt="Probability-Probability ($pp$) Plots. The horizontal axis gives the empirical distribution function at each observation. In the left-hand panel, the corresponding distribution function for the gamma is shown in the vertical axis. The right-hand panel shows the fitted Pareto distribution. Lines of $y=x$ are superimposed." width="80%" />
+<img src="LossDataAnalytics_files/figure-html/PPPlot-1.png" alt="Probability-Probability (\(pp\)) Plots. The horizontal axis gives the empirical distribution function at each observation. In the left-hand panel, the corresponding distribution function for the gamma is shown in the vertical axis. The right-hand panel shows the fitted Pareto distribution. Lines of \(y=x\) are superimposed." width="80%" />
 <p class="caption">
-Figure 4.8: Probability-Probability (<span class="math inline">\(pp\)</span>) Plots. The horizontal axis gives the empirical distribution function at each observation. In the left-hand panel, the corresponding distribution function for the gamma is shown in the vertical axis. The right-hand panel shows the fitted Pareto distribution. Lines of <span class="math inline">\(y=x\)</span> are superimposed.
+Figure 4.8: <strong>Probability-Probability (<span class="math inline">\(pp\)</span>) Plots.</strong> The horizontal axis gives the empirical distribution function at each observation. In the left-hand panel, the corresponding distribution function for the gamma is shown in the vertical axis. The right-hand panel shows the fitted Pareto distribution. Lines of <span class="math inline">\(y=x\)</span> are superimposed.
 </p>
 </div>
 <p>A <span class="math inline">\(pp\)</span> plot is useful in part because no artificial scaling is required, such as with the overlaying of densities in Figure <a href="C-ModelSelection.html#fig:ComparisonCDFPDF">4.7</a>, in which we switched to the log scale to better visualize the data. The Chapter 4 <em>Technical Supplement A.1</em> introduces a variation of the <span class="math inline">\(pp\)</span> plot known as a <a href="#" class="tooltip" style="color:green"><em>Lorenz curve</em><span style="font-size:8pt">A graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis.</span></a>; this is an important tool for assessing income inequality. Furthermore, <span class="math inline">\(pp\)</span> plots are available in multivariate settings where more than one outcome variable is available. However, a limitation of the <span class="math inline">\(pp\)</span> plot is that, because it plots <em>cumulative</em> distribution functions, it can sometimes be difficult to detect <em>where</em> a fitted parametric distribution is deficient. As an alternative, it is common to use a <a href="#" class="tooltip" style="color:green"><em>quantile-quantile (qq) plot</em><span style="font-size:8pt">A plot that compares two models through their quantiles.</span></a>, as demonstrated in Figure <a href="C-ModelSelection.html#fig:QQPlot">4.9</a>.</p>
 <p>The <span class="math inline">\(qq\)</span> plot compares two fitted models through their quantiles. As with <span class="math inline">\(pp\)</span> plots, we compare the nonparametric to a parametric fitted model. Quantiles may be evaluated at each point of the data set, or on a grid (e.g., at <span class="math inline">\(0, 0.001, 0.002, \ldots, 0.999, 1.000\)</span>), depending on the application. In Figure <a href="C-ModelSelection.html#fig:QQPlot">4.9</a>, for each point on the aforementioned grid, the horizontal axis displays the empirical quantile and the vertical axis displays the corresponding fitted parametric quantile (gamma for the upper two panels, Pareto for the lower two). Quantiles are plotted on the original scale in the left panels and on the log scale in the right panels to allow us to see where a fitted distribution is deficient. The straight line represents equality between the empirical distribution and fitted distribution. From these plots, we again see that the Pareto is an overall better fit than the gamma. Furthermore, the lower-right panel suggests that the Pareto distribution does a good job with large claims, but provides a poorer fit for small claims.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:QQPlot"></span>
-<img src="LossDataAnalytics_files/figure-html/QQPlot-1.png" alt="Quantile-Quantile ($qq$) Plots. The horizontal axis gives the empirical quantiles at each observation. The right-hand panels they are graphed on a logarithmic basis. The vertical axis gives the quantiles from the fitted distributions; gamma quantiles are in the upper panels, Pareto quantiles are in the lower panels." width="80%" />
+<img src="LossDataAnalytics_files/figure-html/QQPlot-1.png" alt="Quantile-Quantile (\(qq\)) Plots. The horizontal axis gives the empirical quantiles at each observation. The right-hand panels they are graphed on a logarithmic basis. The vertical axis gives the quantiles from the fitted distributions; gamma quantiles are in the upper panels, Pareto quantiles are in the lower panels." width="80%" />
 <p class="caption">
-Figure 4.9: Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots. The horizontal axis gives the empirical quantiles at each observation. The right-hand panels they are graphed on a logarithmic basis. The vertical axis gives the quantiles from the fitted distributions; gamma quantiles are in the upper panels, Pareto quantiles are in the lower panels.
+Figure 4.9: <strong>Quantile-Quantile (<span class="math inline">\(qq\)</span>) Plots.</strong> The horizontal axis gives the empirical quantiles at each observation. The right-hand panels they are graphed on a logarithmic basis. The vertical axis gives the quantiles from the fitted distributions; gamma quantiles are in the upper panels, Pareto quantiles are in the lower panels.
 </p>
 </div>
 <hr />
-<p><strong>Example 4.1.6. Actuarial Exam Question.</strong>
+<p><strong>Example 4.1.7. Actuarial Exam Question.</strong>
 The graph below shows a <span class="math inline">\(pp\)</span> plot of a fitted distribution compared to a sample.</p>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-40-1.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>Comment on the two distributions with respect to left tail, right tail, and median probabilities.</p>
 <h5 style="text-align: center;">
-<a id="displayExample.4.1.6" href="javascript:toggleEX('toggleExample.4.1.6','displayExample.4.1.6');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.7" href="javascript:toggleEX('toggleExample.4.1.7','displayExample.4.1.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExample.4.1.6" style="display: none">
+<div id="toggleExample.4.1.7" style="display: none">
 <p><strong>Solution.</strong>
-The tail of the fitted distribution is too thick on the left, too thin on the right, and the fitted distribution has less probability around the median than the sample. To see this, recall that the <span class="math inline">\(pp\)</span> plot graphs the cumulative distribution of two distributions on its axes (empirical on the x-axis and fitted on the y-axis in this case). For small values of <span class="math inline">\(x\)</span>, the fitted model assigns greater probability to being below that value than occurred in the sample (i.e. <span class="math inline">\(F(x) &gt; F_n(x)\)</span>). This indicates that the model has a heavier left tail than the data. For large values of <span class="math inline">\(x\)</span>, the model again assigns greater probability to being below that value and thus less probability to being above that value (i.e. <span class="math inline">\(S(x) &lt; S_n(x)\)</span>. This indicates that the model has a lighter right tail than the data. In addition, as we go from 0.4 to 0.6 on the horizontal axis (thus looking at the middle 20% of the data), the <span class="math inline">\(pp\)</span> plot increases from about 0.3 to 0.4. This indicates that the model puts only about 10% of the probability in this range.</p>
+The tail of the fitted distribution is too thick on the left, too thin on the right, and the fitted distribution has less probability around the median than the sample. To see this, recall that the <span class="math inline">\(pp\)</span> plot graphs the cumulative distribution of two distributions on its axes (empirical on the x-axis and fitted on the y-axis in this case). For small values of <span class="math inline">\(x\)</span>, the fitted model assigns greater probability to being below that value than occurred in the sample (i.e. <span class="math inline">\(F(x) &gt; F_n(x)\)</span>). This indicates that the model has a heavier left tail than the data. For large values of <span class="math inline">\(x\)</span>, the model again assigns greater probability to being below that value and thus less probability to being above that value (i.e. <span class="math inline">\(S(x) &lt; S_n(x)\)</span>). This indicates that the model has a lighter right tail than the data. In addition, as we go from 0.4 to 0.6 on the horizontal axis (thus looking at the middle 20% of the data), the <span class="math inline">\(pp\)</span> plot increases from about 0.3 to 0.4. This indicates that the model puts only about 10% of the probability in this range.</p>
 </div>
 <hr />
 </div>
@@ -1204,10 +1214,10 @@ The tail of the fitted distribution is too thick on the left, too thin on the ri
 <h4><span class="header-section-number">4.1.2.2</span> Statistical Comparison of Distributions</h4>
 <p>When selecting a model, it is helpful to make the graphical displays presented. However, for reporting results, it can be effective to supplement the graphical displays with selected statistics that summarize model goodness of fit. <a href="#tab:42">Table 4.2</a> provides three commonly used <a href="#" class="tooltip" style="color:green"><em>goodness of fit statistics</em><span style="font-size:8pt">A measure used to assess how well a statistical model fits the data, usually by summarizing the discrepancy between the observations and the expected values under the model.</span></a>. In this table, <span class="math inline">\(F_n\)</span> is the empirical distribution, <span class="math inline">\(F\)</span> is the fitted or hypothesized distribution, and <span class="math inline">\(F_i^* = F(x_i)\)</span>.</p>
 <p><a id=tab:42></a></p>
+<p>Table 4.2. <strong>Three Goodness of Fit Statistics</strong></p>
 <p><span class="math display">\[
 {\small
 \begin{matrix}
-\text{Table 4.2: Three Goodness of Fit Statistics} \\
 \begin{array}{l|cc}
 \hline
 \text{Statistic} &amp; \text{Definition} &amp; \text{Computational Expression} \\
@@ -1224,7 +1234,7 @@ The tail of the fitted distribution is too thick on the left, too thin on the ri
 \]</span></p>
 <p>The <em>Kolmogorov-Smirnov statistic</em> is the maximum absolute difference between the fitted distribution function and the empirical distribution function. Instead of comparing differences between single points, the <em>Cramer-von Mises statistic</em> integrates the difference between the empirical and fitted distribution functions over the entire range of values. The <em>Anderson-Darling statistic</em> also integrates this difference over the range of values, although weighted by the inverse of the variance. It therefore places greater emphasis on the tails of the distribution (i.e when <span class="math inline">\(F(x)\)</span> or <span class="math inline">\(1-F(x)=S(x)\)</span> is small).</p>
 <hr />
-<p><strong>Example 4.1.7. Actuarial Exam Question (modified).</strong>
+<p><strong>Example 4.1.8. Actuarial Exam Question (modified).</strong>
 A sample of claim payments is:</p>
 <p><span class="math display">\[
 \begin{array}{ccccc}
@@ -1233,9 +1243,9 @@ A sample of claim payments is:</p>
 \]</span></p>
 <p>Compare the empirical claims distribution to an exponential distribution with mean <span class="math inline">\(100\)</span> by calculating the value of the Kolmogorov-Smirnov test statistic.</p>
 <h5 style="text-align: center;">
-<a id="displayExample.4.1.7" href="javascript:toggleEX('toggleExample.4.1.7','displayExample.4.1.7');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.8" href="javascript:toggleEX('toggleExample.4.1.8','displayExample.4.1.8');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExample.4.1.7" style="display: none">
+<div id="toggleExample.4.1.8" style="display: none">
 <p><strong>Solution.</strong>
 For an exponential distribution with mean <span class="math inline">\(100\)</span>, the cumulative distribution function is <span class="math inline">\(F(x)=1-e^{-x/100}\)</span>. Thus,</p>
 <p><span class="math display">\[
@@ -1266,16 +1276,16 @@ KS = \max(0.2517, 0.2727, 0.1934, 0.1408, 0.1620) = 0.2727 .
 <h4><span class="header-section-number">4.1.3.1</span> Method of Moments</h4>
 <p>Under the <a href="#" class="tooltip" style="color:green"><em>method of moments</em><span style="font-size:8pt">The estimation of population parameters by approximating parametric moments using empirical sample moments.</span></a>, we approximate the moments of the parametric distribution using the empirical (nonparametric) moments described in Section <a href="C-ModelSelection.html#S:MS:MomentEstimator">4.1.1.1</a>. We can then algebraically solve for the parameter estimates.</p>
 <hr />
-<p><strong>Example 4.1.8. Property Fund.</strong>
+<p><strong>Example 4.1.9. Property Fund.</strong>
 For the 2010 property fund, there are <span class="math inline">\(n=1,377\)</span> individual claims (in thousands of dollars) with</p>
 <p><span class="math display">\[m_1 = \frac{1}{n} \sum_{i=1}^n X_i = 26.62259 \ \ \ \
 \text{and} \ \ \ \
  m_2 = \frac{1}{n} \sum_{i=1}^n X_i^2 = 136154.6 .\]</span>
 Fit the parameters of the gamma and Pareto distributions using the method of moments.</p>
 <h5 style="text-align: center;">
-<a id="displayExample.4.1.8" href="javascript:toggleEX('toggleExample.4.1.8','displayExample.4.1.8');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.9" href="javascript:toggleEX('toggleExample.4.1.9','displayExample.4.1.9');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExample.4.1.8" style="display: none">
+<div id="toggleExample.4.1.9" style="display: none">
 <p><strong>Solution.</strong>
 To fit a gamma distribution, we have <span class="math inline">\(\mu_1 = \alpha \theta\)</span> and <span class="math inline">\(\mu_2^{\prime} = \alpha(\alpha+1) \theta^2\)</span>. Equating the two yields the method of moments estimators, easy algebra shows that</p>
 <p><span class="math display">\[\alpha = \frac{\mu_1^2}{\mu_2^{\prime}-\mu_1^2}  \ \ \ \text{and} \ \ \  \theta = \frac{\mu_2^{\prime}-\mu_1^2}{\mu_1}.\]</span></p>
@@ -1307,7 +1317,7 @@ To fit a gamma distribution, we have <span class="math inline">\(\mu_1 = \alpha 
 <h4><span class="header-section-number">4.1.3.2</span> Percentile Matching</h4>
 <p>Under <a href="#" class="tooltip" style="color:green"><em>percentile matching</em><span style="font-size:8pt">The estimation of population parameters by approximating parametric percentiles using empirical quantiles.</span></a>, we approximate the quantiles or percentiles of the parametric distribution using the empirical (nonparametric) quantiles or percentiles described in Section <a href="C-ModelSelection.html#S:MS:QuantileEstimator">4.1.1.3</a>.</p>
 <hr />
-<p><strong>Example 4.1.9. Property Fund.</strong>
+<p><strong>Example 4.1.10. Property Fund.</strong>
 For the 2010 property fund, we illustrate matching on quantiles. In particular, the Pareto distribution is intuitively pleasing because of the closed-form solution for the quantiles. Recall that the distribution function for the Pareto distribution is
 <span class="math display">\[F(x) = 1 - \left(\frac{\theta}{x+\theta}\right)^{\alpha}.\]</span>
 Easy algebra shows that we can express the quantile as</p>
@@ -1315,9 +1325,9 @@ Easy algebra shows that we can express the quantile as</p>
 for a fraction <span class="math inline">\(q\)</span>, <span class="math inline">\(0&lt;q&lt;1\)</span>.</p>
 <p>Determine estimates of the Pareto distribution parameters using the 25th and 95th empirical quantiles.</p>
 <h5 style="text-align: center;">
-<a id="displayExample.4.1.9" href="javascript:toggleEX('toggleExample.4.1.9','displayExample.4.1.9');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.10" href="javascript:toggleEX('toggleExample.4.1.10','displayExample.4.1.10');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExample.4.1.9" style="display: none">
+<div id="toggleExample.4.1.10" style="display: none">
 <p><strong>Solution.</strong></p>
 <p>The 25th percentile (the first quartile) turns out to be <span class="math inline">\(0.78853\)</span> and the 95th percentile is <span class="math inline">\(50.98293\)</span> (both in thousands of dollars). With two equations
 <span class="math display">\[0.78853 = \theta \left( 1- (1-.25)^{-1/\alpha} \right) \ \ \ \ \text{and} \ \ \ \ 50.98293 = \theta \left( 1- (1-.75)^{-1/\alpha} \right)\]</span>
@@ -1327,7 +1337,7 @@ and two unknowns, the solution is
 We remark here that a numerical routine is required for these solutions as no analytic solution is available. Furthermore, recall that the <a href="#" class="tooltip" style="color:green"><em>maximum likelihood estimates</em><span style="font-size:8pt"></span></a> are <span class="math inline">\(\hat{\alpha}_{MLE} = 0.9990936\)</span> and <span class="math inline">\(\hat{\theta}_{MLE} = 2.2821147\)</span>, so the percentile matching provides a better approximation for the Pareto distribution than the method of moments.</p>
 </div>
 <hr />
-<p><strong>Example 4.1.10. Actuarial Exam Question.</strong>
+<p><strong>Example 4.1.11. Actuarial Exam Question.</strong>
 You are given:</p>
 <ol style="list-style-type: lower-roman">
 <li>Losses follow a loglogistic distribution with cumulative distribution function:
@@ -1341,9 +1351,9 @@ You are given:</p>
 \]</span></p>
 <p>Calculate the estimate of <span class="math inline">\(\theta\)</span> by percentile matching, using the 40th and 80th empirically smoothed percentile estimates.</p>
 <h5 style="text-align: center;">
-<a id="displayExample.4.1.10" href="javascript:toggleEX('toggleExample.4.1.10','displayExample.4.1.10');"><i><strong>Show Example Solution</strong></i></a>
+<a id="displayExample.4.1.11" href="javascript:toggleEX('toggleExample.4.1.11','displayExample.4.1.11');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
-<div id="toggleExample.4.1.10" style="display: none">
+<div id="toggleExample.4.1.11" style="display: none">
 <p><strong>Solution.</strong>
 With 11 observations, we have <span class="math inline">\(j=\lfloor(n+1)q\rfloor = \lfloor 12(0.4) \rfloor = \lfloor 4.8\rfloor=4\)</span> and <span class="math inline">\(h=(n+1)q-j = 12(0.4)-4=0.8\)</span>. By interpolation, the 40th empirically smoothed percentile estimate is <span class="math inline">\(\hat{\pi}_{0.4} = (1-h) X_{(j)} + h X_{(j+1)} = 0.2(86)+0.8(90)=89.2\)</span>.</p>
 <p>Similarly, for the 80th empirically smoothed percentile estimate, we have <span class="math inline">\(12(0.8)=9.6\)</span> so the estimate is <span class="math inline">\(\hat{\pi}_{0.8} = 0.4(200)+0.6(210)=206\)</span>.</p>
@@ -1351,7 +1361,7 @@ With 11 observations, we have <span class="math inline">\(j=\lfloor(n+1)q\rfloor
 <span class="math display">\[
 0.4=\frac{(89.2/{\hat{\theta}})^{\hat{\gamma}}}{1+(89.2/{\hat{\theta}})^{\hat{\gamma}}} \ \ \ \text{and} \ \ \ \   0.8=\frac{(206/{\hat{\theta}})^{\hat{\gamma}}}{1+(206/{\hat{\theta}})^{\hat{\gamma}}} .
 \]</span></p>
-<p>Solving for each parenthetical expression gives <span class="math inline">\(\frac{2}{3}=(89.2/\theta)^{\hat{\gamma}}\)</span> and <span class="math inline">\(4=(206/{\hat{\theta}})^{\hat{\gamma}}\)</span>. Taking the ratio of the second equation to the first gives <span class="math inline">\(6=(206/89.2)^{\hat{\gamma}}\Rightarrow {\hat{\gamma}}=\frac{\ln(6)}{\ln(206/89.2)} = 2.1407\)</span>. Then <span class="math inline">\(4^{1/2.1407}=206/{\hat{\theta}} \Rightarrow {\hat{\theta}}=107.8\)</span>.</p>
+<p>Solving for each parenthetical expression gives <span class="math inline">\(\frac{2}{3}=(89.2/\theta)^{\hat{\gamma}}\)</span> and <span class="math inline">\(4=(206/{\hat{\theta}})^{\hat{\gamma}}\)</span>. Taking the ratio of the second equation to the first gives <span class="math inline">\(6=(206/89.2)^{\hat{\gamma}}\Rightarrow {\hat{\gamma}}=\frac{\log(6)}{\log(206/89.2)} = 2.1407\)</span>. Then <span class="math inline">\(4^{1/2.1407}=206/{\hat{\theta}} \Rightarrow {\hat{\theta}}=107.8\)</span>.</p>
 </div>
 <hr />
 <p>Like the method of moments, percentile matching is almost too flexible in the sense that estimators can vary depending on different percentiles chosen. For example, one actuary may use estimation on the 25th and 95th percentiles whereas another uses the 20th and 80th percentiles. In general estimated parameters will differ and there is no compelling reason to prefer one over the other. Also as with the method of moments, percentile matching is appealing because it provides a technique that can be readily applied in selected situations and has an intuitive basis. Although most actuarial applications use maximum likelihood estimators, it can be convenient to have alternative approaches such as method of moments and percentile matching available.</p>
@@ -1394,10 +1404,11 @@ With 11 observations, we have <span class="math inline">\(j=\lfloor(n+1)q\rfloor
 <div id="iterative-model-selection" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Iterative Model Selection</h3>
 <p>In our development, we examine the data graphically, hypothesize a model structure, and compare the data to a candidate model in order to formulate an improved model. <span class="citation">Box (<a href="#ref-box1980sampling" role="doc-biblioref">1980</a>)</span> describes this as an <em>iterative process</em> which is shown in Figure <a href="C-ModelSelection.html#fig:Iterative">4.10</a>.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:Iterative"></span>
-<img src="Figures/F5Iterative.png" alt="The iterative model specification process." width="80%" />
+<img src="Figures/F5Iterative.png" alt="Iterative Model Specification Process" width="80%" />
 <p class="caption">
-Figure 4.10: The iterative model specification process.
+Figure 4.10: <strong>Iterative Model Specification Process</strong>
 </p>
 </div>
 <p>This iterative process provides a useful recipe for structuring the task of specifying a model to represent a set of data.</p>
@@ -1422,26 +1433,27 @@ Figure 4.10: The iterative model specification process.
 <h3><span class="header-section-number">4.2.3</span> Model Selection Based on a Test Dataset</h3>
 <p><a href="#" class="tooltip" style="color:green"><em>Model validation</em><span style="font-size:8pt">The process of confirming that the proposed model is appropriate.</span></a> is the process of confirming that the proposed model is appropriate, especially in light of the purposes of the investigation. An important limitation of the model selection process based only on in-sample data is that it can be susceptible to <a href="#" class="tooltip" style="color:green"><em>data-snooping</em><span style="font-size:8pt">Repeatedly fitting models to a data set without a prior hypothesis of interest.</span></a>, that is, fitting a great number of models to a single set of data. By looking at a large number of models, we may overfit the data and understate the natural variation in our representation.</p>
 <p>Selecting a model based only on in-sample data also does not support the goal of <a href="#" class="tooltip" style="color:green"><em>predictive inference</em><span style="font-size:8pt">Preditive inference is the process of using past data observations to predict future observations.</span></a>. Particularly in actuarial applications, our goal is to make statements about <em>new</em> experience rather than a dataset at hand. For example, we use claims experience from one year to develop a model that can be used to price insurance contracts for the following year. As an analogy, we can think about the training data set as experience from one year that is used to predict the behavior of the next year’s test data set.</p>
-<p>We can respond to these criticisms by using a technique known as <strong>out-of-sample validation</strong>. The ideal situation is to have available two sets of data, one for training, or model development, and the other for testing, or model validation. We initially develop one or several models on the first data set that we call our <em>candidate</em> models. Then, the relative performance of the candidate models can be measured on the second set of data. In this way, the data used to validate the model is unaffected by the procedures used to formulate the model.</p>
+<p>We can respond to these criticisms by using a technique known as <strong>out-of-sample validation</strong>. The ideal situation is to have available two sets of data, one for training, or model development, and the other for testing, or model validation. We initially develop one or several models on the first data set that we call our <em>candidate</em> models. Then, the relative performance of the candidate models can be measured on the second set of data. In this way, the data used to validate the model are unaffected by the procedures used to formulate the model.</p>
 <p><strong>Random Split of the Data.</strong> Unfortunately, rarely will two sets of data be available to the investigator. However, we can implement the validation process by splitting the data set into <strong>training</strong> and <strong>test</strong> subsamples, respectively. Figure <a href="C-ModelSelection.html#fig:ModelValidation">4.11</a> illustrates this splitting of the data.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:ModelValidation"></span>
 <img src="LossDataAnalytics_files/figure-html/ModelValidation-1.png" alt="Model Validation. A data set is randomly split into two subsamples." width="60%" />
 <p class="caption">
-Figure 4.11: Model Validation. A data set is randomly split into two subsamples.
+Figure 4.11: <strong>Model Validation.</strong> A data set is randomly split into two subsamples.
 </p>
 </div>
 <p>Various researchers recommend different proportions for the allocation. <span class="citation">Snee (<a href="#ref-snee1977validation" role="doc-biblioref">1977</a>)</span> suggests that data-splitting not be done unless the sample size is moderately large. The guidelines of <span class="citation">Picard and Berk (<a href="#ref-picard1990data" role="doc-biblioref">1990</a>)</span> show that the greater the number of parameters to be estimated, the greater the proportion of observations needed for the model development subsample.</p>
 <p><strong>Model Validation Statistics.</strong> Much of the literature supporting the establishment of a model validation process is based on regression and classification models that you can think of as an <em>input-output</em> problem (<span class="citation">James et al. (<a href="#ref-james2013introduction" role="doc-biblioref">2013</a>)</span>). That is, we have several inputs <span class="math inline">\(x_1, \ldots, x_k\)</span> that are related to an output <span class="math inline">\(y\)</span> through a function such as
 <span class="math display">\[y = \mathrm{g}\left(x_1, \ldots, x_k\right).\]</span>
 One uses the training sample to develop an estimate of <span class="math inline">\(\mathrm{g}\)</span>, say, <span class="math inline">\(\hat{\mathrm{g}}\)</span>, and then calibrate the distance from the observed outcomes to the predictions using a criterion of the form</p>
-<p><span class="math display" id="eq:OutSampleCriter">\[
+<p><span class="math display" id="eq:OutSampleCriter">\[\begin{equation}
 \sum_i \mathrm{d}(y_i,\hat{\mathrm{g}}\left(x_{i1}, \ldots, x_{ik}\right) ) .
 \tag{4.4}
-\]</span></p>
-<p>Here, “d” is some measure of distance measure and the sum <span class="math inline">\(i\)</span> is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2\)</span>. In actuarial applications, Euclidean distance <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|\)</span> is often preferred because of the skewed nature of the data (large outlying values of <span class="math inline">\(y\)</span> can have a large effect on the measure). Chapter <a href="C-PremiumFoundations.html#C:PremiumFoundations">7</a> describes another measure, the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">A measure for assessing income inequality. it measures the discrepancy between the income and population distributions and is calculated from the lorenz curve.</span></a>, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).</p>
+\end{equation}\]</span></p>
+<p>Here, “d” is some measure of distance and the sum <span class="math inline">\(i\)</span> is over the test data. In many regression applications, it is common to use squared Euclidean distance of the form <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = (y_i-\mathrm{g})^2\)</span>. In actuarial applications, Euclidean distance <span class="math inline">\(\mathrm{d}(y_i,\mathrm{g}) = |y_i-\mathrm{g}|\)</span> is often preferred because of the skewed nature of the data (large outlying values of <span class="math inline">\(y\)</span> can have a large effect on the measure). Chapter <a href="C-PremiumFoundations.html#C:PremiumFoundations">7</a> describes another measure, the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">A measure for assessing income inequality. it measures the discrepancy between the income and population distributions and is calculated from the lorenz curve.</span></a>, that is useful in actuarial applications particularly when there is a large proportion of zeros in claims data (corresponding to no claims).</p>
 <p><strong>Selecting a Distribution.</strong> Still, our focus so far has been to select a distribution for a data set that can be used for actuarial modeling without additional inputs <span class="math inline">\(x_1, \ldots, x_k\)</span>. Even in this more fundamental problem, the model validation approach is valuable. If we base all inference on only in-sample data, then there is a tendency to select more complicated models than needed. For example, we might select a four parameter GB2, generalized beta of the second kind, distribution when only a two parameter Pareto is needed. Information criteria such as <a href="#" class="tooltip" style="color:green"><em>AIC</em><span style="font-size:8pt">Akaike’s information criterion</span></a> and <a href="#" class="tooltip" style="color:green"><em>BIC</em><span style="font-size:8pt">Bayesian information criterion</span></a> included penalties for model complexity and so provide some protection but using a test sample is the best guarantee to achieve parsimonious models. From a quote often attributed to Albert Einstein, we want to “use the simplest model as possible but no simpler.”</p>
 </div>
-<div id="model-selection-based-on-cross-validation" class="section level3">
+<div id="S:MS:Cross-Validation" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Model Selection Based on Cross-Validation</h3>
 <p>Although out-of-sample validation is the gold standard in predictive modeling, it is not always practical to do so. The main reason is that we have limited sample sizes and the out-of-sample model selection criterion in equation <a href="C-ModelSelection.html#eq:OutSampleCriter">(4.4)</a> depends on a <em>random</em> split of the data. This means that different analysts, even when working the same data set and same approach to modeling, may select different models. This is likely in actuarial applications because we work with skewed data sets where there is a large chance of getting some very large outcomes and large outcomes may have a great influence on the parameter estimates.</p>
 <p><strong>Cross-Validation Procedure.</strong> Alternatively, one may use <strong>cross-validation</strong>, as follows.</p>
@@ -1502,16 +1514,16 @@ F(c_k) - F(c_{k-1}) &amp;   \text{if }\ x \in (c_{k-1}, c_k]\\
 &amp;= \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{I(x \in (c_{j-1}, c_j])}
 \end{aligned}
 \]</span></p>
-<p>Now, define <span class="math inline">\(n_j\)</span> to be the number of observations that fall in the <span class="math inline">\(j\)</span>th interval, <span class="math inline">\((c_{j-1}, c_j]\)</span>. Thus, the <a href="#" class="tooltip" style="color:green"><em>likelihood function</em><span style="font-size:8pt">A function of the likeliness of the parameters in a model, given the observed data.</span></a> (with respect to the parameter(s) <span class="math inline">\(\theta\)</span>) is
-<span class="math display">\[
+<p>Now, define <span class="math inline">\(n_j\)</span> to be the number of observations that fall in the <span class="math inline">\(j\)</span>th interval, <span class="math inline">\((c_{j-1}, c_j]\)</span>. Thus, the <a href="#" class="tooltip" style="color:green"><em>likelihood function</em><span style="font-size:8pt">A function of the likeliness of the parameters in a model, given the observed data.</span></a> (with respect to the parameter(s) <span class="math inline">\(\theta\)</span>) is</p>
+<p><span class="math display">\[
 \begin{aligned}
-\mathcal{L}(\theta) = \prod_{j=1}^n f(x_i) = \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{n_j}
+L(\theta) = \prod_{j=1}^n f(x_i) = \prod_{j=1}^k \left\{F(c_j) - F(c_{j-1})\right\}^{n_j}
 \end{aligned}
 \]</span></p>
 <p>And the log-likelihood function is
 <span class="math display">\[
 \begin{aligned}
-L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_j \ln \left\{F(c_j) - F(c_{j-1})\right\}
+l(\theta) = \log L(\theta) = \log \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_j \log \left\{F(c_j) - F(c_{j-1})\right\}
 \end{aligned}
 \]</span></p>
 <p>Maximizing the likelihood function (or equivalently, maximizing the log-likelihood function) would then produce the maximum likelihood estimates for grouped data.</p>
@@ -1542,13 +1554,13 @@ L(\theta) = \ln \mathcal{L}(\theta) = \ln \prod_{j=1}^n f(x_i) = \sum_{j=1}^k n_
 <p><strong>Solution.</strong>
 <span class="math display">\[
 \begin{aligned}
-\mathcal{L}(\theta) &amp;= F(1000)^7[F(2000)-F(1000)]^6[1-F(2000)]^7 \\
+L(\theta) &amp;= F(1000)^7[F(2000)-F(1000)]^6[1-F(2000)]^7 \\
 &amp;= (1-e^{-1000/\theta})^7(e^{-1000/\theta} - e^{-2000/\theta})^6(e^{-2000/\theta})^7 \\
 &amp;= (1-p)^7(p-p^2)^6(p^2)^7 \\
 &amp;= p^{20}(1-p)^{13}
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(p=e^{-1000/\theta}\)</span>. Maximizing this expression with respect to <span class="math inline">\(p\)</span> is equivalent to maximizing the likelihood with respect to <span class="math inline">\(\theta\)</span>. The maximum occurs at <span class="math inline">\(p=\frac{20}{33}\)</span> and so <span class="math inline">\(\hat{\theta}=\frac{-1000}{\ln(20/33)}= 1996.90\)</span>.</p>
+<p>where <span class="math inline">\(p=e^{-1000/\theta}\)</span>. Maximizing this expression with respect to <span class="math inline">\(p\)</span> is equivalent to maximizing the likelihood with respect to <span class="math inline">\(\theta\)</span>. The maximum occurs at <span class="math inline">\(p=\frac{20}{33}\)</span> and so <span class="math inline">\(\hat{\theta}=\frac{-1000}{\log(20/33)}= 1996.90\)</span>.</p>
 </div>
 <hr />
 </div>
@@ -1595,10 +1607,11 @@ X &amp; X \le C_U \\
 \]</span></p>
 <p>Classic examples of truncation from the right include <span class="math inline">\(X\)</span> as a measure of distance to a star. When the distance exceeds a certain level <span class="math inline">\(C_U\)</span>, the star is no longer observable.</p>
 <p>Figure <a href="C-ModelSelection.html#fig:CensorTrunc">4.12</a> compares truncated and censored observations. Values of <span class="math inline">\(X\)</span> that are greater than the “upper” censoring limit <span class="math inline">\(C_U\)</span> are not observed at all (right-censored), while values of <span class="math inline">\(X\)</span> that are smaller than the “lower” truncation limit <span class="math inline">\(C_L\)</span> are observed, but observed as <span class="math inline">\(C_L\)</span> rather than the actual value of <span class="math inline">\(X\)</span> (left-truncated).</p>
+
 <div class="figure" style="text-align: center"><span id="fig:CensorTrunc"></span>
 <img src="LossDataAnalytics_files/figure-html/CensorTrunc-1.png" alt="Censoring and Truncation" width="60%" />
 <p class="caption">
-Figure 4.12: Censoring and Truncation
+Figure 4.12: <strong>Censoring and Truncation</strong>
 </p>
 </div>
 <hr />
@@ -1607,10 +1620,11 @@ Figure 4.12: Censoring and Truncation
 </h5>
 <div id="toggleExample.Mort.4f" style="display: none">
 <p><strong>Example – Mortality Study.</strong> Suppose that you are conducting a two-year study of mortality of high-risk subjects, beginning January 1, 2010 and finishing January 1, 2012. Figure <a href="C-ModelSelection.html#fig:Mortality">4.13</a> graphically portrays the six types of subjects recruited. For each subject, the beginning of the arrow represents that the subject was recruited and the arrow end represents the event time where in this example the event represents death. The arrow represents exposure time.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:Mortality"></span>
 <img src="LossDataAnalytics_files/figure-html/Mortality-1.png" alt="Timeline for Several Subjects on Test in a Mortality Study" width="60%" />
 <p class="caption">
-Figure 4.13: Timeline for Several Subjects on Test in a Mortality Study
+Figure 4.13: <strong>Timeline for Several Subjects on Test in a Mortality Study</strong>
 </p>
 </div>
 <ul>
@@ -1676,7 +1690,7 @@ f(x) &amp; \text{if } \delta = 1
 \]</span></p>
 <p>The right-hand expression allows us to present the likelihood more compactly. Now, for an <em>iid</em> sample of size <span class="math inline">\(n\)</span>, the likelihood is</p>
 <p><span class="math display">\[
-\mathcal{L}(\theta) = 
+L(\theta) = 
 \prod_{i=1}^n \left\{ f(x_i)\right\}^{\delta_i} \left\{1-F(C_{Ui})\right\}^{1-\delta_i} = \prod_{\delta_i=1} f(x_i) \prod_{\delta_i=0} \{1-F(C_{Ui})\},
 \]</span></p>
 <p>with potential censoring times <span class="math inline">\(\{ C_{U1}, \ldots,C_{Un} \}\)</span>. Here, the notation “<span class="math inline">\(\prod_{\delta_i=1}\)</span>” means to take the product over uncensored observations, and similarly for “<span class="math inline">\(\prod_{\delta_i=0}\)</span>.”</p>
@@ -1698,11 +1712,11 @@ f(x) &amp; \text{if } \delta = 1
 }
 \]</span></p>
 <p>For known outcomes and censored data, the likelihood is
-<span class="math display">\[\mathcal{L}(\theta) = \prod_{E} f(x_i) \prod_{R} \{1-F(C_{Ui})\} \prod_{L}
+<span class="math display">\[L(\theta) = \prod_{E} f(x_i) \prod_{R} \{1-F(C_{Ui})\} \prod_{L}
 F(C_{Li}) \prod_{I} (F(C_{Ui})-F(C_{Li})),\]</span>
-where “<span class="math inline">\(\prod_{E}\)</span>” is the product over observations with <em>E</em>xact values, and similarly for <span class="math inline">\(R\)</span>ight-, <span class="math inline">\(L\)</span>eft- and <span class="math inline">\(I\)</span>nterval-censoring.</p>
+where “<span class="math inline">\(\prod_{E}\)</span>” is the product over observations with <em>E</em>xact values, and similarly for <span class="math inline">\(R\)</span>ight-, <span class="math inline">\(L\)</span>eft- <br> and <span class="math inline">\(I\)</span>nterval-censoring.</p>
 <p>For right-censored and left-truncated data, the likelihood is
-<span class="math display">\[\mathcal{L}(\theta) = \prod_{E} \frac{f(x_i)}{1-F(C_{Li})} \prod_{R} \frac{1-F(C_{Ui})}{1-F(C_{Li})},\]</span>
+<span class="math display">\[L(\theta) = \prod_{E} \frac{f(x_i)}{1-F(C_{Li})} \prod_{R} \frac{1-F(C_{Ui})}{1-F(C_{Li})},\]</span>
 and similarly for other combinations. To get further insights, consider the following.</p>
 <hr />
 <h5 style="text-align: center;">
@@ -1713,17 +1727,19 @@ and similarly for other combinations. To get further insights, consider the foll
 <p>For this special case, the log-likelihood is</p>
 <p><span class="math display">\[
 \begin{aligned}
-L(\theta) &amp;= \sum_{E} \left\{ \ln f(x_i) - \ln (1-F(C_{Li})) \right\} + \sum_{R}\left\{ \ln (1-F(C_{Ui}))- \ln (1-\mathrm{F}(C_{Li})) \right\}\\
-&amp;= \sum_{E} (-\ln \theta -(x_i-C_{Li})/\theta ) -\sum_{R} (C_{Ui}-C_{Li})/\theta .
+l(\theta) &amp;= \sum_{E} \left\{ \log f(x_i) - \log (1-F(C_{Li})) \right\} + \sum_{R}\left\{ \log (1-F(C_{Ui}))- \log (1-\mathrm{F}(C_{Li})) \right\}\\
+&amp;= \sum_{E} (-\log \theta -(x_i-C_{Li})/\theta ) -\sum_{R} (C_{Ui}-C_{Li})/\theta .
 \end{aligned}
 \]</span></p>
 <p>To simplify the notation, define <span class="math inline">\(\delta_i = I(X_i &lt; C_{Ui})\)</span> to be a binary variable that indicates right-censoring. Let <span class="math inline">\(X_i^{\ast \ast} = \min(X_i, C_{Ui}) - C_{Li}\)</span> be the amount that the observed variable exceeds the lower truncation limit. With this, the log-likelihood is</p>
-<p><span class="math display" id="eq:EXPloglik">\[
-  L(\theta) =  - \sum_{i=1}^n \left((1-\delta_i) \ln \theta + \frac{x_i^{\ast \ast}}{\theta}\right)
-  \tag{4.5}
-\]</span></p>
+<p><span class="math display" id="eq:EXPloglik">\[\begin{equation}
+l(\theta) =  - \sum_{i=1}^n \left((1-\delta_i) \log \theta + \frac{x_i^{\ast \ast}}{\theta}\right)
+\tag{4.5}
+\end{equation}\]</span></p>
 <p>Taking derivatives with respect to the parameter <span class="math inline">\(\theta\)</span> and setting it equal to zero yields the maximum likelihood estimator</p>
-<p><span class="math display">\[\widehat{\theta}  = \frac{1}{n_u} \sum_{i=1}^n  x_i^{\ast \ast},\]</span></p>
+<p><span class="math display">\[
+\widehat{\theta}  = \frac{1}{n_u} \sum_{i=1}^n  x_i^{\ast \ast},
+\]</span></p>
 <p>where <span class="math inline">\(n_u = \sum_i (1-\delta_i)\)</span> is the number of uncensored observations.</p>
 </div>
 <hr />
@@ -1742,9 +1758,9 @@ You are given:</p>
 <p><strong>Solution.</strong>
 These observations are truncated at 500. The contribution of each observation to the likelihood function is <span class="math display">\[\frac{f(x)}{1-F(500)} = \frac{\theta^{-1}e^{-x/\theta}}{e^{-500/\theta}}\]</span></p>
 <p>Then the likelihood function is</p>
-<p><span class="math display">\[\mathcal{L}(\theta)= \frac{\theta^{-1} e^{-600/\theta} \theta^{-1} e^{-700/\theta} \theta^{-1} e^{-900/\theta}}{(e^{-500/\theta})^3} = \theta^{-3}e^{-700/\theta}\]</span></p>
+<p><span class="math display">\[L(\theta)= \frac{\theta^{-1} e^{-600/\theta} \theta^{-1} e^{-700/\theta} \theta^{-1} e^{-900/\theta}}{(e^{-500/\theta})^3} = \theta^{-3}e^{-700/\theta}\]</span></p>
 <p>The log-likelihood is</p>
-<p><span class="math display">\[L(\theta) = \ln\mathcal{L}(\theta) = -3\ln \theta - 700\theta^{-1}\]</span></p>
+<p><span class="math display">\[l(\theta) = \logL(\theta) = -3\log \theta - 700\theta^{-1}\]</span></p>
 <p>Maximizing this expression by setting the derivative with respect to <span class="math inline">\(\theta\)</span> equal to 0, we have</p>
 <p><span class="math display">\[L&#39;(\theta) = -3\theta^{-1} + 700\theta^{-2} = 0 \ \Rightarrow \ \hat{\theta} = \frac{700}{3} = 233.33\]</span></p>
 </div>
@@ -1764,12 +1780,12 @@ You are given the following information about a random sample:</p>
 <p><strong>Solution.</strong> The likelihood function is</p>
 <p><span class="math display">\[
 \begin{aligned} 
-\mathcal{L}(\theta) &amp;= f(20) f(30) f(45) [1-F(50)]^2 \\
+L(\theta) &amp;= f(20) f(30) f(45) [1-F(50)]^2 \\
 &amp;= \frac{2(20/\theta)^2 e^{-(20/\theta)^2}}{20} \frac{2(30/\theta)^2 e^{-(30/\theta)^2}}{30} \frac{2(45/\theta)^2 e^{-(45/\theta)^2}}{45}(e^{-(50/\theta)^2})^2 \\
 &amp;\propto \frac{1}{\theta^6} e^{-8325/\theta^2}
 \end{aligned}
 \]</span></p>
-<p>The natural logarithm of the above expression is <span class="math inline">\(-6\ln\theta - \frac{8325}{\theta^2}\)</span>. Maximizing this expression by setting its derivative to 0, we get</p>
+<p>The natural logarithm of the above expression is <span class="math inline">\(-6\log\theta - \frac{8325}{\theta^2}\)</span>. Maximizing this expression by setting its derivative to 0, we get</p>
 <p><span class="math display">\[\frac{-6}{\theta} + \frac{16650}{\theta^3} = 0 \ \Rightarrow \ \hat{\theta} = \left(\frac{16650}{6}\right)^{\frac{1}{2}} = 52.6783\]</span></p>
 </div>
 <hr />
@@ -1830,26 +1846,27 @@ F_{100}(6000) &amp;=0.8F_{100}(5000)+0.2F_{100}(10000) = 0.8(0.63)+0.2(0.81)=0.6
 </div>
 <hr />
 </div>
-<div id="right-censored-empirical-distribution-function" class="section level4">
+<div id="S:MS:RightCensored" class="section level4">
 <h4><span class="header-section-number">4.3.2.2</span> Right-Censored Empirical Distribution Function</h4>
 <p>It can be useful to calibrate parametric estimators with nonparametric methods that do not rely on a parametric form of the distribution. The <a href="#" class="tooltip" style="color:green"><em>product-limit estimator</em><span style="font-size:8pt">A nonparametric estimator of the survival function in the presence of incomplete data. also known as the kaplan-meier estimator.</span></a> due to <span class="citation">(Kaplan and Meier <a href="#ref-kaplan1958" role="doc-biblioref">1958</a>)</span> is a well-known estimator of the distribution function in the presence of censoring.</p>
-<p><strong>Motivation for the Kaplan-Meier Product Limit Estimator.</strong> To explain why the product-limit works so well with censored observations, let us first return to the “usual” case without censoring. Here, the empirical distribution function <span class="math inline">\(F_n(x)\)</span> is an <em>unbiased</em> estimator of the distribution function <span class="math inline">\(F(x)\)</span>. This is because <span class="math inline">\(F_n(x)\)</span> is the average of indicator variables each of which are unbiased, that is, <span class="math inline">\(\mathrm{E~} I(X_i \le x) = \Pr(X_i \le x) = F(x)\)</span>.</p>
-<p>Now suppose the random outcome is censored on the right by a limiting amount, say, <span class="math inline">\(C_U\)</span>, so that we record the smaller of the two, <span class="math inline">\(X^* = \min(X, C_U)\)</span>. For values of <span class="math inline">\(x\)</span> that are smaller than <span class="math inline">\(C_U\)</span>, the indicator variable still provides an unbiased estimator of the distribution function before we reach the censoring limit. That is, <span class="math inline">\(\mathrm{E~} I(X^* \le x) = F(x)\)</span> because <span class="math inline">\(I(X^* \le x) = I(X \le x)\)</span> for <span class="math inline">\(x &lt; C_U\)</span>. In the same way, <span class="math inline">\(\mathrm{E~} I(X^* &gt; x) = 1 -F(x) = S(x)\)</span>. But, for <span class="math inline">\(x&gt;C_U\)</span>, <span class="math inline">\(I(X^* \le x)\)</span> is in general not an unbiased estimator of <span class="math inline">\(F(x)\)</span>.</p>
+<p><strong>Motivation for the Kaplan-Meier Product Limit Estimator.</strong> To explain why the product-limit works so well with censored observations, let us first return to the “usual” case without censoring. Here, the empirical distribution function <span class="math inline">\(F_n(x)\)</span> is an <em>unbiased</em> estimator of the distribution function <span class="math inline">\(F(x)\)</span>. This is because <span class="math inline">\(F_n(x)\)</span> is the average of indicator variables each of which are unbiased, that is, <span class="math inline">\(\mathrm{E~} [I(X_i \le x)] = \Pr(X_i \le x) = F(x)\)</span>.</p>
+<p>Now suppose the random outcome is censored on the right by a limiting amount, say, <span class="math inline">\(C_U\)</span>, so that we record the smaller of the two, <span class="math inline">\(X^* = \min(X, C_U)\)</span>. For values of <span class="math inline">\(x\)</span> that are smaller than <span class="math inline">\(C_U\)</span>, the indicator variable still provides an unbiased estimator of the distribution function before we reach the censoring limit. That is, <span class="math inline">\(\mathrm{E~} [I(X^* \le x)] = F(x)\)</span> because <span class="math inline">\(I(X^* \le x) = I(X \le x)\)</span> for <span class="math inline">\(x &lt; C_U\)</span>. In the same way, <span class="math inline">\(\mathrm{E~} [I(X^* &gt; x)] = 1 -F(x) = S(x)\)</span>. But, for <span class="math inline">\(x&gt;C_U\)</span>, <span class="math inline">\(I(X^* \le x)\)</span> is in general not an unbiased estimator of <span class="math inline">\(F(x)\)</span>.</p>
 <p>As an alternative, consider <em>two</em> random variables that have different censoring limits. For illustration, suppose that we observe <span class="math inline">\(X_1^* = \min(X_1, 5)\)</span> and <span class="math inline">\(X_2^* = \min(X_2, 10)\)</span> where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent draws from the same distribution. For <span class="math inline">\(x \le 5\)</span>, the empirical distribution function <span class="math inline">\(F_2(x)\)</span> is an unbiased estimator of <span class="math inline">\(F(x)\)</span>. However, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the first observation cannot be used for the distribution function because of the censoring limitation. Instead, the strategy developed by <span class="citation">(Kaplan and Meier <a href="#ref-kaplan1958" role="doc-biblioref">1958</a>)</span> is to use <span class="math inline">\(S_2(5)\)</span> as an estimator of <span class="math inline">\(S(5)\)</span> and then to use the second observation to estimate the survival function conditional on survival to time 5, <span class="math inline">\(\Pr(X &gt; x | X &gt;5) = \frac{S(x)}{S(5)}\)</span>. Specifically, for <span class="math inline">\(5 &lt; x \le 10\)</span>, the estimator of the survival function is</p>
 <p><span class="math display">\[
 \hat{S}(x) = S_2(5) \times I(X_2^* &gt; x ) .
 \]</span></p>
 <p><strong>Kaplan-Meier Product Limit Estimator.</strong> Extending this idea, for each observation <span class="math inline">\(i\)</span>, let <span class="math inline">\(u_i\)</span> be the upper censoring limit (<span class="math inline">\(=\infty\)</span> if no censoring). Thus, the recorded value is <span class="math inline">\(x_i\)</span> in the case of no censoring and <span class="math inline">\(u_i\)</span> if there is censoring. Let <span class="math inline">\(t_{1} &lt;\cdots&lt; t_{k}\)</span> be <span class="math inline">\(k\)</span> distinct points at which an uncensored loss occurs, and let <span class="math inline">\(s_j\)</span> be the number of uncensored losses <span class="math inline">\(x_i\)</span>’s at <span class="math inline">\(t_{j}\)</span>. The corresponding <a href="#" class="tooltip" style="color:green"><em>risk set</em><span style="font-size:8pt">The number of observations that are active (not censored) at a specific point.</span></a> is the number of observations that are active (not censored) at a value <em>less than</em> <span class="math inline">\(t_{j}\)</span>, denoted as <span class="math inline">\(R_j = \sum_{i=1}^n I(x_i \geq t_{j}) + \sum_{i=1}^n I(u_i \geq t_{j})\)</span>.</p>
 <p>With this notation, the <strong>product-limit estimator</strong> of the distribution function is</p>
-<p><span class="math display" id="eq:KaplanMeier">\[
+<p><span class="math display" id="eq:KaplanMeier">\[\begin{equation}
 \hat{F}(x) =
 \left\{
 \begin{array}{ll}
 0 &amp; x&lt;t_{1} \\
 1-\prod_{j:t_{j} \leq x}\left( 1-\frac{s_j}{R_{j}}\right) &amp; x \geq t_{1} 
 \end{array}
-\right. .\tag{4.6}
-\]</span></p>
+\right. .
+\tag{4.6}
+\end{equation}\]</span></p>
 <p>For example, if <span class="math inline">\(x\)</span> is smaller than the smallest uncensored loss, then <span class="math inline">\(x&lt;t_1\)</span> and <span class="math inline">\(\hat{F}(x) =0\)</span>. As another example, if <span class="math inline">\(x\)</span> falls between then second and third smallest uncensored losses, then <span class="math inline">\(x \in (t_2,t_3]\)</span> and <span class="math inline">\(\hat{F}(x) = 1 - \left(1- \frac{s_1}{R_{1}}\right)\left(1- \frac{s_2}{R_{2}}\right)\)</span>.</p>
 <p>As usual, the corresponding estimate of the survival function is <span class="math inline">\(\hat{S}(x) = 1 - \hat{F}(x)\)</span>.</p>
 <hr />
@@ -1890,22 +1907,23 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 </div>
 <hr />
 <p><strong>Example. 4.3.6. Bodily Injury Claims.</strong> We consider again the Boston auto bodily injury claims data from <span class="citation">Derrig, Ostaszewski, and Rempala (<a href="#ref-derrig2001applications" role="doc-biblioref">2001</a>)</span> that was introduced in Example 4.1.11. In that example, we omitted the 17 claims that were censored by policy limits. Now, we include the full dataset and use the Kaplan-Meier product limit to estimate the survival function. This is given in Figure <a href="C-ModelSelection.html#fig:KMSurvival">4.14</a>.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:KMSurvival"></span>
 <img src="LossDataAnalytics_files/figure-html/KMSurvival-1.png" alt="Kaplan-Meier Estimate of the Survival Function for Bodily Injury Claims" width="672" />
 <p class="caption">
-Figure 4.14: Kaplan-Meier Estimate of the Survival Function for Bodily Injury Claims
+Figure 4.14: <strong>Kaplan-Meier Estimate of the Survival Function for Bodily Injury Claims</strong>
 </p>
 </div>
 <h5 style="text-align: center;">
 <a id="displayCode.KaplanMeier.4f" href="javascript:togglecode('toggleCode.KaplanMeier.4f','displayCode.KaplanMeier.4f');"><i><strong>Show R Code</strong></i></a>
 </h5>
 <div id="toggleCode.KaplanMeier.4f" style="display: none">
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(survival)                <span class="co"># for Surv(), survfit()</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="co">#BIData &lt;- read.csv(&quot;Data/DerrigResampling.csv&quot;, header =T)</span></a>
-<a class="sourceLine" id="cb21-3" title="3">BIData<span class="op">$</span>UnCensored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&lt;</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)</a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="co">## KM estimate</span></a>
-<a class="sourceLine" id="cb21-5" title="5">KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)</a>
-<a class="sourceLine" id="cb21-6" title="6"><span class="kw">plot</span>(KM0, <span class="dt">conf.int=</span><span class="ot">FALSE</span>, <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Kaplan Meier Survival&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">library</span>(survival)                <span class="co"># for Surv(), survfit()</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="co">#BIData &lt;- read.csv(&quot;Data/DerrigResampling.csv&quot;, header =T)</span></a>
+<a class="sourceLine" id="cb20-3" title="3">BIData<span class="op">$</span>UnCensored &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">*</span>(BIData<span class="op">$</span>AmountPaid <span class="op">&lt;</span><span class="st"> </span>BIData<span class="op">$</span>PolicyLimit)</a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="co">## KM estimate</span></a>
+<a class="sourceLine" id="cb20-5" title="5">KM0 &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AmountPaid, UnCensored) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>,  <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, <span class="dt">data=</span>BIData)</a>
+<a class="sourceLine" id="cb20-6" title="6"><span class="kw">plot</span>(KM0, <span class="dt">conf.int=</span><span class="ot">FALSE</span>, <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Kaplan Meier Survival&quot;</span>)</a></code></pre></div>
 </div>
 <hr />
 <p><strong>Right-Censored, Left-Truncated Empirical Distribution Function.</strong>
@@ -1917,7 +1935,7 @@ In addition to right-censoring, we now extend the framework to allow for left-tr
 \widehat{Var}(\hat{F}(x)) = (1-\hat{F}(x))^{2} \sum _{j:t_{j} \leq x} \dfrac{s_j}{R_{j}(R_{j}-s_j)}.
 \]</span></p>
 <p>As usual, we refer to the square root of the estimated variance as a <em>standard error</em>, a quantity that is routinely used in confidence intervals and for hypothesis testing. To compute this, <code>R</code>‘s <code>survfit</code> method takes a survival data object and creates a new object containing the Kaplan-Meier estimate of the survival function along with confidence intervals. The Kaplan-Meier method (<code>type='kaplan-meier'</code>) is used by default to construct an estimate of the survival curve. The resulting discrete survival function has point masses at the observed event times (discharge dates) <span class="math inline">\(t_j\)</span>, where the probability of an event given survival to that duration is estimated as the number of observed events at the duration <span class="math inline">\(s_j\)</span> divided by the number of subjects exposed or ’at-risk’ just prior to the event duration <span class="math inline">\(R_j\)</span>.</p>
-<p><strong>Alterative Estimators</strong>. Two alternate types of estimation are also available for the <code>survfit</code> method. The alternative (<code>type='fh2'</code>) handles ties, in essence, by assuming that multiple events at the same duration occur in some arbitrary order. Another alternative (<code>type='fleming-harrington'</code>) uses the <a href="#" class="tooltip" style="color:green"><em>Nelson-Aalen</em><span style="font-size:8pt">A nonparametric estimator of the cumulative hazard function in the presence of incomplete data.</span></a> (see <span class="citation">(Aalen <a href="#ref-aalen1978" role="doc-biblioref">1978</a>)</span>) estimate of the <strong>cumulative hazard function</strong> to obtain an estimate of the survival function. The estimated cumulative hazard <span class="math inline">\(\hat{H}(x)\)</span> starts at zero and is incremented at each observed event duration <span class="math inline">\(t_j\)</span> by the number of events <span class="math inline">\(s_j\)</span> divided by the number at risk <span class="math inline">\(R_j\)</span>. With the same notation as above, the <strong>Nelson-Äalen</strong> estimator of the distribution function is</p>
+<p><strong>Alternative Estimators</strong>. Two alternate types of estimation are also available for the <code>survfit</code> method. The alternative (<code>type='fh2'</code>) handles ties, in essence, by assuming that multiple events at the same duration occur in some arbitrary order. Another alternative (<code>type='fleming-harrington'</code>) uses the <a href="#" class="tooltip" style="color:green"><em>Nelson-Aalen</em><span style="font-size:8pt">A nonparametric estimator of the cumulative hazard function in the presence of incomplete data.</span></a> (see <span class="citation">(Aalen <a href="#ref-aalen1978" role="doc-biblioref">1978</a>)</span>) estimate of the <strong>cumulative hazard function</strong> to obtain an estimate of the survival function. The estimated cumulative hazard <span class="math inline">\(\hat{H}(x)\)</span> starts at zero and is incremented at each observed event duration <span class="math inline">\(t_j\)</span> by the number of events <span class="math inline">\(s_j\)</span> divided by the number at risk <span class="math inline">\(R_j\)</span>. With the same notation as above, the <strong>Nelson-Äalen</strong> estimator of the distribution function is</p>
 <p><span class="math display">\[
 \begin{aligned}
 \hat{F}_{NA}(x) &amp;=
@@ -2045,23 +2063,19 @@ j &amp; t_j &amp; s_j &amp; R_j \\
 <h3><span class="header-section-number">4.4.1</span> Introduction to Bayesian Inference</h3>
 <p>Up to this point, our inferential methods have focused on the <a href="#" class="tooltip" style="color:green"><em>frequentist</em><span style="font-size:8pt"></span></a> setting, in which samples are repeatedly drawn from a population. The vector of parameters <span class="math inline">\(\boldsymbol \theta\)</span> is fixed yet unknown, whereas the outcomes <span class="math inline">\(X\)</span> are realizations of random variables.</p>
 <p>In contrast, under the <a href="#" class="tooltip" style="color:green"><em>Bayesian</em><span style="font-size:8pt">A type of statistical inference in which the model parameters and the data are random variables.</span></a> framework, we view both the model parameters and the data as random variables. We are uncertain about the parameters <span class="math inline">\(\boldsymbol \theta\)</span> and use probability tools to reflect this uncertainty.</p>
-<p>To get a sense of the Bayesian framework, begin by recalling Bayes’ rule</p>
+<p>To get a sense of the Bayesian framework, begin by recalling Bayes’ rule,</p>
 <p><span class="math display">\[
-\Pr(parameters|data) = \frac{\Pr(data|parameters) \times \Pr(parameters)}{\Pr(data)}
+\Pr(parameters|data) = \frac{\Pr(data|parameters) \times \Pr(parameters)}{\Pr(data)},
 \]</span></p>
 <p>where</p>
 <ul>
 <li><span class="math inline">\(\Pr(parameters)\)</span> is the distribution of the parameters, known as the <em>prior</em> distribution.</li>
-<li><span class="math inline">\(\Pr(data | parameters)\)</span> is the sampling distribution. In a frequentist context, it is used for
-making inferences about the parameters and is known as the <em>likelihood</em>.</li>
-<li><span class="math inline">\(\Pr(parameters | data)\)</span> is the distribution of the parameters having observed the data, known as
-the <em>posterior</em> distribution.</li>
-<li><span class="math inline">\(\Pr(data)\)</span> is the marginal distribution of the data. It is generally obtained by integrating (or
-summing) the joint distribution of data and parameters over parameter values.</li>
+<li><span class="math inline">\(\Pr(data | parameters)\)</span> is the sampling distribution. In a frequentist context, it is used for making inferences about the parameters and is known as the <em>likelihood</em>.</li>
+<li><span class="math inline">\(\Pr(parameters | data)\)</span> is the distribution of the parameters having observed the data, known as the <em>posterior</em> distribution.</li>
+<li><span class="math inline">\(\Pr(data)\)</span> is the marginal distribution of the data. It is generally obtained by integrating (or summing) the joint distribution of data and parameters over parameter values.</li>
 </ul>
 <p><strong>Why Bayes?</strong> There are several advantages of the Bayesian approach. First, we can describe the entire distribution of parameters conditional on the data. This allows us, for example, to provide probability statements regarding the likelihood of parameters. Second, the Bayesian approach provides a unified approach for estimating parameters. Some non-Bayesian methods, such as <a href="#" class="tooltip" style="color:green"><em>least squares</em><span style="font-size:8pt">A technique for estimating parameters in linear regression. it is a standard approach in regression analysis to the approximate solution of overdetermined systems. in this technique, one determines the parameters that minimize the sum of squared differences between each observation and the corresponding linear combination of explanatory variables.</span></a>, require a separate approach to estimate variance components. In contrast, in Bayesian methods, all parameters can be treated in a similar fashion. This is convenient for explaining results to consumers of the data analysis. Third, this approach allows analysts to blend prior information known from other sources with the data in a coherent manner. This topic is developed in detail in the <a href="#" class="tooltip" style="color:green"><em>credibility</em><span style="font-size:8pt">An actuarial method of balancing an individual’s loss experience and the experience in the overall portfolio to improve ratemaking estimates.</span></a> Chapter <a href="C-Credibility.html#C:Credibility">9</a>. Fourth, Bayesian analysis is particularly useful for forecasting future responses.</p>
-<p><strong>Poisson - Gamma Special Case.</strong> To develop intuition, we consider the Poisson-Gamma case that holds a prominent position in actuarial applications. The idea is to consider a set of random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> where each <span class="math inline">\(X_i\)</span> could represent the number of claims for the <span class="math inline">\(i\)</span>th policyholder. Assume that claims of all policyholders follow the same Poisson so that
-<span class="math inline">\(X_i\)</span> has a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. This is analogous to the likelihood that we first saw in Chapter <a href="C-Frequency-Modeling.html#C:Frequency-Modeling">2</a>. In a non-Bayesian (or frequentist) context, the parameter <span class="math inline">\(\lambda\)</span> is viewed as an unknown quantity that is not random (it is said to be “fixed”). In the Bayesian context, the unknown parameter <span class="math inline">\(\lambda\)</span> is viewed as uncertain and is modeled as a random variable. In this special case, we use the gamma distribution to reflect this uncertainty, the <a href="#" class="tooltip" style="color:green"><em>prior distribution</em><span style="font-size:8pt">The distribution of the parameters prior to observing data under the bayesian framework.</span></a>.</p>
+<p><strong>Poisson - Gamma Special Case.</strong> To develop intuition, we consider the Poisson-gamma case that holds a prominent position in actuarial applications. The idea is to consider a set of random variables <span class="math inline">\(X_1, \ldots, X_n\)</span> where each <span class="math inline">\(X_i\)</span> could represent the number of claims for the <span class="math inline">\(i\)</span>th policyholder. Assume that claims of all policyholders follow the same Poisson so that <span class="math inline">\(X_i\)</span> has a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. This is analogous to the likelihood that we first saw in Chapter <a href="C-Frequency-Modeling.html#C:Frequency-Modeling">2</a>. In a non-Bayesian (or frequentist) context, the parameter <span class="math inline">\(\lambda\)</span> is viewed as an unknown quantity that is not random (it is said to be “fixed”). In the Bayesian context, the unknown parameter <span class="math inline">\(\lambda\)</span> is viewed as uncertain and is modeled as a random variable. In this special case, we use the gamma distribution to reflect this uncertainty, the <a href="#" class="tooltip" style="color:green"><em>prior distribution</em><span style="font-size:8pt">The distribution of the parameters prior to observing data under the bayesian framework.</span></a>.</p>
 <p>Think of the following two-stage sampling scheme to motivate our probabilistic set-up.</p>
 <ol style="list-style-type: decimal">
 <li>In the first stage, the parameter <span class="math inline">\(\lambda\)</span> is drawn from a gamma distribution.</li>
@@ -2110,28 +2124,38 @@ Here, we used the gamma distribution equality with the substitution <span class=
 </div>
 <div id="bayesian-model" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Bayesian Model</h3>
-<p>With the intuition developed in the preceding Section <a href="C-ModelSelection.html#S:IntroBayes">4.4.1</a>, we now restate the Bayesian model with a bit more precision using mathematical notation. For simplicity, we assume both the outcomes and parameters are continuous random variables. In the examples, we sometimes ask the viewer to apply these same principles to discrete versions. Conceptually both the continuous and discrete cases are the same; mechanically, one replaces a <em>pdf</em> by a <em>pmf</em> and an integral by a sum.</p>
+<p>With the intuition developed in the preceding Section <a href="C-ModelSelection.html#S:IntroBayes">4.4.1</a>, we now restate the Bayesian model with a bit more precision using mathematical notation. For simplicity, we assume both the outcomes and parameters are <strong>continuous</strong> random variables. In the examples, we sometimes ask the viewer to apply these same principles to discrete versions. Conceptually both the continuous and discrete cases are the same; mechanically, one replaces a <em>pdf</em> by a <em>pmf</em> and an integral by a sum.</p>
 <p>To emphasize, under the Bayesian perspective, the model parameters and data are both viewed as random. Our uncertainty about the parameters of the underlying data generating process is reflected in the use of probability tools.</p>
 <p><strong>Prior Distribution.</strong>
-Specifically, think about parameters <span class="math inline">\(\boldsymbol \theta\)</span> as a random vector and let <span class="math inline">\(\pi(\boldsymbol \theta)\)</span> denote the distribution of possible outcomes. This is knowledge that we have before outcomes are observed and is called the prior distribution. Typically, the prior distribution is a regular distribution and so integrates or sums to one, depending on whether <span class="math inline">\(\boldsymbol \theta\)</span> is continuous or discrete. However, we may be very uncertain (or have no clue) about the distribution of <span class="math inline">\(\boldsymbol \theta\)</span>; the Bayesian machinery allows the following situation
-<span class="math display">\[\int \pi(\theta) d\theta = \infty,\]</span>
-in which case <span class="math inline">\(\pi(\cdot)\)</span> is called an <a href="#" class="tooltip" style="color:green"><em>improper prior</em><span style="font-size:8pt">A prior distribution in which the sum or integral of the distribution is not finite.</span></a>.</p>
+Specifically, think about parameters <span class="math inline">\(\boldsymbol \theta\)</span> as a random vector and let <span class="math inline">\(\pi(\boldsymbol \theta)\)</span> denote the corresponding mass or density function. This is knowledge that we have before outcomes are observed and is called the <em>prior distribution</em>. Typically, the prior distribution is a regular distribution and so integrates or sums to one, depending on whether <span class="math inline">\(\boldsymbol \theta\)</span> is continuous or discrete. However, we may be very uncertain (or have no clue) about the distribution of <span class="math inline">\(\boldsymbol \theta\)</span>; the Bayesian machinery allows the following situation</p>
+<p><span class="math display">\[
+\int \pi(\theta) ~d\theta = \infty,
+\]</span></p>
+<p>in which case <span class="math inline">\(\pi(\cdot)\)</span> is called an <a href="#" class="tooltip" style="color:green"><em>improper prior</em><span style="font-size:8pt">A prior distribution in which the sum or integral of the distribution is not finite.</span></a>.</p>
 <p><strong>Model Distribution.</strong>
 The distribution of outcomes given an assumed value of <span class="math inline">\(\boldsymbol \theta\)</span> is known as the model distribution and denoted as <span class="math inline">\(f(x | \boldsymbol \theta) = f_{X|\boldsymbol \theta} (x|\boldsymbol \theta )\)</span>. This is the usual frequentist mass or density function. This is simply the likelihood in the frequentist context and so it is also convenient to use this as a descriptor for the model distribution.</p>
-<p><strong>Joint Distribution.</strong> The distribution of outcomes and model parameters is known as the joint distribution and denoted as <span class="math inline">\(f(x , \boldsymbol \theta) = f(x|\boldsymbol \theta )\pi(\boldsymbol \theta)\)</span>.</p>
-<p><strong>Marginal Outcome Distribution.</strong> The distribution of outcomes can be expressed as
-<span class="math display">\[f(x) = \int f(x | \boldsymbol \theta)\pi(\boldsymbol \theta) ~d \boldsymbol \theta.\]</span>
-This is analogous to a frequentist mixture distribution. In the mixture distribution, we combined (or “mixed”) different subpopulations. In the Bayesian context, the marginal distribution is a combination of different realizations of parameters (in some literatures, you can think about this as combining different “states of nature”).</p>
-<p><strong>Posterior Distribution of Parameters.</strong> After outcomes have been observed (hence the terminology “posterior”), one can use Bayes theorem to write the distribution as
-<span class="math display">\[\pi(\boldsymbol \theta | x) =\frac{f(x , \boldsymbol \theta)}{f(x)} =\frac{f(x|\boldsymbol \theta )\pi(\boldsymbol \theta)}{f(x)}\]</span>
-The idea is to update your knowledge of the distribution of <span class="math inline">\(\boldsymbol \theta\)</span> (<span class="math inline">\(\pi(\boldsymbol \theta)\)</span>) with the data <span class="math inline">\(x\)</span>. Making statements about potential values of parameters is an important aspect of statistical inference.</p>
+<p><strong>Joint Distribution.</strong>
+The distribution of outcomes and model parameters is a joint distribution of two random quantities. Its joint density function is denoted as <span class="math inline">\(f(x , \boldsymbol \theta) = f(x|\boldsymbol \theta )\pi(\boldsymbol \theta)\)</span>.</p>
+<p><strong>Marginal Outcome Distribution.</strong> The distribution of outcomes can be expressed as</p>
+<p><span class="math display">\[
+f(x) = \int f(x | \boldsymbol \theta)\pi(\boldsymbol \theta) ~d \boldsymbol \theta.
+\]</span></p>
+<p>This is analogous to a frequentist mixture distribution. In the mixture distribution, we combine (or “mix”) different subpopulations. In the Bayesian context, the marginal distribution is a combination of different realizations of parameters (in some literatures, you can think about this as combining different “states of nature”).</p>
+<p><strong>Posterior Distribution of Parameters.</strong> After outcomes have been observed (hence the terminology “posterior”), one can use Bayes theorem to write the density function as</p>
+<p><span class="math display">\[
+\pi(\boldsymbol \theta | x) =\frac{f(x , \boldsymbol \theta)}{f(x)} =\frac{f(x|\boldsymbol \theta )\pi(\boldsymbol \theta)}{f(x)} .
+\]</span></p>
+<p>The idea is to update your knowledge of the distribution of <span class="math inline">\(\boldsymbol \theta\)</span> (<span class="math inline">\(\pi(\boldsymbol \theta)\)</span>) with the data <span class="math inline">\(x\)</span>. Making statements about potential values of parameters is an important aspect of statistical inference.</p>
 </div>
 <div id="bayesian-inference" class="section level3">
 <h3><span class="header-section-number">4.4.3</span> Bayesian Inference</h3>
 <div id="summarizing-the-posterior-distribution-of-parameters" class="section level4">
 <h4><span class="header-section-number">4.4.3.1</span> Summarizing the Posterior Distribution of Parameters</h4>
-<p>One way to summarize a distribution is to use a <a href="#" class="tooltip" style="color:green"><em>confidence interval</em><span style="font-size:8pt">Another term for interval estimate. unlike a point estimate, it gives a range of reliability for approximating a parameter of interest.</span></a> type statement. To summarize the <em>posterior</em> distribution of parameters, the interval <span class="math inline">\([a,b]\)</span> is said to be a <span class="math inline">\(100(1-\alpha)\%\)</span> <a href="#" class="tooltip" style="color:green"><em>credibility interval</em><span style="font-size:8pt">A summary of the posterior distribution of parameters under the bayesian framework.</span></a> for <span class="math inline">\(\boldsymbol \theta\)</span> if
-<span class="math display">\[\Pr (a \le \theta \le b | \mathbf{x}) \ge 1- \alpha.\]</span></p>
+<p>One way to summarize a distribution is to use a <a href="#" class="tooltip" style="color:green"><em>confidence interval</em><span style="font-size:8pt">Another term for interval estimate. unlike a point estimate, it gives a range of reliability for approximating a parameter of interest.</span></a> type statement. To summarize the <em>posterior</em> distribution of parameters, the interval <span class="math inline">\([a,b]\)</span> is said to be a <span class="math inline">\(100(1-\alpha)\%\)</span> <a href="#" class="tooltip" style="color:green"><em>credibility interval</em><span style="font-size:8pt">A summary of the posterior distribution of parameters under the bayesian framework.</span></a> for <span class="math inline">\(\boldsymbol \theta\)</span> if</p>
+<p><span class="math display">\[
+\Pr (a \le \theta \le b | \mathbf{x}) \ge 1- \alpha.
+\]</span></p>
+<p>Particularly for insurance applications, this is also known as a <em>credible interval</em> to distinguish it from credibility theory introduced in Chapter <a href="C-Credibility.html#C:Credibility">9</a>.</p>
 <p>For another approach to summarization, we can look to classical <a href="#" class="tooltip" style="color:green"><em>decision analysis</em><span style="font-size:8pt">Bayesian decision theory is the study of an agent’s choices, which is informed by bayesian probability.</span></a>. In this set-up, the loss function <span class="math inline">\(l(\hat{\theta}, \theta)\)</span> determines the penalty paid for using the estimate <span class="math inline">\(\hat{\theta}\)</span> instead of the true <span class="math inline">\(\theta\)</span>. The <strong>Bayes estimate</strong> is the value that minimizes the expected loss <span class="math inline">\(\mathrm{E~}[ l(\hat{\theta}, \theta)]\)</span>. Some important special cases include:</p>
 <p><span class="math display">\[
 {\small
@@ -2324,7 +2348,7 @@ We are given the prior distribution of <span class="math inline">\(\theta\)</spa
 \pi(p|\mathbf{x}) &amp;\propto \Pr(\mathbf{x}|p)\ \pi(p) = p^8(2) \propto p^8 .
 \end{aligned}
 \]</span>
-Because a <em>pdf</em> integrates to one, we can calculate the propotionality constant as
+Because a <em>pdf</em> integrates to one, we can calculate the proportionality constant as
 <span class="math display">\[
 \begin{aligned}
 \pi(p|\mathbf{x}) &amp;= \frac{p^8}{\int_0^5 p^8 dp} = \frac{p^8}{(0.5^9)/9} = 9(0.5^{-9})p^8 .
@@ -2442,7 +2466,7 @@ Thus, the posterior distribution is proportional to
 </h5>
 <div id="toggleExample.4.4.7" style="display: none">
 <p><strong>Solution.</strong></p>
-<p>Since the conditional distribution of the number of claims per policyholder, <span class="math inline">\(E(X|\lambda)=Var(X|\lambda)=\lambda\)</span>, the Bayes prediction is</p>
+<p>Since the conditional distribution of the number of claims per policyholder, <span class="math inline">\(\mathrm{E}(X|\lambda)=\mathrm{Var}(X|\lambda)=\lambda\)</span>, the Bayes prediction is</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathrm{E}(X_2|X_1)

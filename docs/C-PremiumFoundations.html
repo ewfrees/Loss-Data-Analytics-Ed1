@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <!-- Mathjax -->
@@ -479,7 +480,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.1" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#iterative-model-selection"><i class="fa fa-check"></i><b>4.2.1</b> Iterative Model Selection</a></li>
 <li class="chapter" data-level="4.2.2" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#model-selection-based-on-a-training-dataset"><i class="fa fa-check"></i><b>4.2.2</b> Model Selection Based on a Training Dataset</a></li>
 <li class="chapter" data-level="4.2.3" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#model-selection-based-on-a-test-dataset"><i class="fa fa-check"></i><b>4.2.3</b> Model Selection Based on a Test Dataset</a></li>
-<li class="chapter" data-level="4.2.4" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#model-selection-based-on-cross-validation"><i class="fa fa-check"></i><b>4.2.4</b> Model Selection Based on Cross-Validation</a></li>
+<li class="chapter" data-level="4.2.4" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:MS:Cross-Validation"><i class="fa fa-check"></i><b>4.2.4</b> Model Selection Based on Cross-Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:MS:ModifiedData"><i class="fa fa-check"></i><b>4.3</b> Estimation using Modified Data</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="C-ModelSelection.html"><a href="C-ModelSelection.html#S:MS:ModifiedData1"><i class="fa fa-check"></i><b>4.3.1</b> Parametric Estimation using Modified Data</a></li>
@@ -526,7 +527,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="C-Simulation.html"><a href="C-Simulation.html#S:Bootstrap"><i class="fa fa-check"></i><b>6.2</b> Bootstrapping and Resampling</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="C-Simulation.html"><a href="C-Simulation.html#bootstrap-foundations"><i class="fa fa-check"></i><b>6.2.1</b> Bootstrap Foundations</a></li>
-<li class="chapter" data-level="6.2.2" data-path="C-Simulation.html"><a href="C-Simulation.html#bootstrap-precision-bias-standard-deviation-and-mse"><i class="fa fa-check"></i><b>6.2.2</b> Bootstrap Precision: Bias, Standard Deviation, and MSE</a></li>
+<li class="chapter" data-level="6.2.2" data-path="C-Simulation.html"><a href="C-Simulation.html#S:Sim:Precision"><i class="fa fa-check"></i><b>6.2.2</b> Bootstrap Precision: Bias, Standard Deviation, and Mean Square Error</a></li>
 <li class="chapter" data-level="6.2.3" data-path="C-Simulation.html"><a href="C-Simulation.html#confidence-intervals"><i class="fa fa-check"></i><b>6.2.3</b> Confidence Intervals</a></li>
 <li class="chapter" data-level="6.2.4" data-path="C-Simulation.html"><a href="C-Simulation.html#S:ParametricBootStrap"><i class="fa fa-check"></i><b>6.2.4</b> Parametric Bootstrap</a></li>
 </ul></li>
@@ -1055,34 +1056,34 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 <caption><span id="tab:PremPrinciples">Table 7.1: </span> Common Premium Principles</caption>
 <thead>
 <tr class="header">
-<th align="left">Description</th>
-<th align="center">Definition (<span class="math inline">\(H(X)\)</span>)</th>
+<th align="left">scription</th>
+<th align="left">Definition (<span class="math inline">\(H(X)\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Net (pure) premium</td>
-<td align="center"><span class="math inline">\({\rm E}[X]\)</span></td>
+<td align="left"><span class="math inline">\({\rm E}[X]\)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Expected value</td>
-<td align="center"><span class="math inline">\((1+\alpha){\rm E}[X]\)</span></td>
+<td align="left"><span class="math inline">\((1+\alpha){\rm E}[X]\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Standard deviation</td>
-<td align="center"><span class="math inline">\({\rm E}[X]+\alpha ~SD(X)\)</span></td>
+<td align="left"><span class="math inline">\({\rm E}[X]+\alpha ~SD(X)\)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Variance</td>
-<td align="center"><span class="math inline">\({\rm E}[X]+\alpha ~{\rm Var}(X)\)</span></td>
+<td align="left"><span class="math inline">\({\rm E}[X]+\alpha ~{\rm Var}(X)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Zero utility</td>
-<td align="center">solution of <span class="math inline">\(u(w) = {\rm E} ~u(w + P - X)\)</span></td>
+<td align="left">solution of <span class="math inline">\(u(w) = {\rm E} ~u(w + P - X)\)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Exponential</td>
-<td align="center"><span class="math inline">\(\frac{1}{\alpha} \ln {\rm E} ~e^{\alpha X}\)</span></td>
+<td align="left"><span class="math inline">\(\frac{1}{\alpha} \ln {\rm E} ~e^{\alpha X}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1111,30 +1112,30 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 <caption><span id="tab:Properties">Table 7.2: </span> Common Properties of Premium Principles</caption>
 <thead>
 <tr class="header">
-<th align="left">Description</th>
-<th align="center">Definition</th>
+<th align="left">scription</th>
+<th align="left">Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Nonnegative loading</td>
-<td align="center"><span class="math inline">\(H(X) \ge {\rm E}[X]\)</span></td>
+<td align="left"><span class="math inline">\(H(X) \ge {\rm E}[X]\)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Additivity</td>
-<td align="center"><span class="math inline">\(H(X_1+X_2) = H(X_1) + H(X_2)\)</span>, for independent <span class="math inline">\(X_1, X_2\)</span></td>
+<td align="left"><span class="math inline">\(H(X_1+X_2) = H(X_1) + H(X_2)\)</span>, for independent <span class="math inline">\(X_1, X_2\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Scale invariance</td>
-<td align="center"><span class="math inline">\(H(cX) = c H(X)\)</span>, for <span class="math inline">\(c \ge 0\)</span></td>
+<td align="left"><span class="math inline">\(H(cX) = c H(X)\)</span>, for <span class="math inline">\(c \ge 0\)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Consistency</td>
-<td align="center"><span class="math inline">\(H(c+X) = c + H(X)\)</span></td>
+<td align="left"><span class="math inline">\(H(c+X) = c + H(X)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">No rip-off</td>
-<td align="center"><span class="math inline">\(H(X) \le \max \{X\}\)</span></td>
+<td align="left"><span class="math inline">\(H(X) \le \max \{X\}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1652,7 +1653,7 @@ Figure 7.4: Lorenz versus Performance Curve
 </h5>
 <div id="toggleExample.AreaDemo" style="display: none">
 <p>To understand the formula for the Gini statistic, here is a sketch of a parallelogram connecting points <span class="math inline">\((a_1, b_1)\)</span>, <span class="math inline">\((a_2, b_2)\)</span>, and a 45 degree line. You can use basic geometry to check that the area of the figure is <span class="math inline">\(Area = (a_2 - a_1) \left \{\frac{a_2+a_1}{2} - \frac{b_2+b_1}{2} \right\}\)</span>. The definition of the Gini statistic in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is simply twice the sum of the parallelograms. The second equality in equation <a href="C-PremiumFoundations.html#eq:GiniDefn">(7.7)</a> is the result of some straight-forward algebra.</p>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-213-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
 <hr />
 </div>
 <p><strong>Example – Loss Distribution: Continued.</strong> The Gini statistic for the Lorenz curve (left-hand panel of Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a>) is 34.4 percent. In contrast, the Gini statistic for performance curve (right-hand panel) is 1.7 percent.</p>
@@ -1682,29 +1683,29 @@ Figure 7.4: Lorenz versus Performance Curve
 <p>For our base premium, we assume a common distribution among all states. For these simulated data, the average in-sample loss is <span class="math inline">\(P_1\)</span>=221.36.</p>
 <p>As an alternative, we use averages that are state-specific; these averages form our premiums <span class="math inline">\(P_2\)</span>. Because this illustration uses means that vary by states, we anticipate this alternative rating procedure to be preferred to the community rating procedure.</p>
 <p>Out of sample claims were generated from the same gamma distribution as the in-sample model, with 100 observations for each state. The following <code>R</code> code shows how to calculate the performance curves.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1">y &lt;-<span class="st"> </span>Outy </a>
-<a class="sourceLine" id="cb95-2" title="2">P1 &lt;-<span class="st"> </span>Flatpred</a>
-<a class="sourceLine" id="cb95-3" title="3">P2 &lt;-<span class="st"> </span>Predvec</a>
-<a class="sourceLine" id="cb95-4" title="4">n1 =<span class="st"> </span><span class="kw">length</span>(y)</a>
-<a class="sourceLine" id="cb95-5" title="5">XYmat =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(y,P1,P2))</a>
-<a class="sourceLine" id="cb95-6" title="6">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P1),]  <span class="co">#  Sort by premiums P1</span></a>
-<a class="sourceLine" id="cb95-7" title="7">DFy1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
-<a class="sourceLine" id="cb95-8" title="8">DFx1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P1)<span class="op">/</span><span class="kw">sum</span>(P1))</a>
-<a class="sourceLine" id="cb95-9" title="9">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P2),]  <span class="co">#  Sort by premiums P2</span></a>
-<a class="sourceLine" id="cb95-10" title="10">DFy2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
-<a class="sourceLine" id="cb95-11" title="11">DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P2)<span class="op">/</span><span class="kw">sum</span>(P2))</a>
-<a class="sourceLine" id="cb95-12" title="12"></a>
-<a class="sourceLine" id="cb95-13" title="13"><span class="co">#  FIGURE 3</span></a>
-<a class="sourceLine" id="cb95-14" title="14"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb95-15" title="15"><span class="co">#  Lorenz Curve</span></a>
-<a class="sourceLine" id="cb95-16" title="16"><span class="kw">plot</span>(DFx1,DFy1,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
-<a class="sourceLine" id="cb95-17" title="17"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Flat&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb95-18" title="18"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a>
-<a class="sourceLine" id="cb95-19" title="19"><span class="co">#  Performance Curve</span></a>
-<a class="sourceLine" id="cb95-20" title="20"><span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
-<a class="sourceLine" id="cb95-21" title="21"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb95-22" title="22"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a></code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-216-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1">y &lt;-<span class="st"> </span>Outy </a>
+<a class="sourceLine" id="cb89-2" title="2">P1 &lt;-<span class="st"> </span>Flatpred</a>
+<a class="sourceLine" id="cb89-3" title="3">P2 &lt;-<span class="st"> </span>Predvec</a>
+<a class="sourceLine" id="cb89-4" title="4">n1 =<span class="st"> </span><span class="kw">length</span>(y)</a>
+<a class="sourceLine" id="cb89-5" title="5">XYmat =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(y,P1,P2))</a>
+<a class="sourceLine" id="cb89-6" title="6">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P1),]  <span class="co">#  Sort by premiums P1</span></a>
+<a class="sourceLine" id="cb89-7" title="7">DFy1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
+<a class="sourceLine" id="cb89-8" title="8">DFx1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P1)<span class="op">/</span><span class="kw">sum</span>(P1))</a>
+<a class="sourceLine" id="cb89-9" title="9">XYmatPOrder =<span class="st"> </span>XYmat[<span class="kw">order</span>(P2),]  <span class="co">#  Sort by premiums P2</span></a>
+<a class="sourceLine" id="cb89-10" title="10">DFy2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>y)<span class="op">/</span><span class="kw">sum</span>(y))</a>
+<a class="sourceLine" id="cb89-11" title="11">DFx2 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">cumsum</span>(XYmatPOrder<span class="op">$</span>P2)<span class="op">/</span><span class="kw">sum</span>(P2))</a>
+<a class="sourceLine" id="cb89-12" title="12"></a>
+<a class="sourceLine" id="cb89-13" title="13"><span class="co">#  FIGURE 3</span></a>
+<a class="sourceLine" id="cb89-14" title="14"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb89-15" title="15"><span class="co">#  Lorenz Curve</span></a>
+<a class="sourceLine" id="cb89-16" title="16"><span class="kw">plot</span>(DFx1,DFy1,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
+<a class="sourceLine" id="cb89-17" title="17"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Flat&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb89-18" title="18"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a>
+<a class="sourceLine" id="cb89-19" title="19"><span class="co">#  Performance Curve</span></a>
+<a class="sourceLine" id="cb89-20" title="20"><span class="kw">plot</span>(DFx2,DFy2,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">cex=</span> <span class="fl">0.2</span>,</a>
+<a class="sourceLine" id="cb89-21" title="21"><span class="dt">xlab=</span><span class="st">&quot;Premium Distn&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;State Specific&quot;</span>);<span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb89-22" title="22"><span class="kw">mtext</span>(<span class="st">&quot;Loss Distn&quot;</span>, <span class="dt">side=</span><span class="dv">2</span>, <span class="dt">line=</span><span class="op">-</span><span class="fl">0.5</span>, <span class="dt">at=</span><span class="fl">1.1</span>,   <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">1.0</span>)</a></code></pre></div>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-217-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>For these data, the Gini statistics are 19.6 percent for the flat rate premium and -0.702 percent for the state-specific alternative. This indicates that the state-specific alternative procedure is strongly preferred to the base community rating procedure.</p>
 <hr />
 </div>
