@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#moments-and-distribution"><i class="fa fa-check"></i><b>5.3.1</b> Moments and Distribution</a></li>
 <li class="chapter" data-level="5.3.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#stop-loss-insurance"><i class="fa fa-check"></i><b>5.3.2</b> Stop-loss Insurance</a></li>
 <li class="chapter" data-level="5.3.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#analytic-results"><i class="fa fa-check"></i><b>5.3.3</b> Analytic Results</a></li>
-<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#tweedie-distribution"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
+<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:AggLoss:Tweedie"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#computing-the-aggregate-claims-distribution"><i class="fa fa-check"></i><b>5.4</b> Computing the Aggregate Claims Distribution</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#recursive-method"><i class="fa fa-check"></i><b>5.4.1</b> Recursive Method</a></li>
@@ -787,7 +787,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.2" data-path="C-AppC.html"><a href="C-AppC.html#asymptotic-properties-of-mle"><i class="fa fa-check"></i><b>17.2.2</b> Asymptotic Properties of MLE</a></li>
 <li class="chapter" data-level="17.2.3" data-path="C-AppC.html"><a href="C-AppC.html#use-of-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>17.2.3</b> Use of Maximum Likelihood Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelhood Estimation</a><ul>
+<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelihood Estimation</a><ul>
 <li class="chapter" data-level="17.3.1" data-path="C-AppC.html"><a href="C-AppC.html#hypothesis-testing"><i class="fa fa-check"></i><b>17.3.1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="17.3.2" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:MLEModelVal"><i class="fa fa-check"></i><b>17.3.2</b> MLE and Model Validation</a></li>
 </ul></li>
@@ -885,24 +885,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="S:frequency" class="section level3">
 <h3><span class="header-section-number">9.2.1</span> Full Credibility for Claim Frequency</h3>
 <p>Let <span class="math inline">\(N\)</span> be a random variable representing the number of claims for a group of risks, for example, risks within a particular rating classification. The observed number of claims will be used to estimate <span class="math inline">\(\mu_N=\mathrm{E}[N]\)</span>, the expected number of claims. How big does <span class="math inline">\(\mu_N\)</span> need to be to get a good estimate? One way to quantify the accuracy of the estimate would be a statement like: ``The observed value of <span class="math inline">\(N\)</span> should be within 5<span class="math inline">\(\%\)</span> of <span class="math inline">\(\mu_N\)</span> at least 90<span class="math inline">\(\%\)</span> of the time." Writing this as a mathematical expression would give <span class="math inline">\(\Pr[0.95\mu_N\leq N \leq1.05\mu_N] \geq 0.90\)</span>. Generalizing this statement by letting <span class="math inline">\(k\)</span> replace 5<span class="math inline">\(\%\)</span> and probability <span class="math inline">\(p\)</span> replace 0.90 gives the equation</p>
-<p><span class="math display" id="eq:kpercent-interval">\[
+<p><span class="math display" id="eq:kpercent-interval">\[\begin{equation}
 \Pr[(1-k)\mu_N\leq N \leq(1+k)\mu_N] \geq p.
 \tag{9.1}
-\]</span></p>
+\end{equation}\]</span></p>
 <p>The expected number of claims required for the probability on the left-hand side of <a href="C-Credibility.html#eq:kpercent-interval">(9.1)</a> to equal <span class="math inline">\(p\)</span> is called the <a href="#" class="tooltip" style="color:green"><em>full credibility standard</em><span style="font-size:8pt">The threshold of experience necessary to assign 100% credibility to the insured’s own experience</span></a>.</p>
 <p>If the expected number of claims is greater than or equal to the full credibility standard then full credibility can be assigned to the data so <span class="math inline">\(Z=1\)</span>. Usually the expected value <span class="math inline">\(\mu_N\)</span> is not known so full credibility will be assigned to the data if the actual observed number of claims <span class="math inline">\(n\)</span> is greater than or equal to the full credibility standard. The <span class="math inline">\(k\)</span> and <span class="math inline">\(p\)</span> values must be selected and the actuary may rely on experience, judgment, and other factors in making the choices.</p>
 <p>Subtracting <span class="math inline">\(\mu_N\)</span> from each term in <a href="C-Credibility.html#eq:kpercent-interval">(9.1)</a> and dividing by the standard deviation <span class="math inline">\(\sigma_N\)</span> of <span class="math inline">\(N\)</span> gives</p>
-<p><span class="math display" id="eq:normalized-interval">\[
+<p><span class="math display" id="eq:normalized-interval">\[\begin{equation}
 \Pr\left[\frac{-k\mu_N}{\sigma_N}\leq \frac{N-\mu_N}{\sigma_N} \leq \frac{k\mu_N}{\sigma_N}\right] \geq p.
 \tag{9.2}
-\]</span></p>
+\end{equation}\]</span></p>
 <p>In limited fluctuation credibility the standard normal distribution is used to approximate the distribution for <span class="math inline">\((N-\mu_N)/\sigma_N\)</span>. If <span class="math inline">\(N\)</span> is the sum of many claims from a large group of similar risks and the claims are independent, then the approximation may be reasonable.</p>
 <p>Let <span class="math inline">\(y_p\)</span> be the value such that <span class="math inline">\(\Pr[-y_p\leq (N-\mu_N)/\sigma_N \leq y_p]=\Phi(y_p)-\Phi(-y_p)=p\)</span> where <span class="math inline">\(\Phi( )\)</span> is the <a href="#" class="tooltip" style="color:green"><em>cumulative distribution function of the standard normal</em><span style="font-size:8pt">Cumulative density function for the normal distribution with mean 0 and standard deviation 1</span></a>. Because <span class="math inline">\(\Phi(-y_p)=1-\Phi(y_p)\)</span>, the equality can be rewritten as <span class="math inline">\(2\Phi(y_p)-1=p\)</span>. Solving for <span class="math inline">\(y_p\)</span> gives <span class="math inline">\(y_p=\Phi^{-1}((p+1)/2)\)</span> where <span class="math inline">\(\Phi^{-1}( )\)</span> is the inverse of <span class="math inline">\(\Phi( )\)</span>.</p>
 <p>Equation <a href="C-Credibility.html#eq:normalized-interval">(9.2)</a> will be satisfied if <span class="math inline">\(k\mu_N/\sigma_N \geq y_p\)</span> assuming the normal approximation. First we will consider this inequality for the case when <span class="math inline">\(N\)</span> has a Poisson distribution: <span class="math inline">\(\Pr[N=n] = \lambda^n\textrm{e}^{-\lambda}/n!\)</span>. Because <span class="math inline">\(\lambda=\mu_N=\sigma_N^2\)</span> for the Poisson, taking square roots yields <span class="math inline">\(\mu_N^{1/2}=\sigma_N\)</span>. So, <span class="math inline">\(k\mu_N/\mu_N^{1/2} \geq y_p\)</span> which is equivalent to <span class="math inline">\(\mu_N \geq (y_p/k)^2\)</span>. Let’s define <span class="math inline">\(\lambda_{kp}\)</span> to be the value of <span class="math inline">\(\mu_N\)</span> for which equality holds. Then the full credibility standard for the Poisson distribution is</p>
-<p><span class="math display" id="eq:full-credibility-Poisson">\[
+<p><span class="math display" id="eq:full-credibility-Poisson">\[\begin{equation}
 \lambda_{kp} = \left(\frac{y_p}{k}\right)^2 \textrm{with } y_p=\Phi^{-1}((p+1)/2).
 \tag{9.3}
-\]</span></p>
+\end{equation}\]</span></p>
 <p>If the expected number of claims <span class="math inline">\(\mu_N\)</span> is greater than or equal to <span class="math inline">\(\lambda_{kp}\)</span> then equation <a href="C-Credibility.html#eq:kpercent-interval">(9.1)</a> is assumed to hold and full credibility can be assigned to the data. As noted previously, because <span class="math inline">\(\mu_N\)</span> is usually unknown, full credibility is given if the observed number of claims <span class="math inline">\(n\)</span> satisfies <span class="math inline">\(n \geq \lambda_{kp}.\)</span></p>
 <p><strong>Example 9.2.1.</strong>
 The full credibility standard is set so that the observed number of claims is to be within 5% of the expected value with probability <span class="math inline">\(p=0.95\)</span>. If the number of claims has a Poisson distribution find the number of claims needed for full credibility.</p>

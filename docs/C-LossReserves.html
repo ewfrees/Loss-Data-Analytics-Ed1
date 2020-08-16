@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#moments-and-distribution"><i class="fa fa-check"></i><b>5.3.1</b> Moments and Distribution</a></li>
 <li class="chapter" data-level="5.3.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#stop-loss-insurance"><i class="fa fa-check"></i><b>5.3.2</b> Stop-loss Insurance</a></li>
 <li class="chapter" data-level="5.3.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#analytic-results"><i class="fa fa-check"></i><b>5.3.3</b> Analytic Results</a></li>
-<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#tweedie-distribution"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
+<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:AggLoss:Tweedie"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#computing-the-aggregate-claims-distribution"><i class="fa fa-check"></i><b>5.4</b> Computing the Aggregate Claims Distribution</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#recursive-method"><i class="fa fa-check"></i><b>5.4.1</b> Recursive Method</a></li>
@@ -787,7 +787,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.2" data-path="C-AppC.html"><a href="C-AppC.html#asymptotic-properties-of-mle"><i class="fa fa-check"></i><b>17.2.2</b> Asymptotic Properties of MLE</a></li>
 <li class="chapter" data-level="17.2.3" data-path="C-AppC.html"><a href="C-AppC.html#use-of-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>17.2.3</b> Use of Maximum Likelihood Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelhood Estimation</a><ul>
+<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelihood Estimation</a><ul>
 <li class="chapter" data-level="17.3.1" data-path="C-AppC.html"><a href="C-AppC.html#hypothesis-testing"><i class="fa fa-check"></i><b>17.3.1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="17.3.2" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:MLEModelVal"><i class="fa fa-check"></i><b>17.3.2</b> MLE and Model Validation</a></li>
 </ul></li>
@@ -841,11 +841,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="S:motivation" class="section level2">
 <h2><span class="header-section-number">11.1</span> Motivation</h2>
 <p>Our starting point is the lifetime of a P&amp;C insurance claim. Figure <a href="C-LossReserves.html#fig:tikz-run-off">11.1</a> pictures the development of such a claim over time and identifies the events of interest:</p>
+
 <a id="tikz-run-off"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-run-off"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-run-off-1.png" alt="Lifetime or run-off of a claim" width="480" />
+<img src="LossDataAnalytics_files/figure-html/tikz-run-off-1.png" alt="Lifetime or Run-off of a Claim" width="480" />
 <p class="caption">
-Figure 11.1: Lifetime or run-off of a claim
+Figure 11.1: <strong>Lifetime or Run-off of a Claim</strong>
 </p>
 </div>
 <p>The insured event or accident occurs at time <span class="math inline">\(t_{occ}\)</span>. This incident is reported to the insurance company at time <span class="math inline">\(t_{rep}\)</span>, after some delay. If the filed claim is accepted by the insurance company, payments will follow to reimburse the financial loss of the policyholder. In this example the insurance company compensates the incurred loss with loss payments at times <span class="math inline">\(t_1\)</span>, <span class="math inline">\(t_2\)</span> and <span class="math inline">\(t_3\)</span>. Eventually, the claim settles or closes at time <span class="math inline">\(t_{set}\)</span>.</p>
@@ -853,27 +854,30 @@ Figure 11.1: Lifetime or run-off of a claim
 <div id="S:claim-types" class="section level3">
 <h3><span class="header-section-number">11.1.1</span> Closed, IBNR, and RBNS Claims</h3>
 <p>Based on the status of the claim’s run-off we distinguish three types of claims in the books of an insurance company. A first type of claim is a closed claim. For these claims the complete development has been observed. With the red line in Figure <a href="C-LossReserves.html#fig:tikz-closed">11.2</a> indicating the present moment, all events from the claim’s development take place before the present moment. Hence, these events are observed at the present moment. For convenience, we will assume that a closed claim can not reopen.</p>
+
 <a id="tikz-closed"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-closed"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-closed-1.png" alt="Lifetime of a closed claim" width="480" />
+<img src="LossDataAnalytics_files/figure-html/tikz-closed-1.png" alt="Lifetime of a Closed Claim" width="480" />
 <p class="caption">
-Figure 11.2: Lifetime of a closed claim
+Figure 11.2: <strong>Lifetime of a Closed Claim</strong>
 </p>
 </div>
 <p>An <a href="#" class="tooltip" style="color:green"><em>RBNS</em><span style="font-size:8pt">Reported, But is Not fully Settled</span></a> claim is one that has been <strong>R</strong>eported, <strong>B</strong>ut is <strong>N</strong>ot fully <strong>S</strong>ettled at the present moment or the moment of evaluation, that is, the moment when the reserves should be calculated and booked by the insurer. Occurrence, reporting and possibly some loss payments take place before the present moment, but the closing of the claim happens in the future, beyond the present moment.</p>
+
 <a id="tikz-RBNS"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-RBNS"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-RBNS-1.png" alt="Lifetime of an RBNS claim" width="480" />
+<img src="LossDataAnalytics_files/figure-html/tikz-RBNS-1.png" alt="Lifetime of an RBNS Claim" width="480" />
 <p class="caption">
-Figure 11.3: Lifetime of an RBNS claim
+Figure 11.3: <strong>Lifetime of an RBNS Claim</strong>
 </p>
 </div>
 <p>An <a href="#" class="tooltip" style="color:green"><em>IBNR</em><span style="font-size:8pt"> Incurred in the past But is Not yet Reported. For such a claim the insured event took place, but the insurance company is not yet aware of the associated claim.</span></a> claim is one that has <strong>I</strong>ncurred in the past <strong>B</strong>ut is <strong>N</strong>ot yet <strong>R</strong>eported. For such a claim the insured event took place, but the insurance company is not yet aware of the associated claim. This claim will be reported in the future and its complete development (from reporting to settlement) takes place in the future.</p>
+
 <a id="tikz-IBNR"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-IBNR"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-IBNR-1.png" alt="Lifetime of an IBNR claim" width="480" />
+<img src="LossDataAnalytics_files/figure-html/tikz-IBNR-1.png" alt="Lifetime of an IBNR Claim" width="480" />
 <p class="caption">
-Figure 11.4: Lifetime of an IBNR claim
+Figure 11.4: <strong>Lifetime of an IBNR Claim</strong>
 </p>
 </div>
 <p>Insurance companies will reserve capital to fulfill their future liabilities with respect to both RBNS as well as IBNR claims. The future development of such claims is uncertain and predictive modeling techniques will be used to calculate appropriate reserves, from the historical development data observed on similar claims.</p>
@@ -888,11 +892,12 @@ Figure 11.4: Lifetime of an IBNR claim
 <div id="from-micro-to-macro" class="section level3">
 <h3><span class="header-section-number">11.2.1</span> From Micro to Macro</h3>
 <p>We now shed light on the data available to estimate the outstanding reserve for a portfolio of P&amp;C contracts. Insurance companies typically register data on the development of an individual claim as sketched in the timeline on the left hand side of Figure <a href="C-LossReserves.html#fig:tikz-micro-macro">11.5</a>. We refer to data registered at this level as <strong>granular or micro-level</strong> data. Typically, an actuary aggregates the information registered on the individual development of claims across all claims in a portfolio. This aggregation leads to data structured in a triangular format as shown on the right hand side of Figure <a href="C-LossReserves.html#fig:tikz-micro-macro">11.5</a>. Such data are called <strong>aggregate or macro-level</strong> data because each cell in the triangle displays information obtained by aggregating the development of multiple claims.</p>
+
 <a id="tikz-micro-macro"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-micro-macro"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-micro-macro-1.png" alt="From granular data to run-off triangle" width="480" />
+<img src="LossDataAnalytics_files/figure-html/tikz-micro-macro-1.png" alt="From Granular Data to Run-off Triangle" width="480" />
 <p class="caption">
-Figure 11.5: From granular data to run-off triangle
+Figure 11.5: <strong>From Granular Data to Run-off Triangle</strong>
 </p>
 </div>
 <p>The triangular display used in loss reserving is called a <strong>run-off or development</strong> triangle. On the vertical axis the triangle lists the accident or occurrence years during which a portfolio is followed. The loss payments booked for a specific claim are connected to the year during the which the insured event occurred. The horizontal axis indicates the payment delay since occurrence of the insured event.</p>
@@ -900,19 +905,21 @@ Figure 11.5: From granular data to run-off triangle
 <div id="run-off-triangles" class="section level3">
 <h3><span class="header-section-number">11.2.2</span> Run-off Triangles</h3>
 <p>A first example of a <a href="#" class="tooltip" style="color:green"><em>run-off triangle</em><span style="font-size:8pt">Triangular display of loss reserve data. Accident or occurrence periods on one axis (often vertical) with development periods on the other (often horizontal). Also known as a development triangle.</span></a> with incremental payments is displayed in Figure <a href="C-LossReserves.html#fig:tikz-triangle">11.6</a> (taken from <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2, also used in <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2015" role="doc-biblioref">2015</a>)</span>, Table 1.4). Accident years (or years of occurrence) are shown on the vertical axis and run from 2004 up to 2013. These refer to the year during which the insured event occurred. The horizontal axis indicates the payment delay in years since occurrence of the insured event. <em>0 delay</em> is used for payments made in the year of occurrence of the accident or insured event. <em>One year</em> of delay is used for payments made in the year after occurrence of the accident.</p>
+
 <a id="tikz-triangle"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-triangle"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-triangle-1.png" alt="A run-off triangle with incremental payment data. Source: @WuthrichMerz2008, Table 2.2." width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-triangle-1.png" alt="A Run-off Triangle with Incremental Payment Data. Source: Wüthrich and Merz (2008), Table 2.2." width="960" />
 <p class="caption">
-Figure 11.6: A run-off triangle with incremental payment data. Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.
+Figure 11.6: <strong>A Run-off Triangle with Incremental Payment Data.</strong> <em>Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.</em>
 </p>
 </div>
 <p>For example, cell <span class="math inline">\((2004, 0)\)</span> in the above triangle displays the number <span class="math inline">\(5,947\)</span>, the total amount paid in the year 2004 for all claims occurring in year 2004. Thus, it is the total amount paid with 0 years of delay on all claims that occurred in the year 2004. Similarly, the number in cell <span class="math inline">\((2012,1)\)</span> displays the total <span class="math inline">\(2,357.9\)</span> paid in the year 2013 for all claims that occurred in year 2012.</p>
+
 <a id="tikz-cum-triangle"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-1.png" alt="A run-off triangle with cumulative payment data. Source: @WuthrichMerz2008, Table 2.2." width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-1.png" alt="A Run-off Triangle with Cumulative Payment Data. Source: Wüthrich and Merz (2008), Table 2.2." width="960" />
 <p class="caption">
-Figure 11.7: A run-off triangle with cumulative payment data. Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.
+Figure 11.7: <strong>A Run-off Triangle with Cumulative Payment Data.</strong> <em>Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.</em>
 </p>
 </div>
 <p>Whereas the triangle in Figure <a href="C-LossReserves.html#fig:tikz-triangle">11.6</a> displays incremental payment data, the Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle">11.7</a> shows the same information in cumulative format. Now, cell <span class="math inline">\((2004,1)\)</span> displays the total claim amount paid <em>up to</em> payment delay 1 for all claims that occurred in year 2004. Therefore, it is the sum of the amount paid in 2004 and the amount paid in 2005 on accidents that occurred in 2004.</p>
@@ -936,11 +943,12 @@ Figure 11.7: A run-off triangle with cumulative payment data. Source: <span clas
 <div id="run-off-triangles-1" class="section level4 unnumbered">
 <h4>Run-off Triangles</h4>
 <p>To formalize the displays shown in Figures <a href="C-LossReserves.html#fig:tikz-triangle">11.6</a> and <a href="C-LossReserves.html#fig:tikz-cum-triangle">11.7</a>, we let <span class="math inline">\(i\)</span> refer to the occurrence or accident year, the year in which the insured event happened. In our notation the first accident year considered in the portfolio is denoted with 1 and the latest, most recent accident year is denoted with <span class="math inline">\(I\)</span>. Then, <span class="math inline">\(j\)</span> refers to the payment delay or development year, where a delay equal to 0 corresponds to the accident year itself. Figure <a href="C-LossReserves.html#fig:tikz-math-triangle">11.8</a> shows a triangle where the same number of years is considered in both the vertical as well as the horizontal direction, hence <span class="math inline">\(j\)</span> runs from 0 up to <span class="math inline">\(J = I-1\)</span>.</p>
+
 <a id="tikz-math-triangle"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-math-triangle"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-math-triangle-1.png" alt="Mathematical notation for a run-off triangle. Source: @WuthrichMerz2008" width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-math-triangle-1.png" alt="Mathematical notation for a run-off triangle. Source: Wüthrich and Merz (2008)" width="960" />
 <p class="caption">
-Figure 11.8: Mathematical notation for a run-off triangle. Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>
+Figure 11.8: <strong>Mathematical notation for a run-off triangle.</strong> <em>Source:</em> <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>
 </p>
 </div>
 <p>The random variable <span class="math inline">\(X_{ij}\)</span> denotes the incremental claims paid in development period <span class="math inline">\(j\)</span> on claims from accident year <span class="math inline">\(i\)</span>. Thus, <span class="math inline">\(X_{ij}\)</span> is the total amount paid in development year <span class="math inline">\(j\)</span> for all claims that happened in occurrence year <span class="math inline">\(i\)</span>. These payments are actually paid out in accounting or calendar year <span class="math inline">\(i+j\)</span>. Taking a cumulative point of view, <span class="math inline">\(C_{ij}\)</span> is the cumulative amount paid up until (and including) development year <span class="math inline">\(j\)</span> for accidents that occurred in year <span class="math inline">\(i\)</span>. Ultimately, a total amount <span class="math inline">\(C_{iJ}\)</span> is paid in the final development year <span class="math inline">\(J\)</span> for claims that occurred in accident year <span class="math inline">\(i\)</span>. In this chapter time is expressed in years, though other time units can be used as well, e.g. semesters or quarters.</p>
@@ -1067,10 +1075,11 @@ origin    0    1   2   3   4   5  6  7  8  9
 <div id="visualizing-triangles" class="section level4 unnumbered">
 <h4>Visualizing Triangles</h4>
 <p>To explore the evolution of the cumulative payments per occurrence year, Figure <a href="C-LossReserves.html#fig:plottriangle">11.9</a> shows <code>my_triangle</code> using the <code>plot</code> function available for objects of type <code>triangle</code> in the <code>ChainLadder</code> package. Each line in this plot pictures an occurrence year (from 2004 to 2013, labelled as 1 to 10). Development periods are labelled from 1 to 10 (instead of 0 to 9, as used above).</p>
+
 <div class="figure" style="text-align: center"><span id="fig:plottriangle"></span>
 <img src="LossDataAnalytics_files/figure-html/plottriangle-1.png" alt="Claim Development by Occurrence Year" width="80%" />
 <p class="caption">
-Figure 11.9: Claim Development by Occurrence Year
+Figure 11.9: <strong>Claim Development by Occurrence Year</strong>
 </p>
 </div>
 <p>Alternatively, the <code>lattice</code> argument creates one plot per occurrence year.</p>
@@ -1090,11 +1099,12 @@ Figure 11.9: Claim Development by Occurrence Year
 C_{i,j+1} = f_j \times C_{i,j}.
 \]</span></p>
 <p>Thus, the development factor tells you how the cumulative amount in development year <span class="math inline">\(j\)</span> grows to the cumulative amount in year <span class="math inline">\(j+1\)</span>. We highlight the cumulative amount in period 0 in blue and the cumulative amount in period 1 in red on the Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl1">11.10</a> taken from <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span> (Table 2.2, also used in <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2015" role="doc-biblioref">2015</a>)</span>, Table 1.4).</p>
+
 <a id="tikz-cum-triangle-cl1"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle-cl1"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl1-1.png" alt="A run-off triangle with cumulative payment data highlighting the cumulative amount in period 0 in blue and the cumulative amount in period 1 in red. Source: @WuthrichMerz2008, Table 2.2." width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl1-1.png" alt="A Run-off Triangle with Cumulative Payment Data Highlighting the Cumulative Amount in Period 0 in Blue and the Cumulative Amount in Period 1 in Red. Source: Wüthrich and Merz (2008), Table 2.2." width="960" />
 <p class="caption">
-Figure 11.10: A run-off triangle with cumulative payment data highlighting the cumulative amount in period 0 in blue and the cumulative amount in period 1 in red. Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.
+Figure 11.10: <strong>A Run-off Triangle with Cumulative Payment Data Highlighting the Cumulative Amount in Period 0 in Blue and the Cumulative Amount in Period 1 in Red.</strong> <em>Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.</em>
 </p>
 </div>
 <p>The chain-ladder method then presents an intuitive recipe to estimate or calculate these development factors. Since the first development factor <span class="math inline">\(f_0\)</span> describes the development of the cumulative claim amount from development period 0 to development period 1, it can be estimated as the ratio of the cumulative amounts in red and the cumulative amounts in blue, highlighted in the Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl1">11.10</a>. In math notation we then obtain the following estimate <span class="math inline">\(\hat{f}_0^{CL}\)</span> for the first development factor <span class="math inline">\(f_0\)</span>, given observations <span class="math inline">\(\mathcal{D}_I\)</span>:</p>
@@ -1106,11 +1116,12 @@ Figure 11.10: A run-off triangle with cumulative payment data highlighting the c
 \hat{C}_{10, 1} = C_{10,0} \cdot \hat{f}^{CL}_0 = 5,676\cdot 1.4925=8,471.
 \]</span>
 Going forward with this reasoning, the next development factor <span class="math inline">\(f_1\)</span> can be estimated. Since <span class="math inline">\(f_1\)</span> captures the development from period 1 to period 2, it can be estimated as the ratio of the numbers in red and the numbers in blue as highlighted in Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl2">11.11</a>.</p>
+
 <a id="tikz-cum-triangle-cl2"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle-cl2"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl2-1.png" alt="A run-off triangle with cumulative payment data highlighting the cumulative amount in period 1 in blue and the cumulative amount in period 2 in red. Source: @WuthrichMerz2008, Table 2.2." width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl2-1.png" alt="A Run-off Triangle with Cumulative Payment Data Highlighting the Cumulative Amount in Period 1 in Blue and the Cumulative Amount in Period 2 in Red. Source: Wüthrich and Merz (2008), Table 2.2." width="960" />
 <p class="caption">
-Figure 11.11: A run-off triangle with cumulative payment data highlighting the cumulative amount in period 1 in blue and the cumulative amount in period 2 in red. Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.
+Figure 11.11: <strong>A Run-off Triangle with Cumulative Payment Data Highlighting the Cumulative Amount in Period 1 in Blue and the Cumulative Amount in Period 2 in Red.</strong> <em>Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.</em>
 </p>
 </div>
 <p>The mathematical notation of the estimate <span class="math inline">\(\hat{f}_1^{CL}\)</span> for the next development factor <span class="math inline">\(f_1\)</span>, given observations <span class="math inline">\(\mathcal{D}_I\)</span>, equals:</p>
@@ -1126,19 +1137,21 @@ Consequently, this factor measures how the cumulative paid amount in development
 \]</span>
 Note that for <span class="math inline">\(\hat{C}_{10,2}\)</span> you actually use the estimate <span class="math inline">\(\hat{C}_{10,1}\)</span> and multiply it with the estimated development factor <span class="math inline">\(\hat{f}_1^{CL}\)</span>.</p>
 <p>We continue analogously and obtain following predictions, printed in italics in the Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl3">11.12</a>:</p>
+
 <a id="tikz-cum-triangle-cl3"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle-cl3"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl3-1.png" alt="A run-off triangle with cumulative payment data including predictions in italic. Source: [@WuthrichMerz2008], Table 2.2." width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl3-1.png" alt="A Run-off Triangle with Cumulative Payment Data Including Predictions in Italic Source: Wüthrich and Merz (2008), Table 2.2." width="960" />
 <p class="caption">
-Figure 11.12: A run-off triangle with cumulative payment data including predictions in italic. Source: <span class="citation">(Wüthrich and Merz <a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.
+Figure 11.12: <strong>A Run-off Triangle with Cumulative Payment Data Including Predictions in Italic</strong> <em>Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.</em>
 </p>
 </div>
 <p>Eventually we need to estimate the values in the final column. The last development factor <span class="math inline">\(f_8\)</span> measures the growth from development period 8 to development period 9 in the triangle. Since only the first row in the triangle has both cells observed, this last factor is estimated as the ratio of the value in red and the value in blue in Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl3b">11.13</a>.</p>
+
 <a id="tikz-cum-triangle-cl3b"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle-cl3b"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl3b-1.png" alt="A run-off triangle with cumulative payment data highlighting the cumulative amount in period 8 in blue and the cumulative amount in period 9 in red. Source: [@WuthrichMerz2008], Table 2.2." width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl3b-1.png" alt="A Run-off Triangle with Cumulative Payment Data Highlighting the Cumulative Amount in Period 8 in Blue and the Cumulative Amount in Period 9 in Red. Source: Wüthrich and Merz (2008), Table 2.2." width="960" />
 <p class="caption">
-Figure 11.13: A run-off triangle with cumulative payment data highlighting the cumulative amount in period 8 in blue and the cumulative amount in period 9 in red. Source: <span class="citation">(Wüthrich and Merz <a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.
+Figure 11.13: <strong>A Run-off Triangle with Cumulative Payment Data Highlighting the Cumulative Amount in Period 8 in Blue and the Cumulative Amount in Period 9 in Red.</strong> <em>Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.</em>
 </p>
 </div>
 <p>Given observations <span class="math inline">\(\mathcal{D}_I\)</span>, this factor estimate <span class="math inline">\(\hat{f}^{CL}_{8}\)</span> is equal to:</p>
@@ -1156,11 +1169,12 @@ Using this development factor estimate, we can now estimate the remaining cumula
 \]</span>
 where <span class="math inline">\(C_{i,I-i}\)</span> is on the last observed diagonal. It is clear that an important assumption of the chain-ladder method is that the proportional developments of claims from one development period to the next are similar for all occurrence years.</p>
 <p>This yields the following Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl4">11.14</a>:</p>
+
 <a id="tikz-cum-triangle-cl4"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle-cl4"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl4-1.png" alt="A run-off triangle with cumulative payment data including predictions in italic. Source: @WuthrichMerz2008, Table 2.2." width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl4-1.png" alt="A Run-off Triangle with Cumulative Payment Data Including Predictions in Italic Source: Wüthrich and Merz (2008), Table 2.2." width="960" />
 <p class="caption">
-Figure 11.14: A run-off triangle with cumulative payment data including predictions in italic. Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.
+Figure 11.14: <strong>A Run-off Triangle with Cumulative Payment Data Including Predictions in Italic</strong> <em>Source: <span class="citation">Wüthrich and Merz (<a href="#ref-WuthrichMerz2008" role="doc-biblioref">2008</a>)</span>, Table 2.2.</em>
 </p>
 </div>
 <p>The numbers in the last column show the estimates for the ultimate claim amounts. The estimate for the outstanding claim amount <span class="math inline">\(\hat{\mathcal{R}}_i^{CL}\)</span> for a particular occurrence period <span class="math inline">\(i=I-J+1,\ldots, I\)</span> is then given by the difference between the ultimate claim amount and the cumulative amount as observed on the most recent diagonal:</p>
@@ -1168,11 +1182,12 @@ Figure 11.14: A run-off triangle with cumulative payment data including predicti
 \hat{\mathcal{R}}_i^{CL} =\hat{C}_{iJ}^{CL}-C_{i,I-i}.
 \]</span>
 This is the chain-ladder estimate for the reserve necessary to fulfill future liabilities with respect to claims that occurred in this particular occurrence period. These reserves per occurrence period and for the total summed over all occurrence periods are summarized in Figure <a href="C-LossReserves.html#fig:tikz-cum-triangle-cl5">11.15</a>.</p>
+
 <a id="tikz-table-cl5"></a>
 <div class="figure" style="text-align: center"><span id="fig:tikz-cum-triangle-cl5"></span>
-<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl5-1.png" alt="Reserves per occurence period and for total" width="960" />
+<img src="LossDataAnalytics_files/figure-html/tikz-cum-triangle-cl5-1.png" alt="Reserves per Occurence Period and for Total" width="960" />
 <p class="caption">
-Figure 11.15: Reserves per occurence period and for total
+Figure 11.15: <strong>Reserves per Occurence Period and for Total</strong>
 </p>
 </div>
 </div>

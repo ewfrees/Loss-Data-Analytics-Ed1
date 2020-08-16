@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#moments-and-distribution"><i class="fa fa-check"></i><b>5.3.1</b> Moments and Distribution</a></li>
 <li class="chapter" data-level="5.3.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#stop-loss-insurance"><i class="fa fa-check"></i><b>5.3.2</b> Stop-loss Insurance</a></li>
 <li class="chapter" data-level="5.3.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#analytic-results"><i class="fa fa-check"></i><b>5.3.3</b> Analytic Results</a></li>
-<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#tweedie-distribution"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
+<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:AggLoss:Tweedie"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#computing-the-aggregate-claims-distribution"><i class="fa fa-check"></i><b>5.4</b> Computing the Aggregate Claims Distribution</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#recursive-method"><i class="fa fa-check"></i><b>5.4.1</b> Recursive Method</a></li>
@@ -787,7 +787,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.2" data-path="C-AppC.html"><a href="C-AppC.html#asymptotic-properties-of-mle"><i class="fa fa-check"></i><b>17.2.2</b> Asymptotic Properties of MLE</a></li>
 <li class="chapter" data-level="17.2.3" data-path="C-AppC.html"><a href="C-AppC.html#use-of-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>17.2.3</b> Use of Maximum Likelihood Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelhood Estimation</a><ul>
+<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelihood Estimation</a><ul>
 <li class="chapter" data-level="17.3.1" data-path="C-AppC.html"><a href="C-AppC.html#hypothesis-testing"><i class="fa fa-check"></i><b>17.3.1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="17.3.2" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:MLEModelVal"><i class="fa fa-check"></i><b>17.3.2</b> MLE and Model Validation</a></li>
 </ul></li>
@@ -850,6 +850,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p>People, firms, and other entities that we want to understand are described in a dataset by numerical characteristics. As these characteristics vary by entity, they are commonly known as <a href="#" class="tooltip" style="color:green"><em>variables</em><span style="font-size:8pt">A variable is any characteristics, number, or quantity that can be measured or counted.</span></a>. To manage insurance systems, it will be critical to understand the distribution of each variable and how they are associated with one another. It is common for data sets to have many variables (<a href="#" class="tooltip" style="color:green"><em>high dimensional</em><span style="font-size:8pt">Data set is high dimensional when it has many variables. In many applications, the number of variables may be larger than the sample size.</span></a>) and so is useful to begin by classifying them into different types. As will be seen, these classifications are not strict; there is overlap among the groups. Nonetheless, the grouping summarized in <a href="#tab:14.1">Table 14.1</a> and explained in the remainder of this section provides a solid first step in framing a data set.</p>
 <p><a id=tab:14.1></a></p>
+<p>Table 14.1. <strong>Variable Types</strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{l|l} \hline
@@ -881,7 +882,6 @@ Multivariate ~ Variable &amp;            \\
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.1">Table 14.1</a> : Variable Types</p>
 <p>In data analysis, it is important to understand what type of variable you are working with. For example, consider a pair of random variables <span class="math inline">\({\tt (Coverage, Claim)}\)</span> from the <em>LGPIF</em> data introduced in Section <a href="C-Intro.html#S:LGPIF">1.3</a> as displayed in Figure <a href="C-DependenceModel.html#fig:IntroPlot">14.1</a> below. We would like to know whether the distribution of <span class="math inline">\({\tt Coverage}\)</span> depends on the distribution of <span class="math inline">\({\tt Claim}\)</span> or whether they are statistically independent. We would also want to know how the <span class="math inline">\({\tt Claim}\)</span> distribution depends on the <span class="math inline">\({\tt EntityType}\)</span> variable. Because the <span class="math inline">\({\tt EntityType}\)</span> variable belongs to a different class of variables, modeling the dependence between <span class="math inline">\({\tt Claim}\)</span> and <span class="math inline">\({\tt Coverage}\)</span> may require a different technique from that of <span class="math inline">\({\tt Claim}\)</span> and <span class="math inline">\({\tt EntityType}\)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:IntroPlot"></span>
 <img src="LossDataAnalytics_files/figure-html/IntroPlot-1.png" alt="Scatter plot of *(Coverage,Claim)* from LGPIF data" width="80%" />
@@ -968,7 +968,7 @@ Figure 14.1: Scatter plot of <em>(Coverage,Claim)</em> from LGPIF data
 <p>Define the sample covariance function <span class="math inline">\(\widehat{Cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})\)</span>, where <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(\bar{Y}\)</span> are the sample means of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively. Then, the <a href="#" class="tooltip" style="color:green"><em>product-moment (Pearson) correlation</em><span style="font-size:8pt">Pearson correlation, a measure of the linear correlation between two variables</span></a> can be written as</p>
 <p><span class="math display">\[
 r = \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Cov}(X,X)\widehat{Cov}(Y,Y)}}
-= \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Var}(X,X)}\sqrt{\widehat{Var}(Y,Y)}}.
+= \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Var}(X)}\sqrt{\widehat{Var}(Y)}}.
 \]</span></p>
 <p>The correlation statistic <span class="math inline">\(r\)</span> is widely used to capture linear association between random variables. It is a (nonparametric) estimator of the correlation parameter <span class="math inline">\(\rho\)</span>, defined to be the covariance divided by the product of standard deviations.</p>
 <p>This statistic has several important features. Unlike regression estimators, it is symmetric between random variables, so the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> equals the correlation between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span>. It is unchanged by linear transformations of random variables (up to sign changes) so that we can multiply random variables or add constants as is helpful for interpretation. The range of the statistic is <span class="math inline">\([-1,1]\)</span> which does not depend on the distribution of either <span class="math inline">\(X\)</span> or <span class="math inline">\(Y\)</span>.</p>
@@ -1103,6 +1103,7 @@ Although these statistics provide the same information as is the original odds r
 <p>In a later section, we will also see that the marginal distributions have no effect on the Fréchet-Höeffding of the <a href="#" class="tooltip" style="color:green"><em>tetrachoric correlation</em><span style="font-size:8pt">A technique for estimating the correlation between two theorised normally distributed continuous latent variables, from two observed binary variables</span></a>, another measure of association, see also, <span class="citation">Joe (<a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span>, page 48.</p>
 <p>From <a href="#tab:14.2">Table 14.2</a>, <span class="math inline">\(OR(\pi_{11})=\frac{1611(956)}{897(2175)}=0.79\)</span>. You can obtain the <span class="math inline">\(OR(\pi_{11})\)</span>, using the <code>oddsratio()</code> function from the <code>epitools</code> library in <code>R</code>. From the output below, <span class="math inline">\(OR(\pi_{11})=0.79\)</span> for the binary variables <span class="math inline">\({\tt NoClaimCredit}\)</span> and <span class="math inline">\({\tt Fire5}\)</span> from the LGPIF data.</p>
 <p><a id=tab:14.2></a></p>
+<p>Table 14.2. <strong>2 <span class="math inline">\(\times\)</span> 2 Table of Counts for <span class="math inline">\({\tt Fire5}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span></strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{l|rr|r} 
@@ -1118,7 +1119,6 @@ Although these statistics provide the same information as is the original odds r
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.2">Table 14.2</a> : 2 <span class="math inline">\(\times\)</span> 2 Table of Counts for <span class="math inline">\({\tt Fire5}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span></p>
 <h5 style="text-align: center;">
 <a id="displayCode.wald.1" href="javascript:togglecode('toggleCode.wald.1','displayCode.wald.1');"><i><strong>R Code for Odds Ratios</strong></i></a>
 </h5>
@@ -1152,6 +1152,7 @@ and
 Under the null hypothesis of independence, we have <span class="math inline">\(\pi_{jk} =\pi_{X,j}\pi_{Y,k}\)</span> and it is clear from these approximations that we anticipate that these statistics will be small under this hypothesis.</p>
 <p>Classical approaches, as described in <span class="citation">Bishop, Fienberg, and Holland (<a href="#ref-bishop1975discrete" role="doc-biblioref">1975</a>)</span> (page 374), distinguish between tests of independence and measures of associations. The former are designed to detect whether a relationship exists whereas the latter are meant to assess the type and extent of a relationship. We acknowledge these differing purposes but also less concerned with this distinction for actuarial applications.</p>
 <p><a id=tab:14.3></a></p>
+<p>Table 14.3. <strong>Two-way Table of Counts for <span class="math inline">\({\tt EntityType}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span></strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{l|rr} 
@@ -1169,7 +1170,6 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.3">Table 14.3</a> : Two-way Table of Counts for <span class="math inline">\({\tt EntityType}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span></p>
 <p>You can obtain the Pearson chi-square statistic, using the <code>chisq.test()</code> function from the <code>MASS</code> library in <code>R</code>. Here, we test whether the <span class="math inline">\({\tt EntityType}\)</span> variable is independent of the <span class="math inline">\({\tt NoClaimCredit}\)</span> variable using <a href="#tab:14.3">Table 14.3</a>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.chi.1" href="javascript:togglecode('toggleCode.chi.1','displayCode.chi.1');"><i><strong>R Code for Pearson Chi-square Statistic</strong></i></a>
@@ -1230,6 +1230,7 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 \]</span></p>
 <p>It is called a <em>tetrachoric</em> correlation for binary variables.</p>
 <p><a id=tab:14.4></a></p>
+<p>Table 14.4. <strong>Two-way Table of Counts for <span class="math inline">\({\tt AlarmCredit}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span></strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{c|rr} 
@@ -1245,7 +1246,6 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.4">Table 14.4</a> : Two-way Table of Counts for <span class="math inline">\({\tt AlarmCredit}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span></p>
 <p>You can obtain the polychoric or tetrachoric correlation using the <code>polychoric()</code> or <code>tetrachoric()</code> function from the <code>psych</code> library in <code>R</code>. The polychoric correlation is illustrated using <a href="#tab:14.4">Table 14.4</a>. Here, <span class="math inline">\(\hat{\rho}_N=-0.14\)</span>, which means that there is a negative relationship between <span class="math inline">\({\tt AlarmCredit}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.poly.1" href="javascript:togglecode('toggleCode.poly.1','displayCode.poly.1');"><i><strong>R Code for Polychoric Correlation</strong></i></a>
@@ -1285,6 +1285,7 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 \]</span></p>
 <p>The <a href="#" class="tooltip" style="color:green"><em>biserial correlation</em><span style="font-size:8pt">A correlation coefficient used when one variable is dichotomous</span></a> is defined similarly, when one variable is continuous and the other binary.</p>
 <p><a id=tab:14.5></a></p>
+<p>Table 14.5. <strong>Summary of <span class="math inline">\({\tt Claim}\)</span> by <span class="math inline">\({\tt NoClaimCredit}\)</span></strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{l|r|r} 
@@ -1298,7 +1299,6 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.5">Table 14.5</a> : Summary of <span class="math inline">\({\tt Claim}\)</span> by <span class="math inline">\({\tt NoClaimCredit}\)</span></p>
 <p>You can obtain the polyserial or biserial correlation using the <code>polyserial()</code> or <code>biserial()</code> function, respectively, from the <code>psych</code> library in <code>R</code>. <a href="#tab:14.5">Table 14.5</a> gives the summary of <span class="math inline">\({\tt Claim}\)</span> by <span class="math inline">\({\tt NoClaimCredit}\)</span> and the biserial correlation is illustrated using <code>R</code> code below. The <span class="math inline">\(\hat{\rho}_N=-0.04\)</span> which means that there is a negative correlation between <span class="math inline">\({\tt Claim}\)</span> and <span class="math inline">\({\tt NoClaimCredit}\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.bis.1" href="javascript:togglecode('toggleCode.bis.1','displayCode.bis.1');"><i><strong>R Code for Biserial Correlation</strong></i></a>
@@ -1340,10 +1340,10 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 <hr />
 <p>Copulas are widely used in insurance and many other fields to model the dependence among multivariate outcomes. A <a href="#" class="tooltip" style="color:green"><em>copula</em><span style="font-size:8pt">A multivariate distribution function with uniform marginals</span></a> is a multivariate distribution function with uniform marginals. Specifically, let <span class="math inline">\(\{U_1, \ldots, U_p\}\)</span> be <span class="math inline">\(p\)</span> uniform random variables on <span class="math inline">\((0,1)\)</span>. Their distribution function <span class="math display">\[{C}(u_1, \ldots, u_p) = \Pr(U_1 \leq u_1, \ldots, U_p \leq u_p),\]</span></p>
 <p>is a copula. We seek to use copulas in applications that are based on more than just uniformly distributed data. Thus, consider arbitrary marginal distribution functions <span class="math inline">\({F}_1(y_1)\)</span>,…,<span class="math inline">\({F}_p(y_p)\)</span>. Then, we can define a multivariate distribution function using the copula such that</p>
-<p><span class="math display" id="eq:DFDefined">\[
+<p><span class="math display" id="eq:DFDefined">\[\begin{equation}
 {F}(y_1, \ldots, y_p)= {C}({F}_1(y_1), \ldots, {F}_p(y_p)).
- \tag{14.1}
-\]</span></p>
+\tag{14.1}
+\end{equation}\]</span></p>
 <p>Here, <span class="math inline">\(F\)</span> is a multivariate distribution function. <span class="citation">Sklar (<a href="#ref-sklar1959fonctions" role="doc-biblioref">1959</a>)</span> showed that <span class="math inline">\(any\)</span> multivariate distribution function <span class="math inline">\(F\)</span>, can be written in the form of equation <a href="C-DependenceModel.html#eq:DFDefined">(14.1)</a>, that is, using a copula representation.</p>
 <p>Sklar also showed that, if the marginal distributions are continuous, then there is a unique copula representation. In this chapter we focus on copula modeling with continuous variables. For discrete case, readers can see <span class="citation">Joe (<a href="#ref-joe2014dependence" role="doc-biblioref">2014</a>)</span> and <span class="citation">Genest and Nešlohva (<a href="#ref-genest2007methods" role="doc-biblioref">2007</a>)</span>.</p>
 <p>For the bivariate case where <span class="math inline">\(p=2\)</span>, we can write a copula and the distribution function of two random variables as</p>
@@ -1355,11 +1355,11 @@ Under the null hypothesis of independence, we have <span class="math inline">\(\
 {F}(y_1, \, y_2)= {C}({F}_1(y_1),  {F}_p(y_2)).
 \]</span></p>
 <p>As an example, we can look to the copula due to <span class="citation">Frank (<a href="#ref-frank1979simultaneous" role="doc-biblioref">1979</a>)</span>. The copula (distribution function) is</p>
-<p><span class="math display" id="eq:FrankCopula">\[
+<p><span class="math display" id="eq:FrankCopula">\[\begin{equation}
 {C}(u_1,u_2) = \frac{1}{\gamma} \log \left( 1+ \frac{ (\exp(\gamma
 u_1) -1)(\exp(\gamma u_2) -1)} {\exp(\gamma) -1} \right).
 \tag{14.2}
-\]</span></p>
+\end{equation}\]</span></p>
 <p>This is a bivariate distribution function with its domain on the unit square <span class="math inline">\([0,1]^2.\)</span> Here <span class="math inline">\(\gamma\)</span> is dependence parameter, that is, the range of dependence is controlled by the parameter <span class="math inline">\(\gamma\)</span>. Positive association increases as <span class="math inline">\(\gamma\)</span> increases. As we will see, this positive association can be summarized with <a href="#" class="tooltip" style="color:green"><em>Spearman’s rho</em><span style="font-size:8pt">A nonparametric measure of rank correlation</span></a> (<span class="math inline">\(\rho_S\)</span>) and Kendall’s tau (<span class="math inline">\(\tau\)</span>). Frank’s copula is commonly used. We will see other copula functions in Section <a href="C-DependenceModel.html#S:CopTyp">14.5</a>.</p>
 <div id="surveyElement143">
 
@@ -1452,6 +1452,7 @@ F(y)=1- \left( 1 + \frac{\theta}{y+ \theta} \right) ^{\alpha}.
 <a class="sourceLine" id="cb157-6" title="6"><span class="fl">16228.14797</span>     <span class="fl">1.23766</span></a></code></pre></div>
 </div>
 <p><a id=tab:14.6></a></p>
+<p>Table 14.6. <strong>Summary of Pareto Maximum Likelihood Fitted Parameters from the LGPIF Data</strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{l|r|r} 
@@ -1464,7 +1465,6 @@ LOSS  &amp;    16228.14797  &amp;  1.23766 \\
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.6">Table 14.6</a> : Summary of Pareto Maximum Likelihood Fitted Parameters from the LGPIF Data</p>
 <p>To visualize the fitted distribution of <span class="math inline">\({\tt LOSS}\)</span> and <span class="math inline">\({\tt ALAE}\)</span> variables, one can use the estimated parameters and plot the corresponding distribution function and density function. For more details on the selection of marginal models, see Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
 </div>
 <div id="probability-integral-transformation" class="section level3">
@@ -1578,12 +1578,12 @@ Figure 14.6: Left: Plot for distribution function for Franks Copula. Right:Plot 
 <h3><span class="header-section-number">14.5.1</span> Normal (Gaussian) Copulas</h3>
 <p>We started our study with Frank’s copula in equation <a href="C-DependenceModel.html#eq:FrankCopula">(14.2)</a> because it can capture both positive and negative dependence and has a readily understood analytic form. However, extensions to multivariate cases where <span class="math inline">\(p&gt;2\)</span> are not easy and so we look to alternatives. In particular, the normal, or Gaussian, distribution has been used for many years in empirical work, starting with Gauss in 1887. So, it is natural to turn to this distribution as a benchmark for understanding multivariate dependencies.</p>
 <p>For a multivariate normal distribution, think of <span class="math inline">\(p\)</span> normal random variables, each with mean zero and standard deviation one. Their dependence is controlled by <span class="math inline">\(\boldsymbol \Sigma\)</span>, a <a href="#" class="tooltip" style="color:green"><em>correlation matrix</em><span style="font-size:8pt">A table showing correlation coefficients between variables</span></a>, with ones on the diagonal. The number in the <span class="math inline">\(i\)</span>th row and <span class="math inline">\(j\)</span>th column, say <span class="math inline">\(\boldsymbol \Sigma_{ij}\)</span>, gives the correlation between the <span class="math inline">\(i\)</span>th and <span class="math inline">\(j\)</span>th normal random variables. This collection of random variables has a multivariate normal distribution with probability density function</p>
-<p><span class="math display" id="eq:Normalpdf">\[
+<p><span class="math display" id="eq:Normalpdf">\[\begin{equation}
 \phi_N (\mathbf{z})= \frac{1}{(2 \pi)^{p/2}\sqrt{\det \boldsymbol \Sigma}}
 \exp\left( -\frac{1}{2} \mathbf{z}^{\prime} \boldsymbol
 \Sigma^{-1}\mathbf{z}\right).
 \tag{14.3}
-\]</span></p>
+\end{equation}\]</span></p>
 <p>To develop the corresponding copula version, it is possible to start with equation <a href="C-DependenceModel.html#eq:DFDefined">(14.1)</a>, evaluate this using normal variables, and go through a bit of calculus. Instead, we simply state as a definition, the normal (Gaussian) <strong>copula</strong> density function is</p>
 <p><span class="math display">\[
 c_N(u_1,  \ldots, u_p) = \phi_N \left(\Phi^{-1}(u_1), \ldots, \Phi^{-1}(u_p) \right) \prod_{j=1}^p \frac{1}{\phi(\Phi^{-1}(u_j))}.
@@ -1629,7 +1629,7 @@ h_{t_r} (\mathbf{z})= \frac{k_p}{\sqrt{\det \boldsymbol \Sigma}}
 \exp\left[- \left( 1+ \frac{(\mathbf{z}- \boldsymbol \mu)^{\prime} \boldsymbol \Sigma^{-1}(\mathbf{z}- \boldsymbol \mu)}{r} \right)^{-(p+r)/2}\right] .
 \]</span></p>
 <p><a id=tab:14.7></a></p>
-<p><a href="#tab:14.7">Table 14.7</a> : Generator Functions (<span class="math inline">\(g_p(\cdot)\)</span>) for Selected Elliptical Distributions</p>
+<p>Table 14.7. <strong>Generator Functions (<span class="math inline">\(g_p(\cdot)\)</span>) for Selected Elliptical Distributions</strong></p>
 <p><span class="math display">\[
 \small\begin{array}{lc}
 \hline &amp; Generator \\
@@ -1720,10 +1720,10 @@ Figure 14.8: Perfect Positive and Perfect negative dependence plots
 <h4><span class="header-section-number">14.5.4.2</span> Measures of Association</h4>
 <p>Empirical versions of Spearman’s rho and Kendall’s tau were introduced in Sections <a href="C-DependenceModel.html#Sec:Spearman">14.2.2.1</a> and <a href="C-DependenceModel.html#Sec:Kendall">14.2.2.2</a>, respectively. The interesting thing about these expressions is that these summary measures of association are based <strong>only</strong> on the ranks of each variable. Thus, any strictly increasing transform does not affect these measures of association. Specifically, consider two random variables, <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span>, and let m<span class="math inline">\(_1\)</span> and m<span class="math inline">\(_2\)</span> be strictly increasing functions. Then, the association, when measured by Spearman’s rho or Kendall’s tau, between <span class="math inline">\(m_1(Y_1)\)</span> and <span class="math inline">\(m_2(Y_2)\)</span> does not change regardless of the choice of m<span class="math inline">\(_1\)</span> and m<span class="math inline">\(_2\)</span>. For example, this allows analysts to consider dollars, Euros, or log dollars, and still retain the same essential dependence. As we have seen in Section <a href="C-DependenceModel.html#S:Measures">14.2</a>, this is not the case with the Pearson’s measure of correlation.</p>
 <p><span class="citation">Schweizer, Wolff, and others (<a href="#ref-schweizer1981nonparametric" role="doc-biblioref">1981</a>)</span> established that the copula accounts for all the dependence in the sense that they way <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> “move together” is captured by the copula, regardless of the scale in which each variable is measured. They also showed that (population versions of) the two standard nonparametric measures of association could be expressed solely in terms of the copula function. Spearman’s correlation coefficient is given by</p>
-<p><span class="math display" id="eq:TheorySpearman">\[
+<p><span class="math display" id="eq:TheorySpearman">\[\begin{equation}
 \rho_S = 12 \int_0^1 \int_0^1  \left\{C(u,v) - uv \right\} du dv.
 \tag{14.4}
-\]</span></p>
+\end{equation}\]</span></p>
 <p>Kendall’s tau is given by</p>
 <p><span class="math display">\[
 \tau= 4 \int_0^1  \int_0^1  C(u,v)~dC(u,v) - 1 .
@@ -1757,6 +1757,7 @@ L(z) = \frac{\Pr(U_1 \leq z, U_2 \leq z)}{z}=\Pr(U_1 \leq z | U_2 \leq z) =\frac
 <p>with the lower tail dependence parameter <span class="math inline">\(L = \lim_{z \rightarrow 0} L(z)\)</span>. A <a href="#" class="tooltip" style="color:green"><em>tail dependency</em><span style="font-size:8pt">A measure of their comovements in the tails of the distributions</span></a> concentration function captures the probability of two random variables simultaneously having extreme values.</p>
 <p>It is of interest to see how well a given copula can capture tail dependence. To this end, we calculate the left and right tail concentration functions for four different types of copulas; Normal, Frank, Gumbel and <span class="math inline">\(t\)</span>- copulas. The results are summarized for concentration function values for these four copulas in <a href="#tab:14.8">Table 14.8</a>. As in <span class="citation">Venter (<a href="#ref-venter2002tails" role="doc-biblioref">2002</a>)</span>, we show <span class="math inline">\(L(z)\)</span> for <span class="math inline">\(z\leq 0.5\)</span> and <span class="math inline">\(R(z)\)</span> for <span class="math inline">\(z&gt;0.5\)</span> in the tail dependence plot in Figure <a href="C-DependenceModel.html#fig:DepTails">14.9</a>. We interpret the tail dependence plot to mean that both the Frank and Normal copula exhibit no tail dependence whereas the <span class="math inline">\(t\)</span>- and the Gumbel do so. The <span class="math inline">\(t\)</span>- copula is symmetric in its treatment of upper and lower tails.</p>
 <p><a id=tab:14.8></a></p>
+<p>Table 14.8. <strong>Tail Dependence Parameters for Four Copulas</strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{l|rr} 
@@ -1771,7 +1772,6 @@ t-  &amp; 0.10   &amp; 0.10    \\
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.8">Table 14.8</a> : Tail Dependence Parameters for Four Copulas</p>
 <h5 style="text-align: center;">
 <a id="displayCode.Tail.1" href="javascript:togglecode('toggleCode.Tail.1','displayCode.Tail.1');"><i><strong>R Code for Tail Copula Functions for Different Copulas</strong></i></a>
 </h5>
@@ -1839,6 +1839,7 @@ Figure 14.9: Tail dependence plots
 <p>Dependence modeling is important because it enables us to understand the dependence structure by defining the relationship between variables in a dataset. In insurance, ignoring dependence modeling may not impact pricing but could lead to misestimation of required capital to cover losses. For instance, from Section <a href="C-DependenceModel.html#S:CopAppl">14.4</a> , it is seen that there was a positive relationship between <span class="math inline">\({\tt LOSS}\)</span> and <span class="math inline">\({\tt ALAE}\)</span>. This means that, if there is a large loss then we expect expenses to be large as well and ignoring this relationship could lead to mis-estimation of reserves.</p>
 <p>To illustrate the importance of dependence modeling, we refer you back to portfolio management example in Section <a href="C-PortMgt.html#S:PortMgtExample">10.4.3.3</a> that assumed that the property and liability risks are independent. Now, we incorporate dependence by allowing the four lines of business to depend on one another through a Gaussian copula. In <a href="#tab:14.9">Table 14.9</a>, we show that dependence affects the portfolio quantiles (<span class="math inline">\(VaR_q\)</span>), although not the expected values. For instance, the <span class="math inline">\(VaR_{0.99}\)</span> for total risk which is the amount of capital required to ensure, with a <span class="math inline">\(99\%\)</span> degree of certainty that the firm does not become technically insolvent is higher when we incorporate dependence. This leads to less capital being allocated when dependence is ignored and can cause unexpected solvency problems.</p>
 <p><a id=tab:14.9></a></p>
+<p>Table 14.9. <strong>Results for Portfolio Expected Value and Quantiles (<span class="math inline">\(VaR_q\)</span>)</strong></p>
 <p><span class="math display">\[
 {\small \begin{matrix}
 \begin{array}{l|rrrr} 
@@ -1860,7 +1861,6 @@ Figure 14.9: Tail dependence plots
 \end{array}
 \end{matrix}}
 \]</span></p>
-<p><a href="#tab:14.9">Table 14.9</a> : Results for Portfolio Expected Value and Quantiles (<span class="math inline">\(VaR_q\)</span>)</p>
 <h5 style="text-align: center;">
 <a id="displayCode.SimG.1" href="javascript:togglecode('toggleCode.SimG.1','displayCode.SimG.1');"><i><strong>R Code for Simulation Using Gaussian Copula</strong></i></a>
 </h5>

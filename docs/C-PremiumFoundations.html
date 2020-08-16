@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#moments-and-distribution"><i class="fa fa-check"></i><b>5.3.1</b> Moments and Distribution</a></li>
 <li class="chapter" data-level="5.3.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#stop-loss-insurance"><i class="fa fa-check"></i><b>5.3.2</b> Stop-loss Insurance</a></li>
 <li class="chapter" data-level="5.3.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#analytic-results"><i class="fa fa-check"></i><b>5.3.3</b> Analytic Results</a></li>
-<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#tweedie-distribution"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
+<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:AggLoss:Tweedie"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#computing-the-aggregate-claims-distribution"><i class="fa fa-check"></i><b>5.4</b> Computing the Aggregate Claims Distribution</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#recursive-method"><i class="fa fa-check"></i><b>5.4.1</b> Recursive Method</a></li>
@@ -787,7 +787,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.2" data-path="C-AppC.html"><a href="C-AppC.html#asymptotic-properties-of-mle"><i class="fa fa-check"></i><b>17.2.2</b> Asymptotic Properties of MLE</a></li>
 <li class="chapter" data-level="17.2.3" data-path="C-AppC.html"><a href="C-AppC.html#use-of-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>17.2.3</b> Use of Maximum Likelihood Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelhood Estimation</a><ul>
+<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelihood Estimation</a><ul>
 <li class="chapter" data-level="17.3.1" data-path="C-AppC.html"><a href="C-AppC.html#hypothesis-testing"><i class="fa fa-check"></i><b>17.3.1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="17.3.2" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:MLEModelVal"><i class="fa fa-check"></i><b>17.3.2</b> MLE and Model Validation</a></li>
 </ul></li>
@@ -921,12 +921,12 @@ Q = \frac{\text{UW Profit}}{\text{Premium}} ~.
 }
 \]</span>
 Solving for premiums yields</p>
-<p><span class="math display" id="eq:PremiumEquation">\[
+<p><span class="math display" id="eq:PremiumEquation">\[\begin{equation}
 \small{
 \text{Premium} = \frac{\text{Losses + Fixed}}{1-V-Q} .
 }
 \tag{7.2}
-\]</span></p>
+\end{equation}\]</span></p>
 <p>Dividing by exposure, the rate can be calculated as</p>
 <p><span class="math display">\[
 \begin{matrix}
@@ -1010,7 +1010,7 @@ Q_{target} = 1
 }
 \]</span>
 Solving for <span class="math inline">\(ICF\)</span> yields</p>
-<p><span class="math display" id="eq:IndicatedChangeFactor">\[
+<p><span class="math display" id="eq:IndicatedChangeFactor">\[\begin{equation}
 {\small
 \begin{array}{ll}
 ICF &amp;= \frac{\text{Loss + Fixed}}{\text{Premium} \times (1 - V - Q_{target})} \\
@@ -1018,7 +1018,7 @@ ICF &amp;= \frac{\text{Loss + Fixed}}{\text{Premium} \times (1 - V - Q_{target})
 \end{array}
 \tag{7.3}
 }
-\]</span></p>
+\end{equation}\]</span></p>
 <p><strong>Example. Loss Ratio Indicated Change Factor.</strong> Assume the following information:</p>
 <ul>
 <li>Projected ultimate loss and LAE ratio = 65%</li>
@@ -1051,9 +1051,10 @@ ICF = \frac{\text{(Losses + Fixed)}/\text{Premium}}{ 1 - V - Q_{target}} = \frac
 <p>Approaches to pricing vary by the type of contract. For example, personal automobile is common (it is known as part of the retail general insurance market in the United Kingdom). Here, one can expect to do pricing based on a large pool of independent contracts, a situation in which expectations of losses provide an excellent starting point. In contrast, an actuary may wish to price an insurance contract issued to a large employer that covers complex health benefits for thousands of employees. In this example, knowledge of the entire distribution of potential losses, not just the expected value, is critical for starting the pricing negotiations. To cover a range of potential applications, this section describes general premium principles and their properties that one can use to decide whether or not a specific principle is applicable in a given situation.</p>
 <div id="premium-principles" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> Premium Principles</h3>
-<p>This chapter introduces traditional actuarial pricing principles that provide a price based only on the insurance loss distribution; the price does not depend on the demand for insurance or other aspects of the costs such as expenses. Assume that the loss <span class="math inline">\(X\)</span> has a distribution function <span class="math inline">\(F(\cdot)\)</span> and that there exists some rule (which in mathematics is known as a <em>functional</em>), say <span class="math inline">\(H\)</span>, that takes <span class="math inline">\(F(\cdot)\)</span> into the positive real line, denoted as <span class="math inline">\(P = H(F)\)</span>. For notation purposes, it is often convenient to substitute the random variable <span class="math inline">\(X\)</span> for its distribution function and write <span class="math inline">\(P = H(X)\)</span>. Table <a href="C-PremiumFoundations.html#tab:PremPrinciples">7.1</a> provides several examples.</p>
+<p>This chapter introduces traditional actuarial pricing principles that provide a price based only on the insurance loss distribution; the price does not depend on the demand for insurance or other aspects of the costs such as expenses. Assume that the loss <span class="math inline">\(X\)</span> has a distribution function <span class="math inline">\(F(\cdot)\)</span> and that there exists some rule (which in mathematics is known as a <em>functional</em>), say <span class="math inline">\(H\)</span>, that takes <span class="math inline">\(F(\cdot)\)</span> into the positive real line, denoted as <span class="math inline">\(P = H(F)\)</span>. For notation purposes, it is often convenient to substitute the random variable <span class="math inline">\(X\)</span> for its distribution function and write <span class="math inline">\(P = H(X)\)</span>. <a href="#tab:71">Table 7.1</a> provides several examples.</p>
+<p><a id=tab:71></a></p>
+<p>Table 7.1. <strong>Common Premium Principles</strong></p>
 <table>
-<caption><span id="tab:PremPrinciples">Table 7.1: </span> Common Premium Principles</caption>
 <thead>
 <tr class="header">
 <th align="left">scription</th>
@@ -1107,9 +1108,10 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 </div>
 <div id="properties-of-premium-principles" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> Properties of Premium Principles</h3>
-<p>Properties of premium principles help guide the selection of a premium principle in applications. Table <a href="C-PremiumFoundations.html#tab:Properties">7.2</a> provides examples of properties of premium principles.</p>
+<p>Properties of premium principles help guide the selection of a premium principle in applications. <a href="#tab:72">Table 7.2</a> provides examples of properties of premium principles.</p>
+<p><a id=tab:72></a></p>
+<p>Table 7.2. <strong>Common Properties of Premium Principles</strong></p>
 <table>
-<caption><span id="tab:Properties">Table 7.2: </span> Common Properties of Premium Principles</caption>
 <thead>
 <tr class="header">
 <th align="left">scription</th>
@@ -1140,7 +1142,7 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 </tbody>
 </table>
 <p>This is simply a subset of the many properties quoted in the actuarial literature. For example, the review paper of <span class="citation">Young (<a href="#ref-young2014premium" role="doc-biblioref">2014</a>)</span> lists 15 properties. See also the properties described as <em>coherent axioms</em> that we introduce for risk measures in Section <a href="C-PortMgt.html#S:RiskMeasure">10.3</a>.</p>
-<p>Some of the properties listed in Table <a href="C-PremiumFoundations.html#tab:Properties">7.2</a> are mild in the sense that they will nearly always be satisfied. For example, the <em>no rip-off</em> property indicates that the premium charge will be smaller than the largest or “maximal” value of the loss <span class="math inline">\(X\)</span> (here, we use the notation <span class="math inline">\(\max \{X\}\)</span> for this maximal value which is defined as an “essential supremium” in mathematics). Other properties may not be so mild. For example, for a portfolio of independent risks, the actuary may want the <em>additivity</em> property to hold. It is easy to see that this property holds for the expected value, variance, and exponential premium principles but not for the standard deviation principle. Another example is the <em>consistency</em> property that does not hold for the expected value principle when the risk loading parameter <span class="math inline">\(\alpha\)</span> is positive.</p>
+<p>Some of the properties listed in <a href="#tab:72">Table 7.2</a> are mild in the sense that they will nearly always be satisfied. For example, the <em>no rip-off</em> property indicates that the premium charge will be smaller than the largest or “maximal” value of the loss <span class="math inline">\(X\)</span> (here, we use the notation <span class="math inline">\(\max \{X\}\)</span> for this maximal value which is defined as an “essential supremium” in mathematics). Other properties may not be so mild. For example, for a portfolio of independent risks, the actuary may want the <em>additivity</em> property to hold. It is easy to see that this property holds for the expected value, variance, and exponential premium principles but not for the standard deviation principle. Another example is the <em>consistency</em> property that does not hold for the expected value principle when the risk loading parameter <span class="math inline">\(\alpha\)</span> is positive.</p>
 <p>The <em>scale invariance</em> principle is known as <em>homogeneity of degree one</em> in economics. For example, it allows us to work in different currencies (e.g., from dollars to Euros) as well as a host of other applications and will be discussed further in the following Section <a href="C-PremiumFoundations.html#S:HeterogeneousRisks">7.4</a>. Although a generally accepted principle, we note that this principle does not hold for a large value of <span class="math inline">\(X\)</span> that may border on a surplus constraint of an insurer; if an insurer has a large probability of becoming insolvent, then that insurer may not wish to use linear pricing. It is easy to check that this principle holds for the expected value and standard deviation principles, although not for the variance and exponential principles.</p>
 </div>
 </div>
@@ -1164,6 +1166,7 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 <p>Intuitively, the idea behind exposures is to make risks more comparable to one another. For example, it may be that risks <span class="math inline">\(X_1, \ldots, X_n\)</span> come from different distributions and yet, with the choice of the right exposures, the rates <span class="math inline">\(R_1, \ldots, R_n\)</span> come from the same distribution. Here, we interpret the rate <span class="math inline">\(R_i = X_i/E_i\)</span> to be the loss divided by exposure.</p>
 <p><a href="#tab:7.3">Table 7.3</a> provides a few examples. We remark that this table refers to “earned” car and house years, concepts that will be explained in Section <a href="C-PremiumFoundations.html#S:TrendDevelopment">7.5</a>.</p>
 <p><a id=tab:7.3></a></p>
+<p>Table 7.3. <strong>Commonly used Exposures in Different Types of Insurance</strong></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1182,7 +1185,6 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 \end{matrix}
 }
 \]</span></p>
-<p><a href="#tab:7.3">Table 7.3</a> : Commonly used Exposures in Different Types of Insurance</p>
 <p>An exposure is a type of <a href="#" class="tooltip" style="color:green"><em>rating factor</em><span style="font-size:8pt">A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.</span></a>, a concept that we define explicitly in the next Section <a href="C-PremiumFoundations.html#S:RatingFactors">7.4.2</a>. It is typically the most important rating factor, so important that both premiums and losses are quoted on a “per exposure” basis.</p>
 <p>For frequency and severity modeling, it is customary to think about the frequency aspect as proportional to exposure and the severity aspect in terms of loss per claim (not dependent upon exposure). However, this does not cover the entire story. For many lines of business, it is convenient for exposures to be proportional to inflation. Inflation is typically viewed as unrelated to frequency but proportional to severity.</p>
 <div id="criteria-for-choosing-an-exposure" class="section level4 unnumbered">
@@ -1207,6 +1209,7 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 <p>A rating factor, or <a href="#" class="tooltip" style="color:green"><em>rating variable</em><span style="font-size:8pt">A rating factor, or rating variable, is a characteristic of the policyholder or risk being insured by which rates vary.</span></a>, is simply a characteristic of the policyholder or risk being insured by which rates vary. For example, when you purchase auto insurance, it is likely that the insurer has rates that differ by age, gender, type of car and where it is garaged, accident history, and so forth. These variables are known as rating factors. Although some variables may be continuous, such as age, most are categorical - <a href="#" class="tooltip" style="color:green"><em>factor</em><span style="font-size:8pt">A variable that varies by groups or categories.</span></a> is a label that is used for categorical variables. In fact, even with <a href="#" class="tooltip" style="color:green"><em>continuous variables</em><span style="font-size:8pt">Type of variable that can take on any real value</span></a> such as age, it is common to categorize them by creating groups such as “young,” “intermediate,” and “old” for rating purposes.</p>
 <p><a href="#tab:7.4">Table 7.4</a> provides just a few examples. In many jurisdictions, the personal insurance market (e.g., auto and homeowners) is very competitive - using 10 or 20 variables for rating purposes is not uncommon.</p>
 <p><a id=tab:7.4></a></p>
+<p>Table 7.4. <strong>Commonly used Rating Factors in Different Types of Insurance</strong></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1222,11 +1225,11 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 \end{array}
 \end{matrix}
 }
-\]</span>
-<a href="#tab:7.4">Table 7.4</a> : Commonly used Rating Factors in Different Types of Insurance</p>
+\]</span></p>
 <hr />
 <p><strong>Example. Losses and Premium by Amount of Insurance and Territory.</strong> To illustrate, <a href="#tab:7.5">Table 7.5</a> presents a small fictitious data set from <span class="citation">Werner and Modlin (<a href="#ref-werner2016basic" role="doc-biblioref">2016</a>)</span>. The data consists of loss and loss adjustment expenses (<em>LossLAE</em>), decomposed by three levels of amount of insurance (<em>AOI</em>), and three territories (<em>Terr</em>). For each combination of <em>AOI</em> and <em>Terr</em>, we also have available the number of policies issued, given as the <em>Exposure</em>.</p>
 <p><a id=tab:7.5></a></p>
+<p>Table 7.5. <strong>Losses and Premium by Amount of Insurance and Territory</strong></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1248,8 +1251,7 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 \end{array}
 \end{matrix}
 }
-\]</span>
-<a href="#tab:7.5">Table 7.5</a> : Losses and Premium by Amount of Insurance and Territory</p>
+\]</span></p>
 <p>In this case, the rating factors <em>AOI</em> and <em>Terr</em> produce nine cells. Note that one might combine the cell “territory one with a low amount of insurance”" with another cell because there are only 7 policies in that cell. Doing so is perfectly acceptable - considerations of this sort is one of the main jobs of the analyst. An outline on selecting variables is in Chapter <a href="C-RiskClass.html#C:RiskClass">8</a>, including Technical Supplement TS <strong>8.B</strong>. Alternatively, you can also think about reinforcing information about the cell (<em>Terr</em> 1, Low <em>AOI</em>) by “borrowing” information from neighboring cells (e.g., other territories with the same <em>AOI</em>, or other amounts of <em>AOI</em> within <em>Terr</em> 1). This is the subject of <a href="#" class="tooltip" style="color:green"><em>credibility</em><span style="font-size:8pt">Weight assigned to observed data vs. that assigned to an external or broader-based set of data</span></a> that is introduced in Chapter <a href="C-Credibility.html#C:Credibility">9</a>.</p>
 <hr />
 <p>To understand the impact of rating factors, it is common to use relativities. A <a href="#" class="tooltip" style="color:green"><em>relativity</em><span style="font-size:8pt">The difference of the expected risk between a specific level of a rating factor and an accepted baseline value. this difference may be arithmetic or proportional.</span></a> compares the expected risk at a specific level of a rating factor to an accepted baseline value. In this book, we work with relativities defined through ratios; it is also possible to define relativities through arithmetic differences. Thus, our relativity is defined as</p>
@@ -1259,6 +1261,7 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 <hr />
 <p><strong>Example. Losses and Premium by Amount of Insurance and Territory - Continued.</strong> Traditional classification methods consider only one classification variable at a time - they are univariate. Thus, if we wanted relativities for losses and expenses (<em>LossLAE</em>) by amount of insurance, we might sum over territories to get the information displayed in <a href="#tab:7.6">Table 7.6</a>.</p>
 <p><a id=tab:7.6></a></p>
+<p>Table 7.6. <strong>Losses and Relativities by Amount of Insurance</strong></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1274,7 +1277,6 @@ H_{Exp}(X) &amp;= \frac{-\eta}{\alpha_{Exp}} \ln\left(1-\alpha_{Exp} ~\theta\rig
 \end{matrix}
 }
 \]</span></p>
-<p><a href="#tab:7.6">Table 7.6</a> : Losses and Relativities by Amount of Insurance</p>
 <p>Thus, losses and expenses per unit of exposure are 23.2% higher for risks with a high amount of insurance compared to those with a medium amount. These relativities do not control for territory.</p>
 <hr />
 <p>The introduction of rating factors allows the analyst to create cells that define small collections of risks – the goal is to choose the right combination of rating factors so that all risks within a cell may be treated the same. In statistical terminology, we want all risks within a cell to have the same distribution (subject to rescaling by an exposure variable). This is the foundation of insurance pricing. All risks within a cell have the same price per exposure yet risks from different cells may have different prices.</p>
@@ -1307,9 +1309,9 @@ Information about the risks, such as exposures, premium, claim counts, losses, a
 <a href="C-PremiumFoundations.html#fig:Exposures">7.1</a> presents four illustrative policies. Because of these differing start and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:Exposures"></span>
-<img src="LossDataAnalytics_files/figure-html/Exposures-1.png" alt="Timeline of Exposures for Four 12-Month Policies." width="50%" />
+<img src="LossDataAnalytics_files/figure-html/Exposures-1.png" alt="Timeline of Exposures for Four 12-Month Policies" width="50%" />
 <p class="caption">
-Figure 7.1: Timeline of Exposures for Four 12-Month Policies.
+Figure 7.1: <strong>Timeline of Exposures for Four 12-Month Policies</strong>
 </p>
 </div>
 <p>Some commonly used exposure measures are:</p>
@@ -1319,8 +1321,9 @@ Figure 7.1: Timeline of Exposures for Four 12-Month Policies.
 <li><a href="#" class="tooltip" style="color:green"><em>unearned exposures</em><span style="font-size:8pt">Exposure amount for which coverage has not yet been provided</span></a>, represent the portion of the written exposures for which coverage has not yet been provided as of that point in time, and</li>
 <li><a href="#" class="tooltip" style="color:green"><em>in force exposures</em><span style="font-size:8pt">Exposure amount subject to loss at a particular point in time</span></a>, exposure units exposed to loss at a given point in time.</li>
 </ul>
-<p><a href="#tab:7.12">Table 7.12</a> gives detailed illustrative calculations for the four illustrative policies.</p>
-<p><a id=tab:7.12></a></p>
+<p><a href="#tab:7.7">Table 7.7</a> gives detailed illustrative calculations for the four illustrative policies.</p>
+<p><a id=tab:7.7></a></p>
+<p>Table 7.7. <strong>Exposures for Four 12-Month Policies</strong></p>
 <p><span class="math display">\[
 \small{
 \begin{matrix}
@@ -1339,8 +1342,7 @@ Figure 7.1: Timeline of Exposures for Four 12-Month Policies.
 \end{array}
 \end{matrix}
 }
-\]</span>
-<a href="#tab:7.12">Table 7.12</a>: Exposures for Four 12-Month Policies</p>
+\]</span></p>
 <p>This summarization is sometimes known as the <a href="#" class="tooltip" style="color:green"><em>calendar year method</em><span style="font-size:8pt">Experience for rating is aggregated based on calendar year, as opposed to other methods such as when a policy term began</span></a> of aggregation to serve as a contrast to the <a href="#" class="tooltip" style="color:green"><em>policy year</em><span style="font-size:8pt">This is the period between a policy’s anniversary dates.</span></a> method. In the policy year method, all premiums and losses for policies written in the policy year are aggregated regardless of when earned. For example, for all four policies A, B, C, and D, they have written and earned exposures of 1.00 for the policy year 2019 (starting on 1/1 or 1 Jan). This is despite the fact that they do not start at the beginning of the year. This method is useful for ratemaking methods based on individual contracts and we do not pursue this further here.</p>
 <p>In the same way as exposures, one can summarizes premiums. Premiums, like exposures, can be either <em>written</em>, <em>earned</em>, <em>unearned</em>, or <em>in force</em>. Consider the following example.</p>
 <p><strong>Example 7.5.1. CAS Exam 5, 2003, Number 10.</strong> A 12-month policy is written on March 1, 2002 for a premium of $900. As of December 31, 2002, which of the following is true?</p>
@@ -1387,9 +1389,9 @@ As the claim develops, eventually the company deems its financial obligations on
 prior to being closed again.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:ClaimDevelopment"></span>
-<img src="LossDataAnalytics_files/figure-html/ClaimDevelopment-1.png" alt="Timeline of Claim Development." width="75%" />
+<img src="LossDataAnalytics_files/figure-html/ClaimDevelopment-1.png" alt="Timeline of Claim Development" width="75%" />
 <p class="caption">
-Figure 7.2: Timeline of Claim Development.
+Figure 7.2: <strong>Timeline of Claim Development</strong>
 </p>
 </div>
 <ul>
@@ -1544,10 +1546,11 @@ Premium_{experience}
 <h3><span class="header-section-number">7.6.1</span> Classic Lorenz Curve</h3>
 <p>In welfare economics, it is common to compare distributions via the <a href="#" class="tooltip" style="color:green"><em>Lorenz curve</em><span style="font-size:8pt">A graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis.</span></a>, developed by Max Otto Lorenz <span class="citation">(Lorenz <a href="#ref-lorenz1905methods" role="doc-biblioref">1905</a>)</span>. A Lorenz curve is a graph of the proportion of a population on the horizontal axis and a distribution function of interest on the vertical axis. It is typically used to represent income distributions. When the income distribution is perfectly aligned with the population distribution, the Lorenz curve results in a 45 degree line that is known as the <a href="#" class="tooltip" style="color:green"><em>line of equality</em><span style="font-size:8pt">45 degree line equating x and y, that represents a perfect alignment in the sample and population distribution</span></a>. Because the graph compares two distribution functions, one can also think of a Lorenz curve as a type of <a href="#" class="tooltip" style="color:green"><em>pp plot</em><span style="font-size:8pt">Statistical plot used to assess how close a data sample matches a theorized distribution</span></a> that was introduced in Section <a href="C-ModelSelection.html#S:MS:GraphComparison">4.1.2.1</a>. The area between the Lorenz curve and the line of equality is a measure of the discrepancy between the income and population distributions. Two times this area is known as the <a href="#" class="tooltip" style="color:green"><em>Gini index</em><span style="font-size:8pt">The gini index is twice the area between a lorenz curve and a 45 degree line.</span></a>, introduced by Corrado Gini in 1912.</p>
 <p><strong>Example – Classic Lorenz Curve.</strong> For an insurance example, Figure <a href="C-PremiumFoundations.html#fig:ClassicLorenz">7.3</a> shows a distribution of insurance losses. This figure is based on a random sample of 2000 losses. The left-hand panel shows a right-skewed histogram of losses. The right-hand panel provides the corresponding Lorenz curve, showing again a skewed distribution. For example, the arrow marks the point where 60 percent of the policyholders have 30 percent of losses. The 45 degree line is the line of equality; if each policyholder has the same loss, then the loss distribution would be at this line. The Gini index, twice the area between the Lorenz curve and the 45 degree line, is 37.6 percent for this data set.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:ClassicLorenz"></span>
 <img src="LossDataAnalytics_files/figure-html/ClassicLorenz-1.png" alt="Distribution of Insurance Losses. The left-hand panel is a density plot of losses. The right-hand panel presents the same data using a Lorenz curve." width="90%" />
 <p class="caption">
-Figure 7.3: Distribution of Insurance Losses. The left-hand panel is a density plot of losses. The right-hand panel presents the same data using a Lorenz curve.
+Figure 7.3: <strong>Distribution of Insurance Losses.</strong> The left-hand panel is a density plot of losses. The right-hand panel presents the same data using a Lorenz curve.
 </p>
 </div>
 </div>
@@ -1627,10 +1630,11 @@ Figure 7.3: Distribution of Insurance Losses. The left-hand panel is a density p
 </table>
 <p>Figure <a href="C-PremiumFoundations.html#fig:LorenzVsOrdered">7.4</a> compares the Lorenz to the performance curve. The left-hand panel shows the Lorenz curve. The horizontal axis is the cumulative proportion of policyholders (0, 0.2, 0.4, 0.6, 0.8, 1.0) and the vertical axis is the cumulative proportion of losses (0, 2/36, 7/36, 13/36, 19/39, 36/36). For the Lorenz curve, you first order by the loss size (which turns out to be the same order as premiums for this simple dataset). This figure shows a large separation between the distributions of losses and policyholders.</p>
 <p>The right-hand panel shows the performance curve. Because observations are sorted by premiums, the first point after the origin (reading from left to right) is (2/34, 2/36). The second point is (6/34, 7/36), with the pattern continuing. From the figure, we see that there is little separation between losses and premiums.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:LorenzVsOrdered"></span>
 <img src="LossDataAnalytics_files/figure-html/LorenzVsOrdered-1.png" alt="Lorenz versus Performance Curve" width="90%" />
 <p class="caption">
-Figure 7.4: Lorenz versus Performance Curve
+Figure 7.4: <strong>Lorenz versus Performance Curve</strong>
 </p>
 </div>
 <hr />

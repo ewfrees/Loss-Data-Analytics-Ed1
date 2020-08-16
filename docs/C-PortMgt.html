@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#moments-and-distribution"><i class="fa fa-check"></i><b>5.3.1</b> Moments and Distribution</a></li>
 <li class="chapter" data-level="5.3.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#stop-loss-insurance"><i class="fa fa-check"></i><b>5.3.2</b> Stop-loss Insurance</a></li>
 <li class="chapter" data-level="5.3.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#analytic-results"><i class="fa fa-check"></i><b>5.3.3</b> Analytic Results</a></li>
-<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#tweedie-distribution"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
+<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:AggLoss:Tweedie"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#computing-the-aggregate-claims-distribution"><i class="fa fa-check"></i><b>5.4</b> Computing the Aggregate Claims Distribution</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#recursive-method"><i class="fa fa-check"></i><b>5.4.1</b> Recursive Method</a></li>
@@ -787,7 +787,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.2" data-path="C-AppC.html"><a href="C-AppC.html#asymptotic-properties-of-mle"><i class="fa fa-check"></i><b>17.2.2</b> Asymptotic Properties of MLE</a></li>
 <li class="chapter" data-level="17.2.3" data-path="C-AppC.html"><a href="C-AppC.html#use-of-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>17.2.3</b> Use of Maximum Likelihood Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelhood Estimation</a><ul>
+<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelihood Estimation</a><ul>
 <li class="chapter" data-level="17.3.1" data-path="C-AppC.html"><a href="C-AppC.html#hypothesis-testing"><i class="fa fa-check"></i><b>17.3.1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="17.3.2" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:MLEModelVal"><i class="fa fa-check"></i><b>17.3.2</b> MLE and Model Validation</a></li>
 </ul></li>
@@ -1393,8 +1393,8 @@ Let us now consider the <span class="math inline">\(TVaR\)</span>:</p>
 &amp;=&amp; \pi_q+e_X(\pi_q)\nonumber\\
 &amp;=&amp; \pi_q +\frac{\left({\mathrm{E}[X]-\mathrm{E}[X\wedge\pi_q]}\right)}{(1-q)},
 \tag{10.7}
-\end{eqnarray}\]</span>
-where <span class="math inline">\(e_X(d)=\mathrm{E}[X-d|X&gt;d]\)</span> for <span class="math inline">\(d&gt;0\)</span> denotes the <a href="#" class="tooltip" style="color:green"><em>mean excess loss function</em><span style="font-size:8pt">The expected value of a loss in excess of a quantity, given that the loss exceeds the quantity</span></a>. For many commonly used parametric distributions, the formulas for calculating <span class="math inline">\(\mathrm{E}[X]\)</span> and <span class="math inline">\(\mathrm{E}[X\wedge\pi_q]\)</span> can be found in a table of distributions.</p>
+\end{eqnarray}\]</span></p>
+<p>where <span class="math inline">\(e_X(d)=\mathrm{E}[X-d|X&gt;d]\)</span> for <span class="math inline">\(d&gt;0\)</span> denotes the <a href="#" class="tooltip" style="color:green"><em>mean excess loss function</em><span style="font-size:8pt">The expected value of a loss in excess of a quantity, given that the loss exceeds the quantity</span></a>. For many commonly used parametric distributions, the formulas for calculating <span class="math inline">\(\mathrm{E}[X]\)</span> and <span class="math inline">\(\mathrm{E}[X\wedge\pi_q]\)</span> can be found in a table of distributions.</p>
 <p><strong>Example 10.3.9. <span class="math inline">\(TVaR\)</span> of a Pareto distribution.</strong>
 Consider a loss random variable <span class="math inline">\(X\sim Pareto(\theta,\alpha)\)</span> with <span class="math inline">\(\theta&gt;0\)</span> and <span class="math inline">\(\alpha&gt;0\)</span>. The <em>cdf</em> of <span class="math inline">\(X\)</span> is given by
 <span class="math display">\[
@@ -1428,8 +1428,8 @@ Evoking equation <a href="C-PortMgt.html#eq:cte-expectation">(10.7)</a> yields</
 <p><span class="math display" id="eq:cte-var">\[\begin{eqnarray}
   TVaR_{q}[X] &amp;=&amp; \frac{1}{(1-q)}\int_{q}^{1} VaR_{\alpha}[X]\ d\alpha.
   \tag{10.9}
-\end{eqnarray}\]</span>
-What this alternative formula <a href="C-PortMgt.html#eq:cte-var">(10.9)</a> tells is that <span class="math inline">\(TVaR\)</span> in fact is the average of <span class="math inline">\(VaR_{\alpha}[X]\)</span> with varying degree of confidence level over <span class="math inline">\(\alpha\in [q,1]\)</span>. Therefore, the <span class="math inline">\(TVaR\)</span> effectively resolves most of the limitations of <span class="math inline">\(VaR\)</span> outlined in the previous subsection. First, due to the averaging effect, the <span class="math inline">\(TVaR\)</span> may be less sensitive to the change of confidence level compared with <span class="math inline">\(VaR\)</span>. Second, all the extremal losses that are above the <span class="math inline">\((1-q)\times 100\%\)</span> worst probable event are taken in account.</p>
+\end{eqnarray}\]</span></p>
+<p>What this alternative formula <a href="C-PortMgt.html#eq:cte-var">(10.9)</a> tells is that <span class="math inline">\(TVaR\)</span> in fact is the average of <span class="math inline">\(VaR_{\alpha}[X]\)</span> with varying degree of confidence level over <span class="math inline">\(\alpha\in [q,1]\)</span>. Therefore, the <span class="math inline">\(TVaR\)</span> effectively resolves most of the limitations of <span class="math inline">\(VaR\)</span> outlined in the previous subsection. First, due to the averaging effect, the <span class="math inline">\(TVaR\)</span> may be less sensitive to the change of confidence level compared with <span class="math inline">\(VaR\)</span>. Second, all the extremal losses that are above the <span class="math inline">\((1-q)\times 100\%\)</span> worst probable event are taken in account.</p>
 <p>In this respect, it is a simple matter for us to see that for any given <span class="math inline">\(q\in (0,1)\)</span>
 <span class="math display">\[
 TVaR_q[X]\geq VaR_q[X].

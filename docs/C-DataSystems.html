@@ -501,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#moments-and-distribution"><i class="fa fa-check"></i><b>5.3.1</b> Moments and Distribution</a></li>
 <li class="chapter" data-level="5.3.2" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#stop-loss-insurance"><i class="fa fa-check"></i><b>5.3.2</b> Stop-loss Insurance</a></li>
 <li class="chapter" data-level="5.3.3" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#analytic-results"><i class="fa fa-check"></i><b>5.3.3</b> Analytic Results</a></li>
-<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#tweedie-distribution"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
+<li class="chapter" data-level="5.3.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#S:AggLoss:Tweedie"><i class="fa fa-check"></i><b>5.3.4</b> Tweedie Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#computing-the-aggregate-claims-distribution"><i class="fa fa-check"></i><b>5.4</b> Computing the Aggregate Claims Distribution</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="C-AggLossModels.html"><a href="C-AggLossModels.html#recursive-method"><i class="fa fa-check"></i><b>5.4.1</b> Recursive Method</a></li>
@@ -787,7 +787,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.2" data-path="C-AppC.html"><a href="C-AppC.html#asymptotic-properties-of-mle"><i class="fa fa-check"></i><b>17.2.2</b> Asymptotic Properties of MLE</a></li>
 <li class="chapter" data-level="17.2.3" data-path="C-AppC.html"><a href="C-AppC.html#use-of-maximum-likelihood-estimation"><i class="fa fa-check"></i><b>17.2.3</b> Use of Maximum Likelihood Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelhood Estimation</a><ul>
+<li class="chapter" data-level="17.3" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:SI"><i class="fa fa-check"></i><b>17.3</b> Statistical Inference Based on Maximum Likelihood Estimation</a><ul>
 <li class="chapter" data-level="17.3.1" data-path="C-AppC.html"><a href="C-AppC.html#hypothesis-testing"><i class="fa fa-check"></i><b>17.3.1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="17.3.2" data-path="C-AppC.html"><a href="C-AppC.html#S:AppC:MLEModelVal"><i class="fa fa-check"></i><b>17.3.2</b> MLE and Model Validation</a></li>
 </ul></li>
@@ -957,17 +957,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Determine implications.</strong> This step interprets the data by connecting it to the study goals and the larger field of this study.</li>
 </ul>
 <p>The goal of the data analysis as described above focuses on explaining some phenomenon (See Section <a href="C-DataSystems.html#S:expred">13.2.5</a>).</p>
+
 <div class="figure" style="text-align: center"><span id="fig:study"></span>
-<img src="Figures/Figure1.png" alt="The process of a typical study in behavioral and social sciences." width="80%" />
+<img src="Figures/Figure1.png" alt="The Process of a Typical Study in Behavioral and Social Sciences" width="80%" />
 <p class="caption">
-Figure 13.1: The process of a typical study in behavioral and social sciences.
+Figure 13.1: <strong>The Process of a Typical Study in Behavioral and Social Sciences</strong>
 </p>
 </div>
 <p><span class="citation">Shmueli (<a href="#ref-shmueli2010model" role="doc-biblioref">2010</a>)</span> described a general process for statistical modeling, which is shown in Figure <a href="C-DataSystems.html#fig:modeling">13.2</a>. Depending on the goal of the analysis, the steps differ in terms of the choice of methods, criteria, data, and information.</p>
+
 <div class="figure" style="text-align: center"><span id="fig:modeling"></span>
-<img src="Figures/Figure2.png" alt="The process of statistical modeling." width="80%" />
+<img src="Figures/Figure2.png" alt="The Process of Statistical Modeling" width="80%" />
 <p class="caption">
-Figure 13.2: The process of statistical modeling.
+Figure 13.2: <strong>The Process of Statistical Modeling</strong>
 </p>
 </div>
 </div>
@@ -975,6 +977,7 @@ Figure 13.2: The process of statistical modeling.
 <h3><span class="header-section-number">13.2.2</span> Exploratory versus Confirmatory</h3>
 <p>There are two phases of data analysis <span class="citation">(Good <a href="#ref-good1983data" role="doc-biblioref">1983</a>)</span>: <a href="#" class="tooltip" style="color:green"><em>exploratory data analysis</em><span style="font-size:8pt">Approach to analyzing data sets to summarize their main characteristics, using visual methods, descriptive statistics, clustering, dimension reduction</span></a> (EDA) and <a href="#" class="tooltip" style="color:green"><em>confirmatory data analysis</em><span style="font-size:8pt">Process used to challenge assumptions about the data through hypothesis tests, significance testing, model estimation, prediction, confidence intervals, and inference</span></a> (CDA). <a href="#tab:13.1">Table 13.1</a> summarizes some differences between EDA and CDA. EDA is usually applied to observational data with the goal of looking for patterns and formulating hypotheses. In contrast, CDA is often applied to experimental data (i.e., data obtained by means of a formal design of experiments) with the goal of quantifying the extent to which discrepancies between the model and the data could be expected to occur by chance <span class="citation">(Gelman <a href="#ref-gelman2004eda" role="doc-biblioref">2004</a>)</span>.</p>
 <p><a id=tab:13.1></a></p>
+<p>Table 13.1. <strong>Comparison of Exploratory Data Analysis and Confirmatory Data Analysis</strong></p>
 <p><span class="math display">\[
 \begin{matrix}
 \begin{array}{lll} \hline
@@ -988,8 +991,7 @@ Figure 13.2: The process of statistical modeling.
 \hline
 \end{array}
 \end{matrix}
-\]</span>
-<a href="#tab:13.1">Table 13.1</a>: Comparison of Exploratory Data Analysis and Confirmatory Data Analysis</p>
+\]</span></p>
 <p>Techniques for EDA include descriptive statistics (e.g., mean, median, standard deviation, quantiles), distributions, histograms, correlation analysis, dimension reduction, and cluster analysis. Techniques for CDA include the traditional statistical tools of inference, significance, and confidence.</p>
 </div>
 <div id="supervised-versus-unsupervised" class="section level3">
@@ -1000,6 +1002,7 @@ Y = f(X_1, X_2, \ldots, X_p),
 \]</span>
 where <span class="math inline">\(Y\)</span> is a target variable and <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(X_p\)</span> are explanatory variables. <a href="#tab:13.2">Table 13.2</a> gives a list of common names for different types of variables <span class="citation">(Edward W. Frees <a href="#ref-frees2009" role="doc-biblioref">2009</a><a href="#ref-frees2009" role="doc-biblioref">b</a>)</span>. When the target variable is a categorical variable, supervised learning methods are called <a href="#" class="tooltip" style="color:green"><em>classification methods</em><span style="font-size:8pt">Supervised learning method where the response is a categorical variable</span></a>. When the target variable is continuous, supervised learning methods are called <a href="#" class="tooltip" style="color:green"><em>regression methods</em><span style="font-size:8pt">Supervised learning method where the response is a continuous variable</span></a>.</p>
 <p><a id=tab:13.2></a></p>
+<p>Table 13.2. <strong>Common Names of Different Variables</strong></p>
 <p><span class="math display">\[
 \begin{matrix}
 \begin{array}{ll}
@@ -1014,8 +1017,7 @@ where <span class="math inline">\(Y\)</span> is a target variable and <span clas
 \hline
 \end{array}
 \end{matrix}
-\]</span>
-<a href="#tab:13.2">Table 13.2</a>: Common Names of Different Variables</p>
+\]</span></p>
 <p><a href="#" class="tooltip" style="color:green"><em>Unsupervised learning methods</em><span style="font-size:8pt">Models that work with explanatory variables only to describe patterns or groupings</span></a> work with unlabeled data, which include explanatory variables only. In other words, unsupervised learning methods do not use target variables. As a result, unsupervised learning methods are also called descriptive modeling methods.</p>
 </div>
 <div id="parametric-versus-nonparametric" class="section level3">
@@ -1104,6 +1106,7 @@ where <span class="math inline">\(Y\)</span> is a target variable and <span clas
 <h2><span class="header-section-number">13.3</span> Data Analysis Techniques</h2>
 <p>Techniques for data analysis are drawn from different but overlapping fields such as statistics, machine learning, pattern recognition, and data mining. Statistics is a field that addresses reliable ways of gathering data and making inferences based on them <span class="citation">(Bandyopadhyay and Forster <a href="#ref-bandyo2011" role="doc-biblioref">2011</a>; Bluman <a href="#ref-bluman2012" role="doc-biblioref">2012</a>)</span>. The term machine learning was coined by Samuel in 1959 <span class="citation">(Samuel <a href="#ref-samuel1959ml" role="doc-biblioref">1959</a>)</span>. Originally, <a href="#" class="tooltip" style="color:green"><em>machine learning</em><span style="font-size:8pt">Study of algorithms and statistical models that perform a specific task without using explicit instructions, relying on patterns and inference</span></a> refers to the field of study where computers have the ability to learn without being explicitly programmed. Nowadays, machine learning has evolved to the broad field of study where computational methods use experience (i.e., the past information available for analysis) to improve performance or to make accurate predictions <span class="citation">(Bishop <a href="#ref-bishop2007" role="doc-biblioref">2007</a>; Clarke, Fokoue, and Zhang <a href="#ref-clarke2009" role="doc-biblioref">2009</a>; Mohri, Rostamizadeh, and Talwalkar <a href="#ref-mohri2012" role="doc-biblioref">2012</a>; Kubat <a href="#ref-kubat2017" role="doc-biblioref">2017</a>)</span>. There are four types of machine learning algorithms (see <a href="#tab:13.3">Table 13.3</a>) depending on the type of the data and the type of the learning tasks.</p>
 <p><a id=tab:13.3></a></p>
+<p>Table 13.3. <strong>Types of Machine Learning Algorithms</strong></p>
 <p><span class="math display">\[
 \begin{matrix}
 \begin{array}{rll} \hline
@@ -1113,8 +1116,7 @@ where <span class="math inline">\(Y\)</span> is a target variable and <span clas
 \hline
 \end{array}
 \end{matrix}
-\]</span>
-<a href="#tab:13.3">Table 13.3</a>: Types of Machine Learning Algorithms</p>
+\]</span></p>
 <p>Originating in engineering, <a href="#" class="tooltip" style="color:green"><em>pattern recognition</em><span style="font-size:8pt">Automated recognition of patterns and regularities in data</span></a> is a field that is closely related to machine learning, which grew out of computer science. In fact, pattern recognition and machine learning can be considered to be two facets of the same field <span class="citation">(Bishop <a href="#ref-bishop2007" role="doc-biblioref">2007</a>)</span>. <a href="#" class="tooltip" style="color:green"><em>Data mining</em><span style="font-size:8pt">Process of collecting, cleaning, processing, analyzing, and discovering patterns and useful insights from large data sets</span></a> is a field that concerns collecting, cleaning, processing, analyzing, and gaining useful insights from data <span class="citation">(Aggarwal <a href="#ref-aggarwal2015" role="doc-biblioref">2015</a>)</span>.</p>
 <div id="exploratory-techniques" class="section level3">
 <h3><span class="header-section-number">13.3.1</span> Exploratory Techniques</h3>
@@ -1123,6 +1125,7 @@ where <span class="math inline">\(Y\)</span> is a target variable and <span clas
 <h4><span class="header-section-number">13.3.1.1</span> Descriptive Statistics</h4>
 <p>In one sense (as a “mass noun”), “descriptive statistics” is an area of statistics that concerns the collection, organization, summarization, and presentation of data <span class="citation">(Bluman <a href="#ref-bluman2012" role="doc-biblioref">2012</a>)</span>. In another sense (as a “count noun”), “descriptive statistics” are summary statistics that quantitatively describe or summarize data.</p>
 <p><a id=tab:13.4></a></p>
+<p>Table 13.4. <strong>Commonly Used Descriptive Statistics</strong></p>
 <p><span class="math display">\[
 \begin{matrix}
 \begin{array}{ll} \hline
@@ -1133,8 +1136,7 @@ where <span class="math inline">\(Y\)</span> is a target variable and <span clas
 \hline
 \end{array}
 \end{matrix}
-\]</span>
-<a href="#tab:13.4">Table 13.4</a>: Commonly Used Descriptive Statistics</p>
+\]</span></p>
 <p><a href="#tab:13.4">Table 13.4</a> lists some commonly used descriptive statistics. In R, we can use the function <span class="math inline">\(\texttt{summary}\)</span> to calculate some of the descriptive statistics. For numeric data, we can visualize the descriptive statistics using a boxplot.</p>
 <p>In addition to these quantitative descriptive statistics, we can also qualitatively describe shapes of the distributions <span class="citation">(Bluman <a href="#ref-bluman2012" role="doc-biblioref">2012</a>)</span>. For example, we can say that a distribution is positively skewed, symmetric, or negatively skewed. To visualize the distribution of a variable, we can draw a histogram.</p>
 </div>
@@ -1254,6 +1256,7 @@ f(R_1,R_2,\ldots,R_J) = \sum_{j=1}^J \sum_{i=1}^n I_{R_j}(\textbf{x}_i)(y_i - \m
 <!-- % 7.3.4 nn, trees -->
 <p><code>R</code> is an open-source software for statistical computing and graphics. The <code>R</code> software can be downloaded from the <code>R</code> project website at . In this section, we give some <code>R</code> function for data analysis, especially the data analysis tasks mentioned in previous sections.</p>
 <p><a id=tab:13.5></a></p>
+<p>Table 13.5. <strong>Some <code>R</code> Functions for Data Analysis</strong></p>
 <p><span class="math display">\[
 \begin{matrix}
 \begin{array}{lll} \hline
@@ -1269,8 +1272,7 @@ f(R_1,R_2,\ldots,R_J) = \sum_{j=1}^J \sum_{i=1}^n I_{R_j}(\textbf{x}_i)(y_i - \m
 \hline
 \end{array}
 \end{matrix}
-\]</span>
-<a href="#tab:13.5">Table 13.5</a>: Some <code>R</code> Functions for Data Analysis</p>
+\]</span></p>
 <p><a href="#tab:13.5">Table 13.5</a> lists a few <code>R</code> functions for different data analysis tasks. Readers can go to the <code>R</code> documentation to learn how to use these functions. There are also other <code>R</code> packages that do similar things. However, the functions listed in this table provide good starting points for readers to conduct data analysis in <code>R</code>. For analyzing large datasets in <code>R</code> in an efficient way, readers are referred to <span class="citation">Daroczi (<a href="#ref-daroczi2015" role="doc-biblioref">2015</a>)</span>.</p>
 </div>
 <div id="summary" class="section level2">
