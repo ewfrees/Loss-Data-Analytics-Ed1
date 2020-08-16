@@ -23,6 +23,8 @@ People, firms, and other entities that we want to understand are described in a 
 
 [Table 14.1]: \#tab:14.1
 
+Table 14.1. **Variable Types**
+
 $$
 {\small \begin{matrix}
 \begin{array}{l|l} \hline
@@ -56,7 +58,6 @@ Multivariate ~ Variable &            \\
 $$
 
 
-[Table 14.1] : Variable Types
 
 
 In data analysis, it is important to understand what type of variable you are working with. For example, consider a pair of random variables ${\tt (Coverage, Claim)}$ from the *LGPIF* data introduced in Section \@ref(S:LGPIF) as displayed in Figure \@ref(fig:IntroPlot) below. We would like to know whether the distribution of ${\tt Coverage}$ depends on the distribution of ${\tt Claim}$ or whether they are statistically independent. We would also want to know how the ${\tt Claim}$ distribution depends on the ${\tt EntityType}$ variable. Because the  ${\tt EntityType}$ variable belongs to a different class of variables, modeling the dependence between ${\tt Claim}$ and ${\tt Coverage}$ may require a different technique from that of ${\tt Claim}$ and ${\tt EntityType}$. 
@@ -166,7 +167,7 @@ Define the sample covariance function $\widehat{Cov}(X,Y) = \frac{1}{n} \sum_{i=
 
 $$
 r = \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Cov}(X,X)\widehat{Cov}(Y,Y)}}
-= \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Var}(X,X)}\sqrt{\widehat{Var}(Y,Y)}}.
+= \frac{\widehat{Cov}(X,Y)}{\sqrt{\widehat{Var}(X)}\sqrt{\widehat{Var}(Y)}}.
 $$
 
 The correlation statistic $r$ is widely used to capture linear association between random variables. It is a (nonparametric) estimator of the correlation parameter $\rho$, defined to be the covariance divided by the product of standard deviations. 
@@ -356,14 +357,13 @@ Although these statistics provide the same information as is the original odds r
 
 In a later section, we will also see that the marginal distributions have no effect on the Fr&eacute;chet-H&ouml;effding of the `r Gloss('tetrachoric correlation')`, another measure of association, see also, @joe2014dependence, page 48. 
 
-
 From [Table 14.2], $OR(\pi_{11})=\frac{1611(956)}{897(2175)}=0.79$. You can obtain the $OR(\pi_{11})$, using the `oddsratio()` function from the `epitools` library in `R`. From the output below, $OR(\pi_{11})=0.79$ for the binary variables ${\tt NoClaimCredit}$  and ${\tt Fire5}$ from the LGPIF data.
-
 
 <a id=tab:14.2></a>
 
-
 [Table 14.2]:\#tab:14.2
+
+Table 14.2. **2 $\times$ 2 Table of Counts for ${\tt Fire5}$ and ${\tt NoClaimCredit}$**
 
 $$
 {\small \begin{matrix}
@@ -381,7 +381,7 @@ $$
 \end{matrix}}
 $$
 
-[Table 14.2] : 2 $\times$ 2 Table of Counts for ${\tt Fire5}$ and ${\tt NoClaimCredit}$
+
 
 
 ```{r echo=FALSE,warning=FALSE}
@@ -435,9 +435,9 @@ Classical approaches, as described in @bishop1975discrete (page 374), distinguis
 
 <a id=tab:14.3></a>
 
-
 [Table 14.3]:\#tab:14.3
 
+Table 14.3.  **Two-way Table of Counts for ${\tt EntityType}$ and ${\tt NoClaimCredit}$**
 
 $$
 {\small \begin{matrix}
@@ -457,7 +457,6 @@ $$
 \end{matrix}}
 $$
 
-[Table 14.3] : Two-way Table of Counts for ${\tt EntityType}$ and ${\tt NoClaimCredit}$
 
 You can obtain the Pearson chi-square statistic, using the `chisq.test()` function from the `MASS` library in `R`. Here, we test whether the  ${\tt EntityType}$  variable is independent of the ${\tt NoClaimCredit}$ variable using [Table 14.3].
 
@@ -559,6 +558,8 @@ It is called a *tetrachoric* correlation for binary variables.
 
 [Table 14.4]:\#tab:14.4
 
+Table 14.4.  **Two-way Table of Counts for ${\tt AlarmCredit}$ and ${\tt NoClaimCredit}$**
+
 $$
 {\small \begin{matrix}
 \begin{array}{c|rr} 
@@ -574,8 +575,6 @@ $$
 \end{array}
 \end{matrix}}
 $$
-
-[Table 14.4] : Two-way Table of Counts for ${\tt AlarmCredit}$ and ${\tt NoClaimCredit}$
 
 You can obtain the polychoric or tetrachoric correlation using the `polychoric()` or `tetrachoric()` function from the `psych` library in `R`. The polychoric correlation is illustrated using [Table 14.4]. Here, $\hat{\rho}_N=-0.14$, which means that there is a negative relationship between ${\tt AlarmCredit}$ and ${\tt NoClaimCredit}$.
 
@@ -644,9 +643,9 @@ The `r Gloss('biserial correlation')` is defined similarly, when one variable is
 
 <a id=tab:14.5></a>
 
-
 [Table 14.5]:\#tab:14.5
 
+Table 14.5. **Summary of ${\tt Claim}$ by ${\tt NoClaimCredit}$**
 
 $$
 {\small \begin{matrix}
@@ -661,9 +660,6 @@ $$
 \end{array}
 \end{matrix}}
 $$
-
-[Table 14.5] : Summary of ${\tt Claim}$ by ${\tt NoClaimCredit}$
-
 
 You can obtain the polyserial or biserial correlation using the `polyserial()` or `biserial()` function, respectively, from the `psych` library in `R`. [Table 14.5] gives the summary of ${\tt Claim}$ by ${\tt NoClaimCredit}$ and  the biserial correlation is illustrated using `R` code below. The $\hat{\rho}_N=-0.04$ which means that there is a negative correlation between ${\tt Claim}$ and ${\tt NoClaimCredit}$.
 
@@ -705,10 +701,10 @@ Copulas are widely used in insurance and many other fields to model the dependen
 
 is a copula. We seek to use copulas in applications that are based on more than just uniformly distributed data. Thus, consider arbitrary marginal distribution functions ${F}_1(y_1)$,...,${F}_p(y_p)$. Then, we can define a multivariate distribution function using the copula such that 
 
-$$
+\begin{equation}
 {F}(y_1, \ldots, y_p)= {C}({F}_1(y_1), \ldots, {F}_p(y_p)).
- (\#eq:DFDefined)
-$$
+(\#eq:DFDefined)
+\end{equation}
 
 Here, $F$ is a multivariate distribution function. @sklar1959fonctions showed that $any$ multivariate distribution function $F$, can be written in the form of equation \@ref(eq:DFDefined), that is, using a copula representation.
 
@@ -728,11 +724,11 @@ $$
 
 As an example, we can look to the copula due to @frank1979simultaneous. The copula (distribution function) is
 
-$$
+\begin{equation}
 {C}(u_1,u_2) = \frac{1}{\gamma} \log \left( 1+ \frac{ (\exp(\gamma
 u_1) -1)(\exp(\gamma u_2) -1)} {\exp(\gamma) -1} \right).
 (\#eq:FrankCopula)
-$$
+\end{equation}
 
 This is a bivariate distribution function with its domain on the unit square $[0,1]^2.$ Here $\gamma$ is dependence parameter, that is, the range of dependence is controlled by the parameter $\gamma$. Positive association increases as $\gamma$ increases. As we will see, this positive association can be summarized with `r Gloss("Spearman's rho")` ($\rho_S$) and Kendall's tau ($\tau$). Frank's copula is commonly used. We will see other copula functions in Section \@ref(S:CopTyp).
 
@@ -840,6 +836,8 @@ Output:
 
 [Table 14.6]:\#tab:14.6
 
+Table 14.6.  **Summary of Pareto Maximum Likelihood Fitted Parameters from the LGPIF Data**
+
 $$
 {\small \begin{matrix}
 \begin{array}{l|r|r} 
@@ -852,8 +850,6 @@ LOSS  &    16228.14797  &  1.23766 \\
 \end{array}
 \end{matrix}}
 $$
-
-[Table 14.6] : Summary of Pareto Maximum Likelihood Fitted Parameters from the LGPIF Data
 
 To visualize the fitted distribution of  ${\tt LOSS}$ and ${\tt ALAE}$ variables, one can use the estimated parameters and plot the corresponding distribution function and density function. For more details on the selection of marginal models, see Chapter \@ref(C:ModelSelection).
 
@@ -939,6 +935,7 @@ frank.cop <- archmCopula("frank", param= c(5), dim = 2)
 # fit copula using ML method, starting value 0.4
 fit.ml <- fitCopula(frank.cop, uu, method="ml", start=c(0.4))
 #summary(fit.ml)
+
 ```
 
 `r HideRCode('FrankCopula.1',"R Code for IFM Fitting with Frank's Copula")`
@@ -1002,12 +999,12 @@ We started our study with Frank's copula in equation \@ref(eq:FrankCopula) becau
 
 For a multivariate normal distribution, think of $p$ normal random variables, each with mean zero and standard deviation one. Their dependence is controlled by $\boldsymbol \Sigma$, a `r Gloss('correlation matrix')`, with ones on the diagonal. The number in the $i$th row and $j$th column, say $\boldsymbol \Sigma_{ij}$, gives the correlation between the $i$th and $j$th normal random variables. This collection of random variables has a multivariate normal distribution with probability density function
 
-$$
+\begin{equation}
 \phi_N (\mathbf{z})= \frac{1}{(2 \pi)^{p/2}\sqrt{\det \boldsymbol \Sigma}}
 \exp\left( -\frac{1}{2} \mathbf{z}^{\prime} \boldsymbol
 \Sigma^{-1}\mathbf{z}\right).
 (\#eq:Normalpdf)
-$$
+\end{equation}
 
 To develop the corresponding copula version, it is possible to start with equation \@ref(eq:DFDefined), evaluate this using normal variables, and go through a bit of calculus. Instead, we simply state as a definition, the normal (Gaussian) **copula** density function is
 
@@ -1070,7 +1067,7 @@ $$
 
 [Table 14.7]: \#tab:14.7
 
-[Table 14.7] : Generator Functions ($g_p(\cdot)$) for Selected Elliptical Distributions
+Table 14.7. **Generator Functions ($g_p(\cdot)$) for Selected Elliptical Distributions**
 
 $$
 \small\begin{array}{lc}
@@ -1184,10 +1181,10 @@ Empirical versions of Spearman's rho and Kendall's tau were introduced in Sectio
 
 @schweizer1981nonparametric established that the copula accounts for all the dependence in the sense that they way $Y_1$ and $Y_2$ "move together" is captured by the copula, regardless of the scale in which each variable is measured. They also showed that (population versions of) the two standard nonparametric measures of association could be expressed solely in terms of the copula function. Spearman's correlation coefficient is given by
 
-$$
+\begin{equation}
 \rho_S = 12 \int_0^1 \int_0^1  \left\{C(u,v) - uv \right\} du dv.
 (\#eq:TheorySpearman)
-$$
+\end{equation}
 
 Kendall's tau is given by
 
@@ -1243,8 +1240,9 @@ It is of interest to see how well a given copula can capture tail dependence. To
 
 <a id=tab:14.8></a>
 
-
 [Table 14.8]:\#tab:14.8
+
+Table 14.8.  **Tail Dependence Parameters for Four Copulas**
 
 $$
 {\small \begin{matrix}
@@ -1261,7 +1259,7 @@ t-  & 0.10   & 0.10    \\
 \end{matrix}}
 $$
 
-[Table 14.8] : Tail Dependence Parameters for Four Copulas
+
 
 
 ```{r TailConcentration, message=FALSE, warning=FALSE, comment="", echo=FALSE}
@@ -1325,9 +1323,9 @@ To illustrate the importance of dependence modeling, we refer you back to portfo
 
 <a id=tab:14.9></a>  
 
-
 [Table 14.9]: \#tab:14.9
 
+Table 14.9.  **Results for Portfolio Expected Value and Quantiles ($VaR_q$)**
 
 $$
 {\small \begin{matrix}
@@ -1351,7 +1349,7 @@ $$
 \end{matrix}}
 $$
 
-[Table 14.9] : Results for Portfolio Expected Value and Quantiles ($VaR_q$)
+
 
 ```{r PortfolioResults, comment="", include=FALSE}
 # For the gamma distributions, use

@@ -5,7 +5,14 @@ Approaches to pricing vary by the type of contract. For example, personal automo
 
 ### Premium Principles
 
-This chapter introduces traditional actuarial pricing principles that provide a price based only on the insurance loss distribution; the price does not depend on the demand for insurance or other aspects of the costs such as expenses. Assume that the loss $X$ has a distribution function $F(\cdot)$ and that there exists some rule (which in mathematics is known as a *functional*), say $H$, that takes $F(\cdot)$ into the positive real line, denoted as $P = H(F)$. For notation purposes, it is often convenient to substitute the random variable $X$ for its distribution function and write $P = H(X)$. Table \@ref(tab:PremPrinciples) provides several examples. 
+This chapter introduces traditional actuarial pricing principles that provide a price based only on the insurance loss distribution; the price does not depend on the demand for insurance or other aspects of the costs such as expenses. Assume that the loss $X$ has a distribution function $F(\cdot)$ and that there exists some rule (which in mathematics is known as a *functional*), say $H$, that takes $F(\cdot)$ into the positive real line, denoted as $P = H(F)$. For notation purposes, it is often convenient to substitute the random variable $X$ for its distribution function and write $P = H(X)$. [Table 7.1] provides several examples. 
+
+
+[Table 7.1]:\#tab:71
+
+<a id=tab:71></a>
+
+Table 7.1. **Common Premium Principles**
 
   Description 		        Definition ($H(X)$)
   ------------------      ---------------------------------------------
@@ -17,7 +24,6 @@ This chapter introduces traditional actuarial pricing principles that provide a 
   Exponential		          $\frac{1}{\alpha} \ln {\rm E} ~e^{\alpha X}$
   ------------------      ---------------------------------------------
   
-  Table: (\#tab:PremPrinciples)  Common Premium Principles
   
 A premium principle is similar to a `r Gloss('risk measure')` that is introduced in Section \@ref(S:RiskMeasure). Mathematically, both are rules that map the loss `r Gloss('rv')` of interest to a numerical value. From a practical viewpoint, a premium principle provides a guide as to how much an insurer will charge for accepting a risk $X$. In contrast, a risk measure quantifies the level of uncertainty, or riskiness, that an insurer can use to decide on a capital level to be assured of remaining solvent.
 
@@ -46,7 +52,14 @@ $$
 
 ### Properties of Premium Principles
 
-Properties of premium principles help guide the selection of a premium principle in applications. Table \@ref(tab:Properties) provides examples of properties of premium principles.
+Properties of premium principles help guide the selection of a premium principle in applications. [Table 7.2] provides examples of properties of premium principles.
+
+[Table 7.2]:\#tab:72
+
+<a id=tab:72></a>
+
+Table 7.2. **Common Properties of Premium Principles**
+
 
   Description 		      Definition 
   -------------------   ----------------------------------------------------------
@@ -57,11 +70,9 @@ Properties of premium principles help guide the selection of a premium principle
   No rip-off 		        $H(X) \le \max \{X\}$
   -------------------   ----------------------------------------------------------
 
-Table: (\#tab:Properties)  Common Properties of Premium Principles
-
 This is simply a subset of the many properties quoted in the actuarial literature. For example, the review paper of @young2014premium lists 15 properties. See also the properties described as *coherent axioms* that we introduce for risk measures in Section \@ref(S:RiskMeasure).
 
-Some of the properties listed in Table \@ref(tab:Properties) are mild in the sense that they will nearly always be satisfied. For example, the *no rip-off* property indicates that the premium charge will be smaller than the largest or "maximal" value of the loss $X$ (here, we use the notation $\max \{X\}$ for this maximal value which is defined as an "essential supremium" in mathematics). Other properties may not be so mild. For example, for a portfolio of independent risks, the actuary may want the *additivity* property to hold. It is easy to see that this property holds for the expected value, variance, and exponential premium principles but not for the standard deviation principle. Another example is the *consistency* property that does not hold for the expected value principle when the risk loading parameter $\alpha$ is positive.
+Some of the properties listed in [Table 7.2] are mild in the sense that they will nearly always be satisfied. For example, the *no rip-off* property indicates that the premium charge will be smaller than the largest or "maximal" value of the loss $X$ (here, we use the notation $\max \{X\}$ for this maximal value which is defined as an "essential supremium" in mathematics). Other properties may not be so mild. For example, for a portfolio of independent risks, the actuary may want the *additivity* property to hold. It is easy to see that this property holds for the expected value, variance, and exponential premium principles but not for the standard deviation principle. Another example is the *consistency* property that does not hold for the expected value principle when the risk loading parameter $\alpha$ is positive.
 
 The *scale invariance* principle is known as *homogeneity of degree one* in economics. For example, it allows us to work in different currencies (e.g., from dollars to Euros) as well as a host of other applications and will be discussed further in the following Section \@ref(S:HeterogeneousRisks). Although a generally accepted principle, we note that this principle does not hold for a large value of $X$ that may border on a surplus constraint of an insurer; if an insurer has a large probability of becoming insolvent, then that insurer may not wish to use linear pricing. It is easy to check that this principle holds for the expected value and standard deviation principles, although not for the variance and exponential principles.
 

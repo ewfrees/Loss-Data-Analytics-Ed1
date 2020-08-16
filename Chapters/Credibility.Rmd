@@ -50,10 +50,10 @@ In this section, you learn how to:
 
 Let $N$ be a random variable representing the number of claims for a group of risks, for example, risks within a particular rating classification.  The observed number of claims will be used to estimate $\mu_N=\mathrm{E}[N]$, the expected number of claims.  How big does $\mu_N$ need to be to get a good estimate?  One way to quantify the accuracy of the estimate would be a statement like:  ``The observed value of $N$ should be within 5$\%$ of $\mu_N$ at least 90$\%$ of the time."   Writing this as a mathematical expression would give   $\Pr[0.95\mu_N\leq N \leq1.05\mu_N] \geq 0.90$.  Generalizing this statement by letting $k$ replace 5$\%$ and probability $p$ replace 0.90 gives the equation
 
-$$
+\begin{equation}
 \Pr[(1-k)\mu_N\leq N \leq(1+k)\mu_N] \geq p.
 (\#eq:kpercent-interval)
-$$
+\end{equation}
 
 The expected number of claims required for the probability on the left-hand side of \@ref(eq:kpercent-interval) to equal $p$ is called the `r Gloss('full credibility standard')`.  
 
@@ -61,10 +61,10 @@ If the expected number of claims is greater than or equal to the full credibilit
 
 Subtracting $\mu_N$  from each term in \@ref(eq:kpercent-interval) and dividing by the standard deviation $\sigma_N$ of $N$ gives
 
-$$
+\begin{equation}
 \Pr\left[\frac{-k\mu_N}{\sigma_N}\leq \frac{N-\mu_N}{\sigma_N} \leq \frac{k\mu_N}{\sigma_N}\right] \geq p.
 (\#eq:normalized-interval)
-$$
+\end{equation}
 
 In limited fluctuation credibility the standard normal distribution is used to approximate the distribution for $(N-\mu_N)/\sigma_N$. If $N$ is the sum of many claims from a large group of similar risks and the claims are independent, then the approximation may be reasonable.
 
@@ -73,10 +73,10 @@ Let $y_p$ be the value such that $\Pr[-y_p\leq (N-\mu_N)/\sigma_N \leq y_p]=\Phi
 
 Equation \@ref(eq:normalized-interval) will be satisfied if $k\mu_N/\sigma_N \geq y_p$ assuming the normal approximation.  First we will consider this inequality for the case when $N$ has a Poisson distribution:  $\Pr[N=n] = \lambda^n\textrm{e}^{-\lambda}/n!$.  Because $\lambda=\mu_N=\sigma_N^2$ for the Poisson, taking square roots yields $\mu_N^{1/2}=\sigma_N$.  So, $k\mu_N/\mu_N^{1/2} \geq y_p$ which is equivalent to $\mu_N \geq (y_p/k)^2$.  Let's define $\lambda_{kp}$ to be the value of $\mu_N$ for which equality holds.  Then the full credibility standard for the Poisson distribution is 
 
-$$
+\begin{equation}
 \lambda_{kp} = \left(\frac{y_p}{k}\right)^2 \textrm{with } y_p=\Phi^{-1}((p+1)/2).
 (\#eq:full-credibility-Poisson)
-$$
+\end{equation}
 
 If the expected number of claims $\mu_N$ is greater than or equal to $\lambda_{kp}$ then equation \@ref(eq:kpercent-interval) is assumed to hold and full credibility can be assigned to the data.  As noted previously, because $\mu_N$ is usually unknown, full credibility is given if the observed number of claims $n$ satisfies $n \geq \lambda_{kp}.$
 

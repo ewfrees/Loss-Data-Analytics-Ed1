@@ -72,6 +72,7 @@ To introduce the Poisson regression, let us consider a hypothetical health insur
 
 [Table 8.1]: \#tab:8.1
 
+Table 8.1. **Number of Visits to Doctor's Office in Last Year**
 
 $$
 {\small
@@ -94,60 +95,57 @@ $$
 }
 $$
 
-[Table 8.1] : Number of visits to doctor's office in last year
-
-
 As this dataset contains random counts, we try to fit a Poisson distribution for each level.  
 
 As introduced in Section \@ref(S:poisson-distribution), the probability mass function of the Poisson with mean $\mu$ is given by
  
-$$
+\begin{equation}
 \Pr(Y=y)=\frac{\mu^y e^{-\mu}}{y!},\qquad y=0,1,2, \ldots
 (\#eq:Pois-pmf)
-$$  
+\end{equation}  
 
 and $\mathrm{E~}{(Y)}=\mathrm{Var~}{(Y)}=\mu$. In regression contexts, it is common to use $\mu$ for mean parameters instead of the Poisson parameter $\lambda$ although certainly both symbols are suitable. As we saw in Section
  \@ref(S:estimating-frequency-distributions), the `r Gloss('mle')` of the Poisson distribution is given by the sample mean. Thus if we denote the Poisson mean parameter for each level by $\mu_{(1)}$ (smoker) and $\mu_{(2)}$ (non-smoker), we see from [Table 8.1] that $\hat{\mu}_{(1)}=0.0926$ and $\hat{\mu}_{(2)}=0.0746$. This simple example shows the basic idea of risk classification. Depending on the smoking status a policyholder will have a different risk characteristic and it can be incorporated through varying Poisson parameter in computing the fair premium. In this example the ratio of expected loss frequencies is $\hat{\mu}_{(1)}/\hat{\mu}_{(2)}=1.2402$, implying that smokers tend to visit doctor's office 24.02$\%$ times more frequently compared to non-smokers.
 
 It is also informative to note that if the insurer charges the same premium to all policyholders regardless of the smoking status, based on the average characteristic of the portfolio, as was the case for EquitabAll described in Introduction, the expected frequency (or the premium) $\hat{\mu}$ is 0.0792, obtained from the last column of [Table 8.1]. It is easily verified that
 
-$$
+\begin{equation}
 \hat{\mu} = \left(\frac{n_1}{n_1+n_2}\right)\hat{\mu}_{(1)}+\left(\frac{n_2}{n_1+n_2}\right)\hat{\mu}_{(2)}=0.0792,
 (\#eq:coll-prem-avg)
-$$
+\end{equation}
 
 where $n_i$ is the number of observations in each level. Clearly, this premium is a weighted average of the premiums for each level with the weight equal to the proportion of the insureds in that level.  
 
 **A simple Poisson regression**  
 In the example above, we have fitted a Poisson distribution for each level separately, but we can actually combine them together in a unified fashion so that a single Poisson model can encompass both smoking and non-smoking statuses. This can be done by relating the Poisson mean parameter with the risk factor. In other words, we make the Poisson mean, which is the expected loss frequency, respond to the change in the smoking status. The conventional approach to deal with a categorical variable is to adopt indicator or `r Gloss('dummy variables')` that take either 1 or 0, so that we turn the switch on for one level and off for others. Therefore we may propose to use
 
-$$
+\begin{equation}
 \mu=\beta_0+\beta_1 x_1
 (\#eq:lin-mu)
-$$
+\end{equation}
 
 or, more commonly, a `r Gloss('log linear form')`
 
-$$
+\begin{equation}
 \log \mu=\beta_0+\beta_1 x_1,
 (\#eq:log-lin-mu)
-$$
+\end{equation}
 
 where $x_1$ is an indicator variable with
 
-$$
+\begin{equation}
 x_1=
 \begin{cases}
      1 & \text{if smoker}, \\
      0 & \text{otherwise}.
 \end{cases}
 (\#eq:dummy-x1)
-$$
+\end{equation}
 
 We generally prefer the  log linear relation \@ref(eq:log-lin-mu) to the linear one in \@ref(eq:lin-mu) to prevent undesirable events of producing  negative $\mu$ values, which may happen when there are many different risk factors and levels. 
 The setup \@ref(eq:log-lin-mu) and \@ref(eq:dummy-x1) then results in different Poisson frequency parameters depending on the level in the risk factor:
 
-$$
+\begin{equation}
 \log \mu=
 \begin{cases}
      \beta_0+\beta_1 \\
@@ -158,14 +156,14 @@ $$
      e^{\beta_0} & \text{if non-smoker (level 2)},
 \end{cases} 
 (\#eq:ind-mu)
-$$ 
+\end{equation}
 
 achieving what we aim for. This is the simplest form of the Poisson regression. Note that we require a single indicator variable to model two levels in this case. Alternatively, it is also possible to use two indicator variables through a different coding scheme. This scheme requires dropping the intercept term so that \@ref(eq:log-lin-mu) is modified to
 
-$$
+\begin{equation}
 \log \mu=\beta_1 x_1+\beta_2 x_2,
 (\#eq:log-lin-mu-2)
-$$
+\end{equation}
 
 where $x_2$ is the second indicator variable with
 
@@ -179,7 +177,7 @@ $$
 
 Then we have, from \@ref(eq:log-lin-mu-2),
 
-$$
+\begin{equation}
 \log \mu=
 \begin{cases}
      \beta_1 \\
@@ -190,7 +188,7 @@ $$
      e^{\beta_2} & \text{if non-smoker (level 2)}.
 \end{cases}
 (\#eq:ind-mu-2)
-$$
+\end{equation}
 
 The numerical result of \@ref(eq:ind-mu)  is the same as \@ref(eq:ind-mu-2) as all the coefficients are given as numbers in actual estimation, with the former setup more common in most texts; we also stick to the former.  
 
@@ -205,10 +203,10 @@ where $\mu_{(2)}$ is the Poisson mean for the non-smokers. This relation between
 **Dealing with multi-level case**  
 We can readily extend the two-level case to a multi-level one where $l$ different levels are involved for a single rating factor. For this we generally need $l-1$ indicator variables to formulate
 
-$$
+\begin{equation}
 \log \mu=\beta_0+\beta_1 x_1+\cdots+\beta_{l-1} x_{l-1},
 (\#eq:log-lin-mu-1)
-$$
+\end{equation}
 
 where $x_k$ is an indicator variable that takes 1 if the policy belongs to level $k$ and 0 otherwise, for $k=1,2, \ldots, l-1$. By omitting the indicator variable associated with the last level in \@ref(eq:log-lin-mu-1) we effectively chose level $l$ as the `r Gloss('base case')`, but this choice is arbitrary and does not matter numerically.  The resulting Poisson parameter for policies in level $k$ then becomes, from \@ref(eq:log-lin-mu-1),
 
@@ -235,25 +233,25 @@ We also assume, for now, that all policyholders have the same one unit period fo
 
 As done before, we describe the Poisson regression through its mean function. For this we first denote $\mu_i$ to be the expected loss count of the $i$th policyholder under the Poisson specification \@ref(eq:Pois-pmf):
 
-$$
+\begin{equation}
 \mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n.
 (\#eq:mui-glm)
-$$
+\end{equation}
 
 The condition inside the expectation operation in \@ref(eq:mui-glm) indicates that the loss frequency $\mu_i$ is the model output responding to the given set of risk factors or explanatory variables. 
 In principle the conditional mean $\mathrm{E~}{(y_i|\mathbf{ x}_i)}$ in \@ref(eq:mui-glm) can take different forms depending on how we specify the relationship between $\mathbf{ x}$ and $y$. The standard choice for the Poisson regression is to adopt the exponential function, as we mentioned previously, so that
 
-$$
+\begin{equation}
 \mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}=e^{\mathbf{ x}^{\prime}_i\beta}, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n.
 (\#eq:mean-ft-Pois)
-$$
+\end{equation}
 
 Here $\beta=(\beta_0, \ldots, \beta_k)^{\prime}$ is the vector of coefficients so that $\mathbf{ x}^{\prime}_i \boldsymbol \beta=\beta_0+\beta_1x_{i1} +\ldots+\beta_k x_{ik}$. The exponential function in \@ref(eq:mean-ft-Pois) ensures that $\mu_i >0$ for any set of rating factors $\mathbf{ x}_i$. Often \@ref(eq:mean-ft-Pois) is rewritten as a log linear form
 
-$$
+\begin{equation}
 \log \mu_i=\log \mathrm{E~}{(y_i|\mathbf{ x}_i)}=\mathbf{ x}^{\prime}_i \boldsymbol \beta, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n
 (\#eq:mean-ft-Pois-2)
-$$
+\end{equation}
 
 to reveal the relationship when the right side is set as the linear form, $\mathbf{ x}^{\prime}_i\beta$. Again, we see that the  mapping works well as both sides of \@ref(eq:mean-ft-Pois-2), $\log \mu_i$ and $\mathbf{ x}_i\beta$, can now cover the entire real values. 
 This is the formulation of the Poisson regression, assuming that all policyholders have the same unit period of exposure. When the exposures differ among the policyholders, however, as is the case in most practical cases, we need to revise this formulation by adding  exposure component as an additional term in \@ref(eq:mean-ft-Pois-2).
@@ -270,10 +268,10 @@ In the previous section we assumed the same unit of exposure across all policyho
 
 The Poisson distribution in \@ref(eq:Pois-pmf) is parametrized via its mean. To understand the exposure, we alternatively parametrize the Poisson *pmf* in terms of the *rate* parameter $\lambda$, based on the definition of the Poisson process:
 
-$$
+\begin{equation}
 \Pr(Y=y)=\frac{(\lambda t)^y e^{-\lambda t}}{y!},\qquad y=0,1,2, \ldots
 (\#eq:Pois-pmf-2)
-$$ 
+\end{equation}
 
 with $\mathrm{E~}{(Y)}=\mathrm{Var~}{(Y)}=\lambda t$. Here $\lambda$ is known as the rate or intensity per unit period of the Poisson process and $t$ represents the length of time or *exposure*, a known constant value. For given $\lambda$ the Poisson distribution \@ref(eq:Pois-pmf-2) produces a larger expected loss count  as the exposure $t$ gets larger. 
 Clearly, \@ref(eq:Pois-pmf-2) reduces to \@ref(eq:Pois-pmf) when $t=1$, which means that the mean and the rate become the same for the unit  exposure, the case we considered in the previous subsection.  
@@ -294,17 +292,17 @@ Actuaries may be able to use different `r Gloss('exposure bases')` for a given i
 **Incorporating exposure in Poisson regression**  
 As exposures affect the Poisson mean, constructing Poisson regressions requires us to carefully separate the rate and exposure in the modelling process. Focusing on the insurance context, let us denote the rate of the loss event of the $i$th policyholder by $\lambda_i$, the known exposure (the length of coverage) by  $m_i$ and the expected loss count under the given exposure by $\mu_i$. Then  the Poisson regression formulation in \@ref(eq:mean-ft-Pois) and \@ref(eq:mean-ft-Pois-2) should be revised in light of \@ref(eq:Pois-pmf-2) as
 
-$$
+\begin{equation}
 \mu_i=\mathrm{E~}{(y_i|\mathbf{ x}_i)}=m_i \,\lambda_i=m_i \, e^{\mathbf{ x}^{\prime}_i \boldsymbol \beta}, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots, n,
 (\#eq:mean-ft-Pois-6)
-$$ 
+\end{equation} 
 
 which gives
 
-$$
+\begin{equation}
 \log \mu_i=\log m_i+\mathbf{ x}^{\prime}_i \boldsymbol \beta, \qquad y_i \sim Pois(\mu_i), \, i=1, \ldots,
 (\#eq:mean-ft-Pois-7)
-$$
+\end{equation}
 
 Adding $\log m_i$ in \@ref(eq:mean-ft-Pois-7) does not pose a problem in fitting as we can always specify this as an extra explanatory variable, as it is a known constant, and fix its coefficient to 1. In the literature the log of exposure, $\log m_i$, is commonly called the `r Gloss('offset')`.
 
@@ -351,8 +349,9 @@ From this classification rule, we may create an organized  table or list, such a
 
 <a id=tab:8.2></a>  
 
-
 [Table 8.2]: \#tab:8.2
+
+Table 8.2. **Loss Record of the Illustrative Auto Insurer**
 
 $$
 {\small
@@ -373,7 +372,7 @@ $$
 }
 $$
 
-[Table 8.2] : Loss record of the illustrative auto insurer
+
 
 Let us now look at the loss information in [Table 8.2] more closely. The exposure in each row represents the sum of the length of insurance coverages, or `r Gloss('in-force times')`, in the unit of year, of all the policyholders in that tariff cell. Similarly the claim counts in each row is the number of claims at each cell. Naturally the exposures and claim counts vary due to the different number of drivers across the cells, as well as different in-force time periods among the drivers within each cell.
 
@@ -394,10 +393,10 @@ We comment that actual loss records used by insurers typically include much more
 In this subsection, we introduce the `r Gloss('multiplicative tariff model')`, a popular pricing structure that can be naturally used within the Poisson regression framework. The developments here are based on [Table 8.2]. Recall that the loss count of a policyholder is described by the Poisson regression model with rate $\lambda$ and the exposure $m$, so that the expected loss count becomes $m\lambda$. As $m$ is a known constant, we are essentially concerned with modelling $\lambda$, so that it responds to the change in the rating factors. 
  Among other possible `r Gloss('functional forms')`, we commonly choose the multiplicative[^8.2] relation to model the Poisson rate $\lambda_{jk}$ for rating factor ($j,k$):
  
-$$
+\begin{equation}
 \lambda_{jk}= f_0 \times f_{1j} \times f_{2k}, \qquad j=1,2;\, k=1, 2,3.
 (\#eq:multiplicative-tarrif)
-$$
+\end{equation}
 
 [^8.2]: Preferring the `r Gloss('multiplicative form')` to others (e.g., additive one) was already hinted in \@ref(eq:log-lin-mu).
 
@@ -418,14 +417,14 @@ By comparing with \@ref(eq:multiplicative-tarrif), we see that the identical rat
 
 Again, \@ref(eq:multiplicative-tarrif) is log-transformed and rewritten as
 
-$$
+\begin{equation}
 \log \lambda_{jk}= \log f_0 + \log f_{1j} + \log f_{2k},
 (\#eq:log-linear-tariff)
-$$ 
+\end{equation} 
 
 as it is easier to work with in estimating process, similar to \@ref(eq:mean-ft-Pois-2). This log linear form makes the log relativities of the base level in each rating factor equal to zero, i.e., $\log f_{11}=\log f_{21}=0$, and leads to the following alternative, more explicit expression for \@ref(eq:log-linear-tariff):
 
-$$
+\begin{equation}
 \log \lambda_{jk}=\begin{cases}
 \log f_0 + \quad 0 \quad \,\,+ \quad 0 \quad \,\,& \text{for a policy in cell }(1,1), \\
 \log f_0+ \quad 0 \quad \,\,+\log f_{22}& \text{for a policy in cell }(1,2), \\
@@ -435,7 +434,7 @@ $$
 \log f_0+\log f_{12}+\log f_{23}& \text{for a policy in cell }(2,3). \\
 \end{cases}
 (\#eq:log-rate-Poi-tariff-3)
-$$
+\end{equation}
 
 This clearly shows that the Poisson rate parameter $\lambda$ varies across different tariff cells, with the same log linear form used in the Poisson regression framework. In fact the reader may see that \@ref(eq:log-rate-Poi-tariff-3) is  an extended version of the early expression \@ref(eq:ind-mu) with multiple risk factors and that the log relativities now play the role of $\beta_i$ parameters. 
 Therefore all the relativities can be readily estimated via fitting a Poisson regression with a suitably chosen set of indicator variables.
@@ -484,10 +483,10 @@ The triple $(x_1, x_2, x_3)$ then can effectively and uniquely determine each ri
 
 With the proposed indicator variables we can rewrite the log rate \@ref(eq:log-linear-tariff) as
 
-$$
+\begin{equation}
 \log \lambda_{}= \log f_0+ \log f_{12}  \times x_1 + \log f_{22} \times x_2 +\log f_{23} \times x_3,
 (\#eq:log-linear-tariff-3)
-$$
+\end{equation}
 
 which is identical to \@ref(eq:log-rate-Poi-tariff-3) when each triple value is actually applied. For example, we can verify that the base tariff cell $(j,k)=(1,1)$ corresponds to $(x_1, x_2,x_3)=(0, 0, 0)$, and in turn produces $\log \lambda=\log f_0$ or $\lambda= f_0$ in \@ref(eq:log-linear-tariff-3) as required. 
 
@@ -511,10 +510,10 @@ $$
 for $i=1, \ldots, n$. 
 As a result, the relativities are given by
 
-$$
+\begin{equation}
 {f}_0=e^{\beta_0}, \quad {f}_{12}=e^{\beta_1}, \quad {f}_{22}=e^{\beta_2}, \quad \text{and}\quad {f}_{23}=e^{\beta_3},
 (\#eq:relativity-1)
-$$
+\end{equation}
 
 with $f_{11}=1$ and $f_{21}=1$ from the original construction. For the actual dataset, $\beta_i$, $i=0,1, 2, 3$, is replaced with the *mle*  $b_i$ using the method in the technical supplement at the end of this chapter (Section `r chapnum`.A).  
 
@@ -591,9 +590,9 @@ We also note that there is no base level in the policyholder age variable, in th
 
 <a id=tab:8.3></a>  
 
-
 [Table 8.3]: \#tab:8.3
 
+Table 8.3. **Singapore Insurance Claims Data**
 
 $$
 {\small 
@@ -621,7 +620,6 @@ $$
 }
 $$
 
-[Table 8.3] : Singapore insurance claims data
 
 Let us try several examples based on [Table 8.3]. Suppose a male policyholder aged 40 who owns a 7-year-old vehicle of type A. The expected claim frequency for this policyholder is then given by 
 
@@ -718,10 +716,10 @@ In the Poisson regression the varying Poisson mean is determined by parameters $
 
 To obtain the *mle* of $\beta=(\beta_0, \ldots, \beta_k)^{\prime}$, we differentiate[^8.4] $l(\beta)$ with respect to vector $\beta$ and set it to zero:
 
-$$
+\begin{equation}
 \frac{\partial}{\partial \beta}l(\boldsymbol \beta)\Bigg{|}_{\beta=\mathbf{b}}=\sum^n_{i=1} \left(y_i -m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b}) \right)\mathbf{ x}_i=\mathbf{ 0}.
 (\#eq:score-ft-Poi)
-$$  
+\end{equation}  
 
 [^8.4]: We use matrix derivative here.
 
@@ -766,10 +764,10 @@ Since $n_k\, \bar{y}_{(k)}$ in \@ref(eq:score-ft-Poi-2) represents the total los
 **Information matrix**  
 Section \@ref(S:AppC:LF) defines information matrices. Taking second derivatives to \@ref(eq:ll-Poi-reg) gives the `r Gloss('information matrix')` of the *mle* estimators,
 
-$$
+\begin{equation}
 \mathbf{ I}(\boldsymbol \beta)=-\mathrm{E~}{\left( \frac{\partial^2}{\partial \boldsymbol \beta \partial \boldsymbol \beta^{\prime}}l(\boldsymbol \beta) \right)}=\sum^n_{i=1}m_i \exp(\mathbf{ x}^{\prime}_i \boldsymbol \beta)\mathbf{ x}_i \mathbf{ x}_i^{\prime}=\sum^n_{i=1} {\mu}_i \mathbf{ x}_i \mathbf{ x}_i^{\prime}.
 (\#eq:Inf-mtx-Poi)
-$$ 
+\end{equation} 
 
 For actual datasets, ${\mu}_i$ in \@ref(eq:Inf-mtx-Poi) is replaced with $\hat{\mu}_i=m_i \exp(\mathbf{ x}^{\prime}_i \mathbf{ b})$ to estimate the relevant variances and covariances of the *mle* $\mathbf{ b}$ or its functions.  
 

@@ -237,7 +237,6 @@ H_{\mathrm{SD}}(X)=\mathrm{E}[X]+\alpha \mathrm{SD}(X),\text{ for } \alpha\geq 0
 (\#eq:SD-principle) 
 \end{equation}
 
-
 and the variance principle
 $$
 H_{\mathrm{Var}}(X)=\mathrm{E}[X]+\alpha \mathrm{Var}(X),\text{ for } \alpha\geq 0.
@@ -318,7 +317,6 @@ and $Y$ is a degenerate random variable such that
 \end{eqnarray}
 
 It is easy to check that $\Pr[X\leq Y]=1$, but $\mathrm{SD}(X)=\sqrt{4^2\cdot 0.25\cdot 0.75}=\sqrt{3}>\mathrm{SD}(Y)=0$.
-
 
 </div>
 
@@ -653,7 +651,6 @@ Let us now consider the $TVaR$:
 
 It can also be helpful to express the $TVaR$ in terms of limited expected values.  Specifically, we have
 
-
 \begin{eqnarray}
   TVaR_q[X] &=& \int_{\pi_q}^{\infty} (x-\pi_q+\pi_q)f_X(x)dx/(1-q) \nonumber\\
 &=& \pi_q+\frac{1}{(1-q)}\int_{\pi_q}^{\infty} (x-\pi_q)f_X(x)dx\nonumber\\
@@ -661,6 +658,7 @@ It can also be helpful to express the $TVaR$ in terms of limited expected values
 &=& \pi_q +\frac{\left({\mathrm{E}[X]-\mathrm{E}[X\wedge\pi_q]}\right)}{(1-q)},
 (\#eq:cte-expectation)
 \end{eqnarray}
+
 where $e_X(d)=\mathrm{E}[X-d|X>d]$ for $d>0$ denotes the `r Gloss('mean excess loss function')`. For many commonly used parametric distributions, the formulas for calculating $\mathrm{E}[X]$ and $\mathrm{E}[X\wedge\pi_q]$ can be found in a table of distributions.
 
 
@@ -701,11 +699,11 @@ where $\pi_q$ is given by \@ref(eq:var-pareto).
 
 Via a change of variables, we can also rewrite equation \@ref(eq:cte-pdf) as
 
-
 \begin{eqnarray}
   TVaR_{q}[X] &=& \frac{1}{(1-q)}\int_{q}^{1} VaR_{\alpha}[X]\ d\alpha.
   (\#eq:cte-var)
 \end{eqnarray}
+
 What this alternative formula \@ref(eq:cte-var) tells is that $TVaR$ in fact is the average of $VaR_{\alpha}[X]$ with varying degree of confidence level over $\alpha\in [q,1]$.  Therefore, the $TVaR$ effectively resolves most of the limitations of $VaR$ outlined in the previous subsection.  First, due to the averaging effect, the $TVaR$ may be less sensitive to the change of confidence level compared with $VaR$.  Second, all the extremal losses that are above the $(1-q)\times 100\%$ worst probable event are taken in account.
 
 In this respect, it is a simple matter for us to see that for any given $q\in (0,1)$ 

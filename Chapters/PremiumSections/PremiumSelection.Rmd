@@ -26,7 +26,9 @@ GiniLoss = 2*(sum(rank(y)*y)/sum(y) - (nTot+1)/2)/nTot
 
 **Example -- Classic Lorenz Curve.**  For an insurance example, Figure \@ref(fig:ClassicLorenz) shows a distribution of insurance losses. This figure is based on a random sample of `r nTot` losses. The left-hand panel shows a right-skewed histogram of losses.  The right-hand panel provides the corresponding Lorenz curve, showing again a skewed distribution. For example, the arrow marks the point where 60 percent of the policyholders have 30 percent of losses. The 45 degree line is the line of equality; if each policyholder has the same loss, then the loss distribution would be at this line. The Gini index, twice the area between the Lorenz curve and the 45 degree line, is `r round(GiniLoss*100,1)` percent for this data set.
 
-```{r, ClassicLorenz, fig.cap='Distribution of Insurance Losses. The left-hand panel is a density plot of losses. The right-hand panel presents the same data using a Lorenz curve.', out.width='90%', fig.asp=0.5, fig.align='center', echo=FALSE}
+(ref:ClassicLorenz) **Distribution of Insurance Losses.** The left-hand panel is a density plot of losses. The right-hand panel presents the same data using a Lorenz curve.
+
+```{r ClassicLorenz, fig.cap='(ref:ClassicLorenz)', out.width='90%', fig.asp=0.5, fig.align='center', echo=FALSE}
 par(mfrow=c(1,2))
 plot(density(Losses), main="", xlab="Losses")
 plot(DFLine,DFLosses, cex=0.25, xlab="Proportion of Observations", ylab="Proportion of Losses")
@@ -130,9 +132,9 @@ GiniCalc <- function(Claims,PIx,Sx){
 
 ```
 
+(ref:LorenzVsOrdered) **Lorenz versus Performance Curve**
 
-
-```{r, LorenzVsOrdered, fig.cap='Lorenz versus Performance Curve', out.width='90%', fig.asp=0.5, fig.align='center', echo=FALSE}
+```{r LorenzVsOrdered, fig.cap='(ref:LorenzVsOrdered)', out.width='90%', fig.asp=0.5, fig.align='center', echo=FALSE}
 # EXAMPLE
 P = c(2,4,5,7,16)
 y = c(2,5,6,6,17)
@@ -316,7 +318,8 @@ Gini2 <- GiniCalc(Claims=Outy,PIx=Predvec,Sx=Flatpred)[[2]];#Gini
 ```
 
 
-```{r, fig.cap='', out.width='90%', fig.align='center', echo=SHOW_PDF} 
+
+```{r fig.cap='', out.width='90%', fig.align='center', echo=SHOW_PDF} 
 y <- Outy 
 P1 <- Flatpred
 P2 <- Predvec
