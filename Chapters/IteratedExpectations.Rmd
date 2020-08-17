@@ -30,14 +30,26 @@ Here we introduce the concept of conditional distribution respectively for discr
 
 #### Discrete Case
 
-Suppose that $X$ and $Y$ are both discrete random variables, meaning that they can take a finite or countable number of possible values with a positive probability. The **joint probability (mass) function** of ($X$, $Y$) is defined as $$p(x,y) = \Pr[X=x, Y=y]$$.
+Suppose that $X$ and $Y$ are both discrete random variables, meaning that they can take a finite or countable number of possible values with a positive probability. The **joint probability (mass) function** of ($X$, $Y$) is defined as 
+
+$$
+p(x,y) = \Pr[X=x, Y=y] .
+$$
 
 When $X$ and $Y$ are **independent** (the value of $X$ does not depend on that of $Y$), we have
-$$p(x,y)=p(x)p(y),$$
+
+$$
+p(x,y)=p(x)p(y),
+$$
+
 with $p(x)=\Pr[X=x]$ and $p(y)=\Pr[Y=y]$ being the **marginal probability function** of $X$ and $Y$, respectively.
 
 Given the joint probability function, we may obtain the marginal probability functions of $Y$ as
-$$p(y)=\sum_x p(x,y),$$
+
+$$
+p(y)=\sum_x p(x,y),
+$$
+
 where the summation is over all possible values of $x$, and the marginal probability function of $X$ can be obtained in a similar manner.
 
 The **conditional probability (mass) function** of $(Y|X)$ is defined as 
@@ -397,7 +409,7 @@ C ~
 e^{\gamma}\right)^{a_1}
 \exp\left(-a_2e^{\gamma} \right).
 $$
-From the table of exponential family distributions, we recognize this to be a gamma distribution. That is, we have that the prior distribution of $\lambda = e^{\gamma}$ is a gamma distribution with parameters $\alpha_{prior} = a_1+1$ and $\theta_{prior}^{-1}=a_2$. The posterior distribution is a gamma distribution with parameters  $\alpha_{post} =a_1+x+1=\alpha_{prior}+x$ and $\theta_{post}^{-1}=a_2+1 = \theta_{prior}^{-1}+1$. This is consistent with our Section \@ref(S:PosteriorDistribution) result.
+From the table of exponential family distributions, we recognize this to be a gamma distribution. That is, we have that the prior distribution of $\lambda = e^{\gamma}$ is a gamma distribution with parameters $\alpha_{prior} = a_1+1$ and $\theta_{prior}^{-1}=a_2$. The posterior distribution is a gamma distribution with parameters  $\alpha_{post} =a_1+x+1=\alpha_{prior}+x$ and $\theta_{post}^{-1}=a_2+1 = \theta_{prior}^{-1}+1$. This is consistent with our Section \@ref(S:ConjugateDistributions) result.
 
 
 ***

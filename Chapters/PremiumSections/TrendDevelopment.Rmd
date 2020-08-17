@@ -9,10 +9,14 @@ Information about the risks, such as exposures, premium, claim counts, losses, a
 
 With these detailed databases, it is straightforward (in principle) to sum up policy level detail to aggregate information needed for financial reports. This section describes various summary measures commonly used.
 
+
+
+
+
 ### Exposures and Premiums
 
 A financial reporting period is a length of time that is fixed in the calendar; we use January 1 to December 31 for the examples in this book although other reporting periods are also common. The reporting period is fixed but policies may begin at any time during the year. Even if all policies have a common contract length of (say) one year, because of the differing starting time, they can end at any time during the financial reporting. Figure
-\@ref(fig:Exposures) presents four illustrative policies. Because of these differing start and end times, there needs to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period.
+\@ref(fig:Exposures) presents four illustrative policies. There need to be some standards as to what types of measures are most useful for summarizing experience in a given reporting period due to these differing start and end times.
 
 
 (ref:Exposures) **Timeline of Exposures for Four 12-Month Policies**
@@ -94,7 +98,7 @@ $$
 
 This summarization is sometimes known as the `r Gloss('calendar year method')` of aggregation to serve as a contrast to the `r Gloss('policy year')` method. In the policy year method, all premiums and losses for policies written in the policy year are aggregated regardless of when earned. For example, for all four policies A, B, C, and D, they have written and earned exposures of 1.00 for the policy year 2019 (starting on 1/1 or 1 Jan). This is despite the fact that they do not start at the beginning of the year. This method is useful for ratemaking methods based on individual contracts and we do not pursue this further here.
 
-In the same way as exposures, one can summarizes premiums. Premiums, like exposures, can be either *written*, *earned*, *unearned*, or *in force*. Consider the following example.
+In the same way as exposures, one can summarize premiums. Premiums, like exposures, can be either *written*, *earned*, *unearned*, or *in force*. Consider the following example.
 
 **Example `r chapnum`.5.1. CAS Exam 5, 2003, Number 10.** A 12-month policy is written on March 1, 2002 for a premium of $900. As of December 31, 2002, which of the following is true?
 
@@ -132,7 +136,7 @@ Broadly speaking, the terms `r Gloss('loss')` and `r Gloss('claim')` refer to th
 
 * Sometimes, the term *claim* is used interchangeably with the term *loss*.
 * In some insurance and actuarial sources, the term *loss* is used for the amount of damage sustained in an insured event. The *claim* is the amount paid by the insurer with differences typically due to deductibles, upper policy limits, and the like.
-* In economic usages, a *claim* is a demand  for payment by an insured  or by  an injured third-party under the terms and conditions of insurance contract and the *loss* is the amount paid by the insurer.
+* In economics, a *claim* is a demand  for payment by an insured  or by  an injured third-party under the terms and conditions of insurance contract and the *loss* is the amount paid by the insurer.
 
 This text will follow the second bullet. However, when reading other sources, you will need to take care when thinking about definitions for the terms loss and claim.
 
@@ -210,7 +214,8 @@ The *ultimate loss* is the amount of money required to close and settle all clai
 
 ### Comparing Pure Premium and Loss Ratio Methods {#S:CompareMethods}
 
-Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the `r Gloss('mix of business')`. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period that rates are being developed for. The process of extrapolating exposures, premiums, and risk types is known as **trending**. For example, an `r Gloss('on-level earned premium')` is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given contractual and administrative complexities. We refer the reader to standard references that describe approaches in detail such as @werner2016basic and @friedland2013fundamentals.
+Now that we have learned how exposures, premiums, and claims develop over time, we can consider how they can be used for ratemaking. We have seen that insurers offer many different types of policies that cover different policyholders and amounts of risks. This aggregation is sometimes loosely referred to as the `r Gloss('mix of business')`. Importantly, the mix changes over time as policyholders come and go, amounts of risks change, and so forth. The exposures, premiums, and types of risks from a prior financial reporting may not be representative of the period for which the rates are being developed. The process of extrapolating exposures, premiums, and risk types is known as **trending**. For example, an `r Gloss('on-level earned premium')` is that earned premium that would have resulted for the experience period had the current rates been in effect for the entire period. Most trending methods used in practice are mathematically straight-forward although they can become complicated given contractual and administrative complexities. We refer the reader to standard references that describe approaches in detail such as @werner2016basic and @friedland2013fundamentals.
+
 
 #### Loss Ratio Method {-}
 

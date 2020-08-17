@@ -1,12 +1,12 @@
 
-It is common to consider an aggregate portfolio of insurance experience. Consistent with earlier notation, consider a collection of $n$ contracts with losses $X_1, \ldots, X_n$. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are `r Gloss('iid')`. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section \@ref(S:ExposureToRisk) we will introduce the idea of an `r Gloss('exposure', '7.2, 7.4')` variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a 100,000 house and a 200,000 house as coming from the same distribution. For now, we simply assume that $X_1, \ldots, X_n$ are *iid*.
+It is common to consider an aggregate portfolio of insurance experience. Consistent with earlier notation, consider a collection of $n$ contracts with losses $X_1, \ldots, X_n$. In this section, we assume that contracts have the same loss distribution, that is they form a homogeneous portfolio, and so are `r Gloss('iid')`. For motivation, you can think about personal insurance such as auto or homeowners where insurers write many contracts on risks that appear very similar. Further, the assumption of identical distributions is not as limiting as you might think. In Section \@ref(S:ExposureToRisk) we will introduce the idea of an `r Gloss('exposure', '7.2, 7.4')` variable that allows us to rescale experience to make it comparable. For example, by rescaling losses we will be able to treat homeowner losses from a house with 80,000 insurable value and a house with a 320,000 insurable value as coming from the same distribution. For now, we simply assume that $X_1, \ldots, X_n$ are *iid*.
 
 
 <!-- ## Pure Premium Method -->
 
 ### Pure Premium Method {#S:PurePremium}
 
-If the number in the group, $n$, is large, then the average provides a good approximation of the expected loss
+If the number of policies in a collection, $n$, is large, then the average provides a good approximation of the expected loss
 $$
 \small{
 \mathrm{E}(X) \approx \frac{\sum_{i=1}^n X_i}{n} = \frac{\text{Loss}}{\text{Exposure}} = \text{Pure Premium}.
