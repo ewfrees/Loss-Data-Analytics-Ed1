@@ -861,13 +861,20 @@ process. Such types of statistical models are called <strong>two-stage</strong>,
 <p>Here we introduce the concept of conditional distribution respectively for discrete and continuous random variables.</p>
 <div id="discrete-case" class="section level4">
 <h4><span class="header-section-number">16.1.1.1</span> Discrete Case</h4>
-<p>Suppose that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are both discrete random variables, meaning that they can take a finite or countable number of possible values with a positive probability. The <strong>joint probability (mass) function</strong> of (<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>) is defined as <span class="math display">\[p(x,y) = \Pr[X=x, Y=y]\]</span>.</p>
-<p>When <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <strong>independent</strong> (the value of <span class="math inline">\(X\)</span> does not depend on that of <span class="math inline">\(Y\)</span>), we have
-<span class="math display">\[p(x,y)=p(x)p(y),\]</span>
-with <span class="math inline">\(p(x)=\Pr[X=x]\)</span> and <span class="math inline">\(p(y)=\Pr[Y=y]\)</span> being the <strong>marginal probability function</strong> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively.</p>
-<p>Given the joint probability function, we may obtain the marginal probability functions of <span class="math inline">\(Y\)</span> as
-<span class="math display">\[p(y)=\sum_x p(x,y),\]</span>
-where the summation is over all possible values of <span class="math inline">\(x\)</span>, and the marginal probability function of <span class="math inline">\(X\)</span> can be obtained in a similar manner.</p>
+<p>Suppose that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are both discrete random variables, meaning that they can take a finite or countable number of possible values with a positive probability. The <strong>joint probability (mass) function</strong> of (<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>) is defined as</p>
+<p><span class="math display">\[
+p(x,y) = \Pr[X=x, Y=y] .
+\]</span></p>
+<p>When <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <strong>independent</strong> (the value of <span class="math inline">\(X\)</span> does not depend on that of <span class="math inline">\(Y\)</span>), we have</p>
+<p><span class="math display">\[
+p(x,y)=p(x)p(y),
+\]</span></p>
+<p>with <span class="math inline">\(p(x)=\Pr[X=x]\)</span> and <span class="math inline">\(p(y)=\Pr[Y=y]\)</span> being the <strong>marginal probability function</strong> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively.</p>
+<p>Given the joint probability function, we may obtain the marginal probability functions of <span class="math inline">\(Y\)</span> as</p>
+<p><span class="math display">\[
+p(y)=\sum_x p(x,y),
+\]</span></p>
+<p>where the summation is over all possible values of <span class="math inline">\(x\)</span>, and the marginal probability function of <span class="math inline">\(X\)</span> can be obtained in a similar manner.</p>
 <p>The <strong>conditional probability (mass) function</strong> of <span class="math inline">\((Y|X)\)</span> is defined as</p>
 <p><span class="math display">\[
 p(y|x) =\Pr[Y=y|X=x]= \frac{p(x,y)}{\Pr[X=x]},
@@ -1144,7 +1151,7 @@ C ~
 e^{\gamma}\right)^{a_1}
 \exp\left(-a_2e^{\gamma} \right).
 \]</span>
-From the table of exponential family distributions, we recognize this to be a gamma distribution. That is, we have that the prior distribution of <span class="math inline">\(\lambda = e^{\gamma}\)</span> is a gamma distribution with parameters <span class="math inline">\(\alpha_{prior} = a_1+1\)</span> and <span class="math inline">\(\theta_{prior}^{-1}=a_2\)</span>. The posterior distribution is a gamma distribution with parameters <span class="math inline">\(\alpha_{post} =a_1+x+1=\alpha_{prior}+x\)</span> and <span class="math inline">\(\theta_{post}^{-1}=a_2+1 = \theta_{prior}^{-1}+1\)</span>. This is consistent with our Section <a href="#S:PosteriorDistribution"><strong>??</strong></a> result.</p>
+From the table of exponential family distributions, we recognize this to be a gamma distribution. That is, we have that the prior distribution of <span class="math inline">\(\lambda = e^{\gamma}\)</span> is a gamma distribution with parameters <span class="math inline">\(\alpha_{prior} = a_1+1\)</span> and <span class="math inline">\(\theta_{prior}^{-1}=a_2\)</span>. The posterior distribution is a gamma distribution with parameters <span class="math inline">\(\alpha_{post} =a_1+x+1=\alpha_{prior}+x\)</span> and <span class="math inline">\(\theta_{post}^{-1}=a_2+1 = \theta_{prior}^{-1}+1\)</span>. This is consistent with our Section <a href="C-ModelSelection.html#S:ConjugateDistributions">4.4.4</a> result.</p>
 <hr />
 <p><strong>Special case. Normal-Normal Model.</strong>
 Consider a normal likelihood so that <span class="math inline">\(b(\gamma) = \gamma^2/2\)</span> and the scale parameter is <span class="math inline">\(\sigma^2\)</span>. Thus, we have

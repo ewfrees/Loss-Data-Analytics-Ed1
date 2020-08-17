@@ -837,14 +837,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="C:Credibility" class="section level1">
 <h1><span class="header-section-number">Chapter 9</span> Experience Rating Using Credibility Theory</h1>
-<p><em>Chapter Preview.</em> This chapter introduces credibility theory which is an important actuarial tool for estimating pure premiums, frequencies, and severities for individual risks or classes of risks. Credibility theory provides a convenient framework for combining the experience for an individual risk or class with other data to produce more stable and accurate estimates. Several models for calculating credibility estimates will be discussed including limited fluctuation, Bühlmann, Bühlmann-Straub, and nonparametric and semiparametric credibility methods. The chapter will also show a connection between credibility theory and Bayesian estimation which was introduced in Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
+<p><em>Chapter Preview.</em> This chapter introduces credibility theory as an important actuarial tool for estimating pure premiums, frequencies, and severities for individual risks or classes of risks. Credibility theory provides a convenient framework for combining the experience for an individual risk or class with other data to produce more stable and accurate estimates. Several models for calculating credibility estimates will be discussed including limited fluctuation, Bühlmann, Bühlmann-Straub, and nonparametric and semiparametric credibility methods. The chapter will also show a connection between credibility theory and Bayesian estimation which was introduced in Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a>.</p>
 <div id="introduction-to-applications-of-credibility-theory" class="section level2">
 <h2><span class="header-section-number">9.1</span> Introduction to Applications of Credibility Theory</h2>
 <p>What premium should be charged to provide insurance? The answer depends upon the exposure to the risk of loss. A common method to compute an insurance premium is to rate an insured using a <a href="#" class="tooltip" style="color:green"><em>classification rating plan</em><span style="font-size:8pt">A rating plan that uses an insured’s risk characteristics to determine premium</span></a>. A classification plan is used to select an insurance rate based on an insured’s rating characteristics such as geographic territory, age, etc. All classification rating plans use a limited set of criteria to group insureds into a “class” and there will be variation in the risk of loss among insureds within the class.</p>
 <p>An experience rating plan attempts to capture some of the variation in the risk of loss among insureds within a rating class by using the insured’s own loss experience to complement the rate from the classification rating plan. One way to do this is to use a <a href="#" class="tooltip" style="color:green"><em>credibility weight</em><span style="font-size:8pt">The weight assigned to an insured’s historical loss experience for the purposes of determining their premium in an experience rating plan</span></a> <span class="math inline">\(Z\)</span> with <span class="math inline">\(0\leq Z \leq 1\)</span> to compute</p>
-<p><span class="math display">\[\begin{equation*} 
+<p><span class="math display">\[
 \hat{R}=Z\bar{X}+(1-Z)M,
-\end{equation*}\]</span></p>
+\]</span></p>
 <p><span class="math display">\[\begin{eqnarray*}
 \hat{R}&amp;=&amp;\textrm{credibility weighted rate for risk,}\\
            \bar{X}&amp;=&amp;\textrm{average loss for the risk over a specified time period,}\\
@@ -881,12 +881,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Determine credibility-weight <span class="math inline">\(Z\)</span> using the square-root partial credibility formula.</li>
 </ul>
 <hr />
-<p><a href="#" class="tooltip" style="color:green"><em>Limited fluctuation credibility</em><span style="font-size:8pt">A credibility method that attempts to limit fluctuations in its estimates</span></a>, also called “classical credibility”, was given this name because the method explicitly attempts to limit fluctuations in estimates for claim frequencies, severities, or losses. For example, suppose that you want to estimate the expected number of claims <span class="math inline">\(N\)</span> for a group of risks in an insurance rating class. How many risks are needed in the class to ensure that a specified level of accuracy is attained in the estimate? First the question will be considered from the perspective of how many claims are needed.</p>
+<p><a href="#" class="tooltip" style="color:green"><em>Limited fluctuation credibility</em><span style="font-size:8pt">A credibility method that attempts to limit fluctuations in its estimates</span></a>, also called “classical credibility” and “American credibility,” was given this name because the method explicitly attempts to limit fluctuations in estimates for claim frequencies, severities, or losses. For example, suppose that you want to estimate the expected number of claims <span class="math inline">\(N\)</span> for a group of risks in an insurance rating class. How many risks are needed in the class to ensure that a specified level of accuracy is attained in the estimate? First the question will be considered from the perspective of how many claims are needed.</p>
 <div id="S:frequency" class="section level3">
 <h3><span class="header-section-number">9.2.1</span> Full Credibility for Claim Frequency</h3>
-<p>Let <span class="math inline">\(N\)</span> be a random variable representing the number of claims for a group of risks, for example, risks within a particular rating classification. The observed number of claims will be used to estimate <span class="math inline">\(\mu_N=\mathrm{E}[N]\)</span>, the expected number of claims. How big does <span class="math inline">\(\mu_N\)</span> need to be to get a good estimate? One way to quantify the accuracy of the estimate would be a statement like: ``The observed value of <span class="math inline">\(N\)</span> should be within 5<span class="math inline">\(\%\)</span> of <span class="math inline">\(\mu_N\)</span> at least 90<span class="math inline">\(\%\)</span> of the time." Writing this as a mathematical expression would give <span class="math inline">\(\Pr[0.95\mu_N\leq N \leq1.05\mu_N] \geq 0.90\)</span>. Generalizing this statement by letting <span class="math inline">\(k\)</span> replace 5<span class="math inline">\(\%\)</span> and probability <span class="math inline">\(p\)</span> replace 0.90 gives the equation</p>
+<p>Let <span class="math inline">\(N\)</span> be a random variable representing the number of claims for a group of risks, for example, risks within a particular rating classification. The observed number of claims will be used to estimate <span class="math inline">\(\mu_N=\mathrm{E}[N]\)</span>, the expected number of claims. How big does <span class="math inline">\(\mu_N\)</span> need to be to get a good estimate? One way to quantify the accuracy of the estimate would be with a statement like: ``The observed value of <span class="math inline">\(N\)</span> should be within 5<span class="math inline">\(\%\)</span> of <span class="math inline">\(\mu_N\)</span> at least 90<span class="math inline">\(\%\)</span> of the time." Writing this as a mathematical expression would give <span class="math inline">\(\Pr[0.95 \mu_N \leq N \leq 1.05 \mu_N] \geq 0.90\)</span>. Generalizing this statement by letting the range parameter <span class="math inline">\(k\)</span> replace 5<span class="math inline">\(\%\)</span> and probability level <span class="math inline">\(p\)</span> replace 0.90 gives the equation</p>
 <p><span class="math display" id="eq:kpercent-interval">\[\begin{equation}
-\Pr[(1-k)\mu_N\leq N \leq(1+k)\mu_N] \geq p.
+\Pr[(1-k) \mu_N \leq N \leq (1+k) \mu_N] \geq p .
 \tag{9.1}
 \end{equation}\]</span></p>
 <p>The expected number of claims required for the probability on the left-hand side of <a href="C-Credibility.html#eq:kpercent-interval">(9.1)</a> to equal <span class="math inline">\(p\)</span> is called the <a href="#" class="tooltip" style="color:green"><em>full credibility standard</em><span style="font-size:8pt">The threshold of experience necessary to assign 100% credibility to the insured’s own experience</span></a>.</p>
@@ -896,7 +896,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \Pr\left[\frac{-k\mu_N}{\sigma_N}\leq \frac{N-\mu_N}{\sigma_N} \leq \frac{k\mu_N}{\sigma_N}\right] \geq p.
 \tag{9.2}
 \end{equation}\]</span></p>
-<p>In limited fluctuation credibility the standard normal distribution is used to approximate the distribution for <span class="math inline">\((N-\mu_N)/\sigma_N\)</span>. If <span class="math inline">\(N\)</span> is the sum of many claims from a large group of similar risks and the claims are independent, then the approximation may be reasonable.</p>
+<p>In limited fluctuation credibility the standard normal distribution is used to approximate the distribution of <span class="math inline">\((N-\mu_N)/\sigma_N\)</span>. If <span class="math inline">\(N\)</span> is the sum of many claims from a large group of similar risks and the claims are independent, then the approximation may be reasonable.</p>
 <p>Let <span class="math inline">\(y_p\)</span> be the value such that <span class="math inline">\(\Pr[-y_p\leq (N-\mu_N)/\sigma_N \leq y_p]=\Phi(y_p)-\Phi(-y_p)=p\)</span> where <span class="math inline">\(\Phi( )\)</span> is the <a href="#" class="tooltip" style="color:green"><em>cumulative distribution function of the standard normal</em><span style="font-size:8pt">Cumulative density function for the normal distribution with mean 0 and standard deviation 1</span></a>. Because <span class="math inline">\(\Phi(-y_p)=1-\Phi(y_p)\)</span>, the equality can be rewritten as <span class="math inline">\(2\Phi(y_p)-1=p\)</span>. Solving for <span class="math inline">\(y_p\)</span> gives <span class="math inline">\(y_p=\Phi^{-1}((p+1)/2)\)</span> where <span class="math inline">\(\Phi^{-1}( )\)</span> is the inverse of <span class="math inline">\(\Phi( )\)</span>.</p>
 <p>Equation <a href="C-Credibility.html#eq:normalized-interval">(9.2)</a> will be satisfied if <span class="math inline">\(k\mu_N/\sigma_N \geq y_p\)</span> assuming the normal approximation. First we will consider this inequality for the case when <span class="math inline">\(N\)</span> has a Poisson distribution: <span class="math inline">\(\Pr[N=n] = \lambda^n\textrm{e}^{-\lambda}/n!\)</span>. Because <span class="math inline">\(\lambda=\mu_N=\sigma_N^2\)</span> for the Poisson, taking square roots yields <span class="math inline">\(\mu_N^{1/2}=\sigma_N\)</span>. So, <span class="math inline">\(k\mu_N/\mu_N^{1/2} \geq y_p\)</span> which is equivalent to <span class="math inline">\(\mu_N \geq (y_p/k)^2\)</span>. Let’s define <span class="math inline">\(\lambda_{kp}\)</span> to be the value of <span class="math inline">\(\mu_N\)</span> for which equality holds. Then the full credibility standard for the Poisson distribution is</p>
 <p><span class="math display" id="eq:full-credibility-Poisson">\[\begin{equation}
@@ -910,8 +910,7 @@ The full credibility standard is set so that the observed number of claims is to
 <a id="displayExample.9.2.1" href="javascript:toggleEX('toggleExample.9.2.1','displayExample.9.2.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.9.2.1" style="display: none">
-<p><strong>Solution</strong>
-Referring to a normal table, <span class="math inline">\(y_p=\Phi^{-1}((p+1)/2)=\Phi^{-1}((0.95+1)/2)\)</span>=<span class="math inline">\(\Phi^{-1}(0.975)=1.960\)</span>. Using this value and <span class="math inline">\(k=.05\)</span> then <span class="math inline">\(\lambda_{kp} = (y_p/k)^{2}=(1.960/0.05)^{2}=1,536.64\)</span>. After rounding up the full credibility standard is 1,537.</p>
+<p><strong>Solution.</strong> Referring to a standard normal distribution table, <span class="math inline">\(y_p=\Phi^{-1}((p+1)/2)=\Phi^{-1}((0.95+1)/2)\)</span>=<span class="math inline">\(\Phi^{-1}(0.975)=1.960\)</span>. Using this value and <span class="math inline">\(k=.05\)</span> then <span class="math inline">\(\lambda_{kp} = (y_p/k)^{2}=(1.960/0.05)^{2}=1,536.64\)</span>. After rounding up the full credibility standard is 1,537.</p>
 </div>
 <hr />
 <p>If claims are not Poisson distributed then equation <a href="C-Credibility.html#eq:normalized-interval">(9.2)</a> does not imply <a href="C-Credibility.html#eq:full-credibility-Poisson">(9.3)</a>. Setting the upper bound of <span class="math inline">\((N-\mu_N)/\sigma_N\)</span> in <a href="C-Credibility.html#eq:normalized-interval">(9.2)</a> equal to <span class="math inline">\(y_p\)</span> gives <span class="math inline">\(k\mu_N/\sigma_N=y_p\)</span>. Squaring both sides and moving everything to the right side except for one of the <span class="math inline">\(\mu_N\)</span>’s gives <span class="math inline">\(\mu_N=(y_p/k)^2(\sigma_N^2/\mu_N)\)</span>. This is the full credibility standard for frequency and will be denoted by <span class="math inline">\(n_f\)</span>,</p>
@@ -954,25 +953,25 @@ The full credibility standard should be selected so that the observed number of 
 <a id="displayExample.9.2.4" href="javascript:toggleEX('toggleExample.9.2.4','displayExample.9.2.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.9.2.4" style="display: none">
-<p><strong>Solution</strong> With <span class="math inline">\(p=0.95\)</span> and <span class="math inline">\(k=.05\)</span>, <span class="math inline">\(\lambda_{kp} = (y_p/k)^{2}=(1.960/0.05)^{2}=1,536.64\)</span> claims are required for full credibility. The claims frequency rate is 0.20 claims/exposures. To convert the full credibility standard to a standard denominated in exposures the calculation is: (1,536.64 claims)/(0.20 claims/exposures) = 7,683.20 exposures. This can be rounded up to 7,684.</p>
+<p><strong>Solution</strong> With <span class="math inline">\(p=0.95\)</span> and <span class="math inline">\(k=.05\)</span>, <span class="math inline">\(\lambda_{kp} = (y_p/k)^{2}=(1.960/0.05)^{2}=1,536.64\)</span> claims are required for full credibility. The claims frequency rate is 0.20 claims per exposure. To convert the full credibility standard to a standard denominated in exposures the calculation is: (1,536.64 claims)/(0.20 claims/exposures) = 7,683.20 exposures. This can be rounded up to 7,684.</p>
 </div>
 <hr />
-<p>Frequency can be defined as the number of claims per exposure. Letting <span class="math inline">\(m\)</span> represent number of exposures then the observed claim frequency is <span class="math inline">\(N/m\)</span> which is used to estimate <span class="math inline">\(\mathrm{E}(N/m)\)</span>:</p>
-<p><span class="math display">\[\begin{equation*}
+<p>Frequency can be defined as the number of claims per exposure. Letting <span class="math inline">\(m\)</span> denote the number of exposures. Then, if observed claim frequency <span class="math inline">\(N/m\)</span> is used to estimate <span class="math inline">\(\mathrm{E}(N/m)\)</span>:</p>
+<p><span class="math display">\[
 \Pr[(1-k)\mathrm{E}(N/m)\leq N/m \leq(1+k)\mathrm{E}(N/m)] \geq p.
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>Because the number of exposures is not a random variable, <span class="math inline">\(\mathrm{E}(N/m)=\mathrm{E}(N)/m=\mu_N/m\)</span> and the prior equation becomes</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 \Pr\left[(1-k)\frac{\mu_N}{m}\leq \frac{N}{m} \leq(1+k)\frac{\mu_N}{m}\right] \geq p.
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>Multiplying through by <span class="math inline">\(m\)</span> results in equation <a href="C-Credibility.html#eq:kpercent-interval">(9.1)</a> at the beginning of the section. The full credibility standards that were developed for estimating expected number of claims also apply to frequency.</p>
 </div>
 <div id="full-credibility-for-aggregate-losses-and-pure-premium" class="section level3">
 <h3><span class="header-section-number">9.2.2</span> Full Credibility for Aggregate Losses and Pure Premium</h3>
-<p>Aggregate losses are the total of all loss amounts for a risk or group of risks. Letting <span class="math inline">\(S\)</span> represent aggregate losses then</p>
-<p><span class="math display">\[\begin{equation*}
+<p>Aggregate losses are the total of all loss amounts for a risk or group of risks. Letting <span class="math inline">\(S\)</span> represent aggregate losses</p>
+<p><span class="math display">\[
 S=X_1+X_2+\cdots+X_N.
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>The random variable <span class="math inline">\(N\)</span> represents the number of losses and random variables <span class="math inline">\(X_1, X_2,\ldots,X_N\)</span> are the individual loss amounts. In this section it is assumed that <span class="math inline">\(N\)</span> is independent of the loss amounts and that <span class="math inline">\(X_1, X_2,\ldots,X_N\)</span> are <a href="#" class="tooltip" style="color:green"><em>iid</em><span style="font-size:8pt">Independent and identically distributed</span></a>.</p>
 <p>The mean and variance of <span class="math inline">\(S\)</span> are</p>
 <p><span class="math display">\[
@@ -984,46 +983,49 @@ S=X_1+X_2+\cdots+X_N.
 \]</span></p>
 <p>where <span class="math inline">\(X\)</span> is the amount of a single loss.</p>
 <p>Observed losses <span class="math inline">\(S\)</span> will be used to estimate expected losses <span class="math inline">\(\mu_S=\mathrm{E}(S)\)</span>. As with the frequency model in the previous section, the observed losses must be close to the expected losses as quantified in the equation</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 \Pr[(1-k)\mu_S\leq S \leq(1+k)\mu_S] \geq p.
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>After subtracting the mean and dividing by the standard deviation,</p>
 <p><span class="math display">\[
 \Pr\left[\frac{-k\mu_S}{\sigma_S}\leq (S-\mu_S)/\sigma_S \leq \frac{k\mu_S}{\sigma_S}\right] \geq p .
 \]</span></p>
-<p>As done in the previous section the distribution for <span class="math inline">\((S-\mu_S)/\sigma_S\)</span> is assumed to be normal and <span class="math inline">\(k\mu_S/\sigma_S=y_p=\Phi^{-1}((p+1)/2)\)</span>. This equation can be rewritten as <span class="math inline">\(\mu_S^2=(y_p/k)^2\sigma_S^2\)</span>. Using the prior formulas for <span class="math inline">\(\mu_S\)</span> and <span class="math inline">\(\sigma_{S}^2\)</span> gives <span class="math inline">\((\mu_N\mu_X)^2=(y_p/k)^2(\mu_N\sigma^{2}_X+\mu^{2}_X\sigma^{2}_N)\)</span>. Dividing both sides by <span class="math inline">\(\mu_N\mu_X^2\)</span> and reordering terms on the right side results in a full credibility standard <span class="math inline">\(n_S\)</span> for aggregate losses</p>
+<p>As done in the previous section the distribution for <span class="math inline">\((S-\mu_S)/\sigma_S\)</span> is assumed to be standard normal and <span class="math inline">\(k\mu_S/\sigma_S=y_p=\Phi^{-1}((p+1)/2)\)</span>. This equation can be rewritten as <span class="math inline">\(\mu_S^2=(y_p/k)^2\sigma_S^2\)</span>. Using the prior formulas for <span class="math inline">\(\mu_S\)</span> and <span class="math inline">\(\sigma_{S}^2\)</span> gives <span class="math inline">\((\mu_N\mu_X)^2=(y_p/k)^2(\mu_N\sigma^{2}_X+\mu^{2}_X\sigma^{2}_N)\)</span>. Dividing both sides by <span class="math inline">\(\mu_N\mu_X^2\)</span> and reordering terms on the right side results in a full credibility standard <span class="math inline">\(n_S\)</span> for aggregate losses</p>
 <p><span class="math display" id="eq:full-credibility-losses">\[\begin{equation}
 n_S=\left(\frac{y_p}{k}\right)^2\left[\left(\frac{\sigma_N^2}{\mu_N}\right)+\left(\frac{\sigma_X}{\mu_X}\right)^2\right]=\lambda_{kp}\left[\left(\frac{\sigma_N^2}{\mu_N}\right)+\left(\frac{\sigma_X}{\mu_X}\right)^2\right].
 \tag{9.5}
 \end{equation}\]</span></p>
 <p><strong>Example 9.2.5.</strong>
-The number of claims has a Poisson distribution. Individual loss amounts are independently and identically distributed with a Type II Pareto distribution <span class="math inline">\(F(x)=1-[\theta/(x+\theta)]^{\alpha}\)</span>. The number of claims and loss amounts are independent.
+The number of claims has a Poisson distribution. Individual loss amounts are independently and identically distributed with a Pareto distribution <span class="math inline">\(F(x)=1-[\theta/(x+\theta)]^{\alpha}\)</span>. The number of claims and loss amounts are independent.
 If observed aggregate losses should be within 5<span class="math inline">\(\%\)</span> of the expected value with probability <span class="math inline">\(p=0.95\)</span>, how many losses are required for full credibility?</p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.2.5" href="javascript:toggleEX('toggleExample.9.2.5','displayExample.9.2.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.9.2.5" style="display: none">
-<p><strong>Solution</strong>
-Because the number of claims is Poisson, <span class="math inline">\((\sigma_N^2/\mu_N)=1\)</span>. The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)</span> and the variance is <span class="math inline">\(\sigma_X^2=\theta^{2}\alpha/[(\alpha-1)^{2}(\alpha-2)]\)</span> so <span class="math inline">\((\sigma_X/\mu_X)^2=\alpha/(\alpha-2)\)</span>. Combining the frequency and severity terms gives <span class="math inline">\([(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=2(\alpha-1)/(\alpha-2)\)</span>. From a normal table <span class="math inline">\(y_p=\Phi^{-1}((0.95+1)/2)=1.960\)</span>. The full credibility standard is <span class="math inline">\(n_S=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)\)</span>. Suppose <span class="math inline">\(\alpha=3\)</span> then <span class="math inline">\(n_S=6,146.56\)</span> for a full credibility standard of 6,147. Note that considerably more claims are needed for full credibility for aggregate losses than frequency alone.</p>
+<p><strong>Solution.</strong> Because the number of claims is Poisson, <span class="math inline">\((\sigma_N^2/\mu_N)=1\)</span>. The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)</span> and the variance is <span class="math inline">\(\sigma_X^2=\theta^{2}\alpha/[(\alpha-1)^{2}(\alpha-2)]\)</span> so <span class="math inline">\((\sigma_X/\mu_X)^2=\alpha/(\alpha-2)\)</span>. Combining the frequency and severity terms gives <span class="math inline">\([(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=2(\alpha-1)/(\alpha-2)\)</span>. From a standard normal distribution table <span class="math inline">\(y_p=\Phi^{-1}((0.95+1)/2)=1.960\)</span>. The full credibility standard is <span class="math inline">\(n_S=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)\)</span>. Suppose <span class="math inline">\(\alpha=3\)</span> then <span class="math inline">\(n_S=6,146.56\)</span> for a full credibility standard of 6,147. Note that considerably more claims are needed for full credibility for aggregate losses than frequency alone.</p>
 </div>
 <hr />
-<p>When the number of claims is Poisson distributed then equation <a href="C-Credibility.html#eq:full-credibility-losses">(9.5)</a> can be simplified using <span class="math inline">\((\sigma_N^2/\mu_N)=1\)</span>. It follows that <span class="math inline">\([(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=[1+(\sigma_X/\mu_X)^2]=[(\mu_X^2+\sigma_X^2)/\mu_X^2]=\mathrm{E}(X^2)/\mathrm{E}(X)^2\)</span> using the relationship <span class="math inline">\(\mu_X^2+\sigma_X^2=\mathrm{E}(X^2)\)</span>. The full credibility standard is <span class="math inline">\(n_S=\lambda_{kp}\mathrm{E}(X^2)/\mathrm{E}(X)^2\)</span>.</p>
+<p>When the number of claims is Poisson distributed then equation <a href="C-Credibility.html#eq:full-credibility-losses">(9.5)</a> can be simplified using <span class="math inline">\((\sigma_N^2/\mu_N)=1\)</span>. It follows that</p>
+<p><span class="math display">\[
+[(\sigma_N^2/\mu_N)+(\sigma_X/\mu_X)^2]=[1+(\sigma_X/\mu_X)^2]=[(\mu_X^2+\sigma_X^2)/\mu_X^2]=\mathrm{E}(X^2)/\mathrm{E}(X)^2
+\]</span></p>
+<p>using the relationship <span class="math inline">\(\mu_X^2+\sigma_X^2=\mathrm{E}(X^2)\)</span>. The full credibility standard is <span class="math inline">\(n_S=\lambda_{kp}~\mathrm{E}(X^2)/\mathrm{E}(X)^2\)</span>.</p>
 <p>The pure premium <span class="math inline">\(PP\)</span> is equal to aggregate losses <span class="math inline">\(S\)</span> divided by exposures <span class="math inline">\(m\)</span>: <span class="math inline">\(PP=S/m\)</span>. The full credibility standard for pure premium will require</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 \Pr\left[(1-k)\mu_{PP}\leq PP \leq(1+k)\mu_{PP}\right] \geq p.
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>The number of exposures <span class="math inline">\(m\)</span> is assumed fixed and not a random variable so <span class="math inline">\(\mu_{PP}=\mathrm{E}(S/m)=\mathrm{E}(S)/m=\mu_S/m\)</span>.</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 \Pr\left[(1-k)\left(\frac{\mu_S}{m}\right)\leq \left(\frac{S}{m}\right) \leq(1+k)\left(\frac{\mu_S}{m}\right)\right] \geq p.
-\end{equation*}\]</span></p>
-<p>Multiplying through by exposures <span class="math inline">\(m\)</span> returns the bounds for losses</p>
-<p><span class="math display">\[\begin{equation*}
+\]</span></p>
+<p>Multiplying through by <span class="math inline">\(m\)</span> returns the bounds for losses</p>
+<p><span class="math display">\[
 \Pr[(1-k)\mu_S\leq S \leq(1+k)\mu_S] \geq p.
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>This means that the full credibility standard <span class="math inline">\(n_{PP}\)</span> for the pure premium is the same as that for aggregate losses</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 n_{PP}=n_S=\lambda_{kp}\left[\left(\frac{\sigma_N^2}{\mu_n}\right)+\left(\frac{\sigma_X}{\mu_X}\right)^2\right].
-\end{equation*}\]</span></p>
+\]</span></p>
 </div>
 <div id="full-credibility-for-severity" class="section level3">
 <h3><span class="header-section-number">9.2.3</span> Full Credibility for Severity</h3>
@@ -1052,8 +1054,7 @@ Individual loss amounts are independently and identically distributed with a Typ
 <a id="displayExample.9.2.6" href="javascript:toggleEX('toggleExample.9.2.6','displayExample.9.2.6');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.9.2.6" style="display: none">
-<p><strong>Solution</strong>
-The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)</span> and the variance is <span class="math inline">\(\sigma_X^2=\theta^{2}\alpha/[(\alpha-1)^{2}(\alpha-2)]\)</span> so <span class="math inline">\((\sigma_X/\mu_X)^2=\alpha/(\alpha-2)\)</span>. From a normal table <span class="math inline">\(y_p=\Phi^{-1}((0.95+1)/2)=1.960\)</span>. The full credibility standard is <span class="math inline">\(n_X=(1.96/0.05)^{2}[\alpha/(\alpha-2)]=1,536.64\alpha/(\alpha-2)\)</span>. Suppose <span class="math inline">\(\alpha=3\)</span> then <span class="math inline">\(n_X=4,609.92\)</span> for a full credibility standard of 4,610.</p>
+<p><strong>Solution.</strong> The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)</span> and the variance is <span class="math inline">\(\sigma_X^2=\theta^{2}\alpha/[(\alpha-1)^{2}(\alpha-2)]\)</span> so <span class="math inline">\((\sigma_X/\mu_X)^2=\alpha/(\alpha-2)\)</span>. From a standard normal distribution table <span class="math inline">\(y_p=\Phi^{-1}((0.95+1)/2)=1.960\)</span>. The full credibility standard is <span class="math inline">\(n_X=(1.96/0.05)^{2}[\alpha/(\alpha-2)]=1,536.64\alpha/(\alpha-2)\)</span>. Suppose <span class="math inline">\(\alpha=3\)</span> then <span class="math inline">\(n_X=4,609.92\)</span> for a full credibility standard of 4,610.</p>
 </div>
 <hr />
 </div>
@@ -1061,8 +1062,17 @@ The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)<
 <h3><span class="header-section-number">9.2.4</span> Partial Credibility</h3>
 <p>In prior sections full credibility standards were calculated for estimating frequency (<span class="math inline">\(n_f\)</span>), pure premium (<span class="math inline">\(n_{PP}\)</span>), and severity (<span class="math inline">\(n_X\)</span>) - in this section these full credibility standards will be denoted by <span class="math inline">\(n_{0}\)</span>. In each case the full credibility standard was the expected number of claims required to achieve a defined level of accuracy when using empirical data to estimate an expected value. If the observed number of claims is greater than or equal to the full credibility standard then a full credibility weight <span class="math inline">\(Z=1\)</span> is given to the data.</p>
 <p>In limited fluctuation credibility, credibility weights <span class="math inline">\(Z\)</span> assigned to data are</p>
+<!-- $$  -->
+<!-- Z=\quad \sqrt{\frac{n}{n_{0}}} \quad \textrm{if} \quad   n < n_{0} \quad \textrm{and}  \quad Z=\quad 1 \quad \textrm{for} \quad   n \geq n_{0} , -->
+<!-- $$ -->
 <p><span class="math display">\[ 
-Z=\quad \sqrt{\frac{n}{n_{0}}} \quad \textrm{if} \quad   n &lt; n_{0} \quad \textrm{and}  \quad Z=\quad 1 \quad \textrm{for} \quad   n \geq n_{0} ,
+Z=
+\left\{
+\begin{array}{ll}
+\sqrt{n /n_{0}} &amp;\textrm{if }   n &lt; n_{0} \\ 
+1 &amp; \textrm{if }   n \ge n_{0} ,
+\end{array}
+\right.
 \]</span></p>
 <p>where <span class="math inline">\(n_0\)</span> is the full credibility standard. The quantity <span class="math inline">\(n\)</span> is the number of claims for the data that is used to estimate the expected frequency, severity, or pure premium.</p>
 <p><strong>Example 9.2.7.</strong>
@@ -1071,15 +1081,16 @@ The number of claims has a Poisson distribution. Individual loss amounts are ind
 <a id="displayExample.9.2.7" href="javascript:toggleEX('toggleExample.9.2.7','displayExample.9.2.7');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.9.2.7" style="display: none">
-<p><strong>Solution</strong>
-Because the number of claims is Poisson,</p>
+<p><strong>Solution.</strong> Because the number of claims is Poisson,</p>
 <p><span class="math display">\[
 \frac{\mathrm{E}(X^2)}{[\mathrm{E}~(X)]^2}
 =\frac{\sigma_N^2}{\mu_N}+\left(\frac{\sigma_X}{\mu_X}\right)^2.  
 \]</span></p>
-<p>The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)</span> and the second moment is <span class="math inline">\(\mathrm{E}(X^2)=2\theta^{2}/[(\alpha-1)(\alpha-2)]\)</span> so <span class="math inline">\(\mathrm{E}(X^2)/[\mathrm{E}~(X)]^2=2(\alpha-1)/(\alpha-2)\)</span>. From a normal table <span class="math inline">\(y_p=\Phi^{-1}((0.95+1)/2)=1.960\)</span>. The full credibility standard is</p>
-<p><span class="math display">\[n_{PP}=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)\]</span>
-and if <span class="math inline">\(\alpha=3\)</span> then <span class="math inline">\(n_0=n_{PP}=6,146.56\)</span> or 6,147 if rounded up. The credibility assigned to 1,000 claims is <span class="math inline">\(Z=(1,000/6,147)^{1/2}=0.40\)</span>.</p>
+<p>The mean of the Pareto is <span class="math inline">\(\mu_X=\theta/(\alpha-1)\)</span> and the second moment is <span class="math inline">\(\mathrm{E}(X^2)=2\theta^{2}/[(\alpha-1)(\alpha-2)]\)</span> so <span class="math inline">\(\mathrm{E}(X^2)/[\mathrm{E}~(X)]^2=2(\alpha-1)/(\alpha-2)\)</span>. From a standard normal distribution table, <span class="math inline">\(y_p=\Phi^{-1}((0.95+1)/2)=1.960\)</span>. The full credibility standard is</p>
+<p><span class="math display">\[
+n_{PP}=(1.96/0.05)^{2}[2(\alpha-1)/(\alpha-2)]=3,073.28(\alpha-1)/(\alpha-2)
+\]</span></p>
+<p>and if <span class="math inline">\(\alpha=3\)</span> then <span class="math inline">\(n_0=n_{PP}=6,146.56\)</span> or 6,147 if rounded up. The credibility assigned to 1,000 claims is <span class="math inline">\(Z=(1,000/6,147)^{1/2}=0.40\)</span>.</p>
 </div>
 <hr />
 <p>Limited fluctuation credibility uses the formula <span class="math inline">\(Z=\sqrt{n/n_0}\)</span> to limit the fluctuation in the credibility-weighted estimate to match the fluctuation allowed for data with expected claims at the full credibility standard. Variance or standard deviation is used as the measure of fluctuation. Next we show an example to explain why the square-root formula is used.</p>
@@ -1088,13 +1099,13 @@ and if <span class="math inline">\(\alpha=3\)</span> then <span class="math inli
 \hat{\mu}_X=Z\bar{X}+(1-Z)M_X ,
 \]</span></p>
 <p>with <span class="math inline">\(\bar{X}=(X_1+X_2+\cdots+X_n)/n\)</span> and <span class="math inline">\(iid\)</span> random variables <span class="math inline">\(X_i\)</span> representing the sizes of individual claims. The complement of credibility is applied to <span class="math inline">\(M_X\)</span> which could be last year’s estimated average severity adjusted for inflation, the average severity for a much larger pool of risks, or some other relevant quantity selected by the actuary. It is assumed that the variance of <span class="math inline">\(M_X\)</span> is zero or negligible. With this assumption</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 \mathrm{Var}(\hat{\mu}_X)=\mathrm{Var}(Z\bar{X})=Z^2\mathrm{Var}(\bar{X})=\frac{n}{n_0}\mathrm{Var}(\bar{X}).
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>Because <span class="math inline">\(\bar{X}=(X_1+X_2+\cdots+X_n)/n\)</span> it follows that <span class="math inline">\(\mathrm{Var}(\bar{X})=\mathrm{Var}(X_i)/n\)</span> where random variable <span class="math inline">\(X_i\)</span> is one claim. So,</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 \mathrm{Var}(\hat{\mu}_X)=\frac{n}{n_0}\mathrm{Var}(\bar{X})=\frac{n}{n_0}\frac{\mathrm{Var}(X_i)}{n}=\frac{\mathrm{Var}(X_i)}{n_0}.
-\end{equation*}\]</span></p>
+\]</span></p>
 <p>The last term is exactly the variance of a sample mean <span class="math inline">\(\bar{X}\)</span> when the sample size is equal to the full credibility standard <span class="math inline">\(n_0=n_X\)</span>.</p>
 <div id="surveyElement92">
 
@@ -1143,7 +1154,7 @@ and if <span class="math inline">\(\alpha=3\)</span> then <span class="math inli
 \mu&amp;=&amp;\textrm{the expected loss for a randomly chosen policyholder in the class.}\\
 \end{eqnarray*}\]</span></p>
 <p>For a selected policyholder, random variables <span class="math inline">\(X_j\)</span> are assumed to be <em>iid</em> for <span class="math inline">\(j=1,\ldots,n\)</span> because it is assumed that the policyholder’s exposure to loss is not changing through time. The quantity <span class="math inline">\(\bar{X}\)</span> is the average of <span class="math inline">\(n\)</span> observations and <span class="math inline">\(\mathrm{E}(\bar{X}|\theta)=\mathrm{E}(X_j|\theta)=\mu(\theta)\)</span>.</p>
-<p>If a policyholder is randomly chosen from the class and there is no loss information about the risk then the expected loss is <span class="math inline">\(\mu=\mathrm{E}(\mu(\theta))\)</span> where the expectation is taken over all <span class="math inline">\(\theta\)</span>’s in the class. In this situation <span class="math inline">\(Z=0\)</span> and the expected loss is <span class="math inline">\(\hat\mu(\theta)=\mu\)</span> for the risk. The quantity <span class="math inline">\(\mu\)</span> can also be written as <span class="math inline">\(\mu=\mathrm{E}(X_j)\)</span> or <span class="math inline">\(\mu=\mathrm{E}(\bar{X})\)</span> and is often called the overall mean or <a href="#" class="tooltip" style="color:green"><em>collective mean</em><span style="font-size:8pt">The mean estimate of a risk when no loss information about the risk is known</span></a>. Note that E(<span class="math inline">\(X_j\)</span>) is evaluated with the <a href="#" class="tooltip" style="color:green"><em>law of total expectation</em><span style="font-size:8pt">The expected value of the conditional expected value of x given y is the same as the expected value of x</span></a>: E(<span class="math inline">\(X_j\)</span>)=E(E(<span class="math inline">\(X_j|\theta)\)</span>).</p>
+<p>If a policyholder is randomly chosen from the class and there is no loss information about the risk then the expected loss is <span class="math inline">\(\mu=\mathrm{E}(\mu(\theta))\)</span> where the expectation is taken over all <span class="math inline">\(\theta\)</span>’s in the class. In this situation <span class="math inline">\(Z=0\)</span> and the expected loss is <span class="math inline">\(\hat\mu(\theta)=\mu\)</span> for the risk. The quantity <span class="math inline">\(\mu\)</span> can also be written as <span class="math inline">\(\mu=\mathrm{E}(X_j)\)</span> or <span class="math inline">\(\mu=\mathrm{E}(\bar{X})\)</span> and is often called the overall mean or <a href="#" class="tooltip" style="color:green"><em>collective mean</em><span style="font-size:8pt">The mean estimate of a risk when no loss information about the risk is known</span></a>. Note that <span class="math inline">\(\mathrm{E}(X_j)\)</span> is evaluated with the <a href="#" class="tooltip" style="color:green"><em>law of total expectation</em><span style="font-size:8pt">The expected value of the conditional expected value of x given y is the same as the expected value of x</span></a>: <span class="math inline">\(\mathrm{E}(X_j)=\mathrm{E}(\mathrm{E}[X_j|\theta])\)</span>.</p>
 <p><strong>Example 9.3.1.</strong>
 The number of claims <span class="math inline">\(X\)</span> for an insured in a class has a Poisson distribution with mean <span class="math inline">\(\theta&gt;0\)</span>. The risk parameter <span class="math inline">\(\theta\)</span> is exponentially distributed within the class with <a href="#" class="tooltip" style="color:green"><em>pdf</em><span style="font-size:8pt">Probability density function</span></a> <span class="math inline">\(f(\theta)=e^{-\theta}\)</span>. What is the expected number of claims for an insured chosen at random from the class?</p>
 <h5 style="text-align: center;">
@@ -1182,25 +1193,28 @@ If a risk is selected at random from the population, what is the expected aggreg
 <h3><span class="header-section-number">9.3.1</span> Credibility <span class="math inline">\(Z\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span></h3>
 <p>When computing the credibility estimate <span class="math inline">\(\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu\)</span>, how much weight <span class="math inline">\(Z\)</span> should go to experience <span class="math inline">\(\bar{X}\)</span> and how much weight <span class="math inline">\((1-Z)\)</span> to the overall mean <span class="math inline">\(\mu\)</span>? In Bühlmann credibility there are three factors that need to be considered:</p>
 <ol style="list-style-type: decimal">
-<li><p>How much variation is there in a single observation <span class="math inline">\(X_j\)</span> for a selected risk? With <span class="math inline">\(\bar{X}=(X_1+\cdots+X_n)/n\)</span> and assuming that the observations are <em>iid</em> conditional on <span class="math inline">\(\theta\)</span>, it follows that Var(<span class="math inline">\(\bar{X}|\theta)\)</span>=Var(<span class="math inline">\(X_j|\theta)/n\)</span>. For larger Var(<span class="math inline">\(\bar{X}|\theta)\)</span> less credibility weight <span class="math inline">\(Z\)</span> should be given to experience <span class="math inline">\(\bar{X}\)</span>. The <a href="#" class="tooltip" style="color:green"><em>Expected Value of the Process Variance</em><span style="font-size:8pt">Average of the natural variability of observations from within each risk</span></a>, abbreviated <span class="math inline">\(EPV\)</span>, is the expected value of Var(<span class="math inline">\(X_j|\theta\)</span>) across all risks:
-<span class="math display">\[\begin{equation*}
-EPV=\mathrm{E}(\mathrm{Var}(X_j|\theta)). 
-\end{equation*}\]</span>
-Because Var(<span class="math inline">\(\bar{X}|\theta)\)</span>=Var(<span class="math inline">\(X_j|\theta)/n\)</span> it follows that <span class="math inline">\(\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))=EPV/n\)</span>.</p></li>
-<li><p>How homogeneous is the population of risks whose experience was combined to compute the overall mean <span class="math inline">\(\mu\)</span>? If all the risks are similar in loss potential then more weight <span class="math inline">\((1-Z)\)</span> would be given to the overall mean <span class="math inline">\(\mu\)</span> because <span class="math inline">\(\mu\)</span> is the average for a group of similar risks whose means <span class="math inline">\(\mu(\theta)\)</span> are not far apart. The homogeneity or heterogeneity of the population is measured by the <a href="#" class="tooltip" style="color:green"><em>Variance of the Hypothetical Means</em><span style="font-size:8pt">Variance of the means across different classes, used to determine how similar or different the classes are from one another</span></a> with abbreviation <span class="math inline">\(VHM\)</span>:
-<span class="math display">\[\begin{equation*}
-VHM=\mathrm{Var}(\mathrm{E}(X_j|\theta))=\mathrm{Var}(\mathrm{E}(\bar{X}|\theta)). 
-\end{equation*}\]</span>
-Note that we used <span class="math inline">\(\mathrm{E}(\bar{X}|\theta)=\mathrm{E}(X_j|\theta)\)</span> for the second equality.</p></li>
-<li><p>How many observations <span class="math inline">\(n\)</span> were used to compute <span class="math inline">\(\bar{X}\)</span>? A larger sample would infer a larger <span class="math inline">\(Z\)</span>.</p></li>
+<li>How much variation is there in a single observation <span class="math inline">\(X_j\)</span> for a selected risk? With <span class="math inline">\(\bar{X}=(X_1+\cdots+X_n)/n\)</span> and assuming that the observations are <em>iid</em> conditional on <span class="math inline">\(\theta\)</span>, it follows that Var(<span class="math inline">\(\bar{X}|\theta)\)</span>=Var(<span class="math inline">\(X_j|\theta)/n\)</span>. For larger Var(<span class="math inline">\(\bar{X}|\theta)\)</span> less credibility weight <span class="math inline">\(Z\)</span> should be given to experience <span class="math inline">\(\bar{X}\)</span>. The <a href="#" class="tooltip" style="color:green"><em>Expected Value of the Process Variance</em><span style="font-size:8pt">Average of the natural variability of observations from within each risk</span></a>, abbreviated <span class="math inline">\(EPV\)</span>, is the expected value of Var(<span class="math inline">\(X_j|\theta\)</span>) across all risks:</li>
 </ol>
-<p><strong>Example 9.3.3.</strong>
-The number of claims <span class="math inline">\(N\)</span> in a year for a risk in a population has a Poisson distribution with mean <span class="math inline">\(\lambda&gt;0\)</span>. The risk parameter <span class="math inline">\(\lambda\)</span> is uniformly distributed over the interval <span class="math inline">\((0,2)\)</span>. Calculate the <span class="math inline">\(EPV\)</span> and <span class="math inline">\(VHM\)</span> for the population.</p>
+<p><span class="math display">\[
+EPV = \mathrm{E}(\mathrm{Var}(X_j|\theta)). 
+\]</span></p>
+<p>Because Var(<span class="math inline">\(\bar{X}|\theta)\)</span>=Var(<span class="math inline">\(X_j|\theta)/n\)</span> it follows that <span class="math inline">\(\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))=EPV/n\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>How homogeneous is the population of risks whose experience was combined to compute the overall mean <span class="math inline">\(\mu\)</span>? If all the risks are similar in loss potential then more weight <span class="math inline">\((1-Z)\)</span> would be given to the overall mean <span class="math inline">\(\mu\)</span> because <span class="math inline">\(\mu\)</span> is the average for a group of similar risks whose means <span class="math inline">\(\mu(\theta)\)</span> are not far apart. The homogeneity or heterogeneity of the population is measured by the <a href="#" class="tooltip" style="color:green"><em>Variance of the Hypothetical Means</em><span style="font-size:8pt">Variance of the means across different classes, used to determine how similar or different the classes are from one another</span></a> with abbreviation <span class="math inline">\(VHM\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+VHM=\mathrm{Var}(\mathrm{E}(X_j|\theta))=\mathrm{Var}(\mathrm{E}(\bar{X}|\theta)). 
+\]</span></p>
+<p>Note that we used <span class="math inline">\(\mathrm{E}(\bar{X}|\theta)=\mathrm{E}(X_j|\theta)\)</span> for the second equality.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>How many observations <span class="math inline">\(n\)</span> were used to compute <span class="math inline">\(\bar{X}\)</span>? A larger sample would infer a larger <span class="math inline">\(Z\)</span>.</li>
+</ol>
+<p><strong>Example 9.3.3.</strong> The number of claims <span class="math inline">\(N\)</span> in a year for a risk in a population has a Poisson distribution with mean <span class="math inline">\(\lambda&gt;0\)</span>. The risk parameter <span class="math inline">\(\lambda\)</span> is uniformly distributed over the interval <span class="math inline">\((0,2)\)</span>. Calculate the <span class="math inline">\(EPV\)</span> and <span class="math inline">\(VHM\)</span> for the population.</p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.3.3" href="javascript:toggleEX('toggleExample.9.3.3','displayExample.9.3.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.9.3.3" style="display: none">
-<p><strong>Solution</strong> Random variable <span class="math inline">\(N\)</span> is Poisson with parameter <span class="math inline">\(\lambda\)</span> so Var<span class="math inline">\((N|\lambda)=\lambda\)</span>. The Expected Value of the Process variance is EPV=E(Var(<span class="math inline">\(N|\lambda\)</span>))=E<span class="math inline">\((\lambda)=\int_{0}^{2}\lambda \frac{1}{2} d\lambda=1\)</span>. The Variance of the Hypothetical Means is <span class="math inline">\(VHM\)</span>=Var(E(N<span class="math inline">\(|\lambda\)</span>))= Var(<span class="math inline">\(\lambda\)</span>)=E(<span class="math inline">\(\lambda^2)-(\mathrm{E}(\lambda))^2=\int_{0}^{2}\lambda^2 \frac{1}{2} d\lambda-(1)^2=\frac{1}{3}\)</span>.</p>
+<p><strong>Solution.</strong> Random variable <span class="math inline">\(N\)</span> is Poisson with parameter <span class="math inline">\(\lambda\)</span> so <span class="math inline">\(\mathrm{Var}(N|\lambda)=\lambda\)</span>. The Expected Value of the Process variance is <span class="math inline">\(EPV=\mathrm{E}(\mathrm{Var}(N|\lambda))\)</span> = <span class="math inline">\(\mathrm{E}(\lambda)=\int_{0}^{2}\lambda \frac{1}{2} d\lambda=1\)</span>. The Variance of the Hypothetical Means is <span class="math inline">\(VHM=\mathrm{Var}(\mathrm{E}(N|\lambda))\)</span> = <span class="math inline">\(\mathrm{Var}(\lambda)=\mathrm{E}(\lambda^2)-(\mathrm{E}(\lambda))^2\)</span> = <span class="math inline">\(\int_{0}^{2}\lambda^2 \frac{1}{2} d\lambda-(1)^2=\frac{1}{3}\)</span>.</p>
 </div>
 <hr />
 <p>The Bühlmann credibility formula includes values for <span class="math inline">\(n\)</span>, <span class="math inline">\(EPV\)</span>, and <span class="math inline">\(VHM\)</span>:</p>
@@ -1210,27 +1224,28 @@ Z=\frac{n}{n+K} \quad , \quad K =\frac{EPV}{VHM}.
 \end{equation}\]</span></p>
 <p>If the <span class="math inline">\(VHM\)</span> increases then <span class="math inline">\(Z\)</span> increases. If the <span class="math inline">\(EPV\)</span> increases then <span class="math inline">\(Z\)</span> gets smaller. Unlike limited fluctuation credibility where <span class="math inline">\(Z=1\)</span> when the expected number of claims is greater than the full credibility standard, <span class="math inline">\(Z\)</span> can approach but not equal 1 as the number of observations <span class="math inline">\(n\)</span> goes to infinity.</p>
 <p>If you multiply the numerator and denominator of the <span class="math inline">\(Z\)</span> formula by (<span class="math inline">\(VHM\)</span>/<span class="math inline">\(n\)</span>) then <span class="math inline">\(Z\)</span> can be rewritten as</p>
-<p><span class="math display">\[\begin{equation*}
+<p><span class="math display">\[
 Z=\frac{VHM}{VHM+(EPV/n)} . 
-\end{equation*}\]</span></p>
-<p>The number of observations <span class="math inline">\(n\)</span> is captured in the term (<span class="math inline">\(EPV\)</span>/<span class="math inline">\(n\)</span>). As shown in bullet (1) at the beginning of the section, E(Var(<span class="math inline">\(\bar{X}|\theta)\)</span>)=<span class="math inline">\(EPV\)</span>/<span class="math inline">\(n\)</span>. As the number of observations get larger, the expected variance of <span class="math inline">\(\bar{X}\)</span> gets smaller and credibility <span class="math inline">\(Z\)</span> increases so that more weight gets assigned to <span class="math inline">\(\bar{X}\)</span> in the credibility-weighted estimate <span class="math inline">\(\hat{\mu}(\theta)\)</span>.</p>
+\]</span></p>
+<p>The number of observations <span class="math inline">\(n\)</span> is captured in the term (<span class="math inline">\(EPV/n\)</span>). As shown in bullet (1) at the beginning of the section, <span class="math inline">\(\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))\)</span> = <span class="math inline">\(EPV/n\)</span>. As the number of observations get larger, the expected variance of <span class="math inline">\(\bar{X}\)</span> gets smaller and credibility <span class="math inline">\(Z\)</span> increases so that more weight gets assigned to <span class="math inline">\(\bar{X}\)</span> in the credibility-weighted estimate <span class="math inline">\(\hat{\mu}(\theta)\)</span>.</p>
 <p><strong>Example 9.3.4.</strong>
-Use the law of total variance to show that Var(<span class="math inline">\(\bar{X}\)</span>) = <span class="math inline">\(VHM\)</span> + (<span class="math inline">\(EPV\)</span>/n) and derive a formula for <span class="math inline">\(Z\)</span> in terms of <span class="math inline">\(\bar{X}\)</span>.</p>
+Use the law of total variance to show that <span class="math inline">\(\mathrm{Var}(\bar{X})\)</span> = <span class="math inline">\(VHM + (EPV/n)\)</span> and derive a formula for <span class="math inline">\(Z\)</span> in terms of <span class="math inline">\(\bar{X}\)</span>.</p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.3.4" href="javascript:toggleEX('toggleExample.9.3.4','displayExample.9.3.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
 <div id="toggleExample.9.3.4" style="display: none">
-<p><strong>Solution</strong> The quantity Var(<span class="math inline">\(\bar{X}\)</span>) is called the unconditional variance or the total variance of <span class="math inline">\(\bar{X}\)</span>. The law of total variance says
-<span class="math display">\[\begin{equation*} 
+<p><strong>Solution</strong> The quantity <span class="math inline">\(\mathrm{Var}(\bar{X})\)</span> is called the unconditional variance or the total variance of <span class="math inline">\(\bar{X}\)</span>. The law of total variance says</p>
+<p><span class="math display">\[
 \mathrm{Var}(\bar{X})=\textrm{E(Var}(\bar{X}|\theta))+\textrm{Var(E}(\bar{X}|\theta)). 
-\end{equation*}\]</span></p>
-<p>In bullet (1) at the beginning of this section we showed E(Var(<span class="math inline">\(\bar{X}|\theta)\)</span>)=<span class="math inline">\(EPV\)</span>/<span class="math inline">\(n\)</span>. In the second bullet (2), Var(E(<span class="math inline">\(\bar{X}|\theta\)</span>))=<span class="math inline">\(VHM\)</span>. Reordering the right hand side gives Var(<span class="math inline">\(\bar{X}\)</span>)= <span class="math inline">\(VHM\)</span> +(<span class="math inline">\(EPV\)</span>/<span class="math inline">\(n\)</span>). Another way to write the formula for credibility <span class="math inline">\(Z\)</span> is <span class="math inline">\(Z\)</span>=Var(E(<span class="math inline">\(\bar{X}|\theta\)</span>))/Var(<span class="math inline">\(\bar{X}\)</span>). This implies <span class="math inline">\((1-Z)\)</span>=E(Var(<span class="math inline">\(\bar{X}|\theta\)</span>))/Var(<span class="math inline">\(\bar{X}\)</span>).</p>
+\]</span></p>
+<p>In bullet (1) at the beginning of this section we showed <span class="math inline">\(\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))\)</span> = <span class="math inline">\(EPV/n\)</span>. In the bullet (2), <span class="math inline">\(\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))=VHM\)</span>. Reordering the right hand side gives <span class="math inline">\(\mathrm{Var}(\bar{X})\)</span> = <span class="math inline">\(VHM +(EPV/n)\)</span>. Another way to write the formula for credibility <span class="math inline">\(Z\)</span> is <span class="math inline">\(Z=\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))/\mathrm{Var}(\bar{X})\)</span>. This implies <span class="math inline">\((1-Z)=\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))/\mathrm{Var}(\bar{X})\)</span>.</p>
 </div>
 <hr />
 <p>The following long example and solution demonstrate how to compute the credibility-weighted estimate with frequency and severity data.</p>
 <p><strong>Example 9.3.5.</strong>
-For any risk in a population the number of losses <span class="math inline">\(N\)</span> in a year has a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. Individual loss amounts <span class="math inline">\(X\)</span> for a selected risk are independent of <span class="math inline">\(N\)</span> and are <em>iid</em> with exponential distribution <span class="math inline">\(F(x)=1-e^{-x/\beta}\)</span>. There are three types of risks in the population as shown below. A risk was selected at random from the population and all losses were recorded over a five-year period. The total amount of losses over the five-year period was 5,000. Use Bühlmann credibility to estimate the annual expected aggregate loss for the risk.<br />
-<span class="math display">\[\begin{matrix}
+For any risk in a population the number of losses <span class="math inline">\(N\)</span> in a year has a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. Individual loss amounts <span class="math inline">\(X\)</span> for a selected risk are independent of <span class="math inline">\(N\)</span> and are <em>iid</em> with exponential distribution <span class="math inline">\(F(x)=1-e^{-x/\beta}\)</span>. There are three types of risks in the population as shown below. A risk was selected at random from the population and all losses were recorded over a five-year period. The total amount of losses over the five-year period was 5,000. Use Bühlmann credibility to estimate the annual expected aggregate loss for the risk.</p>
+<p><span class="math display">\[
+\begin{matrix}
 \begin{array}{|c|c|c|c|}
 \hline
 \text{Risk } &amp; \text{Percentage} &amp; \text{Poisson} &amp; \text{Exponential} \\
@@ -1241,7 +1256,8 @@ B &amp; 30\% &amp; \lambda=1.0 &amp; \beta=1500 \\
 C &amp; 20\% &amp; \lambda=2.0 &amp; \beta=2000 \\              
 \hline
 \end{array}
-\end{matrix}\]</span></p>
+\end{matrix}
+\]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.3.5" href="javascript:toggleEX('toggleExample.9.3.5','displayExample.9.3.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1293,7 +1309,7 @@ C &amp; 20\% &amp; \lambda=2.0 &amp; \beta=2000 \\
 <p>With standard Bühlmann or least-squares credibility as described in the prior section, losses <span class="math inline">\(X_1,\ldots,X_n\)</span> arising from a selected policyholder are assumed to be <em>iid</em>. If the subscripts indicate year 1, year 2 and so on up to year <span class="math inline">\(n\)</span>, then the <em>iid</em> assumption means that the policyholder has the same exposure to loss every year. For commercial insurance this assumption is frequently violated.</p>
 <p>Consider a commercial policyholder that uses a fleet of vehicles in its business. In year 1 there are <span class="math inline">\(m_1\)</span> vehicles in the fleet, <span class="math inline">\(m_2\)</span> vehicles in year 2, .., and <span class="math inline">\(m_n\)</span> vehicles in year <span class="math inline">\(n\)</span>. The exposure to loss from ownership and use of this fleet is not constant from year to year. The annual losses for the fleet are not <em>iid</em>.</p>
 <p>Define <span class="math inline">\(Y_{jk}\)</span> to be the loss for the <span class="math inline">\(k^{th}\)</span> vehicle in the fleet for year <span class="math inline">\(j\)</span>. Then, the total losses for the fleet in year <span class="math inline">\(j\)</span> are <span class="math inline">\(Y_{j1}+\cdots+Y_{jm_j}\)</span> where we are adding up the losses for each of the <span class="math inline">\(m_j\)</span> vehicles. In the Bühlmann-Straub model it is assumed that random variables <span class="math inline">\(Y_{jk}\)</span> are <em>iid</em> across all vehicles and years for the policyholder. With this assumption the means E(<span class="math inline">\(Y_{jk}|\theta)=\mu(\theta)\)</span> and variances Var(<span class="math inline">\(Y_{jk}|\theta)=\sigma^2(\theta)\)</span> are the same for all vehicles and years. The quantity <span class="math inline">\(\mu(\theta)\)</span> is the expected loss and <span class="math inline">\(\sigma^2(\theta)\)</span> is the variance in the loss for one year for one vehicle for a policyholder with risk parameter <span class="math inline">\(\theta\)</span>.</p>
-<p>If <span class="math inline">\(X_j\)</span> is the average loss per unit of exposure in year <span class="math inline">\(j\)</span>, <span class="math inline">\(X_j=(Y_{j1}+\cdots+Y_{jm_j})/m_j\)</span>, then E(<span class="math inline">\(X_j|\theta)=\mu(\theta)\)</span> and Var(<span class="math inline">\(X_j|\theta)=\sigma^2(\theta)/m_j\)</span> for policyholder with risk parameter <span class="math inline">\(\theta\)</span>. Note that we used the fact that the <span class="math inline">\(Y_{jk}\)</span> are <em>iid</em> for a given policyholder. The average loss per vehicle for the entire <span class="math inline">\(n\)</span>-year period is</p>
+<p>If <span class="math inline">\(X_j\)</span> is the average loss per unit of exposure in year <span class="math inline">\(j\)</span>, <span class="math inline">\(X_j=(Y_{j1}+\cdots+Y_{jm_j})/m_j\)</span>, then E(<span class="math inline">\(X_j|\theta)=\mu(\theta)\)</span> and Var(<span class="math inline">\(X_j|\theta)=\sigma^2(\theta)/m_j\)</span> for a policyholder with risk parameter <span class="math inline">\(\theta\)</span>. Note that we used the fact that the <span class="math inline">\(Y_{jk}\)</span> are <em>iid</em> for a given policyholder. The average loss per vehicle for the entire <span class="math inline">\(n\)</span>-year period is</p>
 <p><span class="math display">\[\begin{equation*}
 \bar{X}= \frac{1}{m} \sum_{j=1}^{n} m_j X_{j} \quad , \quad  m=\sum_{j=1}^{n}  m_j. 
 \end{equation*}\]</span></p>
@@ -1328,13 +1344,13 @@ Z&amp;=&amp;\textrm{credibility assigned to $m$ exposures } \\
  &amp; &amp; \textrm{ policyholder from population.}\\
 \end{eqnarray*}\]</span></p>
 <p>Note that <span class="math inline">\(\hat{\mu}(\theta)\)</span> is the estimator for the expected loss for one exposure. If the policyholder has <span class="math inline">\(m_j\)</span> exposures then the expected loss is <span class="math inline">\(m_j\hat{\mu}(\theta)\)</span>.</p>
-<p>In an example in the prior section it was shown that <span class="math inline">\(Z\)</span>=Var(E(<span class="math inline">\(\bar{X}|\theta\)</span>))/Var(<span class="math inline">\(\bar{X}\)</span>) where <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(n\)</span> observations. In equation <a href="C-Credibility.html#eq:bscred">(9.9)</a> the <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(m\)</span> exposures and the same <span class="math inline">\(Z\)</span> formula can be used:</p>
+<p>In Example 9.3.4, it was shown that <span class="math inline">\(Z\)</span>=Var(E(<span class="math inline">\(\bar{X}|\theta\)</span>))/Var(<span class="math inline">\(\bar{X}\)</span>) where <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(n\)</span> observations. In equation <a href="C-Credibility.html#eq:bscred">(9.9)</a> the <span class="math inline">\(\bar{X}\)</span> is the average loss for <span class="math inline">\(m\)</span> exposures and the same <span class="math inline">\(Z\)</span> formula can be used:</p>
 <p><span class="math display">\[
 Z=\frac{\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}{\mathrm{Var}(\bar{X})}=
 \frac{\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}{\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))+\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))}. 
 \]</span></p>
 <p>The denominator was expanded using the <a href="#" class="tooltip" style="color:green"><em>law of total variance</em><span style="font-size:8pt">A decomposition of the variance of a random variable into conditional components. specifically, for random variables x and y on the same probability space, var(x) = e[var(y|x)] + var[e(x|y)].</span></a>. As noted above <span class="math inline">\(\mathrm{E}(\bar{X}|\theta)=\mu(\theta)\)</span> so <span class="math inline">\(\mathrm{Var}(\mathrm{E}(\bar{X}|\theta))=\mathrm{Var}(\mu(\theta))=VHM\)</span>.
-Because <span class="math inline">\(\mathrm{Var}(\bar{X}|\theta)=\sigma^2(\theta)/m\)</span> it follows that <span class="math inline">\(\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))=\mathrm{E}(\sigma^2(\theta))/m\)</span> = <span class="math inline">\(EPV/m\)</span>. Making these substitutions and a little algebra gives</p>
+Because <span class="math inline">\(\mathrm{Var}(\bar{X}|\theta)=\sigma^2(\theta)/m\)</span> it follows that <span class="math inline">\(\mathrm{E}(\mathrm{Var}(\bar{X}|\theta))=\mathrm{E}(\sigma^2(\theta))/m\)</span> = <span class="math inline">\(EPV/m\)</span>. Making these substitutions and using a little algebra gives</p>
 <p><span class="math display" id="eq:bsZ">\[\begin{equation}
 Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}. 
 \tag{9.10} 
@@ -1400,16 +1416,16 @@ Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}.
 <p><span class="math display">\[\begin{equation*} 
 \pi(\lambda|x_1,\ldots,x_n)=C\lambda^{(\alpha+\sum_{j=1}^{n}x_j)-1}e^{-(\beta+n)\lambda}. 
 \end{equation*}\]</span></p>
-<p>This is a gamma distribution with parameters <span class="math inline">\(\alpha&#39;=\alpha+\sum_{j=1}^{n}x_j\)</span> and <span class="math inline">\(\beta&#39;=\beta+n\)</span>. The constant must be <span class="math inline">\(C={\beta&#39;}^{\alpha&#39;}/\Gamma(\alpha&#39;)\)</span> so that <span class="math inline">\(\int_{0}^{\infty}\pi(\lambda|x_1,\ldots,x_n) d\lambda=1\)</span> though we do not need to know <span class="math inline">\(C\)</span>. As explained in chapter four the gamma distribution is a conjugate prior for the Poisson distribution so the posterior distribution is also gamma.</p>
+<p>This is a gamma distribution with parameters <span class="math inline">\(\alpha&#39;=\alpha+\sum_{j=1}^{n}x_j\)</span> and <span class="math inline">\(\beta&#39;=\beta+n\)</span>. The constant must be <span class="math inline">\(C={\beta&#39;}^{\alpha&#39;}/\Gamma(\alpha&#39;)\)</span> so that <span class="math inline">\(\int_{0}^{\infty}\pi(\lambda|x_1,\ldots,x_n) d\lambda=1\)</span> though we do not need to know <span class="math inline">\(C\)</span>. As explained in Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a> the gamma distribution is a conjugate prior for the Poisson distribution so the posterior distribution is also gamma.</p>
 <p>Because the posterior distribution is gamma the expected number of claims for the selected risk is</p>
 <p><span class="math display">\[\begin{equation*}  
 \mathrm{E}(\lambda|x_1,\ldots,x_n) = \frac{\alpha+\sum_{j=1}^{n}x_j}{\beta+n}=\frac{\alpha + \textrm{number of claims}}{\beta+\textrm{number of years}}. 
 \end{equation*}\]</span></p>
-<p>This formula is slightly different from chapter four because parameter <span class="math inline">\(\beta\)</span> is multiplied by <span class="math inline">\(\lambda\)</span> in the exponential of the gamma <em>pdf</em> whereas in chapter four <span class="math inline">\(\lambda\)</span> is divided by parameter <span class="math inline">\(\theta\)</span>. We have chosen this form for the exponential to simplify the equation for the expected number of claims.</p>
+<p>This formula is slightly different from Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a> because parameter <span class="math inline">\(\beta\)</span> is multiplied by <span class="math inline">\(\lambda\)</span> in the exponential of the gamma <em>pdf</em> whereas in Chapter <a href="C-ModelSelection.html#C:ModelSelection">4</a> <span class="math inline">\(\lambda\)</span> is divided by parameter <span class="math inline">\(\theta\)</span>. We have chosen this form for the exponential to simplify the equation for the expected number of claims.</p>
 <p>Now we will compute the Bühlmann credibility estimate for the Gamma-Poisson model. The variance for a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span> is <span class="math inline">\(\lambda\)</span> so <span class="math inline">\(EPV=\mathrm{E}(\mathrm{Var}(X|\lambda))=\mathrm{E}(\lambda)=\alpha/\beta\)</span>. The mean number of claims per year for the risk is <span class="math inline">\(\lambda\)</span> so <span class="math inline">\(VHM=\mathrm{Var}(\mathrm{E}(X|\lambda))\)</span> = <span class="math inline">\(\mathrm{Var}(\lambda)=\alpha/\beta^2\)</span>. The credibility parameter is <span class="math inline">\(K=EPV/VHM\)</span> = <span class="math inline">\((\alpha/\beta)/(\alpha/\beta^2)=\beta\)</span>. The overall mean is <span class="math inline">\(\mathrm{E}(\mathrm{E}(X|\lambda))=\mathrm{E}(\lambda)=\alpha/\beta\)</span>. The sample mean is <span class="math inline">\(\bar{X}=(\sum_{j=1}^{n}x_j)/n\)</span>. The credibility-weighted estimate for the expected number of claims for the risk is</p>
-<p><span class="math display">\[\begin{equation*} 
-\hat{\mu}=\frac{n}{n+\beta}\frac{\sum_{j=1}^{n}x_j}{n} +(1-\frac{n}{n+\beta})\frac{\alpha}{\beta}=\frac{\alpha+\sum_{j=1}^{n}x_j}{\beta+n}. 
-\end{equation*}\]</span></p>
+<p><span class="math display">\[
+\hat{\mu}=\frac{n}{n+\beta}\frac{\sum_{j=1}^{n}x_j}{n} +\left(1-\frac{n}{n+\beta}\right)\frac{\alpha}{\beta}=\frac{\alpha+\sum_{j=1}^{n}x_j}{\beta+n}. 
+\]</span></p>
 <p>For the Gamma-Poisson model the Bühlmann credibility estimate matches the Bayesian analysis result.</p>
 </div>
 <div id="beta-binomial-model" class="section level3">
