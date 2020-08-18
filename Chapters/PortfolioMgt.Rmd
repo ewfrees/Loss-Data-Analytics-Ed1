@@ -580,19 +580,21 @@ We mentioned earlier in the previous subsection that the $VaR$ of a strictly inc
 **Example `r chapnum`.3.7. $TVaR$ of a lognormal distribution.**
 Consider an insurance loss random variable $X$ lognormal distribution with parameters $\mu \in \mathbf{R}$ and $\sigma>0$. Show that
 
-\begin{eqnarray*}
-  TVaR_q[X] &=& \frac{e^{\mu+\sigma^2/2}}{(1-q)} \Phi(\Phi^{-1}(q)-\sigma).
-\end{eqnarray*}
+$$
+TVaR_q[X] = \frac{e^{\mu+\sigma^2/2}}{(1-q)} \Phi(\Phi^{-1}(q)-\sigma).
+$$
 
 `r HideExample('10.3.7','Show Example Solution')`
 
 **Solution.**
 
 Recall that the *pdf* of lognormal distribution is formulated as
+
 $$
-f_X(x)=\frac{1}{\sigma\sqrt{2\pi} x}\exp\{-(\ln x-\mu )^2/2\sigma^2 \}, \text{ for } x>0.
+f_X(x)=\frac{1}{\sigma\sqrt{2\pi} x}\exp\{-(\log x-\mu )^2/2\sigma^2 \}, \text{ for } x>0.
 $$
-Fix $q\in(0,1)$, then the $TVaR$ of $X$ can be computed via
+
+Fix $q \in (0,1)$, then the $TVaR$ of $X$ can be computed via
 
 <!-- \label{eqn:cte-normal} -->
 
@@ -838,7 +840,9 @@ L &= Var (Y_{insurer}) - \lambda (E (Y_{insurer}) - K) \\
 &= \sum_{i=1}^n c_i^2 ~Var(X_i) - \lambda (\sum_{i=1}^n c_i ~E(X_i) - K) 
 \end{array}
 $$
+
 Taking a partial derivative with respect to $\lambda$ and setting this equal to zero simply means that the constraint, $E(Y_{insurer}) = K$, is enforced and we have to choose the proportions $c_i$ to satisfy this constraint. Moreover, taking the partial derivative with respect to each proportion $c_i$ yields
+
 $$
 \frac{\partial}{\partial c_i} L = 2 c_i ~Var(X_i) - \lambda ~E(X_i) = 0 
 $$
@@ -848,6 +852,7 @@ so that
 $$
 c_i  =  \frac{\lambda}{2} \frac{E(X_i)}{Var(X_i)} .
 $$
+
 With our constraint, we may determine $\lambda$ as the solution of
 
 $$
@@ -856,6 +861,7 @@ K &= \sum_{i=1}^3 c_i \mathrm{E}(X_i) \\
 &= \frac{\lambda}{2} \sum_{i=1}^3 \frac{\mathrm{E}(X_i)^2}{Var(X_i)} 
 \end{array}
 $$
+
 and use this value of $\lambda$ to determine the proportions.
 
 </div>
