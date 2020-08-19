@@ -392,7 +392,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-collaborators"><i class="fa fa-check"></i>Other Collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#version"><i class="fa fa-check"></i>Version</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
@@ -646,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#loss-reserve-notation"><i class="fa fa-check"></i><b>11.2.3</b> Loss Reserve Notation</a></li>
 <li class="chapter" data-level="11.2.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Rcode"><i class="fa fa-check"></i><b>11.2.4</b> R Code to Summarize Loss Reserve Data</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
+<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder Method</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
 <li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
 <li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code-for-chain-ladder-predictions"><i class="fa fa-check"></i><b>11.3.3</b> R code for Chain-Ladder Predictions</a></li>
@@ -1166,7 +1169,8 @@ The number of claims <span class="math inline">\(X\)</span> for an insured in a 
 <hr />
 <p>In the prior example the risk parameter <span class="math inline">\(\theta\)</span> is a random variable with an exponential distribution. In the next example there are three types of risks and the risk parameter has a discrete distribution.</p>
 <p><strong>Example 9.3.2.</strong> For any risk (policyholder) in a population the number of losses <span class="math inline">\(N\)</span> in a year has a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. Individual loss amounts <span class="math inline">\(X_i\)</span> for a risk are independent of <span class="math inline">\(N\)</span> and are <em>iid</em> with Type II Pareto distribution <span class="math inline">\(F(x)=1-[\theta/(x+\theta)]^{\alpha}\)</span>. There are three types of risks in the population as follows:</p>
-<p><span class="math display">\[\begin{matrix}
+<p><span class="math display">\[
+\small{
 \begin{array}{|c|c|c|c|}
 \hline
 \text{Risk } &amp; \text{Percentage} &amp; \text{Poisson} &amp; \text{Pareto} \\
@@ -1177,8 +1181,9 @@ B &amp; 30\% &amp; \lambda=1.0 &amp; \theta=1500, \alpha=2.0 \\
 C &amp; 20\% &amp; \lambda=2.0 &amp; \theta=2000, \alpha=2.0 \\              
 \hline
 \end{array}
-\end{matrix}\]</span>
-If a risk is selected at random from the population, what is the expected aggregate loss in a year?</p>
+}
+\]</span></p>
+<p>If a risk is selected at random from the population, what is the expected aggregate loss in a year?</p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.3.2" href="javascript:toggleEX('toggleExample.9.3.2','displayExample.9.3.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1245,7 +1250,7 @@ Use the law of total variance to show that <span class="math inline">\(\mathrm{V
 <p><strong>Example 9.3.5.</strong>
 For any risk in a population the number of losses <span class="math inline">\(N\)</span> in a year has a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. Individual loss amounts <span class="math inline">\(X\)</span> for a selected risk are independent of <span class="math inline">\(N\)</span> and are <em>iid</em> with exponential distribution <span class="math inline">\(F(x)=1-e^{-x/\beta}\)</span>. There are three types of risks in the population as shown below. A risk was selected at random from the population and all losses were recorded over a five-year period. The total amount of losses over the five-year period was 5,000. Use Bühlmann credibility to estimate the annual expected aggregate loss for the risk.</p>
 <p><span class="math display">\[
-\begin{matrix}
+\small{
 \begin{array}{|c|c|c|c|}
 \hline
 \text{Risk } &amp; \text{Percentage} &amp; \text{Poisson} &amp; \text{Exponential} \\
@@ -1256,7 +1261,7 @@ B &amp; 30\% &amp; \lambda=1.0 &amp; \beta=1500 \\
 C &amp; 20\% &amp; \lambda=2.0 &amp; \beta=2000 \\              
 \hline
 \end{array}
-\end{matrix}
+}
 \]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.3.5" href="javascript:toggleEX('toggleExample.9.3.5','displayExample.9.3.5');"><i><strong>Show Example Solution</strong></i></a>
@@ -1356,8 +1361,9 @@ Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}.
 \tag{9.10} 
 \end{equation}\]</span></p>
 <p>This is the same <span class="math inline">\(Z\)</span> as for Bühlmann credibility except number of exposures <span class="math inline">\(m\)</span> replaces number of years or observations <span class="math inline">\(n\)</span>.</p>
-<p><strong>Example 9.4.2.</strong> A commercial automobile policyholder had the following exposures and claims over a three-year period:
-<span class="math display">\[\begin{matrix}
+<p><strong>Example 9.4.2.</strong> A commercial automobile policyholder had the following exposures and claims over a three-year period:</p>
+<p><span class="math display">\[
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} &amp; \text{Number of Vehicles} &amp; \text{Number of Claims} \\
@@ -1367,7 +1373,8 @@ Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}.
 3 &amp; 15 &amp;  4  \\              
 \hline
 \end{array}
-\end{matrix}\]</span></p>
+}
+\]</span></p>
 <ul>
 <li>The number of claims in a year for each vehicle in the policyholder’s fleet is Poisson distributed with the same mean (parameter) <span class="math inline">\(\lambda\)</span>.</li>
 <li>Parameter <span class="math inline">\(\lambda\)</span> is distributed among the policyholders in the population with <em>pdf</em> <span class="math inline">\(f(\lambda)=6\lambda(1-\lambda)\)</span> with <span class="math inline">\(0&lt;\lambda&lt;1\)</span>.</li>
@@ -1531,7 +1538,8 @@ VHM=\textrm{Var(E}(\mu(\theta_i)) = \mathrm{Var}(\bar{X}_i) - \textrm{E(Var}(\ba
 <p>In some cases formula <a href="C-Credibility.html#eq:VHM-estimate">(9.12)</a> can produce a negative value for <span class="math inline">\(\widehat{VHM}\)</span> because of the subtraction of <span class="math inline">\(\widehat{EPV}/n\)</span>, but a variance cannot be negative. The process variance within risks is so large that it overwhelms the measurement of the variance in means between risks. In this case we cannot use this method to determine the values needed for Bühlmann credibility.</p>
 <p><strong>Example 9.6.1.</strong>
 Two policyholders had claims over a three-year period as shown in the table below. Estimate the expected number of claims for each policyholder using Bühlmann credibility and calculating necessary parameters from the data.</p>
-<p><span class="math display">\[\begin{matrix}
+<p><span class="math display">\[
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} &amp; \text{Risk A} &amp; \text{Risk B} \\
@@ -1541,7 +1549,8 @@ Two policyholders had claims over a three-year period as shown in the table belo
 3 &amp; 0 &amp;  2  \\              
 \hline
 \end{array}
-\end{matrix}\]</span></p>
+}
+\]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.6.1" href="javascript:toggleEX('toggleExample.9.6.1','displayExample.9.6.1');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1560,7 +1569,8 @@ Two policyholders had claims over a three-year period as shown in the table belo
 <hr />
 <p><strong>Example 9.6.2.</strong>
 Two policyholders had claims over a three-year period as shown in the table below. Calculate the nonparametric estimate for the <span class="math inline">\(VHM\)</span>.</p>
-<p><span class="math display">\[\begin{matrix}
+<p><span class="math display">\[
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} &amp; \text{Risk A} &amp; \text{Risk B} \\
@@ -1570,7 +1580,8 @@ Two policyholders had claims over a three-year period as shown in the table belo
 3 &amp; 0 &amp;  3  \\              
 \hline
 \end{array}
-\end{matrix}\]</span></p>
+}
+\]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.6.2" href="javascript:toggleEX('toggleExample.9.6.2','displayExample.9.6.2');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1611,7 +1622,8 @@ Two policyholders had claims over a three-year period as shown in the table belo
 <p>This complicated formula is necessary because of the varying number of exposures. Proofs that the <span class="math inline">\(EPV\)</span> and <span class="math inline">\(VHM\)</span> estimators shown above are unbiased can be found in several references mentioned at the end of this chapter including <span class="citation">(Bühlmann and Gisler <a href="#ref-buhlmanngisler" role="doc-biblioref">2005</a>)</span>, <span class="citation">(Klugman, Panjer, and Willmot <a href="#ref-klugman2012" role="doc-biblioref">2012</a>)</span>, and <span class="citation">(Tse <a href="#ref-tse" role="doc-biblioref">2009</a>)</span>.</p>
 <p><strong>Example 9.6.3.</strong>
 Two policyholders had claims shown in the table below. Estimate the expected number of claims per vehicle for each policyholder using Bühlmann-Straub credibility and calculating parameters from the data.</p>
-<p><span class="math display">\[\begin{matrix}
+<p><span class="math display">\[
+\small{
 \begin{array}{|c|c|c|c|c|c|}
 \hline
 \text{Policyholder} &amp;  &amp; \text{Year 1} &amp; \text{Year 2} &amp; \text{Year 3} &amp; \text{Year 4} \\
@@ -1627,7 +1639,8 @@ Two policyholders had claims shown in the table below. Estimate the expected num
 \text{B} &amp; \text{Insured vehicles} &amp;  0 &amp; 2 &amp; 3 &amp; 4\\      
 \hline
 \end{array}
-\end{matrix}\]</span></p>
+}
+\]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.6.3" href="javascript:toggleEX('toggleExample.9.6.3','displayExample.9.6.3');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1652,8 +1665,9 @@ Two policyholders had claims shown in the table below. Estimate the expected num
 <p>In the prior section on <a href="#" class="tooltip" style="color:green"><em>nonparametric estimation</em><span style="font-size:8pt">Statistical method that allows the functional form of a fit from data to have no assumed prior distribution, constraints, or parameters</span></a>, there were no assumptions about the distribution of the losses per exposure <span class="math inline">\(X_{ij}\)</span>. Assuming that the <span class="math inline">\(X_{ij}\)</span> have a particular distribution and using properties of the distribution along with the data to determine credibility parameters is referred to as <a href="#" class="tooltip" style="color:green"><em>semiparametric estimation</em><span style="font-size:8pt">Credibility method that assumes a distribution for the loss per exposure random variable and otherwise uses empirical data</span></a>.</p>
 <p>An example of semiparametric estimation would be the assumption of a Poisson distribution when estimating claim frequencies. The Poisson distribution has the property that the mean and variance are identical and this property can simplify calculations. The following simple example comes from the prior section but now includes a Poisson assumption about claim frequencies.</p>
 <p><strong>Example 9.6.4.</strong>
-Two policyholders had claims over a three-year period as shown in the table below. Assume that the number of claims for each risk has a Poisson distribution. Estimate the expected number of claims for each policyholder using Bühlmann credibility and calculating necessary parameters from the data.
-<span class="math display">\[\begin{matrix}
+Two policyholders had claims over a three-year period as shown in the table below. Assume that the number of claims for each risk has a Poisson distribution. Estimate the expected number of claims for each policyholder using Bühlmann credibility and calculating necessary parameters from the data.</p>
+<p><span class="math display">\[
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} &amp; \text{Risk A} &amp; \text{Risk B} \\
@@ -1663,7 +1677,8 @@ Two policyholders had claims over a three-year period as shown in the table belo
 3 &amp; 0 &amp;  2  \\              
 \hline
 \end{array}
-\end{matrix}\]</span></p>
+}
+\]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.6.4" href="javascript:toggleEX('toggleExample.9.6.4','displayExample.9.6.4');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1683,8 +1698,9 @@ Two policyholders had claims over a three-year period as shown in the table belo
 <p>Although we assumed that the number of claims for each risk was Poisson distributed in the prior example, we did not need this additional assumption because there was enough information to use nonparametric estimation. In fact, the Poisson assumption might not be appropriate because for risk B the sample mean is not equal to the sample variance: <span class="math inline">\(\bar{x}_B=\frac{5}{3}\neq s_B^2=\frac{1}{3}\)</span>.</p>
 <p>The following example is commonly used to demonstrate a situation where semiparametric estimation is needed. There is insufficient information for nonparametric estimation but with the Poisson assumption, estimates can be calculated.</p>
 <p><strong>Example 9.6.5.</strong>
-A portfolio of 2,000 policyholders generated the following claims profile during a five-year period:
-<span class="math display">\[\begin{matrix}
+A portfolio of 2,000 policyholders generated the following claims profile during a five-year period:</p>
+<p><span class="math display">\[
+\small{
 \begin{array}{|c|c|}
 \hline
 \text{Number of Claims} &amp;   \\
@@ -1698,8 +1714,9 @@ A portfolio of 2,000 policyholders generated the following claims profile during
  5 &amp;  25   \\     
 \hline
 \end{array}
-\end{matrix}\]</span>
-In your model you assume that the number of claims for each policyholder has a Poisson distribution and that a policyholder’s expected number of claims is constant through time. Use Bühlmann credibility to estimate the annual expected number of claims for policyholders with 3 claims during the five-year period.</p>
+}
+\]</span></p>
+<p>In your model you assume that the number of claims for each policyholder has a Poisson distribution and that a policyholder’s expected number of claims is constant through time. Use Bühlmann credibility to estimate the annual expected number of claims for policyholders with 3 claims during the five-year period.</p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.6.5" href="javascript:toggleEX('toggleExample.9.6.5','displayExample.9.6.5');"><i><strong>Show Example Solution</strong></i></a>
 </h5>
@@ -1752,7 +1769,7 @@ m_i(1-Z_i)=m_i\left(1-\frac{m_i}{m_i+K}\right)=m_i\left(\frac{(m_i+K)-m_i}{m_i+K
 <p><strong>Example 9.6.6.</strong>
 An example from the nonparametric Bühlmann-Straub section had the following data for two risks. Find the amount associated with the complement of credibility, <span class="math inline">\(\hat{M}_X\)</span>, that will produce credibility-weighted estimates that are in balance.</p>
 <p><span class="math display">\[
-\begin{matrix}
+\small{
 \begin{array}{|c|c|c|c|c|c|}
 \hline
 \text{Policyholder} &amp;  &amp; \text{Year 1} &amp; \text{Year 2} &amp; \text{Year 3} &amp; \text{Year 4} \\
@@ -1768,7 +1785,7 @@ An example from the nonparametric Bühlmann-Straub section had the following dat
 \text{B} &amp; \text{Insured vehicles} &amp;  0 &amp; 2 &amp; 3 &amp; 4\\      
 \hline
 \end{array}
-\end{matrix}
+}
 \]</span></p>
 <h5 style="text-align: center;">
 <a id="displayExample.9.6.6" href="javascript:toggleEX('toggleExample.9.6.6','displayExample.9.6.6');"><i><strong>Show Example Solution</strong></i></a>
@@ -1804,7 +1821,7 @@ An example from the nonparametric Bühlmann-Straub section had the following dat
 <h2><span class="header-section-number">9.7</span> Further Resources and Contributors</h2>
 <div id="exercises-4" class="section level4 unnumbered">
 <h4>Exercises</h4>
-<p>Here are a set of exercises that guide the viewer through some of the theoretical foundations of <strong>Loss Data Analytics</strong>. Each tutorial is based on one or more questions from the professional actuarial examinations, typically the Society of Actuaries Exam C.</p>
+<p>Here are a set of exercises that guide the viewer through some of the theoretical foundations of <strong>Loss Data Analytics</strong>. Each tutorial is based on one or more questions from the professional actuarial examinations, typically the Society of Actuaries Exam C/STAM.</p>
 <p style="text-align: center;">
 <a href="https://www.ssc.wisc.edu/~jfrees/loss-data-analytics/loss-data-analyticscredibility-guided-tutorials/">Credibility Guided Tutorials</a>
 </p>

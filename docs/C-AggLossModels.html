@@ -392,7 +392,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-collaborators"><i class="fa fa-check"></i>Other Collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#version"><i class="fa fa-check"></i>Version</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
@@ -646,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#loss-reserve-notation"><i class="fa fa-check"></i><b>11.2.3</b> Loss Reserve Notation</a></li>
 <li class="chapter" data-level="11.2.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Rcode"><i class="fa fa-check"></i><b>11.2.4</b> R Code to Summarize Loss Reserve Data</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
+<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder Method</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
 <li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
 <li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code-for-chain-ladder-predictions"><i class="fa fa-check"></i><b>11.3.3</b> R code for Chain-Ladder Predictions</a></li>
@@ -1763,9 +1766,26 @@ Recall Example 5.3.5 with an individual’s claim frequency <span class="math in
 <div id="toggleExample.5.4.2" style="display: none">
 <p><strong>Solution.</strong>
 We follow the algorithm for the collective risk model, where we first simulate frequencies <span class="math inline">\(n_1,\ldots,n_{10000}\)</span>, and conditional on <span class="math inline">\(n_j,~j=1,\ldots,10000\)</span>, simulate each individual loss <span class="math inline">\(x_{ij},~i=1,\ldots n_j\)</span>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">set.seed</span>(<span class="dv">4321</span>)  <span class="co"># For reproducibility of results</span></a>
+<a class="sourceLine" id="cb22-2" title="2">m &lt;-<span class="st"> </span><span class="dv">10000</span>      <span class="co"># Number of observations to simulate</span></a>
+<a class="sourceLine" id="cb22-3" title="3">lambda &lt;-<span class="st"> </span><span class="dv">25</span>    <span class="co"># Parameter for frequency distribution N</span></a>
+<a class="sourceLine" id="cb22-4" title="4">a &lt;-<span class="st"> </span><span class="dv">5</span>; b &lt;-<span class="st"> </span><span class="dv">95</span> <span class="co"># Parameters for severity distribution X</span></a>
+<a class="sourceLine" id="cb22-5" title="5">S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, m) <span class="co"># Initialize an empty vector to store S observations</span></a>
+<a class="sourceLine" id="cb22-6" title="6"></a>
+<a class="sourceLine" id="cb22-7" title="7">n &lt;-<span class="st"> </span><span class="kw">rpois</span>(m, lambda) <span class="co"># Generate m=10000 observations of N from Poisson</span></a>
+<a class="sourceLine" id="cb22-8" title="8"><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>m){ </a>
+<a class="sourceLine" id="cb22-9" title="9">  n_j &lt;-<span class="st"> </span>n[j] <span class="co"># Given each n_j (j=1,...,m), generate n_j observations of X from uniform</span></a>
+<a class="sourceLine" id="cb22-10" title="10">  x_j &lt;-<span class="st"> </span><span class="kw">runif</span>(n_j, <span class="dt">min=</span>a, <span class="dt">max=</span>b)</a>
+<a class="sourceLine" id="cb22-11" title="11">  s_j &lt;-<span class="st"> </span><span class="kw">sum</span>(x_j) <span class="co"># Calculate the aggregate loss s_j</span></a>
+<a class="sourceLine" id="cb22-12" title="12">  S[j] &lt;-<span class="st"> </span>s_j <span class="co"># Store s_j in the vector of observations</span></a>
+<a class="sourceLine" id="cb22-13" title="13">}</a>
+<a class="sourceLine" id="cb22-14" title="14"><span class="kw">mean</span>(S) <span class="co"># Compare to theoretical value of 1,250</span></a></code></pre></div>
 <pre><code>[1] 1248.09</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">var</span>(S)  <span class="co"># Compare to theoretical value of 79,375</span></a></code></pre></div>
 <pre><code>[1] 77441.22</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">mean</span>(S<span class="op">&gt;</span><span class="dv">2000</span>) <span class="co"># Proportion of simulated observations s_j that are &gt; 2000</span></a></code></pre></div>
 <pre><code>[1] 0.0062</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="co"># Compare to normal approximation method of 0.003884</span></a></code></pre></div>
 <p>Using simulation, we estimate the mean and variance of the aggregate claims to be approximately 1248 and 77441 respectively, compared to the theoretical values of 1,250 and 79,375. In addition, we estimate the probability that aggregate losses exceed 2000 to be 0.0062, compared to the normal approximation estimate of 0.003884.</p>
 <p>We can assess the appropriateness of the normal approximation by comparing the empirical distribution of the simulated aggregate losses to the density of the normal distribution used for the normal approximation, <span class="math inline">\(N(\mu=1,250~, ~\sigma^2=79,375)\)</span>:</p>
 <p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-50-1.png" width="70%" style="display: block; margin: auto;" /></p>

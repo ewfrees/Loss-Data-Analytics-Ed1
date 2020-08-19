@@ -392,7 +392,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-collaborators"><i class="fa fa-check"></i>Other Collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#version"><i class="fa fa-check"></i>Version</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
@@ -646,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#loss-reserve-notation"><i class="fa fa-check"></i><b>11.2.3</b> Loss Reserve Notation</a></li>
 <li class="chapter" data-level="11.2.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Rcode"><i class="fa fa-check"></i><b>11.2.4</b> R Code to Summarize Loss Reserve Data</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
+<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder Method</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
 <li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
 <li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code-for-chain-ladder-predictions"><i class="fa fa-check"></i><b>11.3.3</b> R code for Chain-Ladder Predictions</a></li>
@@ -1246,15 +1249,15 @@ claim-free years).</p>
 <p>We can use the left eigenvector of a transition matrix to calculate the
 stationary distribution. The following R program can be used to
 calculate the left eigenvector:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="co">#create transition matrix</span></a>
-<a class="sourceLine" id="cb125-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb125-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb125-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb125-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb125-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,</a>
-<a class="sourceLine" id="cb125-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>)</a>
-<a class="sourceLine" id="cb125-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb125-9" title="9">TP</a></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1"><span class="co">#create transition matrix</span></a>
+<a class="sourceLine" id="cb142-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb142-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>,</a>
+<a class="sourceLine" id="cb142-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9</span>)</a>
+<a class="sourceLine" id="cb142-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb142-9" title="9">TP</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]  0.1  0.9  0.0  0.0  0.0  0.0
 ## [2,]  0.1  0.0  0.9  0.0  0.0  0.0
@@ -1262,9 +1265,9 @@ calculate the left eigenvector:</p>
 ## [4,]  0.1  0.0  0.0  0.0  0.9  0.0
 ## [5,]  0.1  0.0  0.0  0.0  0.0  0.9
 ## [6,]  0.1  0.0  0.0  0.0  0.0  0.9</code></pre>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1"><span class="co">#calculate left eigenvector</span></a>
-<a class="sourceLine" id="cb127-2" title="2"><span class="co">#hint -- left eigenvector is the same as right eigenvector of transpose of transition matrix</span></a>
-<a class="sourceLine" id="cb127-3" title="3"><span class="kw">eigen</span>(<span class="kw">t</span>(TP))</a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="co">#calculate left eigenvector</span></a>
+<a class="sourceLine" id="cb144-2" title="2"><span class="co">#hint -- left eigenvector is the same as right eigenvector of transpose of transition matrix</span></a>
+<a class="sourceLine" id="cb144-3" title="3"><span class="kw">eigen</span>(<span class="kw">t</span>(TP))</a></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1]  1.0000000000+0.0000000000i -0.0004880382+0.0003546725i
@@ -1300,9 +1303,9 @@ calculate the left eigenvector:</p>
 ## [4,] -0.0001468014877601952+0.0004505247500856750i  0.0004736602551468477+0i
 ## [5,] -0.7070333538878578183-0.0004507115465249567i  0.7068696732221422252+0i
 ## [6,]  0.7071798984882565753+0.0000000000000000000i -0.7073436510810596767+0i</code></pre>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="co">#divide entry of first column by sum of elements, so that entries sum to 1</span></a>
-<a class="sourceLine" id="cb129-2" title="2"><span class="co">#provide answers in 4 decimal places</span></a>
-<a class="sourceLine" id="cb129-3" title="3"><span class="kw">round</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]),<span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1"><span class="co">#divide entry of first column by sum of elements, so that entries sum to 1</span></a>
+<a class="sourceLine" id="cb146-2" title="2"><span class="co">#provide answers in 4 decimal places</span></a>
+<a class="sourceLine" id="cb146-3" title="3"><span class="kw">round</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]),<span class="dv">4</span>)</a></code></pre></div>
 <pre><code>## [1] 0.1000+0i 0.0900+0i 0.0810+0i 0.0729+0i 0.0656+0i 0.5905+0i</code></pre>
 <p><strong><em>Example 4</em></strong></p>
 <p><em>Find the stationary distribution for the NCD system in Brazil assuming that the number of successive years of claims is Poisson distributed with parameter</em> <span class="math inline">\(\lambda = 0.10\)</span>.</p>
@@ -1429,15 +1432,15 @@ using the <span class="math inline">\(n\)</span>th power of transition matrix
 <p>The following R program can be used to find the premium in the <em>n-</em>th
 year and the premiums in 20 years under the NCD system in Malaysia (to
 find the solution in Example 6).</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="co">#create transition matrix</span></a>
-<a class="sourceLine" id="cb131-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.0952</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb131-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb131-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb131-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb131-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,</a>
-<a class="sourceLine" id="cb131-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>)</a>
-<a class="sourceLine" id="cb131-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb131-9" title="9">TP</a></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1"><span class="co">#create transition matrix</span></a>
+<a class="sourceLine" id="cb148-2" title="2">entries=<span class="kw">c</span>(<span class="fl">0.0952</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-3" title="3"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-4" title="4"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-5" title="5"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,<span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb148-6" title="6"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>,</a>
+<a class="sourceLine" id="cb148-7" title="7"><span class="op">+</span><span class="st"> </span><span class="fl">0.0952</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.9048</span>)</a>
+<a class="sourceLine" id="cb148-8" title="8">TP=<span class="kw">matrix</span>(entries,<span class="dt">nrow=</span><span class="dv">6</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb148-9" title="9">TP</a></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,] 0.0952 0.9048 0.0000 0.0000 0.0000 0.0000
 ## [2,] 0.0952 0.0000 0.9048 0.0000 0.0000 0.0000
@@ -1445,14 +1448,14 @@ find the solution in Example 6).</p>
 ## [4,] 0.0952 0.0000 0.0000 0.0000 0.9048 0.0000
 ## [5,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048
 ## [6,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048</code></pre>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1"><span class="co">#create function for nth power of square matrix</span></a>
-<a class="sourceLine" id="cb133-2" title="2">powA =<span class="st"> </span><span class="cf">function</span>(n) { </a>
-<a class="sourceLine" id="cb133-3" title="3">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">1</span>) <span class="kw">return</span> (TP)</a>
-<a class="sourceLine" id="cb133-4" title="4">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">2</span>) <span class="kw">return</span> (TP<span class="op">%*%</span>TP)</a>
-<a class="sourceLine" id="cb133-5" title="5">  <span class="cf">if</span> (n<span class="op">&gt;</span><span class="dv">2</span>) <span class="kw">return</span> ( TP<span class="op">%*%</span><span class="kw">powA</span>(n<span class="dv">-1</span>)) }</a>
-<a class="sourceLine" id="cb133-6" title="6"></a>
-<a class="sourceLine" id="cb133-7" title="7"><span class="co">#example for n=3</span></a>
-<a class="sourceLine" id="cb133-8" title="8"><span class="kw">powA</span>(<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1"><span class="co">#create function for nth power of square matrix</span></a>
+<a class="sourceLine" id="cb150-2" title="2">powA =<span class="st"> </span><span class="cf">function</span>(n) { </a>
+<a class="sourceLine" id="cb150-3" title="3">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">1</span>) <span class="kw">return</span> (TP)</a>
+<a class="sourceLine" id="cb150-4" title="4">  <span class="cf">if</span> (n<span class="op">==</span><span class="dv">2</span>) <span class="kw">return</span> (TP<span class="op">%*%</span>TP)</a>
+<a class="sourceLine" id="cb150-5" title="5">  <span class="cf">if</span> (n<span class="op">&gt;</span><span class="dv">2</span>) <span class="kw">return</span> ( TP<span class="op">%*%</span><span class="kw">powA</span>(n<span class="dv">-1</span>)) }</a>
+<a class="sourceLine" id="cb150-6" title="6"></a>
+<a class="sourceLine" id="cb150-7" title="7"><span class="co">#example for n=3</span></a>
+<a class="sourceLine" id="cb150-8" title="8"><span class="kw">powA</span>(<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##        [,1]       [,2]       [,3]      [,4]      [,5]      [,6]
 ## [1,] 0.0952 0.08613696 0.07793672 0.7407263 0.0000000 0.0000000
 ## [2,] 0.0952 0.08613696 0.07793672 0.0000000 0.7407263 0.0000000
@@ -1460,24 +1463,24 @@ find the solution in Example 6).</p>
 ## [4,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263
 ## [5,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263
 ## [6,] 0.0952 0.08613696 0.07793672 0.0000000 0.0000000 0.7407263</code></pre>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1"><span class="co">#define NCD percentage</span></a>
-<a class="sourceLine" id="cb135-2" title="2">NCD=<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">75</span>,.<span class="dv">7</span>,.<span class="dv">6167</span>,.<span class="dv">55</span>,.<span class="dv">45</span>)</a>
-<a class="sourceLine" id="cb135-3" title="3"></a>
-<a class="sourceLine" id="cb135-4" title="4"><span class="co">#create function for premium in nth year</span></a>
-<a class="sourceLine" id="cb135-5" title="5">p=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb135-6" title="6">prem=<span class="cf">function</span>(n){</a>
-<a class="sourceLine" id="cb135-7" title="7">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(NCD))</a>
-<a class="sourceLine" id="cb135-8" title="8">  p[j]=<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])</a>
-<a class="sourceLine" id="cb135-9" title="9">  <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">sum</span>(p<span class="op">*</span>NCD)}</a>
-<a class="sourceLine" id="cb135-10" title="10"></a>
-<a class="sourceLine" id="cb135-11" title="11"><span class="co">#example for n=3</span></a>
-<a class="sourceLine" id="cb135-12" title="12"><span class="kw">prem</span>(<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" title="1"><span class="co">#define NCD percentage</span></a>
+<a class="sourceLine" id="cb152-2" title="2">NCD=<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">75</span>,.<span class="dv">7</span>,.<span class="dv">6167</span>,.<span class="dv">55</span>,.<span class="dv">45</span>)</a>
+<a class="sourceLine" id="cb152-3" title="3"></a>
+<a class="sourceLine" id="cb152-4" title="4"><span class="co">#create function for premium in nth year</span></a>
+<a class="sourceLine" id="cb152-5" title="5">p=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb152-6" title="6">prem=<span class="cf">function</span>(n){</a>
+<a class="sourceLine" id="cb152-7" title="7">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(NCD))</a>
+<a class="sourceLine" id="cb152-8" title="8">  p[j]=<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])</a>
+<a class="sourceLine" id="cb152-9" title="9">  <span class="op">+</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">sum</span>(p<span class="op">*</span>NCD)}</a>
+<a class="sourceLine" id="cb152-10" title="10"></a>
+<a class="sourceLine" id="cb152-11" title="11"><span class="co">#example for n=3</span></a>
+<a class="sourceLine" id="cb152-12" title="12"><span class="kw">prem</span>(<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## [1] 58.06106</code></pre>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" title="1"><span class="co">#provide premiums for 20 years</span></a>
-<a class="sourceLine" id="cb137-2" title="2">premium=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb137-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb137-4" title="4">premium[n]=<span class="kw">prem</span>(n)</a>
-<a class="sourceLine" id="cb137-5" title="5"><span class="kw">round</span>(premium,<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" title="1"><span class="co">#provide premiums for 20 years</span></a>
+<a class="sourceLine" id="cb154-2" title="2">premium=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb154-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb154-4" title="4">premium[n]=<span class="kw">prem</span>(n)</a>
+<a class="sourceLine" id="cb154-5" title="5"><span class="kw">round</span>(premium,<span class="dv">2</span>)</a></code></pre></div>
 <pre><code>##  [1] 62.55 59.87 58.06 57.06 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58
 ## [13] 56.58 56.58 56.58 56.58 56.58 56.58 56.58 56.58</code></pre>
 <p><strong><em>Example 7</em></strong></p>
@@ -1595,8 +1598,8 @@ transitions).</p>
 <p>The following R program can be used to calculate the total variation in
 the <span class="math inline">\(n\)</span>th year, and the total variations (convergence rates) in
 20 years under the NCD system in Malaysia (the solution in Example 8).</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" title="1"><span class="co">#transition matrix</span></a>
-<a class="sourceLine" id="cb139-2" title="2">TP</a></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" title="1"><span class="co">#transition matrix</span></a>
+<a class="sourceLine" id="cb156-2" title="2">TP</a></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,] 0.0952 0.9048 0.0000 0.0000 0.0000 0.0000
 ## [2,] 0.0952 0.0000 0.9048 0.0000 0.0000 0.0000
@@ -1604,26 +1607,26 @@ the <span class="math inline">\(n\)</span>th year, and the total variations (con
 ## [4,] 0.0952 0.0000 0.0000 0.0000 0.9048 0.0000
 ## [5,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048
 ## [6,] 0.0952 0.0000 0.0000 0.0000 0.0000 0.9048</code></pre>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" title="1"><span class="co"># stationary probability</span></a>
-<a class="sourceLine" id="cb141-2" title="2">SP=<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb141-3" title="3">SP</a></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" title="1"><span class="co"># stationary probability</span></a>
+<a class="sourceLine" id="cb158-2" title="2">SP=<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(<span class="kw">eigen</span>(<span class="kw">t</span>(TP))<span class="op">$</span>vectors[,<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb158-3" title="3">SP</a></code></pre></div>
 <pre><code>## [1] 0.09520000+0i 0.08613696+0i 0.07793672+0i 0.07051715+0i 0.06380391+0i
 ## [6] 0.60640526+0i</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" title="1"><span class="co">#create function for total variation in nth year</span></a>
-<a class="sourceLine" id="cb143-2" title="2">TV=<span class="cf">function</span>(n)</a>
-<a class="sourceLine" id="cb143-3" title="3">{dif=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb143-4" title="4"><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(SP))</a>
-<a class="sourceLine" id="cb143-5" title="5">dif[j]=<span class="kw">abs</span>(<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])<span class="op">-</span>SP[j])</a>
-<a class="sourceLine" id="cb143-6" title="6"><span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(dif)}</a>
-<a class="sourceLine" id="cb143-7" title="7"></a>
-<a class="sourceLine" id="cb143-8" title="8"><span class="co">#example for n=1</span></a>
-<a class="sourceLine" id="cb143-9" title="9"><span class="kw">TV</span>(<span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" title="1"><span class="co">#create function for total variation in nth year</span></a>
+<a class="sourceLine" id="cb160-2" title="2">TV=<span class="cf">function</span>(n)</a>
+<a class="sourceLine" id="cb160-3" title="3">{dif=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb160-4" title="4"><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(SP))</a>
+<a class="sourceLine" id="cb160-5" title="5">dif[j]=<span class="kw">abs</span>(<span class="kw">mean</span>(<span class="kw">powA</span>(n)[,j])<span class="op">-</span>SP[j])</a>
+<a class="sourceLine" id="cb160-6" title="6"><span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(dif)}</a>
+<a class="sourceLine" id="cb160-7" title="7"></a>
+<a class="sourceLine" id="cb160-8" title="8"><span class="co">#example for n=1</span></a>
+<a class="sourceLine" id="cb160-9" title="9"><span class="kw">TV</span>(<span class="dv">1</span>)</a></code></pre></div>
 <pre><code>## [1] 0.6096105</code></pre>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" title="1"><span class="co">#provide total variations (convergence rate) in 20 years</span></a>
-<a class="sourceLine" id="cb145-2" title="2">tot.var=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb145-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb145-4" title="4">tot.var[n]=<span class="kw">TV</span>(n)</a>
-<a class="sourceLine" id="cb145-5" title="5"><span class="kw">round</span>(tot.var,<span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" title="1"><span class="co">#provide total variations (convergence rate) in 20 years</span></a>
+<a class="sourceLine" id="cb162-2" title="2">tot.var=<span class="kw">numeric</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb162-3" title="3"><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb162-4" title="4">tot.var[n]=<span class="kw">TV</span>(n)</a>
+<a class="sourceLine" id="cb162-5" title="5"><span class="kw">round</span>(tot.var,<span class="dv">4</span>)</a></code></pre></div>
 <pre><code>##  [1] 0.6096 0.3941 0.2252 0.0958 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
 ## [11] 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</code></pre>
 <p><strong><em>Example 9</em></strong></p>

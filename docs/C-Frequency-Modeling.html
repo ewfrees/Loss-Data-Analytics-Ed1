@@ -392,7 +392,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-collaborators"><i class="fa fa-check"></i>Other Collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#version"><i class="fa fa-check"></i>Version</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="C-Intro.html"><a href="C-Intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Loss Data Analytics</a><ul>
@@ -646,7 +649,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#loss-reserve-notation"><i class="fa fa-check"></i><b>11.2.3</b> Loss Reserve Notation</a></li>
 <li class="chapter" data-level="11.2.4" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Rcode"><i class="fa fa-check"></i><b>11.2.4</b> R Code to Summarize Loss Reserve Data</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder</a><ul>
+<li class="chapter" data-level="11.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:Chain-ladder"><i class="fa fa-check"></i><b>11.3</b> The Chain-Ladder Method</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="C-LossReserves.html"><a href="C-LossReserves.html#S:DeterministicCL"><i class="fa fa-check"></i><b>11.3.1</b> The Deterministic Chain-Ladder</a></li>
 <li class="chapter" data-level="11.3.2" data-path="C-LossReserves.html"><a href="C-LossReserves.html#macks-distribution-free-chain-ladder-model"><i class="fa fa-check"></i><b>11.3.2</b> Mack’s Distribution-Free Chain-Ladder Model</a></li>
 <li class="chapter" data-level="11.3.3" data-path="C-LossReserves.html"><a href="C-LossReserves.html#r-code-for-chain-ladder-predictions"><i class="fa fa-check"></i><b>11.3.3</b> R code for Chain-Ladder Predictions</a></li>
@@ -975,6 +978,28 @@ P_N(s)=M_N(\log(s)), \quad s&lt;e^{t^\ast}.
 \]</span>
 Moreover, if the <em>pgf</em> exists on an interval <span class="math inline">\([0,s^\ast)\)</span> with <span class="math inline">\(s^\ast&gt;1\)</span>, then the <em>mgf</em> <span class="math inline">\(M_N(\cdot)\)</span> exists on <span class="math inline">\((-\infty,\log(s^\ast))\)</span>, and hence uniquely specifies the distribution of <span class="math inline">\(N\)</span> by <a href="#thm:2.1">Theorem 2.1</a>. (As a reminder, throughout this text we use <em>log</em> as the natural logarithm, not the base ten (common) logarithm or other version.) The following result for <em>pgf</em> is an analog of <a href="#thm:2.1">Theorem 2.1</a>, and in particular justifies its name.</p>
 <!-- \begin{theorem}\label{pgfthm} -->
+
+<div class="theorem">
+<p><span id="thm:pgfthm" class="theorem"><strong>Theorem 2.1  </strong></span>Let <span class="math inline">\(N\)</span> be a count random variable such that <span class="math inline">\(\mathrm{E}~{(s^{\ast})^N}\)</span> is finite for some <span class="math inline">\(s^\ast&gt;1\)</span>. We have the following:</p>
+All moments of <span class="math inline">\(N\)</span> are finite, <em>i.e.</em>
+<span class="math display">\[
+\mathrm{E}~{N^r}&lt;\infty, \quad r\geq 0.
+\]</span>
+The <span class="math inline">\(pmf\)</span> of <span class="math inline">\(N\)</span> can be derived from the <em>pgf</em> as follows:
+<span class="math display">\[
+p_N(m)=\begin{cases} 
+P_N(0), &amp;m=0;\cr
+&amp;\cr
+\left(\frac{1}{m!}\right) \left.\frac{{\rm d}^m}{{\rm d}s^m} P_N(s)\right\vert_{s=0}\;, &amp;m\geq 1.\cr
+\end{cases}
+\]</span>
+The factorial moments of <span class="math inline">\(N\)</span> can be derived as follows:
+<span class="math display">\[
+\left.\frac{{\rm d}^m}{{\rm d}s^m} P_N(s)\right\vert_{s=1}=\mathrm{E}~{\prod\limits_{i=0}^{m-1} (N-i)}, \quad m\geq 1.
+\]</span>
+The <em>pgf</em> <span class="math inline">\(P_N(\cdot)\)</span> characterizes the distribution; in other words it uniquely specifies the distribution.
+</div>
+
 </div>
 <div id="S:important-frequency-distributions" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Important Frequency Distributions</h3>
@@ -1433,7 +1458,8 @@ the rapid convergence seen above is typical of the Newton’s method. Hence in t
 <div style="page-break-after: always;"></div>
 <p><a id=tab:2.1></a></p>
 <p>Table 2.1. <strong>Three Samples of Size 5</strong></p>
-<p><span class="math display">\[\begin{matrix}
+<p><span class="math display">\[
+\small{
 \begin{array}{c|c|c}
 \hline
 \text{Data} &amp; \text{Mean }(\hat{\mu}) &amp; \text{Variance }(\hat{\sigma}^2) \\
@@ -1442,7 +1468,8 @@ the rapid convergence seen above is typical of the Newton’s method. Hence in t
 (2,5,6,8,9) &amp; 6 &amp; 6\\
 (4,7,8,10,11) &amp; 8 &amp; 6\\\hline
 \end{array}
-\end{matrix}\]</span></p>
+}
+\]</span></p>
 
 <div class="figure" style="text-align: center"><span id="fig:MLEab0"></span>
 <img src="Figures/figure2.3.png" alt="Plot of \((a,b,0)\) Partially Maximized Likelihoods" width="80%" />
@@ -1518,7 +1545,8 @@ version with <span class="math inline">\((p_0^M=0.6)\)</span>.</p>
 <p><strong>Solution.</strong> For the Poisson distribution as a member of the (<span class="math inline">\(a,b\)</span>,0) class, we have <span class="math inline">\(a=0\)</span> and <span class="math inline">\(b=\lambda=2\)</span>. Thus, we may use the recursion <span class="math inline">\(p_k = \lambda p_{k-1}/k= 2 p_{k-1}/k\)</span> for each type, after determining starting probabilities. The calculation of probabilities for <span class="math inline">\(k\leq 3\)</span> is shown in <a href="#tab:2.2">Table 2.2</a>.</p>
 <p><a id=tab:2.2></a></p>
 <p>Table 2.2. <strong>Calculation of Probabilities for</strong> <span class="math inline">\(k\leq 3\)</span></p>
-<p><span class="math display">\[\begin{matrix}
+<p><span class="math display">\[
+\begin{matrix}
 \begin{array}{c|c|c|c}
 \hline
 k &amp; p_k &amp; p_k^T &amp; p_k^M\\\hline
@@ -1533,7 +1561,8 @@ p_2^M=p_1^M\left(\frac{\lambda}{2}\right)=0.125214\\\hline
 p_3^T=p_2^T\left(\frac{\lambda}{3}\right)=0.208690 &amp;
 p_3^M=p_2^M\left(\frac{\lambda}{3}\right)=0.083476\\\hline
 \end{array}
-\end{matrix}\]</span></p>
+\end{matrix}
+\]</span></p>
 </div>
 <hr />
 <div id="surveyElement25">
@@ -1588,7 +1617,7 @@ In a certain town the number of common colds an individual will get in a year fo
 <p><a id=tab:2.3></a></p>
 <p>Table 2.3. <strong>The Distribution of the Population and the Mean Number of Colds</strong></p>
 <p><span class="math display">\[
-\begin{matrix}
+\small{
 \begin{array}{l|c|c}
 \hline
  &amp; \text{Proportion of population} &amp;
@@ -1597,7 +1626,7 @@ In a certain town the number of common colds an individual will get in a year fo
 \text{Adult Non-Smokers} &amp; 0.6 &amp; 1\\
 \text{Adult Smokers} &amp; 0.1 &amp; 4\\\hline
 \end{array}
-\end{matrix}
+}
 \]</span></p>
 <!-- \def\labelenumi{\arabic{enumi}.} -->
 <ol style="list-style-type: decimal">
@@ -1716,7 +1745,7 @@ Now if we use Poisson (<span class="math inline">\(\hat{\lambda}_{MLE}\)</span>)
 <p><a id=tab:2.5></a></p>
 <p>Table 2.5. <strong>Comparison of Observed to Fitted Counts: Singaporean Auto Data</strong></p>
 <p><span class="math display">\[
-\begin{matrix}
+\small{
 \begin{array}{c|r|r}
 \hline
 \text{Count}  &amp; \text{Observed}  &amp; \text{Fitted Counts}\\
@@ -1731,7 +1760,7 @@ Now if we use Poisson (<span class="math inline">\(\hat{\lambda}_{MLE}\)</span>)
 \text{Total} &amp; 7,483 &amp; 7,483.00\\
 \hline
 \end{array}
-\end{matrix}
+}
 \]</span></p>
 <p>While the fit seems <em>reasonable</em>, a tabular comparison falls short of a statistical test of the hypothesis that the underlying distribution is indeed Poisson. The Pearson’s chi-square statistic is a goodness of fit statistical measure that can be used for this purpose. To explain this statistic let us suppose that a dataset of size <span class="math inline">\(n\)</span> is grouped into <span class="math inline">\(k\)</span> cells with <span class="math inline">\(m_k/n\)</span> and <span class="math inline">\(\hat{p}_k\)</span>, for <span class="math inline">\(k=1\ldots,K\)</span> being the observed and estimated probabilities of an observation belonging to the <span class="math inline">\(k\)</span>-th cell, respectively. The Pearson’s chi-square test statistic is then given by
 <span class="math display">\[
