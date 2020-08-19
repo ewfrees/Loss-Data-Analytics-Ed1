@@ -59,7 +59,7 @@ Our starting point is the lifetime of a P&C insurance claim. Figure \@ref(fig:ti
 
 The insured event or accident occurs at time $t_{occ}$. This incident is reported to the insurance company at time $t_{rep}$, after some delay. If the filed claim is accepted by the insurance company, payments will follow to reimburse the financial loss of the policyholder. In this example the insurance company compensates the incurred loss with loss payments at times $t_1$, $t_2$ and $t_3$. Eventually, the claim settles or closes at time $t_{set}$. 
 
-Often claims will not settle immediately due to the presence of delay in the reporting of a claim, delay in the settlement process or both. The `r Gloss('reporting delay')` is the time that elapses between the occurrence of the insured event and the reporting of this event to the insurance company. The time between reporting and settlement of a claim is known as the `r Gloss('settlement delay')`. For example, it is very intuitive that a material damage claim settles quicker than a bodily injury claim involving a complex type of injury. Closed claims may also reopen due to new developments, e.g. an injury that requires extra treatment. Put together, the development of a claim typically takes some time. The presence of this delay in the run-off of a claim requires the insurer to hold capital in order to settle these claims in the future. 
+Often claims will not settle immediately due to the presence of delay in the reporting of a claim, delay in the settlement process or both. The `r Gloss('reporting delay')` is the time that elapses between the occurrence of the insured event and the reporting of this event to the insurance company. The time between reporting and settlement of a claim is known as the `r Gloss('settlement delay')`. For example, it is very intuitive that a material or property damage claim settles quicker than a bodily injury claim involving a complex type of injury. Closed claims may also reopen due to new developments, e.g. an injury that requires extra treatment. Put together, the development of a claim typically takes some time. The presence of this delay in the run-off of a claim requires the insurer to hold capital in order to settle these claims in the future. 
 
 ### Closed, IBNR, and RBNS Claims {#S:claim-types}
 
@@ -98,7 +98,7 @@ Based on the status of the claim's run-off we distinguish three types of claims 
 ```
 
 
-An `r Gloss('RBNS')` claim is one that has been **R**eported, **B**ut is **N**ot fully **S**ettled at the present moment or the moment of evaluation, that is, the moment when the reserves should be calculated and booked by the insurer. Occurrence, reporting and possibly some loss payments take place before the present moment, but the closing of the claim happens in the future, beyond the present moment. 
+An `r Gloss('RBNS')` claim is one that has been **R**eported, **B**ut is **N**ot fully **S**ettled at the present moment or the moment of evaluation (the valuation date), that is, the moment when the reserves should be calculated and booked by the insurer. Occurrence, reporting and possibly some loss payments take place before the present moment, but the closing of the claim happens in the future, beyond the present moment. 
 
 (ref:tikz-RBNS)  **Lifetime of an RBNS Claim**
 
@@ -162,7 +162,7 @@ Insurance companies will reserve capital to fulfill their future liabilities wit
 
 ### Why Reserving?
 
-The inverted production cycle of the insurance market and the claim dynamics pictured in Section \@ref(S:claim-types) motivate the need for reserving and the design of predictive modeling tools to estimate reserves. In insurance, the premium income precedes the costs. An insurer will charge a client a premium, before actually knowing how costly the insurance policy or contract will become. In typical manufacturing industry this is not the case and the manufacturer knows - before selling a product - what the cost of producing this product was. At a specified evaluation moment $\tau$ the insurer will predict his outstanding liabilities with respect to contracts sold in the past. This is the claims reserve or loss reserve; it is the capital necessary to settle open claims from past exposures. It is a very important element on the balance sheet of the insurer, more specifically on the liabilities side of this balance sheet.
+The inverted production cycle of the insurance market and the claim dynamics pictured in Section \@ref(S:claim-types) motivate the need for reserving and the design of predictive modeling tools to estimate reserves. In insurance, the premium income precedes the costs. An insurer will charge a client a premium, before actually knowing how costly the insurance policy or contract will become. In typical manufacturing industry this is not the case and the manufacturer knows - before selling a product - what the cost of producing this product was. At a specified evaluation moment $\tau$ the insurer will predict outstanding liabilities with respect to contracts sold in the past. This is the claims reserve or loss reserve; it is the capital necessary to settle open claims from past exposures. It is a very important element on the balance sheet of the insurer, more specifically on the liabilities side of the balance sheet.
 
 ## Loss Reserve Data {#S:Data}
 
@@ -331,7 +331,7 @@ To formalize the displays shown in Figures \@ref(fig:tikz-triangle) and \@ref(fi
 \end{scriptsize}
 ```
 
-The random variable $X_{ij}$ denotes the incremental claims paid in development period $j$ on claims from accident year $i$. Thus, $X_{ij}$ is the total amount paid in development year $j$ for all claims that happened in occurrence year $i$. These payments are actually paid out in accounting or calendar year $i+j$. Taking a cumulative point of view, $C_{ij}$ is the cumulative amount paid up until (and including) development year $j$ for accidents that occurred in year $i$. Ultimately, a total amount $C_{iJ}$ is paid in the final development year $J$ for claims that occurred in accident year $i$. In this chapter time is expressed in years, though other time units can be used as well, e.g. semesters or quarters. 
+The random variable $X_{ij}$ denotes the incremental claims paid in development period $j$ on claims from accident year $i$. Thus, $X_{ij}$ is the total amount paid in development year $j$ for all claims that happened in occurrence year $i$. These payments are actually paid out in accounting or calendar year $i+j$. Taking a cumulative point of view, $C_{ij}$ is the cumulative amount paid up until (and including) development year $j$ for accidents that occurred in year $i$. Ultimately, a total amount $C_{iJ}$ is paid in the final development year $J$ for claims that occurred in accident year $i$. In this chapter time is expressed in years, though other time units can be used as well, e.g. six-month periods or quarters. 
 
 #### The Loss Reserve {-}
 
@@ -426,7 +426,7 @@ We recognize the incremental triangle from  Figure \@ref(fig:tikz-triangle).
 
 #### Visualizing Triangles {-}
 
-To explore the evolution of the cumulative payments per occurrence year, Figure \@ref(fig:plottriangle) shows `my_triangle` using the `plot` function available for objects of type `triangle` in the `ChainLadder` package. Each line in this plot pictures an occurrence year (from 2004 to 2013, labelled as 1 to 10). Development periods are labelled from 1 to 10 (instead of 0 to 9, as used above). 
+To explore the evolution of the cumulative payments per occurrence year, Figure \@ref(fig:plottriangle) shows `my_triangle` using the `plot` function available for objects of type `triangle` in the `ChainLadder` package. Each line in this plot depicts an occurrence year (from 2004 to 2013, labelled as 1 to 10). Development periods are labelled from 1 to 10 (instead of 0 to 9, as used above). 
 
 (ref:plottriangle) **Claim Development by Occurrence Year**
 
@@ -446,9 +446,9 @@ plot(my_triangle_incr)
 plot(my_triangle_incr, lattice = TRUE)
 ```
 
-## The Chain-Ladder {#S:Chain-ladder}
+## The Chain-Ladder Method {#S:Chain-ladder}
 
-The most widely used method to estimate outstanding loss reserves is the so-called `r Gloss('chain-ladder method')`. The origins of this method are obscure but was firmly entrenched in practical applications by the early 1970's, @taylor1986claims. As will be seen, the name refers to the chaining of a sequence of (year-to-year development) factors into a ladder of factors; immature losses climb toward maturity when multiplied by this concatenation of ratios, hence the apt description *chain-ladder method.* We will start with exploring the chain-ladder method in its deterministic or algorithmic version, hence without making any stochastic assumptions. Then we will describe Mack's distribution-free chain-ladder model. 
+The most widely used method to estimate outstanding loss reserves is the so-called `r Gloss('chain-ladder method')`. The origins of this method are obscure but was firmly entrenched in practical applications by the early 1970's, @taylor1986claims. As will be seen, the name refers to the chaining of a sequence of (year-to-year development) factors into a ladder of factors; immature losses climb toward maturity when multiplied by this concatenation of ratios, hence the apt descriptor *chain-ladder method.* We will start with exploring the chain-ladder method in its deterministic or algorithmic version, hence without making any stochastic assumptions. Then we will describe Mack's distribution-free chain-ladder model. 
 
 ### The Deterministic Chain-Ladder {#S:DeterministicCL}
 
@@ -488,7 +488,7 @@ year & \textcolor{magenta}{0} & \textcolor{magenta}{1} & 2 & 3 & 4 & 5 & 6 & 7 &
 \end{tiny}
 ```
 
-The chain-ladder method then presents an intuitive recipe to estimate or calculate these development factors. Since the first development factor $f_0$ describes the development of the cumulative claim amount from development period 0 to development period 1, it can be estimated as the ratio of the cumulative amounts in red and the cumulative amounts in blue, highlighted in the  Figure \@ref(fig:tikz-cum-triangle-cl1). In math notation we then obtain the following estimate $\hat{f}_0^{CL}$ for the first development factor $f_0$, given observations $\mathcal{D}_I$:
+The chain-ladder method then presents an intuitive recipe to estimate or calculate these development factors. Since the first development factor $f_0$ describes the development of the cumulative claim amount from development period 0 to development period 1, it can be estimated as the ratio of the cumulative amounts in red and the cumulative amounts in blue, highlighted in the  Figure \@ref(fig:tikz-cum-triangle-cl1). We then obtain the following estimate $\hat{f}_0^{CL}$ for the first development factor $f_0$, given observations $\mathcal{D}_I$:
 
 $$
 \hat{f}^{CL}_{\color{magenta}{0}} = \frac{\sum_{i=1}^{10-\color{magenta}{0}-1} \color{red}{C_{i,\color{magenta}{0}+1}}}{\sum_{i=1}^{10-\color{magenta}{0}-1} \color{blue}{C_{i\color{magenta}{0}}}}= 1.4925.
@@ -806,7 +806,7 @@ $$
 for a $\mathcal{D}_I$ measurable estimator/predictor $\hat{C}_{iJ}$. The process variance component captures the volatility or uncertainty in the random variable $C_{i,J}$ and the parameter estimation variance measures the error that arises from replacing the unknown development factors $f_j$ with their estimated values. This result follows immediately from following equality about the variance of a shifted random variable $X$ where the shift $a$ is deterministic:
 
 $$
-E(X-a)^2 = \text{Var}(X)+\left[EX-a\right]^2.
+\mathrm{E}~(X-a)^2 = \text{Var}(X)+\left[\mathrm{E}(X)-a\right]^2.
 $$
 
 Applied to the expression of the *MSEP* you treat $\hat{C}_{i,J}$ as fixed because you work conditionally on the data in the upper triangle and $\hat{C}_{i,J}$ only uses information from this upper triangle. 
@@ -818,7 +818,7 @@ $$
 \left(\hat{C}_{iJ}^{CL}\right)^2 \sum_{j=I-i}^{J-1} \left[ \frac{\hat{\sigma}_j^2}{(\hat{f}_j^{CL})^2} \left(\frac{1}{\hat{C}^{CL}_{ij}}+\frac{1}{\sum_{n=1}^{I-j-1}C_{nj}}\right)\right].
 $$
 
-For the derivation of this popular formula, we refer to his paper. Note that it is an estimate of the *MSEP* since the unknown parameters $f_j$ and $\sigma_j$ need to be estimated and since the estimation error cannot be calculated explicitly. 
+For the derivation of this popular formula, we refer to his paper. Note that it is an estimate of the *MSEP* since the unknown parameters $f_j$ and $\sigma_j$ need to be estimated as the estimation error cannot be calculated explicitly. 
 
 Mack also derived a formula for the *MSEP* for the total reserve, across all occurrence periods:
 
@@ -925,7 +925,7 @@ $$
 
 This construction allows for under (when $\phi <1$) and over-dispersion (with $\phi>1$). Because $X_{ij}$ no longer follows a well-known distribution, this approach is referred to as quasi-likelihood. It is particularly useful to model a run-off triangle with incremental payments, as these typically reveal over-dispersion. 
 
-Third, the **gamma** regression model is relevant to model a run-off triangle with claim payments. Recall from Section \@ref(S:Loss:Gamma) (see also the Appendix Chapter \@ref(C:SummaryDistributions)) with parameters $\alpha$ and $\theta$. From these, we reparameterize and define a new parameter $\mu = \alpha \cdot \theta$ while retaining the scale parameter $\theta$. Further, assume that $X_{ij}$ has a gamma distribution and allow $\mu$ to vary by $ij$ such that 
+Third, the **gamma** regression model is relevant to model a run-off triangle with claim payments. Recall from Section \@ref(S:Loss:Gamma) (see also the Appendix Chapter \@ref(C:SummaryDistributions)) that the gamma distribution has shape parameter $\alpha$ and scale parameter $\theta$. From these, we reparameterize and define a new parameter $\mu = \alpha \cdot \theta$ while retaining the scale parameter $\theta$. Further, assume that $X_{ij}$ has a gamma distribution and allow $\mu$ to vary by $ij$ such that 
 
 $$
 \mu_{ij} =  \exp{(\mu + \alpha_i + \beta_j)}.

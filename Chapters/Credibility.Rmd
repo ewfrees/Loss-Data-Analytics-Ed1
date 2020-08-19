@@ -438,7 +438,8 @@ In the prior example the risk parameter $\theta$ is a random variable with an ex
 
 **Example `r chapnum`.3.2.**  For any risk (policyholder) in a population the number of losses $N$ in a year has a Poisson distribution with parameter $\lambda$.  Individual loss amounts $X_i$ for a risk are independent of $N$ and are *iid* with Type II Pareto distribution $F(x)=1-[\theta/(x+\theta)]^{\alpha}$.  There are three types of risks in the population as follows:
 
-$$\begin{matrix}
+$$
+\small{
 \begin{array}{|c|c|c|c|}
 \hline
 \text{Risk } & \text{Percentage} & \text{Poisson} & \text{Pareto} \\
@@ -449,7 +450,9 @@ B & 30\% & \lambda=1.0 & \theta=1500, \alpha=2.0 \\
 C & 20\% & \lambda=2.0 & \theta=2000, \alpha=2.0 \\              
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
+
 If a risk is selected at random from the population, what is the expected aggregate loss in a year?
 
 `r HideExample('9.3.2','Show Example Solution')`
@@ -544,7 +547,7 @@ In bullet (1) at the beginning of this section we showed $\mathrm{E}(\mathrm{Var
 For any risk in a population the number of losses $N$ in a year has a Poisson distribution with parameter $\lambda$.  Individual loss amounts $X$ for a selected risk are independent of $N$ and are *iid* with exponential distribution $F(x)=1-e^{-x/\beta}$.  There are three types of risks in the population as shown below.  A risk was selected at random from the population and all losses were recorded over a five-year period.  The total amount of losses over the five-year period was 5,000.  Use B&uuml;hlmann credibility to estimate the annual expected aggregate loss for the risk.  
 
 $$
-\begin{matrix}
+\small{
 \begin{array}{|c|c|c|c|}
 \hline
 \text{Risk } & \text{Percentage} & \text{Poisson} & \text{Exponential} \\
@@ -555,7 +558,7 @@ B & 30\% & \lambda=1.0 & \beta=1500 \\
 C & 20\% & \lambda=2.0 & \beta=2000 \\              
 \hline
 \end{array}
-\end{matrix}
+}
 $$
 
 `r HideExample('9.3.5','Show Example Solution')`
@@ -669,8 +672,10 @@ Z=\frac{m}{m+K} \quad , \quad K =\frac{EPV}{VHM}.
 This is the same $Z$ as for B&uuml;hlmann credibility except number of exposures $m$ replaces number of years or observations $n$.  
 
 
-**Example `r chapnum`.4.2.**  A commercial automobile policyholder had the following exposures and claims over a three-year period: 
-$$\begin{matrix}
+**Example `r chapnum`.4.2.**  A commercial automobile policyholder had the following exposures and claims over a three-year period:
+
+$$
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} & \text{Number of Vehicles} & \text{Number of Claims} \\
@@ -680,7 +685,8 @@ $$\begin{matrix}
 3 & 15 &  4  \\              
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
 
 
 * The number of claims in a year for each vehicle in the policyholder's fleet is Poisson distributed with the same mean (parameter) $\lambda$.
@@ -910,7 +916,8 @@ In some cases formula \@ref(eq:VHM-estimate) can produce a negative value for $\
 **Example `r chapnum`.6.1.**
 Two policyholders had claims over a three-year period as shown in the table below.  Estimate the expected number of claims for each policyholder using B&uuml;hlmann credibility and calculating necessary parameters from the data.
  
-$$\begin{matrix}
+$$
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} & \text{Risk A} & \text{Risk B} \\
@@ -920,7 +927,8 @@ $$\begin{matrix}
 3 & 0 &  2  \\              
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
 
 `r HideExample('9.6.1','Show Example Solution')`
 
@@ -951,7 +959,8 @@ $\hat{\mu}_B=\frac{7}{8}\left(\frac{5}{3}\right)+(1-\frac{7}{8})1=\frac{19}{12}$
 **Example `r chapnum`.6.2.**
 Two policyholders had claims over a three-year period as shown in the table below.  Calculate the nonparametric estimate for the $VHM$.
  
-$$\begin{matrix}
+$$
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} & \text{Risk A} & \text{Risk B} \\
@@ -961,7 +970,8 @@ $$\begin{matrix}
 3 & 0 &  3  \\              
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
 
 `r HideExample('9.6.2','Show Example Solution')`
 
@@ -1024,7 +1034,8 @@ This complicated formula is necessary because of the varying number of exposures
 **Example `r chapnum`.6.3.**
 Two policyholders had claims shown in the table below.  Estimate the expected number of claims per vehicle for each policyholder using B&uuml;hlmann-Straub credibility and calculating parameters from the data.
 
-$$\begin{matrix}
+$$
+\small{
 \begin{array}{|c|c|c|c|c|c|}
 \hline
 \text{Policyholder} &  & \text{Year 1} & \text{Year 2} & \text{Year 3} & \text{Year 4} \\
@@ -1040,7 +1051,8 @@ $$\begin{matrix}
 \text{B} & \text{Insured vehicles} &  0 & 2 & 3 & 4\\      
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
 
 `r HideExample('9.6.3','Show Example Solution')`
 
@@ -1081,7 +1093,9 @@ An example of semiparametric estimation would be the assumption of a Poisson dis
 
 **Example `r chapnum`.6.4.**
 Two policyholders had claims over a three-year period as shown in the table below.  Assume that the number of claims for each risk has a Poisson distribution.  Estimate the expected number of claims for each policyholder using B&uuml;hlmann credibility and calculating necessary parameters from the data.
-$$\begin{matrix}
+
+$$
+\small{
 \begin{array}{|c|c|c|}
 \hline
 \text{Year} & \text{Risk A} & \text{Risk B} \\
@@ -1091,7 +1105,8 @@ $$\begin{matrix}
 3 & 0 &  2  \\              
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
 
 `r HideExample('9.6.4','Show Example Solution')`
 
@@ -1126,7 +1141,9 @@ The following example is commonly used to demonstrate a situation where semipara
 
 **Example  `r chapnum`.6.5.**
 A portfolio of 2,000 policyholders generated the following claims profile during a five-year period:
-$$\begin{matrix}
+
+$$
+\small{
 \begin{array}{|c|c|}
 \hline
 \text{Number of Claims} &   \\
@@ -1140,7 +1157,9 @@ $$\begin{matrix}
  5 &  25   \\     
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
+
 In your model you assume that the number of claims for each policyholder has a Poisson distribution and that a policyholder's expected number of claims is constant through time.  Use B&uuml;hlmann credibility to estimate the annual expected number of claims for policyholders with 3 claims during the five-year period.   
 
 `r HideExample('9.6.5','Show Example Solution')`
@@ -1215,7 +1234,7 @@ $$
 An example from the nonparametric B&uuml;hlmann-Straub section had the following data for two risks.  Find the amount associated with the complement of credibility, $\hat{M}_X$, that will produce credibility-weighted estimates that are in balance.
 
 $$
-\begin{matrix}
+\small{
 \begin{array}{|c|c|c|c|c|c|}
 \hline
 \text{Policyholder} &  & \text{Year 1} & \text{Year 2} & \text{Year 3} & \text{Year 4} \\
@@ -1231,7 +1250,7 @@ $$
 \text{B} & \text{Insured vehicles} &  0 & 2 & 3 & 4\\      
 \hline
 \end{array}
-\end{matrix}
+}
 $$
 
 `r HideExample('9.6.6','Show Example Solution')`
@@ -1259,7 +1278,7 @@ The updated credibility estimates are $\hat{M}_{X_A}=0.7703(1)+(1-0.7703)(.6579)
 
 #### Exercises {-}
 
-Here are a set of exercises that guide the viewer through some of the theoretical foundations of **Loss Data Analytics**. Each tutorial is based on one or more questions from the professional actuarial examinations, typically the Society of Actuaries Exam C.
+Here are a set of exercises that guide the viewer through some of the theoretical foundations of **Loss Data Analytics**. Each tutorial is based on one or more questions from the professional actuarial examinations, typically the Society of Actuaries Exam C/STAM.
 
 <p style="text-align: center;">
 [Credibility Guided Tutorials](https://www.ssc.wisc.edu/~jfrees/loss-data-analytics/loss-data-analyticscredibility-guided-tutorials/)

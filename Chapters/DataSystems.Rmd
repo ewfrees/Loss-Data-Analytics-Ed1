@@ -10,21 +10,21 @@
 
 ### Data Types and Sources
 
-In terms of how data are collected, data can be divided into two types [@hox2005data]: primary data and secondary data. Primary data are original data that are collected for a specific research problem. Secondary data are data originally collected for a different purpose and reused for another research problem. A major advantage of using primary data is that the theoretical constructs, the research design, and the data collection strategy can be tailored to the underlying research question to ensure that the data collected indeed help to solve the problem. A disadvantage of using primary data is that data collection can be costly and time-consuming. Using secondary data has the advantage of lower cost and faster access to relevant information. However, using secondary data may not be optimal for the research question under consideration.   
+In terms of how data are collected, data can be divided into two types [@hox2005data]: primary data and secondary data. Primary data are original data that are collected for a specific research problem. Secondary data are data originally collected for a different purpose and reused for another research problem. A major advantage of using primary data is that the theoretical constructs, the research design, and the data collection strategy can be tailored to the underlying research question to ensure that data collected help to solve the problem. A disadvantage of using primary data is that data collection can be costly and time consuming. Using secondary data has the advantage of lower cost and faster access to relevant information. However, using secondary data may not be optimal for the research question under consideration.   
 
 In terms of the degree of organization of the data, data can be also divided into two types [@inmon2014;@leary2013bigdata;@hashem2015bigdata;@abdullah2013data;@pries2015]: structured data and unstructured data. `r Gloss('Structured data')` have a predictable and regularly occurring format. In contrast, `r Gloss('unstructured data')` lack any regularly occurring format and have no structure that is recognizable to a computer. Structured data consist of records, attributes, keys, and indices and are typically managed by a database management system (DBMS) such as IBM DB2, Oracle, MySQL, and Microsoft SQL Server. As a result, most units of structured data can be located quickly and easily. Unstructured data have many different forms and variations. One common form of unstructured data is text. Accessing unstructured data can be awkward. To find a given unit of data in a long text, for example, a sequential search is usually performed. 
 
-In terms of how the data are measured, data can be classified as qualitative or quantitative. `r Gloss('Qualitative data')` are data about qualities, which cannot be actually measured. As a result, qualitative data are extremely varied in nature and include interviews, documents, and artifacts [@miles2014]. `r Gloss('Quantitative data')` are data about quantities, which can be measured numerically with numbers. In terms of the level of measurement, quantitative data can be further classified as nominal, ordinal,  interval, or ratio [@gan2011]. Nominal data, also called categorical data, are discrete data without a natural ordering. `r Gloss('Ordinal data')` are discrete data with a natural order. `r Gloss('Interval data')` are continuous data with a specific order and equal intervals. Ratio data are interval data with a natural zero. See Section \@ref(S:VarTypes) for a more detailed discussion, with examples, on types of data.
+Data can be classified as qualitative or quantitative. `r Gloss('Qualitative data')` are data about qualities, which cannot be actually measured. As a result, qualitative data are extremely varied in nature and include interviews, documents, and artifacts [@miles2014]. `r Gloss('Quantitative data')` are data about quantities, which can be measured numerically with numbers. In terms of the level of measurement, quantitative data can be further classified as nominal, ordinal,  interval, or ratio [@gan2011]. Nominal data, also called categorical data, are discrete data without a natural ordering. `r Gloss('Ordinal data')` are discrete data with a natural order. `r Gloss('Interval data')` are continuous data with a specific order and equal intervals. Ratio data are interval data with a natural zero. See Section \@ref(S:VarTypes) for a more detailed discussion, with examples, on types of data.
 
 There exist a number of data sources. First, data can be obtained from university-based researchers who collect primary data. Second, data can be obtained from organizations that are set up for the purpose of releasing secondary data for the general research community. Third, data can be obtained from national and regional statistical institutes that collect data. Finally, companies have corporate data that can be obtained for research purposes.
 
-While it might be difficult to obtain data to address a specific research problem or answer a business question, it is relatively easy to obtain data to test a model or an algorithm for data analysis. In the modern era, readers can obtain datasets from the Internet easily. The following is a list of some websites to obtain real-world data:
+While it might be difficult to obtain data to address a specific research problem or answer a business question, it is relatively easy to obtain data to test a model or an algorithm for data analysis. In the modern era, readers can obtain datasets from the Internet. The following is a list of some websites to obtain real-world data:
 
 *  **UCI Machine Learning Repository.** This website (url: [http://archive.ics.uci.edu/ml/index.php](http://archive.ics.uci.edu/ml/index.php)) maintains more than 400 datasets that can be used to test machine learning algorithms.
 *  **Kaggle.** The Kaggle website (url: [https://www.kaggle.com/](https://www.kaggle.com/)) include real-world datasets used for data science competitions. Readers can download data from Kaggle by registering an account.
 *  **DrivenData.** DrivenData aims at bringing cutting-edge practices in data science to solve some of the world's biggest social challenges. In its website (url: [https://www.drivendata.org/](https://www.drivendata.org/)), readers can participate in data science competitions and download datasets.
 *  **Analytics Vidhya.** This website (url: [https://datahack.analyticsvidhya.com/contest/all/](https://datahack.analyticsvidhya.com/contest/all/)) allows you to participate and download datasets from practice problems and hackathon problems. 
-*  **KDD Cup.** KDD Cup is the annual Data Mining and Knowledge Discovery competition organized by ACM Special Interest Group on Knowledge Discovery and Data Mining. This website (url: [http://www.kdd.org/kdd-cup](http://www.kdd.org/kdd-cup)) contains the datasets used in past KDD Cup competitions since 1997.
+*  **KDD Cup.** KDD Cup is the annual Data Mining and Knowledge Discovery competition organized by the ACM Special Interest Group on Knowledge Discovery and Data Mining. This website (url: [http://www.kdd.org/kdd-cup](http://www.kdd.org/kdd-cup)) contains the datasets used in past KDD Cup competitions since 1997.
 *  **U.S. Government's open data.** This website (url: [https://www.data.gov/](https://www.data.gov/)) contains about 200,000 datasets covering a wide range of areas including climate, education, energy, and finance.
 *  **AWS Public Datasets.** In this website (url: [https://aws.amazon.com/datasets/](https://aws.amazon.com/datasets/)), Amazon provides a centralized repository of public datasets, including some huge datasets.
 
@@ -51,13 +51,13 @@ In other words, structured data can be organized into a table consisting of rows
 
 Unstructured data do not follow a regular format [@abdullah2013data]. Examples of unstructured data include documents, videos, and audio files. Most of the data we encounter are unstructured data. In fact, the term "big data" was coined to reflect this fact. Traditional relational databases cannot meet the challenges on the varieties and scales brought by massive unstructured data nowadays. NoSQL databases have been used to store massive unstructured data. 
 
-There are three main NoSQL databases [@chen2014b]: key-value databases, column-oriented databases, and document-oriented databases. `r Gloss('Key-value databases')` use a simple data model and store data according to key-values. Modern key-value databases have higher expandability and smaller query response times than relational databases. Examples of key-value databases include Dynamo used by Amazon and Voldemort used by LinkedIn. `r Gloss('Column-oriented databases')` store and process data according to columns rather than rows. The columns and rows are segmented in multiple nodes to achieve expandability. Examples of column-oriented databases include BigTable developed by Google and Cassandra developed by FaceBook. `r Gloss('Document databases')` are designed to support more complex data forms than those stored in key-value databases. Examples of document databases include MongoDB, SimpleDB, and CouchDB. MongoDB is an open-source document-oriented database that stores documents as binary objects. SimpleDB is a distributed NoSQL database used by Amazon. CouchDB is another open-source document-oriented database. 
+There are three main NoSQL databases [@chen2014b]: key-value databases, column-oriented databases, and document-oriented databases. `r Gloss('Key-value databases')` use a simple data model and store data according to key values. Modern key-value databases have higher expandability and smaller query response times than relational databases. Examples of key-value databases include Dynamo used by Amazon and Voldemort used by LinkedIn. `r Gloss('Column-oriented databases')` store and process data according to columns rather than rows. The columns and rows are segmented in multiple nodes to achieve expandability. Examples of column-oriented databases include BigTable developed by Google and Cassandra developed by FaceBook. `r Gloss('Document databases')` are designed to support more complex data forms than those stored in key-value databases. Examples of document databases include MongoDB, SimpleDB, and CouchDB. MongoDB is an open-source document-oriented database that stores documents as binary objects. SimpleDB is a distributed NoSQL database used by Amazon. CouchDB is another open-source document-oriented database. 
 
 ### Data Quality
 
 Accurate data are essential to useful data analysis. The lack of accurate data may lead to significant costs to organizations in areas such as correction activities, lost customers, missed opportunities, and incorrect decisions [@olson2003].
 
-Data have quality if it satisfies its intended use, that is, the data are accurate, timely, relevant, complete, understandable, and trusted [@olson2003]. As a result, we first need to know the specification of the intended uses and then judge the suitability for those uses in order to assess the quality of the data. Unintended uses of data can arise from a variety of reasons and lead to serious problems. 
+Data have quality if it satisfies its intended use; that is, the data are accurate, timely, relevant, complete, understandable, and trusted [@olson2003]. As a result, we first need to know the specification of the intended uses and then judge the suitability for those uses in order to assess data quality. Unintended uses of data can arise from a variety of reasons and lead to serious problems. 
 
 Accuracy is the single most important component of high-quality data. Accurate data have the following properties [@olson2003]:
 
@@ -71,7 +71,7 @@ Inaccurate data arise from different sources. In particular, the following areas
 * Data moving and restructuring. Inaccurate data can also arise from data extracting, cleansing, transforming, loading, or integrating.
 * Data usage. Faulty reporting and lack of understanding can lead to inaccurate data.
 
-`r Gloss('Reverification')` and analysis are two approaches used to find inaccurate data elements. The first approach is done by people, who manually check every data element by going back to the original source of the data. The second approach is done by software with the skills of an analyst to search through data to find possible inaccurate data elements. To ensure that the data elements are 100\% accurate, we must use reverification. However, reverification can be time-consuming and may not be possible for some data. Analytical techniques can also be used to identify inaccurate data elements. There are five types of analysis that can be used to  identify inaccurate data [@olson2003]: `r Gloss('data element analysis')`, `r Gloss('structural analysis')`, value correlation, aggregation correlation, and value inspection.
+`r Gloss('Reverification')` and analysis are two approaches used to find inaccurate data elements. The first approach is done by people, who manually check every data element by going back to the original source of the data. The second approach is done by software with the skills of an analyst to search through data to find possible inaccurate data elements. To ensure that the data elements are 100\% accurate, we must use reverification. However, reverification can be time consuming and may not be possible for some data. Analytical techniques can also be used to identify inaccurate data elements. There are five types of analysis that can be used to  identify inaccurate data [@olson2003]: `r Gloss('data element analysis')`, `r Gloss('structural analysis')`, value correlation, aggregation correlation, and value inspection.
 
 Companies can create a data quality assurance program to create high-quality databases. For more information about management of data quality issues and data profiling techniques, readers are referred to @olson2003.
 
@@ -79,14 +79,14 @@ Companies can create a data quality assurance program to create high-quality dat
 
 Raw data usually need to be cleaned before useful analysis can be conducted. In particular, the following areas need attention when preparing data for analysis [@janert2010]:
 
-*  **Missing values.** It is common to have missing values in raw data. Depending on the situations, we can discard the record, discard the variable, or impute the missing values.
+*  **Missing values.** It is common to have missing values in raw data. Depending on the situation, we can discard the record, discard the variable, or impute the missing values.
 *  **Outliers.** Raw data may contain unusual data points such as outliers. We need to handle outliers carefully. We cannot just remove outliers without knowing the reason for their existence. Although sometimes outliers can be simple mistakes such as thosed caused by clerical errors, sometimes their unusual behavior can point to precisely the type of effect that we are looking for.
 *  **Junk.** Raw data may contain garbage, or junk, such as nonprintable characters. When it happens, junk is typically rare and not easily noticed. However, junk can cause serious problems in downstream applications.
-*  **Format.** Raw data may be formatted in a way that is inconvenient for subsequent analysis. For example, components of a record may be split into multiple lines in a text file. In such cases, lines corresponding to a single record should be merged before loading to a data analysis software such as R.
-*  **Duplicate records.** Raw data may contain duplicate records. Duplicate records should be recognized and removed. This task may not be trivial depending on what you consider ``duplicate.''
-*  **Merging datasets.** Raw data may come from different sources. In such cases, we need to merge the data from different sources to ensure compatibility.
+*  **Format.** Raw data may be formatted in a way that is inconvenient for subsequent analysis. For example, components of a record may be split into multiple lines in a text file. In such cases, lines corresponding to a single record should be merged before loading to a data analysis software such as `R`.
+*  **Duplicate records.** Raw data may contain duplicate records. Duplicate records should be recognized and removed. This task may not be trivial depending on what you consider "duplicate."
+*  **Merging datasets.** Raw data may come from different sources. In such cases, we need to merge data from different sources to ensure compatibility.
 
-For more information about how to handle data in R, readers are referred to @forte2015 and @buttrey2017.
+For more information about how to handle data in `R`, readers are referred to @forte2015 and @buttrey2017.
 
 
 ```{r child = './Quizzes/Quiz131.html', eval = QUIZ}
@@ -111,21 +111,21 @@ $$
 \hbox{Data} = \hbox{Model} + \hbox{Error},
 $$
 
-where Data represents a set of basic scores or observations to be analyzed, Model is a compact representation of the data, and Error is simply the amount the model fails to represent accurately. Using the above equation for data analysis, an analyst must resolve the following two conflicting goals:
+where Data represents a set of basic scores or observations to be analyzed, Model is a compact representation of the data, and Error is the amount by which an observation differs from its model representation. Using the above equation for data analysis, an analyst must resolve the following two conflicting goals:
 
-* to add more parameters to the model so that the model represents the data better, and
+* to add more parameters to the model so that the model represents data better, and
 * to remove parameters from the model so that the model is simple and parsimonious.
 
 In this section, we give a high-level introduction to data analysis, including different types of methods.
 
 ### Data Analysis Process {#S:process}
 
-Data analysis is part of an overall study. For example, Figure \@ref(fig:study) shows the process of a typical study in behavioral and social sciences as described in @albers2017. The data analysis part consists of the following steps:
+Data analysis is part of an overall study. For example, Figure \@ref(fig:study) shows the process of a typical study in behavioral and social sciences as described in @albers2017. Data analysis consists of the following steps:
 
-*  **Exploratory analysis.** The purpose of this step is to get a feel of the relationships with the data and figure out what type of analysis for the data makes sense.
-*  **Statistical analysis.** This step performs statistical analysis such as determining statistical significance and effect size. 
-*  **Make sense of the results.** This step interprets the statistical results in the context of the overall study.
-*  **Determine implications.** This step interprets the data by connecting it to the study goals and the larger field of this study.
+*  **Exploratory analysis.** Through summary statistics and graphical representations, understand all relevant data characteristics and determine what type of analysis for the data makes sense.
+*  **Statistical analysis.** Performs statistical analysis such as determining statistical significance and effect size. 
+*  **Make sense of the results.** Interprets the statistical results in the context of the overall study.
+*  **Determine implications.** Interprets the data by connecting it to the study goals and the larger field of this study.
 
 The goal of the data analysis as described above focuses on explaining some phenomenon (See Section \@ref(S:expred)).
 
@@ -145,7 +145,7 @@ knitr::include_graphics("Figures/Figure2.png")
 
 ### Exploratory versus Confirmatory
 
-There are two phases of data analysis [@good1983data]: `r Gloss('exploratory data analysis')` (EDA) and `r Gloss('confirmatory data analysis')` (CDA). [Table 13.1] summarizes some differences between EDA and CDA. EDA is usually applied to observational data with the goal of looking for patterns and formulating hypotheses. In contrast, CDA is often applied to experimental data (i.e., data obtained by means of a formal design of experiments) with the goal of quantifying the extent to which discrepancies between the model and the data could be expected to occur by chance [@gelman2004eda]. 
+There are two phases of data analysis [@good1983data]: `r Gloss('exploratory data analysis')` (EDA) and `r Gloss('confirmatory data analysis')` (CDA). [Table 13.1] summarizes some differences between EDA and CDA. EDA is usually applied to observational data with the goal of looking for patterns and formulating hypotheses. In contrast, CDA is often applied to experimental data (i.e., data obtained by means of a formal design of experiments) with the goal of quantifying the extent to which discrepancies between the model and the data could be expected to occur by chance. @gelman2004eda. 
 
 [Table 13.1]:\#tab:13.1
 
@@ -154,7 +154,7 @@ There are two phases of data analysis [@good1983data]: `r Gloss('exploratory dat
 Table 13.1. **Comparison of Exploratory Data Analysis and Confirmatory Data Analysis**
 
 $$
-\begin{matrix}
+\small{
 \begin{array}{lll} \hline
  & \textbf{EDA} & \textbf{CDA} \\\hline
 \text{Data} & \text{Observational data} & \text{Experimental data}\\[3mm]
@@ -165,7 +165,7 @@ $$
 & & \text{confidence} \\
 \hline
 \end{array}
-\end{matrix}
+}
 $$
 
 
@@ -186,7 +186,7 @@ where $Y$ is a target variable and $X_1$, $X_2$, $\ldots$, $X_p$ are explanatory
 Table 13.2. **Common Names of Different Variables**
 
 $$
-\begin{matrix}
+\small{
 \begin{array}{ll}
 \hline
 \textbf{Target Variable}  &  \textbf{Explanatory Variable}\\\hline
@@ -198,7 +198,7 @@ $$
 \text{Regressand} & \text{Regressor} \\
 \hline
 \end{array}
-\end{matrix}
+}
 $$
 
 `r Gloss('Unsupervised learning methods')` work with unlabeled data, which include explanatory variables only. In other words, unsupervised learning methods do not use target variables. As a result, unsupervised learning methods are also called descriptive modeling methods.
@@ -232,7 +232,7 @@ There are two goals in data analysis [@breiman2001modeling;@shmueli2010model]: e
 
 ### Data Modeling versus Algorithmic Modeling
 
-@breiman2001modeling discussed two cultures for the use of statistical modeling to reach conclusions from data: the data modeling culture and the algorithmic modeling culture. In the data modeling culture, the data are assumed to be generated by a given stochastic data model. In the algorithmic modeling culture, the data mechanism is treated as unknown and algorithmic models are used.
+@breiman2001modeling discussed two cultures for the use of statistical modeling to reach conclusions from data: the data modeling culture and the algorithmic modeling culture. In the data modeling culture, data are assumed to be generated by a given stochastic data model. In the algorithmic modeling culture, the data mechanism is treated as unknown and algorithmic models are used.
 
 `r Gloss('Data modeling')` allows statisticians to analyze data and acquire information about the data mechanisms. However, @breiman2001modeling argued that the focus on data modeling in the statistical community has led to some side effects such as:
 
@@ -249,32 +249,32 @@ Unlike traditional data analysis, big data analysis employs additional methods a
 *  A **bloom filter** is a space-efficient probabilistic data structure that is used to determine whether an element belongs to a set. It has the advantages of high space efficiency and high query speed. A drawback of using bloom filter is that there is a certain misrecognition rate.
 *  **Hashing** is a method that transforms data into  fixed-length numerical values through a hash function. It has the advantages of rapid reading and writing. However, sound hash functions are difficult to find.
 *  **Indexing** refers to a process of partitioning data in order to speed up reading. Hashing is a special case of indexing.
-*  A **trie,**  also called digital tree, is a method to improve query efficiency by using common prefixes of character strings to reduce comparison on character strings to the greatest extent.
-*  **Parallel computing** uses multiple computing resources to complete a computation task. Parallel computing tools include MPI (Message Passing Interface), MapReduce, and Dryad.
+*  A **trie,**  also called digital tree, is a method to improve query efficiency by using common prefixes of character strings to reduce comparisons among character strings.
+*  **Parallel computing** uses multiple computing resources to complete a computation task. Parallel computing tools include Message Passing Interface (MPI), MapReduce, and Dryad.
 
-Big data analysis can be conducted in the following levels [@chen2014b]: memory-level, business intelligence (BI) level, and massive level. Memory-level analysis is conducted when the data can be loaded to the memory of a cluster of computers. Current hardware can handle hundreds of gigabytes (GB) of data in memory. BI level analysis can be conducted when the data surpass the memory level. It is common for BI level analysis products to support data over terabytes (TB). Massive level analysis is conducted when the data surpass the capabilities of products for BI level analysis. Usually Hadoop and MapReduce are used in massive level analysis. 
+Big data analysis can be conducted in the following levels [@chen2014b]: memory-level, business intelligence (BI) level, and massive level. Memory-level analysis is conducted when data can be loaded to the memory of a cluster of computers. Current hardware can handle hundreds of gigabytes (GB) of data in memory. BI level analysis can be conducted when data surpass the memory level. It is common for BI level analysis products to support data over terabytes (TB). Massive level analysis is conducted when data surpass the capabilities of products for BI level analysis. Usually Hadoop and MapReduce are used in massive level analysis. 
 
 ### Reproducible Analysis
 
-As mentioned in Section \@ref(S:process), a typical data analysis workflow includes collecting data, analyzing data, and reporting results. The data collected are saved in a database or files. The data are then analyzed by one or more `r Gloss('scripts')`, which may save some intermediate results or always work on the raw data. Finally a report is produced to describe the results, which include relevant plots, tables, and summaries of the data. The workflow may be subject to the following potential issues [@mailund2017, Chapter 2]:
+As mentioned in Section \@ref(S:process), a typical data analysis workflow includes collecting data, analyzing data, and reporting results. The data collected are saved in a database or files. Data are then analyzed by one or more `r Gloss('scripts')`, which may save some intermediate results or always work on the raw data. Finally a report is produced to describe the results, which include relevant plots, tables, and summaries of data. The workflow may be subject to the following potential issues [@mailund2017, Chapter 2]:
 
-*  The data are separated from the analysis scripts.
+*  Data are separated from the analysis scripts.
 *  The documentation of the analysis is separated from the analysis itself.
 
 If the analysis is done on the raw data with a single script, then the first issue is not a major problem. If the analysis consists of multiple scripts and a script saves intermediate results that are read by the next script, then the scripts describe a workflow of data analysis. To reproduce an analysis, the scripts have to be executed in the right order. The workflow may cause major problems if the order of the scripts is not documented or the documentation is not updated or lost. One way to address the first issue is to write the scripts so that any part of the workflow can be run automatically at any time.
 
 If the documentation of the analysis is synchronized with the analysis, then the second issue is not a major problem. However, the documentation may become useless if the scripts are changed but the documentation is not updated.
 
-`r Gloss('Literate programming')` is an approach to address the two issues mentioned above, where the documentation of a program and the code of the program are written together. To do literate programming in `R`, one way is to use the `R Markdown` and the $\texttt{knitr}$ package.
+`r Gloss('Literate programming')` is an approach to address the two issues mentioned above, where the documentation of a program and the code of the program are written together. To do literate programming in `R`, one way is to use `R Markdown` and the `knitr` package.
 
 
 ### Ethical Issues
 
-Analysts may face ethical issues and dilemmas during the data analysis process. In some fields, for example, ethical issues and dilemmas include participant consent, benefits, risk, confidentiality, and `r Gloss('data ownership')` [@miles2014]. For data analysis in actuarial science and insurance in particular, we face the following ethical matters and issues [@miles2014]:
+Analysts may face ethical issues and dilemmas during the data analysis process. In some fields, ethical issues and dilemmas include participant consent, benefits, risk, confidentiality, and `r Gloss('data ownership')` [@miles2014]. For data analysis in actuarial science and insurance in particular, we face the following ethical matters and issues [@miles2014]:
 
-*  **Worthiness of the project.** Is the project worth doing? Will the project contribute in some significant way to a domain broader than my career? If a project is only opportunistic and does not have a larger significance, then it might be pursued with less care. The result look good but not right.
+*  **Worthiness of the project.** Is the project worth doing? Will the project contribute in some significant way to a domain broader than my career? If a project is only opportunistic and does not have a larger significance, then it might be pursued with less care. The result may look good but not be right.
 *  **Competence.** Do I or the whole team have the expertise to carry out the project? Incompetence may lead to weakness in the analytics such as collecting large amounts of data poorly and drawing superficial conclusions.
-*  **Benefits, costs, and reciprocity.** Will each stakeholder gain from the project? Are the benefit and the cost equitable? A project will likely to fail if the benefit and the cost for a stakeholder do not match.
+*  **Benefits, costs, and reciprocity.** Will each stakeholder gain from the project? Are the benefits and costs equitable? A project will likely to fail if the benefit and the cost for a stakeholder do not match.
 *  **Privacy and confidentiality.** How do we make sure that the information is kept confidentially? How do we verify where are raw data and analysis results stored? How will we have access to them? These questions should be addressed and documented in explicit confidentiality agreements.
 
 
@@ -285,7 +285,7 @@ Analysts may face ethical issues and dilemmas during the data analysis process. 
 ## Data Analysis Techniques
 
 
-Techniques for data analysis are drawn from different but overlapping fields such as statistics, machine learning, pattern recognition, and data mining. Statistics is a field that addresses reliable ways of gathering data and making inferences based on them [@bandyo2011;@bluman2012]. The term machine learning was coined by Samuel in 1959 [@samuel1959ml]. Originally, `r Gloss('machine learning')` refers to the field of study where computers have the ability to learn without being explicitly programmed. Nowadays, machine learning has evolved to the broad field of study where computational methods use experience (i.e., the past information available for analysis) to improve performance or to make accurate predictions [@bishop2007;@clarke2009;@mohri2012;@kubat2017]. There are four types of machine learning algorithms (see [Table 13.3]) depending on the type of the data and the type of the learning tasks.
+Techniques for data analysis are drawn from different but overlapping fields such as statistics, machine learning, pattern recognition, and data mining. Statistics is a field that addresses reliable ways of gathering data and making inferences, @bandyo2011, @bluman2012. The term `r Gloss('machine learning')`  was coined by Samuel in 1959 [@samuel1959ml]. Originally, machine learning referred to the field of study where computers have the ability to learn without being explicitly programmed. Nowadays, machine learning has evolved to the broad field of study where computational methods use experience (i.e., the past information available for analysis) to improve performance or to make accurate predictions [@bishop2007;@clarke2009;@mohri2012;@kubat2017]. There are four types of machine learning algorithms (see [Table 13.3]) depending on the type of data and the type of the learning tasks.
 
 [Table 13.3]:\#tab:13.3
 
@@ -294,14 +294,14 @@ Techniques for data analysis are drawn from different but overlapping fields suc
 Table 13.3. **Types of Machine Learning Algorithms**
 
 $$
-\begin{matrix}
+\small{
 \begin{array}{rll} \hline
 & \textbf{Supervised} & \textbf{Unsupervised} \\\hline
 \textbf{Discrete Data} & \text{Classification} & \text{Clustering} \\
 \textbf{Continuous Data} & \text{Regression} & \text{Dimension reduction} \\
 \hline
 \end{array}
-\end{matrix}
+}
 $$
 
 Originating in engineering, `r Gloss('pattern recognition')` is a field that is closely related to machine learning, which grew out of computer science. In fact, pattern recognition and machine learning can be considered to be two facets of the same field [@bishop2007]. `r Gloss('Data mining')` is a field that concerns collecting, cleaning, processing, analyzing, and gaining useful insights from data [@aggarwal2015].
@@ -322,7 +322,7 @@ In one sense (as a "mass noun"), "descriptive statistics" is an area of statisti
 Table 13.4. **Commonly Used Descriptive Statistics**
 
 $$
-\begin{matrix}
+\small{
 \begin{array}{ll} \hline
 & \textbf{Descriptive Statistics} \\\hline
 \text{Measures of central tendency} & \text{Mean, median, mode, midrange}\\
@@ -330,10 +330,10 @@ $$
 \text{Measures of position} & \text{Quantile} \\
 \hline
 \end{array}
-\end{matrix}
+}
 $$
 
-[Table 13.4] lists some commonly used descriptive statistics. In R, we can use the function $\texttt{summary}$ to calculate some of the descriptive statistics. For numeric data, we can visualize the descriptive statistics using a boxplot.
+[Table 13.4] lists some commonly used descriptive statistics. In `R`, we can use the function `summary` to calculate some of the descriptive statistics. For numeric data, we can visualize the descriptive statistics using a boxplot.
 
 In addition to these quantitative descriptive statistics, we can also qualitatively describe shapes of the distributions [@bluman2012]. For example, we can say that a distribution is positively skewed, symmetric, or negatively skewed. To visualize the distribution of a variable, we can draw a histogram.
 
@@ -466,7 +466,7 @@ In terms of predictive accuracy, decision trees generally do not perform to the 
 
 <!-- % 7.2.4 - 7.2.7 fit distribution, linear model, survival analysis, glm -->
 <!-- % 7.3.4 nn, trees -->
-`R` is an open-source software for statistical computing and graphics. The `R` software can be downloaded from the `R` project website at \url{https://www.r-project.org/}. In this section, we give some `R` function for data analysis, especially the data analysis tasks mentioned in previous sections. 
+`R` is an open-source software for statistical computing and graphics. The `R` software can be downloaded from the `R` project website at [https://www.r-project.org/](https://www.r-project.org/). In this section, we give some `R` function for data analysis, especially the data analysis tasks mentioned in previous sections. 
 
 [Table 13.5]:\#tab:13.5
 
@@ -475,9 +475,9 @@ In terms of predictive accuracy, decision trees generally do not perform to the 
 Table 13.5. **Some `R` Functions for Data Analysis**
 
 $$
-\begin{matrix}
+\small{
 \begin{array}{lll} \hline
-\text{Data Analysis Task} & \text{R package} & \text{R Function} \\\hline
+\text{Data Analysis Task} & \text{R Package} & \text{R Function} \\\hline
 \text{Descriptive Statistics} & \texttt{base} & \texttt{summary}\\
 \text{Principal Component Analysis} & \texttt{stats} & \texttt{prcomp} \\
 \text{Data Clustering} & \texttt{stats} & \texttt{kmeans}, \texttt{hclust} \\
@@ -488,7 +488,7 @@ $$
 \text{Survival Analysis} & \texttt{survival} & \texttt{survfit} \\
 \hline
 \end{array}
-\end{matrix}
+}
 $$
 
 [Table 13.5] lists a few `R` functions for different data analysis tasks. Readers can go to the `R` documentation to learn how to use these functions. There are also other `R` packages that do similar things. However, the functions listed in this table provide good starting points for readers to conduct data analysis in `R`. For analyzing large datasets in `R` in an efficient way, readers are referred to @daroczi2015. 

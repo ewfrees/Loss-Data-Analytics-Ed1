@@ -13,15 +13,21 @@ This chapter introduces traditional actuarial pricing principles that provide a 
 
 Table 7.1. **Common Premium Principles**
 
-  Description 		        Definition ($H(X)$)
-  ------------------      ---------------------------------------------
-  Net (pure) premium	    ${\rm E}[X]$ 
-  Expected value		      $(1+\alpha){\rm E}[X]$ 
-  Standard deviation	    ${\rm E}[X]+\alpha ~SD(X)$ 
-  Variance		            ${\rm E}[X]+\alpha ~{\rm Var}(X)$ 
-  Zero utility		        solution of $u(w) = {\rm E} [u(w + P - X)]$
-  Exponential		          $\frac{1}{\alpha} \log {\rm E} [e^{\alpha X}]$
-  ------------------      ---------------------------------------------
+$$
+\small{
+\begin{array}{ll}
+\text{Description } & \text{Definition } (H(X)) \\\hline
+\text{Net (pure) premium} &  {\rm E}[X] \\
+\text{Expected value} & (1+\alpha){\rm E}[X]\\
+\text{Standard deviation}  & {\rm E}[X]+\alpha ~SD(X)\\
+\text{Variance} & {\rm E}[X]+\alpha ~{\rm Var}(X)\\
+\text{Zero utility}  & \text{solution of }u(w) = {\rm E} [u(w + P - X)]\\
+\text{Exponential}  & \frac{1}{\alpha} \log {\rm E} [e^{\alpha X}]\\
+\hline
+\end{array}
+}
+$$
+  
   
   
 A premium principle is similar to a `r Gloss('risk measure')` that is introduced in Section \@ref(S:RiskMeasure). Mathematically, both are rules that map the loss `r Gloss('rv')` of interest to a numerical value. From a practical viewpoint, a premium principle provides a guide as to how much an insurer will charge for accepting a risk $X$. In contrast, a risk measure quantifies the level of uncertainty, or riskiness, that an insurer can use to decide on a capital level to be assured of remaining solvent.
@@ -59,14 +65,19 @@ Properties of premium principles help guide the selection of a premium principle
 
 Table 7.2. **Common Properties of Premium Principles**
 
-  Description 		      Definition 
-  -------------------   ----------------------------------------------------------
-  Nonnegative loading 	$H(X) \ge {\rm E}[X]$
-  Additivity 		        $H(X_1+X_2) = H(X_1) + H(X_2)$, for independent $X_1, X_2$
-  Scale invariance 	    $H(cX) = c H(X)$, for $c \ge 0$
-  Consistency 		      $H(c+X) = c + H(X)$
-  No rip-off 		        $H(X) \le \max \{X\}$
-  -------------------   ----------------------------------------------------------
+$$
+\small{
+\begin{array}{ll}
+\text{Description } & \text{Definition }\\\hline
+\text{Nonnegative loading} & H(X) \ge {\rm E}[X] \\
+\text{Additivity} & H(X_1+X_2) = H(X_1) + H(X_2), \text{ for independent }X_1, X_2  \\
+\text{Scale invariance}  & H(cX) = c H(X), \text{ for }c \ge 0 \\
+\text{Consistency} & H(c+X) = c + H(X)\\
+\text{No rip-off }  & H(X) \le \max \{X\}\\
+\hline
+\end{array}
+}
+$$
 
 This is simply a subset of the many properties quoted in the actuarial literature. For example, the review paper of @young2014premium lists 15 properties. See also the properties described as *coherent axioms* that we introduce for risk measures in Section \@ref(S:RiskMeasure).
 
