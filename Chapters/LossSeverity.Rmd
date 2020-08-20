@@ -99,7 +99,7 @@ Section \@ref(S:MS:QuantileEstimator) will extend the definition of quantiles to
 
 ### Moment Generating Function
 
-The`r Gloss('moment generating function (mgf)')`, denoted by $M_{X}(t)$ uniquely characterizes the distribution of $X$. While it is possible for two different distributions to have the same moments and yet still differ, this is not the case with the moment generating function. That is, if two random variables have the same moment generating function, then they have the same distribution. The moment generating function is given by
+The `r Gloss('moment generating function (mgf)')`, denoted by $M_{X}(t)$ uniquely characterizes the distribution of $X$. While it is possible for two different distributions to have the same moments and yet still differ, this is not the case with the moment generating function. That is, if two random variables have the same moment generating function, then they have the same distribution. The moment generating function is given by
 $$
 M_{X}(t) = \mathrm{E}\left( e^{tX} \right) = \int_{0}^{\infty}{e^{\text{tx}}f_{X}\left( x \right) dx }
 $$
@@ -174,7 +174,7 @@ $$
 P_{X}(z) = \mathrm{E}\left( z^{X} \right) = M_{X}\left( \log z \right) . 
 $$
 
-As introduced in Section \@ref(S:generating-functions), the probability generating function is more useful for discrete *rv*s. 
+As introduced in Section \@ref(S:generating-functions), the probability generating function is more useful for discrete random variables. 
 
 
 ```{r child = './Quizzes/Quiz31.html', eval = QUIZ}
@@ -1169,7 +1169,7 @@ Y^{L} = \left\{ \begin{matrix}
 \alpha\left( u - d \right) & X > u. \\
 \end{matrix} \right.\ 
 $$
-The policy limit (the maximum amount paid by the insurer) in this case is $\alpha\left( u - d \right)$, while $u$ is the maximum covered loss.  
+The maximum amount paid by the insurer in this case is $\alpha\left( u - d \right)$, while $u$ is the maximum covered loss.  
 
 We have seen in Section \@ref(S:PolicyLimits) that when a loss is subject to both a deductible $d$ and a limit $u$ the per-loss variable $Y^L$ can be expressed as $Y^L=\left(X\land u\right)-\left(X\land d\right)$. With coinsurance, this becomes $Y^L$ can be expressed as $Y^L=\alpha\left[(X\land u)-(X\land d)\right]$.
 

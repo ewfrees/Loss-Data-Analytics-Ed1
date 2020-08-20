@@ -64,7 +64,7 @@ Dividing by $n-1$ instead of $n$ matters little when you have a large sample siz
 
 We have seen how to compute nonparametric estimators of the $k$th moment $\mathrm{E~} [X^k]$. In the same way, for any known function $\mathrm{g}(\cdot)$, we can estimate $\mathrm{E~} [\mathrm{g}(X)]$ using $n^{-1}\sum_{i=1}^n \mathrm{g}(X_i)$. 
 
-Now consider the function $\mathrm{g}(X) = I(X \le x)$ for a fixed $x$. Here, the notation $I(\cdot)$ is the `r Gloss('indicator')` function; it returns 1 if the event $(\cdot)$ is true and 0 otherwise. For this choice of $\mathrm{g}(\cdot)$, the expected value is $\mathrm{E~} [I(X \le x)] = \Pr(X \le x) = F(x)$, the distribution function evaluated at $x$. Using the `r Gloss('analog principle')`, we define the nonparametric estimator of the distribution function
+Now consider the function $\mathrm{g}(X) = I(X \le x)$ for a fixed $x$. Here, the notation $I(\cdot)$ is the `r Gloss('indicator')` function; it returns 1 if the event $(\cdot)$ is true and 0 otherwise. Note that now the random variable $\mathrm{g}(X)$ has Bernoulli distribution (a binomial distribution with $n=1$). We can use this distribution to readily calculate quantities such as the mean and the variance. For example, for this choice of $\mathrm{g}(\cdot)$, the expected value is $\mathrm{E~} [I(X \le x)] = \Pr(X \le x) = F(x)$, the distribution function evaluated at $x$. Using the `r Gloss('analog principle')`, we define the nonparametric estimator of the distribution function
 
 $$
 \begin{aligned}
@@ -259,7 +259,7 @@ f_n(x) = \frac{1}{2nb} \sum_{i=1}^n I(x-b < X_i \le x + b)
 
 ***
 
-The idea is that the estimator $f_n(x)$ in equation \@ref(eq:KDF) is the average over $n$ *iid* realizations of a random variable with mean
+**Snippet of Theory.** The idea is that the estimator $f_n(x)$ in equation \@ref(eq:KDF) is the average over $n$ *iid* realizations of a random variable with mean
 
 $$
 \begin{aligned}

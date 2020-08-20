@@ -370,7 +370,11 @@ The above relationships are all of the form
 
 this raises the question if there are any other distributions which satisfy this seemingly general recurrence relation. Note that the ratio on the left, the ratio of two probabilities, is non-negative.
 
-To begin with, let $a<0$. In this case as $k\rightarrow \infty$, $(a+b/k)\rightarrow a<0$. It follows that if $a<0$ then $b$ should satisfy $b=-ka$, for some $k\geq 1$. Any such pair $(a,b)$ can be written as
+`r HideProofTheory('ab0.1',"Show A Snippet of Theory")`
+
+***
+
+**Snippet of Theory.** To begin with, let $a<0$. In this case as $k\rightarrow \infty$, $(a+b/k)\rightarrow a<0$. It follows that if $a<0$ then $b$ should satisfy $b=-ka$, for some $k\geq 1$. Any such pair $(a,b)$ can be written as
 \[
 \left(\frac{-q}{1-q},\frac{(m+1)q}{1-q}\right), \quad q\in(0,1), m\geq 1;
 \]
@@ -383,6 +387,11 @@ In the case of $a>0$, again by non-negativity of the ratio $p_k/p_{k-1}$, we hav
 p_k = \binom{k+r-1}{k} p_0 a^k, \quad k=1,2,\ldots. 
 \]
 The above series converges for $a<1$ when $r>0$, with the sum given by $p_0 \cdot ((1-a)^{(-r)}-1)$. Hence, equating the latter to $1-p_0$ we get $p_0=(1-a)^{(r)}$. So in this case the pair $(a,b)$ is of the form $(a,(r-1)a)$, for $r>0$ and $0<a<1$; since an equivalent parametrization is $(\beta/(1+\beta),(r-1)\beta/(1+\beta))$, for $r>0$ and $\beta>0$, we see from above that such distributions are negative binomial distributions.
+
+***
+
+</div>
+
 
 From the above development we see that not only does the recurrence \@ref(eq:ab0) tie these three distributions together, but also it characterizes them. For this reason these three distributions are collectively referred to in the actuarial literature as `r Gloss('(a,b,0) class')` of distributions, with $0$ referring to the starting point of the recurrence. Note that the value of $p_0$ is implied by $(a,b)$ since the probabilities have to sum to one. Of course, \@ref(eq:ab0) as a recurrence relation for $p_k$  makes  the computation of the *pmf* efficient by removing redundancies. Later, we will see that it does so even in the case of compound distributions with the frequency distribution belonging to the $(a,b,0)$ class - this fact is the more important motivating reason to study these three distributions from this viewpoint.
 
@@ -581,7 +590,7 @@ The above discussion suggests the following simple algorithm:
 
 We note that if the underlying distribution is the binomial distribution with parameters $(m,q)$ (with $q>0$) then $\hat{m}_{MLE}$ equals $m$ for large sample sizes. Also, $\hat{q}_{MLE}$ will have an asymptotically normal distribution and converge with probability one to $q$.  
 
-(ref:MLEm) **Plot of $L(m,\\overline{x}/m)$ for a Binomial Distribution**
+(ref:MLEm) **Plot of $L(m,\bar{x}/m)$ for a Binomial Distribution**
 
 ```{r MLEm, echo=FALSE, fig.cap='(ref:MLEm)', out.width='80%', fig.align='center'}
 knitr::include_graphics("Figures/figure2.2.png")
@@ -609,9 +618,14 @@ l(r,\overline{x}/r)=\sum_{i=1}^n \log\binom{r+x_i-1}{x_i} -n(r+\overline{x}) \lo
 \]
 with respect to $r$, with the maximizing $r$ being its *MLE* and $\hat{\beta}_{MLE}=\overline{x}/\hat{r}_{MLE}$. In @levin1977 it is shown that if the sample variance is greater than the sample mean then there exists a unique $r>0$ that maximizes $l(r,\overline{x}/r)$ and hence a unique 
 *MLE* for $r$ and $\beta$. Also, they show that if $\hat{\sigma}^2\leq \overline{x}$, then the negative binomial likelihood will be dominated by the Poisson likelihood with $\hat{\lambda}=\overline{x}$. In other words, a Poisson distribution offers a better fit to the data. The guarantee in the case of $\hat{\sigma}^2>\hat{\mu}$ permits us to use some algorithm to maximize $l(r,\overline{x}/r)$. Towards an alternate method of computing the likelihood, we note that 
-\[
-l(r,\overline{x}/r)=\sum_{i=1}^n \sum_{j=1}^{x_i}\log(r-1+j) - \sum_{i=1}^n\log(x_i!) - n(r+\overline{x}) \log(r+\overline{x}) + nr\log(r) + n\overline{x}\log(\overline{x}),
-\]
+
+$$
+\begin{array}{ll}
+l(r,\overline{x}/r)&=\sum_{i=1}^n \sum_{j=1}^{x_i}\log(r-1+j) - \sum_{i=1}^n\log(x_i!) \\
+& \ \ \ - n(r+\overline{x}) \log(r+\overline{x}) + nr\log(r) + n\overline{x}\log(\overline{x}),
+\end{array}
+$$
+
 which yields
 \[
 \left(\frac{1}{n}\right)\frac{\delta}{\delta r}l(r,\overline{x}/r)=\left(\frac{1}{n}\right)\sum_{i=1}^n \sum_{j=1}^{x_i}\frac{1}{r-1+j} - \log(r+\overline{x}) + \log(r).
@@ -968,15 +982,17 @@ In $1993$, a portfolio of $n=7,483$ automobile insurance policies from a major S
 
 Table 2.4. **Singaporean Automobile Accident Data**
 
-$$\begin{matrix}
-\begin{array}{c|c|c|c|c|c|c}
+$$
+\small{
+\begin{array}{l|c|c|c|c|c|c}
 \hline
 \text{Count }(k) & 0 & 1 & 2 & 3 & 4 & \text{Total}\\
 \hline
 \text{No. of Policies with }k\text{ accidents }(m_k) & 6,996 & 455 & 28 & 4 & 0 & 7,483\\
 \hline
 \end{array}
-\end{matrix}$$
+}
+$$
 
 
 

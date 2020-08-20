@@ -1114,11 +1114,14 @@ The simulated losses are slightly more right-skewed than the normal distribution
 
 This section focuses on an individual risk model for claim counts. Recall the individual risk model involves a fixed $n$ number of contracts and independent loss random variables $X_i$. Consider the number of claims from a group of $n$ policies:
 $$S=X_1+\cdots+X_n ,$$
-where we assume $X_i$ are *iid* representing the number of claims from policy $i$. In this case, the exposure for the portfolio is $n$, using policy as exposure base. The *pgf* of $S$ is
-$$\begin{aligned}
+where we assume $X_i$ are *iid* representing the number of claims from policy $i$. In this case, the exposure for the portfolio is $n$, using policy as exposure base. In Section \@ref(S:ExposureToRisk) we will introduce other exposure bases. The *pgf* of $S$ is
+
+$$
+\begin{aligned}
 P_{S}(z)&={\rm E}(z^S)={\rm E}\left(z^{\sum_{i=1}^nX_i}\right)\\
 &=\prod_{i=1}^n{\rm E}(z^{X_i})=[P_X(z)]^n .
-\end{aligned}$$
+\end{aligned}
+$$
 
 **Special Case: Poisson.** If $X_i\sim Poi(\lambda)$, its *pgf* is $P_X(z)=e^{\lambda(z-1)}$. Then the *pgf* of $S$ is
   $$P_{S}(z)=[e^{\lambda(z-1)}]^n=e^{n\lambda(z-1)}.$$
@@ -1357,10 +1360,15 @@ and the amount of payment on a `r Gloss('per-payment basis')` as
 \right..
 \end{eqnarray*}
 In the above, $r$, $u$, and $\alpha$ represent the inflation rate, policy limit, and coinsurance, respectively. Hence, aggregate costs (payment amounts) can be expressed either on a per loss or per payment basis:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 S &= X^L_1 + \cdots + X^L_{N^L} \\
 &=X^P_1 + \cdots + X^P_{N^P} ~.
-\end{aligned}$$
+\end{aligned}
+$$
+
+(Recall that when we introduced the per-loss and per-payment bases in Section \@ref(S:CoverageModifications), we used another letter $Y$ to distinguish losses from insurance payments, or claims. At this point in our development, we use the letter $X$ to reduce notation complexity.)
 
 The fundamentals regarding collective risk models are ready to apply. For instance, we have:
 $$\begin{aligned}
