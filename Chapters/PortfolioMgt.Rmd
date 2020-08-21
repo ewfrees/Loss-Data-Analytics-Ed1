@@ -251,10 +251,10 @@ Several risk measures have been developed in the literature. Unfortunately, ther
 
 Consider a risk measure $H(\cdot)$. It is said to be a `r Gloss('coherent risk measure')` for two random variables $X$ and $Y$ if the following axioms are satisfied.  
 
-* **Axiom 1.** *Subadditivity:* $H(X+Y)\leq H(X)+H(Y)$.  The economic implication of this axiom is that diversification benefits exist if different risks are combined.  
-* **Axiom 2.** *Monotonicity:* if $\Pr[X\leq Y]=1$, then $H(X)\leq H(Y)$. Recall that $X$ and $Y$ are random variables representing losses, the underlying economic implication is that higher losses essentially leads to a higher level of risk.    
-* **Axiom 3.** *Positive homogeneity:* $H(cX)=cH(X)$ for any positive constant $c$.  A potential economic implication about this axiom is that risk measure should be independent of the monetary units in which the risk is measured.  For example, let $c$ be the currency exchange rate between the US and Canadian dollars, then the risk of random losses measured in terms of US dollars (i.e., $X$) and Canadian dollars (i.e., $cX$) should be different only up to the exchange rate $c$ (i.e., $cH(x)=H(cX)$).  
-* **Axiom 4.** *Translation invariance:* $H(X+c)=H(X)+c$ for any positive constant $c$.  If the constant $c$ is interpreted as risk-free cash and $X$ is an insurance portfolio, then adding cash to a portfolio only increases the portfolio risk by the amount of cash.
+*  **Axiom 1.** *Subadditivity:* $H(X+Y)\leq H(X)+H(Y)$.  The economic implication of this axiom is that diversification benefits exist if different risks are combined.  
+*  **Axiom 2.** *Monotonicity:* if $\Pr[X\leq Y]=1$, then $H(X)\leq H(Y)$. Recall that $X$ and $Y$ are random variables representing losses, the underlying economic implication is that higher losses essentially leads to a higher level of risk.    
+*  **Axiom 3.** *Positive homogeneity:* $H(cX)=cH(X)$ for any positive constant $c$.  A potential economic implication about this axiom is that risk measure should be independent of the monetary units in which the risk is measured.  For example, let $c$ be the currency exchange rate between the US and Canadian dollars, then the risk of random losses measured in terms of US dollars (i.e., $X$) and Canadian dollars (i.e., $cX$) should be different only up to the exchange rate $c$ (i.e., $cH(x)=H(cX)$).  
+*  **Axiom 4.** *Translation invariance:* $H(X+c)=H(X)+c$ for any positive constant $c$.  If the constant $c$ is interpreted as risk-free cash and $X$ is an insurance portfolio, then adding cash to a portfolio only increases the portfolio risk by the amount of cash.
 
 Verifying the coherent properties for some risk measures can be quite straightforward, but it can be very challenging sometimes.  For example, it is a simple matter to check that the mean is a coherent risk measure.
 

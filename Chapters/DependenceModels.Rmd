@@ -62,8 +62,9 @@ $$
 
 In data analysis, it is important to understand what type of variable you are working with. For example, consider a pair of random variables ${\tt (Coverage, Claim)}$ from the *LGPIF* data introduced in Section \@ref(S:LGPIF) as displayed in Figure \@ref(fig:IntroPlot) below. We would like to know whether the distribution of ${\tt Coverage}$ depends on the distribution of ${\tt Claim}$ or whether they are statistically independent. We would also want to know how the ${\tt Claim}$ distribution depends on the ${\tt EntityType}$ variable. Because the  ${\tt EntityType}$ variable belongs to a different class of variables, modeling the dependence between ${\tt Claim}$ and ${\tt Coverage}$ may require a different technique from that of ${\tt Claim}$ and ${\tt EntityType}$. 
 
+(ref:IntroPlot) **Scatter Plot of *(Coverage,Claim)* from LGPIF Data**
 
-```{r IntroPlot, fig.cap='Scatter plot of *(Coverage,Claim)* from LGPIF data',echo=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
+```{r IntroPlot, fig.cap='(ref:IntroPlot)',echo=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 library(ggplot2)
 Insample <- read.csv("Data/Insample.csv", header=T, na.strings=c("."), stringsAsFactors=FALSE)
 Claim <- Insample$y
@@ -758,7 +759,9 @@ We start with a sample ($n = 1500$) from the whole data. We consider first two v
 
 To visualize the relationship between losses and expenses, the scatterplots in Figure \@ref(fig:Scatter) are created on dollar and log dollar scales. It is difficult to see any relationship between the two variables in the left-hand panel. Their dependence is more evident when viewed on the log scale, as in the right-hand panel.
 
-```{r  Scatter, message=FALSE, echo=FALSE, out.width='80%', fig.align='center',fig.cap='Scatter plot of LOSS and ALAE'}
+(ref:Scatter) **Scatter Plot of LOSS and ALAE**
+
+```{r  Scatter, message=FALSE, echo=FALSE, out.width='80%', fig.align='center',fig.cap='(ref:Scatter)'}
 library(copula)
 data(loss) # loss data from copula library
 LOSS <- loss$loss
@@ -874,14 +877,18 @@ u1 = 1 - (1 + (ALAE/theta.ALAE))^(-alpha.ALAE) # or u1=pparetoII(ALAE, location=
 
 After applying the probability integral transformation to  the ${\tt ALAE}$ variable, we plot the histogram of *Transformed* ${\tt ALAE}$ in Figure \@ref(fig:Hist). This plot appears reasonably close to what we expect to see with a uniform distribution, suggesting that the Pareto distribution is a reasonable specification.
 
-```{r Hist, message=FALSE, warning=FALSE, comment=FALSE, out.width='60%', echo=FALSE, fig.align='center', fig.cap='Histogram of Transformed ALAE'}
+(ref:Hist) **Histogram of Transformed ALAE**
+
+```{r Hist, message=FALSE, warning=FALSE, comment=FALSE, out.width='60%', echo=FALSE, fig.align='center', fig.cap='(ref:Hist)'}
 hist(u1, main="", xlab="" )
 ```
 
 In the same way, the variable ${\tt LOSS}$ is also transformed to the variable $u_2$, which follows a uniform distribution on $[0,1]$. The left-hand panel of Figure \@ref(fig:Hist2) shows a plot the histogram of *Transformed* ${\tt ALAE}$, again reinforcing the Pareto distribution specification. 
 For another way of looking at the data, the variable $u_2$ can be transformed to a *normal score* with the quantile function of standard normal distribution. As we see in Figure \@ref(fig:Hist2), normal scores of the variable ${\tt LOSS}$ are approximately marginally standard normal. This figure is helpful because analysts are used to looking for patterns of approximate normality (which seems to be evident in the figure). The logic is that, if the Pareto distribution is correctly specified, then transformed losses $u_2$ should be approximately normal, and the normal scores $\Phi^{-1}(u_2)$, should be approximately normal. (Here, $\Phi$ is the cumulative standard normal distribution function.)
 
-```{r Hist2, message=FALSE, warning=FALSE, comment="", echo=FALSE, out.width='80%', fig.align='center',fig.cap='Histogram of Transformed Loss. The left-hand panel shows the distribution of probability integral transformed losses. The right-hand panel shows the distribution for the corresponding normal scores.'}
+(ref:Hist2) **Histogram of Transformed Loss.** The left-hand panel shows the distribution of probability integral transformed losses. The right-hand panel shows the distribution for the corresponding normal scores.
+
+```{r Hist2, message=FALSE, warning=FALSE, comment="", echo=FALSE, out.width='80%', fig.align='center',fig.cap='(ref:Hist2)'}
 theta.LOSS = Coef(fit.LOSS)[1]
 alpha.LOSS = Coef(fit.LOSS)[2]
 u2 = 1 - (1 + (LOSS/theta.LOSS))^(-alpha.LOSS)
@@ -901,7 +908,9 @@ hist(qnorm(u2), main="", xlab="")
 
 Before jointly modeling losses and expenses, we draw the scatterplot of transformed variables $(u_1, u_2)$ and the scatterplot of normal scores in Figure \@ref(fig:Scatter2). The left-hand panel is a plot of $u_1$ versus $u_2$, where $u_1 = \hat{F}_1(ALAE)$ and $u_2=\hat{F}_2(LOSS)$). Then we transform each one using an inverse standard normal distribution function, $\Phi^{-1}(\cdot)$, or `qnorm` in `R` to get normal scores.  As in Figure \@ref(fig:Scatter), it is difficult to see patterns in the left-hand panel. However, with rescaling, patterns are evident in the right-hand panel. To learn more details about normal scores and their applications in copula modeling, see @joe2014dependence. 
 
-```{r Scatter2, message=FALSE, warning=FALSE, comment="", echo=FALSE, out.width='80%', fig.align='center', fig.cap='Left: Scatter plot for transformed variables.  Right:Scatter plot for normal scores'}
+(ref:Scatter2) Left: Scatter plot for transformed variables.  Right:Scatter plot for normal scores
+
+```{r Scatter2, message=FALSE, warning=FALSE, comment="", echo=FALSE, out.width='80%', fig.align='center', fig.cap='(ref:Scatter2)'}
 par(mfrow = c(1, 2))
 plot(u1, u2, cex = 0.5, xlim = c(-0.1,1.1), ylim = c(-0.1,1.1),
      xlab = "Transformed ALAE", ylab = "Transformed LOSS")
@@ -960,7 +969,9 @@ The maximized loglikelihood is 172.6
 
 To visualize the fitted Frank's copula, the distribution function and density function perspective plots are drawn in Figure \@ref(fig:FrankCop).
 
-```{r FrankCop, message=FALSE, warning=FALSE, comment="", echo=FALSE, fig.align='center', fig.cap='Left: Plot for distribution function for Franks Copula. Right:Plot for density function for Franks Copula '}
+(ref:FrankCop) Left: Plot for distribution function for Franks Copula. Right:Plot for density function for Franks Copula
+
+```{r FrankCop, message=FALSE, warning=FALSE, comment="", echo=FALSE, fig.align='center', fig.cap='(ref:FrankCop)'}
 #par(mfrow=c(1,2))
 par(mar=c(3.2,3,.2,.2),mfrow=c(1,2))
 persp(frank.cop, pCopula, theta=50, zlab="C(u,v)", xlab ="u", ylab="v", cex.lab=0.9, cex.axis = 0.5)
@@ -1014,8 +1025,9 @@ $$
 
 Here, we use $\Phi$ and $\phi$ to denote the standard normal distribution and density functions. Unlike the usual probability density function $\phi_N$, the copula density function has its domain on the hyper-cube $[0,1]^p$. For contrast, Figure \@ref(fig:NormalPDFCopula) compares these two density functions.
 
+(ref:NormalPDFCopula) **Bivariate Normal Probability Density Function Plots.** The left-hand panel is a traditional bivariate normal probability density function. The right-hand plot is a plot of the copula density for the normal distribution.
 
-```{r NormalPDFCopula, message=FALSE, warning=FALSE, comment="", echo=FALSE, out.width='100%', fig.align='center', fig.cap='Bivariate Normal Probability Density Function Plots. The left-hand panel is a traditional bivariate normal probability density function. The right-hand plot is a plot of the copula density for the normal distribution.'}
+```{r NormalPDFCopula, message=FALSE, warning=FALSE, comment="", echo=FALSE, out.width='100%', fig.align='center', fig.cap='(ref:NormalPDFCopula)'}
 par(mfrow=c(1, 2))
 #  BIVARIATE NORMAL DF WITH RHO = 0.25
 norm.pdf <- mvdc(normalCopula(0.25), c("norm", "norm"),
@@ -1160,7 +1172,9 @@ See, for example, @nelsen1997introduction for additional discussion.
 
 To see how these bounds relate to the concept of dependence, consider the case of $p=2$. As a benchmark, first note that the product copula is $C(u_1,u_2)=u_1 \cdot u_2$ is the result of assuming independence between random variables. Now, from the above discussion, we see that the lower bound is achieved when the two random variables are perfectly negatively related ($U_2=1-U_1$). Further, it is clear that the upper bound is achieved when they are perfectly positively related ($U_2=U_1$). To emphasize this, the `r Gloss('Frechet-Hoeffding bounds')` for two random variables appear in Figure \@ref(fig:Bounds).
 
-```{r Bounds, message=FALSE, warning=FALSE, comment="", out.width='60%', echo=FALSE, fig.align='center', fig.cap='Perfect Positive and Perfect negative dependence plots'}
+(ref:Bounds) **Perfect Positive and Perfect Negative Dependence Plots**
+
+```{r Bounds, message=FALSE, warning=FALSE, comment="", out.width='60%', echo=FALSE, fig.align='center', fig.cap='(ref:Bounds)'}
 set.seed(1980)
 U <- runif(100)
 par(mfrow=c(1, 2))
@@ -1290,7 +1304,9 @@ jointtail4 <- TailFunction(Tailcop4)
 
 </div> 
 
-```{r DepTails, message=FALSE, warning=FALSE, comment="", out.width='80%', echo=FALSE, fig.align='center',fig.cap='Tail dependence plots'}
+(ref:DepTails) **Tail Dependence Plots**
+
+```{r DepTails, message=FALSE, warning=FALSE, comment="", out.width='80%', echo=FALSE, fig.align='center',fig.cap='(ref:DepTails)'}
 plot(U,jointtail1, cex=.2, xlim=c(0,1),ylab="Tail Dependence", ylim=c(0,1))
 lines(U,jointtail2, type="p",lty=1, cex=.2)
 lines(U,jointtail3, type="p",lty=1, cex=.2)

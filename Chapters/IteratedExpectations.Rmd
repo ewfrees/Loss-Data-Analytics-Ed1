@@ -180,9 +180,10 @@ Consider two random variables $X$ and $Y$, and $h(X,Y)$, a random variable depen
 
 Assuming all the expectations exist and are finite, the **Law of Iterated Expectations** states that
 
-$$
+\begin{equation}
 \mathrm{E}[h(X,Y)]= \mathrm{E} \left\{ \mathrm{E} \left[ h(X,Y) | X \right] \right \},
-$$
+(\#eq:LawIterExp)
+\end{equation}
 
 where the first (inside) expectation is taken with respect to the random variable $Y$ and the second (outside) expectation is taken with respect to $X$.
 
@@ -217,16 +218,17 @@ The Law of Iterated Expectations for the continuous and hybrid cases can be prov
 
 Assuming that all the variances exist and are finite, the **Law of Total Variance** states that
 
-$$
+\begin{equation}
 \mathrm{Var}[h(X,Y)]= \mathrm{E} \left\{ \mathrm{Var} \left[h(X,Y) | X \right] \right \}
     +\mathrm{Var} \left\{ \mathrm{E} \left[ h(X,Y) | X \right] \right \},
-$$
+(\#eq:LawTotVar)
+\end{equation}
 
 where the first (inside) expectation/variance is taken with respect to the random variable $Y$ and the second (outside) expectation/variance is taken with respect to $X$. Thus, the unconditional variance equals to the expectation of the conditional variance plus the variance of the conditional expectation.
 
 *** 
 
-`r HideProofTheory('LTV.1',"Show Technical Detail")`
+`r HideProofTheory('LTV.1',"Show Verification of the Law of Total Variance")`
 
 In order to verify this rule, first note that we can calculate a conditional variance as 
 
@@ -280,10 +282,10 @@ $$
 
 Let $T$ be the indicator whether (s)he is a good driver, with $T=1$ representing that the driver is a good driver with $\Pr[T=1]=\alpha$ and $T=2$ representing that the driver is a bad driver with $\Pr[T=2]=1-\alpha$.
 
-From the Law of Iterated Expectations, we can obtain the expected number of claims as $$
+From equation \@ref(eq:LawIterExp), we can obtain the expected number of claims as $$
     \mathrm{E}[N]= \mathrm{E} \left\{ \mathrm{E} \left[ N | T \right] \right \}= \mathrm{E}[N_1] \times \alpha +  \mathrm{E}[N_2] \times (1-\alpha).$$
 
-From the Law of Total Variance, we can obtain the variance of $N$ as
+From equation \@ref(eq:LawTotVar), we can obtain the variance of $N$ as
 
 $$
 \mathrm{Var}[N]= \mathrm{E} \left\{ \mathrm{Var} \left[ N | T \right] \right \}
@@ -318,7 +320,7 @@ $$
     
 ## Conjugate Distributions {#S:AppConjugateDistributions}
 
-As described in Section \@ref(S:IntroBayes), for conjugate distributions the posterior and the prior come from the same family of distributions. In insurance applications, this broadly occurs in a "family of distribution familes" known as the linear exponential family which we introduce first.
+As described in Section \@ref(S:IntroBayes), for conjugate distributions the posterior and the prior come from the same family of distributions. In insurance applications, this broadly occurs in a "family of distribution families" known as the linear exponential family which we introduce first.
 
 
 ### Linear Exponential Family

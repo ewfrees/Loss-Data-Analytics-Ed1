@@ -83,7 +83,7 @@ $$
     = \frac{\partial}{\partial \boldsymbol \theta} 1 = \mathbf 0.\end{aligned}
 $$
 
--   Denote by ${ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/{\partial \boldsymbol \theta\partial \boldsymbol \theta^{\prime}}={ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/{\partial \boldsymbol \theta^{2}}$ the second derivative of the log-likelihood function when $\boldsymbol\theta$ is a single parameter, or by ${ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/{\partial \boldsymbol \theta\partial \boldsymbol \theta^{\prime}}=(h_{jk})=({ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/\partial x_j\partial x_k)$ the hessian matrix of the log-likelihood function when it contains multiple parameters. Denote $[{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta}][{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta'}]=u^2(\boldsymbol \theta)$ when $\boldsymbol\theta$ is a single parameter, or let $[{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta}][{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta'}]=(uu_{jk})$ be a $p\times p$ matrix when $\boldsymbol\theta$ contains a total of $p$ parameters, with each element $uu_{jk}=u_j(\boldsymbol \theta)u_k(\boldsymbol \theta)$ and $u_j(\boldsymbol \theta)$ being the $k$th element of the score vector as defined earlier. Another basic property of the likelihood function is that sum of the expectation of the hessian matrix and the expectation of the kronecker product of the score vector and its transpose is $\mathbf 0$. That is,
+-   Denote by ${ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/{\partial \boldsymbol \theta\partial \boldsymbol \theta^{\prime}}={ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/{\partial \boldsymbol \theta^{2}}$ the second derivative of the log-likelihood function when $\boldsymbol\theta$ is a single parameter, or by ${ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/{\partial \boldsymbol \theta\partial \boldsymbol \theta^{\prime}}=(h_{jk})=({ \partial^2 l(\boldsymbol \theta|\mathbf{x}) }/\partial x_j\partial x_k)$ the hessian matrix of the log-likelihood function when it contains multiple parameters. Denote $[{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta}][{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta'}]=u^2(\boldsymbol \theta)$ when $\boldsymbol\theta$ is a single parameter, or let $[{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta}][{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta'}]=(uu_{jk})$ be a $p\times p$ matrix when $\boldsymbol\theta$ contains a total of $p$ parameters, with each element $uu_{jk}=u_j(\boldsymbol \theta)u_k(\boldsymbol \theta)$ and $u_j(\boldsymbol \theta)$ being the $k$th element of the score vector as defined earlier. Another basic property of the likelihood function is that sum of the expectation of the hessian matrix and the expectation of the Kronecker product of the score vector and its transpose is $\mathbf 0$. That is,
 $$\mathrm{E} \left( \frac{ \partial^2 }{\partial \boldsymbol \theta\partial \boldsymbol \theta^{\prime}} l(\boldsymbol \theta|\mathbf{x}) \right) + \mathrm{E} \left( \frac{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta} \frac{ \partial l(\boldsymbol \theta|\mathbf{x})}{\partial\boldsymbol \theta^{\prime}}\right) = \mathbf 0.$$
 
 -  Define the **Fisher information matrix** as
@@ -104,27 +104,27 @@ As the sample size $n$ goes to infinity, the score function (vector) converges i
 
 In this section, you learn
 
-- the definition and derivation of the maximum likelihood estimator (MLE) for parameters from a specific distribution family
+- the definition and derivation of the maximum likelihood estimator (*mle*) for parameters from a specific distribution family
 - the properties of maximum likelihood estimators that ensure valid large-sample inference of the parameters
-- why using the MLE-based method, and what caution that needs to be taken.
+- why using the *mle*-based method, and what caution that needs to be taken.
 
 ***
 
 In statistics, maximum likelihood estimators are values of the parameters $\boldsymbol \theta$ that are most likely to have been produced by the data. 
 
-### Definition and Derivation of MLE
+### Definition and Derivation of *MLE*
 
 Based on the definition given in Appendix Chapter  \@ref(C:AppA), the value of $\boldsymbol \theta$, say $\hat{\boldsymbol \theta}_{MLE}$,
-that maximizes the likelihood function, is called the *maximum likelihood estimator* (MLE) of $\boldsymbol \theta$. 
+that maximizes the likelihood function, is called the *maximum likelihood estimator* (*mle*) of $\boldsymbol \theta$. 
     
 Because the log function $\log(\cdot)$ is a one-to-one function, we can also determine $\hat{\boldsymbol{\theta}}_{MLE}$ by maximizing the log-likelihood
-function, $l(\boldsymbol \theta|\mathbf{x})$. That is, the MLE is defined as
+function, $l(\boldsymbol \theta|\mathbf{x})$. That is, the *mle* is defined as
 
 $$
 \hat{\boldsymbol \theta}_{MLE} = {\mbox{argmax}}_{\boldsymbol{\theta}\in\Theta}~l(\boldsymbol{\theta}|\mathbf{x}).
 $$
 
-Given the analytical form of the likelihood function, the MLE can be obtained by taking the first derivative of the log-likelihood function with respect to $\boldsymbol{\theta}$, and setting the values of the partial derivatives to zero. That is, the MLE are the solutions of the equations of
+Given the analytical form of the likelihood function, the *mle* can be obtained by taking the first derivative of the log-likelihood function with respect to $\boldsymbol{\theta}$, and setting the values of the partial derivatives to zero. That is, the *mle* are the solutions of the equations of
 
 $$
 \frac{\partial l(\hat{\boldsymbol{\theta}}|\mathbf{x})}{\partial\hat{\boldsymbol{\theta}}}=\mathbf 0.
@@ -161,17 +161,17 @@ $$
 </div>
 ***
 
-### Asymptotic Properties of MLE
+### Asymptotic Properties of *MLE*
 
 From Appendix Chapter  \@ref(C:AppA), the `r Gloss('MLE')` has some nice large-sample properties, under certain regularity conditions. We presented the results for a single parameter in Appendix Chapter  \@ref(C:AppA), but results are true for the case when $\boldsymbol{\theta}$ contains multiple parameters. In particular, we have the following results, in a general case when $\boldsymbol{\theta}=(\theta_1,\theta_2,\cdots,\theta_p)$.
 
-- The MLE of a parameter $\boldsymbol{\theta}$, $\hat{\boldsymbol{\theta}}_{MLE}$, is a **consistent** estimator. That is, the MLE $\hat{\boldsymbol{\theta}}_{MLE}$ converges in probability to the true value $\boldsymbol{\theta}$, as the sample size $n$ goes to infinity.
+- The *mle* of a parameter $\boldsymbol{\theta}$, $\hat{\boldsymbol{\theta}}_{MLE}$, is a **consistent** estimator. That is, the *mle* $\hat{\boldsymbol{\theta}}_{MLE}$ converges in probability to the true value $\boldsymbol{\theta}$, as the sample size $n$ goes to infinity.
 
--  The MLE has the **asymptotic normality** property, meaning that the estimator will converge in distribution to a multivariate normal distribution centered around the true value, when the sample size goes to infinity. Namely,
+-  The *mle* has the **asymptotic normality** property, meaning that the estimator will converge in distribution to a multivariate normal distribution centered around the true value, when the sample size goes to infinity. Namely,
 $$\sqrt{n}(\hat{\boldsymbol{\theta}}_{MLE}-\boldsymbol{\theta})\rightarrow N\left(\mathbf 0,\,\boldsymbol{V}\right),\quad \mbox{as}\quad n\rightarrow \infty,$$
-where $\boldsymbol{V}$ denotes the asymptotic variance (or covariance matrix) of the estimator. Hence, the MLE $\hat{\boldsymbol{\theta}}_{MLE}$ has an approximate normal distribution with mean $\boldsymbol{\theta}$ and variance (covariance matrix when $p>1$) $\boldsymbol{V}/n$, when the sample size is large. 
+where $\boldsymbol{V}$ denotes the asymptotic variance (or covariance matrix) of the estimator. Hence, the *mle* $\hat{\boldsymbol{\theta}}_{MLE}$ has an approximate normal distribution with mean $\boldsymbol{\theta}$ and variance (covariance matrix when $p>1$) $\boldsymbol{V}/n$, when the sample size is large. 
 
-- The MLE is **efficient**, meaning that it has the smallest asymptotic variance $\boldsymbol{V}$, commonly referred to as the **Cramer--Rao lower bound**. In particular, the Cramer--Rao lower bound is the inverse of the Fisher information (matrix) $\mathcal{I}(\boldsymbol{\theta})$ defined earlier in this appendix. Hence, $\mathrm{Var}(\hat{\boldsymbol{\theta}}_{MLE})$ can be estimated based on the observed Fisher information.
+- The *mle* is **efficient**, meaning that it has the smallest asymptotic variance $\boldsymbol{V}$, commonly referred to as the **Cramer--Rao lower bound**. In particular, the Cramer--Rao lower bound is the inverse of the Fisher information (matrix) $\mathcal{I}(\boldsymbol{\theta})$ defined earlier in this appendix. Hence, $\mathrm{Var}(\hat{\boldsymbol{\theta}}_{MLE})$ can be estimated based on the observed Fisher information.
 
 Based on the above results, we may perform statistical inference based on the procedures defined in Appendix Chapter  \@ref(C:AppA).
 
@@ -223,10 +223,10 @@ $$\mathcal{I}^{-1}(\theta_1, \theta_2) = \frac{1}{5(2) - 3(3)}\left(
 The method of maximum likelihood has many advantages over alternative methods such as the method of moment method introduced in Appendix Chapter  \@ref(C:AppA).
 
   -   It is a general tool that works in many situations. For example, we may be able to write out the closed-form likelihood function for censored and truncated data. Maximum likelihood estimation can be used for regression models including covariates, such as survival regression, generalized linear models and mixed models, that may include covariates that are time-dependent.
-  -  From the efficiency of the MLE, it is optimal, the best, in the sense that it has the smallest variance among the class of all unbiased estimators for large sample sizes.
-  -  From the results on the asymptotic normality of the MLE, we can obtain a large-sample distribution for the estimator, allowing users to assess the variability in the estimation and perform statistical inference on the parameters. The approach is less computationally extensive than re-sampling methods that require a large of fittings of the model. 
+  -  From the efficiency of the *mle*, it is optimal, the best, in the sense that it has the smallest variance among the class of all unbiased estimators for large sample sizes.
+  -  From the results on the asymptotic normality of the *mle*, we can obtain a large-sample distribution for the estimator, allowing users to assess the variability in the estimation and perform statistical inference on the parameters. The approach is less computationally extensive than re-sampling methods that require a large of fittings of the model. 
 
-Despite its numerous advantages, MLE has its drawback in cases such as generalized linear models when it does not have a closed analytical form. In such cases, maximum likelihood estimators are computed iteratively using numerical optimization methods. For example, we may use the Newton-Raphson iterative algorithm or its variations for obtaining the MLE. Iterative algorithms require starting values. For some problems, the choice of a close starting value is critical, particularly in cases where the likelihood function has local minimums or maximums. Hence, there may be a convergence issue when the starting value is far from the maximum. Hence, it is important to start from different values across the parameter space, and compare the maximized likelihood or log-likelihood to make sure the algorithms have converged to a global maximum.
+Despite its numerous advantages, *mle* has its drawback in cases such as generalized linear models when it does not have a closed analytical form. In such cases, maximum likelihood estimators are computed iteratively using numerical optimization methods. For example, we may use the Newton-Raphson iterative algorithm or its variations for obtaining the *mle*. Iterative algorithms require starting values. For some problems, the choice of a close starting value is critical, particularly in cases where the likelihood function has local minimums or maximums. Hence, there may be a convergence issue when the starting value is far from the maximum. Hence, it is important to start from different values across the parameter space, and compare the maximized likelihood or log-likelihood to make sure the algorithms have converged to a global maximum.
 
 ## Statistical Inference Based on Maximum Likelihood Estimation {#S:AppC:SI}
 
@@ -234,7 +234,7 @@ Despite its numerous advantages, MLE has its drawback in cases such as generaliz
 
 In this section, you learn how to
 
-- perform hypothesis testing based on MLE for cases where there are multiple parameters in $\boldsymbol\theta$
+- perform hypothesis testing based on *mle* for cases where there are multiple parameters in $\boldsymbol\theta$
 - perform likelihood ratio test  for cases where there are multiple parameters in $\boldsymbol\theta$
 
 ***
@@ -245,7 +245,7 @@ In Appendix Chapter  \@ref(C:AppA), we have introduced maximum likelihood-based 
 
 In Appendix Chapter  \@ref(C:AppA), we defined hypothesis testing concerning the null hypothesis, a statement on the parameter(s) of a distribution or model. One important type of inference is to assess whether a parameter estimate is statistically significant, meaning whether the value of the parameter is zero or not.
 
-We have learned earlier that the MLE $\hat{\boldsymbol{\theta}}_{MLE}$ has a large-sample normal distribution with mean $\boldsymbol \theta$ and the variance covariance matrix $\mathcal{I}^{-1}(\boldsymbol \theta)$. Based on the multivariate normal distribution, the $j$th element of $\hat{\boldsymbol{\theta}}_{MLE}$, say
+We have learned earlier that the *mle* $\hat{\boldsymbol{\theta}}_{MLE}$ has a large-sample normal distribution with mean $\boldsymbol \theta$ and the variance covariance matrix $\mathcal{I}^{-1}(\boldsymbol \theta)$. Based on the multivariate normal distribution, the $j$th element of $\hat{\boldsymbol{\theta}}_{MLE}$, say
     $\hat{\theta}_{MLE,j}$, has a large-sample univariate normal distribution.
 
 Define $se(\hat{\theta}_{MLE,j})$, the standard error (estimated
@@ -265,7 +265,7 @@ For example, if we use a 5% significance level, then the cut-off value is 1.96 u
 
 Another useful concept in hypothesis testing is the $p$-value, shorthand for probability value. From the mathematical definition in Appendix Chapter  \@ref(C:AppA), a $p$-value is defined as the smallest significance level for which the null hypothesis would be rejected. Hence, the $p$-value is a useful summary statistic for the data analyst to report because it allows the reader to understand the strength of statistical evidence concerning the deviation from the null hypothesis. 
 
-### MLE and Model Validation {#S:AppC:MLEModelVal}
+### *MLE* and Model Validation {#S:AppC:MLEModelVal}
 
 In addition to hypothesis testing and interval estimation introduced in Appendix Chapter  \@ref(C:AppA) and the previous subsection, another important type of inference is selection of a model from two choices, where one choice is a special case of the other with certain parameters being restricted. For such two models with one being nested in the other, we have introduced the likelihood ratio test (LRT) in Appendix Chapter  \@ref(C:AppA). Here, we will briefly review the process of performing a LRT based on a specific example of two alternative models.
 

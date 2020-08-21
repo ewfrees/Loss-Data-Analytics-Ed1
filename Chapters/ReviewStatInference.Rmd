@@ -105,9 +105,9 @@ For the Wisconsin Property Fund data, we may denote $\hat{\mu} =7.804$ and $\hat
 
 Before defining the method of moments estimation, we define the the concept of **moments**. Moments are population attributes that characterize the distribution function $F(\cdot)$. Given a random draw $X$ from $F(\cdot)$, the expectation $\mu_k=\mathrm{E}[X^k]$ is called the **$k$th moment** of $X$, $k=1,2,3,\ldots$ For example, the population mean $\mu$ is the *first* moment. Furthermore, the expectation $\mathrm{E}[(X-\mu)^k]$ is called a **$k$th central moment**. Thus, the variance is the second central moment.
 
-Using the random sample $X_1, \ldots, X_n$, we may construct the corresponding sample moment, $\hat{\mu}_k=(1/n)\sum_{i=1}^n X_i^k$, for estimating the population attribute $\mu_k$. For example, we have used the sample mean $\bar{X}$ as an estimator for the population mean $\mu$. Similarly, the second central moment can be estimated as $(1/n)\sum_{i=1}^n(X_i-\bar{X})^2$. Without assuming a parametric form for $F(\cdot)$, the sample moments constitute nonparametric estimates of the corresponding population attributes. Such an estimator based on matching of the corresponding sample and population moments is called a **method of moments estimator** (MME). 
+Using the random sample $X_1, \ldots, X_n$, we may construct the corresponding sample moment, $\hat{\mu}_k=(1/n)\sum_{i=1}^n X_i^k$, for estimating the population attribute $\mu_k$. For example, we have used the sample mean $\bar{X}$ as an estimator for the population mean $\mu$. Similarly, the second central moment can be estimated as $(1/n)\sum_{i=1}^n(X_i-\bar{X})^2$. Without assuming a parametric form for $F(\cdot)$, the sample moments constitute nonparametric estimates of the corresponding population attributes. Such an estimator based on matching of the corresponding sample and population moments is called a **method of moments estimator** (*mme*). 
 
-While the MME works naturally in a nonparametric model, it can be used to estimate parameters when a specific parametric family of distribution is assumed for $F(\cdot)$. Denote by $\boldsymbol{\theta}=(\theta_1,\cdots,\theta_m)$ the vector of parameters corresponding to a parametric distribution $F(\cdot)$. Given a distribution family, we commonly know the relationships between the parameters and the moments. In particular, we know the specific forms of the functions $h_1(\cdot),h_2(\cdot),\cdots,h_m(\cdot)$ such that $\mu_1=h_1(\boldsymbol{\theta}),\,\mu_2=h_2(\boldsymbol{\theta}),\,\cdots,\,\mu_m=h_m(\boldsymbol{\theta})$. Given the MME $\hat{\mu}_1, \ldots, \hat{\mu}_m$ from the random sample, the MME of the parameters $\hat{\theta}_1,\cdots,\hat{\theta}_m$ can be obtained by solving the equations of
+While the *mme* works naturally in a nonparametric model, it can be used to estimate parameters when a specific parametric family of distribution is assumed for $F(\cdot)$. Denote by $\boldsymbol{\theta}=(\theta_1,\cdots,\theta_m)$ the vector of parameters corresponding to a parametric distribution $F(\cdot)$. Given a distribution family, we commonly know the relationships between the parameters and the moments. In particular, we know the specific forms of the functions $h_1(\cdot),h_2(\cdot),\cdots,h_m(\cdot)$ such that $\mu_1=h_1(\boldsymbol{\theta}),\,\mu_2=h_2(\boldsymbol{\theta}),\,\cdots,\,\mu_m=h_m(\boldsymbol{\theta})$. Given the *mme* $\hat{\mu}_1, \ldots, \hat{\mu}_m$ from the random sample, the *mme* of the parameters $\hat{\theta}_1,\cdots,\hat{\theta}_m$ can be obtained by solving the equations of
 $$\hat{\mu}_1=h_1(\hat{\theta}_1,\cdots,\hat{\theta}_m);$$
 $$\hat{\mu}_2=h_2(\hat{\theta}_1,\cdots,\hat{\theta}_m);$$
 $$\cdots$$
@@ -116,7 +116,7 @@ $$\hat{\mu}_m=h_m(\hat{\theta}_1,\cdots,\hat{\theta}_m).$$
 
 `r HideExample('MME', 'Show Wisconsin Property Fund Example - Continued')`
 
-**Example -- Wisconsin Property Fund.** Assume that the claims follow a lognormal distribution, so that logarithmic claims follow a normal distribution. Specifically, assume $\log(X)$ has a normal distribution with mean $\mu$ and variance $\sigma^2$, denoted as $\log(X) \sim N(\mu, \sigma^2)$. It is straightforward that the MME $\hat{\mu}=\bar{X}$ and $\hat{\sigma}=\sqrt{(1/n)\sum_{i=1}^n(X_i-\bar{X})^2}$. For the Wisconsin Property Fund example, the method of moments estimates are $\hat{\mu} =7.804$ and $\hat{\sigma} = 1.683$.
+**Example -- Wisconsin Property Fund.** Assume that the claims follow a lognormal distribution, so that logarithmic claims follow a normal distribution. Specifically, assume $\log(X)$ has a normal distribution with mean $\mu$ and variance $\sigma^2$, denoted as $\log(X) \sim N(\mu, \sigma^2)$. It is straightforward that the *mme* $\hat{\mu}=\bar{X}$ and $\hat{\sigma}=\sqrt{(1/n)\sum_{i=1}^n(X_i-\bar{X})^2}$. For the Wisconsin Property Fund example, the method of moments estimates are $\hat{\mu} =7.804$ and $\hat{\sigma} = 1.683$.
 
 </div>
 
@@ -126,18 +126,18 @@ When $F(\cdot)$ takes a parametric form, the maximum likelihood method is widely
 $$L(\boldsymbol{\theta}|\mathbf{x})=\prod_{i=1}^nf(x_i|\boldsymbol{\theta}),$$
 with the corresponding **log-likelihood function** given by
 $$l(\boldsymbol{\theta}|\mathbf{x})=\log(L(\boldsymbol{\theta}|\mathbf{x}))=\sum_{i=1}^n\log f(x_i|\boldsymbol{\theta}).$$
-The maximum likelihood estimator (MLE) of $\boldsymbol{\theta}$ is the set of values of $\boldsymbol{\theta}$ that maximize the likelihood function (log-likelihood function), given the observed sample. That is, the *MLE* $\hat{\boldsymbol{\theta}}$ can be written as
+The maximum likelihood estimator (*mle*) of $\boldsymbol{\theta}$ is the set of values of $\boldsymbol{\theta}$ that maximize the likelihood function (log-likelihood function), given the observed sample. That is, the *mle* $\hat{\boldsymbol{\theta}}$ can be written as
 $$\hat{\boldsymbol{\theta}}={\mbox{argmax}}_{\boldsymbol{\theta}\in\Theta}l(\boldsymbol{\theta}|\mathbf{x}),$$
 where $\Theta$ is the parameter space of $\boldsymbol{\theta}$, and ${\mbox{argmax}}_{\boldsymbol{\theta}\in\Theta}l(\boldsymbol{\theta}|\mathbf{x})$ is defined as the value of $\boldsymbol{\theta}$ at which the function $l(\boldsymbol{\theta}|\mathbf{x})$ reaches its maximum.
 
-Given the analytical form of the likelihood function, the *MLE* can be obtained by taking the first derivative of the log-likelihood function with respect to $\boldsymbol{\theta}$, and setting the values of the partial derivatives to zero. That is, the *MLE* are the solutions of the equations of
+Given the analytical form of the likelihood function, the *mle* can be obtained by taking the first derivative of the log-likelihood function with respect to $\boldsymbol{\theta}$, and setting the values of the partial derivatives to zero. That is, the *mle* are the solutions of the equations of
 $$\frac{\partial l(\hat{\boldsymbol{\theta}}|\mathbf{x})}{\partial\hat{\theta}_1}=0;$$
 $$\frac{\partial l(\hat{\boldsymbol{\theta}}|\mathbf{x})}{\partial\hat{\theta}_2}=0;$$
 $$\cdots$$
 $$\frac{\partial l(\hat{\boldsymbol{\theta}}|\mathbf{x})}{\partial\hat{\theta}_m}=0,$$
 provided that the second partial derivatives are negative.
 
-For parametric models, the *MLE* of the parameters can be obtained either analytically (e.g., in the case of normal distributions and linear estimators), or numerically through iterative algorithms such as the Newton-Raphson method and its adaptive versions (e.g., in the case of generalized linear models with a non-normal response variable).
+For parametric models, the *mle* of the parameters can be obtained either analytically (e.g., in the case of normal distributions and linear estimators), or numerically through iterative algorithms such as the Newton-Raphson method and its adaptive versions (e.g., in the case of generalized linear models with a non-normal response variable).
 
 
 **Normal distribution.** Assume $(X_1,X_2,\cdots,X_n)$ to be a random sample from the normal distribution $N(\mu, \sigma^2)$. With an observed sample $(X_1,X_2,\cdots,X_n)=(x_1,x_2,\cdots,x_n)$, we can write the likelihood function of $\mu,\sigma^2$ as
@@ -147,11 +147,11 @@ $$l(\mu,\sigma^2)=-\frac{n}{2}[\log(2\pi)+\log(\sigma^2)]-\frac{1}{2\sigma^2}\su
 
 By solving 
 $$\frac{\partial l(\hat{\mu},\sigma^2)}{\partial \hat{\mu}}=0,$$
-we obtain $\hat{\mu}=\bar{x}=(1/n)\sum_{i=1}^nx_i$. It is straightforward to verify that $\frac{\partial l^2(\hat{\mu},\sigma^2)}{\partial \hat{\mu}^2}\left|_{\hat{\mu}=\bar{x}}\right.<0$. Since this works for arbitrary $x$, $\hat{\mu}=\bar{X}$ is the *MLE* of $\mu$. Similarly, by solving
+we obtain $\hat{\mu}=\bar{x}=(1/n)\sum_{i=1}^nx_i$. It is straightforward to verify that $\frac{\partial l^2(\hat{\mu},\sigma^2)}{\partial \hat{\mu}^2}\left|_{\hat{\mu}=\bar{x}}\right.<0$. Since this works for arbitrary $x$, $\hat{\mu}=\bar{X}$ is the *mle* of $\mu$. Similarly, by solving
 $$\frac{\partial l(\mu,\hat{\sigma}^2)}{\partial \hat{\sigma}^2}=0,$$
-we obtain $\hat{\sigma}^2=(1/n)\sum_{i=1}^n(x_i-\mu)^2$. Further replacing $\mu$ by $\hat{\mu}$, we derive the *MLE* of $\sigma^2$ as $\hat{\sigma}^2=(1/n)\sum_{i=1}^n(X_i-\bar{X})^2$. 
+we obtain $\hat{\sigma}^2=(1/n)\sum_{i=1}^n(x_i-\mu)^2$. Further replacing $\mu$ by $\hat{\mu}$, we derive the *mle* of $\sigma^2$ as $\hat{\sigma}^2=(1/n)\sum_{i=1}^n(X_i-\bar{X})^2$. 
 
-Hence, the sample mean $\bar{X}$ and $\hat{\sigma}^2$ are both the *MME* and `r Gloss('MLE')` for the mean $\mu$ and variance $\sigma^2$, under a normal population distribution $F(\cdot)$. More details regarding the properties of the likelihood function, and the derivation of *MLE* under parametric distributions other than the normal distribution are given in Appendix Chapter \@ref(C:AppB).
+Hence, the sample mean $\bar{X}$ and $\hat{\sigma}^2$ are both the *mme* and `r Gloss('MLE')` for the mean $\mu$ and variance $\sigma^2$, under a normal population distribution $F(\cdot)$. More details regarding the properties of the likelihood function are given in Appendix Section \@ref(S:AppC:LF).
 
 ## Interval Estimation {#S:AppA:IE}
 
@@ -159,36 +159,36 @@ Hence, the sample mean $\bar{X}$ and $\hat{\sigma}^2$ are both the *MME* and `r 
 
 In this section, you learn how to
 
-- derive the exact sampling distribution of the *MLE* of the normal mean
-- obtain the large-sample approximation of the sampling distribution using the large sample properties of the MLE
-- construct a confidence interval of a parameter based on the large sample properties of the MLE
+- derive the exact sampling distribution of the *mle* of the normal mean
+- obtain the large-sample approximation of the sampling distribution using the large sample properties of the *mle*
+- construct a confidence interval of a parameter based on the large sample properties of the *mle*
 
 ***
 
-Now that we have introduced the MME and MLE, we may perform the first type of statistical inference, **interval estimation** that quantifies the uncertainty resulting from the use of a finite sample. By deriving the sampling distribution of MLE, we can estimate an interval (a confidence interval) for the parameter. Under the frequentist approach (e.g., that based on maximum likelihood estimation), the confidence intervals generated from the same random sampling frame will cover the true value the majority of times (e.g., 95% of the times), if we repeat the sampling process and re-calculate the interval over and over again. Such a process requires the derivation of the sampling distribution for the MLE.
+Now that we have introduced the *mme* and *mle*, we may perform the first type of statistical inference, **interval estimation** that quantifies the uncertainty resulting from the use of a finite sample. By deriving the sampling distribution of *mle*, we can estimate an interval (a confidence interval) for the parameter. Under the frequentist approach (e.g., that based on maximum likelihood estimation), the confidence intervals generated from the same random sampling frame will cover the true value the majority of times (e.g., 95% of the times), if we repeat the sampling process and re-calculate the interval over and over again. Such a process requires the derivation of the sampling distribution for the *mle*.
 
 ### Exact Distribution for Normal Sample Mean {#S:AppA:IE:ED}
 
-Due to the **additivity** property of the normal distribution (i.e., a sum of normal random variables that follows a multivariate normal distribution still follows a normal distribution) and that the normal distribution belongs to the **location--scale family** (i.e., a location and/or scale transformation of a normal random variable has a normal distribution), the sample mean $\bar{X}$ of a random sample from a normal $F(\cdot)$ has a normal sampling distribution for any finite $n$. Given $X_i\sim^{iid} N(\mu,\sigma^2)$, $i=1,\dots,n$, the *MLE* of $\mu$ has an exact distribution $$\bar{X}\sim N\left(\mu,\frac{\sigma^2}{n}\right).$$ 
+Due to the **additivity** property of the normal distribution (i.e., a sum of normal random variables that follows a multivariate normal distribution still follows a normal distribution) and that the normal distribution belongs to the **location--scale family** (i.e., a location and/or scale transformation of a normal random variable has a normal distribution), the sample mean $\bar{X}$ of a random sample from a normal $F(\cdot)$ has a normal sampling distribution for any finite $n$. Given $X_i\sim^{iid} N(\mu,\sigma^2)$, $i=1,\dots,n$, the *mle* of $\mu$ has an exact distribution $$\bar{X}\sim N\left(\mu,\frac{\sigma^2}{n}\right).$$ 
 Hence, the sample mean is an unbiased estimator of $\mu$. In addition, the uncertainty in the estimation can be quantified by its variance $\sigma^2/n$, that decreases with the sample size $n$. When the sample size goes to infinity, the sample mean will approach a single mass at the true value. 
 
-### Large-sample Properties of MLE
+### Large-sample Properties of *MLE*
 
-For the *MLE* of the mean parameter and any other parameters of other parametric distribution families, however, we usually cannot derive an exact sampling distribution for finite samples. Fortunately, when the sample size is sufficiently large, MLEs can be approximated by a normal distribution. Due to the general maximum likelihood theory, the *MLE* has some nice large-sample properties.
+For the *mle* of the mean parameter and any other parameters of other parametric distribution families, however, we usually cannot derive an exact sampling distribution for finite samples. Fortunately, when the sample size is sufficiently large, *mle*s can be approximated by a normal distribution. Due to the general maximum likelihood theory, the *mle* has some nice large-sample properties.
 
-- The *MLE* $\hat{\theta}$ of a parameter $\theta$, is a **consistent** estimator. That is, $\hat{\theta}$ converges in probability to the true value $\theta$, as the sample size $n$ goes to infinity.
+- The *mle* $\hat{\theta}$ of a parameter $\theta$, is a **consistent** estimator. That is, $\hat{\theta}$ converges in probability to the true value $\theta$, as the sample size $n$ goes to infinity.
 
--  The *MLE* has the **asymptotic normality** property, meaning that the estimator will converge in distribution to a normal distribution centered around the true value, when the sample size goes to infinity. Namely,
+-  The *mle* has the **asymptotic normality** property, meaning that the estimator will converge in distribution to a normal distribution centered around the true value, when the sample size goes to infinity. Namely,
 $$\sqrt{n}(\hat{\theta}-\theta)\rightarrow_d N\left(0,\,V\right),\quad \mbox{as}\quad n\rightarrow \infty,$$
-where $V$ is the inverse of the Fisher Information. Hence, the *MLE* $\hat{\theta}$ approximately follows a normal distribution with mean $\theta$ and variance $V/n$, when the sample size is large.
+where $V$ is the inverse of the Fisher Information. Hence, the *mle* $\hat{\theta}$ approximately follows a normal distribution with mean $\theta$ and variance $V/n$, when the sample size is large.
 
-- The *MLE* is **efficient**, meaning that it has the smallest asymptotic variance $V$, commonly referred to as the **Cramer--Rao lower bound**. In particular, the Cramer--Rao lower bound is the inverse of the Fisher information defined as $\mathcal{I}(\theta)=-\mathrm{E}(\partial^2\log f(X;\theta)/\partial \theta^2)$. Hence, $\mathrm{Var}(\hat{\theta})$ can be estimated based on the observed Fisher information that can be written as $-\sum_{i=1}^n \partial^2\log f(X_i;\theta)/\partial \theta^2$.
+- The *mle* is **efficient**, meaning that it has the smallest asymptotic variance $V$, commonly referred to as the **Cramer--Rao lower bound**. In particular, the Cramer--Rao lower bound is the inverse of the Fisher information defined as $\mathcal{I}(\theta)=-\mathrm{E}(\partial^2\log f(X;\theta)/\partial \theta^2)$. Hence, $\mathrm{Var}(\hat{\theta})$ can be estimated based on the observed Fisher information that can be written as $-\sum_{i=1}^n \partial^2\log f(X_i;\theta)/\partial \theta^2$.
 
-For many parametric distributions, the Fisher information may be derived analytically for the *MLE* of parameters. For more sophisticated parametric models, the Fisher information can be evaluated numerically using numerical integration for continuous distributions, or numerical summation for discrete distributions.
+For many parametric distributions, the Fisher information may be derived analytically for the *mle* of parameters. For more sophisticated parametric models, the Fisher information can be evaluated numerically using numerical integration for continuous distributions, or numerical summation for discrete distributions.  More details regarding maximum likelihood estimation are given in Appendix Section \@ref(S:AppC:MLE).
 
 ### Confidence Interval
 
-Given that the *MLE* $\hat{\theta}$ has either an exact or an approximate normal distribution with mean $\theta$ and variance $\mathrm{Var}(\hat{\theta})$, we may take the square root of the variance and plug-in the estimate to define $se(\hat{\theta}) = \sqrt{\mathrm{Var}(\hat{\theta})}$. A **standard error** is an estimated standard deviation that quantifies the uncertainty in the estimation resulting from the use of a finite sample. Under some regularity conditions governing the population distribution, we may establish that the statistic
+Given that the *mle* $\hat{\theta}$ has either an exact or an approximate normal distribution with mean $\theta$ and variance $\mathrm{Var}(\hat{\theta})$, we may take the square root of the variance and plug-in the estimate to define $se(\hat{\theta}) = \sqrt{\mathrm{Var}(\hat{\theta})}$. A **standard error** is an estimated standard deviation that quantifies the uncertainty in the estimation resulting from the use of a finite sample. Under some regularity conditions governing the population distribution, we may establish that the statistic
 
 $$
 \frac{\hat{\theta}-\theta}{se(\hat{\theta})}
@@ -202,7 +202,7 @@ $$
 
 from which we can derive a  **confidence interval** for $\theta$. From the above equation we can derive a pair of statistics, $\hat{\theta}_1$ and $\hat{\theta}_2$, that provide an interval of the form $[\hat{\theta}_1, \hat{\theta}_2]$. This interval is a $1-\alpha$ confidence interval for $\theta$ such that  $\Pr\left(\hat{\theta}_1 \le \theta \le \hat{\theta}_2\right) = 1-\alpha,$ where the probability $1-\alpha$ is referred to as the **confidence level**. Note that the above confidence interval is not valid for small samples, except for the case of the normal mean.
  
-**Normal distribution.** For the normal population mean $\mu$, the *MLE* has an exact sampling distribution $\bar{X}\sim N(\mu,\sigma/\sqrt{n})$, in which we can estimate $se(\hat{\theta})$ by $\hat{\sigma}/\sqrt{n}$. Based on the **Cochran's theorem**, the resulting statistic has an exact Student-$t$ distribution with degrees of freedom $n-1$. Hence, we can derive the lower and upper bounds of the confidence interval as
+**Normal distribution.** For the normal population mean $\mu$, the *mle* has an exact sampling distribution $\bar{X}\sim N(\mu,\sigma/\sqrt{n})$, in which we can estimate $se(\hat{\theta})$ by $\hat{\sigma}/\sqrt{n}$. Based on the **Cochran's theorem**, the resulting statistic has an exact Student-$t$ distribution with degrees of freedom $n-1$. Hence, we can derive the lower and upper bounds of the confidence interval as
 
 $$
 \hat{\mu}_1 = \hat{\mu} - t_{n-1}\left(1-\frac{\alpha}{2}\right)\frac{ \hat{\sigma}}{\sqrt{n}}
@@ -222,7 +222,7 @@ When $\alpha = 0.05$, $t_{n-1}(1-\alpha/2) \approx 1.96$ for large values of $n$
 
 **Example -- Wisconsin Property Fund.** For the lognormal claim model, (7.715235, 7.893208) is a 95% confidence interval for $\mu$.
 
-More details regarding interval estimation based the *MLE* of other parameters and distribution families are given in Appendix Chapter \@ref(C:AppC).
+More details regarding interval estimation based the *mle* of other parameters and distribution families are given in Appendix Chapter \@ref(C:AppC).
 
 </div>
 ***
@@ -234,7 +234,7 @@ More details regarding interval estimation based the *MLE* of other parameters a
 In this section, you learn how to
 
 - understand the basic concepts in hypothesis testing including the level of significance and the power of a test
-- perform hypothesis testing such as a Student-$t$ test based on the properties of the MLE
+- perform hypothesis testing such as a Student-$t$ test based on the properties of the *mle*
 - construct a likelihood ratio test for a single parameter or multiple parameters from the same statistical model
 - use information criteria such as the Akaike's information criterion or the Bayesian information criterion to perform model selection
 
@@ -269,9 +269,9 @@ $$
 
 Note that the power of the test is typically calculated based on a specific alternative value of $\theta=\theta_a$, given a specific sampling distribution and a given sample size. In real experimental studies, people usually calculate the required sample size in order to choose a sample size that will ensure a large chance of obtaining a statistically significant test (i.e., with a prespecified statistical power such as 85%). 
 
-### Student-$t$ test based on MLE
+### Student-*t* test based on *mle*
 
-Based on the results from Section \@ref(S:AppA:IE:ED), we can define a Student $t$ test for testing $H_0:\theta=\theta_0$. In particular, we define the test statistic as
+Based on the results from Section \@ref(S:AppA:IE:ED), we can define a Student-$t$ test for testing $H_0:\theta=\theta_0$. In particular, we define the test statistic as
 
 $$
 t\text{-stat}=\frac{\hat{\theta}-\theta_0}{se(\hat{\theta})},
@@ -306,7 +306,7 @@ $\mu_0 = \log(5000)= 8.517$. We might want to use the 2010 data to assess whethe
 
 `r HideExample('TST2', 'Show Wisconsin Property Fund Example - Continued')`
 
-**Example -- Wisconsin Property Fund.** For numerical stability and extensions to regression applications, statistical packages often work with transformed versions of parameters. The following estimates are from the **R** package **VGAM** (the function). More details on the *MLE* of other distribution families are given in Appendix Chapter \@ref(C:AppC).
+**Example -- Wisconsin Property Fund.** For numerical stability and extensions to regression applications, statistical packages often work with transformed versions of parameters. The following estimates are from the **R** package **VGAM** (the function). More details on the *mle* of other distribution families are given in Appendix Chapter \@ref(C:AppC).
 
 -------------- ----------- ---------- ----------
   Distribution   Parameter   Standard   $t$-stat
@@ -328,7 +328,7 @@ $\mu_0 = \log(5000)= 8.517$. We might want to use the 2010 data to assess whethe
 
 ### Likelihood Ratio Test {#S:AppA:HT:LRT}
 
-In the previous subsection, we have introduced the Student-$t$ test on a single parameter, based on the properties of the MLE. In this section, we define an alternative test called the **likelihood ratio test** (LRT). The LRT may be used to test multiple parameters from the same statistical model.
+In the previous subsection, we have introduced the Student-$t$ test on a single parameter, based on the properties of the *mle*. In this section, we define an alternative test called the **likelihood ratio test** (*LRT*). The *LRT* may be used to test multiple parameters from the same statistical model.
 
 Given the likelihood function $L(\theta|\mathbf{x})$ and $\Theta_0 \subset \Theta$, the likelihood ratio test statistic for testing $H_0:\theta\in\Theta_0$ against $H_a:\theta\notin\Theta_0$ is given by
 
@@ -342,13 +342,13 @@ $$
 L=\frac{L(\theta_0|\mathbf{x})}{\sup_{\theta\in\Theta}L(\theta|\mathbf{x})}.
 $$
 
-The LRT rejects the null hypothesis when $L < c$, with the threshold depending on the level of significance $\alpha$, the sample size $n$, and the number of parameters in $\theta$. Based on the **Neyman--Pearson Lemma**, the LRT is the **uniformly most powerful** (UMP) test for testing $H_0:\theta=\theta_0$ versus $H_a:\theta=\theta_a$. That is, it provides the largest power $\beta$ for a given $\alpha$ and a given alternative value $\theta_a$.
+The *LRT* rejects the null hypothesis when $L < c$, with the threshold depending on the level of significance $\alpha$, the sample size $n$, and the number of parameters in $\theta$. Based on the **Neyman--Pearson Lemma**, the *LRT* is the **uniformly most powerful** test for testing $H_0:\theta=\theta_0$ versus $H_a:\theta=\theta_a$. That is, it provides the largest power $\beta$ for a given $\alpha$ and a given alternative value $\theta_a$.
 
-Based on the **Wilks's Theorem**, the likelihood ratio test statistic $-2\log(L)$ converges in distribution to a Chi-square distribution with the degree of freedom being the difference between the dimensionality of the parameter spaces $\Theta$ and $\Theta_0$, when the sample size goes to infinity and when the null model is nested within the alternative model. That is, when the null model is a special case of the alternative model containing a restricted sample space, we may approximate $c$ by $\chi^2_{p_1 - p_2}(1-\alpha)$, the $100\times(1-\alpha)$ th percentile of the Chi-square distribution, with $p_1-p_2$ being the degrees of freedom, and $p_1$ and $p_2$ being the numbers of parameters in the alternative and null models, respectively. Note that the LRT is also a large-sample test that will not be valid for small samples.
+Based on the **Wilks's Theorem**, the likelihood ratio test statistic $-2\log(L)$ converges in distribution to a Chi-square distribution with the degree of freedom being the difference between the dimensionality of the parameter spaces $\Theta$ and $\Theta_0$, when the sample size goes to infinity and when the null model is nested within the alternative model. That is, when the null model is a special case of the alternative model containing a restricted sample space, we may approximate $c$ by $\chi^2_{p_1 - p_2}(1-\alpha)$, the $100\times(1-\alpha)$ th percentile of the Chi-square distribution, with $p_1-p_2$ being the degrees of freedom, and $p_1$ and $p_2$ being the numbers of parameters in the alternative and null models, respectively. Note that the *LRT* is also a large-sample test that will not be valid for small samples.
 
 ### Information Criteria {#S:AppA:HT:IC}
 
-In real-life applications, the LRT has been commonly used for comparing two nested models. The LRT approach as a model selection tool, however, has two major drawbacks: 1) It typically requires the null model to be nested within the alternative model; 2) models selected from the LRT tends to provide in-sample over-fitting, leading to poor out-of-sample prediction. In order to overcome these issues, model selection based on information criteria, applicable to non-nested models while taking into consideration the model complexity, is more widely used for model selection. Here, we introduce the two most widely used criteria, the Akaike's information criterion and the Bayesian information criterion. 
+In real-life applications, the *LRT* has been commonly used for comparing two nested models. The *LRT* approach as a model selection tool, however, has two major drawbacks: 1) It typically requires the null model to be nested within the alternative model; 2) models selected from the *LRT* tends to provide in-sample over-fitting, leading to poor out-of-sample prediction. In order to overcome these issues, model selection based on information criteria, applicable to non-nested models while taking into consideration the model complexity, is more widely used for model selection. Here, we introduce the two most widely used criteria, the Akaike's information criterion and the Bayesian information criterion. 
 
 In particular, the **Akaike's information criterion** ($AIC$) is defined as
 
@@ -356,7 +356,7 @@ $$
 AIC = -2\log L(\hat{\boldsymbol \theta}) + 2p,
 $$
 
-where $\hat{\boldsymbol \theta}$ denotes the *MLE* of ${\boldsymbol \theta}$, and $p$ is the number of parameters in the model. The additional term $2 p$ represents a penalty for the complexity of the model. That is, with the same maximized likelihood function, the $AIC$ favors model with less parameters. We note that the $AIC$ does not consider the impact from the sample size $n$.
+where $\hat{\boldsymbol \theta}$ denotes the *mle* of ${\boldsymbol \theta}$, and $p$ is the number of parameters in the model. The additional term $2 p$ represents a penalty for the complexity of the model. That is, with the same maximized likelihood function, the $AIC$ favors model with less parameters. We note that the $AIC$ does not consider the impact from the sample size $n$.
 
 Alternatively, people use the **Bayesian information criterion** ($BIC$) that takes into consideration the sample size. The $BIC$ is defined as
 
@@ -402,7 +402,7 @@ fit.pareto <- vglm(Claim ~ 1, paretoII, loc=0, data = ClaimData)
 
 ###################################################
 #  Inference assuming a GB2 Distribution - this is more complicated
-# The likelihood functon of GB2 distribution (negative for optimization)
+# The likelihood function of GB2 distribution (negative for optimization)
 likgb2 <- function(param) {
   a1 <- param[1]
   a2 <- param[2]
@@ -462,7 +462,7 @@ fit.pareto <- vglm(Claim ~ 1, paretoII, loc=0, data = ClaimData)
 
 ###################################################
 #  Inference assuming a GB2 Distribution - this is more complicated
-# The likelihood functon of GB2 distribution (negative for optimization)
+# The likelihood function of GB2 distribution (negative for optimization)
 likgb2 <- function(param) {
   a1 <- param[1]
   a2 <- param[2]

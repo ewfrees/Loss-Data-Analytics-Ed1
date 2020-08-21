@@ -364,7 +364,7 @@ $$\begin{aligned}
 ```
 
 
-## Collective Risk Model
+## Collective Risk Model {#S:AggLoss:CRM}
 
 ### Moments and Distribution
 
@@ -1588,7 +1588,8 @@ Lastly, for the moment generating function of the aggregate loss under the indiv
 $$
 \begin{aligned}
 M_{S_n}(t) &= \prod_{i=1}^n ~ M_{X_i}(t) ~~~~ \text{from the independence of } X_i \text{'s} \\
-&= \prod_{i=1}^n ~ \mathrm{E}(e^{t~X_i}) = \prod_{i=1}^n ~ \mathrm{E}\left(e^{~t~(I_i \times B_i)} \right) = \prod_{i=1}^n ~ \mathrm{E} \left[ \mathrm{E} \left( e^{~t~(I_i \times B_i)} | I_i \right) \right] ~~~~ \text{from the law of iterated expectations} \\
+&= \prod_{i=1}^n ~ \mathrm{E}(e^{t~X_i}) = \prod_{i=1}^n ~ \mathrm{E}\left(e^{~t~(I_i \times B_i)} \right) \\
+& = \prod_{i=1}^n ~ \mathrm{E} \left[ \mathrm{E} \left( e^{~t~(I_i \times B_i)} | I_i \right) \right] ~~~~ \text{from the law of iterated expectations} \\
 &= \prod_{i=1}^n ~ \left[~ \mathrm{E}\left(e^{~t~(I_i \times B_i)} | I_i=0 \right) ~ \Pr(I_i=0) + \mathrm{E}\left( e^{~t~(I_i \times B_i)} | I_i=1 \right) ~ \Pr(I_i=1) ~\right] \\
 &= \prod_{i=1}^n ~ \left[ ~ (1) ~ (1-q_i) + M_{B_i}(t) ~ q_i ~ \right] = \prod_{i=1}^n \left(~ 1-q_i + q_i ~ M_{B_i}(t) ~\right) .
 \end{aligned}

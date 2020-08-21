@@ -89,7 +89,7 @@ Figure \@ref(fig:StochOperations) traces a timeline of a typical insurance contr
 features, such as the choice of a `r Gloss('deductible')` or the amount of coverage. From a company perspective, one can even think about the
 contract initiation (arrival, time $\mathrm{t}_1$) and contract termination (departure, time $\mathrm{t}_6$) as uncertain events.  (Alternatively, for some purposes, you may condition on these events and treat them as certain.)
 
-(ref:StochOperations) **Timeline of a Typical Insurance Policy. Arrows mark the occurrences of random events. Each x marks the time of scheduled events that are typically non-random**.
+(ref:StochOperations) **Timeline of a Typical Insurance Policy.** Arrows mark the occurrences of random events. Each x marks the time of scheduled events that are typically non-random.
 
 ```{r StochOperations, fig.cap='(ref:StochOperations)', out.width='100%', fig.asp=.75, fig.align='center', echo=FALSE}
 plot.new() 
@@ -684,8 +684,7 @@ severity than policyholders with the highest (15%, with 24/7 monitoring
 by a fire station or security company) alarm credit. In particular, when
 we look at the entity type School, the frequency is 0.422 and the
 severity 25,523 for no alarm credit, whereas for the highest alarm level
-it is 2.008 and 85,140, respectively. This may simply imply that entities with more
-claims are the ones that are likely to have an alarm system. Summary
+it is 2.008 and 85,140, respectively. This may simply imply that entities with more claims are the ones that are likely to have an alarm system. Summary
 tables do not examine multivariate effects; for example, [Table 1.6] ignores the effect of size (as we measure through
 coverage amounts) that affect claims.
 
@@ -830,8 +829,8 @@ classification*.
 Although property insurance is typically a one-year contract, [Table 1.3] suggests that policyholders tend to renew; this is
 typical of general insurance. For renewing policyholders, in addition to
 their rating variables we have their claims history and this claims
-history can be a good predictor of future claims. For example, Table
-\@ref(tab:ClaimRateVar) shows that policyholders without a claim in the last
+history can be a good predictor of future claims. For example, 
+[Table 1.6] shows that policyholders without a claim in the last
 two years had much lower claim frequencies than those with at least one
 accident (0.310 compared to 1.501); a lower predicted frequency
 typically results in a lower premium. This is why it is common for
