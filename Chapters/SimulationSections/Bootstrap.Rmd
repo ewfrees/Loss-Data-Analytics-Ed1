@@ -154,8 +154,6 @@ LER.boot <- function(ded, data, indices){
 set.seed(2019)
 dVec2 <- c(4000, 5000, 10500, 11500, 14000, 18500)
 OutBoot <- matrix(0,length(dVec2),6)
-colnames(OutBoot) <- c("d","NP Estimate","Bootstrap Bias", "Bootstrap SD", 
-                           "Lower Normal 95% CI", "Upper Normal 95% CI")
   for (i in 1:length(dVec2)) {
 OutBoot[i,1] <- dVec2[i]
 results <- boot(data=BIDataUncensored, statistic=LER.boot, R=1000, ded=dVec2[i])
@@ -177,9 +175,24 @@ OutBoot[i,6] <- temp$normal[3]
 Table 6.3. **Bootstrap Estimates of LER at Selected Deductibles**
 
 ```{r comment="", echo=FALSE}
-library(kableExtra)
-knitr::kable(OutBoot, digits=5)
+OutBoot.latex <- OutBoot
+colnames(OutBoot) <- c("d","NP Estimate","Bootstrap Bias", "Bootstrap SD", 
+                           "Lower Normal 95% CI", "Upper Normal 95% CI")
+if (knitr::is_html_output()) {knitr::kable(OutBoot, "html",digits=5) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+          font_size = 10)
+}
+if (knitr::is_latex_output()) {knitr::kable(OutBoot.latex, "latex", booktabs = T, digits=5) %>%
+  kable_styling(latex_options="scale_down") %>%
+    add_header_above(c("","Estimate","Bias", "SD", 
+                           "95% CI", "95% CI"))  %>%
+      add_header_above(c("d","NP","Bootstrap", "Bootstrap", 
+                           "Lower Normal", "Upper Normal"))
+}
 ```
+
+
+
 
 The bootstrap standard deviation gives a measure of precision. For one application of standard deviations, we can use the normal approximation to create a confidence interval. For example, the `R` function `boot.ci` produces the normal confidence intervals at 95%. These are produced by creating an interval of twice the length of 1.95994 bootstrap standard deviations, centered about the bias-corrected estimator (1.95994 is the 97.5th quantile of the standard normal distribution). For example, the lower normal 95% CI at $d=14000$ is $(0.97678-0.00018)- 1.95994*0.00701$ $= 0.96286$. We further discuss bootstrap confidence intervals in the next section.
 
@@ -339,10 +352,6 @@ BIDataUncensored <- subset(BIData, Censored == 0)
 set.seed(2017)
 PercentVec <- c(0.50, 0.80, 0.90, 0.95, 0.98)
 OutBoot1 <- matrix(0,5,10)
-colnames(OutBoot1) <- c("Fraction","NP Estimate", "Bootstrap Bias", "Bootstrap SD", 
-                        "Lower Normal 95% CI", "Upper Normal  95% CI",
-                        "Lower Basic 95% CI", "Upper Basic 95% CI",
-                        "Lower Percentile 95% CI", "Upper  Percentile 95% CI")
 for (i in 1:length(PercentVec)) {
 OutBoot1[i,1] <- PercentVec[i]
 results <- boot(data=BIDataUncensored$AmountPaid,
@@ -372,11 +381,30 @@ OutBoot1[i,10] <- temp$percent[5]
 
 Table 6.4. **Bootstrap Estimates of Quantiles at Selected Fractions**
 
-```{r comment="", echo = FALSE}
-knitr::kable(OutBoot1,digits=2) %>%
+```{r comment="", echo=FALSE}
+OutBoot1.latex <- OutBoot1
+colnames(OutBoot1) <- c("Fraction","NP Estimate", "Bootstrap Bias", 
+       "Bootstrap SD", "Lower Normal 95% CI", "Upper Normal  95% CI",
+       "Lower Basic 95% CI", "Upper Basic 95% CI",
+       "Lower Percentile 95% CI", "Upper  Percentile 95% CI")
+if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
           font_size = 10)
+}
+if (knitr::is_latex_output()) {knitr::kable(OutBoot1.latex, booktabs = T, "latex",digits=2) %>%
+  kable_styling(latex_options="scale_down") %>%
+    add_header_above(c("","Estimate", "Bias", 
+       "SD", "95% CI", "95% CI",
+       "95% CI", "95% CI",
+       "95% CI", "95% CI")) %>%
+    add_header_above(c("Fraction","NP", "Bootstrap", 
+       "Bootstrap", "Lower Normal", "Upper Normal",
+       "Lower Basic", "Upper Basic",
+       "Lower Percentile", "Upper  Percentile"))
+  }
 ```
+
+
 
 For example, when the fraction is 0.50, we see that lower and upper 2.5th quantiles of the bootstrap simulations are $q_L=$ `r quantile(bootreal,.025, type=6)` and $q_u=$ `r quantile(bootreal,.975, type=6)`, respectively. These form the percentile bootstrap confidence interval. With the nonparametric estimator `r quantile(BIDataUncensored$AmountPaid,.5)`, these yield the lower and upper bounds of the basic confidence interval `r 2*quantile(BIDataUncensored$AmountPaid,.5)-quantile(bootreal,.975, type=6)`
 and `r 2*quantile(BIDataUncensored$AmountPaid,.5)-quantile(bootreal,.025, type=6)`, respectively. [Table 6.4] also shows bootstrap estimates of the bias, standard deviation, and a normal confidence interval, concepts introduced in Section \@ref(S:Sim:Precision).
@@ -400,10 +428,6 @@ CTE.boot <- function(data, indices, RiskLevel){
 set.seed(2017)  
 PercentVec <- c(0.50, 0.80, 0.90, 0.95, 0.98)
 OutBoot1 <- matrix(0,5,10)
-colnames(OutBoot1) <- c("Fraction","NP Estimate", "Bootstrap Bias", 
-       "Bootstrap SD", "Lower Normal 95% CI", "Upper Normal  95% CI",
-       "Lower Basic 95% CI", "Upper Basic 95% CI",
-       "Lower Percentile 95% CI", "Upper  Percentile 95% CI")
   for (i in 1:length(PercentVec)) {
 OutBoot1[i,1] <- PercentVec[i]
 results <- boot(data=BIDataUncensored, statistic=CTE.boot, R=1000, RiskLevel=PercentVec[i])
@@ -429,11 +453,31 @@ OutBoot1[i,10] <- temp$percent[5]
 
 Table 6.5. **Bootstrap Estimates of TVaR at Selected Risk Levels**
 
+
 ```{r comment="", echo=FALSE}
-knitr::kable(OutBoot1,digits=2) %>%
+OutBoot1.latex <- OutBoot1
+colnames(OutBoot1) <- c("Fraction","NP Estimate", "Bootstrap Bias", 
+       "Bootstrap SD", "Lower Normal 95% CI", "Upper Normal  95% CI",
+       "Lower Basic 95% CI", "Upper Basic 95% CI",
+       "Lower Percentile 95% CI", "Upper  Percentile 95% CI")
+if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
           font_size = 10)
+}
+if (knitr::is_latex_output()) {knitr::kable(OutBoot1.latex, "latex", booktabs = T, digits=2) %>%
+  kable_styling(latex_options="scale_down") %>%
+    add_header_above(c("","Estimate", "Bias", 
+       "SD", "95% CI", "95% CI",
+       "95% CI", "95% CI",
+       "95% CI", "95% CI"))  %>%
+    add_header_above(c("Fraction","NP", "Bootstrap", 
+       "Bootstrap", "Lower Normal", "Upper Normal",
+       "Lower Basic", "Upper Basic",
+       "Lower Percentile", "Upper  Percentile"))
+  }
 ```
+
+
 
 ### Parametric Bootstrap {#S:ParametricBootStrap}
 
@@ -516,8 +560,6 @@ KM0 <- survfit(Surv(AmountPaid, UnCensored) ~ 1,
 set.seed(2019)
 PercentVec <- c(0.50, 0.80, 0.90, 0.95, 0.98)
 OutBoot1 <- matrix(NA,5,6)
-colnames(OutBoot1) <- c("Fraction","KM NP Estimate", "Bootstrap Bias",
-                        "Bootstrap SD",  "Lower Basic 95% CI", "Upper Basic 95% CI")
 KM.survobj <- Surv(BIData$AmountPaid, BIData$UnCensored) 
 for (i in 1:length(PercentVec)) {
 OutBoot1[i,1] <- PercentVec[i]
@@ -541,9 +583,25 @@ OutBoot1[i,6] <- 2*OutBoot1[i,2]-quantile(results,.025, type=6)
 
 Table 6.6. **Bootstrap Kaplan-Meier Estimates of Quantiles at Selected Fractions**
 
+
 ```{r comment="", echo=FALSE}
-knitr::kable(OutBoot1,digits=2)
+OutBoot1.latex <- OutBoot1
+colnames(OutBoot1) <- c("Fraction","KM NP Estimate", "Bootstrap Bias",
+                        "Bootstrap SD",  "Lower Basic 95% CI", "Upper Basic 95% CI")
+if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+          font_size = 10)
+}
+if (knitr::is_latex_output()) {knitr::kable(OutBoot1.latex, "latex", booktabs = T, digits=2) %>%
+  kable_styling(latex_options="scale_down") %>%
+        add_header_above(c("","Estimate", "Bias",
+                      "SD",  "95% CI", "95% CI")) %>%
+    add_header_above(c("Fraction","KM NP", "Bootstrap ",
+                      "Bootstrap",  "Lower Basic", "Upper Basic"))
+
+}
 ```
+
 
 
 Results in [Table 6.6] are consistent with the results for the uncensored subsample in [Table 6.4]. In [Table 6.6], we note the difficulty in estimating quantiles at large fractions due to the censoring. However, for moderate size fractions (0.50, 0.80, and 0.90), the Kaplan-Meier nonparametric (KM NP) estimates of the quantile are consistent with those [Table 6.4]. The bootstrap standard deviation is smaller at the 0.50 (corresponding to the median) but larger at the 0.80 and 0.90 levels. The censored data analysis summarized in [Table 6.6] uses more data than the uncensored subsample analysis in [Table 6.4] but also has difficulty extracting information for large quantiles.

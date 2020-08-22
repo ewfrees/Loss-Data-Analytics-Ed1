@@ -170,7 +170,6 @@ LER <- function(ded) sum(pmin(x,ded))/sum(x)
 set.seed(2019)
 dVec2 <- c(4000, 5000, 10500, 11500, 14000, 18500)
 OutJack <- matrix(0,length(dVec2),8)
-colnames(OutJack) <- c("d","NP Estimate","Bootstrap Bias", "Bootstrap SD", "Jackknife Bias", "Jackknife SD","Lower Jackknife 95% CI", "Upper Jackknife 95% CI")
   for (j in 1:length(dVec2)) {
 OutJack[j,1] <- dVec2[j]
 results <- boot(data=BIDataUncensored, statistic=LER.boot, R=1000, ded=dVec2[j])
@@ -197,9 +196,24 @@ OutJack[j,7:8] <- mean(JackTheta.ded)+qt(c(0.025,0.975),length(x)-1)*OutJack[j,6
 
 Table 6.7. **Jackknife Estimates of LER at Selected Deductibles**
 
+
 ```{r comment="", echo=FALSE}
-knitr::kable(OutJack, digits=5)
+OutJack.latex <- OutJack
+colnames(OutJack) <- c("d","NP Estimate","Bootstrap Bias", "Bootstrap SD", 
+                       "Jackknife Bias", "Jackknife SD","Lower Jackknife 95% CI", "Upper Jackknife 95% CI")
+if (knitr::is_html_output()) {knitr::kable(OutJack, "html",digits=5) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+          font_size = 10)
+}
+if (knitr::is_latex_output()) {knitr::kable(OutJack.latex, "latex", booktabs = T, digits=5) %>%
+  kable_styling(latex_options="scale_down") %>%
+    add_header_above(c("","Estimate","Bias", "SD", 
+                       "Bias", "SD","95% CI", "95% CI")) %>%
+      add_header_above(c("d","NP","Bootstrap", "Bootstrap", 
+                       "Jackknife", "Jackknife","Lower Jackknife", "Upper Jackknife"))
+}
 ```
+
 
 ***
 

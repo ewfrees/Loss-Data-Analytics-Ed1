@@ -41,7 +41,7 @@ i.i.d, it can be reproduced by using the same seed number (and the same
 algorithm). 
 
 
-**Example `r chapnum`.1.2. Generating uniform random numbers in `R`.**
+**Example `r chapnum`.1.2. Generating Uniform Random Numbers in `R`.**
 The following code shows how to generate three uniform (0,1) numbers in `R` using the `runif` command. The `set.seed()` function sets the initial seed. In many computer packages, the initial seed is set using the system clock unless specified otherwise.
 
 
@@ -83,7 +83,7 @@ The result is that the sequence {$X_{i}$} is approximately *iid* with distributi
 
 The inverse transform result is available when the underlying random variable is continuous, discrete or a hybrid combination of the two. We now present a series of examples to illustrate its scope of applications.
 
-**Example `r chapnum`.1.3. Generating exponential random numbers.**
+**Example `r chapnum`.1.3. Generating Exponential Random Numbers.**
 Suppose that we would like to generate observations from an exponential distribution with scale
 parameter $\theta$ so that $F(x) = 1 - e^{-x/\theta}$. To compute the
 inverse transform, we can use the following steps: 
@@ -117,7 +117,7 @@ knitr::kable(outmat, digits=5)
 
 ***
 
-**Example `r chapnum`.1.4. Generating Pareto random numbers.**
+**Example `r chapnum`.1.4. Generating Pareto Random Numbers.**
 Suppose that we would like to generate observations from a Pareto distribution with parameters $\alpha$ and
 $\theta$ so that $F(x) = 1 - \left(\frac{\theta}{x+\theta} \right)^{\alpha}$. To compute
 the inverse transform, we can use the following steps: 
@@ -158,7 +158,7 @@ as required. The key step is that $F(F^{-1}(u)) = u$ for each $u$, which is clea
 
 We now consider some discrete examples.
 
-**Example `r chapnum`.1.5. Generating Bernoulli random numbers.**
+**Example `r chapnum`.1.5. Generating Bernoulli Random Numbers.**
 Suppose that we wish to simulate random variables from a Bernoulli distribution with parameter $q=0.85$.
 
 (ref:BinaryDF) **Distribution Function of a Binary Random Variable**
@@ -211,7 +211,7 @@ colnames(outmat) <- c("Uniform","Binary X")
 knitr::kable(outmat, digits=5)
 ```
 
-**Example `r chapnum`.1.6. Generating random numbers from a discrete distribution.**
+**Example `r chapnum`.1.6. Generating Random Numbers from a Discrete Distribution.**
 Consider the time of a machine failure in the first five years. The distribution of failure times is
 given as:
 
@@ -222,9 +222,11 @@ time <- 1:5
 probs <- c(0.1,0.2,0.1, 0.4, 0.2)
 df <- cumsum(probs)
 outmat <- rbind(time, probs, df)
-rownames(outmat) <- c("Time","Probability","Distribution Function $F(x)$    ")
-knitr::kable(outmat, align=c('rrrrr'), col.names = rep("$~~~~~~~~~~$",5))
+rownames(outmat) <- c("Time","Probability","Distribution Function")
+knitr::kable(outmat, align=c('rrrrr'), col.names = rep('',5))
 ```
+
+
 
 (ref:DiscreteDF) **Distribution Function of a Discrete Random Variable**
 
@@ -308,7 +310,7 @@ $$
             
 Both algorithms produce (in the long-run) the same probabilities, e.g., $\Pr(\textrm{whole life})=0.1$, and so forth. So, neither is incorrect. You should be aware that there is more than one way to accomplish a goal. Similarly, you could use an alternative algorithm for ordered outcomes (such as failure times 1, 2, 3, 4, or 5, above).
 
-**Example `r chapnum`.1.7. Generating random numbers from a hybrid distribution.**
+**Example `r chapnum`.1.7. Generating Random Numbers from a Hybrid Distribution.**
 Consider a random variable that is 0
 with probability 70% and is exponentially distributed with parameter
 $\theta= 10,000$ with probability 30%. In an insurance application, this might correspond to a 70% chance of having no insurance claims and a 30%
@@ -653,6 +655,7 @@ matlines(1:n,bonds+true_value,col="red",lty=1)
 
 [Table 6.1] summarizes the four choices of $h(\cdot)$ and $F(\cdot)$ to approximate $\Pr[X>2] =$ `r round(true_value,digits=5)`. The standard error varies dramatically. Thus, if we have a desired degree of accuracy, then the *number of simulations* depends strongly on how we write the integrals we try to approximate.
 
+
 [Table 6.1]:\#tab:61
 
 <a id=tab:61></a>
@@ -662,6 +665,8 @@ Table 6.1. **Summary of Four Choices to Approximate** $\Pr[X>2]$
 <div align="center">
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 library(htmlTable)
+library(knitr)
+library(kableExtra)
 x1 <- c(
   "$p_1$", 
   "$\\frac{1}{R}\\sum_{i=1}^R \\mathrm{I}(F^{-1}(U_i)>2)$",
@@ -680,9 +685,18 @@ x4 <- c(
   "$h_4(x)=\\frac{1}{2\\pi(1+x^2)}$",format(round(c(p4,se.p4),digits=6), scientific = FALSE))
 outMat <- rbind(x1,x2,x3,x4)
 rownames(outMat) <- NULL
-htmlTable(outMat, header =  c("Estimator", "Definition",
-                            "Support Function", "Estimate", " Standard Error"),
-          align = "cccrr")     
+# htmlTable(outMat, header =  c("Estimator", "Definition",
+#                             "Support Function", "Estimate", " Standard Error"),
+#           align = "cccrr")  
+colnames(outMat) <- c("Estimator", "Definition",
+                            "Support \n Function", "Estimate", " Standard \n Error")
+if (knitr::is_latex_output()) {knitr::kable(outMat, "latex", booktabs=TRUE, escape = F, align = "cccrr") %>%
+  kable_styling(font_size = 10, latex_options="scale_down")
+}
+if (knitr::is_html_output()) {knitr::kable(outMat, "html", booktabs=TRUE, escape = F, align = "cccrr") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+          font_size = 10)
+  }
 ```
 </div>
 
