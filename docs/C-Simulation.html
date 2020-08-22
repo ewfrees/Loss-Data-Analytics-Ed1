@@ -916,7 +916,7 @@ Take <span class="math inline">\(m=15\)</span>, <span class="math inline">\(a=3\
 replicated. That is, despite the fact that {<span class="math inline">\(U_{i}\)</span>} appears to be
 i.i.d, it can be reproduced by using the same seed number (and the same
 algorithm).</p>
-<p><strong>Example 6.1.2. Generating uniform random numbers in <code>R</code>.</strong>
+<p><strong>Example 6.1.2. Generating Uniform Random Numbers in <code>R</code>.</strong>
 The following code shows how to generate three uniform (0,1) numbers in <code>R</code> using the <code>runif</code> command. The <code>set.seed()</code> function sets the initial seed. In many computer packages, the initial seed is set using the system clock unless specified otherwise.</p>
 <div id="three-uniform-random-variates" class="section level5 unnumbered">
 <h5>Three Uniform Random Variates</h5>
@@ -973,7 +973,7 @@ F^{-1}(y) = \inf_x ~ \{ F(x) \ge y \} .
 <p>Recall that <span class="math inline">\(\inf\)</span> stands for <em>infimum</em> or the <a href="#" class="tooltip" style="color:green"><em>greatest lower bound</em><span style="font-size:8pt">Largest value that is less than or equal to a specified subset of values/elements</span></a>. It is essentially the smallest value of <em>x</em> that satisfies the inequality <span class="math inline">\(\{F(x) \ge y\}\)</span>.
 The result is that the sequence {<span class="math inline">\(X_{i}\)</span>} is approximately <em>iid</em> with distribution function <span class="math inline">\(F\)</span> if the {<span class="math inline">\(U_i\)</span>} are <em>iid</em> with uniform on <span class="math inline">\((0,1)\)</span> distribution function.</p>
 <p>The inverse transform result is available when the underlying random variable is continuous, discrete or a hybrid combination of the two. We now present a series of examples to illustrate its scope of applications.</p>
-<p><strong>Example 6.1.3. Generating exponential random numbers.</strong>
+<p><strong>Example 6.1.3. Generating Exponential Random Numbers.</strong>
 Suppose that we would like to generate observations from an exponential distribution with scale
 parameter <span class="math inline">\(\theta\)</span> so that <span class="math inline">\(F(x) = 1 - e^{-x/\theta}\)</span>. To compute the
 inverse transform, we can use the following steps:
@@ -1043,7 +1043,7 @@ Exponential 2
 </tbody>
 </table>
 <hr />
-<p><strong>Example 6.1.4. Generating Pareto random numbers.</strong>
+<p><strong>Example 6.1.4. Generating Pareto Random Numbers.</strong>
 Suppose that we would like to generate observations from a Pareto distribution with parameters <span class="math inline">\(\alpha\)</span> and
 <span class="math inline">\(\theta\)</span> so that <span class="math inline">\(F(x) = 1 - \left(\frac{\theta}{x+\theta} \right)^{\alpha}\)</span>. To compute
 the inverse transform, we can use the following steps:</p>
@@ -1073,7 +1073,7 @@ the inverse transform, we can use the following steps:</p>
 <hr />
 </div>
 <p>We now consider some discrete examples.</p>
-<p><strong>Example 6.1.5. Generating Bernoulli random numbers.</strong>
+<p><strong>Example 6.1.5. Generating Bernoulli Random Numbers.</strong>
 Suppose that we wish to simulate random variables from a Bernoulli distribution with parameter <span class="math inline">\(q=0.85\)</span>.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:BinaryDF"></span>
@@ -1145,7 +1145,7 @@ Binary X
 </tr>
 </tbody>
 </table>
-<p><strong>Example 6.1.6. Generating random numbers from a discrete distribution.</strong>
+<p><strong>Example 6.1.6. Generating Random Numbers from a Discrete Distribution.</strong>
 Consider the time of a machine failure in the first five years. The distribution of failure times is
 given as:</p>
 <div id="discrete-distribution" class="section level5 unnumbered">
@@ -1156,19 +1156,14 @@ given as:</p>
 <th style="text-align:left;">
 </th>
 <th style="text-align:right;">
-<span class="math inline">\(~~~~~~~~~~\)</span>
 </th>
 <th style="text-align:right;">
-<span class="math inline">\(~~~~~~~~~~\)</span>
 </th>
 <th style="text-align:right;">
-<span class="math inline">\(~~~~~~~~~~\)</span>
 </th>
 <th style="text-align:right;">
-<span class="math inline">\(~~~~~~~~~~\)</span>
 </th>
 <th style="text-align:right;">
-<span class="math inline">\(~~~~~~~~~~\)</span>
 </th>
 </tr>
 </thead>
@@ -1215,7 +1210,7 @@ Probability
 </tr>
 <tr>
 <td style="text-align:left;">
-Distribution Function <span class="math inline">\(F(x)\)</span>
+Distribution Function
 </td>
 <td style="text-align:right;">
 0.1
@@ -1289,7 +1284,7 @@ X = \left\{ \begin{array}{cc}
 }
 \]</span></p>
 <p>Both algorithms produce (in the long-run) the same probabilities, e.g., <span class="math inline">\(\Pr(\textrm{whole life})=0.1\)</span>, and so forth. So, neither is incorrect. You should be aware that there is more than one way to accomplish a goal. Similarly, you could use an alternative algorithm for ordered outcomes (such as failure times 1, 2, 3, 4, or 5, above).</p>
-<p><strong>Example 6.1.7. Generating random numbers from a hybrid distribution.</strong>
+<p><strong>Example 6.1.7. Generating Random Numbers from a Hybrid Distribution.</strong>
 Consider a random variable that is 0
 with probability 70% and is exponentially distributed with parameter
 <span class="math inline">\(\theta= 10,000\)</span> with probability 30%. In an insurance application, this might correspond to a 70% chance of having no insurance claims and a 30%
@@ -1496,92 +1491,94 @@ The expression seems rather similar to the previous one.</p>
 <p><a id=tab:61></a></p>
 <p>Table 6.1. <strong>Summary of Four Choices to Approximate</strong> <span class="math inline">\(\Pr[X&gt;2]\)</span></p>
 <div align="center">
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th style="text-align:center;">
 Estimator
 </th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th style="text-align:center;">
 Definition
 </th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
-Support Function
+<th style="text-align:center;">
+Support
+Function
 </th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
+<th style="text-align:right;">
 Estimate
 </th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
-Standard Error
+<th style="text-align:right;">
+Standard
+Error
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(p_1\)</span>
 </td>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(\frac{1}{R}\sum_{i=1}^R \mathrm{I}(F^{-1}(U_i)&gt;2)\)</span>
 </td>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(~~~~~~F^{-1}(u)=\tan \left( \pi(u-0.5) \right)~~~~~~~\)</span>
 </td>
-<td style="text-align: right;">
+<td style="text-align:right;">
 0.147439
 </td>
-<td style="text-align: right;">
+<td style="text-align:right;">
 0.000355
 </td>
 </tr>
 <tr>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(p_2\)</span>
 </td>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(\frac{1}{2R}\sum_{i=1}^R \mathrm{I}(|F^{-1}(U_i)|&gt;2)\)</span>
 </td>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(F^{-1}(u)=\tan \left( \pi(u-0.5) \right)\)</span>
 </td>
-<td style="text-align: right;">
+<td style="text-align:right;">
 0.147477
 </td>
-<td style="text-align: right;">
+<td style="text-align:right;">
 0.000228
 </td>
 </tr>
 <tr>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(p_3\)</span>
 </td>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(\frac{1}{2}-\frac{1}{R}\sum_{i=1}^R h_3(2U_i)\)</span>
 </td>
-<td style="text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(h_3(x)=\frac{2}{\pi(1+x^2)}\)</span>
 </td>
-<td style="text-align: right;">
+<td style="text-align:right;">
 0.147558
 </td>
-<td style="text-align: right;">
+<td style="text-align:right;">
 0.000169
 </td>
 </tr>
 <tr>
-<td style="border-bottom: 2px solid grey; text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(p_4\)</span>
 </td>
-<td style="border-bottom: 2px solid grey; text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(\frac{1}{R}\sum_{i=1}^R h_4(U_i/2)\)</span>
 </td>
-<td style="border-bottom: 2px solid grey; text-align: center;">
+<td style="text-align:center;">
 <span class="math inline">\(h_4(x)=\frac{1}{2\pi(1+x^2)}\)</span>
 </td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
+<td style="text-align:right;">
 0.147587
 </td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
+<td style="text-align:right;">
 0.000010
 </td>
 </tr>
@@ -1785,22 +1782,20 @@ Figure 6.8: <strong>Inverse of an Empirical Distribution Function</strong>
 <a class="sourceLine" id="cb55-14" title="14"><span class="kw">set.seed</span>(<span class="dv">2019</span>)</a>
 <a class="sourceLine" id="cb55-15" title="15">dVec2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4000</span>, <span class="dv">5000</span>, <span class="dv">10500</span>, <span class="dv">11500</span>, <span class="dv">14000</span>, <span class="dv">18500</span>)</a>
 <a class="sourceLine" id="cb55-16" title="16">OutBoot &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="kw">length</span>(dVec2),<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb55-17" title="17"><span class="kw">colnames</span>(OutBoot) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>,<span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, </a>
-<a class="sourceLine" id="cb55-18" title="18">                           <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal 95% CI&quot;</span>)</a>
-<a class="sourceLine" id="cb55-19" title="19">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(dVec2)) {</a>
-<a class="sourceLine" id="cb55-20" title="20">OutBoot[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>dVec2[i]</a>
-<a class="sourceLine" id="cb55-21" title="21">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>LER.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">ded=</span>dVec2[i])</a>
-<a class="sourceLine" id="cb55-22" title="22">OutBoot[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
-<a class="sourceLine" id="cb55-23" title="23">biasboot &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 -&gt;<span class="st"> </span>OutBoot[i,<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb55-24" title="24">sdboot &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) -&gt;<span class="st"> </span>OutBoot[i,<span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb55-25" title="25">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results)</a>
-<a class="sourceLine" id="cb55-26" title="26">OutBoot[i,<span class="dv">5</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb55-27" title="27">OutBoot[i,<span class="dv">6</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb55-28" title="28">}</a></code></pre></div>
+<a class="sourceLine" id="cb55-17" title="17">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(dVec2)) {</a>
+<a class="sourceLine" id="cb55-18" title="18">OutBoot[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>dVec2[i]</a>
+<a class="sourceLine" id="cb55-19" title="19">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>LER.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">ded=</span>dVec2[i])</a>
+<a class="sourceLine" id="cb55-20" title="20">OutBoot[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
+<a class="sourceLine" id="cb55-21" title="21">biasboot &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 -&gt;<span class="st"> </span>OutBoot[i,<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb55-22" title="22">sdboot &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) -&gt;<span class="st"> </span>OutBoot[i,<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb55-23" title="23">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results)</a>
+<a class="sourceLine" id="cb55-24" title="24">OutBoot[i,<span class="dv">5</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb55-25" title="25">OutBoot[i,<span class="dv">6</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb55-26" title="26">}</a></code></pre></div>
 </div>
 <p><a id=tab:63></a></p>
 <p>Table 6.3. <strong>Bootstrap Estimates of LER at Selected Deductibles</strong></p>
-<table>
+<table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -2086,28 +2081,24 @@ In this expression, the denominator counts the number of observations that excee
 <a class="sourceLine" id="cb65-6" title="6"><span class="kw">set.seed</span>(<span class="dv">2017</span>)</a>
 <a class="sourceLine" id="cb65-7" title="7">PercentVec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.50</span>, <span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.98</span>)</a>
 <a class="sourceLine" id="cb65-8" title="8">OutBoot1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb65-9" title="9"><span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, </a>
-<a class="sourceLine" id="cb65-10" title="10">                        <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal  95% CI&quot;</span>,</a>
-<a class="sourceLine" id="cb65-11" title="11">                        <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>,</a>
-<a class="sourceLine" id="cb65-12" title="12">                        <span class="st">&quot;Lower Percentile 95% CI&quot;</span>, <span class="st">&quot;Upper  Percentile 95% CI&quot;</span>)</a>
-<a class="sourceLine" id="cb65-13" title="13"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {</a>
-<a class="sourceLine" id="cb65-14" title="14">OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]</a>
-<a class="sourceLine" id="cb65-15" title="15">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored<span class="op">$</span>AmountPaid,</a>
-<a class="sourceLine" id="cb65-16" title="16">                <span class="dt">statistic=</span><span class="cf">function</span>(X,indices)</a>
-<a class="sourceLine" id="cb65-17" title="17">                    <span class="kw">quantile</span>(X[indices],PercentVec[i]),</a>
-<a class="sourceLine" id="cb65-18" title="18">                 <span class="dt">R=</span><span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb65-19" title="19"><span class="cf">if</span> (i<span class="op">==</span><span class="dv">1</span>){bootreal &lt;-<span class="st"> </span>results<span class="op">$</span>t}</a>
-<a class="sourceLine" id="cb65-20" title="20">OutBoot1[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
-<a class="sourceLine" id="cb65-21" title="21">OutBoot1[i,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 </a>
-<a class="sourceLine" id="cb65-22" title="22">OutBoot1[i,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) </a>
-<a class="sourceLine" id="cb65-23" title="23">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results, <span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;norm&quot;</span>, <span class="st">&quot;basic&quot;</span>, <span class="st">&quot;perc&quot;</span>))</a>
-<a class="sourceLine" id="cb65-24" title="24">OutBoot1[i,<span class="dv">5</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb65-25" title="25">OutBoot1[i,<span class="dv">6</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb65-26" title="26">OutBoot1[i,<span class="dv">7</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb65-27" title="27">OutBoot1[i,<span class="dv">8</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb65-28" title="28">OutBoot1[i,<span class="dv">9</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb65-29" title="29">OutBoot1[i,<span class="dv">10</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb65-30" title="30">}</a></code></pre></div>
+<a class="sourceLine" id="cb65-9" title="9"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {</a>
+<a class="sourceLine" id="cb65-10" title="10">OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]</a>
+<a class="sourceLine" id="cb65-11" title="11">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored<span class="op">$</span>AmountPaid,</a>
+<a class="sourceLine" id="cb65-12" title="12">                <span class="dt">statistic=</span><span class="cf">function</span>(X,indices)</a>
+<a class="sourceLine" id="cb65-13" title="13">                    <span class="kw">quantile</span>(X[indices],PercentVec[i]),</a>
+<a class="sourceLine" id="cb65-14" title="14">                 <span class="dt">R=</span><span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb65-15" title="15"><span class="cf">if</span> (i<span class="op">==</span><span class="dv">1</span>){bootreal &lt;-<span class="st"> </span>results<span class="op">$</span>t}</a>
+<a class="sourceLine" id="cb65-16" title="16">OutBoot1[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
+<a class="sourceLine" id="cb65-17" title="17">OutBoot1[i,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 </a>
+<a class="sourceLine" id="cb65-18" title="18">OutBoot1[i,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) </a>
+<a class="sourceLine" id="cb65-19" title="19">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results, <span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;norm&quot;</span>, <span class="st">&quot;basic&quot;</span>, <span class="st">&quot;perc&quot;</span>))</a>
+<a class="sourceLine" id="cb65-20" title="20">OutBoot1[i,<span class="dv">5</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb65-21" title="21">OutBoot1[i,<span class="dv">6</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb65-22" title="22">OutBoot1[i,<span class="dv">7</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb65-23" title="23">OutBoot1[i,<span class="dv">8</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb65-24" title="24">OutBoot1[i,<span class="dv">9</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb65-25" title="25">OutBoot1[i,<span class="dv">10</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb65-26" title="26">}</a></code></pre></div>
 </div>
 <p><a id=tab:64></a></p>
 <p>Table 6.4. <strong>Bootstrap Estimates of Quantiles at Selected Fractions</strong></p>
@@ -2327,24 +2318,20 @@ and 7000, respectively. <a href="#tab:64">Table 6.4</a> also shows bootstrap est
 <a class="sourceLine" id="cb66-9" title="9"><span class="kw">set.seed</span>(<span class="dv">2017</span>)  </a>
 <a class="sourceLine" id="cb66-10" title="10">PercentVec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.50</span>, <span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.98</span>)</a>
 <a class="sourceLine" id="cb66-11" title="11">OutBoot1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb66-12" title="12"><span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>, </a>
-<a class="sourceLine" id="cb66-13" title="13">       <span class="st">&quot;Bootstrap SD&quot;</span>, <span class="st">&quot;Lower Normal 95% CI&quot;</span>, <span class="st">&quot;Upper Normal  95% CI&quot;</span>,</a>
-<a class="sourceLine" id="cb66-14" title="14">       <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>,</a>
-<a class="sourceLine" id="cb66-15" title="15">       <span class="st">&quot;Lower Percentile 95% CI&quot;</span>, <span class="st">&quot;Upper  Percentile 95% CI&quot;</span>)</a>
-<a class="sourceLine" id="cb66-16" title="16">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {</a>
-<a class="sourceLine" id="cb66-17" title="17">OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]</a>
-<a class="sourceLine" id="cb66-18" title="18">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>CTE.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">RiskLevel=</span>PercentVec[i])</a>
-<a class="sourceLine" id="cb66-19" title="19">OutBoot1[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
-<a class="sourceLine" id="cb66-20" title="20">OutBoot1[i,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 </a>
-<a class="sourceLine" id="cb66-21" title="21">OutBoot1[i,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) </a>
-<a class="sourceLine" id="cb66-22" title="22">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results, <span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;norm&quot;</span>, <span class="st">&quot;basic&quot;</span>, <span class="st">&quot;perc&quot;</span>))</a>
-<a class="sourceLine" id="cb66-23" title="23">OutBoot1[i,<span class="dv">5</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb66-24" title="24">OutBoot1[i,<span class="dv">6</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb66-25" title="25">OutBoot1[i,<span class="dv">7</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb66-26" title="26">OutBoot1[i,<span class="dv">8</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb66-27" title="27">OutBoot1[i,<span class="dv">9</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb66-28" title="28">OutBoot1[i,<span class="dv">10</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb66-29" title="29">  }</a></code></pre></div>
+<a class="sourceLine" id="cb66-12" title="12">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {</a>
+<a class="sourceLine" id="cb66-13" title="13">OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]</a>
+<a class="sourceLine" id="cb66-14" title="14">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>CTE.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">RiskLevel=</span>PercentVec[i])</a>
+<a class="sourceLine" id="cb66-15" title="15">OutBoot1[i,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
+<a class="sourceLine" id="cb66-16" title="16">OutBoot1[i,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 </a>
+<a class="sourceLine" id="cb66-17" title="17">OutBoot1[i,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) </a>
+<a class="sourceLine" id="cb66-18" title="18">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results, <span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;norm&quot;</span>, <span class="st">&quot;basic&quot;</span>, <span class="st">&quot;perc&quot;</span>))</a>
+<a class="sourceLine" id="cb66-19" title="19">OutBoot1[i,<span class="dv">5</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb66-20" title="20">OutBoot1[i,<span class="dv">6</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>normal[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb66-21" title="21">OutBoot1[i,<span class="dv">7</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb66-22" title="22">OutBoot1[i,<span class="dv">8</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>basic[<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb66-23" title="23">OutBoot1[i,<span class="dv">9</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb66-24" title="24">OutBoot1[i,<span class="dv">10</span>] &lt;-<span class="st"> </span>temp<span class="op">$</span>percent[<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb66-25" title="25">  }</a></code></pre></div>
 </div>
 <p><a id=tab:65></a></p>
 <p>Table 6.5. <strong>Bootstrap Estimates of TVaR at Selected Risk Levels</strong></p>
@@ -2606,24 +2593,22 @@ Figure 6.11: <strong>Comparision of Nonparametric and Parametric Bootstrap Distr
 <a class="sourceLine" id="cb74-8" title="8"><span class="kw">set.seed</span>(<span class="dv">2019</span>)</a>
 <a class="sourceLine" id="cb74-9" title="9">PercentVec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.50</span>, <span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.98</span>)</a>
 <a class="sourceLine" id="cb74-10" title="10">OutBoot1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>,<span class="dv">5</span>,<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb74-11" title="11"><span class="kw">colnames</span>(OutBoot1) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fraction&quot;</span>,<span class="st">&quot;KM NP Estimate&quot;</span>, <span class="st">&quot;Bootstrap Bias&quot;</span>,</a>
-<a class="sourceLine" id="cb74-12" title="12">                        <span class="st">&quot;Bootstrap SD&quot;</span>,  <span class="st">&quot;Lower Basic 95% CI&quot;</span>, <span class="st">&quot;Upper Basic 95% CI&quot;</span>)</a>
-<a class="sourceLine" id="cb74-13" title="13">KM.survobj &lt;-<span class="st"> </span><span class="kw">Surv</span>(BIData<span class="op">$</span>AmountPaid, BIData<span class="op">$</span>UnCensored) </a>
-<a class="sourceLine" id="cb74-14" title="14"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {</a>
-<a class="sourceLine" id="cb74-15" title="15">OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]</a>
-<a class="sourceLine" id="cb74-16" title="16">results &lt;-<span class="st"> </span><span class="kw">bootkm</span>(KM.survobj, <span class="dt">q=</span><span class="dv">1</span><span class="op">-</span>PercentVec[i], <span class="dt">B=</span><span class="dv">1000</span>, <span class="dt">pr =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb74-17" title="17"><span class="cf">if</span> (i<span class="op">==</span><span class="dv">1</span>){bootreal &lt;-<span class="st"> </span>results}</a>
-<a class="sourceLine" id="cb74-18" title="18">OutBoot1[i,<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">quantile</span>(KM0, PercentVec[i])<span class="op">$</span>quantile</a>
-<a class="sourceLine" id="cb74-19" title="19">OutBoot1[i,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(results)<span class="op">-</span>OutBoot1[i,<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb74-20" title="20">OutBoot1[i,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(results) </a>
-<a class="sourceLine" id="cb74-21" title="21"><span class="co"># temp &lt;- boot.ci(results, type = c(&quot;norm&quot;,  &quot;basic&quot;,&quot;perc&quot;))</span></a>
-<a class="sourceLine" id="cb74-22" title="22">OutBoot1[i,<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>OutBoot1[i,<span class="dv">2</span>]<span class="op">-</span><span class="kw">quantile</span>(results,.<span class="dv">975</span>, <span class="dt">type=</span><span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb74-23" title="23">OutBoot1[i,<span class="dv">6</span>] &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>OutBoot1[i,<span class="dv">2</span>]<span class="op">-</span><span class="kw">quantile</span>(results,.<span class="dv">025</span>, <span class="dt">type=</span><span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb74-24" title="24">}</a></code></pre></div>
+<a class="sourceLine" id="cb74-11" title="11">KM.survobj &lt;-<span class="st"> </span><span class="kw">Surv</span>(BIData<span class="op">$</span>AmountPaid, BIData<span class="op">$</span>UnCensored) </a>
+<a class="sourceLine" id="cb74-12" title="12"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(PercentVec)) {</a>
+<a class="sourceLine" id="cb74-13" title="13">OutBoot1[i,<span class="dv">1</span>] &lt;-<span class="st"> </span>PercentVec[i]</a>
+<a class="sourceLine" id="cb74-14" title="14">results &lt;-<span class="st"> </span><span class="kw">bootkm</span>(KM.survobj, <span class="dt">q=</span><span class="dv">1</span><span class="op">-</span>PercentVec[i], <span class="dt">B=</span><span class="dv">1000</span>, <span class="dt">pr =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb74-15" title="15"><span class="cf">if</span> (i<span class="op">==</span><span class="dv">1</span>){bootreal &lt;-<span class="st"> </span>results}</a>
+<a class="sourceLine" id="cb74-16" title="16">OutBoot1[i,<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">quantile</span>(KM0, PercentVec[i])<span class="op">$</span>quantile</a>
+<a class="sourceLine" id="cb74-17" title="17">OutBoot1[i,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(results)<span class="op">-</span>OutBoot1[i,<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb74-18" title="18">OutBoot1[i,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(results) </a>
+<a class="sourceLine" id="cb74-19" title="19"><span class="co"># temp &lt;- boot.ci(results, type = c(&quot;norm&quot;,  &quot;basic&quot;,&quot;perc&quot;))</span></a>
+<a class="sourceLine" id="cb74-20" title="20">OutBoot1[i,<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>OutBoot1[i,<span class="dv">2</span>]<span class="op">-</span><span class="kw">quantile</span>(results,.<span class="dv">975</span>, <span class="dt">type=</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb74-21" title="21">OutBoot1[i,<span class="dv">6</span>] &lt;-<span class="st"> </span><span class="dv">2</span><span class="op">*</span>OutBoot1[i,<span class="dv">2</span>]<span class="op">-</span><span class="kw">quantile</span>(results,.<span class="dv">025</span>, <span class="dt">type=</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb74-22" title="22">}</a></code></pre></div>
 </div>
 <p><a id=tab:66></a></p>
 <p>Table 6.6. <strong>Bootstrap Kaplan-Meier Estimates of Quantiles at Selected Fractions</strong></p>
-<table>
+<table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -2875,25 +2860,24 @@ s_{jack} =\sqrt{\frac{n-1}{n}\sum_{i=1}^n \left(\widehat{\theta}_{-i} -\overline
 <a class="sourceLine" id="cb79-20" title="20"><span class="kw">set.seed</span>(<span class="dv">2019</span>)</a>
 <a class="sourceLine" id="cb79-21" title="21">dVec2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4000</span>, <span class="dv">5000</span>, <span class="dv">10500</span>, <span class="dv">11500</span>, <span class="dv">14000</span>, <span class="dv">18500</span>)</a>
 <a class="sourceLine" id="cb79-22" title="22">OutJack &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="kw">length</span>(dVec2),<span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb79-23" title="23"><span class="kw">colnames</span>(OutJack) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;NP Estimate&quot;</span>,<span class="st">&quot;Bootstrap Bias&quot;</span>, <span class="st">&quot;Bootstrap SD&quot;</span>, <span class="st">&quot;Jackknife Bias&quot;</span>, <span class="st">&quot;Jackknife SD&quot;</span>,<span class="st">&quot;Lower Jackknife 95% CI&quot;</span>, <span class="st">&quot;Upper Jackknife 95% CI&quot;</span>)</a>
-<a class="sourceLine" id="cb79-24" title="24">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(dVec2)) {</a>
-<a class="sourceLine" id="cb79-25" title="25">OutJack[j,<span class="dv">1</span>] &lt;-<span class="st"> </span>dVec2[j]</a>
-<a class="sourceLine" id="cb79-26" title="26">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>LER.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">ded=</span>dVec2[j])</a>
-<a class="sourceLine" id="cb79-27" title="27">OutJack[j,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
-<a class="sourceLine" id="cb79-28" title="28">biasboot &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 -&gt;<span class="st"> </span>OutJack[j,<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb79-29" title="29">sdboot &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) -&gt;<span class="st"> </span>OutJack[j,<span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb79-30" title="30">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results)</a>
-<a class="sourceLine" id="cb79-31" title="31"></a>
-<a class="sourceLine" id="cb79-32" title="32">LER.jack.ded&lt;-<span class="st"> </span><span class="cf">function</span>(i) <span class="kw">LER.jack</span>(<span class="dt">ded=</span>dVec2[j],i)</a>
-<a class="sourceLine" id="cb79-33" title="33">JackTheta.ded &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(LER.jack.ded)(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x))</a>
-<a class="sourceLine" id="cb79-34" title="34">OutJack[j,<span class="dv">5</span>] &lt;-<span class="st"> </span>BiasJack.ded &lt;-<span class="st"> </span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">mean</span>(JackTheta.ded) <span class="op">-</span><span class="st"> </span><span class="kw">LER</span>(<span class="dt">ded=</span>dVec2[j]))</a>
-<a class="sourceLine" id="cb79-35" title="35">OutJack[j,<span class="dv">6</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(JackTheta.ded)</a>
-<a class="sourceLine" id="cb79-36" title="36">OutJack[j,<span class="dv">7</span><span class="op">:</span><span class="dv">8</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(JackTheta.ded)<span class="op">+</span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>),<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>OutJack[j,<span class="dv">6</span>]</a>
-<a class="sourceLine" id="cb79-37" title="37">}</a></code></pre></div>
+<a class="sourceLine" id="cb79-23" title="23">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(dVec2)) {</a>
+<a class="sourceLine" id="cb79-24" title="24">OutJack[j,<span class="dv">1</span>] &lt;-<span class="st"> </span>dVec2[j]</a>
+<a class="sourceLine" id="cb79-25" title="25">results &lt;-<span class="st"> </span><span class="kw">boot</span>(<span class="dt">data=</span>BIDataUncensored, <span class="dt">statistic=</span>LER.boot, <span class="dt">R=</span><span class="dv">1000</span>, <span class="dt">ded=</span>dVec2[j])</a>
+<a class="sourceLine" id="cb79-26" title="26">OutJack[j,<span class="dv">2</span>] &lt;-<span class="st"> </span>results<span class="op">$</span>t0</a>
+<a class="sourceLine" id="cb79-27" title="27">biasboot &lt;-<span class="st"> </span><span class="kw">mean</span>(results<span class="op">$</span>t)<span class="op">-</span>results<span class="op">$</span>t0 -&gt;<span class="st"> </span>OutJack[j,<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb79-28" title="28">sdboot &lt;-<span class="st"> </span><span class="kw">sd</span>(results<span class="op">$</span>t) -&gt;<span class="st"> </span>OutJack[j,<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb79-29" title="29">temp &lt;-<span class="st"> </span><span class="kw">boot.ci</span>(results)</a>
+<a class="sourceLine" id="cb79-30" title="30"></a>
+<a class="sourceLine" id="cb79-31" title="31">LER.jack.ded&lt;-<span class="st"> </span><span class="cf">function</span>(i) <span class="kw">LER.jack</span>(<span class="dt">ded=</span>dVec2[j],i)</a>
+<a class="sourceLine" id="cb79-32" title="32">JackTheta.ded &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(LER.jack.ded)(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x))</a>
+<a class="sourceLine" id="cb79-33" title="33">OutJack[j,<span class="dv">5</span>] &lt;-<span class="st"> </span>BiasJack.ded &lt;-<span class="st"> </span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">mean</span>(JackTheta.ded) <span class="op">-</span><span class="st"> </span><span class="kw">LER</span>(<span class="dt">ded=</span>dVec2[j]))</a>
+<a class="sourceLine" id="cb79-34" title="34">OutJack[j,<span class="dv">6</span>] &lt;-<span class="st"> </span><span class="kw">sd</span>(JackTheta.ded)</a>
+<a class="sourceLine" id="cb79-35" title="35">OutJack[j,<span class="dv">7</span><span class="op">:</span><span class="dv">8</span>] &lt;-<span class="st"> </span><span class="kw">mean</span>(JackTheta.ded)<span class="op">+</span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>),<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>OutJack[j,<span class="dv">6</span>]</a>
+<a class="sourceLine" id="cb79-36" title="36">}</a></code></pre></div>
 </div>
 <p><a id=tab:67></a></p>
 <p>Table 6.7. <strong>Jackknife Estimates of LER at Selected Deductibles</strong></p>
-<table>
+<table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -3320,7 +3304,7 @@ and</p>
 <a class="sourceLine" id="cb90-6" title="6"><span class="kw">lines</span>(u,<span class="kw">dnorm</span>(u),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
 <a class="sourceLine" id="cb90-7" title="7"><span class="kw">qqnorm</span>(simx)</a>
 <a class="sourceLine" id="cb90-8" title="8"><span class="kw">acf</span>(simx,<span class="dt">lag=</span><span class="dv">100</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>)</a></code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-217-1.png" width="672" /></p>
 </div>
 <div id="gibbs-sampler" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> Gibbs Sampler</h3>
@@ -3349,7 +3333,7 @@ and</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" title="1"><span class="kw">plot</span>(sim,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">11</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">4.3</span>))</a>
 <a class="sourceLine" id="cb92-2" title="2"><span class="kw">polygon</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">density=</span><span class="dv">15</span>,<span class="dt">border=</span><span class="ot">NA</span>)</a>
 <a class="sourceLine" id="cb92-3" title="3"><span class="kw">abline</span>(<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
-<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-216-1.png" width="672" /></p>
+<p><img src="LossDataAnalytics_files/figure-html/unnamed-chunk-219-1.png" width="672" /></p>
 <p>The construction of the sequence (<a href="#" class="tooltip" style="color:green"><em>MCMC</em><span style="font-size:8pt">Markov Chain Monte Carlo</span></a> algorithms are iterative) can be visualized below</p>
 <h5 style="text-align: center;">
 <a id="displayCode.Gibbs.2" href="javascript:togglecode('toggleCode.Gibbs.2','displayCode.Gibbs.2');"><i><strong>Show R Code</strong></i></a>
