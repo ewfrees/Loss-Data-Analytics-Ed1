@@ -69,7 +69,13 @@ Subtracting $\mu_N$  from each term in \@ref(eq:kpercent-interval) and dividing 
 In limited fluctuation credibility the standard normal distribution is used to approximate the distribution of $(N-\mu_N)/\sigma_N$. If $N$ is the sum of many claims from a large group of similar risks and the claims are independent, then the approximation may be reasonable.
 
 
-Let $y_p$ be the value such that $\Pr[-y_p\leq (N-\mu_N)/\sigma_N \leq y_p]=\Phi(y_p)-\Phi(-y_p)=p$ where $\Phi( )$ is the `r Gloss('cumulative distribution function of the standard normal')`.  Because $\Phi(-y_p)=1-\Phi(y_p)$, the equality can be rewritten as $2\Phi(y_p)-1=p$.  Solving for $y_p$ gives $y_p=\Phi^{-1}((p+1)/2)$ where $\Phi^{-1}( )$ is the inverse of $\Phi( )$.  
+Let $y_p$ be the value such that 
+
+$$
+\Pr[-y_p\leq \frac{N-\mu_N}{\sigma_N} \leq y_p]=\Phi(y_p)-\Phi(-y_p)=p
+$$ 
+
+where $\Phi( )$ is the `r Gloss('cumulative distribution function of the standard normal')`.  Because $\Phi(-y_p)=1-\Phi(y_p)$, the equality can be rewritten as $2\Phi(y_p)-1=p$.  Solving for $y_p$ gives $y_p=\Phi^{-1}((p+1)/2)$ where $\Phi^{-1}( )$ is the inverse of $\Phi( )$.  
 
 Equation \@ref(eq:normalized-interval) will be satisfied if $k\mu_N/\sigma_N \geq y_p$ assuming the normal approximation.  First we will consider this inequality for the case when $N$ has a Poisson distribution:  $\Pr[N=n] = \lambda^n\textrm{e}^{-\lambda}/n!$.  Because $\lambda=\mu_N=\sigma_N^2$ for the Poisson, taking square roots yields $\mu_N^{1/2}=\sigma_N$.  So, $k\mu_N/\mu_N^{1/2} \geq y_p$ which is equivalent to $\mu_N \geq (y_p/k)^2$.  Let's define $\lambda_{kp}$ to be the value of $\mu_N$ for which equality holds.  Then the full credibility standard for the Poisson distribution is 
 
@@ -379,7 +385,7 @@ The last term is exactly the variance of a sample mean $\bar{X}$ when the sample
 ```{r child = './Quizzes/Quiz92.html', eval = QUIZ}
 ```
 
-## B&uuml;hlmann Credibility
+## B&uuml;hlmann Credibility {#S:Cred:Buhlmann}
 
 ***
 
@@ -580,7 +586,7 @@ In real world applications of B&uuml;hlmann credibility the value of $K=EPV/VHM$
 
 For a policyholder with risk parameter $\theta$, B&uuml;hlmann credibility uses a linear approximation $\hat{\mu}(\theta)=Z\bar{X}+(1-Z)\mu$ to estimate $\mathrm{E}(\mu(\theta)|X_1,\ldots,X_n)$, the expected loss for the policyholder given prior losses $X_1,\ldots, X_n$.  We can rewrite this as $\hat{\mu}(\theta)=a+b\bar{X}$ which makes it obvious that the credibility estimate is a linear function of $\bar{X}$.  
 
-If $\mathrm{E}(\mu(\theta)|X_1,\ldots,X_n)$ is approximated by the linear function $a+b\bar{X}$ and constants $a$ and $b$ are chosen so that $\mathrm{E}[(\mathrm{E}(\mu(\theta)|X_1,\ldots,X_n)-(a+b\bar{X}))^2]$ is minimized, what are $a$ and $b$?  The answer is $b=n/(n+K)$ and $a=(1-b)\mu$ with $K=EPV/VHM$ and $\mu=\mathrm{E}(\mu(\theta))$.  More details can be found in references [@buhlmann], [@buhlmanngisler], [@klugman2012], and [@tse].
+If $\mathrm{E}(\mu(\theta)|X_1,\ldots,X_n)$ is approximated by the linear function $a+b\bar{X}$ and constants $a$ and $b$ are chosen so that $\mathrm{E}[(\mathrm{E}(\mu(\theta)|X_1,\ldots,X_n)-(a+b\bar{X}))^2]$ is minimized, what are $a$ and $b$?  The answer is $b=n/(n+K)$ and $a=(1-b)\mu$ with $K=EPV/VHM$ and $\mu=\mathrm{E}(\mu(\theta))$.  More details can be found in references [@Buhlmann1967], [@BuhlmannGisler2005], [@klugman2012], and [@Tse2009].
 
 B&uuml;hlmann credibility is also called least-squares credibility, greatest accuracy credibility, or Bayesian credibility.
 
@@ -714,7 +720,7 @@ In this section, you learn how to:
 
 ***
 
-Section \@ref(S:MS:BayesInference) reviews `r Gloss('Bayesian inference')` and it is assumed that the reader is familiar with that material.  The reader is also advised to read the B&uuml;hlmann credibility section in this chapter.  This section will compare Bayesian inference with B&uuml;hlmann credibility and show connections between the two models.
+Section \@ref(S:MS:BayesInference) reviews `r Gloss('Bayesian inference')` and it is assumed that the reader is familiar with that material.  The reader is also advised to read the B&uuml;hlmann credibility Section \@ref(S:Cred:Buhlmann) in this chapter.  This section will compare Bayesian inference with B&uuml;hlmann credibility and show connections between the two models.
 
 A risk with risk parameter $\theta$ has expected loss $\mu(\theta)=\mathrm{E}(X|\theta)$ with random variable $X$ representing pure premium, aggregate loss, number of claims, claim severity, or some other measure of loss during a period of time.  If the risk has $n$ losses $X_1,\ldots, X_n$ during n separate periods of time, then these losses are assumed to be $iid$ for the policyholder and $\mu(\theta)=\mathrm{E}(X_i|\theta)$ for $i=1,..,n$.  
 
@@ -754,7 +760,7 @@ $$
 \pi(\lambda|x_1,\ldots,x_n)=C\lambda^{(\alpha+\sum_{j=1}^{n}x_j)-1}e^{-(\beta+n)\lambda}. 
 \end{equation*}
 
-This is a gamma distribution with parameters $\alpha'=\alpha+\sum_{j=1}^{n}x_j$ and $\beta'=\beta+n$.  The constant must be $C={\beta'}^{\alpha'}/\Gamma(\alpha')$ so that $\int_{0}^{\infty}\pi(\lambda|x_1,\ldots,x_n) d\lambda=1$ though we do not need to know $C$.  As explained in Chapter \@ref(C:ModelSelection) the gamma distribution is a conjugate prior for the Poisson distribution so the posterior distribution is also gamma.
+This is a gamma distribution with parameters $\alpha'=\alpha+\sum_{j=1}^{n}x_j$ and $\beta'=\beta+n$.  The constant must be $C={\beta'}^{\alpha'}/\Gamma(\alpha')$ so that $\int_{0}^{\infty}\pi(\lambda|x_1,\ldots,x_n) d\lambda=1$ though we do not need to know $C$.  As explained in Chapter \@ref(C:ModelSelection) the gamma distribution is a conjugate prior for the Poisson distribution so the posterior distribution is also gamma. See also Appendix Section \@ref(S:IterExp:Conjugate).
 
 Because the posterior distribution is gamma the expected number of claims for the selected risk is
 
@@ -836,7 +842,7 @@ which is the same as the Bayesian posterior mean.
 
 As demonstrated in the prior section, the B&uuml;hlmann credibility estimates for the gamma-Poisson and beta-binomial models exactly match the Bayesian analysis results.  The term `r Gloss('exact credibility')` is applied in these situations.  Exact credibility may occur if the probability distribution for $X_j$ is in the linear exponential family and the prior distribution is a conjugate prior.  Besides these two models, examples of exact credibility also include Gamma-Exponential and Normal-Normal models. 
 
-It is also noteworthy that if the conditional mean $\mathrm{E}(\mu(\theta)|X_1,...,X_n)$ is linear in the past observations, then the B&uuml;hlmann credibility estimate will coincide with the Bayesian estimate. More information about exact credibility can be found in [@buhlmanngisler], [@klugman2012], and [@tse].
+It is also noteworthy that if the conditional mean $\mathrm{E}(\mu(\theta)|X_1,...,X_n)$ is linear in the past observations, then the B&uuml;hlmann credibility estimate will coincide with the Bayesian estimate. More information about exact credibility can be found in [@BuhlmannGisler2005], [@klugman2012], and [@Tse2009].
 
 
 ## Estimating Credibility Parameters
@@ -1028,8 +1034,7 @@ To calculate an estimator for the variance in the hypothetical means ($VHM$) the
 \widehat{VHM}=\frac{\sum_{i=1}^r m_i(\bar{X}_i-\bar{X})^2 - (r-1)\widehat{EPV}}{m-\frac{1}{m}\sum_{i=1}^r m_i^2}.  
 \end{equation*}
 
-This complicated formula is necessary because of the varying number of exposures.  Proofs that the $EPV$ and $VHM$ estimators shown above are unbiased can be found in several references mentioned at the end of this chapter including [@buhlmanngisler], [@klugman2012], and [@tse].
-
+This complicated formula is necessary because of the varying number of exposures.  Proofs that the $EPV$ and $VHM$ estimators shown above are unbiased can be found in several references mentioned at the end of this chapter including [@BuhlmannGisler2005], [@klugman2012], and [@Tse2009].
 
 
 **Example `r chapnum`.6.3.**

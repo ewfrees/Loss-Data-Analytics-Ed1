@@ -177,7 +177,7 @@ Methods for data analysis can be divided into two types [@abbott2014;@igual2017]
 \[
 Y = f(X_1, X_2, \ldots, X_p),
 \]
-where $Y$ is a target variable and $X_1$, $X_2$, $\ldots$, $X_p$ are explanatory variables. [Table 13.2] gives a list of common names for different types of variables [@frees2009]. When the target variable is a categorical variable, supervised learning methods are called `r Gloss('classification methods')`. When the target variable is continuous, supervised learning methods are called `r Gloss('regression methods')`.
+where $Y$ is a target variable and $X_1$, $X_2$, $\ldots$, $X_p$ are explanatory variables. [Table 13.2] gives a list of common names for different types of variables [@frees2009regression]. When the target variable is a categorical variable, supervised learning methods are called `r Gloss('classification methods')`. When the target variable is continuous, supervised learning methods are called `r Gloss('regression methods')`.
 
 [Table 13.2]:\#tab:13.2
 
@@ -385,7 +385,7 @@ Confirmatory data analysis techniques include the traditional statistical tools 
 
 Linear models, also called `r Gloss('linear regression models')`, aim at using a linear function to approximate the relationship between the dependent variable and independent variables. A linear regression model is called a simple linear regression model if there is only one independent variable. When more than one independent variable is involved, a linear regression model is called a multiple linear regression model.
 
-Let $X$ and $Y$ denote the independent and the dependent variables, respectively. For $i=1,2,\ldots,n$, let $(x_i, y_i)$ be the observed values of $(X,Y)$ in the $i$th case.  Then the simple linear regression model is specified as follows [@frees2009]:
+Let $X$ and $Y$ denote the independent and the dependent variables, respectively. For $i=1,2,\ldots,n$, let $(x_i, y_i)$ be the observed values of $(X,Y)$ in the $i$th case.  Then the simple linear regression model is specified as follows [@frees2009regression]:
 
 $$
 y_i  = \beta_0 + \beta_1 x_i + \epsilon_i,\quad i=1,2,\ldots,n,
@@ -439,7 +439,8 @@ $$
 
 where $\phi$ denotes the dispersion parameter and $\nu(\cdot)$ is a function.
 
-As we can see from the above specification, the GLM provides a unifying framework to handle different types of dependent variables, including discrete and continuous variables. For more information about GLMs, readers are referred to @dejong2008 and @frees2009. 
+As we can see from the above specification, the GLM provides a unifying framework to handle different types of dependent variables, including discrete and continuous variables. For more information about GLMs, readers are referred to @Dejong08 and @frees2009regression. 
+
 
 #### Tree-based Models
 

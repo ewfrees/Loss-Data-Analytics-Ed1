@@ -759,7 +759,7 @@ In this section, you learn how to:
 
 ***
 
-In the previous sections, we discussed three distributions with supports contained in the set of non-negative integers, which well cater to many insurance applications. Moreover, typically by allowing the parameters to be a function of known (to the insurer) `r Gloss('explanatory variables')` such as age, sex, geographic location (territory), and so forth, these distributions allow us to explain claim probabilities in terms of these  variables. The field of statistical study that studies such models is known as `r Gloss('regression analysis')` - it is an important topic of actuarial interest that we will not pursue in this book; see @freesregression.
+In the previous sections, we discussed three distributions with supports contained in the set of non-negative integers, which well cater to many insurance applications. Moreover, typically by allowing the parameters to be a function of known (to the insurer) `r Gloss('explanatory variables')` such as age, sex, geographic location (territory), and so forth, these distributions allow us to explain claim probabilities in terms of these  variables. The field of statistical study that studies such models is known as `r Gloss('regression analysis')` - it is an important topic of actuarial interest that we will not pursue in this book; see @frees2009regression.
 
 There are clearly infinitely many other count distributions, and more importantly the above distributions by themselves do not cater to all practical needs. In particular, one feature of some insurance data is that the proportion of zero counts can be out of place with the proportion of other counts to be explainable by the above distributions. In the following we modify the above distributions to allow for arbitrary probability for zero count irrespective of the assignment of relative probabilities for the other counts. Another feature of a data set which is naturally comprised of `r Gloss('homogeneous')` subsets is that while the above distributions may provide good fits to each subset, they may fail to do so to the whole data set. Later we naturally extend the $(a,b,0)$ distributions to be able to cater to, in particular,  such data sets. 
   
@@ -1179,16 +1179,6 @@ $$
 $$
 
 You use a chi-square test to measure the fit of a Poisson distribution with mean 0.60. The minimum expected number of observations in any group should be 5. The maximum number of groups should be used. Determine the value of the chi-square statistic. 
-
-
-A discrete probability distribution has the following properties 
-\[
-\begin{aligned}
-\Pr(N=k) = \left( \frac{3k+9}{8k}\right) \Pr(N=k-1), \quad k=1,2,3,\ldots
-\end{aligned}
-\]
-Determine the value of $\Pr(N=3)$. (Ans: 0.1609) 
-
 
 
 #### Additional Exercises {-}

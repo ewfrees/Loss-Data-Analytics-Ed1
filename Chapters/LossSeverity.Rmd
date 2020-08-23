@@ -458,7 +458,7 @@ Solving for $\pi_{0.99}$, we get $\pi_{0.99} = 118.99$.
 
 ### The Generalized Beta Distribution of the Second Kind
 
-The `r Gloss('Generalized Beta Distribution of the Second Kind')` (*GB2*) was introduced by @venter1983transformed in the context of insurance loss modeling and by @mcdonald1984some as an income and wealth distribution. It is a four-parameter very flexible distribution that can model positively as well as negatively skewed distributions.
+The `r Gloss('Generalized Beta Distribution of the Second Kind')` (*GB2*) was introduced by @venter1983transformed in the context of insurance loss modeling and by @mcdonald1984some as an income and wealth distribution. It is a four-parameter, very flexible, distribution that can model positively as well as negatively skewed distributions.
 
 The continuous variable $X$ is said to have the *GB2* distribution with parameters $\sigma$, $\theta$, $\alpha_1$ and $\alpha_2$ if its *pdf* is given by
 
@@ -475,13 +475,15 @@ $$
 
 The *GB2* provides a model for heavy as well as light tailed data. It includes the exponential, gamma, Weibull, Burr, Lomax, F, chi-square, Rayleigh, lognormal and log-logistic as special or limiting cases. For example, by setting the parameters $\sigma = \alpha_1 = \alpha_2 = 1$, the *GB2* reduces to the log-logistic distribution. When $\sigma = 1$ and $\alpha_2 \rightarrow \infty$, it reduces to the gamma distribution, and when $\alpha = 1$ and $\alpha_2 \rightarrow \infty$, it reduces to the Weibull distribution.
 
-A *GB2* random variable can be constructed as follows. Suppose that $G_1$ and $G_2$ are independent random variables where $G_i$ has a gamma distribution with parameters $\alpha_i$ and scale parameter 1. Then, one can show that the random variable $X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}$ has a *GB2* distribution with *pdf* summarized in equation \@ref(eq:GB2Distn). This theoretical result has several implications. For example, when the moments exist, one can show that the $k$-th raw moment of the *GB2* distributed random variable is given by
+A *GB2* random variable can be constructed as follows. Suppose that $G_1$ and $G_2$ are independent random variables where $G_i$ has a gamma distribution with shape parameter $\alpha_i$ and scale parameter 1. Then, one can show that the random variable $X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}$ has a *GB2* distribution with *pdf* summarized in equation \@ref(eq:GB2Distn). This theoretical result has several implications. For example, when the moments exist, one can show that the $k$-th raw moment of the *GB2* distributed random variable is given by
 
 $$
 \mathrm{E}\left( X^{k} \right) = \frac{\theta^{k}~\mathrm{B}\left( \alpha_1 +k \sigma,\alpha_2 - k \sigma \right)}{\mathrm{B}\left( \alpha_1,\alpha_2 \right)}, \ \ \ k > 0.
 $$
 
-Earlier applications of the *GB2* were on income data and more recently have been used to model long-tailed claims data (Section \@ref(S:Tails) describes different interpretations of the descriptor "long-tail"). *GB2* was used to model different types of automobile insurance claims, severity of fire losses as well as medical insurance claim data.
+As will be described in Section \@ref(S:LossSev:Raising), the *GB2* is also related to an $F$-distribution, a result that can be useful in simulation and residual analysis.
+
+Earlier applications of the *GB2* were on income data and more recently have been used to model long-tailed claims data (Section \@ref(S:Tails) describes different interpretations of the descriptor "long-tail"). The *GB2* has been used to model different types of automobile insurance claims, severity of fire losses, as well as medical insurance claim data.
 
 
 ```{r child = './Quizzes/Quiz32.html', eval = QUIZ}
@@ -573,7 +575,7 @@ Using the same approach you can demonstrate that other distributions introduced 
 
 *** 
 
-### Raising to a Power
+### Raising to a Power {#S:LossSev:Raising}
 
 In Section \@ref(S:LS:Weibull) we talked about the flexibility of the Weibull distribution in fitting `r Gloss('reliability data')`. Looking to the origins of the Weibull distribution, we recognize that the Weibull is a `r Gloss('power transformation')` of the exponential distribution. This is an application of another type of transformation which involves raising the random variable to a power.
 
@@ -623,7 +625,30 @@ where $\alpha = \frac{1}{\tau}$ and $\beta = \theta^{\tau}$. Then, $Y$ follows t
 
 </div>
 
-*** 
+***
+
+**Special Case. Relating a *GB2* to an $F$- Distribution.** We can use tranforms such as multiplication by a constant and raising to a power to verify that the *GB2* distribution is related to an $F$-distribution, a distribution widely used in applied statistics.
+
+`r HideProofTheory('GB.1',"Relating a GB2 to an F- Distribution")`
+
+***
+
+To see this relationship, we first note that $\frac{1}{2} G_1$ has a gamma distribution with shape parameter $\alpha_1$ and scale parameter $0.5$. Readers with some background in applied statistics may also recognize this to be a *chi-square* distribution with degrees of freedom $2\alpha_1$. The ratio of independent chi-squares has an $F$-distribution. That is
+
+$$
+\frac{G_1}{G_2} = \frac{0.5G_1}{0.5G_2}  = F
+$$
+
+has an $F$-distribution with numerator degrees of freedom $2\alpha_1$ and denominator degrees of freedom $2\alpha_2$. Thus, a random variable $X$ with a *GB2* distribution can be expressed as $X = \theta \left(\frac{G_1}{G_2}\right)^{\sigma}= \theta ~ F^{\sigma}$. With this, you can think of a *GB2* as a "power $F$" or a "generalized $F$", as it is sometimes known in the literature.
+
+Simulation, discussed in Chapter \@ref(C:Simulation), provides a direct application of this result. Suppose we know how to simulate an outcome with an $F-distribution$ (that is easy to do using, for example, the `R` function `rf(n,df1,df2)`), say $F$. Then we raise it to the power $\sigma$ and multiply it by $\theta$ so that $\theta ~ F^{\sigma}$ is an outcome that has a *GB2* distribution.
+
+Residual analysis provides another direct application. Suppose we have an outcome, say $X$, that we think comes from a *GB2* distribution. Then we can examine the transformed version $X^{\ast} = \left(X/\theta\right)^{1/\sigma}$. If the original specification is correct, then $X^{\ast}$ has an $F-$ distribution and there are many well-known techniques, some described in Chapter \@ref(C:ModelSelection), for verifying this assertion.
+
+***
+
+</div>
+
 
 ### Exponentiation
 

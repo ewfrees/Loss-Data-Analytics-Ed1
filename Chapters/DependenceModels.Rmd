@@ -160,7 +160,7 @@ In this section, you learn how to:
 
 ### Association Measures for Quantitative Variables
 
-For this section, consider a pair of random variables $(X,Y)$ having joint distribution function $F(\cdot)$ and a random sample $(X_i,Y_i), i=1, \ldots, n$. For the continuous case, suppose that $F(\cdot)$ is absolutely continuous with absolutely continuous marginals.
+For this section, consider a pair of random variables $(X,Y)$ having joint distribution function $F(\cdot)$ and a random sample $(X_i,Y_i), i=1, \ldots, n$. For the continuous case, suppose that $F(\cdot)$ has  absolutely continuous marginals with marginal density functions.
 
 #### Pearson Correlation
 
@@ -263,9 +263,12 @@ We can show that the Spearman correlation statistic is invariant under strictly 
 
 An alternative measure that uses ranks is based on the concept of *concordance*. An observation pair $(X,Y)$ is said to be `r Gloss('concordant')` (`r Gloss('discordant')`) if the observation with a larger value of $X$ has also the larger (smaller) value of $Y$. Then $\Pr(concordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) >0 ]$ , $\Pr(discordance) = \Pr[ (X_1-X_2)(Y_1-Y_2) <0 ]$, $\Pr(tie) = \Pr[ (X_1-X_2)(Y_1-Y_2) =0 ]$ and
 
-\begin{eqnarray*}
-\tau(X,Y)= \Pr(concordance) - \Pr(discordance) = 2\Pr(concordance) - 1 + \Pr(tie).
-\end{eqnarray*}
+$$
+\begin{array}{rl}
+\tau(X,Y) &= \Pr(concordance) - \Pr(discordance) \\
+& = 2\Pr(concordance) - 1 + \Pr(tie).
+\end{array}
+$$
 
 To estimate this, the pairs $(X_i,Y_i)$ and $(X_j,Y_j)$ are said to be concordant if the product $sgn(X_j-X_i)sgn(Y_j-Y_i)$ equals 1 and discordant if the product equals -1. Here, $sgn(x)=1,0,-1$ as $x>0$, $x=0$, $x<0$, respectively. With this, we can express the association measure of @kendall1938new, known as `r Gloss("Kendall's tau")`, as
 

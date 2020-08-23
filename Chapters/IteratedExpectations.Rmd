@@ -382,7 +382,7 @@ $$
 
 The Tweedie (see Section \@ref(S:AggLoss:Tweedie)) and inverse Gaussian distributions are also members of the linear exponential family. The linear exponential family of distribution families is extensively used as the basis of generalized linear models as described in, for example, @frees2009regression.
 
-### Conjugate Distributions
+### Conjugate Distributions {#S:IterExp:Conjugate}
 
 Now assume that the parameter $\gamma$ is random with distribution $\pi(\gamma, \tau)$, where $\tau$ is a vector of parameters that describe the distribution of $\gamma$. In Bayesian models, the distribution $\pi$ is known as the prior and reflects our belief or information about $\gamma$. The likelihood $f(x|\gamma)$ is a probability conditional on $\gamma$. The distribution of $\gamma$ with knowledge of the random variables, $\pi(\gamma,\tau| x)$, is called the posterior distribution. For a given likelihood distribution, priors and posteriors that come from the same parametric family are known as conjugate families of distributions.
 
@@ -402,7 +402,7 @@ where $C_1$ is a normalizing constant. Thus, we see that $\pi(\gamma,\tau|x)$ ha
 
 ***
 
-**Special case. Poisson-Gamma Model.** Consider a Poisson likelihood so that $b(\gamma) = e^{\gamma}$ and scale parameter ($\theta$) equals one.  Thus, we have
+**Special case. Gamma-Poisson Model.** Consider a Poisson likelihood so that $b(\gamma) = e^{\gamma}$ and scale parameter ($\theta$) equals one.  Thus, we have
 $$
 \pi(\gamma,\tau) = C \exp\left\{
 \gamma a_1 - a_2 e^{\gamma} \right\}=

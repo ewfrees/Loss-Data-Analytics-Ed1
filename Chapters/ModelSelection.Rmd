@@ -1675,7 +1675,7 @@ where
 
 **Why Bayes?** There are several advantages of the Bayesian approach. First, we can describe the entire distribution of parameters conditional on the data. This allows us, for example, to provide probability statements regarding the likelihood of parameters. Second, the Bayesian approach provides a unified approach for estimating parameters. Some non-Bayesian methods, such as `r Gloss('least squares')`, require a separate approach to estimate variance components. In contrast, in Bayesian methods, all parameters can be treated in a similar fashion. This is convenient for explaining results to consumers of the data analysis. Third, this approach allows analysts to blend prior information known from other sources with the data in a coherent manner. This topic is developed in detail in the `r Gloss('credibility', '4.4')` Chapter \@ref(C:Credibility). Fourth, Bayesian analysis is particularly useful for forecasting future responses.
 
-**Poisson - Gamma Special Case.** To develop intuition, we consider the Poisson-gamma case that holds a prominent position in actuarial applications. The idea is to consider a set of random variables $X_1, \ldots, X_n$ where each $X_i$ could represent the number of claims for the $i$th policyholder. Assume that claims of all policyholders follow the same Poisson so that $X_i$ has a Poisson distribution with parameter $\lambda$. This is analogous to the likelihood that we first saw in Chapter \@ref(C:Frequency-Modeling). In a non-Bayesian (or frequentist) context, the parameter $\lambda$ is viewed as an unknown quantity that is not random (it is said to be "fixed"). In the Bayesian context, the unknown parameter $\lambda$ is viewed as uncertain and is modeled as a random variable. In this special case, we use the gamma distribution to reflect this uncertainty, the `r Gloss('prior distribution', '4.4')`.
+**Gamma - Poisson Special Case.** To develop intuition, we consider the gamma-Poisson case that holds a prominent position in actuarial applications. The idea is to consider a set of random variables $X_1, \ldots, X_n$ where each $X_i$ could represent the number of claims for the $i$th policyholder. Assume that claims of all policyholders follow the same Poisson so that $X_i$ has a Poisson distribution with parameter $\lambda$. This is analogous to the likelihood that we first saw in Chapter \@ref(C:Frequency-Modeling). In a non-Bayesian (or frequentist) context, the parameter $\lambda$ is viewed as an unknown quantity that is not random (it is said to be "fixed"). In the Bayesian context, the unknown parameter $\lambda$ is viewed as uncertain and is modeled as a random variable. In this special case, we use the gamma distribution to reflect this uncertainty, the `r Gloss('prior distribution', '4.4')`.
 
 Think of the following two-stage sampling scheme to motivate our probabilistic set-up.
 
@@ -2112,9 +2112,9 @@ $$
 \end{array}
 $$
 
-For conjugate distributions, the posterior and the prior belong to the same family of distributions. The following illustration looks at the Poisson-gamma special case, the most well-known in actuarial applications.
+For conjugate distributions, the posterior and the prior belong to the same family of distributions. The following illustration looks at the gamma-Poisson special case, the most well-known in actuarial applications.
 
-**Special Case -- Poisson-Gamma - Continued.** Assume a Poisson($\lambda$) model distribution and that $\lambda$ follows a gamma($\alpha, \theta$) prior distribution. Then, the posterior distribution of $\lambda$ given the data follows a gamma distribution with new parameters $\alpha_{post} = \sum_i x_i + \alpha$ and $\theta_{post} = 1/(n + 1/\theta)$.
+**Special Case -- Gamma-Poisson - Continued.** Assume a Poisson($\lambda$) model distribution and that $\lambda$ follows a gamma($\alpha, \theta$) prior distribution. Then, the posterior distribution of $\lambda$ given the data follows a gamma distribution with new parameters $\alpha_{post} = \sum_i x_i + \alpha$ and $\theta_{post} = 1/(n + 1/\theta)$.
 
 `r HideExample('Conj.4f', 'Show Special Case Details')`
 
