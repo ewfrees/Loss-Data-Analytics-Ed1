@@ -205,12 +205,12 @@ if (knitr::is_html_output()) {knitr::kable(OutJack, "html",digits=5) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
           font_size = 10)
 }
-if (knitr::is_latex_output()) {knitr::kable(OutJack.latex, "latex", booktabs = T, digits=5) %>%
+if (knitr::is_latex_output()) {kbl(OutJack.latex,  booktabs = T, digits=5) %>%
   kable_styling(latex_options="scale_down") %>%
-    add_header_above(c("","Estimate","Bias", "SD", 
-                       "Bias", "SD","95% CI", "95% CI")) %>%
-      add_header_above(c("d","NP","Bootstrap", "Bootstrap", 
-                       "Jackknife", "Jackknife","Lower Jackknife", "Upper Jackknife"))
+    add_header_above(c("","Estimate"=1,"Bias"=1, "SD"=1, 
+                       "Bias"=1, "SD"=1,"95% CI"=1, "95% CI"=1)) %>%
+      add_header_above(c("d"=1,"NP"=1,"Bootstrap"=1, "Bootstrap"=1, 
+                       "Jackknife"=1, "Jackknife"=1,"Lower Jackknife"=1, "Upper Jackknife"=1))
 }
 ```
 

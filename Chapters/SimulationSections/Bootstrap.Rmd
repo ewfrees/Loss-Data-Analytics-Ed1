@@ -175,6 +175,7 @@ OutBoot[i,6] <- temp$normal[3]
 Table 6.3. **Bootstrap Estimates of LER at Selected Deductibles**
 
 ```{r comment="", echo=FALSE}
+library(kableExtra)
 OutBoot.latex <- OutBoot
 colnames(OutBoot) <- c("d","NP Estimate","Bootstrap Bias", "Bootstrap SD", 
                            "Lower Normal 95% CI", "Upper Normal 95% CI")
@@ -182,13 +183,14 @@ if (knitr::is_html_output()) {knitr::kable(OutBoot, "html",digits=5) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
           font_size = 10)
 }
-if (knitr::is_latex_output()) {knitr::kable(OutBoot.latex, "latex", booktabs = T, digits=5) %>%
+if (knitr::is_latex_output()) {
+  kbl(OutBoot.latex, booktabs = T, digits=5) %>%
   kable_styling(latex_options="scale_down") %>%
-    add_header_above(c("","Estimate","Bias", "SD", 
-                           "95% CI", "95% CI"))  %>%
-      add_header_above(c("d","NP","Bootstrap", "Bootstrap", 
-                           "Lower Normal", "Upper Normal"))
-}
+    add_header_above(c(" ","Estimate"=1,"Bias"=1,"SD"=1, 
+                            "95% CI"=1, "95% CI"=1)) %>%
+      add_header_above(c("d","NP"=1,"Bootstrap"=1, "Bootstrap"=1,
+                             "Lower Normal"=1, "Upper Normal"=1))
+      }
 ```
 
 
@@ -391,16 +393,16 @@ if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
           font_size = 10)
 }
-if (knitr::is_latex_output()) {knitr::kable(OutBoot1.latex, booktabs = T, "latex",digits=2) %>%
+if (knitr::is_latex_output()) {kbl(OutBoot1.latex, booktabs = T, digits=2) %>%
   kable_styling(latex_options="scale_down") %>%
-    add_header_above(c("","Estimate", "Bias", 
-       "SD", "95% CI", "95% CI",
-       "95% CI", "95% CI",
-       "95% CI", "95% CI")) %>%
-    add_header_above(c("Fraction","NP", "Bootstrap", 
-       "Bootstrap", "Lower Normal", "Upper Normal",
-       "Lower Basic", "Upper Basic",
-       "Lower Percentile", "Upper  Percentile"))
+    add_header_above(c("","Estimate"=1, "Bias"=1, 
+       "SD"=1, "95% CI"=1, "95% CI"=1,
+       "95% CI"=1, "95% CI"=1,
+       "95% CI"=1, "95% CI"=1)) %>%
+    add_header_above(c("Fraction"=1,"NP"=1, "Bootstrap"=1, 
+       "Bootstrap"=1, "Lower Normal"=1, "Upper Normal"=1,
+       "Lower Basic"=1, "Upper Basic"=1,
+       "Lower Percentile"=1, "Upper  Percentile"=1))
   }
 ```
 
@@ -464,16 +466,16 @@ if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
           font_size = 10)
 }
-if (knitr::is_latex_output()) {knitr::kable(OutBoot1.latex, "latex", booktabs = T, digits=2) %>%
+if (knitr::is_latex_output()) {kbl(OutBoot1.latex,  booktabs = T, digits=2) %>%
   kable_styling(latex_options="scale_down") %>%
-    add_header_above(c("","Estimate", "Bias", 
-       "SD", "95% CI", "95% CI",
-       "95% CI", "95% CI",
-       "95% CI", "95% CI"))  %>%
-    add_header_above(c("Fraction","NP", "Bootstrap", 
-       "Bootstrap", "Lower Normal", "Upper Normal",
-       "Lower Basic", "Upper Basic",
-       "Lower Percentile", "Upper  Percentile"))
+    add_header_above(c("","Estimate"=1, "Bias"=1, 
+       "SD"=1, "95% CI"=1, "95% CI"=1,
+       "95% CI"=1, "95% CI"=1,
+       "95% CI"=1, "95% CI"=1))  %>%
+    add_header_above(c("Fraction"=1,"NP"=1, "Bootstrap"=1, 
+       "Bootstrap"=1, "Lower Normal"=1, "Upper Normal"=1,
+       "Lower Basic"=1, "Upper Basic"=1,
+       "Lower Percentile"=1, "Upper  Percentile"=1))
   }
 ```
 
@@ -592,12 +594,12 @@ if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
           font_size = 10)
 }
-if (knitr::is_latex_output()) {knitr::kable(OutBoot1.latex, "latex", booktabs = T, digits=2) %>%
+if (knitr::is_latex_output()) {kbl(OutBoot1.latex, booktabs = T, digits=2) %>%
   kable_styling(latex_options="scale_down") %>%
-        add_header_above(c("","Estimate", "Bias",
-                      "SD",  "95% CI", "95% CI")) %>%
-    add_header_above(c("Fraction","KM NP", "Bootstrap ",
-                      "Bootstrap",  "Lower Basic", "Upper Basic"))
+        add_header_above(c("","Estimate"=1, "Bias"=1,
+                      "SD"=1,  "95% CI"=1, "95% CI"=1)) %>%
+    add_header_above(c("Fraction"=1,"KM NP"=1, "Bootstrap "=1,
+                      "Bootstrap"=1,  "Lower Basic"=1, "Upper Basic"=1))
 
 }
 ```
