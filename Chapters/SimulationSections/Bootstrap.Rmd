@@ -179,9 +179,10 @@ library(kableExtra)
 OutBoot.latex <- OutBoot
 colnames(OutBoot) <- c("d","NP Estimate","Bootstrap Bias", "Bootstrap SD", 
                            "Lower Normal 95% CI", "Upper Normal 95% CI")
-if (knitr::is_html_output()) {knitr::kable(OutBoot, "html",digits=5) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-          font_size = 10)
+if (knitr::is_html_output()) {knitr::kable(OutBoot, "html",digits=5) 
+  # %>%
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+  #         font_size = 10)
 }
 if (knitr::is_latex_output()) {
   kbl(OutBoot.latex, booktabs = T, digits=5) %>%
@@ -389,9 +390,10 @@ colnames(OutBoot1) <- c("Fraction","NP Estimate", "Bootstrap Bias",
        "Bootstrap SD", "Lower Normal 95% CI", "Upper Normal  95% CI",
        "Lower Basic 95% CI", "Upper Basic 95% CI",
        "Lower Percentile 95% CI", "Upper  Percentile 95% CI")
-if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-          font_size = 10)
+if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) 
+  # %>%
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+  #         font_size = 10)
 }
 if (knitr::is_latex_output()) {kbl(OutBoot1.latex, booktabs = T, digits=2) %>%
   kable_styling(latex_options="scale_down") %>%
@@ -462,9 +464,10 @@ colnames(OutBoot1) <- c("Fraction","NP Estimate", "Bootstrap Bias",
        "Bootstrap SD", "Lower Normal 95% CI", "Upper Normal  95% CI",
        "Lower Basic 95% CI", "Upper Basic 95% CI",
        "Lower Percentile 95% CI", "Upper  Percentile 95% CI")
-if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-          font_size = 10)
+if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) 
+  # %>%
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+  #         font_size = 10)
 }
 if (knitr::is_latex_output()) {kbl(OutBoot1.latex,  booktabs = T, digits=2) %>%
   kable_styling(latex_options="scale_down") %>%
@@ -590,9 +593,10 @@ Table 6.6. **Bootstrap Kaplan-Meier Estimates of Quantiles at Selected Fractions
 OutBoot1.latex <- OutBoot1
 colnames(OutBoot1) <- c("Fraction","KM NP Estimate", "Bootstrap Bias",
                         "Bootstrap SD",  "Lower Basic 95% CI", "Upper Basic 95% CI")
-if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-          font_size = 10)
+if (knitr::is_html_output()) {knitr::kable(OutBoot1, "html",digits=2) 
+  # %>%
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+  #         font_size = 10)
 }
 if (knitr::is_latex_output()) {kbl(OutBoot1.latex, booktabs = T, digits=2) %>%
   kable_styling(latex_options="scale_down") %>%

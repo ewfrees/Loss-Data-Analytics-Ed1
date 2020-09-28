@@ -201,9 +201,10 @@ Table 6.7. **Jackknife Estimates of LER at Selected Deductibles**
 OutJack.latex <- OutJack
 colnames(OutJack) <- c("d","NP Estimate","Bootstrap Bias", "Bootstrap SD", 
                        "Jackknife Bias", "Jackknife SD","Lower Jackknife 95% CI", "Upper Jackknife 95% CI")
-if (knitr::is_html_output()) {knitr::kable(OutJack, "html",digits=5) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-          font_size = 10)
+if (knitr::is_html_output()) {knitr::kable(OutJack, "html",digits=5) 
+  # %>%
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+  #         font_size = 10)
 }
 if (knitr::is_latex_output()) {kbl(OutJack.latex,  booktabs = T, digits=5) %>%
   kable_styling(latex_options="scale_down") %>%

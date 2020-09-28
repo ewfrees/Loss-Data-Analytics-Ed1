@@ -693,9 +693,10 @@ colnames(outMat) <- c("Estimator", "Definition",
 if (knitr::is_latex_output()) {knitr::kable(outMat, "latex", booktabs=TRUE, escape = F, align = "cccrr") %>%
   kable_styling(font_size = 10, latex_options="scale_down")
 }
-if (knitr::is_html_output()) {knitr::kable(outMat, "html", booktabs=TRUE, escape = F, align = "cccrr") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-          font_size = 10)
+if (knitr::is_html_output()) {knitr::kable(outMat, "html", booktabs=TRUE, escape = F, align = "cccrr")   
+  # %>%
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+  #         font_size = 10)
   }
 ```
 </div>
