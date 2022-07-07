@@ -1,7 +1,7 @@
 
 `r chapnum = 2`
 
-# Frequency Modeling {#C:Frequency-Modeling}
+# Frequency Modeling {#ChapFrequency-Modeling}
 
 *Chapter Preview.* A primary focus for insurers is estimating the magnitude of aggregate claims it must bear under its insurance contracts. `r Gloss('Aggregate claims')` are affected by both the frequency and the severity of the insured event. Decomposing aggregate claims into these two components, each of which warrant significant attention, is essential for analysis and pricing. This chapter discusses frequency distributions, summary measures, and parameter estimation techniques. 
 
@@ -469,7 +469,7 @@ In the case of the binomial distribution we have
 \[
 L(m,q)=\left(\prod_{i=1}^n \binom{m}{x_i}\right) q^{\sum_{i=1}^n x_i} (1-q)^{nm-\sum_{i=1}^n x_i} .
 \] 
-The `r Gloss('maximum likelihood estimator (mle)')` for $\theta$ is any maximizer of the likelihood; in a sense the  *mle* chooses the set of parameter values that best explains the observed observations. Appendix Section \@ref(S:AppA:MLE) reviews the foundations of maximum likelihood estimation with more mathematical details in Appendix Chapter \@ref(C:AppC).
+The `r Gloss('maximum likelihood estimator (mle)')` for $\theta$ is any maximizer of the likelihood; in a sense the  *mle* chooses the set of parameter values that best explains the observed observations. Appendix Section \@ref(S:AppA:MLE) reviews the foundations of maximum likelihood estimation with more mathematical details in Appendix Chapter \@ref(CAppC).
 
 **Special Case: Three Bernoulli Outcomes.** To illustrate, consider a sample of size $n=3$ from a Bernoulli distribution (binomial with $m=1$) with values $0,1,0$. The likelihood in this case is easily checked to equal 
 \[
@@ -883,7 +883,7 @@ In \@ref(eq:mixdefn) we see that the distribution function is a convex combinati
 (\#eq:LawTotalVariation)
 \end{equation}
 
-Appendix Chapter \@ref(C:AppB) provides additional background about this important expression.
+Appendix Chapter \@ref(CAppB) provides additional background about this important expression.
 
 <!-- \phantom{Exercise or example for hazard rate density/survival expectation etc..} -->
 
@@ -1192,7 +1192,7 @@ Here are a set of exercises that guide the viewer through some of the theoretica
 
 ## Further Resources and Contributors {#Freq-further-reading-and-resources}
 
-Appendix Chapter \@ref(C:AppA) gives a general introduction to maximum likelihood theory regarding estimation of parameters from a parametric family. Appendix Chapter \@ref(C:AppC) gives more specific examples and expands some of the concepts.
+Appendix Chapter \@ref(CAppA) gives a general introduction to maximum likelihood theory regarding estimation of parameters from a parametric family. Appendix Chapter \@ref(CAppC) gives more specific examples and expands some of the concepts.
 
 
 #### Contributors {-}

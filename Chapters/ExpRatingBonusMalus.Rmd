@@ -2,7 +2,7 @@
 `r chapnum = 12`
 
 
-# Experience Rating using Bonus-Malus {#C:BonusMalus}
+# Experience Rating using Bonus-Malus {#ChapBonusMalus}
 
 ***
 
@@ -27,7 +27,7 @@ different countries, is based on penalizing insureds who are responsible
 for one or more claims by a premium surcharge (malus), and rewarding insureds
 with a premium discount (bonus) if they do not have any claims. 
 A bonus-malus system can be perceived as a commercial implementation of the 
-ideal credibility premium as discussed in Chapter \@ref(C:Credibility), where premium payable
+ideal credibility premium as discussed in Chapter \@ref(ChapCredibility), where premium payable
 for insureds are calculated on an individual basis. Insurers use
 bonus-malus systems for two main purposes: to encourage drivers to drive
 more carefully in a year without any claims, and to ensure insureds to
@@ -1049,12 +1049,12 @@ possible.
 
 ### Premium Rating
 
-In motor insurance ratemaking, BMS is a form of *a posteriori* rating mechanism to complement the use of *a priori* risk classification as described in Chapter \@ref(C:RiskClass). The *a priori* ***risk segmentation*** introduced in Section \@ref(S:RC:Introduction)
+In motor insurance ratemaking, BMS is a form of *a posteriori* rating mechanism to complement the use of *a priori* risk classification as described in Chapter \@ref(ChapRiskClass). The *a priori* ***risk segmentation*** introduced in Section \@ref(S:RC:Introduction)
 divides portfolio of drivers into a number of homogeneous risk classes based on observable rating factors (see Section \@ref(S:RatingFactors)),
 such that policyholders in the same risk class pay the same *a priori* premium. The underlying reason for utilizing BMS that relies on claims experience information is to deal with the *residual heterogeneity* within each homogeneous risk class (e.g., see the discussion before Example 2.6.2) since the observable variables are far from perfect in predicting the riskiness of driving behaviors.
 
 
-The ideal *a posteriori* mechanism is the credibility premium framework developed in Chapter \@ref(C:Credibility) and in particular Section \@ref(S:Cred:BayesInf) (see also @DionneVanasse89), whereby premiums are derived on an individual basis for each policyholder by incorporating both the *a priori* and  *a posteriori* information. However, such individual premium determination is overly complex from a commercial standpoint for practical implementations by motor insurers. For this reason, *BMS* is the preferred solution and it consists of the following three building blocks: (a) *BMS* classes; (b) transition rules; (c) premium levels (also known as premium relativities or premium adjustment coefficients).
+The ideal *a posteriori* mechanism is the credibility premium framework developed in Chapter \@ref(ChapCredibility) and in particular Section \@ref(S:Cred:BayesInf) (see also @DionneVanasse89), whereby premiums are derived on an individual basis for each policyholder by incorporating both the *a priori* and  *a posteriori* information. However, such individual premium determination is overly complex from a commercial standpoint for practical implementations by motor insurers. For this reason, *BMS* is the preferred solution and it consists of the following three building blocks: (a) *BMS* classes; (b) transition rules; (c) premium levels (also known as premium relativities or premium adjustment coefficients).
 
 The first two building blocks are pre-specified in advance and have been discussed in previous sections, whereas the determination (instead of pre-determined as discussed in the cases of Malaysian, Brazilian and Swiss systems) of premium relativities are important for motor insurers precisely because of its complementary and correction nature to account for the imperfection or inaccuracies in the *a priori* 
 risk classification. Note that the premium relativities under BMS are different from the relativity measure defined in Section \@ref(S:RatingFactors), which is the ratio between the expected risk of a given risk class to a baseline risk class, both of which are calculated from observable rating factors. In the following subsections, we briefly introduce the required modelling setup to study the determination of optimal relativities. We refer interested reader to @Denuit07 for a fuller discussion on the technical details. 
